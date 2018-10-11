@@ -1,0 +1,4 @@
+altair-data*.json
+.vscode
+.pyc
+factbook
