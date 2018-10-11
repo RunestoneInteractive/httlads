@@ -1,0 +1,26 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pandas = "*"
+jupyterlab = "*"
+ipython = "*"
+sklearn = "*"
+"psycopg2-binary" = "*"
+sqlalchemy = "*"
+nltk = "*"
+numpy = "*"
+matplotlib = "*"
+altair = "*"
+seaborn = "*"
+requests = "*"
+textatistic = "*"
+vega-datasets = "*"
+"beautifulsoup4" = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.6"
