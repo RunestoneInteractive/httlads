@@ -97,7 +97,7 @@ In-class work on projects -- practice applying concepts from modules above
 
 ### [Week 8-9]  Module 4
 
-Predictive -- simple recommender system. Ex: Insta-cart shopping basket recommendation; beer & diapers story; movies/music/books.
+Predictive -- simple recommender system. Ex: Insta-cart shopping basket recommendation; MovieLens data;  beer & diapers story; movies/music/books.
 * Correlation
 * Pull in Heat maps
 * SQL basics
