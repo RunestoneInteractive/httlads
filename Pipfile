@@ -19,6 +19,10 @@ requests = "*"
 textatistic = "*"
 vega-datasets = "*"
 "beautifulsoup4" = "*"
+numexpr = "*"
+jupyter-contrib-nbextensions = "*"
+jupytext = "*"
+graphviz = "*"
 
 [dev-packages]
 
