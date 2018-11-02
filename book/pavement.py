@@ -11,7 +11,7 @@ from socket import gethostname
 sys.path.append(os.getcwd())
 
 home_dir = os.getcwd()
-master_url = 'http://127.0.0.1:8000'
+master_url = 'https://runestone.academy'
 master_app = 'runestone'
 serving_dir = "./build/httlads"
 dest = "../../static"
@@ -28,9 +28,9 @@ options(
         template_args={'course_id': 'httlads',
                        'login_required':'false',
                        'appname':master_app,
-                       'loglevel': 10,
+                       'loglevel': 0,
                        'course_url':master_url,
-                       'use_services': 'true',
+                       'use_services': 'false',
                        'python3': 'true',
                        'dburl': 'postgresql://user:password@localhost/runestone',
                        'default_ac_lang': 'python',
