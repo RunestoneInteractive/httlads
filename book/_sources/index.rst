@@ -13,16 +13,11 @@ How to Think like a Data Scientist - Alpha
 .. Sources can also be included from subfolders of this directory.
    (e.g. "DataStructures/queues.rst").
 
-Introduction
-::::::::::::
-
-To be written
-
-
 
 .. toctree::
     :maxdepth: 2
 
+    introduction.rst
     happiness.rst
     solver.rst
     WorldFactbook.rst

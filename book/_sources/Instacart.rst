@@ -49,9 +49,10 @@ Reading List
 The Data
 --------
 
-This is a BIG data set. The larges file has over 32 million rows. We
-don’t want to start there as that is crazy big. So we have a smaller
-file, still with 1.3 million rows that we can use to start with.
+| This is a BIG data set. The largest file has over 32 million rows.
+| We don’t want to start there as that is crazy big. So we have a
+  smaller file, still with 1.3 million rows that we can use to start
+  with.
 
 aisles.csv
 ~~~~~~~~~~
@@ -1427,41 +1428,18 @@ Experimenting with item-item recommendations
 
 
 
-I turns out that using json.dump is a stupid idea in this case. Because…
-json.dump coerces every key of a dictionary to a string! So, when you
-read it back in again the key is a string not an int as it should be
-which makes the item_item matrix useless.
-
-Use the pickle object instead!
-
-.. code:: ipython3
-
-    with open('item_item.pkl','wb') as f:
-        pickle.dump(iimat,f)
-            
-    test.to_csv('mytest.csv')
-    
-        
-
-.. code:: ipython3
-
-    #t = pd.DataFrame(iimat).to_sparse()
-
-
-.. code:: ipython3
-
-    def getval(d):
-        return d[1]
-    
-
-
 Visualizing Grocery Data
 ------------------------
 
 -  How can we show top combinations of two things?
--  Visualize the flow?
 
--  Inspiration from https://python-graph-gallery.com/
+-  Visualize the flow from department to department or from aisle to
+   aisle.
+
+-  You can get some inspiration from https://python-graph-gallery.com/
+
+To accomplish this you will have to dig into some new packages that we
+have not used in class. But this is all part of the process.
 
 We need to create square adjacency matrix – Aisle to Aisle. We’ll use
 this to build our chord diagram and other graph like visualizations.
@@ -1543,7 +1521,7 @@ this to build our chord diagram and other graph like visualizations.
 
 
 
-.. image:: Instacart_files/Instacart_88_1.png
+.. image:: Instacart_files/Instacart_84_1.png
 
 
 Looks like a lot of small values! Lets make a histogram of the whole
@@ -1589,7 +1567,7 @@ thing and see.
 
 
 
-.. image:: Instacart_files/Instacart_96_1.png
+.. image:: Instacart_files/Instacart_92_1.png
 
 
 .. code:: ipython3
