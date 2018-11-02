@@ -41,3 +41,9 @@ The better known phrase is that “Statistics don’t lie, but statisticians som
 
   The ethical data scientist would strive to improve the world, not repeat it. That would mean deploying tools to explicitly construct fair processes. As long as our world is not perfect, and as long as data is being collected on that world, we will not be building models that are improvements on our past unless we specifically set out to do so.
 
+
+
+The Data Science Pipeline
+-------------------------
+
+.. image:: Figures/DSPipeline.svg
