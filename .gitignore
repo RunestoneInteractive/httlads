@@ -2,3 +2,5 @@ altair-data*.json
 .vscode
 .pyc
 factbook
+build/
+*.Rmd

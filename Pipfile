@@ -23,6 +23,9 @@ numexpr = "*"
 jupyter-contrib-nbextensions = "*"
 jupytext = "*"
 graphviz = "*"
+ipywidgets = "*"
+tables = "*"
+runestone = {editable = true, path = "/Users/bradleymiller/Runestone/RunestoneComponents"}
 
 [dev-packages]
 
