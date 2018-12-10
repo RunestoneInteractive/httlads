@@ -20,8 +20,10 @@ How to Think like a Data Scientist - Alpha
     introduction.rst
     happiness.rst
     solver.rst
+    pandas_kungfu.rst
     WorldFactbook.rst
     UNGeneralDebates.rst
+    SQL_in_one_lesson.rst
     BeerPredictions.rst
     Instacart.rst
 
