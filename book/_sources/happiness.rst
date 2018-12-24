@@ -52,7 +52,7 @@ Reading List
 
 * Find reference to refresh on basic statistics
 
-* Find a reference/tutorial on spreadsheet basics
+* `Google Sheets 101: <https://zapier.com/learn/google-sheets/google-sheets-tutorial/>`_
 
 * https://www.youtube.com/watch?v=QTgvX5MLPC8
 
@@ -63,7 +63,7 @@ Reading List
 Time Required
 =============
 
-This can easily take four class periods.  But you could cut that down by assigning parts of it to be done outside of class.
+This can easily take four class periods.  But you could be less depending on how much is done as homework versus in-class work.
 
 .. _hf33f5c6794a1d5ee7c64395b788:
 
