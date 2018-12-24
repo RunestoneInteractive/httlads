@@ -18,7 +18,7 @@ How to Think like a Data Scientist - Alpha
     :maxdepth: 2
 
     introduction.rst
-    happiness.rst
+    Happiness/toctree.rst
     solver.rst
     pandas_kungfu.rst
     WorldFactbook.rst
