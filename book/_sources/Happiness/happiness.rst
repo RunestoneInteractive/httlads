@@ -3,9 +3,9 @@
 Part II Adding More Data
 ========================
 
-Limiting our analysis to the data provided to us from a single source would be quite limiting.  Seldom does one file contain all the data you need to answer the questions you may have.  In this part of the project we will import a spreadsheet that has a lot more data about each country including its continent (see question 5).  This is an important lesson as it sets the stage nicely for what we will learn about later when using SQL to "join" two tables of data.
+Limiting our analysis to the data provided to us from a single source would restrict our analysis.  Seldom does one file contain all the data you need to answer the questions you may have.  In this part of the project we will import a spreadsheet that has a lot more data about each country including its continent (see question 5).  This is an important lesson as it sets the stage nicely for what we will learn about later when using SQL to "join" two tables of data.
 
-#. The first thing we need to do is to import the countries of the world spreadsheet.  This has a huge amount of data about each country and you may wish to explore some of the other data provided later.  For now we are interested in how we can use the information on this new spreadsheet to give us the continent of each country.
+#. The first thing we need to do is to import the `countries of the world <../static/world_countries.csv>`_ spreadsheet.  This has a huge amount of data about each country and you may wish to explore some of the other data provided later.  For now we are interested in how we can use the information on this new spreadsheet to give us the continent of each country.
 
 #. You can start by either copy/pasting the whole sheet into a new tab or importing the csv file into a new tab.
 

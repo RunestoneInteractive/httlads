@@ -4,3 +4,4 @@ altair-data*.json
 factbook
 build/
 *.Rmd
+.DS_Store

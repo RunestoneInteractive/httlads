@@ -10,32 +10,26 @@ Part I Exploring the Data
 
 We will start by loading the `happiness_2017.csv <../_static/happiness_2017.csv>`_ file into Google Sheets.  The table below gives a bit of detail about each of the columns on the spreadsheet.
 
+The following definitions are reproduced from `World Happiness Report 2018 <http://worldhappiness.report/ed/2018/>`_
 
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-|Country                      |Name of the country.                                                                                                                                    |
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-|Region                       |Region the country belongs to.                                                                                                                          |
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-|Happiness Rank               |Rank of the country based on the Happiness Score.                                                                                                       |
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-|Happiness Score              |A metric measured in 2015 by asking the sampled people the question: "How would you rate your happiness on a scale of 0 to 10 where 10 is the happiest."|
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-|Standard Error               |The standard error of the happiness score.                                                                                                              |
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-|Economy (GDP per Capita)     |The extent to which GDP contributes to the calculation of the Happiness Score.                                                                          |
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-|Family                       |The extent to which Family contributes to the calculation of the Happiness Score                                                                        |
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-|Health (Life Expectancy)     |The extent to which Life expectancy contributed to the calculation of the Happiness Score                                                               |
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-|Freedom                      |The extent to which Freedom contributed to the calculation of the Happiness Score.                                                                      |
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-|Trust (Government Corruption)|The extent to which Perception of Corruption contributes to Happiness Score.                                                                            |
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-|Generosity                   |The extent to which Generosity contributed to the calculation of the Happiness Score.                                                                   |
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-|Dystopia Residual            |The extent to which Dystopia Residual contributed to the calculation of the Happiness Score.                                                            |
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+1. GDP per capita is in terms of Purchasing Power Parity (PPP) adjusted to constant 2011 international dollars, taken from
+the World Development Indicators (WDI) released by the World Bank in September 2017. See Appendix 1 for more details. GDP data for 2017 are not yet available, so we extend the GDP time series from 2016 to 2017 using country-specific forecasts of real GDP growth from the OECD Economic Outlook No. 102 (Edition November 2017) and the World Bank’s Global Economic Prospects (Last Updated: 06/04/2017), after adjustment for population growth. The equation uses the natural log of GDP per capita, as this form fits the data significantly better than GDP per capita.
+
+2. The time series of healthy life expectancy at birth are constructed based on data from the World Health Organization (WHO) and WDI. WHO publishes the data on healthy life expectancy for the year 2012. The time series of life expectancies, with no adjustment for health, are available in WDI. We adopt the following strategy to construct the time series of healthy life expectancy at birth: first we generate the ratios
+of healthy life expectancy to life expectancy in 2012 for countries
+with both data. We then apply the country-specific ratios to other years to generate the healthy life expectancy data. See Appendix 1 for more details.
+
+3. Social support is the national average of the binary responses (either 0 or 1) to the Gallup World Poll (GWP) question “If you were in trouble, do you have relatives or friends you can count on to help you whenever you need them, or not?”
+
+4. Freedom to make life choices is the national average of binary responses to the GWP question “Are you satisfied or dissatisfied with your freedom to choose what you do with your life?”
+
+5. Generosity is the residual of regressing the national average of GWP responses to the question “Have you donated money to a charity in the past month?” on GDP per capita.
+
+6. Perceptions of corruption are the average of binary answers to two GWP questions: “Is corruption widespread throughout the government or not?” and “Is corruption widespread within businesses or not?” Where data for government corruption are missing, the perception of business corruption is used as the overall corruption-perception measure.
+
+7. Positive affect is defined as the average of previous-day affect measures for happiness, laughter, and enjoyment for GWP waves 3-7 (years 2008 to 2012, and some in 2013). It is defined as the average of laughter and enjoyment for other waves where the happiness question was not asked.
+
+8. Negative affect is defined as the average of previous-day affect measures for worry, sadness, and anger for all waves. See Statistical Appendix 1 for more details.
 
 In this first part we will review and practice some spreadsheet calculations by doing some exploratory data analysis.  If you have never used a spreadsheet before don't worry, you will catch on quickly.  Also, remember that at this point we are just exploring so there isn't necessarily a right answer. In fact most of the time we don't know what the right answers are when we are in exploring mode.  You might even be wondering what does it mean to be in exploring mode.  The main thing we are doing is looking around at the data and seeking out things that look 'interesting' bits of statistics that stand out.  We wonder about how things might correlate or what variables might be interdependent on others.  Two of the primary tools we use in this exploring mode are:
 
