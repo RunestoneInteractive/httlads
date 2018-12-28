@@ -10,14 +10,14 @@ Learning Goals for this Module
     * Tricks for Copying and pasting down and across
     * VLOOKUP (match / index)
     * Grouping
-        * AVERAGEIF
-        * COUNTIF
-        * IF
-        * Making a Pivot Table
+      * AVERAGEIF
+      * COUNTIF
+      * IF
+      * Making a Pivot Table
     * Cleaning
-        * TRIM
+      * TRIM
     * Exploring
-        * UNIQUE
+      * UNIQUE
 
 * Use a spreadsheet to explore data
 
@@ -28,7 +28,7 @@ Learning Goals for this Module
 Reading List
 ============
 
-* Find reference to refresh on basic statistics
+* `Intro to Descriptive Statistics <https://towardsdatascience.com/intro-to-descriptive-statistics-252e9c464ac9>`_
 
 * `Google Sheets 101: <https://zapier.com/learn/google-sheets/google-sheets-tutorial/>`_
 
