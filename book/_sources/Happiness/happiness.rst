@@ -58,8 +58,39 @@ Now let's create a table where we compute the average happiness score for all of
 
     #. Another good use case is to replace what we have just done.  We want to use the unique values for each continent as the row, and then calculate a number of summary statistics for each.
 
-.. bottom of content
 
+**Lesson Feedback**
+
+.. poll:: LearningZone_2_2
+    :option_1: Comfort Zone
+    :option_2: Learning Zone
+    :option_3: Panic Zone
+
+    During this lesson I was primarily in my...
+
+.. poll:: Time_2_2
+    :option_1: Very little time
+    :option_2: A reasonable amount of time
+    :option_3: More time than is reasonable
+
+    Completing this lesson took...
+
+.. poll:: TaskValue_2_2
+    :option_1: Don't seem worth learning
+    :option_2: May be worth learning
+    :option_3: Are definitely worth learning
+
+    Based on my own interests and needs, the things taught in this lesson...
+
+.. poll:: Expectancy_2_2
+    :option_1: Definitely within reach
+    :option_2: Within reach if I try my hardest
+    :option_3: Out of reach no matter how hard I try
+
+    For me to master the things taught in this lesson feels...
+
+
+.. bottom of content
 
 .. |STYLE1| replace:: **blank cell to the left**
 

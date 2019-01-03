@@ -1,8 +1,12 @@
 
 .. _h45294365433556a7a5a2403ac5f8:
 
+Introduction
+============
+
+
 Learning Goals for this Module
-==============================
+------------------------------
 
 * Become familiar with basic spreadsheet operations
     * Addressing cells - relative versus absolute, on the same same sheet versus across sheets
@@ -26,7 +30,7 @@ Learning Goals for this Module
 .. _h257e47683de51231245397924107b3:
 
 Reading List
-============
+------------
 
 * `Intro to Descriptive Statistics <https://towardsdatascience.com/intro-to-descriptive-statistics-252e9c464ac9>`_
 
@@ -39,14 +43,14 @@ Reading List
 .. _h85837457734576e2a582e637a44:
 
 Time Required
-=============
+-------------
 
-This can easily take four class periods.  But you could be less depending on how much is done as homework versus in-class work.
+This whole can easily take four class periods.  But you could be less depending on how much is done as homework versus in-class work.
 
 .. _hf33f5c6794a1d5ee7c64395b788:
 
 Research Questions
-==================
+------------------
 
 #. What are the different factors that lead to happiness of a country?
 
