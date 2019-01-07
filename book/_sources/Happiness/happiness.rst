@@ -3,54 +3,134 @@
 Part II Adding More Data
 ========================
 
-Limiting our analysis to the data provided to us from a single source would restrict our analysis.  Seldom does one file contain all the data you need to answer the questions you may have.  In this part of the project we will import a spreadsheet that has a lot more data about each country including its continent (see question 5).  This is an important lesson as it sets the stage nicely for what we will learn about later when using SQL to "join" two tables of data.
-
-#. The first thing we need to do is to import the `countries of the world <../static/world_countries.csv>`_ spreadsheet.  This has a huge amount of data about each country and you may wish to explore some of the other data provided later.  For now we are interested in how we can use the information on this new spreadsheet to give us the continent of each country.
-
-#. You can start by either copy/pasting the whole sheet into a new tab or importing the csv file into a new tab.
-
-#. Next we will want to add a column to the happiness spreadsheet that contains the continent.  The way we do this is to use the VLOOKUP function.  Pay attention to this as it is one of the most powerful functions you will learn about for doing high powered calculations on a spreadsheet.  The main idea behind this is also widely used in the database world so it is worth learning in detail.
-
-The idea goes like this.  On our happiness spreadsheet we have a column that contains the name of each country.  It has a bunch of happiness related data about each country in other columns.  On our countries of the world sheet we have a column of country names and a bunch of other information about countries (including their continent) in other columns.  The two sheets do not have the countries in the same order, nor do they necessarily have the same list of countries -- they do have most of the same but not all.
-
-When we use VLOOKUP our goal is to join together these two sheets adding columns to the happiness sheet using values from the row in the countries of the world sheet from the row where the country names match.  For example in our happiness sheet Ireland is on row 15 but in the countries of the world sheet it is on row 101.  What we want to do is take (at least) column B row 101 from the countries sheet and add it to the happiness sheet on row 15 column M.   
-
-With VLOOKUP with do this by allowing the function to search for the value in one cell in another column, and then return the value from a different cell in the same row but in some other column.  To find the continent of Israel we would use VLOOKUP(A15, Sheet1!$A$2:$C$156, 2, FALSE)
-
-Let's unpack that:
-
-A15 is the cell containing Israel
-
-Sheet1!$A$2:$C$156 the range of cells we can search in as well as get values from.
-
-2 tells Sheets that when we find a match for Israel we want the value from the same row but in column 2 of our range.  (Sigh -- sheets and Python use different counting systems)
-
-Notice that column 2 of our range is the continent/Region column! Nice  You may have noticed that VLOOKUP is a bit like using match and index together, but it is a little less flexible as the column you search in must always be on the far left side of the range.
-
-To add a whole new column to fill in the region for each country we would type the following into M2  =vlookup(A2,Sheet1!$A$3:$C$229,2,FALSE)  Now if you double click on the blue square in the lower right corner when you have M2 selected you will see that sheets will automatically copy/past the formula down the column.  It will do this until it finds a \ |STYLE1|\  and then it will stop.  If your spreadsheet has some missing data this can lead to some unexpected results, so it's always a good idea to make sure it has pasted all the way down.
-
 Happiness by Region
 -------------------
 
 Now let's create a table where we compute the average happiness score for all of the countries in the region.  To get started we need to answer a couple of questions:  What are the unique region names? How can we compute an average for the countries that are in the same region?
 
-#. We can get a table of the unique region names by using the UNIQUE function.  In Cell A180 the UNIQUE function takes the range that contains all of the region names and will build a table with just the unique names.
+#. We can get a table of the unique region names by using the UNIQUE function.  In Cell A180 the UNIQUE function takes the range that contains all of the region names and will populate a few rows with just the unique names.
 
-#. Hmm -- #N/A It seems that not all are found.  We don't want to compute and average for #N/A but if we try to delete that cell we get an error message about not deleting cells from an array formula
+.. fillintheblank:: fb_region_count
 
-#. Here is a common strategy that will help us out in just a minute.  Select and copy all the cells containing the names of the regions. Now leave that selected and choose Edit -> Paste Special -> Paste values only  -- This will replace the calculated cells with just plain values and now you can get rid of the #N/A
+   How many unique regions are there?
 
-#. Now lets calculate an average for each region using AVERAGEIF Average if takes two ranges and a condition the first range is the range that the condition applies to.  The second case is the region where we will take the numbers from when calculating the average.  What we want to do is find the rows where the region matches the name in column A and use the happiness score from column C on that same row in our calculation of the average.  The formula looks like this:  =averageif(M$2:M$156,A174,E$2:E$156)  Now if you double click the lower left square this will fill down and calculate an average for each region.  By now you should be feeling some respect for the spreadsheet jockeys of the world. This is definitely not a toy!
+   - :11: Is the correct answer
+     :x: Use the UNIQUE function on the Region Column
+
+#.  Now lets make that list of countries look a little nicer by sorting it.  Select the countries and then from the menu select Data -> Sort range.  Then click on the Sort button.  Hmmm what happened here?
+
+#. The problem is that UNIQUE is a special kind of function that returns an array of values.  We need to make the values in the columns permanent before we sort them.  To do this we can select the names again, then copy them to the clipboard.  Now immediately choose Edit -> Paste Special -> Paste values only and this will eliminate the formula and leave us with cells containing only the names of the regions.
+
+#. With the table of Regions we can use a combination of SUMIF and COUNTIF to compute the average happiness.  Lets do this incrementally to start.  Lets create a column right next to the region names that contains the number of countries in the region.  The COUNTIF function takes a range of cells and a condition for those cells to match.  In our case the range is B2:B141 that is all of the regions.  The condition is the name of the region which we can get from a cell in our newly created table of region names.
+
+.. fillintheblank:: fb_country_count
+
+   There are |blank| countries in Western Europe and |blank| countries in Sub-Saharan Africa.
+
+   - :20: Is the correct answer
+     :13: It appears you have not used $ in your formula as you should
+     :x: catchall feedback
+
+   - :33: Is the correct answer
+     :x: Check your ranges carefully
+
+Now lets create a column that sums the happiness score for each region using the SUMIF function.  The SUMIF function is a bit more complicated than COUNTIF in that it takes a separate (parallel) range for us to SUM.  Once again the first parameter will be the range containing the regions, the second parameter will be the name of a region to match, but the third parameter is the range of cells containing the happiness scores.  When a row in the Region column matches the given Region the function includes the value from the Happiness score column in the sum.
+
+.. fillintheblank:: fb_happy_sum
+
+   The sum of all happiness in South Asia is |blank| and the sum of all happiness in Western Europe is |blank| (out to three decimal places)
+
+   - :27.380: Is the correct answer
+     :26.093: It looks like you may have forgotten to use the $ correctly
+     :x: Make sure you use the SUMIF formula
+
+   - :134.968: Is the correct answer
+     :x: Make sure you use the SUMIF formula
+
+
+
+#. We can combine the work we did above using a single function called AVERAGEIF.  Lets use it and compare our answers -- They should be identical. By now you should be feeling some respect for the spreadsheet jockeys of the world. This is definitely not a toy!
 
 #. OK, last but not least let us sort the happiness scores so we can see the regions from most to least happy.
 
 #. Select the table and then from the Data menu select Sort Range choose column B and check the box for Z->A then sort
 
-#. Nice - Oceania is the happiest (Aussie Aussie Aussie) and Sub-Saharan Africa is the least.
+#. Nice - North America and ANZ is the happiest (Aussie Aussie Aussie) and Sub-Saharan Africa is the least.
 
 #. Add another column to our little table that tells us how many countries are in each region (COUNTIF)
 
 #. Now Using MAXIFS, MINIFS, MATCH and INDEX lets find the most and least happy country in each region.  MAXIFS and MINIFS work alot like AVERAGEIF and COUNTIF  but allow for more conditions.  We still need only one.  If you read the popup you will know what to do.
+
+Joining Data from other Sources
+-------------------------------
+
+So far we have limited our analysis to the data provided for us in the original happiness spreadsheet.  But what if we wanted to look at other factors for happiness such as cell phone ownership?  Internet access? birth rates? or anything else we can think of?  Seldom does one file contain all the data you need to answer the questions you may have.  In this part of the project we will import a spreadsheet that has a lot more data about each country including its continent (see question 5).  This is an important lesson as it sets the stage nicely for what we will learn about later when using SQL to "join" two tables of data.
+
+
+#. The first thing we need to do is to import the `countries of the world <../static/world_countries.csv>`_ spreadsheet.  This has a huge amount of data about each country and you may wish to explore some of the other data provided later.  For now we are interested in how we can use the information on this new spreadsheet to give us the continent of each country.
+
+#. You can start by either copy/pasting the whole sheet into a new tab or importing the csv file into a new tab.
+
+#. Next we will want to add a column to the happiness spreadsheet that contains the Population for each country.  The way we do this is to use the VLOOKUP function.  Pay attention to this as it is one of the most powerful functions you will learn about for doing high powered calculations on a spreadsheet.  The main idea behind this is also widely used in the database world so it is worth learning in detail.
+
+The idea goes like this.  On our happiness spreadsheet we have a column that contains the name of each country.  It has a bunch of happiness related data about each country in other columns.  On our countries of the world sheet we have a column of country names and a bunch of other information about countries (including their population) in other columns.  The two sheets do not have the countries in the same order, nor do they necessarily have the same list of countries -- they do have most of the same but not all.
+
+When we use VLOOKUP our goal is to join together these two sheets adding columns to the happiness sheet using values from the row in the countries of the world sheet from the row where the country names match.  For example in our happiness sheet Ireland is on row 15 but in the countries of the world sheet it is on row 101.  What we want to do is take (at least) column B row 101 from the countries sheet and add it to the happiness sheet on row 15 column M.
+
+With VLOOKUP with do this by allowing the function to search for the value in one cell in another column, and then return the value from a different cell in the same row but in some other column.  To find the continent of Israel we would use VLOOKUP(A15, Sheet1!$A$6:$F$229, 5, FALSE)
+
+Let's unpack that:
+
+A15 is the cell containing Ireland
+
+Sheet1!$A$6:$F$229 the range of cells we can search in as well as get values from.
+
+2 tells Sheets that when we find a match for Israel we want the value from the same row but in column 2 of our range.  (Sigh -- sheets and Python use different counting systems)
+
+Notice that column 5 of our range is the continent/Region column! Nice  You may have noticed that VLOOKUP is a bit like using match and index together, but it is a little less flexible as the column you search in must always be on the far left side of the range.
+
+To add a whole new column to fill in the region for each country we would type the following into O2  =vlookup(A2,Sheet1!$A$6:$F$229,5,FALSE)  Now if you double click on the blue square in the lower right corner when you have M2 selected you will see that sheets will automatically copy/paste the formula down the column.  It will do this until it finds a |STYLE1|  and then it will stop.  If your spreadsheet has some missing data this can lead to some unexpected results, so it's always a good idea to make sure it has pasted all the way down.
+
+.. fillintheblank:: uniqueid
+
+   What does your spreadsheet show for the population of the United States? |blank| what does the countries of the world sheet show for the united states? |blank|
+
+   - :#N/A: Is the correct answer
+     :298444215: Really?  check again on the happiness_2017 spreadsheet
+     :x: The happiness_2017 spreadsheet will not have a value for the United States
+
+   - :298444215: Is the correct answer
+     :#N/A: Make sure you are looking at the right spreadsheet
+     :x: Check a little more carefully
+
+As you found out there are some rows that have a value of #N/A in them.  This is because one spreadsheet has the name "United States" and the other spreadsheet has "United States of America",  We know these are the same but the computer does not make the match.  You will need to clean up this data manually by making the names match where they don't already.  This is also why the countries of the world spreadsheet contains the column that has a three letter code for each country.  These codes are internationally agreed upon and are always the same for each country.  This avoids the kind of problems we have where there is more than on common spelling.
+
+Any time you are introducing data from another source you are likely to run into inconsistencies and missing data.  That is just a simple fact of life for a data scientist.  You will need to either search further to fill in the missing pieces, or learn to live without some pieces of data.
+
+.. mchoice:: mc_missing_data
+
+   Which of the following countries are NOT in the world countries spreadsheet?
+
+   - Kosovo
+
+     + correct
+
+   - Palestine
+
+     + correct
+
+   - Palau
+
+     - No, Palau is there
+
+   - Ivory Coast
+
+     - Technically this one is there but you need to translate it to Côte d'Ivoire
+
+
+
+Introducing Pivot Tables
+------------------------
 
 #. We can make all of this a bit easier using a Pivot Table !  This is a really useful tool to have in your toolbox and many other tools you use will support the creation of pivot tables as well.
 
