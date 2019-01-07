@@ -5,3 +5,6 @@ factbook
 build/
 *.Rmd
 .DS_Store
+.ipynb_checkpoints
+build_info
+__pycache__

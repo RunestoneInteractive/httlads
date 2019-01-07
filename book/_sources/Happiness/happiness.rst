@@ -128,6 +128,25 @@ Any time you are introducing data from another source you are likely to run into
      - Technically this one is there but you need to translate it to Côte d'Ivoire
 
 
+Now that you have country names unified, and the population data in place you can practice some calculations on this new piece of data.
+
+#. Calculate the average population for each region?
+
+#. Find the name of the country in each region with the largest population
+
+#. What is the country in each region with the smallest population?
+
+
+.. shortanswer:: act_own_questions_2
+
+    Write down two questions of your own, that you can explore with the combined data set.
+
+Now, using your new spreadsheet skills answer your own questions.
+
+.. shortanswer:: act_own_answers_2
+
+    Use this space to provide answers to the questions above, explaining briefly how you arrived at the answers.
+
 
 Introducing Pivot Tables
 ------------------------
