@@ -151,11 +151,45 @@ Now, using your new spreadsheet skills answer your own questions.
 Introducing Pivot Tables
 ------------------------
 
-#. We can make all of this a bit easier using a Pivot Table !  This is a really useful tool to have in your toolbox and many other tools you use will support the creation of pivot tables as well.
+We can make all of this a bit easier using a Pivot Table !  This is a really useful tool to have in your toolbox and many other tools you use will support the creation of pivot tables as well.
 
-    #. The idea behind a pivot table is to take the unique values from some column and make them the titles of a bunch of columns, while summarizing the data for those columns from a number of rows.  For example suppose you had a three of columns: user, movie, rating   What would be more easy to look at would be to have a column for each movie and a row for each user with the rating in the cell corresponding to a user and a movie.  This is exactly the use case for pivot tables.
+#. The idea behind a pivot table is to take the unique values from some column and make them the titles of a bunch of columns, while summarizing the data for those columns from a number of rows.  For example suppose you had a three of columns: user, movie, rating   What would be more easy to look at would be to have a column for each movie and a row for each user with the rating in the cell corresponding to a user and a movie.  This is exactly the use case for pivot tables.  You can see an example of transforming the orginal data to the pivot table view below:
 
-    #. Another good use case is to replace what we have just done.  We want to use the unique values for each continent as the row, and then calculate a number of summary statistics for each.
+.. image:: Figures/pivot_example.png
+
+
+Start a new worksheet, and recreate the data and pivot table you see in the example above.
+
+#. Another good use case is to replace what we have just done.  We want to use the unique values for each continent as the row, and then calculate a number of summary statistics for each.  For practice you should redo the exercise of finding the average population for each region that you did above.
+
+
+.. fillintheblank:: act_fb_median
+
+   Using a Pivot table find the median value of the Life Ladder column for each region.  The median value for South Asia is |blank| to 3 decimal places
+
+   - :4.320: Is the correct answer
+     :x: You should have a Life Ladder column summarized by Median
+
+
+Pivot tables can be treated like any other part of your spreadsheet.  Use a pivot table to find the least happy country in each region.  Then using MATCH and index add an additional column that contains the name of that country.
+
+.. fillintheblank:: act_fb_least_happy
+
+   The least happy country in Southeast Asia is |blank|
+
+   - :Cambodia: Is the correct answer
+     :Singapore: Is the most happy country
+     :x: Make sure you are summarizing the value with the MIN function
+
+.. fillintheblank:: act_fb_most_happy
+
+   Without adding another column you can quickly change the function to summarize and find that the most happy country in Southeast Asia is |blank|
+
+   - :Singapore: Is the correct answer
+     :Cambodia: Is the least happy country
+     :x: Make sure you are summarizing the value with the MAX function
+
+You will find that understanding Pivot tables and when to use them to be a very powerful tool to have in your toolbox.  Many other systems including Pandas and Relational databases, like Postgresql and others also support making pivot tables.  The interface in the Spreadsheet is the simplest so it is a good one to learn on.
 
 
 **Lesson Feedback**
