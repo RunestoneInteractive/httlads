@@ -1,1 +1,2 @@
 *.csv filter=lfs diff=lfs merge=lfs -text
+*.word2vec.txt filter=lfs diff=lfs merge=lfs -text
