@@ -227,7 +227,7 @@ Visualization
 
    #. If you tried to copy/paste the functions from above you likely ran into some errors.  Check the ranges carefully and remember what sheets does when you copy and paste.  If you insist on copy/pasting then you are going to have to use $ to get it right.  But you'll have to figure that out.
 
-#. One great way to get an overview of the data visually is to make a \ |STYLE0|\ .  A choropleth combines the geographic data with some other data such as the happiness score.  Google sheets make it very easy to graph data by country.
+#. One great way to get an overview of the data visually is to make a **choropleth**.  A choropleth combines the geographic data with some other data such as the happiness score.  Google sheets make it very easy to graph data by country.
 
    #. Click on the insert graph icon
    #. Choose Geo Chart

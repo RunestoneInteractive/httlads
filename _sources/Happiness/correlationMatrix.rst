@@ -6,8 +6,9 @@ Early on in our exploration of the happiness data we calculated the correlation 
 The following table illustrates what we mean.  Suppose we have three factors A, B, and C.  A and B have a correlation of 0.7, A and C have a correlation of -0.5, B and C have a correlation of 0.9.
 
 .. csv-table::
+    :header: ,A,B,C
+    :stub-columns: 1
 
-    ,A,B,C
     A,1.0,0.7,-.5
     B,0.7,1.0,.9
     C,-.5,.9,1.0
@@ -28,7 +29,7 @@ In the next steps you will build a correlation matrix between the various factor
           For j in "EFGHIJKL":
               print("correlate column ", i, " with column ", j)
 
-   3. The aptly named INDEX function is wwhat allows us to do this by writing one clever function and then copying and pasting it to fill out our matrix.
+   3. The aptly named INDEX function is what allows us to do this by writing one clever function and then copying and pasting it to fill out our matrix.
 
 #. It may take a bit of experimentation to get the indexes and the $ correct but you will eventually end up with a matrix where the diagonal is 1.  This is a good indicator that you have things right.  This \ |LINK2|\  may also be useful for getting this right.
 

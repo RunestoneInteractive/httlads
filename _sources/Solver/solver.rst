@@ -36,13 +36,13 @@ Suppose you run a Lemonade Stand on the corner of your street.  In addition to l
 |chips       |0.25        |0.8         |100         |
 +------------+------------+------------+------------+
 
-Being a student of data science you want to figure out how to maximize your profits from the lemonade stand.  You have the following inventory on hand, but because of your busy schedule you know that you can only sell 500 items before you close up shop for the day.  You are a good sales person and can usually get your customers to buy whatever you suggest.  So, the question is how to you steer those customers to make maximum amount of money. 
+Being a student of data science you want to figure out how to maximize your profits from the lemonade stand.  You have the following inventory on hand, but because of your busy schedule you know that you can only sell 500 items before you close up shop for the day.  You are a good sales person and can usually get your customers to buy whatever you suggest.  So, the question is how to you steer those customers to make maximum amount of money.
 
 Start by entering the data from the table above into a Google sheets document.  Now add a column called profit and figure out the profit margin for each item.  It looks like cheese curds and burgers are your most profitable items.   You must be in Wisconsin!  But you only have 50 cheese curds and 80 burgers.  So you have lots more to sell.  Let's set this up as an optimization problem and use the Open Solver tool to find the best answer for us.
 
 Add another column called numsold to keep track of how many items you have sold, and another column called total profit that multiplies the number sold times the profit for that item.  The sum of that column will be your grand total profit.  It is the grand total that we want to maximize.  That sum is our \ |STYLE7|\ .
 
-The next question is what are our constraints? 
+The next question is what are our constraints?
 
 * You can't sell more than 500 items total
 
@@ -81,6 +81,11 @@ Given those constraints we will use solver to come up with the following solutio
 
 The interesting part is that we are going to let solver fill in the values for us in the numsold column.  You should start out by trying out some values for yourself.  So you can see the recalculation happening.  Now let's set up solver to find the best values for that column.
 
+
+.. image:: Figures/solver.png
+   :width: 300px
+   :align: left
+
 We said that our objective function was to maximize profits.  That value is the total that shows up as 894.75 and is in cell G11 in the spreadsheet.  So in our solver tab in the \ |STYLE16|\  input box we will set G11 as our objective cell.  You can see that at the right.  You can also see that I have checked the box to maximize that objective.
 
 Next you see the \ |STYLE17|\  input box.  This is where we tell Solver the values it can change.  We are allowing solver to decide how much of each item we sell.  Those are cells F2:F9 . It doesn't matter if you have already entered a few values into those cells as solver will override them.
@@ -95,38 +100,6 @@ When you have all of that entered click the solve model button.  You should end 
 Now, this model is not super realistic, lets add in the fact that you have to operate under a budget, and we will interpret the inventory column to mean the maximum number of a particular item you can sell.  The new constraint we will add is that since you are a college student you only have $50 to spend on supplies.  So not only do you have a limit on the number of items you can sell during the time your lemonade stand is open but you also have a limit on how much you can spend.  Modify the spreadsheet so that you have a new constraint that reflects that you can only spend $50 on your supplies.  You may not be surprised to see that when you have such a limited budget you are forced to focus you sales on the lowest priced highest profit items -- lemonade and popcorn.
 
 .. _h3d3516442cc155d64346dda345122:
-
-A Small Problems to Try
------------------------
-
-With exactly 2700 square inches  of cardboard, we wish to construct a box (width x depth x height  (that can contain a volume V. We require the width to be double its depth. We would like to maximize the volume the box can hold. Which values of width, depth, and height fulfill our objective?
-
-A cylindrical can is to hold 20\ |IMG1|\  m.\ |STYLE19|\  The material for the top and bottom costs $10/m.\ |STYLE20|\  and material for the side costs $8/m.\ |STYLE21|\  Find the radius r and height h of the most economical can.
-
-A farmer wants to customize his fertilizer for his current crop.  He can buy plant food mix A and plant food mix B.  Each cubic yard of food A contains 20 pounds of phosphoric acid, 30 pounds of nitrogen and 5 pounds of potash.  Each cubic yard of food B contains 10 pounds of phosphoric acid, 30 pounds of nitrogen and 10 pounds of potash. He requires a minimum of 460 pounds of phosphoric acid, 9060 pounds of nitrogen and 220 pounds of potash.  If food A costs $30 per cubic yard and food B costs $35 per cubic yard, how many cubic yards of each food should the farmer blend to meet the minimum chemical requirements at a minimal cost?  What is this cost?
-
-Travelling salesman problem.   Create a matrix of distances and then a row of nodes to go to and from.  Use index to lookup the distance, and minimize the total distance.
-
-.. _h5b223650757d6c521c651704c403f6:
-
-Bigger Problem -- Optimize your Class Schedule
-----------------------------------------------
-
-\* 10 classes in your major
-
-\* maximize your gpa
-
-\* No classes before 9am
-
-\* No classes after 2:30pm
-
-\* must take at least 32 credits
-
-\* must take 2 courses in humanities
-
-\* must take 2 courses in social sciences
-
-\* must take 1 course in fine arts
 
 
 .. bottom of content
@@ -179,4 +152,3 @@ Bigger Problem -- Optimize your Class Schedule
 .. |IMG1| image:: static/Optimizing_with_Solver_1.gif
    :height: 18 px
    :width: 18 px
-   

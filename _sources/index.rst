@@ -20,8 +20,8 @@ How to Think like a Data Scientist - Alpha
 
     introduction.rst
     Happiness/toctree.rst
-    solver.rst
-    pandas_kungfu.rst
+    Solver/toctree.rst
+    MovieData/toctree.rst
     WorldFactbook.rst
     UNGeneralDebates.rst
     SQL_in_one_lesson.rst
