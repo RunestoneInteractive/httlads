@@ -22,7 +22,7 @@ How to Think like a Data Scientist - Alpha
     Happiness/toctree.rst
     Solver/toctree.rst
     MovieData/toctree.rst
-    WorldFactbook.rst
+    WorldFacts/toctree.rst
     UNGeneralDebates.rst
     SQL_in_one_lesson.rst
     BeerPredictions.rst
