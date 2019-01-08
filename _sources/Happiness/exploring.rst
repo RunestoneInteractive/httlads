@@ -4,9 +4,15 @@
 Part I Exploring the Data
 =========================
 
-#. Before class you should read about the data science processing pipeline and exploratory data analysis.
+#. Before class you should read about the data science processing pipeline and exploratory data analysis, and the other resources on spreadsheets and summary statistics linked in the previous section.
 
 #. https://towardsdatascience.com/exploratory-data-analysis-8fc1cb20fd15
+
+
+Introducing the Happiness Report
+--------------------------------
+
+The World Happiness Report is a landmark survey of the state of global happiness. The World Happiness Report 2018, ranks 156 countries by their happiness levels, and 117 countries by the happiness of their immigrants.  Many factors may lead to the happiness of a country and we will use spreadsheets to help us explore these factors to try to discover what factors may be most important in determining a countries happiness.
 
 We will start by loading the `happiness_2017.csv <../_static/happiness_2017.csv>`_ file into Google Sheets.  The table below gives a bit of detail about each of the columns on the spreadsheet.
 
