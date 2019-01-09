@@ -118,19 +118,22 @@ Summary statistics
          After calculating the average happiness score enter it in the blank |blank|, you should include three digits to the right of the decimal point.
 
          - :5.399: Is the correct answer
+           :5.398: 5.3989 should be rounded up to 5.399
            :5.398907144: Be careful with your range, you should not include the column title
            :x: USE the AVERAGE function and the range from D2 to D 141
 
+      Since you are going to be entering numbers to 3 digits, you can use a custom number format under the Format menu, to have Sheets automatically display your values correctly rounded to just three digits to the right of the decimal point.
 
-   #. Many formulas in Sheets use ranges.  Ranges can span cells in a single column like we did in a.  Or they can span cells in a single row such as A1:L1 they can even span rows and columns such as A1:L156.
+   #. Many formulas in Sheets use ranges.  Ranges can span cells in a single column like we did in a.  Or they can span cells in a single row such as A1:L1 they can even span rows and columns such as A1:L141.
 
-   #. Now calculate the STDEV and MEDIAN for the Happiness Score column as well.
+   #. Now calculate the STDEV and MEDIAN for the Happiness Score column as well.  If you are fuzzy about standard deviation `this article <https://runestone.academy/runestone/static/cppds/index.html>`_ is a nice intuitive explanation.
 
       .. fillintheblank:: fb_stdhappiness
 
          What is the standard deviation of the happiness score? |blank| Again you only need to include three digits to the right of the decimal point.
 
-         - :1.109: Is the correct answer
+         - :1.110: Is the correct answer
+           :1.109: 1.1098 should be rounded up to 1.110
            :1.094: Careful about how you copy and paste, check your range carefully
            :x: Make sure you use the STDEV function.
 
@@ -142,10 +145,10 @@ Summary statistics
 
          The mean value for healthy life expectancy is |blank| and the standard deviation is |blank|.
 
-         - :63.440: Is the correct answer
+         - :63.441: Is the correct answer
            :x: Incorrect, make sure you are using the correct range
 
-         - :(7.567|7.568): Is the correct answer
+         - :7.596: Is the correct answer
            :x: Make sure you are using the correct range
 
    #. If you do NOT want Sheets to change the cell references when you are copy/pasting you can use a $ in front of the row or the column and that tells sheets to "leave this reference alone"  We see some examples of this later.
@@ -154,11 +157,11 @@ Summary statistics
 Visualization
 -------------
 
-#. The STDDEV value tells us that the majority of the values are between 4.0 and 6.6 so let us check that graphically.   It is easy to make a histogram of the values in Sheets.
+#. The `STDDEV <https://runestone.academy/runestone/static/cppds/index.html>`_ value tells us that the majority of the values are between 4.0 and 6.6 so let us check that graphically.   It is easy to make a histogram of the values in Sheets.
 
    #. Click on the insert graph icon
    #. Choose chart type of histogram
-   #. Enter or drag the rows in column c
+   #. Enter or drag the rows in column D
    #. Does it look like most of the bars are between 4 and 6.6 on your histogram?  It should.
    #. Try editing the details of the histogram to look at the distribution in other columns.
 
@@ -170,11 +173,11 @@ Visualization
 
          What is the maximum value in the generosity column?
 
-         - :0.628.*: Is the correct answer
+         - :0.629: Is the correct answer
            :0.9.*: Looks like you might be off by a column
            :x: Please check your ranges and try again.
 
-   #. Knowing the max is one thing, but that does not tell us which country it is.  For that we will use the MATCH and INDEX functions.  Match allows us to search for a value in a range of cells.  Just like the search function in a word processor. IN cell J147 type =match(J146,J2:J141,0) the match function says look for the value in cell J162 in the range J2:J156 and the 0 tells it that the data is not sorted. This is a really important detail.  If you leave this off it will assume that the data is sorted and stop searching and return the first cell it finds that is greater than the value in J162.
+   #. Knowing the max is one thing, but that does not tell us which country it is.  For that we will use the MATCH and INDEX functions.  Match allows us to search for a value in a range of cells.  Just like the search function in a word processor. IN cell J147 type =match(J146,J2:J141,0) the match function says look for the value in cell J146 in the range J2:J141 and the 0 tells it that the data is not sorted. This is a really important detail.  If you leave this off it will assume that the data is sorted and stop searching and return the first cell it finds that is greater than the value in J162.
 
       .. fillintheblank:: gen_max_row
 
@@ -183,7 +186,7 @@ Visualization
          - :105: Is the correct answer
            :x: catchall feedback
 
-   #. In cell J164 type =index(A2:A156,J163) This tells sheets to return the value from the range A2:A156 in the row specified by the value in J163.  In other words starting at A2 go down 114 rows and return the value.  As we will see later index is really powerful for doing all kinds of things, but primarily for now we will think of the combination of match and index being our search and retrieve powertools.
+   #. In cell J164 type =index(A2:A141,J147) This tells sheets to return the value from the range A2:A141 in the row specified by the value in J163.  In other words starting at A2 go down 105 rows and return the value.  As we will see later index is really powerful for doing all kinds of things, but primarily for now we will think of the combination of match and index being our search and retrieve powertools.
 
       .. fillintheblank:: gen_max_country
 
@@ -194,7 +197,7 @@ Visualization
            :Senegal: Not quite you are off by 1
            :x: Check your formula carefully
 
-   #. We broke this process into three steps to make it clear what we were doing.  But they can be combined into a single cell by nesting the functions.  Let's figure out which country gets the lowest score for Generosity, but we'll do it in one cell.  In J165 enter =index($A2:$A156,match(min(J2:J156),J2:J156,0))   Here we are using the fact that match and min each return values and rather than have them visible in a cell for us to look at we can just use them directly as parameters to another function.  That probably seems pretty logical to you since you have done this in Python many times.
+   #. We broke this process into three steps to make it clear what we were doing.  But they can be combined into a single cell by nesting the functions.  Let's figure out which country gets the lowest score for Generosity, but we'll do it in one cell.  In J165 enter =index($A2:$A141,match(min(J2:J141),J2:J141,0))   Here we are using the fact that match and min each return values and rather than have them visible in a cell for us to look at we can just use them directly as parameters to another function.  That probably seems pretty logical to you since you have done this in Python many times.
 
       .. fillintheblank:: gen_min
 
