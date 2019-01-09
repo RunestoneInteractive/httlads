@@ -1,77 +1,6 @@
+World Factbook: Exploratory Data Analysis
+=========================================
 
-Using Jupyter Lab for data exploration
-======================================
-
-.. code:: ipython3
-
-    %matplotlib inline
-    
-    import pandas as pd
-    import matplotlib
-    import matplotlib.pyplot as plt
-    import psycopg2
-    import textatistic
-    import seaborn as sbn
-    from altair import Chart, X, Y, Color, Scale
-    import altair as alt
-    from vega_datasets import data
-    import requests
-    from bs4 import BeautifulSoup
-    matplotlib.style.use('ggplot')
-    # for plotly py.offline.init_notebook_mode()
-
-Reading List
-------------
-
--  `One Dataset Visualized 25 Different
-   Ways <https://flowingdata.com/2017/01/24/one-dataset-visualized-25-ways/>`__
-   This is a great article to help you think about visualization
--  `Getting Started with
-   Altair <https://altair-viz.github.io/getting_started/starting.html>`__
-   Read the overview and then move to the `User
-   Guide <https://altair-viz.github.io/user_guide/data.html>`__ Read
-   this through data transformations.
--  `A Comprehensive Guide to the Grammar of
-   Graphics <https://towardsdatascience.com/a-comprehensive-guide-to-the-grammar-of-graphics-for-effective-visualization-of-multi-dimensional-1f92b4ed4149>`__
--  `Introduction to Pandas Part
-   I <http://www.gregreda.com/2013/10/26/intro-to-pandas-data-structures/>`__
--  `Screen Scraping
-   101 <https://hackernoon.com/web-scraping-tutorial-with-python-tips-and-tricks-db070e70e071>`__
--  `Web Scraping Weather
-   Forecasts <https://www.dataquest.io/blog/web-scraping-tutorial-python/>`__
--  `Beautiful Soup
-   docs <https://www.crummy.com/software/BeautifulSoup/bs4/doc/>`__
-
-As a warmup exercise and maybe to stimulate some questions for
-investigation take the `Gapminder
-quiz <http://forms.gapminder.org/s3/test-2018>`__
-
-Let’s start by loading some data about countries. This data has been
-compiled by combining information from files at:
-http://gsociology.icaap.org/dataupload.html we are going to use it to
-warm up our pandas skills. In this first part of the module we will
-continue with some data that should be familair to you but we will use
-it in Pandas instead of a spreadsheet. In the second part we will focus
-on several different kinds of textual analysis using data from the
-United Nations.
-
-The goals for Part I of the module are:
-
--  Loading data into pandas
--  Using Altair to make some quick visualization of the data
--  Querying (filtering) our data
--  Sorting data
--  Adding new columns of data
-
-Exploratory Questions to get started
-------------------------------------
-
--  What are the minimum and maximum values of the data in each column?
--  How does the birth rate compare across countries? What is the
-   distribution of the birth rates?
--  Is there are connection between the area of a country and its
-   population?
--  How can we find all of the details on a specific country?
 
 Loading data into a dataframe from a CSV file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -95,6 +24,26 @@ You may have some experience with reading and parsing CSV files on your
 own with Python. If not you may wish to `have a quick
 review <https://runestone.academy/runestone/static/fopp/Files/ReadingCSVFiles.html>`__
 
+.. code:: ipython3
+
+    %matplotlib inline
+
+    import pandas as pd
+    import matplotlib
+    import matplotlib.pyplot as plt
+    import psycopg2
+    import textatistic
+    import seaborn as sbn
+    from altair import Chart, X, Y, Color, Scale
+    import altair as alt
+    from vega_datasets import data
+    import requests
+    from bs4 import BeautifulSoup
+    matplotlib.style.use('ggplot')
+    # for plotly py.offline.init_notebook_mode()
+
+
+
 Meanwhile, we will make use of one of the many data reading functions
 pandas provides for us ``read_csv``
 
@@ -111,16 +60,16 @@ pandas provides for us ``read_csv``
 
 .. raw:: html
 
-    <div>
+    <div style="max-width: 800px; overflow: scroll;">
     <style scoped>
         .dataframe tbody tr th:only-of-type {
             vertical-align: middle;
         }
-    
+
         .dataframe tbody tr th {
             vertical-align: top;
         }
-    
+
         .dataframe thead th {
             text-align: right;
         }
@@ -280,8 +229,8 @@ pandas provides for us ``read_csv``
 
 
 
-Understanding the Data
-~~~~~~~~~~~~~~~~~~~~~~
+Describing the Data
+~~~~~~~~~~~~~~~~~~~
 
 -  Country
 -  Area Square Miles
@@ -340,16 +289,16 @@ and D. 4. Dry hot summers and wet winters,
 
 .. raw:: html
 
-    <div>
+    <div style="max-width: 800px; overflow: scroll;">
     <style scoped>
         .dataframe tbody tr th:only-of-type {
             vertical-align: middle;
         }
-    
+
         .dataframe tbody tr th {
             vertical-align: top;
         }
-    
+
         .dataframe thead th {
             text-align: right;
         }
@@ -560,13 +509,14 @@ and D. 4. Dry hot summers and wet winters,
     </table>
     </div>
 
-
+Visualizing Distribution with Histograms
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code:: ipython3
 
     c = Chart(wd) # make a chart
     m = c.mark_bar() # set the mark -- returns a new Chart
-    e = m.encode(X('Birthrate',bin=True),y='count()') # set the encoding 
+    e = m.encode(X('Birthrate',bin=True),y='count()') # set the encoding
     e.display()
 
 
@@ -600,6 +550,8 @@ Practice
    variables of the data set
 
 
+Scatter Plots for discovering relationships
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Now lets make a simple scatter plot of area versus population of the
 countries.
@@ -618,7 +570,7 @@ countries.
 
 Thats not a very satisfying graph. But it does make us want to focus
 more on the lower left corner. Let’s redo the graph but focus on the
-countrieswith a population under 150 million and an area under 4
+countries with a population under 150 million and an area under 4
 million. Lets start with the first part
 
 To do this we will create a new DataFrame where we focus on the
@@ -674,16 +626,16 @@ To be a bit more dramatic lets look at the countries of less than
 
 .. raw:: html
 
-    <div>
+    <div style="max-width: 800px; overflow: scroll;">
     <style scoped>
         .dataframe tbody tr th:only-of-type {
             vertical-align: middle;
         }
-    
+
         .dataframe tbody tr th {
             vertical-align: top;
         }
-    
+
         .dataframe thead th {
             text-align: right;
         }
@@ -1626,7 +1578,7 @@ to a variable first.
 
 
 
-How interesting! One country pushes all the others down. We added a
+How interesting! One country has such a large value that it pushes all the others down. We added a
 tooltip parameter so that if you hover over that point you will see it
 is Greenland! Lots of land area but not too many people. There are large
 universities that have more people than the country of Greenland. Lets
@@ -1647,16 +1599,16 @@ directions.
 
 .. raw:: html
 
-    <div>
+    <div style="max-width: 800px; overflow: scroll;">
     <style scoped>
         .dataframe tbody tr th:only-of-type {
             vertical-align: middle;
         }
-    
+
         .dataframe tbody tr th {
             vertical-align: top;
         }
-    
+
         .dataframe thead th {
             text-align: right;
         }
@@ -2585,16 +2537,16 @@ equality:
 
 .. raw:: html
 
-    <div>
+    <div style="max-width: 800px; overflow: scroll;">
     <style scoped>
         .dataframe tbody tr th:only-of-type {
             vertical-align: middle;
         }
-    
+
         .dataframe tbody tr th {
             vertical-align: top;
         }
-    
+
         .dataframe thead th {
             text-align: right;
         }
@@ -2651,16 +2603,16 @@ those spaces.
 
 .. raw:: html
 
-    <div>
+    <div style="max-width: 800px; overflow: scroll;">
     <style scoped>
         .dataframe tbody tr th:only-of-type {
             vertical-align: middle;
         }
-    
+
         .dataframe tbody tr th {
             vertical-align: top;
         }
-    
+
         .dataframe thead th {
             text-align: right;
         }
@@ -2769,7 +2721,7 @@ methods you know about.
     27                                                Brazil
     28                                    British Virgin Is.
     29                                                Brunei
-                                 ...                        
+                                 ...
     195                                          Switzerland
     196                                                Syria
     197                                               Taiwan
@@ -2819,16 +2771,16 @@ Now we can replace our original Country column with the stripped column.
 
 .. raw:: html
 
-    <div>
+    <div style="max-width: 800px; overflow: scroll;">
     <style scoped>
         .dataframe tbody tr th:only-of-type {
             vertical-align: middle;
         }
-    
+
         .dataframe tbody tr th {
             vertical-align: top;
         }
-    
+
         .dataframe thead th {
             text-align: right;
         }
@@ -2936,7 +2888,7 @@ scatter matrix to make life easier.
 
 
 Developing Fluency
-------------------
+~~~~~~~~~~~~~~~~~~
 
 Pandas will only become a part of your daily workflow when you develop
 fluency with the basics. You need to be able to do easy queries without
@@ -2949,7 +2901,7 @@ just means it will take longer at first as you have to go back and
 review documentation in order to become efficient.
 
 Practice Questions
-~~~~~~~~~~~~~~~~~~
+------------------
 
 1. What are the top 10 countries with the largest GDP?
 2. What are the top 20 countries by Population?
@@ -2964,178 +2916,6 @@ Practice Questions
    phones/1000 people?
 8. What are the 10 countries with the largest GDP that have a “Wet
    Tropical” climate?
-
-.. code:: ipython3
-
-    from math import log
-    wd['logpop'] = wd.Population.map(lambda x: log(x))
-
-.. code:: ipython3
-
-    Chart(wd).mark_point().encode(x='Birthrate', y='Deathrate', size='GDP', color='logpop', tooltip='Country').interactive()
-
-
-
-
-.. image:: WorldFactbook_files/WorldFactbook_50_0.png
-
-
-
-.. code:: ipython3
-
-    Chart(wd).mark_point().encode(y='Infant mortality',x='Birthrate', size='GDP')
-
-
-
-
-.. image:: WorldFactbook_files/WorldFactbook_51_0.png
-
-
-
-.. code:: ipython3
-
-    wd[['Infant mortality', 'Birthrate']].corr()
-
-
-
-
-.. raw:: html
-
-    <div>
-    <style scoped>
-        .dataframe tbody tr th:only-of-type {
-            vertical-align: middle;
-        }
-    
-        .dataframe tbody tr th {
-            vertical-align: top;
-        }
-    
-        .dataframe thead th {
-            text-align: right;
-        }
-    </style>
-    <table border="1" class="dataframe">
-      <thead>
-        <tr style="text-align: right;">
-          <th></th>
-          <th>Infant mortality</th>
-          <th>Birthrate</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th>Infant mortality</th>
-          <td>1.000000</td>
-          <td>0.856764</td>
-        </tr>
-        <tr>
-          <th>Birthrate</th>
-          <td>0.856764</td>
-          <td>1.000000</td>
-        </tr>
-      </tbody>
-    </table>
-    </div>
-
-
-
-.. code:: ipython3
-
-    wd.groupby('Region')['Birthrate', 'Infant mortality'].mean()
-
-
-
-
-.. raw:: html
-
-    <div>
-    <style scoped>
-        .dataframe tbody tr th:only-of-type {
-            vertical-align: middle;
-        }
-    
-        .dataframe tbody tr th {
-            vertical-align: top;
-        }
-    
-        .dataframe thead th {
-            text-align: right;
-        }
-    </style>
-    <table border="1" class="dataframe">
-      <thead>
-        <tr style="text-align: right;">
-          <th></th>
-          <th>Birthrate</th>
-          <th>Infant mortality</th>
-        </tr>
-        <tr>
-          <th>Region</th>
-          <th></th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th>ASIA (EX. NEAR EAST)</th>
-          <td>21.157857</td>
-          <td>41.780000</td>
-        </tr>
-        <tr>
-          <th>BALTICS</th>
-          <td>9.343333</td>
-          <td>8.103333</td>
-        </tr>
-        <tr>
-          <th>C.W. OF IND. STATES</th>
-          <td>17.855833</td>
-          <td>44.410000</td>
-        </tr>
-        <tr>
-          <th>EASTERN EUROPE</th>
-          <td>10.370909</td>
-          <td>12.686667</td>
-        </tr>
-        <tr>
-          <th>LATIN AMER. &amp; CARIB</th>
-          <td>19.081111</td>
-          <td>20.092667</td>
-        </tr>
-        <tr>
-          <th>NEAR EAST</th>
-          <td>23.527857</td>
-          <td>23.677857</td>
-        </tr>
-        <tr>
-          <th>NORTHERN AFRICA</th>
-          <td>20.814000</td>
-          <td>30.916000</td>
-        </tr>
-        <tr>
-          <th>NORTHERN AMERICA</th>
-          <td>13.154000</td>
-          <td>8.628000</td>
-        </tr>
-        <tr>
-          <th>OCEANIA</th>
-          <td>22.108000</td>
-          <td>20.203684</td>
-        </tr>
-        <tr>
-          <th>SUB-SAHARAN AFRICA</th>
-          <td>36.043922</td>
-          <td>80.039216</td>
-        </tr>
-        <tr>
-          <th>WESTERN EUROPE</th>
-          <td>10.553571</td>
-          <td>4.730357</td>
-        </tr>
-      </tbody>
-    </table>
-    </div>
-
 
 
 Graphing Infant Mortality on a map
@@ -3161,8 +2941,8 @@ create and outline the map
     from vega_datasets import data
     counties = alt.topo_feature(data.us_10m.url, 'counties')
     unemp_data = data.unemployment.url
-    
-    
+
+
     alt.Chart(counties).mark_geoshape().project(
         type='albersUsa').properties(
         width=500,
@@ -3197,16 +2977,16 @@ the geo data to our dataframe that contains unemployment data.
 
 .. raw:: html
 
-    <div>
+    <div style="max-width: 800px; overflow: scroll;">
     <style scoped>
         .dataframe tbody tr th:only-of-type {
             vertical-align: middle;
         }
-    
+
         .dataframe tbody tr th {
             vertical-align: top;
         }
-    
+
         .dataframe thead th {
             text-align: right;
         }
@@ -3263,7 +3043,7 @@ name in this example.
 
 .. code:: ipython3
 
-    
+
     alt.Chart(counties).mark_geoshape(
     ).encode(
         color='rate:Q'
@@ -3282,804 +3062,6 @@ name in this example.
 
 
 .. image:: WorldFactbook_files/WorldFactbook_59_0.png
-
-
-
-Screen Scraping Country IDs
----------------------------
-
-Can you make use of the provided example and the altair documentation to
-produce a graph of the world where the countries are colored by one of
-the features in the data?
-
-You have some work to do:
-
-In this part of the project we will:
-
--  Review the structure of a web page
--  Review the CSS Query selector language
--  Learn to use the requests module to get data from the web into our
-   program
--  Learn about the Beautiful Soup package for scraping data from a
-   webpage
--  Learn how to add columns to a data frame using the ``map`` function.
-   And possibly learn to use a lambda function if you’ve never used one
-   before.
-
-Lets make a todo list:
-
-1. We need to add a column to our wd dataframe that contains the
-   numerical country id. Where can we get this data? There may be some
-   CSV files with this information already in them, but this is a good
-   chance to learn about a common technique used by data scientists
-   everywhere. **screen scraping**
-
-.. code:: ipython3
-
-    page = requests.get('https://www.nationsonline.org/oneworld/country_code_list.htm')
-    soup = BeautifulSoup(page.text, 'html.parser')
-
-The soup object is now a representation of the web page that we can work
-with and query. In fact if you have done any web programming you will be
-able to use the familiar CSS query selector syntax to query the object
-and get back matching elements. If you need a refresher on that or if
-you have never done anything with that then take a look at `This
-W3Schools
-reference <https://www.w3schools.com/cssref/css_selectors.asp>`__
-
-We can use ``print(soup.prettify())`` to print out all of the source for
-the web page we just downloaded. If we do some searching through that
-text we will see that each row of the table containing the data we want
-looks like this:
-
-::
-
-    <tr class="border1" style=" margin-top:3px; margin-bottom:3px">
-       <td style="width:20px">
-        <div class="flag" id="AFG">
-        </div>
-       </td>
-       <td class="abs">
-        <a href="afghanistan.htm">
-         Afghanistan
-        </a>
-       </td>
-       <td style="text-align:center">
-        AF
-       </td>
-       <td style="text-align:center">
-        AFG
-       </td>
-       <td style="text-align:center">
-        004
-       </td>
-      </tr>
-      <tr class="border1">
-       <td style="width:20px">
-        <img alt="ALA" height="12" src="../flags12/Aaland12_flag.gif" width="20"/>
-       </td>
-       <td class="abs">
-        <em>
-         Aland Islands
-        </em>
-       </td>
-       <td style="text-align:center">
-        AX
-       </td>
-       <td style="text-align:center">
-        ALA
-       </td>
-       <td style="text-align:center">
-        248
-       </td>
-      </tr>
-
-Now you may think this is a horrible mess to work with. But it is
-actually very structured:
-
-1. We have a table
-2. The table has rows (tr tags) and each row has five columns.
-3. The three letter country code is always in the 4th column
-4. The numeric country code is always in the 5th column.
-
-When you break it down like that it doesn’t seem so hard. Now the trick
-is getting past all of the extra stuff, and that is where Beautiful Soup
-is our friend!
-
-If you have not used Beautiful Soup before now would be an excellent
-time to work through this `video
-tutorial <https://www.youtube.com/watch?v=ng2o98k983k>`__ or if you
-prefer text this `blog
-post <https://www.dataquest.io/blog/web-scraping-tutorial-python/>`__ is
-good.
-
-What we want to do is search for a ``tr`` tag with the class “border1”
-Using our CSS selector language we can find all of the instances of that
-on the web page using “tr.border1” If there are multiple matches select
-will return them as a list. So lets look at the first 3 elements we get
-back from searching our page.
-
-.. code:: ipython3
-
-    soup.select("tr.border1")[:3]
-
-
-
-
-.. parsed-literal::
-
-    [<tr class="border1" style=" margin-top:3px; margin-bottom:3px">
-     <td style="width:20px"> </td>
-     <td> </td>
-     <td style="text-align:center"> </td>
-     <td style="text-align:center"> </td>
-     <td style="text-align:center"> </td>
-     </tr>, <tr class="border1" style=" margin-top:3px; margin-bottom:3px">
-     <td style="width:20px"><div class="flag" id="AFG"></div></td>
-     <td class="abs"><a href="afghanistan.htm">Afghanistan</a></td>
-     <td style="text-align:center"> AF</td>
-     <td style="text-align:center">AFG</td>
-     <td style="text-align:center">004</td>
-     </tr>, <tr class="border1">
-     <td style="width:20px"><img alt="ALA" height="12" src="../flags12/Aaland12_flag.gif" width="20"/></td>
-     <td class="abs"><em>Aland Islands</em></td>
-     <td style="text-align:center">AX</td>
-     <td style="text-align:center">ALA</td>
-     <td style="text-align:center">248</td>
-     </tr>]
-
-
-
-Select returns a list of items that we can iterate over or use for
-further queryies.
-
-Let’s look at an easy way to use another select to get the ``td``
-elements from each row and print out the the text contained in the 4th
-and 5th ``td``
-
-.. code:: ipython3
-
-    for row in soup.select("tr.border1")[:10]:
-        col_list = row.select('td')
-        print(col_list[3].text, col_list[4].text)
-
-
-.. parsed-literal::
-
-       
-    AFG 004
-    ALA 248
-    ALB 008
-    DZA 012
-    ASM 016
-    AND 020
-    AGO 024
-    AIA 660
-    ATA 010
-
-
-OK, now modify the code above so instead of printing the values you
-create a dictionary. The key should be the three digit country code and
-the value should be the numeric code converted to an integer. You will
-need to check your work to make sure that the dictionary is clean. You
-don’t want keys that have whitespace in them and you may need to account
-for the occasional blank row in the table.
-
-.. code:: ipython3
-
-    ## DELETE ME
-    cc_map = {}
-    for row in soup.select("tr.border1"):
-        col_list = row.select('td')
-        if col_list[4].text.isnumeric():
-            cc_map[col_list[3].text.strip()] = int(col_list[4].text)
-
-Now that you have the dictionary we can take the next step of adding the
-numeric information as a new column to our wd dataframe. The most common
-way of doing this is through the use of the ``map`` function. Map is a
-very common in functional programming as well as for Pandas programmers.
-The pattern is as follows ``dataframe.column.map(afunction)`` . The
-function you pass to map should take a single parameter and return the
-value you want to go into the new column. The parameter will be the
-value from ``column`` for a particular row. So to add a column to our wd
-dataframe that contains the code number for acountry we can simply do:
-
-.. code:: ipython3
-
-    wd['CodeNum'] = wd.Code.map(cc_map.get)
-    wd.head()
-
-
-
-
-.. raw:: html
-
-    <div>
-    <style scoped>
-        .dataframe tbody tr th:only-of-type {
-            vertical-align: middle;
-        }
-    
-        .dataframe tbody tr th {
-            vertical-align: top;
-        }
-    
-        .dataframe thead th {
-            text-align: right;
-        }
-    </style>
-    <table border="1" class="dataframe">
-      <thead>
-        <tr style="text-align: right;">
-          <th></th>
-          <th>Country</th>
-          <th>Ctry</th>
-          <th>Code</th>
-          <th>CodeNum</th>
-          <th>Region</th>
-          <th>Population</th>
-          <th>Area</th>
-          <th>Pop. Density</th>
-          <th>Coastline</th>
-          <th>Net migration</th>
-          <th>...</th>
-          <th>Phones</th>
-          <th>Arable</th>
-          <th>Crops</th>
-          <th>Other</th>
-          <th>Climate</th>
-          <th>Birthrate</th>
-          <th>Deathrate</th>
-          <th>Agriculture</th>
-          <th>Industry</th>
-          <th>Service</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th>0</th>
-          <td>Afghanistan</td>
-          <td>Afghanistan</td>
-          <td>AFG</td>
-          <td>4.0</td>
-          <td>ASIA (EX. NEAR EAST)</td>
-          <td>31056997</td>
-          <td>647500</td>
-          <td>48.0</td>
-          <td>0.00</td>
-          <td>23.06</td>
-          <td>...</td>
-          <td>3.2</td>
-          <td>12.13</td>
-          <td>0.22</td>
-          <td>87.65</td>
-          <td>1.0</td>
-          <td>46.60</td>
-          <td>20.34</td>
-          <td>0.380</td>
-          <td>0.240</td>
-          <td>0.380</td>
-        </tr>
-        <tr>
-          <th>1</th>
-          <td>Albania</td>
-          <td>Albania</td>
-          <td>ALB</td>
-          <td>8.0</td>
-          <td>EASTERN EUROPE</td>
-          <td>3581655</td>
-          <td>28748</td>
-          <td>124.6</td>
-          <td>1.26</td>
-          <td>-4.93</td>
-          <td>...</td>
-          <td>71.2</td>
-          <td>21.09</td>
-          <td>4.42</td>
-          <td>74.49</td>
-          <td>3.0</td>
-          <td>15.11</td>
-          <td>5.22</td>
-          <td>0.232</td>
-          <td>0.188</td>
-          <td>0.579</td>
-        </tr>
-        <tr>
-          <th>2</th>
-          <td>Algeria</td>
-          <td>Algeria</td>
-          <td>DZA</td>
-          <td>12.0</td>
-          <td>NORTHERN AFRICA</td>
-          <td>32930091</td>
-          <td>2381740</td>
-          <td>13.8</td>
-          <td>0.04</td>
-          <td>-0.39</td>
-          <td>...</td>
-          <td>78.1</td>
-          <td>3.22</td>
-          <td>0.25</td>
-          <td>96.53</td>
-          <td>1.0</td>
-          <td>17.14</td>
-          <td>4.61</td>
-          <td>0.101</td>
-          <td>0.600</td>
-          <td>0.298</td>
-        </tr>
-        <tr>
-          <th>3</th>
-          <td>American Samoa</td>
-          <td>American Samoa</td>
-          <td>ASM</td>
-          <td>16.0</td>
-          <td>OCEANIA</td>
-          <td>57794</td>
-          <td>199</td>
-          <td>290.4</td>
-          <td>58.29</td>
-          <td>-20.71</td>
-          <td>...</td>
-          <td>259.5</td>
-          <td>10.00</td>
-          <td>15.00</td>
-          <td>75.00</td>
-          <td>2.0</td>
-          <td>22.46</td>
-          <td>3.27</td>
-          <td>NaN</td>
-          <td>NaN</td>
-          <td>NaN</td>
-        </tr>
-        <tr>
-          <th>4</th>
-          <td>Andorra</td>
-          <td>Andorra</td>
-          <td>AND</td>
-          <td>20.0</td>
-          <td>WESTERN EUROPE</td>
-          <td>71201</td>
-          <td>468</td>
-          <td>152.1</td>
-          <td>0.00</td>
-          <td>6.60</td>
-          <td>...</td>
-          <td>497.2</td>
-          <td>2.22</td>
-          <td>0.00</td>
-          <td>97.78</td>
-          <td>3.0</td>
-          <td>8.71</td>
-          <td>6.25</td>
-          <td>NaN</td>
-          <td>NaN</td>
-          <td>NaN</td>
-        </tr>
-      </tbody>
-    </table>
-    <p>5 rows × 23 columns</p>
-    </div>
-
-
-
-So – why did ``cc_map.get`` work? Because it is a function that takes a
-single parameter, namely the three letter country code and returns the
-corresponding value in the dictionary. This is really convenient, but is
-definitely not the only way to do it. The most common ways are
-
--  use a ``lambda`` function
--  Write a function using def
-
-We can modify the statement above to use a lambda as follows:
-``wd.Code.map(lambda x: cc_map[x])`` That is a bit clearer about what’s
-going on if you understand lambdas. If you have never used lambda
-functions before you should read `This
-post <https://pythonconquerstheuniverse.wordpress.com/2011/08/29/lambda_tutorial/>`__
-
-So, now you have the information you need to use the example of the
-counties above and apply that to the world below.
-
-.. code:: ipython3
-
-    alt.Chart(countries).mark_geoshape(
-        fill='#666666',
-        stroke='white' 
-    ).properties(
-        width=750,
-        height=450
-    ).project('equirectangular')
-
-
-
-
-.. image:: WorldFactbook_files/WorldFactbook_74_0.png
-
-
-
-.. code:: ipython3
-
-    ## DELETE from final version
-    countries = alt.topo_feature(data.world_110m.url, 'countries')
-    
-    base = alt.Chart(countries).mark_geoshape(
-        fill='#666666',
-        stroke='white'
-    ).encode(color='Infant mortality:Q', 
-             tooltip='Country:N'
-    ).properties(
-        width=750,
-        height=450
-    ).project('equirectangular').transform_lookup(
-            lookup='id',
-            from_=alt.LookupData(wd, 'CodeNum', ['Infant mortality', 'Country']))
-    
-    base
-
-
-
-
-.. image:: WorldFactbook_files/WorldFactbook_75_0.png
-
-
-
-More Practice
--------------
-
-Screen Scraping Stock Prices
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Create a graph of the closing price of Google Stock over the last year,
-using https://finance.yahoo.com/quote/GOOG/history?p=GOOG as your
-source.
-
-1. you will need to screen scrape the table of data and make a DataFrame
-   from the results.
-
-
-
-2. Next create a line graph using Altair
-
-
-
-3. Can you figure out how to make a line graph that shows the opening
-   price as well as the closing price for each day? Hint: If you data is
-   an a tidy narrow format it will “just work” if you use the color
-   channel to encode opening and closing
-
-
-
-Screen Scraping the CIA
-~~~~~~~~~~~~~~~~~~~~~~~
-
-Now its time to live dangerously! The country data that we have been
-using was compiled and turned into a csv file in 2006. Much of that data
-comes from the CIA World Factbook. (not Facebook - as autocorrect so
-often thinks)
-
-The goal of this exercise is to create an up to date version of our
-country data (at least 2017 as I write this) This will be challenging
-and fun as each column of the data is on its own page. But you can do
-it, and you will see how powerful you are when you have the right tools!
-
-However – **Think Generally!** At the end of this we would like to be
-able to scrape the CIA data for **any** year not just 2017. So keep that
-in mind.
-
-You can download each year of the factbook going back to the year 2000
-`from the CIA <https://www.cia.gov/library/publications/download/>`__.
-Start with the year 2017. The nice thing about this is that you can
-unzip the file on your local computer but still use ``requests`` without
-drawing attention to yourself on the CIA’s website!
-
-The Challenge of this project is that each variable is on its own page.
-So we are going to have to combine many pages into a single coherent
-data frame. Then when we have gathered all of the columns we can pull
-them together into one nice data frame and we’ll learn how to save that
-to a CSV file.
-
-Again, think generally. If you design a good function for finding and
-scraping one piece of information make it work for all pieces of
-information and at the end you will have a little code that does a LOT
-of work.
-
-Lets take a look at the file structure of the downloaded data from 2017
-
-.. code:: ipython3
-
-    ls factbook/2017
-
-
-.. parsed-literal::
-
-    [34mappendix[m[m/          [34mfonts[m[m/             index.html         [34mrankorder[m[m/
-    [34mcss[m[m/               [34mgeos[m[m/              [34mjs[m[m/                [34mscripts[m[m/
-    [34mdocs[m[m/              [34mgraphics[m[m/          [34mprint[m[m/             [34mstyles[m[m/
-    [34mfields[m[m/            [34mimages[m[m/            print_Contact.pdf  [34mwfbExt[m[m/
-
-
-The folder that may jump out at you is called fields, so lets look at
-that in more detail.
-
-.. code:: ipython3
-
-    import os
-    files = os.listdir('factbook/2017/fields')
-    print(sorted(files)[:10])
-
-
-.. parsed-literal::
-
-    ['2001.html', '2002.html', '2003.html', '2004.html', '2006.html', '2007.html', '2008.html', '2010.html', '2011.html', '2012.html']
-
-
-Getting a list of all fields
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-That may not look terribly useful but each of the numbered files
-contains one field that we can add to our data frame. Examine one of
-them closely and see if you can figure out a good marker we can use to
-find the field contained in each.
-
-In fact now that you are investigating and if you stop and think for a
-minute you may conclude that there must be some kind of nice human
-readable table of contents. In fact there is take a look at the file
-``notesanddefs.html``
-
-In the spirit of starting small and working our way up to a larger
-project write some code in the cell below to scrape all of the fields
-and the file they are in from the notesanddefs.html file.
-
-
-Loading all the data in rough form
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-One more thing to note. You might assume that the country names will all
-be consistent from field to field but that probably isn’t the case. What
-is consistent is the two letter country code used in the URL to the
-detail information about each country. So, what you are are going to
-have to do is build a data structure for each field. you will want a
-name for the field, then a dictionary that maps from the two digit
-country code to the value of the field.
-
-::
-
-   all_data = {'field name' : {coutry_code : value} ...}
-
-It may be that the data for the field and the country is more than we
-want, but it will be easiest for now to just get the data in rough form
-then we can clean it up once we have it in a dataframe
-
-There are 177 different fields in the 2017 data. Loading all of them
-would be a huge amount of work and more data than we need. Lets start
-with a list that is close to our original data above
-
--  Country – name
--  Code2
--  Code3
--  CodeNum
--  Population
--  Area
--  Coastline
--  Climate
--  Net migration
--  Birth rate
--  Death rate
--  Infant mortality rate
--  Literacy
--  GDP
--  Government type
--  Inflation rate
--  Health expenditures
--  GDP - composition, by sector of origin
--  Land use
--  Internet users
-
-Feel free to add others if they interest you.
-
-If you use the structure given above you can just pass that to the
-DataFrame constructor and you should have something that looks like
-this:
-
-.. code:: ipython3
-
-    #pd.DataFrame(data).head()
-
-
-
-
-.. raw:: html
-
-    <div>
-    <style scoped>
-        .dataframe tbody tr th:only-of-type {
-            vertical-align: middle;
-        }
-    
-        .dataframe tbody tr th {
-            vertical-align: top;
-        }
-    
-        .dataframe thead th {
-            text-align: right;
-        }
-    </style>
-    <table border="1" class="dataframe">
-      <thead>
-        <tr style="text-align: right;">
-          <th></th>
-          <th>Area</th>
-          <th>Birth rate</th>
-          <th>Climate</th>
-          <th>Coastline</th>
-          <th>Death rate</th>
-          <th>GDP (purchasing power parity)</th>
-          <th>GDP - composition, by sector of origin</th>
-          <th>Government type</th>
-          <th>Health expenditures</th>
-          <th>Infant mortality rate</th>
-          <th>Internet users</th>
-          <th>Land use</th>
-          <th>Literacy</th>
-          <th>Population</th>
-          <th>Country</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th>aa</th>
-          <td>total: 180 sq km\nland: 180 sq km\nwater: 0 sq km</td>
-          <td>12.4 births/1,000 population (2017 est.)</td>
-          <td>tropical marine; little seasonal temperature v...</td>
-          <td>68.5 km</td>
-          <td>8.4 deaths/1,000 population (2017 est.)</td>
-          <td>$2.516 billion (2009 est.)\n$2.258 billion (20...</td>
-          <td>agriculture: 0.4%\nindustry: 33.3%\nservices: ...</td>
-          <td>parliamentary democracy (Legislature); part of...</td>
-          <td>NaN</td>
-          <td>total: 10.7 deaths/1,000 live births\nmale: 14...</td>
-          <td>total: 106,309\npercent of population: 93.5% (...</td>
-          <td>agricultural land: 11.1%\narable land 11.1%; p...</td>
-          <td>definition: age 15 and over can read and write...</td>
-          <td>115,120 (July 2017 est.)</td>
-          <td>Aruba</td>
-        </tr>
-        <tr>
-          <th>ac</th>
-          <td>total: 442.6 sq km (Antigua 280 sq km; Barbuda...</td>
-          <td>15.7 births/1,000 population (2017 est.)</td>
-          <td>tropical maritime; little seasonal temperature...</td>
-          <td>153 km</td>
-          <td>5.7 deaths/1,000 population (2017 est.)</td>
-          <td>$2.288 billion (2016 est.)\n$2.145 billion (20...</td>
-          <td>agriculture: 2.3%\nindustry: 20.2%\nservices: ...</td>
-          <td>parliamentary democracy (Parliament) under a c...</td>
-          <td>5.5% of GDP (2014)</td>
-          <td>total: 12.1 deaths/1,000 live births\nmale: 13...</td>
-          <td>total: 60,000\npercent of population: 65.2% (J...</td>
-          <td>agricultural land: 20.5%\narable land 9.1%; pe...</td>
-          <td>definition: age 15 and over has completed five...</td>
-          <td>94,731 (July 2017 est.)</td>
-          <td>Antigua and Barbuda</td>
-        </tr>
-        <tr>
-          <th>ae</th>
-          <td>total: 83,600 sq km\nland: 83,600 sq km\nwater...</td>
-          <td>15.1 births/1,000 population (2017 est.)</td>
-          <td>desert; cooler in eastern mountains</td>
-          <td>1,318 km</td>
-          <td>1.9 deaths/1,000 population (2017 est.)</td>
-          <td>$671.1 billion (2016 est.)\n$643.1 billion (20...</td>
-          <td>agriculture: 0.8%\nindustry: 39.5%\nservices: ...</td>
-          <td>federation of monarchies</td>
-          <td>3.6% of GDP (2014)</td>
-          <td>total: 10 deaths/1,000 live births\nmale: 11.6...</td>
-          <td>total: 5,370,299\npercent of population: 90.6%...</td>
-          <td>agricultural land: 4.6%\narable land 0.5%; per...</td>
-          <td>definition: age 15 and over can read and write...</td>
-          <td>6,072,475 (July 2017 est.)\nnote: the UN estim...</td>
-          <td>United Arab Emirates</td>
-        </tr>
-        <tr>
-          <th>af</th>
-          <td>total: 652,230 sq km\nland: 652,230 sq km\nwat...</td>
-          <td>37.9 births/1,000 population (2017 est.)</td>
-          <td>arid to semiarid; cold winters and hot summers</td>
-          <td>0 km (landlocked)</td>
-          <td>13.4 deaths/1,000 population (2017 est.)</td>
-          <td>$66.65 billion (2016 est.)\n$64.29 billion (20...</td>
-          <td>agriculture: 22%\nindustry: 22%\nservices: 56%...</td>
-          <td>presidential Islamic republic</td>
-          <td>8.2% of GDP (2014)</td>
-          <td>total: 110.6 deaths/1,000 live births\nmale: 1...</td>
-          <td>total: 3,531,770\npercent of population: 10.6%...</td>
-          <td>agricultural land: 58.07%\narable land 20.5%; ...</td>
-          <td>definition: age 15 and over can read and write...</td>
-          <td>34,124,811 (July 2017 est.)</td>
-          <td>Afghanistan</td>
-        </tr>
-        <tr>
-          <th>ag</th>
-          <td>total: 2,381,741 sq km\nland: 2,381,741 sq km\...</td>
-          <td>22.2 births/1,000 population (2017 est.)</td>
-          <td>arid to semiarid; mild, wet winters with hot, ...</td>
-          <td>998 km</td>
-          <td>4.3 deaths/1,000 population (2017 est.)</td>
-          <td>$609.6 billion (2016 est.)\n$582.7 billion (20...</td>
-          <td>agriculture: 12.9%\nindustry: 36.2%\nservices:...</td>
-          <td>presidential republic</td>
-          <td>7.2% of GDP (2014)</td>
-          <td>total: 19.6 deaths/1,000 live births\nmale: 21...</td>
-          <td>total: 17,291,463\npercent of population: 42.9...</td>
-          <td>agricultural land: 17.4%\narable land 18.02%; ...</td>
-          <td>definition: age 15 and over can read and write...</td>
-          <td>40,969,443 (July 2017 est.)</td>
-          <td>Algeria</td>
-        </tr>
-      </tbody>
-    </table>
-    </div>
-
-
-
-So, we have made lot of progress but we have a lot of cleanup to do!
-
-
-Cleaning the data
-~~~~~~~~~~~~~~~~~
-
-With the data now in a dataframe we can begin the hard work of cleaning.
-it up and adding our last few columns – the 3 letter and numeric country
-codes! But those are easy to get from the two digit country code using
-the same website we used before!
-
-We can do this nicely and tackle one column at a time. This is a lot of
-string processing and type conversion work. A lot of this can be made
-easier by using regular expression pattern matching. Which is a very big
-skill to add to your arsenal. If you haven’t used them before or are out
-of practice `Go through this
-tutorial <http://evc-cit.info/comsc020/python-regex-tutorial/>`__
-
-**Instructors Note:** This would work well as a class project where each
-team gets a column to transform and then everyone can share their
-solution with everyone else. Or if you don’t have enough students then
-each team can take one or more columns.
-
-
-
-Saving the data
-~~~~~~~~~~~~~~~
-
-We can save the data using ``to_csv``
-
-
-Rinse Repeat
-~~~~~~~~~~~~
-
-If you try to repeat the exercise above for 2016 it works great! What
-about 2015? Earlier? How far back can you go before your code breaks?
-
-
-What you will find when you go back illustrates one of the real ugly
-parts of screen scraping. Which is that you are at the mercy of the web
-site designer. All they have to do is make one little change to a CSS
-class or the id of an element and boom your whole strategy goes away
-
-Comparing across the years.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you or you and your classmates can scrape all 17 years of world
-factbook data you will really have achieved something. And are destined
-for internet fame if you make your notebooks public. You will likely
-have noticed that lots of people want this data in a more convenient
-format.
-
-
-
-
-
-
-
 
 
 
