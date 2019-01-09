@@ -6,9 +6,6 @@ Part I Exploring the Data
 
 #. Before class you should read about the data science processing pipeline and exploratory data analysis, and the other resources on spreadsheets and summary statistics linked in the previous section.
 
-#. https://towardsdatascience.com/exploratory-data-analysis-8fc1cb20fd15
-
-
 Introducing the Happiness Report
 --------------------------------
 

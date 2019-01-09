@@ -34,11 +34,13 @@ Reading List
 
 * `Intro to Descriptive Statistics <https://towardsdatascience.com/intro-to-descriptive-statistics-252e9c464ac9>`_
 
+* `Data Types in Statistics <https://towardsdatascience.com/data-types-in-statistics-347e152e8bee>`_
+
 * `Google Sheets 101: <https://zapier.com/learn/google-sheets/google-sheets-tutorial/>`_
 
 * https://www.youtube.com/watch?v=QTgvX5MLPC8
 
-* \ |LINK1|\ 
+* \ |LINK1|\
 
 .. _h85837457734576e2a582e637a44:
 

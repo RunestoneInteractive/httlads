@@ -29,6 +29,12 @@ As an interdisciplinary field of inquiry data science is perfect for a liberal a
 
   The best data scientists have one thing in common: unbelievable curiosity. - D.J. Patil Chief Data Scientist of the United States.
 
+The diagram below is widely used to answer the question "What is Data Science?" It also is a great illustration of the liberal arts nature of data science.  Some computer science, Some statistics, and something from one of the many majors available at a liberal arts college, any of which are looking for people with data skills!
+
+.. figure:: https://static1.squarespace.com/static/5150aec6e4b0e340ec52710a/t/51525c33e4b0b3e0d10f77ab/1364352052403/Data_Science_VD.png?format=1500w
+
+   Venn Diagram |CCBYANC| Drew Conway
+
 According to Eric Haller, VP of Experian, a global information services company, recently interviewed by the Chicago Tribune.
 
   A data scientist is an explorer, scientist, and analyst all combined into one role.  They have the curiosity and passion of an explorer for jumping into new problems, new dta sets and new technologies.  They love going where no man has gone before in taking on a new approach to taking on age old challenges or coming up with an approach for a very new problem where nobody has tried to solve it in the past.
@@ -52,6 +58,25 @@ The Data Science Pipeline
 -------------------------
 
 .. image:: Figures/DSPipeline.svg
+   :align: left
+
+One of the primary goals of this course is to familiarize you with the data science pipeline.  That is the series of steps you will go through as you seek to analyze and communicate with data.  There are many steps in the pipeline and as you can see the pipeline is anything but a linear process.  Doing data science is a very iterative process whereby you will often repeat previous steps because of something you learn in later steps.  This is part of the exploratory nature of data science.  There is not a single formula for success, or a single process that works for every data set.  Lets look at each of the steps:
+
+* **Get Data** -- acquiring data can come in many forms.  Data is sometimes found in a simple file, or in relational database, from a web based interface, or in some unstructured form that you will scrape from a web page.  Many times a project will require data from more than one of these sources.
+
+* **Exploratory Data Analysis and Visualization (EDA)** -- Its virtually impossible to glance at a data set and comprehend what it is trying to tell you.  So you will have to spend some time exploring and getting to know the data.  There are lots of questions you can ask about any data set that will help you in this task.  What is the largest of X or the smallest of X, what is the average of Y what is the distribution of Z.  In each module of this book we will spend a good amount of time on the EDA task introducing you to these questions.
+
+* **Data Cleaning** -- As you explore the data you will discover missing pieces, outliers, data that was entered incorrectly or is even of the wrong type.  You will learn techniques for dealing with all of these problems.
+
+* **Rescaling** -- Sometimes we want to look at data in its raw and unchanged form, but other times having data that includes pricing data, along with age data, along with distance measurements can cause big problems.  In these cases we will learn ways to rescale the data so that it works with the algorithms we want to use.
+
+* **Training / Test split**  -- In a machine learning project we divide up our data into a training set, that we will work with for model building, and a test set that we hold back and only use for test purposes.  This is much more realistic because we frequently want to use our machine learning system to make predictions in new situations that we have never encountered.  If we only predict the things we already know that is not very interesting.
+
+* **Model Building** -- Building models is an exciting part of data science.  In this class we will rely on libraries that are well tested rather than writing algorithms from scratch.  In particular we will use the amazing Scikit Learn library of models.
+
+* **Model Testing** -- Once the model is built we need to test it to see how well it performs using our test data.  Sometimes things work well, and sometimes we need to go back to the drawing board to build a completely different model using a completely different algorithm.
+
+* **Polishing and Presenting** -- Finally, when all is tested and validated you will need to present your results.  This may take the form of an infographic, an animated visualization, a video, a series of graphs that you narrate with text or in a presentation.  This is often the most important part of the process!  It doesn't do anyone any good for you to spend weeks understanding what the data is telling you if you can't turn that into a form of communication that connects with your audience.  Whether its your peers, your boss, your parents, or your customers!
 
 Data Science in this Course
 ---------------------------
@@ -62,11 +87,14 @@ As we dive into data science, you will notice that the format of this course wil
 
 This means that the learning zones that we talked about `previously <https://runestone.academy/runestone/static/fopp/FrontBackMatter/preface.html#get-in-the-learning-zone>`_ are still very much going to be with us. Computers are still very reliable, and very quick, but not creative. As you apply more powerful tools to problem solving, you will find that some things that might have been hard with basic Python are now easy, allowing you to perform certain tasks in your comfort zone. However, new tools also mean new ways for them to fail or produce unexpected results. This will hopefully push you into your learning zone where you will discover your ability to perform complex analyses to solve real-world problem.
 
-There is a second definition of the learning zone that is related to what we have been talking aobut.  In this amazing `TED talk: How to get better at the things you care about <https://www.ted.com/talks/eduardo_briceno_how_to_get_better_at_the_things_you_care_about>`_ Eduardo Briceño talks about the "performance zone" versus the "learning zone."  
+There is a second definition of the learning zone that is related to what we have been talking aobut.  In this amazing `TED talk: How to get better at the things you care about <https://www.ted.com/talks/eduardo_briceno_how_to_get_better_at_the_things_you_care_about>`_ Eduardo Briceño talks about the "performance zone" versus the "learning zone."
 
 .. youtube:: YKACzIrog24
 
 The big takeaway for you is that as a student in the classroom for this class, you are in the learning zone as Briceño defines it.  You are not being judged or graded for how quickly you arrive at an answer or not!  The classroom for this course is a time for you to practice old skills, try new skills, and to fail without repercussions.  That is how we learn!  You will spend a huge amount of the rest of your life in the performance zone, so take advantage of this opportunity and enjoy the chance to be in the learning zone.
 
 If you find yourself in the panic zone, please seek help from your instructor and/or classmates: none of the activities in this book are intended to stump you. As you understand how to solve some simpler problems, you will develop the ability to join these solutions together to solve increasingly challenging problems with real-world applications.
+
+
+.. |CCBYANC| image:: https://static1.squarespace.com/static/5150aec6e4b0e340ec52710a/t/524d6fb7e4b0b5e2e08118c4/1380806583508/88x31.png?format=300w
 

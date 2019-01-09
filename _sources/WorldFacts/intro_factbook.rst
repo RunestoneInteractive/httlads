@@ -10,6 +10,8 @@ Reading List
 -  `One Dataset Visualized 25 Different
    Ways <https://flowingdata.com/2017/01/24/one-dataset-visualized-25-ways/>`__
    This is a great article to help you think about visualization
+- `What is Exploratory Data Analysis <https://towardsdatascience.com/exploratory-data-analysis-8fc1cb20fd15>`_
+
 -  `Getting Started with
    Altair <https://altair-viz.github.io/getting_started/starting.html>`__
    Read the overview and then move to the `User
