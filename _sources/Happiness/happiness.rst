@@ -14,7 +14,7 @@ Now let's create a table where we compute the average happiness score for all of
 
    How many unique regions are there?
 
-   - :11: Is the correct answer
+   - :10: Is the correct answer
      :x: Use the UNIQUE function on the Region Column
 
 #.  Now lets make that list of countries look a little nicer by sorting it.  Select the countries and then from the menu select Data -> Sort range.  Then click on the Sort button.  Hmmm what happened here?
@@ -40,14 +40,22 @@ Now lets create a column that sums the happiness score for each region using the
 
    The sum of all happiness in South Asia is |blank| and the sum of all happiness in Western Europe is |blank| (out to three decimal places)
 
-   - :27.380: Is the correct answer
+   - :27.388: Is the correct answer
      :26.093: It looks like you may have forgotten to use the $ correctly
      :x: Make sure you use the SUMIF formula
 
    - :134.968: Is the correct answer
      :x: Make sure you use the SUMIF formula
 
+With a column for count and a column for the sum you can now calculate the average by dividing our two columns.
 
+.. fillintheblank:: fb_happy_avg
+
+   The average happiness score for Latin America and Caribbean is |blank|
+
+
+   - :6.020: Is the correct answer
+     :x: Please check your formula again.
 
 #. We can combine the work we did above using a single function called AVERAGEIF.  Lets use it and compare our answers -- They should be identical. By now you should be feeling some respect for the spreadsheet jockeys of the world. This is definitely not a toy!
 
@@ -60,6 +68,14 @@ Now lets create a column that sums the happiness score for each region using the
 #. Add another column to our little table that tells us how many countries are in each region (COUNTIF)
 
 #. Now Using MAXIFS, MINIFS, MATCH and INDEX lets find the most and least happy country in each region.  MAXIFS and MINIFS work alot like AVERAGEIF and COUNTIF  but allow for more conditions.  We still need only one.  If you read the popup you will know what to do.
+
+.. fillintheblank:: fb_happy_region_max
+
+   What is the happiest country in East Asia?  |blank|
+
+   - :Taiwan Province: Is the correct answer
+     :x: Keep checking
+
 
 Joining Data from other Sources
 -------------------------------
@@ -132,9 +148,31 @@ Now that you have country names unified, and the population data in place you ca
 
 #. Calculate the average population for each region?
 
+.. fillintheblank:: fb_ea_avg_pop
+
+   The average population is |blank| for East Asia.
+
+   - :253848815: Is the correct answer
+     :x: Please check your formula
+
 #. Find the name of the country in each region with the largest population
 
+.. fillintheblank:: fb_reg_lg_pop
+
+   |blank| has the largest population in Latin America and Caribbean
+
+
+   - :Brazil: Is the correct answer
+     :x: Not quite, keep on working.
+
 #. What is the country in each region with the smallest population?
+
+.. fillintheblank:: fb_reg_sm_pop
+
+   |blank| has the smallest population in the Middle East and North Africa region.
+
+   - :Bahrain: Is the correct answer
+     :x: Keep trying!
 
 
 .. shortanswer:: act_own_questions_2
