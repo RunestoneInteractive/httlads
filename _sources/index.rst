@@ -13,6 +13,14 @@ How to Think like a Data Scientist - Alpha
 .. Sources can also be included from subfolders of this directory.
    (e.g. "DataStructures/queues.rst").
 
+Table of Contents
+:::::::::::::::::
+
+.. raw:: html
+
+   <ul>
+   <li><a href="../../assignments/chooseAssignment.html">Assignments</a></li>
+   </ul>
 
 .. toctree::
     :numbered:
