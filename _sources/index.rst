@@ -18,7 +18,7 @@ How to Think like a Data Scientist - Alpha
     :numbered:
     :maxdepth: 3
 
-    introduction.rst
+    Introduction/toctree.rst
     Happiness/toctree.rst
     Solver/toctree.rst
     MovieData/toctree.rst
