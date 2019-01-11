@@ -9,7 +9,7 @@ Part I Exploring the Data
 Introducing the Happiness Report
 --------------------------------
 
-The World Happiness Report is a landmark survey of the state of global happiness. The World Happiness Report 2018, ranks 156 countries by their happiness levels, and 117 countries by the happiness of their immigrants.  Many factors may lead to the happiness of a country and we will use spreadsheets to help us explore these factors to try to discover what factors may be most important in determining a countries happiness.
+The World Happiness Report is a landmark survey of the state of global happiness. The World Happiness Report 2018, ranks 156 countries by their happiness levels, and 117 countries by the happiness of their immigrants.  Many factors may lead to the happiness of a country and we will use spreadsheets to help us explore these factors to try to discover what factors may be most important in determining a country's happiness.
 
 We will start by loading the `happiness_2017.csv <../_static/happiness_2017.csv>`_ file into Google Sheets.  The table below gives a bit of detail about each of the columns on the spreadsheet.
 
@@ -111,7 +111,7 @@ Summary statistics
 
 #. Although the countries are ranked from most happy to least happy we might want start by looking at some summary statistics for the happiness score.
 
-   #. Use the AVERAGE function of sheets to calculate the mean in column D.  Scroll down and click in cell D143 -- that should be an empty cell below the column of numbers for the happiness score.  Now type =AVERAGE(D2:C141) You can also type =AVERAGE( and then click and drag the numbers you want.  D2:D141 specifies a range.  From Column D Row 2 down to Column D Row 141.
+   #. Use the AVERAGE function of sheets to calculate the mean in column D.  Scroll down and click in cell D143 -- that should be an empty cell below the column of numbers for the happiness score.  Now type =AVERAGE(D2:D141) You can also type =AVERAGE( and then click and drag the numbers you want.  D2:D141 specifies a range.  From Column D Row 2 down to Column D Row 141.
 
       .. fillintheblank:: fb_avghappiness
 
@@ -124,7 +124,7 @@ Summary statistics
 
       Since you are going to be entering numbers to 3 digits, you can use a custom number format under the Format menu, to have Sheets automatically display your values correctly rounded to just three digits to the right of the decimal point.
 
-   #. Many formulas in Sheets use ranges.  Ranges can span cells in a single column like we did in a.  Or they can span cells in a single row such as A1:L1 they can even span rows and columns such as A1:L141.
+   #. Many formulas in Sheets use ranges.  Ranges can span cells in a single column like we did in a.  Or they can span cells in a single row such as A1:L1 they can even span rows and columns to form a rectangle such as A1:L141.
 
    #. Now calculate the STDEV and MEDIAN for the Happiness Score column as well.  If you are fuzzy about standard deviation `this article <https://runestone.academy/runestone/static/cppds/index.html>`_ is a nice intuitive explanation.
 
@@ -157,7 +157,7 @@ Summary statistics
 Visualization
 -------------
 
-#. The `STDDEV <https://runestone.academy/runestone/static/cppds/index.html>`_ value tells us that the majority of the values are between 4.0 and 6.6 so let us check that graphically.   It is easy to make a histogram of the values in Sheets.
+#. The `STDDEV <https://runestone.academy/runestone/static/cppds/index.html>`_ value tells us that the majority of the values are between 4.0 and 6.6 so let us check that graphically.   It is easy to make a histogram of the values in Sheets.  Note: To do this same thing in Excel you would need to install an extension.
 
    #. Click on the insert graph icon
    #. Choose chart type of histogram
@@ -165,7 +165,7 @@ Visualization
    #. Does it look like most of the bars are between 4 and 6.6 on your histogram?  It should.
    #. Try editing the details of the histogram to look at the distribution in other columns.
 
-#. Because we are exploring it might also wonder "which country has the largest Economy.GDP or which country scores the highest on Family? Or generosity?  This is a great question to ask, learning about minimum and maximum values can definitely lead you in interesting directions.  It is also a great chance to learn a couple of other really powerful functions.  Let's explore the question, what country has the highest score in the Generosity column?
+#. Because we are exploring you might also wonder "which country has the largest Economy.GDP or which country scores the highest on Family? Or Generosity?  This is a great question to ask, learning about minimum and maximum values can definitely lead you in interesting directions.  It is also a great chance to learn a couple of other really powerful functions.  Let's explore the question, what country has the highest score in the Generosity column?
 
    #. Start by finding the maximum value in the generosity column, putting the result in cell J146.
 
@@ -177,7 +177,7 @@ Visualization
            :0.9.*: Looks like you might be off by a column
            :x: Please check your ranges and try again.
 
-   #. Knowing the max is one thing, but that does not tell us which country it is.  For that we will use the MATCH and INDEX functions.  Match allows us to search for a value in a range of cells.  Just like the search function in a word processor. IN cell J147 type =match(J146,J2:J141,0) the match function says look for the value in cell J146 in the range J2:J141 and the 0 tells it that the data is not sorted. This is a really important detail.  If you leave this off it will assume that the data is sorted and stop searching and return the first cell it finds that is greater than the value in J162.
+   #. Knowing the max is one thing, but that does not tell us which country it is.  For that we will use the MATCH and INDEX functions.  Match allows us to search for a value in a range of cells.  Just like the search function in a word processor. In cell J147 type =match(J146,J2:J141,0) the match function says look for the value in cell J146 in the range J2:J141 and the 0 tells it that the data is not sorted. This is a really important detail.  If you leave the 0 off it will assume that the data is sorted and stop searching and return the first cell it finds that is greater than the value in J146.
 
       .. fillintheblank:: gen_max_row
 
@@ -186,7 +186,7 @@ Visualization
          - :105: Is the correct answer
            :x: catchall feedback
 
-   #. In cell J164 type =index(A2:A141,J147) This tells sheets to return the value from the range A2:A141 in the row specified by the value in J163.  In other words starting at A2 go down 105 rows and return the value.  As we will see later index is really powerful for doing all kinds of things, but primarily for now we will think of the combination of match and index being our search and retrieve powertools.
+   #. In cell J148 type =index(A2:A141,J147) This tells sheets to return the value from the range A2:A141 in the row specified by the value in J163.  In other words starting at A2 go down 105 rows and return the value.  As we will see later INDEX is really powerful for doing all kinds of things, but primarily for now we will think of the combination of match and index being our search and retrieve power tools.
 
       .. fillintheblank:: gen_max_country
 
