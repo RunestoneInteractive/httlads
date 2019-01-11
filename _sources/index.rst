@@ -31,10 +31,10 @@ Table of Contents
     Solver/toctree.rst
     MovieData/toctree.rst
     WorldFacts/toctree.rst
-    UNGeneralDebates.rst
-    SQL_in_one_lesson.rst
-    BeerPredictions.rst
-    Instacart.rst
+    UNGeneralDebates/toctree.rst
+    VideoGames/toctree.rst
+    BeerPredictions/toctree.rst
+    Instacart/toctree.rst
 
 
 
