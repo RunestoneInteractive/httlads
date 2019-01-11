@@ -96,5 +96,13 @@ The big takeaway for you is that as a student in the classroom for this class, y
 If you find yourself in the panic zone, please seek help from your instructor and/or classmates: none of the activities in this book are intended to stump you. As you understand how to solve some simpler problems, you will develop the ability to join these solutions together to solve increasingly challenging problems with real-world applications.
 
 
+How to use this Book
+--------------------
+
+This book is designed to be used in conjunction with external tools like Google Sheets and Jupyter Notebooks.  You will need to move back and forth between browser tabs as you work with the tools and follow the instructions in the book.  You will be asked to answer the questions in the book as you read.  This is to encourage you to type in the code we have provided and experiment with it.  Learning computer science or data science is not a spectator sport.  Many students make the mistake of thinking that they can just read about it and understand it.  You really have to do it in order to understand it.  So don't fool yourself, and don't guess at the answers to the questions in the book.
+
+Everything you learn in this class builds on and reinforces the things you have learned previously. If you do fall behind, make sure you talk to your instructor so you can develop a strategy for catching up.
+
+
 .. |CCBYANC| image:: https://static1.squarespace.com/static/5150aec6e4b0e340ec52710a/t/524d6fb7e4b0b5e2e08118c4/1380806583508/88x31.png?format=300w
 
