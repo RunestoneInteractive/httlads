@@ -29,6 +29,7 @@ Table of Contents
     Introduction/toctree.rst
     Happiness/toctree.rst
     Solver/toctree.rst
+    PythonReview/toctree.rst
     MovieData/toctree.rst
     WorldFacts/toctree.rst
     UNGeneralDebates/toctree.rst
