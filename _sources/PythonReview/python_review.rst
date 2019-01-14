@@ -312,7 +312,7 @@ Dictionaries can be created in a variety of ways:
 .. code:: ipython3
 
     my_dict = {}   # Empty dict
-    my_dict = {'foo': 'bar', 'baz': 'bak'} 
+    my_dict = {'foo': 'bar', 'baz': 'bak'}
     # This one is handy if you have a list of pairs to turn into a dictionary:
     my_dict = dict([['foo', 'bar'], ['baz', 'bak']])
 
@@ -362,7 +362,7 @@ Remember that the
 
     def double_plus_y(x, y=4):
         return 2 * x + y
-    
+
     double_plus_y(6)
 
 
@@ -381,7 +381,7 @@ example above) or return anything:
 
     def say_hi():
         print("Just saying 'hello'.")
-        
+
     say_hi()
 
 
@@ -578,4 +578,32 @@ the states should not be the resulting list).
 
     ['Riverside', 'Dayton', 'Los Angeles']
 
+**Lesson Feedback**
 
+.. poll:: LearningZone_4_1
+    :option_1: Comfort Zone
+    :option_2: Learning Zone
+    :option_3: Panic Zone
+
+    During this lesson I was primarily in my...
+
+.. poll:: Time_4_1
+    :option_1: Very little time
+    :option_2: A reasonable amount of time
+    :option_3: More time than is reasonable
+
+    Completing this lesson took...
+
+.. poll:: TaskValue_4_1
+    :option_1: Don't seem worth learning
+    :option_2: May be worth learning
+    :option_3: Are definitely worth learning
+
+    Based on my own interests and needs, the things taught in this lesson...
+
+.. poll:: Expectancy_4_1
+    :option_1: Definitely within reach
+    :option_2: Within reach if I try my hardest
+    :option_3: Out of reach no matter how hard I try
+
+    For me to master the things taught in this lesson feels...
