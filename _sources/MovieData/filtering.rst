@@ -9,16 +9,17 @@ movies whose budget was over a million dollars.
 
 .. code:: ipython3
 
-    budget_df = df[df.budget>1000000]    ### SOLUTION
+    budget_df = []
     budget_df.shape
 
 
+.. fillintheblank:: mov_expensive_movies
 
+   How many movies have a budget over 1 million dollars?
 
-.. parsed-literal::
-
-    (7208, 23)
-
+   - :7208: Is the correct answer
+     :7405: Budget should be over (not including) 1 million dollars
+     :x: catchall feedback
 
 
 With this more manageable list of 7000+ movies, I’d like to have a way
@@ -30,16 +31,16 @@ of that movie.
 
 .. code:: ipython3
 
-    budget_lookup = pd.Series(budget_df['budget'].values, index=budget_df['title'])    ### SOLUTION
+    budget_lookup = []
     budget_lookup['Dead Presidents']
 
 
+.. fillintheblank:: mov_dead_presidents_budget
 
+   What was the budget for Dead Presidents?
 
-.. parsed-literal::
-
-    10000000
-
+   - :10000000: Is the correct answer
+     :x: catchall feedback
 
 
 I have figured out that the first (alphabetically) movie whose title
@@ -84,15 +85,15 @@ titles to do a slice.
 
 .. code:: ipython3
 
-    budget_lookup_as_and_bs = budget_lookup.sort_index()["A Bag of Hammers":"Byzantium"]   ### SOLUTION
+    budget_lookup_as_and_bs = []
     budget_lookup_as_and_bs.shape
 
 
+.. fillintheblank:: mov_a_b_movies
 
+   How many movies with a budget of over a million dollars and whose title
+   starts with an ‘A’ or a ‘B’ are there?
 
-.. parsed-literal::
-
-    (933,)
-
-
+   - :933: Is the correct answer
+     :x: catchall feedback
 

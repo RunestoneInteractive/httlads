@@ -14,6 +14,7 @@ We start with some standard imports:
 
 .. code:: ipython3
 
+    import ast
     import pandas as pd
     import numpy as np
 
@@ -21,7 +22,7 @@ Then we load the data from a local file and checkout the data:
 
 .. code:: ipython3
 
-    df = pd.read_csv('movies_metadata.csv').dropna(axis=1, how='all')
+    df = pd.read_csv('../Data/movies_metadata.csv').dropna(axis=1, how='all')
     df.head()
 
 
