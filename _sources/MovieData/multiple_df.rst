@@ -17,9 +17,20 @@ greater than 8.
 
 
 Here we have some high-quality movies, at least according to some people.
+
+
+.. fillintheblank:: mov_highly_rated
+
+   How many highly-rated movies are in this dataset?
+
+   - :178: Is the correct answer
+     :x: catchall feedback
+
+
+
 But what about **my** opinion?
 
-Here are my favorite movies and their relative scores, create a
+Here are my favorite movies and their relative scores. Create a
 DataFrame called ``compare_votes`` that contains the title as an index
 and both the vote_average and my_vote as its columns. Also only keep the
 movies that are both my favorites and popular favorites.
