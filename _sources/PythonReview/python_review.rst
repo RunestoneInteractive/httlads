@@ -10,8 +10,19 @@ being a numerical value, a string, other things:
 .. code:: ipython3
 
     my_var = 3
+    print(type(my_var))
     my_var = "foo"
+    print(type(my_var))
     my_var = len  # Even a function!
+    print(type(my_var))
+
+
+.. parsed-literal::
+
+    <class 'int'>
+    <class 'str'>
+    <class 'builtin_function_or_method'>
+
 
 Strings can be represented with single or double quotes. Triple quotes
 make it easy to define multi-line strings:
@@ -19,9 +30,23 @@ make it easy to define multi-line strings:
 .. code:: ipython3
 
     my_var = 'foo\nbar'   # \n means newline
+    print("1:", my_var)
     my_var = "foo\nbar"
+    print("2:", my_var)
     my_var = """foo
     bar"""
+    print("3:", my_var)
+
+
+.. parsed-literal::
+
+    1: foo
+    bar
+    2: foo
+    bar
+    3: foo
+    bar
+
 
 Python can convert variable from one type to another:
 
@@ -31,8 +56,8 @@ Python can convert variable from one type to another:
     my_int = int(my_string)
     almost_pi = float("3.14159")
 
-Remember to import useful modules that add functionality to Python. For
-example:
+Remember that you can import useful modules that add functionality to
+Python. For example:
 
 .. code:: ipython3
 
@@ -47,6 +72,8 @@ example:
     26
 
 
+
+Re-run the above cell to see that it produces different outputs.
 
 For-loops can be used to iterate numerical values like in other
 programming languages with the range function:
@@ -296,7 +323,7 @@ So to add up all the odd numbers in ``my_list``:
 
 
 
-To read a file, we use the ``open`` function. Using ``with`` avoid
+To read a file, we use the ``open`` function. Using ``with`` avoids
 having to remember to close the file.
 
 .. code:: ipython3
@@ -305,14 +332,14 @@ having to remember to close the file.
         for line in md:
             pass # Do something with each line
 
-Dictionary are another very handy, built-in data type in Python (they’re
-hash tables if you’ve use another language that uses that name).
-Dictionaries can be created in a variety of ways:
+Dictionaries are another very handy, built-in data type in Python
+(they’re hash tables if you’ve use another language that uses that
+name). Dictionaries can be created in a variety of ways:
 
 .. code:: ipython3
 
     my_dict = {}   # Empty dict
-    my_dict = {'foo': 'bar', 'baz': 'bak'}
+    my_dict = {'foo': 'bar', 'baz': 'bak'} 
     # This one is handy if you have a list of pairs to turn into a dictionary:
     my_dict = dict([['foo', 'bar'], ['baz', 'bak']])
 
@@ -491,8 +518,8 @@ You can even combine filtering and other operations:
 
 
 
-Exercises
-~~~~~~~~~
+List Comprehension Exercises
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Let’s practice list comprehensions. To do so, we’re going to be using a
 list of city and state names. Fun fact: these are all `real
