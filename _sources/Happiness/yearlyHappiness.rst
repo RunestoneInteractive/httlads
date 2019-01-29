@@ -37,7 +37,7 @@ The right way to handle this problem is to use the IFERROR function of Google Sh
 
    - True
 
-     + No, the countries are different.  If you are guessing you better complete this part to find out who they are and investigate why that might be.
+     - No, the countries are different.  If you are guessing you better complete this part to find out who they are and investigate why that might be.
 
 .. fillintheblank:: act_fb_bigmoversscore
 
