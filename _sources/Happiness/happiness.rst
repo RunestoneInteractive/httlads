@@ -73,7 +73,7 @@ With a column for count and a column for the sum you can now calculate the avera
 
    What is the happiest country in East Asia?  |blank|
 
-   - :Taiwan Province: Is the correct answer
+   - :Taiwan Province.*: Is the correct answer
      :x: Keep checking
 
 
