@@ -34,7 +34,6 @@ Table of Contents
     WorldFacts/toctree.rst
     UNGeneralDebates/toctree.rst
     VideoGames/toctree.rst
-    BeerPredictions/toctree.rst
     Instacart/toctree.rst
 
 

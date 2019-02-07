@@ -18,6 +18,8 @@ We start with some standard imports:
     import pandas as pd
     import numpy as np
 
+We are providing you with data for this exercise that comes from The `Movie Database <https://www.themoviedb.org/documentation/api>`_.  To create this lesson we used the TMDb API but our book is not endorsed or certified by TMDb. Their API also provides access to data on many additional movies, actors and actresses, crew members, and TV shows.
+
 Then we load the data from a local file and checkout the data:
 
 .. code:: ipython3

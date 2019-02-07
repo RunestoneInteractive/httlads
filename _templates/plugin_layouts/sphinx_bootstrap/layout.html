@@ -11,7 +11,7 @@
     '_static'+'/processing-1.4.1.min.js',
     '_static'+'/jquery.hotkey.js',
     '_static'+'/jquery-migrate-1.2.1.min.js',
-    '_static'+'/presenter_mode.js',    
+    '_static'+'/presenter_mode.js',
   ]
 %}
 
@@ -56,7 +56,7 @@
       </div>
     </div>
 
-     
+
 
     <div class="navbar-collapse collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav navbar-right" >
@@ -211,7 +211,7 @@
 
 
 
-      
+
     </div> <!-- container -->
   </div>
 </div>
@@ -297,11 +297,11 @@
       {%- if hasdoc('copyright') %}
         {% trans path=pathto('copyright'), copyright=copyright|e %}&copy; <a href="{{ path }}">Copyright</a> {{ copyright }}.{% endtrans %}
       {%- else %}
-        {% trans copyright=copyright|e %}&copy; Copyright {{ copyright }}.{% endtrans %}
+        {% trans copyright=copyright|e %}License <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA</a> {% endtrans %}
       {%- endif %}
     {%- endif %}
     {%- if last_updated %}
-      {% trans last_updated=last_updated|e %}Last updated on {{ last_updated }}.{% endtrans %}<br/>
+      {% trans last_updated=last_updated|e %}Updated: {{ last_updated }}.{% endtrans %}<br/>
     {%- endif %}
     {%- if show_sphinx %}
       {% trans sphinx_version=sphinx_version|e %}Created using <a href="http://runestoneinteractive.org/">Runestone</a> {{ runestone_version }}.{% endtrans %}
