@@ -95,6 +95,18 @@ The big takeaway for you is that as a student in the classroom for this class, y
 
 If you find yourself in the panic zone, please seek help from your instructor and/or classmates: none of the activities in this book are intended to stump you. As you understand how to solve some simpler problems, you will develop the ability to join these solutions together to solve increasingly challenging problems with real-world applications.
 
+Datasets in this Book
+---------------------
+
+Every chapter in this book uses data.  The data that we use is real world data representing real world problems.  This is far more interesting, and complex, than the toy data sets you might find elsewhere.  It also reminds you that the real world is often messier than the carefully crafted examples you might encounter in other courses or books.
+
+When using real world data it is important to make sure that the data is licensed in a way that is appropriate for your intended use.  For example the CIA World Factbook data is licensed in the "public domain" which allows you to use the data any way you want.  You could even package the CIA data in an application for a phone and sell that application on the app store.  If you search you will see there is more than one!  Another data set called the Twitter US Airline Sentiment data set is used in several different data science textbooks and is licensed using the Creative Commons `CC-BY-NC-SA <https://creativecommons.org/licenses/by-nc-sa/4.0/>`_ license.  This license allows you to use the data, share the data and adapt the data for your own purposes as long as you give credit to the original source, share any modifications you make to the data under the same license, and it restricts you from using the data for commercial purposes (make money).  So you could not use the airline tweet data in an app that you charge money for that recommended airlines, or ranked airlines in some way.
+
+Since this textbook is open source and we are not charging you to use the book, and the book is intended for educational purposes, we believe that we are not using the data for commercial purposes.  So although we try to find data sets that are in the public domain, or are `CC-BY <https://creativecommons.org/licenses/by/4.0/>`_ only, many interesting data sets do have the non-commercial restriction.  We will still use those data sets, and we will point out their restrictions in each chapter as we explore the data.  In some cases we've even gone the extra mile to seek out the publisher of the data set and get explicit permission to use the data.
+
+This book itself is licensed `CC-BY-SA <https://creativecommons.org/licenses/by-sa/4.0/>`_ That means other instructors or authors are free to take this book as a starting point, add new material, change the examples we use if they want, remove material that isn't relevant, as long as they give us credit as the original source, and license their version of the textbook using the CC-BY-SA license.  It also means that this book is freely available for you and anyone else who wants to read it without paying for it.
+
+Copyright laws are complicated, and I am not a lawyer, so please don't take anything I've just written as legal advice!  You can learn more about copyright law and the creative commons work to help simplify the law on the `creative commons website <https://creativecommons.org/>`_
 
 How to use this Book
 --------------------
@@ -102,6 +114,7 @@ How to use this Book
 This book is designed to be used in conjunction with external tools like Google Sheets and Jupyter Notebooks.  You will need to move back and forth between browser tabs as you work with the tools and follow the instructions in the book.  You will be asked to answer the questions in the book as you read.  This is to encourage you to type in the code we have provided and experiment with it.  Learning computer science or data science is not a spectator sport.  Many students make the mistake of thinking that they can just read about it and understand it.  You really have to do it in order to understand it.  So don't fool yourself, and don't guess at the answers to the questions in the book.
 
 Everything you learn in this class builds on and reinforces the things you have learned previously. If you do fall behind, make sure you talk to your instructor so you can develop a strategy for catching up.
+
 
 
 .. |CCBYANC| image:: https://static1.squarespace.com/static/5150aec6e4b0e340ec52710a/t/524d6fb7e4b0b5e2e08118c4/1380806583508/88x31.png?format=300w
