@@ -1,3 +1,4 @@
+.. _PythonReview:
 
 Python Review
 =============
@@ -339,7 +340,7 @@ name). Dictionaries can be created in a variety of ways:
 .. code:: ipython3
 
     my_dict = {}   # Empty dict
-    my_dict = {'foo': 'bar', 'baz': 'bak'} 
+    my_dict = {'foo': 'bar', 'baz': 'bak'}
     # This one is handy if you have a list of pairs to turn into a dictionary:
     my_dict = dict([['foo', 'bar'], ['baz', 'bak']])
 
