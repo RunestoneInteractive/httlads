@@ -34,8 +34,6 @@ create and outline the map
 
 .. image:: WorldFactbook_files/WorldFactbook_55_0.png
 
-
-
 What about our encoding channels??!! The primary data needed to draw the
 map using a ``mark_geoshape`` was passed to the Chart, but that is
 really secondary data for us, what we care about is graphing the
@@ -174,9 +172,11 @@ Lets make a todo list:
 2. Once we have the new column we can follow the example from above to make a world map and show birthrate data.
 
 
+The first step is to make use of the awesome `requests module <http://docs.request.org>`_  The requests module allows us to easily communicate to databases across the web.  The documentation for it is awesome, so you should use that to learn about requests in more detail.  We'll just give you the bare bones to get started.
 
 .. code:: ipython3
 
+    import requests
     res = requests.get('https://restcountries.eu/rest/v2/alpha/usa')
     res.status_code
 
@@ -520,12 +520,12 @@ counties above and apply that to the world below.
 More Practice
 -------------
 
-Using a Web API on your own
+Using a Web API on Your Own
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Find a web API that provides some numeric data that interests you.  There is tons of data available in the world of Finance, Sports, environment, travel, etc.
+Find a web API that provides some numeric data that interests you.  There is tons of data available in the world of Finance, Sports, environment, travel, etc.  A great place to look is at `The Programmable Web <https://www.programmalbeweb.com>`_  Yes, this assignment is a bit vague and open ended but that is part of the excitement.  You get to find an API and graph some data that appeals to YOU, not something some author or professor picked out.  You might even feel like you have awesome super powers by the time you finish this project.
 
-1. Use the web api to obtain the data.
+1. Use the web api to obtain the data.  Most sites are going to provide it in JSON format similar to what we saw.
 
 2. Next create a graph of your using Altair
 
