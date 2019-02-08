@@ -1,10 +1,10 @@
 Challenge:  Screen Scraping the CIA
 ===================================
 
-Now its time to live dangerously! The country data that we have been
+The country data that we have been
 using was compiled and turned into a csv file in 2006. Much of that data
 comes from the CIA World Factbook. (not Facebook - as autocorrect so
-often thinks)
+often thinks) However, the CIA does not provide the factbook in the form of a nice convenient CSV file, so we need to do that part ourselves.
 
 The goal of this exercise is to create an up to date version of our
 country data (at least 2017 as I write this) This will be challenging
@@ -18,8 +18,7 @@ in mind.
 You can download each year of the factbook going back to the year 2000
 `from the CIA <https://www.cia.gov/library/publications/download/>`__.
 Start with the year 2017. The nice thing about this is that you can
-unzip the file on your local computer but still use ``requests`` without
-drawing attention to yourself on the CIA’s website!
+unzip the file on your local computer but still use ``requests``.
 
 The Challenge of this project is that each variable is on its own page.
 So we are going to have to combine many pages into a single coherent

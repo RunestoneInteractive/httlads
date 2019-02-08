@@ -1,7 +1,7 @@
 Introduction
 ============
 
-The World Factbook provides information on the history, people, government, economy, geography, communications, transportation, military, and transnational issues for 267 world entities.  It is a rich source of information that can be combined with many data sets.  In fact you used a form of this data in the World Happiness project.  In this module we will go more in-depth and use Pandas to explore and visualize the data.
+The World Factbook provides information on the history, people, government, economy, geography, communications, transportation, military, and transnational issues for 267 world entities.  It is a rich source of information that can be combined with many data sets.  In fact you used a form of this data in the World Happiness project.  In this module we will go more in-depth and use Pandas to explore and visualize the data.  The Factbook is in the public domain. Accordingly, it may be copied freely without permission of the Central Intelligence Agency.
 
 
 Reading List

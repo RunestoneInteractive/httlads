@@ -1,5 +1,153 @@
-Screen Scraping Country IDs (optional)
-======================================
+Graphing Infant Mortality on a map
+==================================
+
+Let us take on the seemingly simple task of plotting some of the country
+data on a map. Like we did in Google Sheets earlier. We’ll see that this
+is one area where things are not quite as simple as they are in Sheets.
+But we can make it work with a bit of effort.
+
+Altair provides us with the facility to make a blank map. But filling in
+the data requires a bit more work on our part.
+
+This is a good example of learning by example and extrapolating what you
+need to do based on understanding the example.
+
+The counties data that is passed to the chart is the data needed to
+create and outline the map
+
+.. code:: ipython3
+
+    import altair as alt
+    from vega_datasets import data
+    counties = alt.topo_feature(data.us_10m.url, 'counties')
+    unemp_data = data.unemployment.url
+
+
+    alt.Chart(counties).mark_geoshape().project(
+        type='albersUsa').properties(
+        width=500,
+        height=300
+    )
+
+
+
+
+.. image:: WorldFactbook_files/WorldFactbook_55_0.png
+
+
+
+What about our encoding channels??!! The primary data needed to draw the
+map using a ``mark_geoshape`` was passed to the Chart, but that is
+really secondary data for us, what we care about is graphing the
+unemployment data by county. That is in a different data frame with a
+column called rate.
+
+With a geoshape we can encode the county data using color. But there is
+no unemployment data in counties so we have to use a
+``transform_lookup`` to **map** from the way counties are identified in
+the geo data to our dataframe that contains unemployment data.
+
+.. code:: ipython3
+
+    unemp_data = pd.read_csv('http://vega.github.io/vega-datasets/data/unemployment.tsv',sep='\t')
+    unemp_data.head()
+
+
+
+
+.. raw:: html
+
+    <div style="max-width: 800px; overflow: scroll;">
+    <style scoped>
+        .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+        }
+
+        .dataframe tbody tr th {
+            vertical-align: top;
+        }
+
+        .dataframe thead th {
+            text-align: right;
+        }
+    </style>
+    <table border="1" class="dataframe">
+      <thead>
+        <tr style="text-align: right;">
+          <th></th>
+          <th>id</th>
+          <th>rate</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>0</th>
+          <td>1001</td>
+          <td>0.097</td>
+        </tr>
+        <tr>
+          <th>1</th>
+          <td>1003</td>
+          <td>0.091</td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td>1005</td>
+          <td>0.134</td>
+        </tr>
+        <tr>
+          <th>3</th>
+          <td>1007</td>
+          <td>0.121</td>
+        </tr>
+        <tr>
+          <th>4</th>
+          <td>1009</td>
+          <td>0.099</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+
+
+Using the transform_lookup method we can arrange for the id in the
+geographic data to be matched against the id in our unemp_data data
+frame. This allows us to make use of two data frames in one graph. The
+example below is a bit misleading in that id is used both as th lookup
+as well as the key in the call to LookupData. The lookup value refers to
+the column name in the dataframe passed to Chart where as the second
+parameter to the LookupData call is the name of the column in the
+unemp_data dataframe. It is just a coincidence that they have the same
+name in this example.
+
+.. code:: ipython3
+
+
+    alt.Chart(counties).mark_geoshape(
+    ).encode(
+        color='rate:Q'
+    ).transform_lookup(
+        lookup='id',
+        from_=alt.LookupData(unemp_data, 'id', ['rate'])
+    ).project(
+        type='albersUsa'
+    ).properties(
+        width=500,
+        height=300,
+        title='Unemployment by County'
+    )
+
+
+
+
+.. image:: WorldFactbook_files/WorldFactbook_59_0.png
+
+
+
+Using a Web API to get Country Codes
+------------------------------------
+
 
 Can you make use of the provided example and the altair documentation to
 produce a graph of the world where the countries are colored by one of
@@ -9,12 +157,8 @@ You have some work to do:
 
 In this part of the project we will:
 
--  Review the structure of a web page
--  Review the CSS Query selector language
--  Learn to use the requests module to get data from the web into our
-   program
--  Learn about the Beautiful Soup package for scraping data from a
-   webpage
+-  Learn about using web apis for data gathering
+-  Use a web api to get data that maps country codes to country numbers
 -  Learn how to add columns to a data frame using the ``map`` function.
    And possibly learn to use a lambda function if you’ve never used one
    before.
@@ -25,173 +169,151 @@ Lets make a todo list:
    numerical country id. Where can we get this data? There may be some
    CSV files with this information already in them, but this is a good
    chance to learn about a common technique used by data scientists
-   everywhere. **screen scraping**
+   everywhere. **web APIs**
+
+2. Once we have the new column we can follow the example from above to make a world map and show birthrate data.
+
+
 
 .. code:: ipython3
 
-    page = requests.get('https://www.nationsonline.org/oneworld/country_code_list.htm')
-    soup = BeautifulSoup(page.text, 'html.parser')
-
-The soup object is now a representation of the web page that we can work
-with and query. In fact if you have done any web programming you will be
-able to use the familiar CSS query selector syntax to query the object
-and get back matching elements. If you need a refresher on that or if
-you have never done anything with that then take a look at `This
-W3Schools
-reference <https://www.w3schools.com/cssref/css_selectors.asp>`__
-
-We can use ``print(soup.prettify())`` to print out all of the source for
-the web page we just downloaded. If we do some searching through that
-text we will see that each row of the table containing the data we want
-looks like this:
-
-::
-
-    <tr class="border1" style=" margin-top:3px; margin-bottom:3px">
-       <td style="width:20px">
-        <div class="flag" id="AFG">
-        </div>
-       </td>
-       <td class="abs">
-        <a href="afghanistan.htm">
-         Afghanistan
-        </a>
-       </td>
-       <td style="text-align:center">
-        AF
-       </td>
-       <td style="text-align:center">
-        AFG
-       </td>
-       <td style="text-align:center">
-        004
-       </td>
-      </tr>
-      <tr class="border1">
-       <td style="width:20px">
-        <img alt="ALA" height="12" src="../flags12/Aaland12_flag.gif" width="20"/>
-       </td>
-       <td class="abs">
-        <em>
-         Aland Islands
-        </em>
-       </td>
-       <td style="text-align:center">
-        AX
-       </td>
-       <td style="text-align:center">
-        ALA
-       </td>
-       <td style="text-align:center">
-        248
-       </td>
-      </tr>
-
-Now you may think this is a horrible mess to work with. But it is
-actually very structured:
-
-1. We have a table
-2. The table has rows (tr tags) and each row has five columns.
-3. The three letter country code is always in the 4th column
-4. The numeric country code is always in the 5th column.
-
-When you break it down like that it doesn’t seem so hard. Now the trick
-is getting past all of the extra stuff, and that is where Beautiful Soup
-is our friend!
-
-If you have not used Beautiful Soup before now would be an excellent
-time to work through this `video
-tutorial <https://www.youtube.com/watch?v=ng2o98k983k>`__ or if you
-prefer text this `blog
-post <https://www.dataquest.io/blog/web-scraping-tutorial-python/>`__ is
-good.
-
-What we want to do is search for a ``tr`` tag with the class “border1”
-Using our CSS selector language we can find all of the instances of that
-on the web page using “tr.border1” If there are multiple matches select
-will return them as a list. So lets look at the first 3 elements we get
-back from searching our page.
-
-.. code:: ipython3
-
-    soup.select("tr.border1")[:3]
-
-
-
+    res = requests.get('https://restcountries.eu/rest/v2/alpha/usa')
+    res.status_code
 
 .. parsed-literal::
 
-    [<tr class="border1" style=" margin-top:3px; margin-bottom:3px">
-     <td style="width:20px"> </td>
-     <td> </td>
-     <td style="text-align:center"> </td>
-     <td style="text-align:center"> </td>
-     <td style="text-align:center"> </td>
-     </tr>, <tr class="border1" style=" margin-top:3px; margin-bottom:3px">
-     <td style="width:20px"><div class="flag" id="AFG"></div></td>
-     <td class="abs"><a href="afghanistan.htm">Afghanistan</a></td>
-     <td style="text-align:center"> AF</td>
-     <td style="text-align:center">AFG</td>
-     <td style="text-align:center">004</td>
-     </tr>, <tr class="border1">
-     <td style="width:20px"><img alt="ALA" height="12" src="../flags12/Aaland12_flag.gif" width="20"/></td>
-     <td class="abs"><em>Aland Islands</em></td>
-     <td style="text-align:center">AX</td>
-     <td style="text-align:center">ALA</td>
-     <td style="text-align:center">248</td>
-     </tr>]
+    200
 
+The status code of 200 tells us that everything went fine.  If you make a typo in the URL you may see the familiar status code of 404 - meaning not found.
 
-
-Select returns a list of items that we can iterate over or use for
-further queryies.
-
-Let’s look at an easy way to use another select to get the ``td``
-elements from each row and print out the the text contained in the 4th
-and 5th ``td``
+We can also look at the text that was returned.
 
 .. code:: ipython3
 
-    for row in soup.select("tr.border1")[:10]:
-        col_list = row.select('td')
-        print(col_list[3].text, col_list[4].text)
-
+    res.text
 
 .. parsed-literal::
 
-       
-    AFG 004
-    ALA 248
-    ALB 008
-    DZA 012
-    ASM 016
-    AND 020
-    AGO 024
-    AIA 660
-    ATA 010
+    '{"name":"United States of America","topLevelDomain":[".us"],"alpha2Code":"US","alpha3Code":"USA","callingCodes":["1"],"capital":"Washington, D.C.","altSpellings":["US","USA","United States of America"],"region":"Americas","subregion":"Northern America","population":323947000,"latlng":[38.0,-97.0],"demonym":"American","area":9629091.0,"gini":48.0,"timezones":["UTC-12:00","UTC-11:00","UTC-10:00","UTC-09:00","UTC-08:00","UTC-07:00","UTC-06:00","UTC-05:00","UTC-04:00","UTC+10:00","UTC+12:00"],"borders":["CAN","MEX"],"nativeName":"United States","numericCode":"840","currencies":[{"code":"USD","name":"United States dollar","symbol":"$"}],"languages":[{"iso639_1":"en","iso639_2":"eng","name":"English","nativeName":"English"}],"translations":{"de":"Vereinigte Staaten von Amerika","es":"Estados Unidos","fr":"États-Unis","ja":"アメリカ合衆国","it":"Stati Uniti D\'America","br":"Estados Unidos","pt":"Estados Unidos","nl":"Verenigde Staten","hr":"Sjedinjene Američke Države","fa":"ایالات متحده آمریکا"},"flag":"https://restcountries.eu/data/usa.svg","regionalBlocs":[{"acronym":"NAFTA","name":"North American Free Trade Agreement","otherAcronyms":[],"otherNames":["Tratado de Libre Comercio de América del Norte","Accord de Libre-échange Nord-Américain"]}],"cioc":"USA"}'
 
+That looks like an ugly mess!  Fortunately its not as bad as it seems.  if you look closely at the data you will see that it starts with a `{` and ends with a `}` in fact you may realize this looks a lot like a Python dictionary!  If you thought that your are correct, this is a big long string that represents a python dictionary.  Better yet, we can convert this string into an actual Python dictionary and then access the individual key value pairs stored in the dictionary using the usual python syntax!
 
-OK, now modify the code above so instead of printing the values you
-create a dictionary. The key should be the three digit country code and
-the value should be the numeric code converted to an integer. You will
-need to check your work to make sure that the dictionary is clean. You
-don’t want keys that have whitespace in them and you may need to account
-for the occasional blank row in the table.
-
-
-Now that you have the dictionary we can take the next step of adding the
-numeric information as a new column to our wd dataframe. The most common
-way of doing this is through the use of the ``map`` function. Map is a
-very common in functional programming as well as for Pandas programmers.
-The pattern is as follows ``dataframe.column.map(afunction)`` . The
-function you pass to map should take a single parameter and return the
-value you want to go into the new column. The parameter will be the
-value from ``column`` for a particular row. So to add a column to our wd
-dataframe that contains the code number for acountry we can simply do:
+The official name for the format that we saw above is called JSON - JavaScript Object Notation.  Its a good Acronym to know, but you don't have to know anything about Javascript in order to make use of JSON!
 
 .. code:: ipython3
 
-    wd['CodeNum'] = wd.Code.map(cc_map.get)
+    usa_info = res.json()
+    usa_info
+
+.. code:: json
+
+    {'name': 'United States of America',
+     'topLevelDomain': ['.us'],
+     'alpha2Code': 'US',
+     'alpha3Code': 'USA',
+     'callingCodes': ['1'],
+     'capital': 'Washington, D.C.',
+     'altSpellings': ['US', 'USA', 'United States of America'],
+     'region': 'Americas',
+     'subregion': 'Northern America',
+     'population': 323947000,
+     'latlng': [38.0, -97.0],
+     'demonym': 'American',
+     'area': 9629091.0,
+     'gini': 48.0,
+     'timezones': ['UTC-12:00',
+       'UTC-11:00',
+       'UTC-10:00',
+       'UTC-09:00',
+       'UTC-08:00',
+       'UTC-07:00',
+       'UTC-06:00',
+       'UTC-05:00',
+       'UTC-04:00',
+       'UTC+10:00',
+       'UTC+12:00'],
+     'borders': ['CAN', 'MEX'],
+     'nativeName': 'United States',
+     'numericCode': '840',
+     'currencies': [{'code': 'USD',
+       'name': 'United States dollar',
+       'symbol': '$'}],
+     'languages': [{'iso639_1': 'en',
+       'iso639_2': 'eng',
+       'name': 'English',
+       'nativeName': 'English'}],
+     'translations': {'de': 'Vereinigte Staaten von Amerika',
+       'es': 'Estados Unidos',
+       'fr': 'États-Unis',
+       'ja': 'アメリカ合衆国',
+       'it': "Stati Uniti D'America",
+       'br': 'Estados Unidos',
+       'pt': 'Estados Unidos',
+       'nl': 'Verenigde Staten',
+       'hr': 'Sjedinjene Američke Države',
+       'fa': 'ایالات متحده آمریکا'},
+     'flag': 'https://restcountries.eu/data/usa.svg',
+     'regionalBlocs': [{'acronym': 'NAFTA',
+       'name': 'North American Free Trade Agreement',
+       'otherAcronyms': [],
+       'otherNames': ['Tratado de Libre Comercio de América del Norte',
+         'Accord de Libre-échange Nord-Américain']}],
+     'cioc': 'USA'}
+
+
+.. code:: ipython3
+
+    usa_info['timezones']
+
+.. parsed-literal::
+
+    ['UTC-12:00',
+     'UTC-11:00',
+     'UTC-10:00',
+     'UTC-09:00',
+     'UTC-08:00',
+     'UTC-07:00',
+     'UTC-06:00',
+     'UTC-05:00',
+     'UTC-04:00',
+     'UTC+10:00',
+     'UTC+12:00']
+
+
+**Check your Understanding**
+
+.. fillintheblank:: fb_api1
+
+   What is the numericCode for the country of Peru?
+
+   - :(604|'604'): Is the correct answer
+     :51:Is the callingCode for Peru.  Use that if you are phoning a friend.
+     :x: Check your answer again.
+
+.. fillintheblank:: fb_api2
+
+   Copy and paste the list of the three letter country codes of the countries that border Peru.  Do not include the square brackets:
+
+   - :'BOL', 'BRA', 'CHL', 'COL', 'ECU': Is the correct answer
+     :x: There should be five countries, in single quotes separated by a comma and a space.
+
+.. fillintheblank:: fb_api3
+
+   How many keys are in the dictionary returned for the country of Peru?
+
+   - :24: Is the correct answer
+     :x: You can use the `keys` method on the object return by `.json()` to see the list of keys.
+
+
+Now that we have a really nice way to get the additional country information, lets add the numeric country code as a new column in our `wd` dataframe.  We can think of adding the column as a transformation of our three letter country code to a number.  We can do this using the `map` function.  You learned about `map` in the Python Review section of this book. If you need to refresh your memory check here PythonReview_.
+
+When we use pandas the difference is that we don't pass the list as a parameter to map, map is a method of a Series, so we use the syntax `df.myColumn.map(function)`  This applies the function we pass as a parameter to each element of the series and constructs a brand new series.
+
+For our case we need to write a function that takes a three letter country code as a parameter and returns the numeric code we lookup as an integer, lets call it `get_num_code`.  You have all the details you need to write this function.  Once you write this function you can use as shown below:
+
+.. code:: ipython3
+
+    wd['CodeNum'] = wd.Code.map(get_num_code)
     wd.head()
 
 
@@ -368,33 +490,22 @@ dataframe that contains the code number for acountry we can simply do:
 
 
 
-So – why did ``cc_map.get`` work? Because it is a function that takes a
-single parameter, namely the three letter country code and returns the
-corresponding value in the dictionary. This is really convenient, but is
-definitely not the only way to do it. The most common ways are
-
--  use a ``lambda`` function
--  Write a function using def
-
-We can modify the statement above to use a lambda as follows:
-``wd.Code.map(lambda x: cc_map[x])`` That is a bit clearer about what’s
-going on if you understand lambdas. If you have never used lambda
-functions before you should read `This
-post <https://pythonconquerstheuniverse.wordpress.com/2011/08/29/lambda_tutorial/>`__
-
 So, now you have the information you need to use the example of the
 counties above and apply that to the world below.
 
 .. code:: ipython3
 
-    alt.Chart(countries).mark_geoshape(
+    alt.Chart(wd).mark_geoshape(
         fill='#666666',
         stroke='white'
+    ).encode( #your code here
+
+    ).transform_lookup( # your code here
+
     ).properties(
         width=750,
         height=450
     ).project('equirectangular')
-
 
 
 
@@ -409,24 +520,13 @@ counties above and apply that to the world below.
 More Practice
 -------------
 
-Screen Scraping Stock Prices
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Using a Web API on your own
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Create a graph of the closing price of Google Stock over the last year,
-using https://finance.yahoo.com/quote/GOOG/history?p=GOOG as your
-source.
+Find a web API that provides some numeric data that interests you.  There is tons of data available in the world of Finance, Sports, environment, travel, etc.
 
-1. you will need to screen scrape the table of data and make a DataFrame
-   from the results.
+1. Use the web api to obtain the data.
 
+2. Next create a graph of your using Altair
 
-
-2. Next create a line graph using Altair
-
-
-
-3. Can you figure out how to make a line graph that shows the opening
-   price as well as the closing price for each day? Hint: If you data is
-   an a tidy narrow format it will “just work” if you use the color
-   channel to encode opening and closing
-
+3. Take some time to talk about and present the data and the graph you created to the class.
