@@ -167,12 +167,21 @@ Lets make a todo list:
    numerical country id. Where can we get this data? There may be some
    CSV files with this information already in them, but this is a good
    chance to learn about a common technique used by data scientists
-   everywhere. **web APIs**
+   everywhere **web APIs**.  API stands for Application Programmer Interface. Each website will have its own convention for how you ask it for data, and the format in which the data is returned.
 
 2. Once we have the new column we can follow the example from above to make a world map and show birthrate data.
 
 
 The first step is to make use of the awesome `requests module <http://docs.request.org>`_  The requests module allows us to easily communicate to databases across the web.  The documentation for it is awesome, so you should use that to learn about requests in more detail.  We'll just give you the bare bones to get started.
+
+The website called restcountries.eu provides an interface for us to get data from their site rather than a web page.  When thinking about a web API you have to understand how to ask it for the data you want.  In this case we will use `/rest/v2/alpha/XXX`.  If we unpack that into pieces lets look at what its telling us:
+
+* `/rest` - technically REST stands for REpresentational State Transfer.  This uses the HTTP protocol to ask for and respond with data.
+* `/v2` - this is version 2 of this website's protocol
+* `/alpha` - This tells the website that the next thing we are going to pass tell it is the three letter code for the country.
+* `XXX` this can be any valid three letter country code.  for example usa
+
+Open a new tab in your browser and paste this URL - `https://restcountries.eu/rest/v2/alpha/usa`  You will see that you don't get a web page in response, but rather some information that looks like a Python dictionary.  We'll explore that more below.  We can do the same thing from a Python program using the requests library.
 
 .. code:: ipython3
 
