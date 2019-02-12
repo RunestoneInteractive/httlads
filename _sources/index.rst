@@ -32,9 +32,7 @@ Table of Contents
     PythonReview/toctree.rst
     MovieData/toctree.rst
     WorldFacts/toctree.rst
+    DataEthics/toctree.rst
     UNGeneralDebates/toctree.rst
     VideoGames/toctree.rst
     Instacart/toctree.rst
-
-
-

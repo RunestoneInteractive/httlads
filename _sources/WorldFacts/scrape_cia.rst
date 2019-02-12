@@ -4,7 +4,7 @@ Challenge:  Screen Scraping the CIA
 The country data that we have been
 using was compiled and turned into a csv file in 2006. Much of that data
 comes from the CIA World Factbook. (not Facebook - as autocorrect so
-often thinks) However, the CIA does not provide the factbook in the form of a nice convenient CSV file, so we need to do that part ourselves.
+often thinks) However, the CIA does not provide the factbook in the form of a nice convenient CSV file, so we need to convert the data from its human readable format (as a webpage) to a Pandas friendly format -- as csv file.
 
 The goal of this exercise is to create an up to date version of our
 country data (at least 2017 as I write this) This will be challenging
