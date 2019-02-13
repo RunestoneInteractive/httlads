@@ -1,3 +1,5 @@
+.. _screenscrape:
+
 Challenge:  Screen Scraping the CIA
 ===================================
 
