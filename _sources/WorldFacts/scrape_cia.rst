@@ -40,10 +40,10 @@ Lets take a look at the file structure of the downloaded data from 2017
 
 .. parsed-literal::
 
-    [34mappendix[m[m/          [34mfonts[m[m/             index.html         [34mrankorder[m[m/
-    [34mcss[m[m/               [34mgeos[m[m/              [34mjs[m[m/                [34mscripts[m[m/
-    [34mdocs[m[m/              [34mgraphics[m[m/          [34mprint[m[m/             [34mstyles[m[m/
-    [34mfields[m[m/            [34mimages[m[m/            print_Contact.pdf  [34mwfbExt[m[m/
+    appendix/          fonts/             index.html         rankorder/
+    css/               geos/              js/                scripts/
+    docs/              graphics/          print/             styles/
+    fields/            images/            print_Contact.pdf  wfbExt/
 
 
 The folder that may jump out at you is called fields, so lets look at
@@ -75,17 +75,237 @@ readable table of contents. In fact there is take a look at the file
 ``notesanddefs.html``
 
 In the spirit of starting small and working our way up to a larger
-project write some code in the cell below to scrape all of the fields
+project lets write some code to scrape all of the fields
 and the file they are in from the notesanddefs.html file.
 
+
+The webpage for that file looks like this:
+
+.. figure:: Figures/factbook_notes.png
+
+    Part of the Definitions and Notes page for the World Factbook 2017.
+
+There are a couple of important things on this page that we will want to get.  The feature name, like Administrative divisions or Airports and the link to the page that has all of the data for this feature for each country.  That is the little icon on the right hand side.
+
+When we **screen scrape** a webpage we take advantage of the fact that we can get that webpage using the requests module we learned about in the previous chapter and treat the web page as a simple text file!  Lets look at part of the text for this page.
+
+.. parsed-literal:: html
+
+			<a name="2053"></a>
+				<div id="2053" name="2053">
+					<li style="list-style-type: none; line-height: 20px; padding-bottom: 3px;" >
+					<span style="padding: 2px; display:block; background-color:#F8f8e7;" class="category">
+						<table width="100%" border="0" cellpadding="0" cellspacing="0" >
+							<tr>
+								<td style="width: 90%;" >Airports</td>
+                <td align="right" valign="middle">
+
+											<a href="../fields/2053.html#6" title="Field info displayed for all countries in alpha order."> <img src="../graphics/field_listing_on.gif" border="0" style="padding:0px;" > </a>
+
+								</td>
+							</tr>
+						</table>
+					</span>
+					<div id="data" class="category_data" style="width: 98%; font-weight: normal; background-color: #fff; padding: 5px; margin-left: 0px; border-top: 1px solid #ccc;" >
+					<div class="category_data" style="text-transform:none">
+
+						This entry gives the total number of airports or airfields recognizable from the air. The runway(s) may be paved (concrete or asphalt surfaces) or unpaved (grass, earth, sand, or gravel surfaces) and may include closed or abandoned installations.  Airports or airfields that are no longer recognizable (overgrown, no facilities, etc.) are not included. Note that not all airports have accommodations for refueling, maintenance, or air traffic control.</div>
+				</div>
+			</li>
+			</div>
+
+If you have not seen HTML before, this may look a bit confusing.  One of the skills you will develop as a data scientist is learning what to zero in on and what to ignore.  This takes practice and experience so don't be frustrated if it seems a bit overwhelming at the beginning.
+
+The two things to focus on here are:
+
+* `<td style="width: 90%;" >Airports</td><td align="right" valign="middle">`
+* `<a href="../fields/2053.html#6" title="Field info displayed for all countries in alpha order."> <img src="../graphics/field_listing_on.gif" border="0" style="padding:0px;" > </a>`
+
+The `<td>` is a tag that defines a cell in a table.  The page you see in the figure is composed of many small tables, each table has one row, and two columns.  The first column contains the feature we are interested in and the second contains the icon.  This would not be considered good page design by many web developers today, but you have to learn to work with what you've got.  The icon is embedded in an `<a>` tag.  This is the tag that is used to link one web page to another.  You click on things defined by `<a>` tags all the time.  The part `href="../fields/2053.html#6"` is a hyper-ref, that contains the URL of where the link should take you. For example `This Link <https://runestone.academy>`_ takes you to the Runestone homepage and looks like this in html `<a href="https://runestone.academy">This Link</a>`
+
+The indentation of the above code not accidental, the indentation shows the hierarchical structure of an html document.  things that are indented to the same level are siblings, things that are nested inside other things have a parent and child relationship.  We can draw a diagram that illustrates these relationships as follows:
+
+.. figure:: Figures/htmltree.png
+
+
+So, what we need to do is look at the page as a whole and see if we can find a pattern that will allow us to find the two items we are interested in.  In newer web pages this can be a bit easier as designers will use classes and more descriptive attributes to set off parts of the web page.  But we can still accomplish the goal.
+
+In this case if we look carefully we see that the each table we want is contained in a `span` and the span has the attribute `class="category"`.
+
+Now that we know the pattern we are looking for, the big question is how do we go about finding and working with each instance of what we are looking for in our web page?  We could just treat each page like a big long string and use Python's string searching facilities.  But that would be *painful* for sure. Instead we will turn to another of Python's packages that will make the job fun and very manageable.  That package is called `BeautifulSoup <https://www.crummy.com/software/BeautifulSoup/bs4/doc/>`_  The name Beautiful Soup comes from Alice in Wonderland, it is the title of a song sung by the Mock Turtle.  (Yes, its turtles everywhere).  Using BeautifulSoup we can get the web page into a form that we can use some real power search tools.  Lets see how.
+
+First lets import the module, and read the entire webpage as a string.
+
+.. code:: ipython3
+
+    from bs4 import BeautifulSoup
+    page = open('../Data/factbook/2017/docs/notesanddefs.html').read()
+    page[:200]
+
+.. parsed-literal::
+
+    '<!doctype html>\n<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->\n<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->\n<!--[if IE 8]>    <html c'
+
+Now lets have BeautifulSoup take control
+
+.. code:: ipython3
+
+    page = BeautifulSoup(page)
+    print(page.prettify()[:1000])
+
+
+.. parsed-literal::
+
+    <!DOCTYPE html>
+    <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+    <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+    <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <!--<![endif]-->
+    <html class="no-js" lang="en">
+     <!-- InstanceBegin template="/Templates/wfbext_template.dwt.cfm" codeOutsideHTMLIsLocked="false" -->
+     <head>
+      <meta charset="utf-8"/>
+      <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+      <!-- InstanceBeginEditable name="doctitle" -->
+      <title>
+       The World Factbook
+      </title>
+      <!-- InstanceEndEditable -->
+      <meta content="" name="description"/>
+      <meta content="width=device-width" name="viewport"/>
+      <link href="../css/fullscreen-external.css" rel="stylesheet" type="text/css"/>
+      <script src="../js/modernizr-latest.js">
+      </script>
+      <!--developers version - switch to specific production http://modernizr.com/download/-->
+      <script src="../js/jquery-1.8.3.min.
+
+So far this doesn't seem like much help, but lets see how we can use the search capabilities of Beautiful Soup to find all of the `span` tags with the `class` "category".  To do this we will use a search syntax that is commonly used in the web development community. It is the same syntax that is used to write the rules for the Cascading Style Sheets (CSS) that are used to make our web pages look nice.
+
+The search syntax allows us to:
+
+* search for all matching tags
+* search for all matching tags with a particular class   (Bingo!)
+* search for some tag that has the given id
+* search for all matching tags that are the children of some other tag
+* And other variations on this theme
+
+The search syntax is uses a couple of special characters to indicate relationships or to identify classes and ids
+
+* `.` is used to specify a class so `.category` finds all tags that have the attribute class=category, `tag.class` makes that more specific and limits the results to just the particular tags that have that class, for example `span.category` will only select span tags with class=category.
+* `#` is used to specify an id so `div#2053` would only match a div tag with id=2053.  `#2053` would find any tag with id=2053.  Note ids are meant to be unique within a web page so `#2053` should ony find a single tag.
+* ` ` indicates parent child relationship, so `span table` would find all of the table tags that are children of a span.  Or `div span table` would find all the tables that are children of a span that are children of a div.
+
+You can definitely get more complicated than that, but knowing only those 3 concepts is a really good start.  To make use of the search capability we will use the `select <https://www.crummy.com/software/BeautifulSoup/bs4/doc/#css-selectors>`_ method of a BeautifulSoup object.  In our case we have created a BeautifulSoup object called `page`.  select will always return a list, so you can iterate over the list or index into the list. Lets try an example:
+
+.. code:: ipython3
+
+    links = page.select('a')
+    print(len(links))
+    links[-1]
+
+.. parsed-literal::
+
+    625
+    <a class="go-top" href="#">GO TOP</a>
+
+So, this tells us that there are 625 `a` tags on the page and the last one takes us to the top of the page.
+
+.. fillintheblank:: fb_wfb_div_cout
+
+    How many `div` tags are on the page?
+
+    - :793: Is the correct answer
+      :x: Use the select method to find only a div tag.
+
+
+.. fillintheblank:: fb_wfb_tagtype
+
+    What kind of tag is the last tag to have the class of "cfclose" ?
+
+    - :button: Is correct!
+      :x: Hint: there are three items with class="cfclose" and they are all the same tag.
+
+Now lets put this all together and see if we can make a list of the columns and the paths to the files that contain the data. We will do this by creating a list of all of the `span` tags with the class category. As we iterate over each of them, we can use select to find the td tags inside the span.  There should be two of them in each.  The first will give us the name of the column and the second will have the path to the file contained in the href attribute.
+
+Starting small, lets print the column names
+
+.. code:: ipython3
+
+    cols = page.select("span.category")
+    for col in cols:
+        cells = col.select('td')
+        col_name cells[0].text
+        print(colname)
+
+
+.. parsed-literal::
+
+    Administrative divisions
+    Age structure
+    Agriculture - products
+    Airports
+    Airports - with paved runways
+    Airports - with unpaved runways
+    Area
+    Area - comparative
+    Background
+    Birth rate
+    Broadcast media
+    Budget
+
+Next lets expand on this example to get the path to the file.
+
+.. code:: ipython3
+
+    cols = page.select("span.category")
+    for col in cols:
+        cells = col.select('td')
+        colname = cells[0].text
+        links = cells[1].select('a')
+        if len(links) > 0:
+            fpath = links[0]['href']
+            print(colname, fpath)
+
+.. parsed-literal::
+
+    Administrative divisions ../fields/2051.html#3
+    Age structure ../fields/2010.html#4
+    Agriculture - products ../fields/2052.html#5
+    Airports ../fields/2053.html#6
+    Airports - with paved runways ../fields/2030.html#7
+    Airports - with unpaved runways ../fields/2031.html#8
+    Area ../fields/2147.html#10
+    Area - comparative ../fields/2023.html#11
+    Background ../fields/2028.html#12
+    Birth rate ../fields/2054.html#13
+    Broadcast media ../fields/2213.html#14
+    Budget ../fields/2056.html#15
+    Budget surplus (+) or deficit (-) ../fields/2222.html#16
+
+Success!
+
+
+.. fillintheblank:: fb_wfb_
+
+   What is the path and filename for the file containing the data for "Internet users"? |blank| note the #xxx number that comes after .html is not part of the filename.
+
+   - :../fields/2153.html: Is the correct answer
+     :../fields/2153.html#126: No, #126 is not part of the filename
+     :2153.html: Is only the filename
+     :#126: Is not part of the filename
+
+So, now we have the means to get the names and paths so we can populate a dataframe with columns and data for each country.  Your task is now to create a dataframe with as many of the same columns as you can from our world_countries.csv file.  You'll have to do your own investigation into the structure of the file to find a way to scrape the information.
 
 Loading all the data in rough form
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Your next task is to start to construct
+
 One more thing to note. You might assume that the country names will all
 be consistent from field to field but that probably isn’t the case. What
 is consistent is the two letter country code used in the URL to the
-detail information about each country. So, what you are are going to
+detail information about each country as well as the id of the tr tag in the large table that contains the data you want. So, what you are are going to
 have to do is build a data structure for each field. you will want a
 name for the field, then a dictionary that maps from the two digit
 country code to the value of the field.
@@ -270,18 +490,13 @@ this:
 
 
 
-So, we have made lot of progress but we have a lot of cleanup to do!
-
+So, we have made lot of progress but we have a lot of cleanup to do!  You will have noticed that many of the fields that we wanted to be numeric are definitely not.  Many of them are in a more human readable format than computer digestible. You should consult the documentation on the extract method in pandas as it will help you get want you want from the strings you currently have.
 
 Cleaning the data
 ~~~~~~~~~~~~~~~~~
 
 With the data now in a dataframe we can begin the hard work of cleaning.
-it up and adding our last few columns – the 3 letter and numeric country
-codes! But those are easy to get from the two digit country code using
-the same website we used before!
-
-We can do this nicely and tackle one column at a time. This is a lot of
+it up.  We can do this nicely and tackle one column at a time. This is a lot of
 string processing and type conversion work. A lot of this can be made
 easier by using regular expression pattern matching. Which is a very big
 skill to add to your arsenal. If you haven’t used them before or are out
@@ -292,6 +507,15 @@ tutorial <http://evc-cit.info/comsc020/python-regex-tutorial/>`__
 team gets a column to transform and then everyone can share their
 solution with everyone else. Or if you don’t have enough students then
 each team can take one or more columns.
+
+
+.. fillintheblank:: fb_wfb_avg_im
+
+   What is the average value for the column Infant mortality rate? Two significant digits.
+
+   - :22.13: Is the correct answer
+     :x: Check your answer again.
+
 
 
 
