@@ -2,7 +2,7 @@ Finding the Cheaters
 ====================
 
 
-In this lesson you are going to do a simplified version of the analysis outlined in the The Tennis Racket article.  I have prepared an anonymized data file for you that contains a numeric identifier instead of a name, along with the starting odds and the ending odds of a number of tennis matches.  Your goal is to identify the cheaters.  You can get the anonymous from `puzzle_anon.csv <../_static/puzzle_anon.csv`_.
+In this lesson you are going to do a simplified version of the analysis outlined in the The Tennis Racket article.  I have prepared an anonymized data file for you that contains a numeric identifier instead of a name, along with the starting odds and the ending odds of a number of tennis matches.  Your goal is to identify the cheaters.  You can get the anonymous from `puzzle_anon.csv <../_static/puzzle_anon.csv>`_.
 
 
 .. mchoice:: mc_ethics_anon_cheaters
@@ -61,12 +61,12 @@ Now that you have identified the cheaters can you match the cheaters with their 
 
    Match the numeric identifiers from the first part of the project with the real names.
 
-.. shortansswer:: sa_tennis
+.. shortanswer:: sa_tennis
 
     What are three main points that you take away from the Tennis Racket article?
 
 
-.. shortansswer:: sa_tennis_unmask
+.. shortanswer:: sa_tennis_unmask
 
     What are three main points that you take away from the unmasking article?  What ethical considerations are important to you when considering de-anonymizing some other data set?
 
