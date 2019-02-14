@@ -6,3 +6,4 @@ Ethical and Legal Considerations in Using Data
    :maxdepth: 2
 
    introDataEthics.rst
+   finding_cheaters.rst
