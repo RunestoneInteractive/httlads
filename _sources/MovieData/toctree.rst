@@ -5,6 +5,7 @@ Learning Pandas with Movie Data
    :caption: Learning Pandas
    :maxdepth: 2
 
+   jupyter_getting_started.rst
    pandas_kungfu.rst
    filtering.rst
    indexing.rst
