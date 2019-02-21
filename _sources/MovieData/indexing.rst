@@ -13,20 +13,21 @@ Before you start, here is a refresher on the index operator in Pandas.
 
 * ``df[<string>]`` — get me a column and return the Series corresponding to that column.
 * ``df[<list of strings>]`` — Get me a bunch of columns and return a DataFrame
-* ``df[<series/list of Boolean>]`` — get me the rows for each element in the listlike thing you passed me that is ``True``
 
 **Selecting Rows of a DataFrame**
 
-* ``df.loc[]`` whenever we want to access a DataFrame by row.
-* ``df.loc[<series/list of Boolean]`` — behaves just like ``df[<series/list of Boolean>]``
+* ``df[<series/list of Boolean>]`` — get me the rows for each element in the listlike thing you passed me that is ``True``  However, I think this is confusing and whenever you want to select some rows of a DataFrame you should use  ``df.loc[]``
+* ``df.loc[<series/list of Boolean>]`` — behaves just like ``df[<series/list of Boolean>]``
 * ``df.loc[<string>]`` — use the non-numeric row index and return the row(s) for that index value.
 * ``df.loc[<string1>:<string2>]`` — use the non-numeric index and return a data frame composed of the rows starting with string1 and ending with each string2
 * ``df.loc[<list/Series of strings>]`` — return a data frame composed of each row from df with an index value that matches a string in the list
 
 If you use an integer in any of the last four examples it works just like the string, but the index values are numeric instead.  What is important (and confusing) about this is that they use the index, NOT the position.  So, if you create a data frame with 4 rows of some data it will have an index that is created by default where the first row starts with 0, the next row is 1 and so on.  BUT then you sort the data frame and that causes the last row to be first and the first row to be last.  Using `df.loc[0]` on the sorted data frame will return the last row!
 
-If you want to be strictly positional you should use `df.iloc[0]` which will return the first row REGARDLESS of the index value. — `df.iloc[0:5]` is the same as doing ``df.head()``
+If you want to be strictly positional you should use ``df.iloc[0]`` which will return the first row REGARDLESS of the index value. — ``df.iloc[0:5]`` is the same as doing ``df.head()``, and ``df.iloc[[1, 3, 5, 7]]`` will return four rows: 2nd, 4th, 6th and 8th.
 
+Practice Questions
+~~~~~~~~~~~~~~~~~~
 
 Create a Series called ``time_scheduler`` that is indexed by runtime and
 has the movie’s title as its values. Note that you will need to use
