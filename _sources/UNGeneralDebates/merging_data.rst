@@ -110,7 +110,7 @@ Now that we know how the file is encoded we can read it easily
 
 
 This data frame has a lot of information and we can add all or just a
-bit of it to our united nations dataframe using Pandas’ ``merge``
+bit of it to our united nations DataFrame using Pandas’ ``merge``
 method.
 
 Before we merge lets clean up the column names on the undf data frame
@@ -690,14 +690,14 @@ Many of the problems with untidy data stem from not knowing how to handle relati
 * one to many relationships
 * many to many relationships
 
-An example of a one to one relationship would be a person and their passport. A person can have one passport, and a passport belongs to one person.  There is data that we can collect about a person and that would make a fine dataframe.  There is also data that we can collect from a passport, such as the countries that you have visited, the place the passport was issued, This also would make a fine dataframe.
+An example of a one to one relationship would be a person and their passport. A person can have one passport, and a passport belongs to one person.  There is data that we can collect about a person and that would make a fine DataFrame.  There is also data that we can collect from a passport, such as the countries that you have visited, the place the passport was issued, This also would make a fine DataFrame.
 
 
 An example of a one to many relationship is a customer and the the things they have ordered from Amazon.  A particular customer may have ordered many things, but an order can only belong to a single customer.
 
 An example of a many to many relationship is a student and a class.  A student can be enrolled in more than one class, and a class has many students that have enrolled in it.
 
-Whenever you see a dataframe that has a column that contains a list, or a dictionary that is a sure sign of untidiness!  It is also something that can be fixed an in the end will make your analysis easier.
+Whenever you see a DataFrame that has a column that contains a list, or a dictionary that is a sure sign of untidiness!  It is also something that can be fixed an in the end will make your analysis easier.
 
 Tidying the Movie Genres
 ------------------------
@@ -736,11 +736,11 @@ Even better, we can assign the result of `eval` to a variable and then we can us
 
 One way we could solve this is to duplicate all of the rows for as many genres as the movie has storing one genere on each line, but that would mean we had to needlessly duplicate all of the other information on our first movie three times!
 
-The better strategy for doing solving this problem is to create a new dataframe with just two columns.  One containing the movie's unique id number and a second containing the genre.  This allows you to use the `merge` method on the two dataframes, but only temporarily when you need to know the genre of a particular movie.
+The better strategy for doing solving this problem is to create a new DataFrame with just two columns.  One containing the movie's unique id number and a second containing the genre.  This allows you to use the `merge` method on the two DataFrames, but only temporarily when you need to know the genre of a particular movie.
 
 .. figure::  movie_genres.jpg
 
-To construct this table we need to iterate over all the rows of the dataframe and gather the genres for this movie.  For each genre of the movie we will add a an item to a list that contains the `imdb_id` of the movie and and item to a list that contains the name of the genre.  These two lists are in sync with each other so that the i\ :sup:`th` element of each list will represent the same movie.
+To construct this table we need to iterate over all the rows of the DataFrame and gather the genres for this movie.  For each genre of the movie we will add a an item to a list that contains the `imdb_id` of the movie and and item to a list that contains the name of the genre.  These two lists are in sync with each other so that the i\ :sup:`th` element of each list will represent the same movie.
 
 Here is some code you can use to construct two lists
 .. code:: ipython3
@@ -781,9 +781,9 @@ Using these two lists construct a new DataFrame with a column for `imdb_id` and 
 
 Now lets calculate the average revenue for the Comedy genre.  We'll do this is a couple of steps.
 
-1.  We will reduce the genre dataframe so it only has the Comedies left.
-2.  Then we will merge the movie data frame with the genres dataframe using the `imdb_id` column.
-3.  We will be left with a dataframe that only contains the rows for the movies that are comedies. You can think of a merge like this as being the **intersection** of the set of comedies and the set of all movies.
+1.  We will reduce the genre DataFrame so it only has the Comedies left.
+2.  Then we will merge the movie data frame with the genres DataFrame using the `imdb_id` column.
+3.  We will be left with a DataFrame that only contains the rows for the movies that are comedies. You can think of a merge like this as being the **intersection** of the set of comedies and the set of all movies.
 
 .. fillintheblank:: un_fb_merge_movies3
 
@@ -791,7 +791,7 @@ Now lets calculate the average revenue for the Comedy genre.  We'll do this is a
 
    - :(12608821.677012537|12608821.678): Is the correct answer
      :166966016647.0: Is the total revenue
-     :x: keep on trying.  Hint if merge is the problem you can use the fact that imdb_id is the only column in both dataframes!
+     :x: keep on trying.  Hint if merge is the problem you can use the fact that imdb_id is the only column in both DataFrames!
 
 
 
@@ -805,7 +805,7 @@ Now lets calculate the average revenue for the Comedy genre.  We'll do this is a
      :x: catchall feedback
 
    - :10: Is the correct answer
-     :x: Keep on it.  Hint use sort and head to create a very small dataframe that you can merge with the movies.
+     :x: Keep on it.  Hint use sort and head to create a very small DataFrame that you can merge with the movies.
 
 
 **Problems to work on**

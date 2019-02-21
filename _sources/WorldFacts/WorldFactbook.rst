@@ -2,7 +2,7 @@ World Factbook: Exploratory Data Analysis
 =========================================
 
 
-Loading data into a dataframe from a CSV file
+Loading data into a DataFrame from a CSV file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The csv file is one of the most common ways you will find data. CSV stands for

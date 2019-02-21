@@ -297,7 +297,7 @@ Success!
      :2153.html: Is only the filename
      :#126: Is not part of the filename
 
-So, now we have the means to get the names and paths so we can populate a dataframe with columns and data for each country.  Your task is now to create a dataframe with as many of the same columns as you can from our world_countries.csv file.  You'll have to do your own investigation into the structure of the file to find a way to scrape the information.
+So, now we have the means to get the names and paths so we can populate a DataFrame with columns and data for each country.  Your task is now to create a DataFrame with as many of the same columns as you can from our world_countries.csv file.  You'll have to do your own investigation into the structure of the file to find a way to scrape the information.
 
 Loading all the data in rough form
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -318,7 +318,7 @@ country code to the value of the field.
 
 It may be that the data for the field and the country is more than we
 want, but it will be easiest for now to just get the data in rough form
-then we can clean it up once we have it in a dataframe
+then we can clean it up once we have it in a DataFrame
 
 There are 177 different fields in the 2017 data. Loading all of them
 would be a huge amount of work and more data than we need. Lets start
@@ -497,7 +497,7 @@ So, we have made lot of progress but we have a lot of cleanup to do!  You will h
 Cleaning the data
 ~~~~~~~~~~~~~~~~~
 
-With the data now in a dataframe we can begin the hard work of cleaning.
+With the data now in a DataFrame we can begin the hard work of cleaning.
 it up.  We can do this nicely and tackle one column at a time. This is a lot of
 string processing and type conversion work. A lot of this can be made
 easier by using regular expression pattern matching. Which is a very big

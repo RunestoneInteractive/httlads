@@ -43,7 +43,7 @@ column called rate.
 With a geoshape we can encode the county data using color. But there is
 no unemployment data in counties so we have to use a
 ``transform_lookup`` to **map** from the way counties are identified in
-the geo data to our dataframe that contains unemployment data.
+the geo data to our DataFrame that contains unemployment data.
 
 .. code:: ipython3
 
@@ -114,9 +114,9 @@ geographic data to be matched against the id in our unemp_data data
 frame. This allows us to make use of two data frames in one graph. The
 example below is a bit misleading in that id is used both as th lookup
 as well as the key in the call to LookupData. The lookup value refers to
-the column name in the dataframe passed to Chart where as the second
+the column name in the DataFrame passed to Chart where as the second
 parameter to the LookupData call is the name of the column in the
-unemp_data dataframe. It is just a coincidence that they have the same
+unemp_data DataFrame. It is just a coincidence that they have the same
 name in this example.
 
 .. code:: ipython3
@@ -163,7 +163,7 @@ In this part of the project we will:
 
 Lets make a todo list:
 
-1. We need to add a column to our wd dataframe that contains the
+1. We need to add a column to our wd DataFrame that contains the
    numerical country id. Where can we get this data? There may be some
    CSV files with this information already in them, but this is a good
    chance to learn about a common technique used by data scientists
@@ -314,7 +314,7 @@ The official name for the format that we saw above is called JSON - JavaScript O
      :x: You can use the `keys` method on the object return by `.json()` to see the list of keys.
 
 
-Now that we have a really nice way to get the additional country information, lets add the numeric country code as a new column in our `wd` dataframe.  We can think of adding the column as a transformation of our three letter country code to a number.  We can do this using the `map` function.  You learned about `map` in the Python Review section of this book. If you need to refresh your memory check here PythonReview_.
+Now that we have a really nice way to get the additional country information, lets add the numeric country code as a new column in our `wd` DataFrame.  We can think of adding the column as a transformation of our three letter country code to a number.  We can do this using the `map` function.  You learned about `map` in the Python Review section of this book. If you need to refresh your memory check here PythonReview_.
 
 When we use pandas the difference is that we don't pass the list as a parameter to map, map is a method of a Series, so we use the syntax `df.myColumn.map(function)`  This applies the function we pass as a parameter to each element of the series and constructs a brand new series.
 

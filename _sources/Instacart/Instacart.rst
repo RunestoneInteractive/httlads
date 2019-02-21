@@ -14,7 +14,7 @@ kind of thing that Amazon has been doing successfully for years.
 .. code:: ipython3
 
     %matplotlib inline
-    
+
     import pandas as pd
     import matplotlib
     import matplotlib.pyplot as plt
@@ -59,10 +59,10 @@ aisles.csv
 
 ::
 
-    aisle_id,aisle  
-    1,prepared soups salads  
-    2,specialty cheeses  
-    3,energy granola bars  
+    aisle_id,aisle
+    1,prepared soups salads
+    2,specialty cheeses
+    3,energy granola bars
     ...
 
 departments.csv
@@ -70,10 +70,10 @@ departments.csv
 
 ::
 
-    department_id,department  
-    1,frozen  
-    2,other  
-    3,bakery  
+    department_id,department
+    1,frozen
+    2,other
+    3,bakery
     ...
 
 order_products__prio.csv
@@ -88,11 +88,11 @@ items. ``order_products_train.csv`` is much smaller (even though it has
 
 ::
 
-    order_id,product_id,add_to_cart_order,reordered  
-    1,49302,1,1  
-    1,11109,2,1  
-    1,10246,3,0  
-    ... 
+    order_id,product_id,add_to_cart_order,reordered
+    1,49302,1,1
+    1,11109,2,1
+    1,10246,3,0
+    ...
 
 orders.csv
 ~~~~~~~~~~
@@ -103,10 +103,10 @@ is the day of week.
 
 ::
 
-    order_id,user_id,eval_set,order_number,order_dow,order_hour_of_day,days_since_prior_order  
-    2539329,1,prior,1,2,08,  
-    2398795,1,prior,2,3,07,15.0  
-    473747,1,prior,3,3,12,21.0  
+    order_id,user_id,eval_set,order_number,order_dow,order_hour_of_day,days_since_prior_order
+    2539329,1,prior,1,2,08,
+    2398795,1,prior,2,3,07,15.0
+    473747,1,prior,3,3,12,21.0
     ...
 
 products.csv
@@ -115,9 +115,9 @@ products.csv
 ::
 
     product_id,product_name,aisle_id,department_id
-    1,Chocolate Sandwich Cookies,61,19  
-    2,All-Seasons Salt,104,13  
-    3,Robust Golden Unsweetened Oolong Tea,94,7  
+    1,Chocolate Sandwich Cookies,61,19
+    2,All-Seasons Salt,104,13
+    3,Robust Golden Unsweetened Oolong Tea,94,7
     ...
 
 Some exploratory data analysis questions we might do
@@ -170,11 +170,11 @@ shopping cart.
         .dataframe tbody tr th:only-of-type {
             vertical-align: middle;
         }
-    
+
         .dataframe tbody tr th {
             vertical-align: top;
         }
-    
+
         .dataframe thead th {
             text-align: right;
         }
@@ -241,11 +241,11 @@ them!
         .dataframe tbody tr th:only-of-type {
             vertical-align: middle;
         }
-    
+
         .dataframe tbody tr th {
             vertical-align: top;
         }
-    
+
         .dataframe thead th {
             text-align: right;
         }
@@ -304,7 +304,7 @@ them!
 
 The most common operation we are going to want to use with this table is
 to look up a product id to get more information about the product. So,
-lets make the product_id the index of the dataframe to make things
+lets make the product_id the index of the DataFrame to make things
 faster.
 
 .. code:: ipython3
@@ -325,11 +325,11 @@ faster.
         .dataframe tbody tr th:only-of-type {
             vertical-align: middle;
         }
-    
+
         .dataframe tbody tr th {
             vertical-align: top;
         }
-    
+
         .dataframe thead th {
             text-align: right;
         }
@@ -409,13 +409,13 @@ thought (and time!) So lets do some design first.
 1. Its a very good assumption that this data is sparse, so lets start by
    using a data structure that supports sparsity. – A dictionary of
    dictionaries is the key to this. In fact scroll back just a bit and
-   look carefully at how our dataframe was constructed. You will notice
+   look carefully at how our DataFrame was constructed. You will notice
    a dictionary like this:
 
    ::
 
-       {'doritos': {'oreos': 2, 'snickers':6}, 
-        'oreos': {'doritos':2, 'snickers':3}, 
+       {'doritos': {'oreos': 2, 'snickers':6},
+        'oreos': {'doritos':2, 'snickers':3},
         'snickers': {'doritos': 6, 'oreos':3}
         }
 
@@ -474,11 +474,11 @@ ordernum,product
         .dataframe tbody tr th:only-of-type {
             vertical-align: middle;
         }
-    
+
         .dataframe tbody tr th {
             vertical-align: top;
         }
-    
+
         .dataframe thead th {
             text-align: right;
         }
@@ -553,8 +553,8 @@ our dictionary based matrix no problem.
             for j in cart.loc[i+1:]:
                 print(f"products {cart[i]} and {j} in cart")
         print("--")
-            
-        
+
+
 
 
 .. parsed-literal::
@@ -645,11 +645,11 @@ our dictionary based matrix no problem.
         .dataframe tbody tr th:only-of-type {
             vertical-align: middle;
         }
-    
+
         .dataframe tbody tr th {
             vertical-align: top;
         }
-    
+
         .dataframe thead th {
             text-align: right;
         }
@@ -734,11 +734,11 @@ knew that the order numbers started at 1 and went sequentailly.
         .dataframe tbody tr th:only-of-type {
             vertical-align: middle;
         }
-    
+
         .dataframe tbody tr th {
             vertical-align: top;
         }
-    
+
         .dataframe thead th {
             text-align: right;
         }
@@ -801,7 +801,7 @@ knew that the order numbers started at 1 and went sequentailly.
     def log_progress(sequence, every=None, size=None, name='Items'):
         from ipywidgets import IntProgress, HTML, VBox
         from IPython.display import display
-    
+
         is_iterator = False
         if size is None:
             try:
@@ -816,7 +816,7 @@ knew that the order numbers started at 1 and went sequentailly.
                     every = int(size / 200)     # every 0.5%
         else:
             assert every is not None, 'sequence is iterator, set every'
-    
+
         if is_iterator:
             progress = IntProgress(min=0, max=1, value=1)
             progress.bar_style = 'info'
@@ -825,7 +825,7 @@ knew that the order numbers started at 1 and went sequentailly.
         label = HTML()
         box = VBox(children=[label, progress])
         display(box)
-    
+
         index = 0
         try:
             for index, record in enumerate(sequence, 1):
@@ -857,7 +857,7 @@ knew that the order numbers started at 1 and went sequentailly.
 .. code:: ipython3
 
     %%time
-    
+
     groups = order_products.groupby('order_id')
     unique_orderids = order_products.order_id.unique()
     mat = {}
@@ -899,7 +899,7 @@ and then delete them later.
         for k,v in mat[i].items():
             if v == 1:
                 delkeys.append((i,k))
-    
+
     len(delkeys)
 
 
@@ -921,7 +921,7 @@ Yep, 21.9 million entries in our matrix are 1’s
 .. code:: ipython3
 
     %%time
-    
+
     smat = pd.SparseDataFrame(mat)
     smat.head()
 
@@ -961,7 +961,7 @@ row with the maximum value for that column.
 .. code:: ipython3
 
     %%time
-    
+
     maxcc = 0
     maxrow = None
     maxcol = None
@@ -1027,7 +1027,7 @@ most commonly purchased together?
 .. code:: ipython3
 
     print(f"product {maxrow} was purchased with {maxcol} {maxcc} times")
-    
+
 
 
 
@@ -1088,11 +1088,11 @@ that are bought with Doritos.
         .dataframe tbody tr th:only-of-type {
             vertical-align: middle;
         }
-    
+
         .dataframe tbody tr th {
             vertical-align: top;
         }
-    
+
         .dataframe thead th {
             text-align: right;
         }
@@ -1272,7 +1272,7 @@ that are bought with Doritos.
     13377                    Swaddlers Diapers Jumbo Pack Size
     13801                Free & Clear Overnight Diapers Size 5
     14009                      Snug & Dry Diapers Step 1 Jumbo
-                                   ...                        
+                                   ...
     35954           Little Movers Diapers, Giant Pack - Size 5
     36200                      Baby Dry Diapers Size 6 Diapers
     36453                             Size 3 M  Skulls Diapers
@@ -1310,7 +1310,7 @@ that are bought with Doritos.
 .. code:: ipython3
 
     # snickers - 14261
-    
+
     for idx, val in get_all_cocart(smat, 682).nlargest(10).iteritems():
         print(get_product_byid(products,idx), val)
 
@@ -1464,7 +1464,7 @@ this to build our chord diagram and other graph like visualizations.
 .. code:: ipython3
 
     %%time
-    
+
     tco = flowdf.groupby('order_id')
     for order in tco.groups.keys():
         contents = tco.get_group(order).sort_values('add_to_cart_order')
@@ -1477,9 +1477,9 @@ this to build our chord diagram and other graph like visualizations.
             except:
                 print("bad index", start_aisle, row['aisle_id'], type(start_aisle), type(row['aisle_id']))
             start_aisle = row['aisle_id']
-            
-    
-        
+
+
+
 
 
 .. parsed-literal::
@@ -1588,11 +1588,11 @@ thing and see.
         .dataframe tbody tr th:only-of-type {
             vertical-align: middle;
         }
-    
+
         .dataframe tbody tr th {
             vertical-align: top;
         }
-    
+
         .dataframe thead th {
             text-align: right;
         }
@@ -1784,7 +1784,7 @@ thing and see.
 
     aisle_mat.sort_values('total', ascending=False, inplace=True)
     aisle_mat.head()
-        
+
 
 
 
@@ -1797,11 +1797,11 @@ thing and see.
         .dataframe tbody tr th:only-of-type {
             vertical-align: middle;
         }
-    
+
         .dataframe tbody tr th {
             vertical-align: top;
         }
-    
+
         .dataframe thead th {
             text-align: right;
         }
@@ -2063,11 +2063,11 @@ thing and see.
         .dataframe tbody tr th:only-of-type {
             vertical-align: middle;
         }
-    
+
         .dataframe tbody tr th {
             vertical-align: top;
         }
-    
+
         .dataframe thead th {
             text-align: right;
         }

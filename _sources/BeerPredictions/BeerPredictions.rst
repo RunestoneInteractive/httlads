@@ -29,13 +29,13 @@ Craft Beer Ratings
     import altair as alt
     import requests
     import nltk
-    from nltk.corpus import stopwords 
+    from nltk.corpus import stopwords
     from sklearn.model_selection import train_test_split
     from sklearn.linear_model import LinearRegression, LogisticRegression
     from sklearn.metrics import accuracy_score
     from sklearn.preprocessing import StandardScaler, MinMaxScaler
     from graphviz import Digraph
-    
+
     matplotlib.style.use('ggplot')
 
 
@@ -99,11 +99,11 @@ make the best ratings possible.
         .dataframe tbody tr th:only-of-type {
             vertical-align: middle;
         }
-    
+
         .dataframe tbody tr th {
             vertical-align: top;
         }
-    
+
         .dataframe thead th {
             text-align: right;
         }
@@ -254,7 +254,7 @@ Checking for missing data
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The easiest way to check for missing data in pandas is to use the
-``isna`` method on the dataframe. Used alone this gives you a giant
+``isna`` method on the DataFrame. Used alone this gives you a giant
 table of True/False values depending on whether a particular cell in the
 dataframe has a value. We are interested in knowing if any of our
 columns have missing values and we can use the any function to reduce
@@ -332,9 +332,9 @@ that we are getting the ratings only for a particular beer.
 
 .. code:: ipython3
 
-    
+
     dot = Digraph(comment='The Round Table')
-    
+
     dot.node('A', 'Load Data')
     dot.node('B', 'Group Data')
     dot.node('L', 'Aggregate')
@@ -342,7 +342,7 @@ that we are getting the ratings only for a particular beer.
     dot.node('J', 'Join back to original')
     dot.node('F', 'filter out extra columns')
     dot.edges(['AB', 'BL', 'LS', 'SJ', 'JF'])
-    
+
     dot
 
 
@@ -368,11 +368,11 @@ that we are getting the ratings only for a particular beer.
         .dataframe tbody tr th:only-of-type {
             vertical-align: middle;
         }
-    
+
         .dataframe tbody tr th {
             vertical-align: top;
         }
-    
+
         .dataframe thead th {
             text-align: right;
         }
@@ -558,11 +558,11 @@ What are the highest rated styles?
         .dataframe tbody tr th:only-of-type {
             vertical-align: middle;
         }
-    
+
         .dataframe tbody tr th {
             vertical-align: top;
         }
-    
+
         .dataframe thead th {
             text-align: right;
         }
@@ -714,11 +714,11 @@ between each pair of variables.
         .dataframe tbody tr th:only-of-type {
             vertical-align: middle;
         }
-    
+
         .dataframe tbody tr th {
             vertical-align: top;
         }
-    
+
         .dataframe thead th {
             text-align: right;
         }
@@ -831,11 +831,11 @@ table and puts the in the row with the coordinates as columns.
         .dataframe tbody tr th:only-of-type {
             vertical-align: middle;
         }
-    
+
         .dataframe tbody tr th {
             vertical-align: top;
         }
-    
+
         .dataframe thead th {
             text-align: right;
         }
@@ -973,7 +973,7 @@ as you could just build a model the memorized everything and got 100%
 but in the real world you need to make predictions for things that you
 have not seen before.
 
-The first thing we’ll do create two simplified dataframes one that
+The first thing we’ll do create two simplified DataFrames one that
 contains a column containing the taste rating for each beer and a second
 column that contains the overall rating. Next we’ll randomly select 80%
 of the data to use in creating our linear regression model, and 20% of
@@ -1099,7 +1099,7 @@ There are two primary (and easy) metrics that we can use at this point
 .. code:: ipython3
 
     from sklearn.metrics import mean_absolute_error, mean_squared_error
-    
+
     print("MAE = ", mean_absolute_error(test_y, preds))
     print("MSE = ", mean_squared_error(test_y, preds))
 
@@ -1126,7 +1126,7 @@ Let us compare the distribution of the predictions
 
 .. code:: ipython3
 
-    alt.Chart(pd.DataFrame({'rating': np.concatenate((preds.ravel()[:2500], test_y['review/overall'].values[:2500])), 
+    alt.Chart(pd.DataFrame({'rating': np.concatenate((preds.ravel()[:2500], test_y['review/overall'].values[:2500])),
                             'label':['pred']*2500 + ['actual']*2500 })).mark_bar().encode(
         x=alt.X('rating', bin=True), y='count()', color='label')
 
@@ -1588,12 +1588,12 @@ As we have done before, let’s clean up the review text by:
 .. code:: ipython3
 
     c = Counter()
-    
+
     tl = 0
     for row in bf.text_list:
         c.update(row)
         tl += len(row)
-    
+
     print('total number of words ', tl)
     print('unique words = ', len(c.keys()))
 
@@ -1619,7 +1619,7 @@ As we have done before, let’s clean up the review text by:
     for w in c:
         if c[w] < 50:
             ll += 1
-    
+
     ll
 
 
@@ -1710,10 +1710,10 @@ First lets remove all of the words used less than 50 times.
     for w in c:
         if c[w] < 50:
             remove_list.append(w)
-    
+
     for w in remove_list:
         del c[w]
-    
+
     len(c)
 
 
@@ -1737,11 +1737,11 @@ computation for each of the 37,500 rows Thats 133,762,500 computations!
 .. code:: ipython3
 
     %%time
-    
+
     for w in c.keys():
         bf[w] = bf.text_list.map(lambda x : 1 if w in x else 0)
-        
-        
+
+
 
 
 .. parsed-literal::
@@ -1752,8 +1752,8 @@ computation for each of the 37,500 rows Thats 133,762,500 computations!
 
 OK, now lets prepare our data for testing. We will need the following:
 
-1. One dataframe with only the 1-hot encoded words
-2. One dataframe with the overall ratings
+1. One DataFrame with only the 1-hot encoded words
+2. One DataFrame with the overall ratings
 
 Then we can use the train test split utility as usual to create our
 training and test data
@@ -1767,7 +1767,7 @@ training and test data
 .. code:: ipython3
 
     %%time
-    
+
     model = LinearRegression(n_jobs=-1)
     model.fit(train_X, train_y)
 
@@ -1845,11 +1845,11 @@ a 1 value. You can see that quite a few are less than .01 or less than
         .dataframe tbody tr th:only-of-type {
             vertical-align: middle;
         }
-    
+
         .dataframe tbody tr th {
             vertical-align: top;
         }
-    
+
         .dataframe thead th {
             text-align: right;
         }
@@ -2081,7 +2081,7 @@ a 1 value. You can see that quite a few are less than .01 or less than
 
 
 
-If we apply the sum function to the the entire dataframe it will give us
+If we apply the sum function to the the entire DataFrame it will give us
 a series with the sum for each column. We can sum up that series to tell
 us the number of cells with 1.
 
@@ -2089,7 +2089,7 @@ us the number of cells with 1.
 
     num_ones = worddf.sum().sum()
     total_cells = len(worddf.columns) * len(worddf)
-    
+
     print(num_ones, total_cells, num_ones/total_cells)
 
 
@@ -2127,11 +2127,11 @@ Building a word frequency graph
         .dataframe tbody tr th:only-of-type {
             vertical-align: middle;
         }
-    
+
         .dataframe tbody tr th {
             vertical-align: top;
         }
-    
+
         .dataframe thead th {
             text-align: right;
         }
@@ -2346,7 +2346,7 @@ about the words at the top. Lets look at the average rating of beers
 that contain the top 10 and bottom 10
 
 This is a very interesting little puzzle in itself. We want to select
-the rows from the bf dataframe where at least one of the words in the
+the rows from the bf DataFrame where at least one of the words in the
 text of the review is in the list of either the top weights or the
 bottom weights. Another way to think about this is to think of the
 review as a set of words and the top weights as a set of words. What we
@@ -2420,7 +2420,7 @@ all of the words and then divide each count by the total.
     tot = sum(c.values(), 0.0)
     for w in c:
         c[w] /= tot
-    
+
 
 
 .. code:: ipython3
@@ -2474,15 +2474,15 @@ Exercise: Are Frequency and Weight correlated?
 
 OK, before we move on let’s try one little improvement, lets use the
 frequency score instead of a 1 when a word is present. Again this will
-take a bit of time to update the columns in the dataframe.
+take a bit of time to update the columns in the DataFrame.
 
 .. code:: ipython3
 
     %%time
-    
+
     for w in c.keys():
         bf[w] = bf.text_list.map(lambda x : c[w] if w in x else 0)
-    
+
     bf.head()
 
 
@@ -2501,7 +2501,7 @@ take a bit of time to update the columns in the dataframe.
 .. code:: ipython3
 
     %%time
-    
+
     model = LinearRegression(n_jobs=-1)
     model.fit(train_X, train_y)
 
@@ -2544,11 +2544,11 @@ take a bit of time to update the columns in the dataframe.
         .dataframe tbody tr th:only-of-type {
             vertical-align: middle;
         }
-    
+
         .dataframe tbody tr th {
             vertical-align: top;
         }
-    
+
         .dataframe thead th {
             text-align: right;
         }
@@ -2608,11 +2608,11 @@ take a bit of time to update the columns in the dataframe.
         .dataframe tbody tr th:only-of-type {
             vertical-align: middle;
         }
-    
+
         .dataframe tbody tr th {
             vertical-align: top;
         }
-    
+
         .dataframe thead th {
             text-align: right;
         }
@@ -2717,11 +2717,11 @@ A violin plot using Seaborn
         .dataframe tbody tr th:only-of-type {
             vertical-align: middle;
         }
-    
+
         .dataframe tbody tr th {
             vertical-align: top;
         }
-    
+
         .dataframe thead th {
             text-align: right;
         }
@@ -2778,26 +2778,26 @@ Thats a lot of information captured in a single plot.
     lower_whisker = 'min(predict):Q'
     upper_box = 'q3(predict):Q' # returns the lower boundary of the upper quartile of values.
     upper_whisker = 'max(predict):Q'
-    
+
     # Compose each layer individually
     lower_plot = alt.Chart(comp_dfs, width=300).mark_rule().encode(
         y=alt.Y(lower_whisker, axis=alt.Axis(title="prediction")),
         y2=lower_box,
         x='actual:O'
     )
-    
+
     middle_plot = alt.Chart(comp_dfs,width=300).mark_bar(size=5.0).encode(
         y=lower_box,
         y2=upper_box,
         x='actual:O'
     )
-    
+
     upper_plot = alt.Chart(comp_dfs, width=300).mark_rule().encode(
         y=upper_whisker,
         y2=upper_box,
         x='actual:O'
     )
-    
+
     middle_tick = alt.Chart(comp_dfs, width=300).mark_tick(
         color='white',
         size=5.0
@@ -2805,7 +2805,7 @@ Thats a lot of information captured in a single plot.
         y='median(predict):Q',
         x='actual:O',
     )
-    
+
     # the plus operator overlays the individual plots and the result is displayed all together.
     lower_plot + upper_plot + middle_plot + middle_tick
 
