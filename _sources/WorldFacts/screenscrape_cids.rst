@@ -172,7 +172,7 @@ Lets make a todo list:
 2. Once we have the new column we can follow the example from above to make a world map and show birthrate data.
 
 
-The first step is to make use of the awesome `requests module <http://docs.request.org>`_  The requests module allows us to easily communicate to databases across the web.  The documentation for it is awesome, so you should use that to learn about requests in more detail.  We'll just give you the bare bones to get started.
+The first step is to make use of the awesome `requests module <http://http://docs.python-requests.org>`_  The requests module allows us to easily communicate to databases across the web.  The documentation for it is awesome, so you should use that to learn about requests in more detail.  We'll just give you the bare bones to get started.
 
 The website called restcountries.eu provides an interface for us to get data from their site rather than a web page.  When thinking about a web API you have to understand how to ask it for the data you want.  In this case we will use `/rest/v2/alpha/XXX`.  If we unpack that into pieces lets look at what its telling us:
 
@@ -296,7 +296,7 @@ The official name for the format that we saw above is called JSON - JavaScript O
    What is the numericCode for the country of Peru?
 
    - :(604|'604'): Is the correct answer
-     :51:Is the callingCode for Peru.  Use that if you are phoning a friend.
+     :51: Is the callingCode for Peru.  Use that if you are phoning a friend.
      :x: Check your answer again.
 
 .. fillintheblank:: fb_api2
@@ -304,6 +304,7 @@ The official name for the format that we saw above is called JSON - JavaScript O
    Copy and paste the list of the three letter country codes of the countries that border Peru.  Do not include the square brackets:
 
    - :'BOL', 'BRA', 'CHL', 'COL', 'ECU': Is the correct answer
+     :200: No, 200 is the status code of the request not
      :x: There should be five countries, in single quotes separated by a comma and a space.
 
 .. fillintheblank:: fb_api3
@@ -497,14 +498,26 @@ For our case we need to write a function that takes a three letter country code 
     <p>5 rows × 23 columns</p>
     </div>
 
+You can make a gray map of the world like this:
 
+.. code:: ipython3
+
+    countries = alt.topo_feature(data.world_110m.url, 'countries')
+
+    alt.Chart(countries).mark_geoshape(
+        fill='#666666',
+        stroke='white'
+    ).properties(
+        width=750,
+        height=450
+    ).project('equirectangular')
 
 So, now you have the information you need to use the example of the
 counties above and apply that to the world below.
 
 .. code:: ipython3
 
-    alt.Chart(wd).mark_geoshape(
+    base = alt.Chart(countries).mark_geoshape(
         fill='#666666',
         stroke='white'
     ).encode( #your code here
@@ -516,6 +529,7 @@ counties above and apply that to the world below.
         height=450
     ).project('equirectangular')
 
+    base
 
 
 .. image:: WorldFactbook_files/WorldFactbook_74_0.png
@@ -532,7 +546,7 @@ More Practice
 Using a Web API on Your Own
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Find a web API that provides some numeric data that interests you.  There is tons of data available in the world of Finance, Sports, environment, travel, etc.  A great place to look is at `The Programmable Web <https://www.programmalbeweb.com>`_  Yes, this assignment is a bit vague and open ended but that is part of the excitement.  You get to find an API and graph some data that appeals to YOU, not something some author or professor picked out.  You might even feel like you have awesome super powers by the time you finish this project.
+Find a web API that provides some numeric data that interests you.  There is tons of data available in the world of Finance, Sports, environment, travel, etc.  A great place to look is at `The Programmable Web <https://www.programmableweb.com>`_  Yes, this assignment is a bit vague and open ended but that is part of the excitement.  You get to find an API and graph some data that appeals to YOU, not something some author or professor picked out.  You might even feel like you have awesome super powers by the time you finish this project.
 
 1. Use the web api to obtain the data.  Most sites are going to provide it in JSON format similar to what we saw.
 
