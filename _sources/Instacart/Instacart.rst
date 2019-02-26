@@ -49,10 +49,10 @@ Reading List
 The Data
 --------
 
-| This is a BIG data set. The largest file has over 32 million rows.
-| We don’t want to start there as that is crazy big. So we have a
-  smaller file, still with 1.3 million rows that we can use to start
-  with.
+The data we will be using in this module is shopping data from Instacart.   The Instacart Online Grocery Shopping Dataset 2017, Accessed from https://www.instacart.com/datasets/grocery-shopping-2017 on October 15, 2018.  This is a BIG data set. The largest file has over 32 million rows.
+We don’t want to start there as that is crazy big. So we have a
+smaller file, still with 1.3 million rows that we can use to start
+with.
 
 aisles.csv
 ~~~~~~~~~~
