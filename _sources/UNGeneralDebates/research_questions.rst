@@ -86,8 +86,15 @@ Regular expression methods for strings
      :economy: Good, and the correct answer is very similar.
      :x: catchall feedback
 
-   - :1033:
+   - :1033: Is the correct answer
      :256: make sure you use ``extractall``
+
+We can use our new skills to do a minor bit of cleanup on the text.  Many of the speeches start with an invisible non-breaking space character followed by a newline (you will see it as `\n` in the text.  We can eliminate this with:
+
+.. code:: ipython3
+
+    undf['text'] = undf.text.str.replace('\ufeff','') # remove strange character
+    undf['text'] = undf.text.str.strip() # eliminate whitespace from beginning and end
 
 
 

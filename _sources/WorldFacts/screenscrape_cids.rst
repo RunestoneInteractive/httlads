@@ -328,10 +328,9 @@ For our case we need to write a function that takes a three letter country code 
 
 
 
-
 .. raw:: html
 
-    <div>
+    <div style="max-width: 800px; overflow: scroll;">
     <style scoped>
         .dataframe tbody tr th:only-of-type {
             vertical-align: middle;
@@ -498,6 +497,12 @@ For our case we need to write a function that takes a three letter country code 
     <p>5 rows × 23 columns</p>
     </div>
 
+
+.. warning:: DataFrame Gotcha
+
+    Be careful,  ``wd.CodeNum`` and ``wd['CodeNum']`` are ALMOST always interchangeable, except for when you create a new column.  when you create a new column you MUST use ``wd['CodeNum'] = blah new column expression``  If you write `wd.CodeNum = blah new column expression` it will add a ``CodeNum`` attribute to the ``wd`` object rather than creating a new column.  This is consistent with standard python syntax of allowing you to add an attribute on the fly to any object.
+ 
+
 You can make a gray map of the world like this:
 
 .. code:: ipython3
@@ -535,6 +540,7 @@ counties above and apply that to the world below.
 .. image:: WorldFactbook_files/WorldFactbook_74_0.png
 
 
+Your final result should look like this:
 
 .. image:: WorldFactbook_files/WorldFactbook_75_0.png
 
