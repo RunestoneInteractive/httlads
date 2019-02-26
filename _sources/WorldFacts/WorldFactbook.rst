@@ -251,10 +251,14 @@ Describing the Data
 -  Inustry % GDP
 -  Service % GDP
 
-The Climate numbers are as follows: 1. Dry tropical or tundra and ice,
-classification B and E. 2. Wet tropical, classification A. 3. Temperate
-humid subtropical and temperate continental, classification Cfa, Cwa,
-and D. 4. Dry hot summers and wet winters,
+The Climate numbers are as follows:
+
+1. Dry tropical or tundra and ice
+2. Wet tropical
+3. Temperate humid subtropical and temperate continental
+4. Dry hot summers and wet winters
+
+Somehow some values of 1.5 and 2.5 have crept in, so we will assume that 1.5 is mixed tropical and 2.5 mixed.
 
 .. code:: ipython3
 
