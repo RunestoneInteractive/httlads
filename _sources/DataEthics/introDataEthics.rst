@@ -6,7 +6,7 @@ Reading List
 
 * `Ten Simple Rules for Responsible Big Data Research <https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005399>`_
 
-* `The Tennis Racket <https://www.buzzfeednews.com/article/heidiblake/the-tennis-racket#.aswkbqBxw8>`_
+* `The Tennis Racket <https://www.buzzfeednews.com/article/heidiblake/the-tennis-racket#.aswkbqBxw8>`_  With the followup that unmasks the suspects `Finding the Tennis Suspects <https://medium.com/@rkaplan/finding-the-tennis-suspects-c2d9f198c33d>`_
 
 * `A Lone Data Whiz is Fighting AirBnB -- and Winning <https://www.wired.com/2017/02/a-lone-data-whiz-is-fighting-airbnb-and-winning/>`_
 
