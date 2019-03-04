@@ -65,7 +65,7 @@ Here is a complete list of the string functions that the str object knows.  Most
 
 Regular expression methods for strings
 
-* ``match()	`` -- returns True/False if the string matches
+* ``match()`` -- returns True/False if the string matches
 * ``extract()``
 * ``extractall()``
 * ``findall()``
@@ -116,6 +116,7 @@ Research Questions
     popular word as is freedom and human rights. what about HIV or
     terrorism or global warming. Compare two phrases like ‘global
     warming’ and ‘climate change’
+
 7. When did the internet become a popular topic?
 
 Text Complexity

@@ -260,29 +260,6 @@ The Climate numbers are as follows:
 
 Somehow some values of 1.5 and 2.5 have crept in, so we will assume that 1.5 is mixed tropical and 2.5 mixed.
 
-.. code:: ipython3
-
-    wd.to_csv('countries_of_the_world.csv', columns='Country',
-     'Code',
-     'Region',
-     'Population',
-     'Area',
-     'Pop. Density',
-     'Coastline',
-     'Net migration',
-     'Infant mortality',
-     'GDP',
-     'Literacy',
-     'Phones',
-     'Arable',
-     'Crops',
-     'Other',
-     'Climate',
-     'Birthrate',
-     'Deathrate',
-     'Agriculture',
-     'Industry',
-     'Service'])
 
 .. code:: ipython3
 
