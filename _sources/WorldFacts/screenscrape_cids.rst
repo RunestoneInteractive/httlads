@@ -315,7 +315,7 @@ The official name for the format that we saw above is called JSON - JavaScript O
      :x: You can use the `keys` method on the object return by `.json()` to see the list of keys.
 
 
-Now that we have a really nice way to get the additional country information, lets add the numeric country code as a new column in our `wd` DataFrame.  We can think of adding the column as a transformation of our three letter country code to a number.  We can do this using the `map` function.  You learned about `map` in the Python Review section of this book. If you need to refresh your memory check here PythonReview_.
+Now that we have a really nice way to get the additional country information, lets add the numeric country code as a new column in our `wd` DataFrame.  We can think of adding the column as a transformation of our three letter country code to a number.  We can do this using the `map` function.  You learned about `map` in the Python Review section of this book. If you need to refresh your memory check here :ref:`PythonReview`.
 
 When we use pandas the difference is that we don't pass the list as a parameter to map, map is a method of a Series, so we use the syntax `df.myColumn.map(function)`  This applies the function we pass as a parameter to each element of the series and constructs a brand new series.
 
