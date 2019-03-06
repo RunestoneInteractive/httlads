@@ -93,7 +93,7 @@ What about counting the number of times that ALL the countries mention Cuba?  Yo
 
 The answer should look like this:
 
-..code:: ipython3
+.. code:: ipython3
 
     code
     CAN     0
@@ -279,6 +279,7 @@ Admittedly, this table is a bit hard to read in this format.  Its much easier to
 
 .. raw:: html
 
+    <div>
     <table border="1" class="dataframe">
     <thead>
         <tr style="text-align: right;">
@@ -327,8 +328,9 @@ Admittedly, this table is a bit hard to read in this format.  Its much easier to
         </tr>
     </tbody>
     </table>
+    </div>
 
-The challenge is to see if you can do it with just three lines of code.
+You will notice that this is flipped from our original, but we can easily fix that later.   The challenge is to see if you can do it with just three lines of code.
 
 
 **Check your understanding**
@@ -470,13 +472,22 @@ The arrows on the graph indicate which country is referencing which other countr
 
 In an adjacency matrix the cells indicate if there is an edge from the row node to the column node.  The values in the cells are often used to represent a weight or cost to go from one node to the other.  A 0 in the cell indicates that there is not a relationship.
 
-There are two graph packages we can use, networkx and graphviz.  Its not clear that one is the clear winner, each have some strengths and weaknesses and in fact they can be used together to some extent.  I personally like graphviz a little better since the file format is easy to edit and understand and I think it draws prettier graphs out of the box.  The graph above was drawn using graphviz.
+A second common way to represent a graph is through an **edge list** and our narrow representation that we built originally for this project fits that description perfectly. Even the names we chose for the columns (speaking_c, referenced_c) suggest a graph like relationship.
+
+There are two graph packages we can use, ``networkx`` and ``graphviz``.  Its not clear that one is the clear winner, each have some strengths and weaknesses and in fact they can be used together to some extent.  I personally like graphviz a little better since the file format is easy to edit and understand and I think it draws prettier graphs out of the box.  The graph above was drawn using graphviz.  You will need to install both networkx and graphviz on your computer.
+
+Both packages are well documented:
+
+* `Graphviz <https://graphviz.readthedocs.io/en/stable/index.html>`_
+* `Overview of NetworkX <https://networkx.github.io/documentation/stable/>`_
+
+Lets look at some example code that shows how easy it was to build the graph above.
 
 .. code:: ipython3
 
     from graphviz import Digraph
     g = Digraph()
-    g.edge('USA', 'Mexico',label='27')
+    g.edge('USA', 'Mexico')
     g.edge('Mexico', 'Cuba')
     g.edge('Cuba', 'USA')
     g.edge('USA', 'Cuba')
@@ -484,7 +495,7 @@ There are two graph packages we can use, networkx and graphviz.  Its not clear t
     g
 
 
-Using networkx we can build the graph directly from the dataframe, but the graph produced is not very aesthetically pleasing.
+Using networkx we can build the graph directly from the DataFrame, but the graph produced is not very aesthetically pleasing.
 
 .. code:: ipython3
 
@@ -497,10 +508,11 @@ Using networkx we can build the graph directly from the dataframe, but the graph
     nx.draw(g, pos)
     nx.draw_networkx_labels(g, pos)
 
-produces the rather ugly graph:
+The above produces the rather unattractive graph:
 
 .. image:: Figures/networkx1.png
 
+Its missing the arrows, and the text doesn't fit, and the bright red is a bit alarming for no good reason.  Not to mention that the layout is not very easy to understand.
 We can immediately do much better by saving the graph we created with networkx as a dot file and then reading it back again and letting graphviz render the graph for us!
 
 .. code:: ipython3
@@ -518,4 +530,20 @@ Which produces the much nicer looking:
 
 
 As with many tools its easy to get to the 80% done in a pretty quick way, but if you want to make a presentation worthy graph that last 20% can take some work.  If we want to clean up the labels on the nodes to use the real names of the countries and add labels to the edges we'll have to combine what we have learned from the above examples and add our edges to a graphviz graph manually.
+
+Pick a sub region to focus on and build a graph where you label the edges with the fraction of times mentioned, using the real name of the country as the title of each node.
+
+
+
+Projects for Further Exploration
+--------------------------------
+
+* Graph visualizations also lend themselves to literature.  Check out this visualization of the interactions between the characters in the `Lord of the Rings <http://lotrproject.com/statistics/books/cooccurrences>`_. You could make a similar visualization of a book.  `Project Gutenberg <https://www.gutenberg.org/>`_ offers over 58,000 books that you are free to use for nearly any purpose.
+
+* Since graphing each country of the world individually is a bit difficult, build a heatmap or graph of how the countries within each subregion reference each other.  There are about 22 sub regions in the `country_codes <../_static/country_codes.csv>`_ data file.  Which is quite manageable.
+
+* Find or create a group of topics and build a heatmap or a graph to visualize which countries or regions are most interested in those topics.  Where we are defining interest to be somehow related to the number of times those topics come up in their UN speeches.
+
+* **Challenge** A `chord diagram <https://python-graph-gallery.com/chord-diagram/>`_ is another great way to visualize relationships.  Create a chord diagram to visualize the relationships between countries.
+
 
