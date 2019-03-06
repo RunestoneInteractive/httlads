@@ -15,14 +15,14 @@ Diameter Price
 18       18
 ======== =====
 
-Your first task is to put the data into a spreadsheet and make a scatter plot of the diameter versus the price.  What you can see pretty easily from this graph is that as the diameter of the pizza goes up, so does the price.  
+Your first task is to put the data into a spreadsheet and make a scatter plot of the diameter versus the price.  What you can see pretty easily from this graph is that as the diameter of the pizza goes up, so does the price.
 
 If you were to draw a straight line through the points that came as close as possible to all of them, it would look like this:
 
 .. image:: Figures/pizza_best_fit.png
 
 
-The orange line called the trend-line or the regression line is our best guess at a line that describes the data.  This is important because we can come up with an equation for the line that will allow us to predict the y value (price) for any given x value (diameter).  Linear regression is all about finding the best equation for the line.  
+The orange line called the trend-line or the regression line is our best guess at a line that describes the data.  This is important because we can come up with an equation for the line that will allow us to predict the y value (price) for any given x value (diameter).  Linear regression is all about finding the best equation for the line.
 
 How do we do that?  There are actually several different ways we can come up with the equation for the line.  We will look at two different solutions, one is a closed form equation that will work for any problem like this in just two dimensions.  The second is a solution that will allow us to generalize the idea of a best fit line to many dimensions!
 
@@ -58,7 +58,7 @@ To do this we will follow these steps:
 
 Let's develop some intuition for this whole thing by writing a function and trying to minimize the error.
 
-You will write three functions ``compute_y(x, m, b)``, ``compute_all_y(list_of_x)`` This shoudl use ``compute_y`` and ``compute_mse(list_of_known, list_of_predictions)``  
+You will write three functions ``compute_y(x, m, b)``, ``compute_all_y(list_of_x)`` This shoudl use ``compute_y`` and ``compute_mse(list_of_known, list_of_predictions)``
 
 .. activecode:: act_pizza_4
 
@@ -74,3 +74,13 @@ At this point your algorithms ability to 'learn' is limited by how much you chan
 For two dimensional data there is even a closed form solution to this problem that one could derive using a bit of calculus.  It is worthwhile to have the students do this to see that their solution is very very close to the solution you get from a simple formula that slope = covariance / variance and intercept = avg(y) - slope * avg(x).  Write a function that will calculate the slope and intercept using this method and compare the slope and intercept with your previous error.
 
 .. activecode:: act_pizza_6
+
+
+.. raw:: html
+
+    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSi5xtRfw_mfKTMf9uOxk8UjvKGF3VikCmRy2DfFNgvd_C83oZyayF1yPUpiHvf78oonHMzW96rxynp/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" width="90%" height="300px">
+    </iframe>
+
+.. https://docs.google.com/spreadsheets/d/12_vrntk_SZq53b5w3-qxRzeJ7HoCQE6AQbXu3UeDfbY/edit?usp=sharing
+
+

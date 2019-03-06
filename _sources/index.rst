@@ -35,4 +35,5 @@ Table of Contents
     DataEthics/toctree.rst
     UNGeneralDebates/toctree.rst
     VideoGames/toctree.rst
+    BikeRental/toctree.rst
     Instacart/toctree.rst
