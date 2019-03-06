@@ -816,3 +816,33 @@ Now lets calculate the average revenue for the Comedy genre.  We'll do this is a
 4. Use a similar process to create a data frame of collections and their movies.  Which collection has the most movies?
 5. Again a similar process can be used for spoken_languages.  How many movies are there for each language?  Is English the most popular movie language?
 
+
+**Lesson Feedback**
+
+.. poll:: LearningZone_8_2
+    :option_1: Comfort Zone
+    :option_2: Learning Zone
+    :option_3: Panic Zone
+
+    During this lesson I was primarily in my...
+
+.. poll:: Time_8_2
+    :option_1: Very little time
+    :option_2: A reasonable amount of time
+    :option_3: More time than is reasonable
+
+    Completing this lesson took...
+
+.. poll:: TaskValue_8_2
+    :option_1: Don't seem worth learning
+    :option_2: May be worth learning
+    :option_3: Are definitely worth learning
+
+    Based on my own interests and needs, the things taught in this lesson...
+
+.. poll:: Expectancy_8_2
+    :option_1: Definitely within reach
+    :option_2: Within reach if I try my hardest
+    :option_3: Out of reach no matter how hard I try
+
+    For me to master the things taught in this lesson feels...
