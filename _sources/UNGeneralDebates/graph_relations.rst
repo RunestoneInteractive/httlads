@@ -547,3 +547,33 @@ Projects for Further Exploration
 * **Challenge** A `chord diagram <https://python-graph-gallery.com/chord-diagram/>`_ is another great way to visualize relationships.  Create a chord diagram to visualize the relationships between countries.
 
 
+**Lesson Feedback**
+
+.. poll:: LearningZone_8_5
+    :option_1: Comfort Zone
+    :option_2: Learning Zone
+    :option_3: Panic Zone
+
+    During this lesson I was primarily in my...
+
+.. poll:: Time_8_5
+    :option_1: Very little time
+    :option_2: A reasonable amount of time
+    :option_3: More time than is reasonable
+
+    Completing this lesson took...
+
+.. poll:: TaskValue_8_5
+    :option_1: Don't seem worth learning
+    :option_2: May be worth learning
+    :option_3: Are definitely worth learning
+
+    Based on my own interests and needs, the things taught in this lesson...
+
+.. poll:: Expectancy_8_5
+    :option_1: Definitely within reach
+    :option_2: Within reach if I try my hardest
+    :option_3: Out of reach no matter how hard I try
+
+    For me to master the things taught in this lesson feels...
+

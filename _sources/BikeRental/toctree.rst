@@ -5,5 +5,6 @@ Pizza and Bike Rental
    :caption: Introduction
    :maxdepth: 2
 
+   bike_share_intro.rst
    pizza_regression.rst
 

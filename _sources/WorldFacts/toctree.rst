@@ -9,4 +9,4 @@ CIA World Factbook Data
    WorldFactbook.rst
    screenscrape_cids.rst
    scrape_cia.rst
-   government_types
+   government_types.rst
