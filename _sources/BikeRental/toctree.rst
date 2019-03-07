@@ -10,5 +10,10 @@ Pizza and Bike Rental
    :maxdepth: 2
 
    bike_share_intro.rst
+   introduction_to_SQL.rst
+   filtering_SQL.rst
+   sorting_SQL.rst
+   aggregation_SQL.rst
+   joining_SQL.rst
    pizza_regression.rst
 
