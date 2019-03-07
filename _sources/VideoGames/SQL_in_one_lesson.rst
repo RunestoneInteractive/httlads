@@ -1,4 +1,8 @@
 
+..  Copyright (C)  Google, Runestone Interactive LLC
+    This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
+
+
 SQL in one lesson
 =================
 
@@ -352,10 +356,10 @@ since 2010:
 .. code:: ipython3
 
     %%sql
-    
+
     SELECT rank, name, year, publisher, platform
     FROM vgsale
-    WHERE year >= 2010 
+    WHERE year >= 2010
     LIMIT 20;
 
 
@@ -825,10 +829,10 @@ we could run:
 .. code:: ipython3
 
     %%sql
-    
+
     SELECT name, year, publisher, global_sales
-    FROM vgsale 
-    ORDER BY year 
+    FROM vgsale
+    ORDER BY year
     LIMIT 10
 
 
@@ -920,9 +924,9 @@ recent games in the order they were published.
 
     %%sql
     SELECT name, year, publisher, global_sales
-    FROM vgsale 
+    FROM vgsale
     WHERE year > 2015
-    ORDER BY year 
+    ORDER BY year
     LIMIT 10
 
 
@@ -1018,7 +1022,7 @@ numbers before the first ‘A’ game).
 .. code:: ipython3
 
     %%sql
-    
+
     SELECT name, platform
     FROM vgsale
     WHERE year = 2014
@@ -1137,10 +1141,10 @@ ourselves which publishers have published games that have sold more than
 .. code:: ipython3
 
     %%sql
-    SELECT publisher, COUNT(*) 
-    FROM vgsale 
-    WHERE global_sales > 10 
-    GROUP BY publisher 
+    SELECT publisher, COUNT(*)
+    FROM vgsale
+    WHERE global_sales > 10
+    GROUP BY publisher
 
 
 .. parsed-literal::
@@ -1197,9 +1201,9 @@ Let’s take a closer look at the 4 rows for Sony:
 .. code:: ipython3
 
     %%sql
-    SELECT * 
-    FROM vgsale 
-    WHERE global_sales > 10 
+    SELECT *
+    FROM vgsale
+    WHERE global_sales > 10
     AND publisher = 'Sony Computer Entertainment'
 
 
@@ -1301,8 +1305,8 @@ example, the following query should fail:
     %%sql
     SELECT publisher, genre
     FROM vgsale
-    WHERE global_sales > 10 
-    GROUP BY publisher 
+    WHERE global_sales > 10
+    GROUP BY publisher
 
 
 .. parsed-literal::
@@ -1371,8 +1375,8 @@ top-selling games that were sold by running:
     %%sql
     SELECT publisher, SUM(global_sales)
     FROM vgsale
-    WHERE global_sales > 10 
-    GROUP BY publisher 
+    WHERE global_sales > 10
+    GROUP BY publisher
 
 
 .. parsed-literal::
@@ -1436,7 +1440,7 @@ sold a total of 50 million games or more we would run:
     SELECT publisher, SUM(global_sales)
     FROM vgsale
     GROUP BY publisher
-    HAVING SUM(global_sales) >= 50 
+    HAVING SUM(global_sales) >= 50
 
 
 .. parsed-literal::
@@ -1940,7 +1944,7 @@ table names but the result is a mess:
 
 .. code:: ipython3
 
-    %%sql 
+    %%sql
     SELECT *
     FROM vgsale, platformsale
     LIMIT 10
@@ -2199,7 +2203,7 @@ for both of these columns:
 
 .. code:: ipython3
 
-    %%sql 
+    %%sql
     SELECT *
     FROM vgsale, platformsale
     WHERE vgsale.platform = platformsale.platform_abbreviation
@@ -2450,7 +2454,7 @@ We can check the size of the resulting table by running:
 
 .. code:: ipython3
 
-    %%sql 
+    %%sql
     SELECT COUNT(*)
     FROM vgsale, platformsale
     WHERE vgsale.platform = platformsale.platform_abbreviation
@@ -2490,9 +2494,9 @@ how those tables are to be joined:
 
 .. code:: ipython3
 
-    %%sql 
-    SELECT name, global_sales, platformsale.platform, units_sold 
-    FROM vgsale JOIN platformsale 
+    %%sql
+    SELECT name, global_sales, platformsale.platform, units_sold
+    FROM vgsale JOIN platformsale
     ON vgsale.platform = platformsale.platform_abbreviation
     LIMIT 10
 
@@ -2584,9 +2588,9 @@ each game installed, we can run:
 
 .. code:: ipython3
 
-    %%sql 
-    SELECT name, global_sales, platformsale.platform, units_sold, global_sales/units_sold AS sale_percentage 
-    FROM vgsale JOIN platformsale 
+    %%sql
+    SELECT name, global_sales, platformsale.platform, units_sold, global_sales/units_sold AS sale_percentage
+    FROM vgsale JOIN platformsale
     ON vgsale.platform = platformsale.platform_abbreviation
     WHERE units_sold is not null
     ORDER BY sale_percentage DESC
@@ -2697,9 +2701,9 @@ million copies.
 
 .. code:: ipython3
 
-    %%sql 
+    %%sql
     SELECT rank, name
-    FROM vgsale JOIN platformsale 
+    FROM vgsale JOIN platformsale
     ON vgsale.platform = platformsale.platform_abbreviation
     WHERE year = released_year
     AND global_sales >= 10

@@ -1,3 +1,7 @@
+
+..  Copyright (C)  Google, Runestone Interactive LLC
+    This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
+
 .. _h756a797b286237b36797fb1f277d18:
 
 Part III Comparing Happiness Data across years
