@@ -1,4 +1,8 @@
 
+..  Copyright (C)  Google, Runestone Interactive LLC
+    This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
+
+
 .. _h651bd6f7d3125664c517b446bc5d4b:
 
 Part I Exploring the Data
