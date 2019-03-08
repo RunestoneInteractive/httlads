@@ -11,7 +11,7 @@ The goal of this section is to be able to do some comparison of the different fo
 2. Learn about the ``pivot_table`` and ``pivot`` methods
 3. Practice adding new data to a data frame.
 
-If you haven't already you should review the example of :ref:`screenscrape`. This will show you the basics of reading and grabbing information out of a page.  when you are comfortable with that you can dig in to getting the information from `this page <../../_static/government_type.html>`_
+If you haven't already you should review the example of :ref:`screenscrape`. This will show you the basics of reading and grabbing information out of a page.  when you are comfortable with that you can dig in to getting the information from `this page <../_static/government_type.html>`_
 
 Now Lets look at making a pivot table.  We will leave pivoting on the form of government up to you.  Instead, we will do an example to see how climate the region of the world, and parts of the economy might be related.  We have a column for region, we have a column for climate, and we have information on the economy.  What we want to do is summarize that information in a table where we have a row for each region, and a column for each classification of climate.  Then in each cell we would like to summarize the fraction of the economy that comes from agriculture.
 

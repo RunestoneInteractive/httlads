@@ -377,7 +377,11 @@ and list the results in order of highest average to lowest average.
         </tr>
     </table>
 
+* What is the userid of the Member with the most rides?
 
+* what is the userid of the Casual rider with the most rides?
+
+* What is the station that has the most rides that start and end at the same station?
 
 **Lesson Feedback**
 
