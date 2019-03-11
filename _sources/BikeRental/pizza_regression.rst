@@ -69,6 +69,13 @@ Now lets make use of the Solver functionality to search for and find the best va
      :x: Check your settings and try running solver again
 
 
+If you are having any trouble, your setup should look like this.
+
+.. figure:: Figures/Solver_screen.png
+
+    Setting up Solver to find the slope and intercept
+
+
 Closed form Solution
 --------------------
 
