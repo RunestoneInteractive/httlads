@@ -215,3 +215,32 @@ In many cases large data files are available in compressed format.  Usually this
 The ``os.listdir`` call on line 5 looks at the directory and returns a Python list containing all the filenames of files there.  The ``with ZipFile...`` line opens the ``.zip`` file as an object that you can manipulate.  In particular we would like to be able to find out all the files that have been compressed and stored in our zip, and we would like to be able to open them just like any other file.  Except that when we use ``myzip.open`` on line 12 Python will automatically uncompress the file for us.  The rest of lines simply read use ``pd.read_csv`` to read in the uncompressed data, create a DataFrame, and store that DataFrame in a list for us to use when we ``pd.concat`` all of the DataFrames into a single large DataFrame.
 
 
+**Lesson Feedback**
+
+.. poll:: LearningZone_10_5
+    :option_1: Comfort Zone
+    :option_2: Learning Zone
+    :option_3: Panic Zone
+
+    During this lesson I was primarily in my...
+
+.. poll:: Time_10_5
+    :option_1: Very little time
+    :option_2: A reasonable amount of time
+    :option_3: More time than is reasonable
+
+    Completing this lesson took...
+
+.. poll:: TaskValue_10_5
+    :option_1: Don't seem worth learning
+    :option_2: May be worth learning
+    :option_3: Are definitely worth learning
+
+    Based on my own interests and needs, the things taught in this lesson...
+
+.. poll:: Expectancy_10_5
+    :option_1: Definitely within reach
+    :option_2: Within reach if I try my hardest
+    :option_3: Out of reach no matter how hard I try
+
+    For me to master the things taught in this lesson feels...
