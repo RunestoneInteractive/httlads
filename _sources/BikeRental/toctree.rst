@@ -18,4 +18,4 @@ Pizza and Bike Rental
    pandas_and_SQL.rst
    time_series_bikes.rst
    pizza_regression.rst
-
+   multi_pizza.rst
