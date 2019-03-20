@@ -857,6 +857,13 @@ member type Member.
      :Massachusetts Ave & Dupont Circle NW: In order to be counted, rides must start and end at the same station
      :x: catchall feedback
 
+.. fillintheblank:: sql_join_4
+
+   What is the name of the most popular ending station for rides that begin at Massachusetts Ave & Dupont Circle NW?
+
+   - :15th & P St NW: Is the correct answer
+     :Massachusetts Ave & Dupont Circle NW: Rides do not have to start and end here.
+     :x: catchall feedback
 
 **Lesson Feedback**
 
