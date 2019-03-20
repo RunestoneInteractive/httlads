@@ -1,7 +1,7 @@
 Predicting Daily Bike Rentals
 =============================
 
-Lets say you are a new data scientist working for Bikes-R-Us, and your boss comes to you and asks you to develop a model for predicting bike rentals in the future.  The company is trying to decide whether to invest in more bikes so they can keep stations better stocked.  Its late in 2011 and what you have to work with so far is the databases of rental information with which we began this chapter.
+Lets say you are a new data scientist working for Bikes-R-Us, and your boss comes to you and asks you to develop a model for predicting bike rentals in the future.  The company is trying to decide whether to invest in more bikes so they can keep stations better stocked.  Its early in 2013 and what you have to work with is a database of rental information similar to the one with which we began this chapter.  The difference is that we have two full years of data to work with 2011 and 2012.  Because 2010 was a partial and startup year that data has been discounted as too unreliable.  You can get this data from the bikeshare_11_12.db file.
 
 You have many questions:  How do you start?  How will you know if you are even on the right track to building a good model?  What data can I use as features when I build the model?  Should I be trying to predict rentals hour by hour? day by day?  month by month?
 
@@ -58,24 +58,24 @@ Your task list for this project is as follows
 
    How many days of data do you have in the transformed data set (before the train test split)
 
-   - :468: Is the correct answer
+   - :731: Is the correct answer
      :x: catchall feedback
 
 .. fillintheblank:: modelv1_test_len
 
    How many days of data do you have in the test set?
 
-   - :94: Is the correct answer
-     :117: Looks like you did not set the test_size parameter to .2
-     :93.6: Good calculation, but we cannot have a fraction of a row in our data.
-     :x: Hint:  The correct size is between 90 and 100.  You can calculate it yourself if you got the previous question correct.  If not, you need to get that one right before doing this one.
+   - :147: Is the correct answer
+     :183|182: Looks like you did not set the test_size parameter to .2
+     :146.2: Good calculation, but we cannot have a fraction of a row in our data.
+     :x: Hint:  The correct size is between 140 and 160.  You can calculate it yourself if you got the previous question correct.  If not, you need to get that one right before doing this one.
 
 .. fillintheblank:: modelv1_mae
 
    What is the mean absolute error of your predictions?
 
-   - :918.82.*: Is the correct answer
-     :1366395.01.*: Is the mean squared error
+   - :1236.04.*: Is the correct answer
+     :2547739.2.*: Is the mean squared error
      :x: Make sure you use the ``mean_absolute_error`` function
 
 
@@ -103,7 +103,7 @@ Don't get discouraged that our first try wasn't that great.  You might have even
 
  The representation of the date we chose is definitely simple, but you know from the time series visualization, that numbering the days that way would leave out a lot of valuable information.  You can see in the graph above that there are seasonal variations in the data as well as variations due to the day of the week.  We also know that as we went from year to year, overall rentals kept growing.  So, instead of encoding our date as a single number lets encode the date as by adding features for year, month, day and even weekday.  Hopefully by adding more features that capture the kinds of variation we know exist will help our model.
 
-This kind of development of the model is
+This kind of development of the model is very common.  Start with a simple idea and then refine it, learning what you can from the previous refinements.  Sometimes an idea you think will make an improvement actually turns out to hurt more than it helps, so you have to abandon it.  This is part of the joy and the frustration of data science is that it is an experimental science.  There is not necessarily one "right way" to get the best answer.  In this particular example we might have to admit that we can only do so much.  The shape of the time series is clearly NOT a linear function, but we will do the best with the tools we have.  The truth is there are other approaches besides linear regression that will ultimately work better for data like this, but we can still learn a lot by trying to see how far we can push regression.
 
 Version 2.0 Task List
 ---------------------
@@ -114,4 +114,80 @@ Version 2.0 Task List
 * Make a new set of predictions for the test days
 * calculate mean squared error, mean absolute error, and r2 for this new model against the known values.
 * Plot the predictions against daynum to see how they look with more features
+
+.. fillintheblank:: modelv2_mae
+
+   What is the mean absolute error of your predictions?
+
+   - :1043.6.*: Is the correct answer
+     :2196800.74.*: Is the mean squared error
+     :x: Make sure you use the ``mean_absolute_error`` function
+
+.. fillintheblank:: modelv2_r2
+
+   What is your r2_score for this model?
+
+   - :0.46.*|0.459.*|.459.*|.46.*: Is the correct answer
+     :incorrect: Is feedback on a specific incorrect
+     :x: catchall feedback
+
+
+Lets make one more refinement to our version 2.0 model.  The problem with using month number in the hopes that we will capture seasonality is that it just doesn't work.  Numbering the months from 1 to 12 implies something linear about the months.  So although there is a linear relationship in that June comes after May on the calendar for a problem where we care about seasonality it doesn't work.  The winter months include 11, 12, 1, and 2.  Probably even 3 if you live in the Midwest.
+
+Let us do a bit more feature engineering to see if we can make an improvement.  Your first thought is probably to add a new column called season, however numbering the seasons winter=0, spring=1, summer=2, fall=3 is not really a solution.  Because there is not an ordered relationship between the seasons.  spring is not more than winter or better than winter, so assigning 0 to winter and 1 to spring is actually misleading.  There are many examples of this such as encoding gender, or location information, or marital status. The general rule is that if the data is not ordinal then don't encode it as ordinal!  But how do we encode nominal data then to make use of it in our work? The solution to this in data science is to encode this information using a technique called **one-hot encoding**.  To use one-hot encoding we'll add four new columns to our model, one for each season.  If the date for a particular row of the model is in one of the winter months then the value for winter will be 1 and the other season columns will be 0.  Similarly if the date for a row corresponds to a date in the summer then the summer column will be one and all the other season related columns will be 0.  This allows us to capture the seasonal information and use it in our model.
+
+
+
+Version 2.5 Task List
+---------------------
+
+* Update your DataFrame to do one-hot encoding for each of the seasons.
+* Retrain and retest your model
+
+
+Cool!  That gave us some real improvement.
+
+.. fillintheblank:: modelv25_mae
+
+   What is the mean absolute error of your predictions?
+
+   - :846.2.*: Is the correct answer
+     :1633379.38.*: Is the mean squared error
+     :x: Make sure you use the ``mean_absolute_error`` function
+
+
+.. fillintheblank:: modelv25_r2
+
+   What is your r2 value for this model?
+
+   - :0.598|0.6.*|.6.*|0.59.*: Is the correct answer
+     :incorrect: Is feedback on a specific incorrect
+     :x: catchall feedback
+
+After you have done so yourself, take a look and see if your graph matches this one.
+
+.. reveal:: modelv25_viz
+
+     .. image:: Figures/modelv25_compare.png
+
+
+Version 3.0
+-----------
+
+Now that you have been through the cycle a couple of times, you are probably saying to yourself.  Hey, there are other factors to bike rental besides just the day of the week or the season!  And you are correct, it may be that the weather on a particular day is more important than the day of the week!  Who wants to rent a bike and ride through Washington DC in the rain or snow?
+
+So, lets add some weather information.  This could be a good chance to practice your WebAPI skills again, or even do some screen scraping from a source that allows it.  But we also have some weather data for you in a table in the database.
+
+The weather data looks like this:
+
+* weathersit:
+  - 1: Clear, Few clouds, Partly cloudy, Partly cloudy
+  - 2: Mist + Cloudy, Mist + Broken clouds, Mist + Few clouds, Mist
+  - 3: Light Snow, Light Rain + Thunderstorm + Scattered clouds, Light Rain + Scattered clouds
+  - 4: Heavy Rain + Ice Pallets + Thunderstorm + Mist, Snow + Fog
+
+* temp : Normalized temperature in Celsius. The values are derived via (t-t_min)/(t_max-t_min), t_min=-8, t_max=+39 (only in hourly scale)
+* atemp: Normalized "feels like" temperature in Celsius. The values are derived via (t-t_min)/(t_max-t_min), t_min=-16, t_max=+50 (only in hourly scale)
+* hum: Normalized humidity. The values are divided to 100 (max)
+* windspeed: Normalized wind speed. The values are divided to 67 (max)
 
