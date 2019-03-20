@@ -744,8 +744,8 @@ bikes available, we can run:
 
 
 
-Exercise 4
-----------
+Practice Exercises
+------------------
 
 Use ``JOIN`` to show the station IDs of active stations and what’s the
 duration of bike trip originating and ending at the same station with
@@ -831,6 +831,31 @@ member type Member.
             <td>1470.4208333333333</td>
         </tr>
     </table>
+
+.. fillintheblank:: sql_join_1
+
+   What is the name of the station where the most rides start?
+
+   - :Massachusetts Ave & Dupont Circle NW: Is the correct answer
+     :11th & M St NW: Has the fewest rides
+     :x: incorrect
+
+.. fillintheblank:: sql_join_2
+
+   What is the name of the station where the most rides end?
+
+   - :Massachusetts Ave & Dupont Circle NW: Is the correct answer - That must be a very busy station!
+     :Anacostia Ave & Benning Rd NE / River Terrace: Is feedback on a specific incorrect
+     :x: catchall feedback
+
+
+.. fillintheblank:: sql_join_3
+
+   What is the name of the station where most rides both start and end?
+
+   - :USDA / 12th & Independence Ave SW: Is the correct answer
+     :Massachusetts Ave & Dupont Circle NW: In order to be counted, rides must start and end at the same station
+     :x: catchall feedback
 
 
 **Lesson Feedback**

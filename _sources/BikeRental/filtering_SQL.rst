@@ -183,8 +183,8 @@ type of Member:
 
 
 
-Exercise 1
-----------
+Practice Exercises
+------------------
 
 Figure out how to get all the trips on the bike with id of ``W01274``
 and only include rides which are shorter than 15 minutes.
@@ -205,7 +205,24 @@ and only include rides which are shorter than 15 minutes.
         Done.
 
 
+Get the ending station and the duration of all of the bike trips originating at station ``31111`` that lasted 8 hours or more.
 
+.. fillintheblank:: sql_trips_31111
+
+   How many trips match the criteria above?
+
+   - :21: Is the correct answer
+     :20|22: Close, but count again
+     :x: Incorrect 8 hours is 28,800 seconds
+
+
+.. fillintheblank:: sql_trips_return
+
+   How many trips longer than 8 hours started and ended and station 31111 by casual riders?
+
+   - :4: Is the correct answer
+     :5: Is the total for both members and casual riders
+     :x: catchall feedback
 
 .. raw:: html
 
