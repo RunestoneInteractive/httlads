@@ -304,8 +304,8 @@ bike trips for all subscriber types
 
 
 
-Exercise 3
-----------
+Practice Exercises
+------------------
 
 Compute the average duration of bike trips for each starting station id
 and list the results in order of highest average to lowest average.
@@ -377,11 +377,43 @@ and list the results in order of highest average to lowest average.
         </tr>
     </table>
 
-* What is the userid of the Member with the most rides?
+.. fillintheblank:: sql_agg_1
 
-* what is the userid of the Casual rider with the most rides?
+   What is the bike_number |blank| and count |blank| of the bike with the most rides?
 
-* What is the station that has the most rides that start and end at the same station?
+   - :W00893: Is the correct answer
+     :W01189: Is the fewest
+     :x: incorrect
+
+   - :1584: Is the correct answer
+     :1: Is the fewest number of rides
+     :x: incorrect
+
+.. fillintheblank:: sql_agg_2
+
+   How many total rides by Members |blank| and Casual users |blank|
+
+   - :979814: Is the correct answer
+     :246949: You have the numbers reversed...
+     :x: incorrect
+
+   - :246949: Is correct!
+     :979814: You have your numbers backward
+     :x: incorrect
+
+.. fillintheblank:: sql_agg_3
+
+   What is the station that has the most rides that start and end at the same station? |blank| How many rides started there?
+
+   - :31217: Is the correct answer
+     :31200: Is in second
+     :x: incorrect
+
+   - :3135: Is the correct answer
+     :1: Is the fewest number of rides
+     :x: Incorrect
+
+
 
 **Lesson Feedback**
 
