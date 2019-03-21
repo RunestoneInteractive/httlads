@@ -64,7 +64,7 @@ Getting Started with the Bike Data
 ==================================
 
 In this Lesson, we will be hands on and try out SQL with the Capital
-bike sharing dataset, hosted on a SQLLite database.
+bike sharing dataset, hosted on a SQLLite database. To get started you will need to download `bikeshare.db <../static/bikeshare.db>`_ and move it to your folder where you have your notebooks.
 
 There are just two lines we need to execute at the top of our notebook,
 One line loads an extension so that we can write SQL in the cells of our

@@ -1,7 +1,7 @@
 Predicting Daily Bike Rentals
 =============================
 
-Lets say you are a new data scientist working for Bikes-R-Us, and your boss comes to you and asks you to develop a model for predicting bike rentals in the future.  The company is trying to decide whether to invest in more bikes so they can keep stations better stocked.  Its early in 2013 and what you have to work with is a database of rental information similar to the one with which we began this chapter.  The difference is that we have two full years of data to work with 2011 and 2012.  Because 2010 was a partial and startup year that data has been discounted as too unreliable.  You can get this data from the bikeshare_11_12.db file.
+Lets say you are a new data scientist working for Bikes-R-Us, and your boss comes to you and asks you to develop a model for predicting bike rentals in the future.  The company is trying to decide whether to invest in more bikes so they can keep stations better stocked.  Its early in 2013 and what you have to work with is a database of rental information similar to the one with which we began this chapter.  The difference is that we have two full years of data to work with 2011 and 2012.  Because 2010 was a partial and startup year that data has been discounted as too unreliable.  You can get this data from the `bikeshare_11_12.db <../_static/bikeshare_11_12.db>`_ file.
 
 You have many questions:  How do you start?  How will you know if you are even on the right track to building a good model?  What data can I use as features when I build the model?  Should I be trying to predict rentals hour by hour? day by day?  month by month?
 
@@ -178,16 +178,124 @@ Now that you have been through the cycle a couple of times, you are probably say
 
 So, lets add some weather information.  This could be a good chance to practice your WebAPI skills again, or even do some screen scraping from a source that allows it.  But we also have some weather data for you in a table in the database.
 
-The weather data looks like this:
+The weather data can be found in the weather table and looks like this:
 
-* weathersit:
+* weathersit, Weather situation - integer column with the following meaning:
   - 1: Clear, Few clouds, Partly cloudy, Partly cloudy
   - 2: Mist + Cloudy, Mist + Broken clouds, Mist + Few clouds, Mist
   - 3: Light Snow, Light Rain + Thunderstorm + Scattered clouds, Light Rain + Scattered clouds
   - 4: Heavy Rain + Ice Pallets + Thunderstorm + Mist, Snow + Fog
 
-* temp : Normalized temperature in Celsius. The values are derived via (t-t_min)/(t_max-t_min), t_min=-8, t_max=+39 (only in hourly scale)
-* atemp: Normalized "feels like" temperature in Celsius. The values are derived via (t-t_min)/(t_max-t_min), t_min=-16, t_max=+50 (only in hourly scale)
-* hum: Normalized humidity. The values are divided to 100 (max)
-* windspeed: Normalized wind speed. The values are divided to 67 (max)
+* temp_f : Temperature in degrees Fahrenheit
+* feelslike_f: The feels like temperature in Fahrenheit
+* humidity: percent from 0 to 100
+* windspeed: Wind speed mph
 
+Lets look at a few rows.
+
+.. raw:: html
+
+     <table border="1" class="dataframe">
+     <thead>
+     <tr style="text-align: right;">
+          <th></th>
+          <th>date</th>
+          <th>hour</th>
+          <th>weathersit</th>
+          <th>temp_f</th>
+          <th>feelslike_f</th>
+          <th>humidity</th>
+          <th>windspeed</th>
+     </tr>
+     </thead>
+     <tbody>
+     <tr>
+          <th>0</th>
+          <td>2011-01-01</td>
+          <td>0</td>
+          <td>1</td>
+          <td>37.904</td>
+          <td>37.40252</td>
+          <td>81.0</td>
+          <td>0.0</td>
+     </tr>
+     <tr>
+          <th>1</th>
+          <td>2011-01-01</td>
+          <td>1</td>
+          <td>1</td>
+          <td>36.212</td>
+          <td>35.59676</td>
+          <td>80.0</td>
+          <td>0.0</td>
+     </tr>
+     <tr>
+          <th>2</th>
+          <td>2011-01-01</td>
+          <td>2</td>
+          <td>1</td>
+          <td>36.212</td>
+          <td>35.59676</td>
+          <td>80.0</td>
+          <td>0.0</td>
+     </tr>
+     <tr>
+          <th>3</th>
+          <td>2011-01-01</td>
+          <td>3</td>
+          <td>1</td>
+          <td>37.904</td>
+          <td>37.40252</td>
+          <td>75.0</td>
+          <td>0.0</td>
+     </tr>
+     <tr>
+          <th>4</th>
+          <td>2011-01-01</td>
+          <td>4</td>
+          <td>1</td>
+          <td>37.904</td>
+          <td>37.40252</td>
+          <td>75.0</td>
+          <td>0.0</td>
+     </tr>
+     </tbody>
+     </table>
+
+
+Incorporate this weather data into your model as you see fit.  Experiment a bit and see what you can figure out.
+
+.. shortanswer:: bike_rent_weather1
+    :optional:
+
+    What was the lowest MAE you were able to achieve?  Which weather features improved your score the most?
+
+Feature Engineering - Re-Scaling
+--------------------------------
+
+One last bit of feature engineering  you can try is to `re-scale <https://medium.com/greyatom/why-how-and-when-to-scale-your-features-4b30ab09db5e>`_ the values of your features so they are all on a common scale.  One of the problems with leaving all the features in their "normal" units is that it warps the n-dimensional space in strange ways.  Some axes are elongated with respect to other axes.  For example think about the values for our one-hot encoded features like the season or weekend.  Those values are either 0 or 1.  However the temperature values can range from -8 to a max of 102.  If you just use those two features think of how the 2-dimensional graph of ``isweekday`` versus temperature looks.  Its a long and narrow space.
+
+Now why is this a problem?  Remember that we are trying to minimize the sum of squared errors as we try to find the coefficients for each of our features.  Go back and review our work with pizzas if you have forgotten.  What that means is that we are calculating the distance between a known point in some n dimensional space, and a predicted point in the same n-dimensional space.  But if some axes are really elongated and others are really short that introduces a bias that the algorithm has to overcome.
+
+Whereas if you re-scale the temperature to be on scale from 0 to 1 then you have a nice space where all the features are on the same scales and the algorithm can do its job more efficiently.  This may not be the most important factor for regression, but for other machine learning algorithms its critical!
+
+One really common method for transforming the data is to use min-max scaling
+
+.. math::
+
+     scaled = \frac{v_i - min(v)}{max(v) - min(v)}
+
+This will ensure that all of your values are between 0 and 1.
+
+
+Where to go from here?
+----------------------
+
+In the introduction to this textbook we showed you this diagram.  Take a look at it again here:
+
+.. image:: ../Introduction/Figures/DSPipeline.svg
+   :align: left
+
+You can see that we have now learned something about every box on that diagram.  In this chapter you learned how to build one of the most commonly used kinds of models in data science, Regression.  But Regression analysis is just the tip of the iceberg, there are many other kinds of models to learn about.  The good news for you is that you have some knowledge of the scikit-learn API.  The API is consistent across many other kinds of models whether its Regression or LogisticRegression or DecisionTrees or Perceptron, you use the same methods, fit, predict, etc. to train and test the model!
+
+The next step for you is to find a different data set, something that is interesting to you, maybe its predicting the scores of soccer games, or predicting trends in fashion, or identifying tumors in MRI images.  Whatever it is its a great opportunity to practice what you have learned in this chapter.
