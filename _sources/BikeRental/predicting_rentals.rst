@@ -1,7 +1,7 @@
 Predicting Daily Bike Rentals
 =============================
 
-Lets say you are a new data scientist working for Bikes-R-Us, and your boss comes to you and asks you to develop a model for predicting bike rentals in the future.  The company is trying to decide whether to invest in more bikes so they can keep stations better stocked.  Its early in 2013 and what you have to work with is a database of rental information similar to the one with which we began this chapter.  The difference is that we have two full years of data to work with 2011 and 2012.  Because 2010 was a partial and startup year that data has been discounted as too unreliable.  You can get this data from the bikeshare_11_12.db file.
+Lets say you are a new data scientist working for Bikes-R-Us, and your boss comes to you and asks you to develop a model for predicting bike rentals in the future.  The company is trying to decide whether to invest in more bikes so they can keep stations better stocked.  Its early in 2013 and what you have to work with is a database of rental information similar to the one with which we began this chapter.  The difference is that we have two full years of data to work with 2011 and 2012.  Because 2010 was a partial and startup year that data has been discounted as too unreliable.  You can get this data from the `bikeshare_11_12.db <../_static/bikeshare_11_12.db>`_ file.
 
 You have many questions:  How do you start?  How will you know if you are even on the right track to building a good model?  What data can I use as features when I build the model?  Should I be trying to predict rentals hour by hour? day by day?  month by month?
 
