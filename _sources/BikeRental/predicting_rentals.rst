@@ -287,3 +287,15 @@ One really common method for transforming the data is to use min-max scaling
 
 This will ensure that all of your values are between 0 and 1.
 
+
+Where to go from here?
+----------------------
+
+In the introduction to this textbook we showed you this diagram.  Take a look at it again here:
+
+.. image:: ../Introduction/Figures/DSPipeline.svg
+   :align: left
+
+You can see that we have now learned something about every box on that diagram.  In this chapter you learned how to build one of the most commonly used kinds of models in data science, Regression.  But Regression analysis is just the tip of the iceberg, there are many other kinds of models to learn about.  The good news for you is that you have some knowledge of the scikit-learn API.  The API is consistent across many other kinds of models whether its Regression or LogisticRegression or DecisionTrees or Perceptron, you use the same methods, fit, predict, etc. to train and test the model!
+
+The next step for you is to find a different data set, something that is interesting to you, maybe its predicting the scores of soccer games, or predicting trends in fashion, or identifying tumors in MRI images.  Whatever it is its a great opportunity to practice what you have learned in this chapter.
