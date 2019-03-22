@@ -27,6 +27,11 @@ Table of Contents
    </ul>
 
 .. toctree::
+    :maxdepth: 1
+
+    preface.rst
+
+.. toctree::
     :numbered:
     :maxdepth: 3
 

@@ -26,6 +26,9 @@ graphviz = "*"
 ipywidgets = "*"
 tables = "*"
 runestone = {editable = true, path = "/Users/bradleymiller/Runestone/RunestoneComponents"}
+datacommons = "*"
+geopy = "*"
+ipython-sql = "*"
 
 [dev-packages]
 
