@@ -196,7 +196,7 @@ and only include rides which are shorter than 15 minutes.
 
         %%sql
 
-        select * from trip_data where bike_number = 'W01274' and duration < 450
+        select * from trip_data where bike_number = 'W01274' and duration < 900
 
 
     .. parsed-literal::
