@@ -323,7 +323,7 @@ Now that we have a really nice way to get the additional country information, le
 
 When we use pandas the difference is that we don't pass the list as a parameter to map, map is a method of a Series, so we use the syntax `df.myColumn.map(function)`  This applies the function we pass as a parameter to each element of the series and constructs a brand new series.
 
-For our case we need to write a function that takes a three letter country code as a parameter and returns the numeric code we lookup as an integer, lets call it `get_num_code`.  You have all the details you need to write this function.  Once you write this function you can use as shown below:
+For our case we need to write a function that takes a three letter country code as a parameter and returns the numeric code we lookup **converted to an integer**, lets call it `get_num_code`.  You have all the details you need to write this function.  Once you write this function you can use as shown below:
 
 .. code:: ipython3
 

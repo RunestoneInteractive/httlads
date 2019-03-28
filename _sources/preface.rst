@@ -77,9 +77,16 @@ More Traditional topic Outline
   - Understanding relationships
 
     - scatter plot
+    - bubble plot
     - heat map
     - Network diagrams
     - chord charts
+
+  - Making Comparisons
+
+    - bar chart / stacked bar chart
+    - line chart
+    - spider plot
 
   - Geographic analysis
 
