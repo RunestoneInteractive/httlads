@@ -241,8 +241,8 @@ Starting small, lets print the column names
     cols = page.select("span.category")
     for col in cols:
         cells = col.select('td')
-        col_name cells[0].text
-        print(colname)
+        col_name = cells[0].text
+        print(col_name)
 
 
 .. parsed-literal::
@@ -305,8 +305,6 @@ So, now we have the means to get the names and paths so we can populate a DataFr
 
 Loading all the data in rough form
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Your next task is to start to construct
 
 One more thing to note. You might assume that the country names will all
 be consistent from field to field but that probably isn’t the case. What
