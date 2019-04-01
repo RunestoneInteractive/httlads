@@ -30,7 +30,7 @@ There are many places on the web where you can find datasets for exploration and
 
 * `Registry of Open Data on AWS <https://registry.opendata.aws/>`_
 
-* `Data Commons <www.datacommons.org>`_
+* `Data Commons <https://www.datacommons.org>`_
 
 * `NYC Open Data <https://opendata.cityofnewyork.us/data/>`_
 
