@@ -383,6 +383,14 @@ Practice Exercises
             </tr>
         </table>
 
+    2. ``select bike_number, count(*) from trip_data group by bike_number order by count(*) desc```
+
+    3. ``select member_type, count(*) from trip_data group by member_type;``
+
+    4. ``select start_station, count(*) from trip_data where start_station = end_station group by start_station order by count(*) desc``
+
+
+
 .. fillintheblank:: sql_agg_1
 
    What is the bike_number |blank| and count |blank| of the bike with the most rides?

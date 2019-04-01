@@ -41,6 +41,7 @@ longitude  FLOAT   longitude of the station
 
 .. raw:: html
 
+    <div style="max-width: 600px; overflow: scroll;">
     <table>
         <tr>
             <th>index</th>
@@ -131,7 +132,7 @@ longitude  FLOAT   longitude of the station
             <td>-77.0319595336126</td>
         </tr>
     </table>
-
+    </div>
 
 
 This means that we now have the data to answer questions like “How many
@@ -176,6 +177,7 @@ table names but the result is a mess:
 
 .. raw:: html
 
+    <div style="max-width: 600px; overflow: scroll;">
     <table>
         <tr>
             <th>index</th>
@@ -354,7 +356,7 @@ table names but the result is a mess:
             <td>-77.0319595336126</td>
         </tr>
     </table>
-
+    </div>
 
 
 If you look carefully you might notice that the rows are identical for
@@ -398,6 +400,7 @@ out the ones that don’t have the same value for both of these columns:
 
 .. raw:: html
 
+    <div style="max-width: 600px; overflow: scroll;">
     <table>
         <tr>
             <th>index</th>
@@ -576,7 +579,7 @@ out the ones that don’t have the same value for both of these columns:
             <td>-77.0341262134231</td>
         </tr>
     </table>
-
+    </div>
 
 
 Notice that the result looks more sensical: we end up with one row from
@@ -747,9 +750,13 @@ bikes available, we can run:
 Practice Exercises
 ------------------
 
-Use ``JOIN`` to show the station IDs of active stations and what’s the
-duration of bike trip originating and ending at the same station with
-member type Member.
+.. fillintheblank:: sql_join_0
+
+   Use ``JOIN`` to show the station IDs of active stations and what’s the average duration of bike trip originating and ending at the same station with member type Member.  For station 31000 what is the average duration from above?
+
+   - :31000: Is the correct answer
+     :incorrect: Is feedback on a specific incorrect
+     :x: catchall feedback
 
 .. reveal:: bikes_join1
     :instructoronly:
@@ -774,63 +781,90 @@ member type Member.
         10
 
 
+    .. raw:: html
 
-.. parsed-literal::
+        <table>
+            <tr>
+                <th>station_id</th>
+                <th>AVG(duration)</th>
+            </tr>
+            <tr>
+                <td>31000</td>
+                <td>1005.0</td>
+            </tr>
+            <tr>
+                <td>31001</td>
+                <td>1422.8181818181818</td>
+            </tr>
+            <tr>
+                <td>31002</td>
+                <td>2217.6341463414633</td>
+            </tr>
+            <tr>
+                <td>31003</td>
+                <td>2102.5241379310346</td>
+            </tr>
+            <tr>
+                <td>31004</td>
+                <td>1435.7014925373135</td>
+            </tr>
+            <tr>
+                <td>31005</td>
+                <td>1457.952380952381</td>
+            </tr>
+            <tr>
+                <td>31006</td>
+                <td>1244.3434343434344</td>
+            </tr>
+            <tr>
+                <td>31007</td>
+                <td>1751.5882352941176</td>
+            </tr>
+            <tr>
+                <td>31009</td>
+                <td>1037.3444444444444</td>
+            </tr>
+            <tr>
+                <td>31010</td>
+                <td>1470.4208333333333</td>
+            </tr>
+        </table>
 
-     * sqlite:///bikeshare.db
-    Done.
 
+    2. .. code-block:: sql
 
+            select name, count(*)
+            from trip_data join bikeshare_stations on
+                start_station = station_id
+            group by name
+            order by count(*) desc
+            limit 10
 
+    3. .. code-block:: sql
 
-.. raw:: html
+            select name, count(*)
+            from trip_data join bikeshare_stations on end_station = station_id
+            group by name
+            order by count(*) desc
+            limit 10
 
-    <table>
-        <tr>
-            <th>station_id</th>
-            <th>AVG(duration)</th>
-        </tr>
-        <tr>
-            <td>31000</td>
-            <td>1005.0</td>
-        </tr>
-        <tr>
-            <td>31001</td>
-            <td>1422.8181818181818</td>
-        </tr>
-        <tr>
-            <td>31002</td>
-            <td>2217.6341463414633</td>
-        </tr>
-        <tr>
-            <td>31003</td>
-            <td>2102.5241379310346</td>
-        </tr>
-        <tr>
-            <td>31004</td>
-            <td>1435.7014925373135</td>
-        </tr>
-        <tr>
-            <td>31005</td>
-            <td>1457.952380952381</td>
-        </tr>
-        <tr>
-            <td>31006</td>
-            <td>1244.3434343434344</td>
-        </tr>
-        <tr>
-            <td>31007</td>
-            <td>1751.5882352941176</td>
-        </tr>
-        <tr>
-            <td>31009</td>
-            <td>1037.3444444444444</td>
-        </tr>
-        <tr>
-            <td>31010</td>
-            <td>1470.4208333333333</td>
-        </tr>
-    </table>
+    4. .. code-block:: sql
+
+            select name, count(*)
+            from trip_data join bikeshare_stations on end_station = station_id
+            where start_station = end_station
+            group by name
+            order by count(*) desc
+            limit 10
+
+    5. .. code-block:: sql
+
+            select name, count(*)
+            from trip_data join bikeshare_stations on end_station = station_id
+            where start_station = 31200
+            group by name
+            order by count(*) desc
+            limit 10
 
 .. fillintheblank:: sql_join_1
 
