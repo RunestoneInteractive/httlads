@@ -9,14 +9,15 @@ This is how I organized the first two data science courses I ever taught, and su
 Learning Objectives
 -------------------
 
-* Articulate the data science pipeline
+* Articulate the data science processing pipeline
 * Extract data using SQL
-* Gather data from the Internet; combine data from sources
+* Gather data from the Internet using web API's and screen scraping
+* combine data from different sources
 * Clean the data
 * Handle missing data/finding outliers/fixing data
-* Normalize the data
+* Normalize and rescaling data
 * Visualize the data
-* Translate questions to analysis
+* Translate questions to analysis and analysis to interesting stories
 * Analyze data
 
   * Single variable regression, logistic regression
