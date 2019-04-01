@@ -391,8 +391,8 @@ Practice Exercises
         What is the longest of the rides you just selected?
 
         - :833: Is the correct answer
-            :828: Is close, but it is the second longest
-            :x: Keep trying
+          :828: Is close, but it is the second longest
+          :x: Keep trying
 
 
 #.
@@ -402,8 +402,8 @@ Practice Exercises
         Get the ending station and the duration of all of the bike trips originating at station ``31111`` that lasted 8 hours or more.  How many trips match the criteria above?
 
         - :21: Is the correct answer
-            :20|22: Close, but count again
-            :x: Incorrect 8 hours is 28,800 seconds
+          :20|22: Close, but count again
+          :x: Incorrect 8 hours is 28,800 seconds
 
 #.
 
@@ -412,8 +412,8 @@ Practice Exercises
         How many trips longer than 8 hours started and ended and station 31111 by casual riders?
 
         - :4: Is the correct answer
-            :5: Is the total for both members and casual riders
-            :x: catchall feedback
+          :5: Is the total for both members and casual riders
+          :x: catchall feedback
 
 
 
