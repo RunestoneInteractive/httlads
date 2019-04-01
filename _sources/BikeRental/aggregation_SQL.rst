@@ -307,8 +307,14 @@ bike trips for all subscriber types
 Practice Exercises
 ------------------
 
-Compute the average duration of bike trips for each starting station id
-and list the results in order of highest average to lowest average.
+.. fillintheblank:: sql_agg_0
+
+   Compute the average duration of bike trips for each starting station id and list the results in order of highest average to lowest average for the 10 stations with the highest average.  What is the highest average duration?
+
+   - :40669.5: Is the correct answer
+     :2368.5.*: Is the 10th largest
+     :x: Keep trying
+
 
 .. reveal:: bikes_agg
     :instructoronly:
@@ -328,54 +334,54 @@ and list the results in order of highest average to lowest average.
         LIMIT
         10
 
-.. raw:: html
+    .. raw:: html
 
-    <table>
-        <tr>
-            <th>start_station</th>
-            <th>AVG(duration)</th>
-        </tr>
-        <tr>
-            <td>31806</td>
-            <td>40669.5</td>
-        </tr>
-        <tr>
-            <td>31052</td>
-            <td>4325.0</td>
-        </tr>
-        <tr>
-            <td>31705</td>
-            <td>3787.787878787879</td>
-        </tr>
-        <tr>
-            <td>31262</td>
-            <td>3563.8636363636365</td>
-        </tr>
-        <tr>
-            <td>31704</td>
-            <td>3550.0</td>
-        </tr>
-        <tr>
-            <td>31703</td>
-            <td>3134.6492146596856</td>
-        </tr>
-        <tr>
-            <td>31266</td>
-            <td>2906.0</td>
-        </tr>
-        <tr>
-            <td>31217</td>
-            <td>2431.043944420405</td>
-        </tr>
-        <tr>
-            <td>31016</td>
-            <td>2414.4292185730465</td>
-        </tr>
-        <tr>
-            <td>31235</td>
-            <td>2368.5348916450866</td>
-        </tr>
-    </table>
+        <table>
+            <tr>
+                <th>start_station</th>
+                <th>AVG(duration)</th>
+            </tr>
+            <tr>
+                <td>31806</td>
+                <td>40669.5</td>
+            </tr>
+            <tr>
+                <td>31052</td>
+                <td>4325.0</td>
+            </tr>
+            <tr>
+                <td>31705</td>
+                <td>3787.787878787879</td>
+            </tr>
+            <tr>
+                <td>31262</td>
+                <td>3563.8636363636365</td>
+            </tr>
+            <tr>
+                <td>31704</td>
+                <td>3550.0</td>
+            </tr>
+            <tr>
+                <td>31703</td>
+                <td>3134.6492146596856</td>
+            </tr>
+            <tr>
+                <td>31266</td>
+                <td>2906.0</td>
+            </tr>
+            <tr>
+                <td>31217</td>
+                <td>2431.043944420405</td>
+            </tr>
+            <tr>
+                <td>31016</td>
+                <td>2414.4292185730465</td>
+            </tr>
+            <tr>
+                <td>31235</td>
+                <td>2368.5348916450866</td>
+            </tr>
+        </table>
 
 .. fillintheblank:: sql_agg_1
 

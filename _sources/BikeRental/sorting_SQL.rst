@@ -275,9 +275,19 @@ trips from Member type of Casual in the order of the duration.
 Practice Exercises
 ------------------
 
-Get the start and end station IDs for bike trips that are longer 60
-minutes or longer, in the order of largest number of seconds first and
-display the top 40 results.
+.. fillintheblank:: sql_sort_0
+
+   Get the start and end station IDs for bike trips that are longer 60 minutes or longer, in the order of largest number of seconds first and display the top 40 results.  What is the duration of the last ride |blank| what is the ending station?
+
+   - :84190: Is the correct answer
+     :86355: Is the longest - make sure you are using the DESC keyword to reverse your sort
+     :x: Keep on trying
+
+   - :31018: Is the correct answer
+     :31611: Should be from the first row. Make sure you are sorting in the right order.
+     :x: Keep on querying
+
+
 
 .. reveal:: bikes_sort
     :instructoronly:
@@ -507,6 +517,10 @@ display the top 40 results.
                 <td>31018</td>
             </tr>
         </table>
+
+    2.  ``select bike_number, duration from trip_data order by duration desc limit 1;``
+
+    3. ``select start_station, duration from trip_data where start_station = end_station order by duration desc limit 1;``
 
 .. fillintheblank:: sql_sort_1
 
