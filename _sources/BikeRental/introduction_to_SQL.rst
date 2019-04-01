@@ -347,4 +347,53 @@ columns we could select:
 query over multiple lines just to make it easier to read.
 
 
+Its also really easy to forget the exact names of all of the columns in a table, especially when you are just getting started with a new database.  Here's a handy one-liner that will remind you of the names of your tables and all of their columns and types:
+
+.. code:: ipython3
+
+    %sql select name, sql from sqlite_master
+
+.. raw:: html
+
+    <table border="1" class="dataframe">
+    <thead>
+        <tr style="text-align: right;">
+        <th></th>
+        <th>0</th>
+        <th>1</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <th>0</th>
+        <td>trip_data</td>
+        <td> <pre>
+    CREATE TABLE trip_data (
+    "index" BIGINT,
+    duration BIGINT,
+    start_date DATETIME,
+    end_date DATETIME,
+    start_station BIGINT,
+    end_station BIGINT,
+    bike_number TEXT,
+    member_type TEXT
+    )</pre></td>
+        </tr>
+        <tr>
+        <th>1</th>
+        <td>bikeshare_stations</td>
+        <td><pre>CREATE TABLE bikeshare_stations (
+    "index" BIGINT,
+    station_id BIGINT,
+    name TEXT,
+    status TEXT,
+    latitude FLOAT,
+    longitude FLOAT
+    )</pre></td>
+        </tr>
+    </tbody>
+    </table>
+
+Note, this works fine for SQLITE but will not work for Postgresql or MySQL or other databases, each database has their own query for things like this, and once you get more experience you'll be able to easily find them on the internet.
+
 
