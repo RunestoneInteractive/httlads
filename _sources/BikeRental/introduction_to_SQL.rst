@@ -359,8 +359,8 @@ Its also really easy to forget the exact names of all of the columns in a table,
     <thead>
         <tr style="text-align: right;">
         <th></th>
-        <th>0</th>
-        <th>1</th>
+        <th>name</th>
+        <th>sql</th>
         </tr>
     </thead>
     <tbody>

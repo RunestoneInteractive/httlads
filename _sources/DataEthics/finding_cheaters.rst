@@ -14,31 +14,31 @@ In this lesson you are going to do a simplified version of the analysis outlined
 
    Check the ids of all of the cheaters here.
 
-   - 7002589994262273027
+   - 7002589994262270000
 
      + Cheater number 1
 
-   - 2416068425895372125
+   - 2416068425895370000
 
      + Cheater number 2
 
-   - 1547483661413497428
+   - 1547483661413490000
 
      + Cheater number 3
 
-   - 6228119144908428867
+   - 6228119144908420000
 
      + Cheater number 4
 
-   - 1718561694846009025
+   - 1718561694846000000
 
      + Cheater number 5
 
-   - 4643766977283546131
+   - 4643766977283540000
 
      - You accuse an innocent person
 
-   - 1693568023468297046
+   - 1693568023468290000
 
      - You accuse an innocent person
 
@@ -55,13 +55,13 @@ Now that you have identified the cheaters can you match the cheaters with their 
 
 .. dragndrop:: dd_ethics_real
    :feedback: Please keep going with your analysis.
-   :match_1: bob|||7002589994262273027
-   :match_2: jane|||2416068425895372125
-   :match_3: john|||1547483661413497428
-   :match_4: sally|||6228119144908428867
-   :match_5: sue|||1718561694846009025
-   :match_6: don|||4643766977283546131
-   :match_7: hill|||1693568023468297046
+   :match_1: bob|||7002589994262270000
+   :match_2: jane|||2416068425895370000
+   :match_3: john|||1547483661413490000
+   :match_4: sally|||6228119144908420000
+   :match_5: sue|||1718561694846000000
+   :match_6: don|||4643766977283540000
+   :match_7: hill|||1693568023468290000
 
    Match the numeric identifiers from the first part of the project with the real names.
 
