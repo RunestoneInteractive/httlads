@@ -83,7 +83,7 @@ Create a DataFrame of the first 10 rides from the trip_data table sorted by star
 
    What is the type of the ``calc_duration`` field that you just computed?
 
-   - :timedelta64.*: Is the correct answer
+   - :.*imedelta.*: Is the correct answer
      :datetime64: is the type for start_date and end_date but not for this column.
      :x: Make sure that you use the parse_dates parameter when you read the DataFrame
 
