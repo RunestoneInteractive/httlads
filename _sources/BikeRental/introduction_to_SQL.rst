@@ -69,7 +69,7 @@ bike sharing dataset, hosted on a SQLLite database. To get started you will need
 There are just two lines we need to execute at the top of our notebook,
 One line loads an extension so that we can write SQL in the cells of our
 notebook. The second ‘connects’ to our SQLLite database. You may need to
-install the ``ipython-sql`` module using ``conda install ipython-sql``
+install the ``ipython-sql`` module using ``conda install ipython-sql`` or ``conda install -c conda-forge ipython-sql ``
 
 .. code:: ipython3
 
