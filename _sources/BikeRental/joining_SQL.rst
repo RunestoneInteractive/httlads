@@ -754,7 +754,7 @@ Practice Exercises
 
    Use ``JOIN`` to show the station IDs of active stations and what’s the average duration of bike trip originating and ending at the same station with member type Member.  For station 31000 what is the average duration from above?
 
-   - :31000: Is the correct answer
+   - :1005: Is the correct answer
      :incorrect: Is feedback on a specific incorrect
      :x: catchall feedback
 
