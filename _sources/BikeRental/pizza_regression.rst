@@ -81,7 +81,7 @@ Closed form Solution
 
 The closed form solution to this problem is known to many science students.
 
-slope = :math:`\frac{\sum{(x_i-\bar{y})(y_i - \bar{y})}}{\sum{(x_i - \bar{x})^2}}`
+slope = :math:`\frac{\sum{(x_i-\bar{x})(y_i - \bar{y})}}{\sum{(x_i - \bar{x})^2}}`
 
 intercept = :math:`\bar{y} - slope \cdot \bar{x}`
 
