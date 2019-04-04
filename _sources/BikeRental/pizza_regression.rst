@@ -81,9 +81,9 @@ Closed form Solution
 
 The closed form solution to this problem is known to many science students.
 
-slope = :math:`\frac{\sum{y_i - \bar{y}}}{\sum{(x_i - \bar{x})^2}}`
+slope = :math:`\frac{\sum{(x_i-\bar{y})(y_i - \bar{y})}}{\sum{(x_i - \bar{x})^2}}`
 
-intercept = :math:`\bar{y} - b \bar{x}`
+intercept = :math:`\bar{y} - slope \cdot \bar{x}`
 
 Lets use the closed form solution to calculate values for the slope and intercept.  To do this you will need to calculate a value for :math:`\bar{x}` and :math:`\bar{y}` that is the average value for both x and y.  You can add two columns to do the calculation of :math:`y_i - \bar{y}` and :math:`x_i - \bar{x}`
 
