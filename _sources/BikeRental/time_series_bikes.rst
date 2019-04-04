@@ -131,6 +131,7 @@ Experiment with some resampling and graphing of the data.  Try to graph by busin
    For the week ending June 12 2011 how many rentals were there?
 
    - :31371|: Is the correct answer
+     :31367: Is close but you may be indexing by ``start_date``
      :x: The date used as the index is the ending date.  By default for a week pandas has the week ending on Sunday.  You can verify this by resampling by day and using this expression: ``resamp.loc['2011-06-06':'2011-06-12'].duration.sum()``
 
 .. fillintheblank:: ts_bw_mean_dur
