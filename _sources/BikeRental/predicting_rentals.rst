@@ -24,7 +24,7 @@ The first thing we'll do create two simplified DataFrames one that contains a co
 
 * test_y - we will use this data along with the predicted values to come up with our score.  The score we calculate will be the mean absolute error.
 
-By default the ``train_test_split`` function will
+By default the `train_test_split <https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html>`_ function takes parameters as follows ``train_test_split(features_df, answer_df, test_size, random_state)``
 
 The ``train_test_split`` function contains an optional parameter called ``random_state`` We will use ``random_state=997`` for this parameter to ensure we are all getting the same randomness.  This will allow you to compare your results against mine and your classmates.  It will also make your results reproducible from one day to the next.
 
@@ -89,7 +89,7 @@ Compare your graph to this one after you have made it.
 
 What do you think of the model so far?  You are probably a bit disappointed both with how the graph looks as well as the mean absolute error.  missing your daily predictions by over 900 is not great, especially in the earlier days when rentals were only around 1000.  In fact if the average daily rentals for this time period is about 2750 then you are off by around 77% every day.
 
-We can also look at the :math:`R^2` score for this model which gives us a value of 0.42.  1.0 would be the best score possible, so we are a long way from there. But what is the interpretation of :math:`R^2`.  It tells us how much of the variation of the data is explained by the model.  Reviewing  the graph from above there is a lot of variation and our model is only accounting for 42% of it.
+We can also look at the :math:`R^2` score for this model which gives us a value of 0.373.  1.0 would be the best score possible, so we are a long way from there. But what is the interpretation of :math:`R^2`.  It tells us how much of the variation of the data is explained by the model.  Reviewing  the graph from above there is a lot of variation and our model is only accounting for 37% of it.
 
 Lets hold off on taking this model to the boss and see if we can't refine our model to do a bit better!
 
