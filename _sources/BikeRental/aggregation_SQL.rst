@@ -53,13 +53,13 @@ which subscriber type has the most bike trips?
 
 
 
-``GROUP BY subscriber_type`` takes all the rows with a given
-subscriber_type and produces a single row in the result. This means that
+``GROUP BY member_type`` takes all the rows with a given
+member_type and produces a single row in the result. This means that
 we need to tell SQL how we want to combine the other columns’ values
 into a single row. The above example uses ``COUNT(*)`` which reports of
 the number of rows that were combined.
 
-Aggregating the values for ``subscriber_type`` is not hard, since
+Aggregating the values for ``member_type`` is not hard, since
 they’re all the same, SQL just gives us a single copy of the publisher
 name. Other columns, we need to either ignore (causing them to be
 omitted from the output) or specify a way to aggregate them.
@@ -78,7 +78,7 @@ SQL will complain. For example, the following query should fail:
     FROM
       trip_data
     GROUP BY
-      subscriber_type
+      member_type
     ORDER BY
       COUNT(*) DESC
 
@@ -87,7 +87,7 @@ SQL will complain. For example, the following query should fail:
 .. parsed-literal::
 
      * sqlite:///bikeshare.db
-    (sqlite3.OperationalError) no such column: subscriber_type [SQL: 'SELECT\n  member_type, duration\nFROM\n  trip_data\nGROUP BY\n  subscriber_type\nORDER BY\n  COUNT(*) DESC'] (Background on this error at: http://sqlalche.me/e/e3q8)
+    (sqlite3.OperationalError) no such column: member_type [SQL: 'SELECT\n  member_type, duration\nFROM\n  trip_data\nGROUP BY\n  member_type\nORDER BY\n  COUNT(*) DESC'] (Background on this error at: http://sqlalche.me/e/e3q8)
 
 
 Let’s go back briefly to the first query in the Aggregation section. The
