@@ -56,8 +56,7 @@ which subscriber type has the most bike trips?
 ``GROUP BY member_type`` takes all the rows with a given
 member_type and produces a single row in the result. This means that
 we need to tell SQL how we want to combine the other columns’ values
-into a single row. The above example uses ``COUNT(*)`` which reports of
-the number of rows that were combined.
+into a single row. The above example uses ``COUNT(*)`` which reports the number of rows that were combined.
 
 Aggregating the values for ``member_type`` is not hard, since
 they’re all the same, SQL just gives us a single copy of the publisher
@@ -66,15 +65,14 @@ omitted from the output) or specify a way to aggregate them.
 
 We must specify an aggregate function for any column that we ``SELECT``
 in our query (except the column that we’re grouping by) in order for the
-command to succeed. If we don’t specify a way to aggregate the value,
-SQL will complain. For example, the following query should fail:
+command to succeed. If we don’t specify a way to aggregate the value most database servers will complain.  However, SQLITE does not.  SQLite lets you do silly things without giving you an error.   For example, the following query will work, but you have no idea what the results actually mean.
 
 .. code:: ipython3
 
     %%sql
 
     SELECT
-      member_type, duration
+      duration, count(*)
     FROM
       trip_data
     GROUP BY
@@ -83,11 +81,39 @@ SQL will complain. For example, the following query should fail:
       COUNT(*) DESC
 
 
+.. raw:: html
 
-.. parsed-literal::
+    <table border="1" class="dataframe">
+    <thead>
+        <tr style="text-align: right;">
+        <th></th>
+        <th>duration</th>
+        <th>count(*)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <th>0</th>
+        <td>3548</td>
+        <td>979814</td>
+        </tr>
+        <tr>
+        <th>1</th>
+        <td>346</td>
+        <td>246949</td>
+        </tr>
+        <tr>
+        <th>2</th>
+        <td>501</td>
+        <td>4</td>
+        </tr>
+    </tbody>
+    </table>
 
-     * sqlite:///bikeshare.db
-    (sqlite3.OperationalError) no such column: member_type [SQL: 'SELECT\n  member_type, duration\nFROM\n  trip_data\nGROUP BY\n  member_type\nORDER BY\n  COUNT(*) DESC'] (Background on this error at: http://sqlalche.me/e/e3q8)
+Here you have grouped by ``member_type``, but without ``member_type`` in the select clause you have no idea which rows correspond to which member type. That is why most databases will flag this as a error.  Furthermore the duration field may be the first duration in the group or maybe the last duration in the group or possibly in between, But its not defined.  The best practices for writing group by queries that work well across database systems are as follows:
+
+* Always include the GROUP BY column(s) in your SELECT clause.
+* If you include a column that is **not** in the GROUP BY clause in your SELECT clause you must do some form of aggregation on the values in that column.  For example, min, max, mean, count, etc.
 
 
 Let’s go back briefly to the first query in the Aggregation section. The
