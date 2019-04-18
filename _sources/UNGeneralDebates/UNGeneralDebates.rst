@@ -20,6 +20,8 @@ UN General Debates
     }
     </style>
 
+In this chapter we are going to explore the text from many speeches over many years given by delegates to the United Nations General Assembly.  Every year since 1947, representatives of UN member states gather at the annual sessions of the United Nations General Assembly. The centrepiece of each session is the General Debate. This is a forum at which leaders and other senior officials deliver statements that present their government’s perspective on the major issues in world politics. (Jankin Mikhaylov, Slava; Baturo, Alexander; Dasandi, Niheer, 2017, "United Nations General Debate Corpus", https://doi.org/10.7910/DVN/0TJX8Y, Harvard Dataverse, V5) This diversity of text gives us a great opportunity for some deeper exploration of text.   You can download `un-general-debates.csv <../_static/un-general-debates.csv>`_ to get started.  It is 130MB so be prepared for a lot of words!  It is licensed CC0 which means it is a public domain data set.
+
 Reading List
 ------------
 
