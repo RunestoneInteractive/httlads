@@ -22,6 +22,15 @@ Using NLTK to score the speeches
 
 The Natural Language ToolKit (`NLTK <https://www.nltk.org/>`_) Provides us with many tools for working with text and natural language sentences.  NLTK provides a couple of different algorithms for sentiment analysis, a NaiveBayes classifier like we described above, and VADER (Valence Aware Dictionary and sEntiment Reasoner) - Not Darth.  VADER performs better on normal text and does not require us to manually train a model.  So we will use Vader as it gets us going a lot quicker.
 
+To get started with Vader we will need a download the data files Vader uses.
+
+.. code-block:: python3
+
+    import nltk
+    nltk.download('vader_lexicon')
+    nltk.download('punkt')
+
+
 Here is a function that we can use to map each of the speeches to a sentiment score.
 
 .. code-block:: python3
@@ -44,7 +53,7 @@ With our analyzer ready to go we can add a column to the undf DataFrame containi
 
 .. code:: ipython3
 
-    undf['sentiment'] = undf.text.map(score_text)
+    undf['sentiment'] = undf.text.map(lambda t : score_text(t, analyzer))
 
 You can start that line running in your notebook and grab a cup of coffee as it will take a bit of time to run.
 
