@@ -51,7 +51,7 @@ Lets try it out on a couple of sentences to see what we get.  ``score_text("This
 
 With our analyzer ready to go we can add a column to the undf DataFrame containing the sentiment score as follows:
 
-.. code:: ipython3
+.. code:: python3
 
     undf['sentiment'] = undf.text.map(lambda t : score_text(t, analyzer))
 
@@ -59,7 +59,7 @@ You can start that line running in your notebook and grab a cup of coffee as it 
 
 Now comes the moment of truth.  Lets see the distribution of sentiment scores for all of the speeches.
 
-.. code:: ipython3
+.. code:: python3
 
     alt.Chart(undf).mark_bar().encode(x=X('sentiment', bin=True), y='count()')
 

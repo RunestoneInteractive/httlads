@@ -8,7 +8,7 @@ Working with Text
 
 The Series and index objects in Pandas each have a set of string processing methods that make all of the standard Python string methods and more available to work on all of the string elements in a Series. We call these "vectorized string methods" because Pandas is designed to allow these operations to happen in parallel on all the rows of the data frame simultaneously, if you have the computing power. These are accessed through an intermediate object called `str`  For example suppose we wanted to convert all of our three letter country codes to lowercase.
 
-.. code:: ipython3
+.. code:: python3
 
     undf.country.str.lower()
 
@@ -95,7 +95,7 @@ Regular expression methods for strings
 
 We can use our new skills to do a minor bit of cleanup on the text.  Many of the speeches start with an invisible non-breaking space character followed by a newline (you will see it as `\n` in the text.  We can eliminate this with:
 
-.. code:: ipython3
+.. code:: python3
 
     undf['text'] = undf.text.str.replace('\ufeff','') # remove strange character
     undf['text'] = undf.text.str.strip() # eliminate whitespace from beginning and end

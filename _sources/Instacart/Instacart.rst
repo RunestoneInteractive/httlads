@@ -14,7 +14,7 @@ purchases or suggest items that a person may want to add to their
 shopping cart based on their past behavior. Sound familiar? This is the
 kind of thing that Amazon has been doing successfully for years.
 
-.. code:: ipython3
+.. code:: python3
 
     %matplotlib inline
 

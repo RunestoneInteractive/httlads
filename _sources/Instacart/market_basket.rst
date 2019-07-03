@@ -12,7 +12,7 @@ a product, each column is a product and the cell where two products
 intersect is the count of the number of times they ended up in the same
 shopping cart.
 
-.. code:: ipython3
+.. code:: python3
 
     mb = pd.DataFrame({'doritos': {'oreos': 2, 'snickers':6}, 'oreos': {'doritos':2, 'snickers':3}, 'snickers': {'doritos': 6, 'oreos':3}})
     mb
@@ -83,7 +83,7 @@ rows. That means we have 2,468,897,344 (thats 2+ billion!) cells in our
 table. How many of those cells do you think are empty? *Hint* Lots of
 them!
 
-.. code:: ipython3
+.. code:: python3
 
     products = pd.read_csv('ecomm/products.csv')
     products.head()
@@ -164,11 +164,11 @@ to look up a product id to get more information about the product. So,
 lets make the product_id the index of the DataFrame to make things
 faster.
 
-.. code:: ipython3
+.. code:: python3
 
     products.set_index('product_id', inplace=True)
 
-.. code:: ipython3
+.. code:: python3
 
     products.head()
 
@@ -244,7 +244,7 @@ faster.
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     len(products)**2
 
@@ -315,7 +315,7 @@ ordernum,product
 8, 3
 
 
-.. code:: ipython3
+.. code:: python3
 
     small_o = pd.read_csv('small_orders.csv')
     groups = small_o.groupby('ordernum')
@@ -370,7 +370,7 @@ data frame containing only the items in one particular order. Now if we
 are smart and process the items from smallest to largest we can build
 our dictionary based matrix no problem.
 
-.. code:: ipython3
+.. code:: python3
 
     groups.get_group(1)['product'].sort_values()
 
@@ -386,7 +386,7 @@ our dictionary based matrix no problem.
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     cart = groups.get_group(1)['product'].sort_values()
     cart.loc[1:]
@@ -402,7 +402,7 @@ our dictionary based matrix no problem.
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     for g in range(1,9):
         cart = groups.get_group(g)['product'].sort_values()
@@ -437,7 +437,7 @@ our dictionary based matrix no problem.
     --
 
 
-.. code:: ipython3
+.. code:: python3
 
     mat = {}
     for g in range(1,9):
@@ -539,7 +539,7 @@ our dictionary based matrix no problem.
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     mat
 
@@ -576,7 +576,7 @@ The first thing we’ll need is a list of unique order ids. In the toy
 example above we were able to just use a range of numbers, because we
 knew that the order numbers started at 1 and went sequentailly.
 
-.. code:: ipython3
+.. code:: python3
 
     order_products = pd.read_csv("ecomm/order_products__prior.csv")
     order_products.head()
@@ -652,7 +652,7 @@ knew that the order numbers started at 1 and went sequentailly.
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     import ipywidgets
     def log_progress(sequence, every=None, size=None, name='Items'):
@@ -711,7 +711,7 @@ knew that the order numbers started at 1 and went sequentailly.
                 index=str(index or '?')
             )
 
-.. code:: ipython3
+.. code:: python3
 
     %%time
 
@@ -749,7 +749,7 @@ You can’t remove things from a dictionary while you are iterating over a
 dictionary. So we will need to make a list of keys to remove in one pass
 and then delete them later.
 
-.. code:: ipython3
+.. code:: python3
 
     delkeys = []
     for i in mat.keys():
@@ -770,12 +770,12 @@ and then delete them later.
 
 Yep, 21.9 million entries in our matrix are 1’s
 
-.. code:: ipython3
+.. code:: python3
 
     for i,j in delkeys:
         del mat[i][j]
 
-.. code:: ipython3
+.. code:: python3
 
     %%time
 
@@ -792,7 +792,7 @@ Yep, 21.9 million entries in our matrix are 1’s
 We can check on the density of our sparse data structure by looking at
 its density attribute.
 
-.. code:: ipython3
+.. code:: python3
 
     smat.density
 
@@ -810,12 +810,12 @@ And we see that it is only 0.8% full!
 We can use idxmax to give us a series that for each column tells us the
 row with the maximum value for that column.
 
-.. code:: ipython3
+.. code:: python3
 
     maxcols = smat.idxmax()
     maxcols = maxcols.dropna()
 
-.. code:: ipython3
+.. code:: python3
 
     %%time
 
@@ -836,7 +836,7 @@ row with the maximum value for that column.
     Wall time: 5.95 s
 
 
-.. code:: ipython3
+.. code:: python3
 
     maxcc
 
@@ -849,7 +849,7 @@ row with the maximum value for that column.
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     maxrow
 
@@ -862,7 +862,7 @@ row with the maximum value for that column.
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     maxcol
 
@@ -881,7 +881,7 @@ Testing our item-item matrix
 Let’s test the matrix by doing some exploring. What are the two products
 most commonly purchased together?
 
-.. code:: ipython3
+.. code:: python3
 
     print(f"product {maxrow} was purchased with {maxcol} {maxcc} times")
 
@@ -897,7 +897,7 @@ Because we were smart before and made the product_id the index of the
 products table we can use this nice lookup syntax to get the product
 name!
 
-.. code:: ipython3
+.. code:: python3
 
     products.loc[maxrow, 'product_name']
 
@@ -910,7 +910,7 @@ name!
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     products.loc[maxcol, 'product_name']
 
@@ -923,7 +923,7 @@ name!
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     def get_product_byid(df, idx):
         return df.loc[idx].product_name
@@ -931,7 +931,7 @@ name!
 OK, so now lets see what our real data has to say about the products
 that are bought with Doritos.
 
-.. code:: ipython3
+.. code:: python3
 
     products[products.product_name.str.contains('Dorito')]
 
@@ -994,7 +994,7 @@ that are bought with Doritos.
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     def get_product_count(sp_mat, ix1, ix2):
         if ix1 > ix2:
@@ -1002,7 +1002,7 @@ that are bought with Doritos.
         else:
             return sp_mat.loc[ix2, ix1]
 
-.. code:: ipython3
+.. code:: python3
 
     get_product_count(smat, 47209, 13176)
 
@@ -1015,7 +1015,7 @@ that are bought with Doritos.
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     def get_all_cocart(sp_mat, pid):
         """
@@ -1025,7 +1025,7 @@ that are bought with Doritos.
         """
         return pd.concat((sp_mat[pid], sp_mat.loc[pid])).dropna()
 
-.. code:: ipython3
+.. code:: python3
 
     get_all_cocart(smat, 2144).nlargest(10)
 
@@ -1048,7 +1048,7 @@ that are bought with Doritos.
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     for idx, val in get_all_cocart(smat, 2144).nlargest(10).iteritems():
         print(get_product_byid(products,idx), val)
@@ -1069,7 +1069,7 @@ that are bought with Doritos.
     Skim Milk 17.0
 
 
-.. code:: ipython3
+.. code:: python3
 
     get_product_byid(products, 2144)
 
@@ -1082,14 +1082,14 @@ that are bought with Doritos.
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     def product_search(df, name):
         prods = df.product_name.str.lower()
         return df[prods.str.contains(name)].product_name
 
 
-.. code:: ipython3
+.. code:: python3
 
     product_search(products, 'diapers')
 
@@ -1164,7 +1164,7 @@ that are bought with Doritos.
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     # snickers - 14261
 
@@ -1199,7 +1199,7 @@ that we would want to use in making a recommendation.
 
 We can also eliminate our original dictionary
 
-.. code:: ipython3
+.. code:: python3
 
     smat.to_pickle('item_item.pkl')
 
@@ -1220,17 +1220,17 @@ recommender is widely used
 
 -  Can you make a visualization of this item-item matrix?
 
-.. code:: ipython3
+.. code:: python3
 
     forhist = pd.DataFrame({'allvals': smat.values.flatten()})
 
 
-.. code:: ipython3
+.. code:: python3
 
     forhist = forhist.dropna()
 
 
-.. code:: ipython3
+.. code:: python3
 
     alt.Chart(forhist).mark_bar().encode(x=alt.X('allvals', bin=True),y='count()')
 

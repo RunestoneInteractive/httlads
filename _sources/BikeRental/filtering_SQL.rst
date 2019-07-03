@@ -7,7 +7,7 @@ could want to look only at the bike trips which are at least a certain
 number of minutes. Let’s say you’re only interested in bike trips of 60
 minutes or more:
 
-.. code:: ipython3
+.. code:: python3
 
     %%sql
 
@@ -96,7 +96,7 @@ It’s also possible to filter by multiple criteria. For example to look
 at only bike trips which are 60 minutes or more and only the subscriber
 type of Member:
 
-.. code:: ipython3
+.. code:: python3
 
     %%sql
 

@@ -49,7 +49,7 @@ The steps we will use with the pizza data are that we will first create an empty
 
 Create a new notebook and lets give this a try.
 
-.. code:: ipython3
+.. code:: python3
 
     import pandas as pd
     from sklearn.linear_model import LinearRegression, LogisticRegression
@@ -58,7 +58,7 @@ Create a new notebook and lets give this a try.
 
 Import pandas, sklearn, and altair
 
-.. code:: ipython3
+.. code:: python3
 
     pdf = pd.read_csv('../Data/pizza.csv')
     pdf
@@ -115,7 +115,7 @@ Import pandas, sklearn, and altair
     </table>
 
 
-.. code:: ipython3
+.. code:: python3
 
     model = LinearRegression()
     model.fit(pdf[['diameter','toppings']], pdf.price)
@@ -124,7 +124,7 @@ The fit method takes two parameters:  The features that we use to build the mode
 
 Now, using the diameter and toppings make predictions about what the price will be.
 
-.. code:: ipython3
+.. code:: python3
 
     model.predict(pdf[['diameter','toppings']])
 
@@ -144,7 +144,7 @@ If you look at those predictions, you will see they are identical to the predict
 
 We can also use the ``mean_squared_error`` function supplied by sklearn to check the mean squared error of our predictions.  This function takes two parameters the "true" values, in our case, the known price, and the predicted values.
 
-.. code:: ipython3
+.. code:: python3
 
     mean_squared_error(pdf.price, model.predict(pdf[['diameter','toppings']]))
 
@@ -154,7 +154,7 @@ We can also use the ``mean_squared_error`` function supplied by sklearn to check
 
 We can also add the predictions to our dataframe so that we can graph the actual values and predicted values together.  We will use the diameter as the x-axis even though we used
 
-.. code:: ipython3
+.. code:: python3
 
     pdf['predictions'] = model.predict(pdf[['diameter','toppings']])
     Chart(pdf).mark_circle().encode(x='diameter', y='price') + \

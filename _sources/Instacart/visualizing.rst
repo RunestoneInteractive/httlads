@@ -25,16 +25,16 @@ this to build our chord diagram and other graph like visualizations.
 3. Increase the count in from aisle (row) to to aisle (column) - this is
    a directed graph.
 
-.. code:: ipython3
+.. code:: python3
 
     aisle_mat = pd.DataFrame(0, index=range(1,135),columns=range(1,135))
 
-.. code:: ipython3
+.. code:: python3
 
     flowdf = op.merge(products, on='product_id').merge(adf, on='aisle_id')
 
 
-.. code:: ipython3
+.. code:: python3
 
     %%time
 
@@ -61,26 +61,26 @@ this to build our chord diagram and other graph like visualizations.
     Wall time: 3h 11min 18s
 
 
-.. code:: ipython3
+.. code:: python3
 
     aisle_mat.to_csv('aisle_mat.csv')
 
-.. code:: ipython3
+.. code:: python3
 
     for ix, row in contents.iterrows():
         print(row['product_id'], row['aisle_id'])
 
-.. code:: ipython3
+.. code:: python3
 
     x = contents.iterrows()
     next(x)[1]['aisle_id']
 
-.. code:: ipython3
+.. code:: python3
 
     for i, j in x:
         print(j['product_id'])
 
-.. code:: ipython3
+.. code:: python3
 
     sbn.heatmap(aisle_mat)
 
@@ -100,33 +100,33 @@ this to build our chord diagram and other graph like visualizations.
 Looks like a lot of small values! Lets make a histogram of the whole
 thing and see.
 
-.. code:: ipython3
+.. code:: python3
 
     #plt.hist(aisle_mat.values.flatten(),bins=100)
 
-.. code:: ipython3
+.. code:: python3
 
     for i in range(1,135):
         aisle_mat.loc[i][i] = 0
 
-.. code:: ipython3
+.. code:: python3
 
     x = aisle_mat.values.flatten()
 
 
-.. code:: ipython3
+.. code:: python3
 
     sall = aisle_mat.values.sum()
 
-.. code:: ipython3
+.. code:: python3
 
     y = aisle_mat.applymap(lambda x: x/sall)
 
-.. code:: ipython3
+.. code:: python3
 
     z = y.applymap(lambda x: x if x > 0.001 else np.nan)
 
-.. code:: ipython3
+.. code:: python3
 
     sbn.heatmap(z)
 
@@ -143,11 +143,11 @@ thing and see.
 .. image:: Instacart_files/Instacart_92_1.png
 
 
-.. code:: ipython3
+.. code:: python3
 
     aisle_mat = pd.read_csv('aisle_mat.csv',index_col='aid')
 
-.. code:: ipython3
+.. code:: python3
 
     aisle_mat.head()
 
@@ -349,11 +349,11 @@ thing and see.
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     aisle_mat['total'] = aisle_mat.apply(lambda x : x.sum(), axis=1)
 
-.. code:: ipython3
+.. code:: python3
 
     aisle_mat.sort_values('total', ascending=False, inplace=True)
     aisle_mat.head()
@@ -558,7 +558,7 @@ thing and see.
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     row_order = aisle_mat.index
     row_order = row_order.tolist()
@@ -584,7 +584,7 @@ thing and see.
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     aisle_map = pd.merge(aisle_mat, adf, left_index=True, right_on='aisle_id')['aisle']
     aisle_map.values.tolist()[:10]
@@ -607,21 +607,21 @@ thing and see.
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     am = aisle_mat.values.tolist()[:20][:20]
     for i in range(len(am)):
         am[i][i] = 0.0
 
-.. code:: ipython3
+.. code:: python3
 
     pickle.dump(am,file=open('am.pkl', 'wb'))
 
-.. code:: ipython3
+.. code:: python3
 
     import pprint
 
-.. code:: ipython3
+.. code:: python3
 
     depts = pd.read_csv('ecomm/departments.csv')
     depts

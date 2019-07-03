@@ -12,7 +12,7 @@ and a few new things
 Python variables don’t have a type so they can seamlessly change from
 being a numerical value, a string, other things:
 
-.. code:: ipython3
+.. code:: python3
 
     my_var = 3
     print(type(my_var))
@@ -32,7 +32,7 @@ being a numerical value, a string, other things:
 Strings can be represented with single or double quotes. Triple quotes
 make it easy to define multi-line strings:
 
-.. code:: ipython3
+.. code:: python3
 
     my_var = 'foo\nbar'   # \n means newline
     print("1:", my_var)
@@ -55,7 +55,7 @@ make it easy to define multi-line strings:
 
 Python can convert variable from one type to another:
 
-.. code:: ipython3
+.. code:: python3
 
     my_string = str(123)
     my_int = int(my_string)
@@ -64,7 +64,7 @@ Python can convert variable from one type to another:
 Remember that you can import useful modules that add functionality to
 Python. For example:
 
-.. code:: ipython3
+.. code:: python3
 
     import random
     random.randrange(20, 30)
@@ -83,7 +83,7 @@ Re-run the above cell to see that it produces different outputs.
 For-loops can be used to iterate numerical values like in other
 programming languages with the range function:
 
-.. code:: ipython3
+.. code:: python3
 
     for i in range(0, 10):
         print(i)
@@ -105,7 +105,7 @@ programming languages with the range function:
 
 But can also be used to visit every item in a list.
 
-.. code:: ipython3
+.. code:: python3
 
     for color in ["red", "green", "blue"]:
         print(color)
@@ -121,7 +121,7 @@ But can also be used to visit every item in a list.
 Remember that the contents of the for-loop have to be indented at the
 same level to differentiate them from code outside the for-loop:
 
-.. code:: ipython3
+.. code:: python3
 
     for i in range(3):
         print("repeated")
@@ -143,7 +143,7 @@ same level to differentiate them from code outside the for-loop:
 Getting back to lists, they are a basic type in Python and they can
 contain a mix of different types:
 
-.. code:: ipython3
+.. code:: python3
 
     my_list = ["string", 1, [2.0, 4.5], 5.6]  # Don't do that
     my_list = []                              # An empty list
@@ -151,7 +151,7 @@ contain a mix of different types:
 
 Lists are mutable so you can overwrite arbitrary values:
 
-.. code:: ipython3
+.. code:: python3
 
     my_list[2] = 64
     my_list
@@ -167,7 +167,7 @@ Lists are mutable so you can overwrite arbitrary values:
 
 Remember that indexes start at 0:
 
-.. code:: ipython3
+.. code:: python3
 
     my_list[0]
 
@@ -183,7 +183,7 @@ Remember that indexes start at 0:
 And you use negative indexes to refer to values starting from the end of
 the list.
 
-.. code:: ipython3
+.. code:: python3
 
     my_list[-2]
 
@@ -199,7 +199,7 @@ the list.
 You can also use slices to rapidly grab portion of the list. For example
 to get the first 2 values:
 
-.. code:: ipython3
+.. code:: python3
 
     my_list[0:2]
 
@@ -214,7 +214,7 @@ to get the first 2 values:
 
 You can also perform a variety of operations on lists:
 
-.. code:: ipython3
+.. code:: python3
 
     print(len(my_list))
     print(min(my_list))
@@ -238,7 +238,7 @@ You can also perform a variety of operations on lists:
 
 Some of these operations work on strings too:
 
-.. code:: ipython3
+.. code:: python3
 
     my_var = "Abc defg hij"
     print(len(my_var))
@@ -259,7 +259,7 @@ Some of these operations work on strings too:
 
 Strings also have special abilities:
 
-.. code:: ipython3
+.. code:: python3
 
     print(my_var.lower())
     print(my_var.upper())
@@ -283,7 +283,7 @@ Strings also have special abilities:
 
 Use double-equals (==) to test for equality:
 
-.. code:: ipython3
+.. code:: python3
 
     if sum(my_list) == 333:
         print("It's 333 exactly!")
@@ -298,7 +298,7 @@ Use double-equals (==) to test for equality:
 
 But you can test for a lot of different relations:
 
-.. code:: ipython3
+.. code:: python3
 
     if my_list[0] > 20 and my_list[1] <= 14 or my_list[2] != 5 and 4 in my_list and 65 not in my_list:
         print("Weird condition")
@@ -311,7 +311,7 @@ But you can test for a lot of different relations:
 
 So to add up all the odd numbers in ``my_list``:
 
-.. code:: ipython3
+.. code:: python3
 
     total = 0
     for val in my_list:
@@ -331,7 +331,7 @@ So to add up all the odd numbers in ``my_list``:
 To read a file, we use the ``open`` function. Using ``with`` avoids
 having to remember to close the file.
 
-.. code:: ipython3
+.. code:: python3
 
     with open('mydata.txt', 'r') as md:
         for line in md:
@@ -341,7 +341,7 @@ Dictionaries are another very handy, built-in data type in Python
 (they’re hash tables if you’ve use another language that uses that
 name). Dictionaries can be created in a variety of ways:
 
-.. code:: ipython3
+.. code:: python3
 
     my_dict = {}   # Empty dict
     my_dict = {'foo': 'bar', 'baz': 'bak'}
@@ -351,7 +351,7 @@ name). Dictionaries can be created in a variety of ways:
 ``'foo'`` and ``'baz'`` are called keys, ``'bar'`` and ``'bak'`` are
 called values. You can access values in the dictionary with its key:
 
-.. code:: ipython3
+.. code:: python3
 
     my_dict['foo']
 
@@ -366,14 +366,14 @@ called values. You can access values in the dictionary with its key:
 
 And you can add new values (or overwrite old ones) by key as well:
 
-.. code:: ipython3
+.. code:: python3
 
     my_dict['hello'] = 'world'
     my_dict['hello'] = 'goodbye'
 
 You can iterate over a dictionary using a for-loop:
 
-.. code:: ipython3
+.. code:: python3
 
     for key in my_dict:
         print("The key", key, "maps to the value", my_dict[key])
@@ -390,7 +390,7 @@ You can define your own functions using the ``def`` keyword and
 ``return`` to specify the value that is returned by the function.
 Remember that the
 
-.. code:: ipython3
+.. code:: python3
 
     def double_plus_y(x, y=4):
         return 2 * x + y
@@ -409,7 +409,7 @@ Remember that the
 But functions don’t have to take parameters (``x`` and ``y`` in the
 example above) or return anything:
 
-.. code:: ipython3
+.. code:: python3
 
     def say_hi():
         print("Just saying 'hello'.")
@@ -424,7 +424,7 @@ example above) or return anything:
 
 The map function allows us to call a function on each item in a list:
 
-.. code:: ipython3
+.. code:: python3
 
     for value in map(double_plus_y, my_list):
         print(value)
@@ -448,7 +448,7 @@ The map function allows us to call a function on each item in a list:
 For simple, one-time-use function, we don’t have to define a function,
 we can use lambda to define the operation in-line:
 
-.. code:: ipython3
+.. code:: python3
 
     for value in map(lambda x: 2 * x, my_list):  # Don't need a separate function
         print(value)
@@ -479,7 +479,7 @@ comprehension <https://www.pythonforbeginners.com/basics/list-comprehensions-in-
 to perform an operation on every item in the list. It looks a little bit
 like a for-loop inside of a list:
 
-.. code:: ipython3
+.. code:: python3
 
     [x*2 for x in my_list]
 
@@ -495,7 +495,7 @@ like a for-loop inside of a list:
 You can also use it to filter out values from a list. For example to
 extract every odd values from the list:
 
-.. code:: ipython3
+.. code:: python3
 
     [x for x in my_list if x % 2 == 1]
 
@@ -510,7 +510,7 @@ extract every odd values from the list:
 
 You can even combine filtering and other operations:
 
-.. code:: ipython3
+.. code:: python3
 
     [x**2 for x in my_list if x<10]   # Square every value less than 10
 
@@ -534,7 +534,7 @@ in the US but with a more famous namesake in a different state.
 Use list comprehension to produce a list of only the cities whose name
 (including the state name) are less than 12 characters long.
 
-.. code:: ipython3
+.. code:: python3
 
     cities = ['washington,ct', 'springfield,or', 'riverside,tx', 'franklin,vt', 'lebanon,co', 'dayton,tx', 'las vegas,nm', 'madison,ca', 'georgetown,ct', 'los angeles,tx']
     short_cities = []
@@ -552,7 +552,7 @@ Use list comprehension to produce a list of only the cities whose name
 Next, create a list of abbreviations that are just the first 3 letters
 of each city name:
 
-.. code:: ipython3
+.. code:: python3
 
     abbreviations = []
     abbreviations
@@ -569,7 +569,7 @@ of each city name:
 Use list comprehension, to create a dictionary that maps city names to
 the states that they are located in.
 
-.. code:: ipython3
+.. code:: python3
 
     city_dict = []
     city_dict
@@ -598,7 +598,7 @@ comprehension that produces the
 version of just the city names of the cities in Texas (that means that
 the states should not be the resulting list).
 
-.. code:: ipython3
+.. code:: python3
 
     texas = []
     texas

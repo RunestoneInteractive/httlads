@@ -20,30 +20,30 @@ tasks is as follows:
 3. Break the string into a list of words
 4. Remove stop words from the list
 
-.. code:: ipython3
+.. code:: python3
 
     speeches_1970 = undf[undf.year == 1970].copy()
 
 
-.. code:: ipython3
+.. code:: python3
 
     speeches_1970['text'] = speeches_1970.text.apply(lambda x: x.lower())
 
-.. code:: ipython3
+.. code:: python3
 
     speeches_1970['text'] = speeches_1970.text.apply(lambda x: x.translate(str.maketrans(string.punctuation, ' '*len(string.punctuation))))
 
 
-.. code:: ipython3
+.. code:: python3
 
     speeches_1970['word_list'] = speeches_1970.text.apply(nltk.word_tokenize)
 
-.. code:: ipython3
+.. code:: python3
 
     from collections import Counter
     c = Counter(speeches_1970.word_list.sum())
 
-.. code:: ipython3
+.. code:: python3
 
     c.most_common(10)
 
@@ -65,7 +65,7 @@ tasks is as follows:
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     c.most_common()[-10:]
 
@@ -108,7 +108,7 @@ tasks is as follows:
        - '/Users/bradleymiller/.local/share/virtualenvs/httlads--V2x4wK-/bin/../lib/nltk_data'
    **********************************************************************
 
-.. code:: ipython3
+.. code:: python3
 
     sw = set(stopwords.words('english'))
     len(sw)
@@ -122,15 +122,15 @@ tasks is as follows:
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     speeches_1970['word_list'] = speeches_1970.word_list.apply(lambda x: [y for y in x if y not in sw])
 
-.. code:: ipython3
+.. code:: python3
 
     c = Counter(speeches_1970.word_list.sum())
 
-.. code:: ipython3
+.. code:: python3
 
     c.most_common(25)
 
@@ -167,7 +167,7 @@ tasks is as follows:
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     c.most_common()[-25:]
 

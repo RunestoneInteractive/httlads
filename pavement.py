@@ -7,14 +7,22 @@ from runestone.server import get_dburl
 from sphinxcontrib import paverutils
 import pkg_resources
 from socket import gethostname
+from runestone import get_master_url
 
 sys.path.append(os.getcwd())
 
 home_dir = os.getcwd()
-master_url = 'https://runestone.academy'
+master_url = None
+if not master_url:
+    master_url = get_master_url()
+
+dynamic_pages = True
 master_app = 'runestone'
 serving_dir = "./build/httlads"
-dest = "../../static"
+if dynamic_pages:
+    dest = './published'
+else:
+    dest = "../../static"
 
 options(
     sphinx = Bunch(docroot=".",),
@@ -30,6 +38,7 @@ options(
                        'appname':master_app,
                        'loglevel': 0,
                        'course_url':master_url,
+                       'dynamic_pages': dynamic_pages,
                        'use_services': 'false',
                        'python3': 'true',
                        'dburl': 'postgresql://user:password@localhost/runestone',
@@ -39,7 +48,8 @@ options(
                        'proxy_uri_runs': '/jobe/index.php/restapi/runs/',
                        'proxy_uri_files': '/jobe/index.php/restapi/files/',
                        'downloads_enabled': 'false',
-                       'enable_chatcodes': 'false'
+                       'enable_chatcodes': 'false',
+                       'allow_pairs': 'false'
                         }
     )
 )

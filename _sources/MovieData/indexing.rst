@@ -45,14 +45,14 @@ for that?).
 HINT: You’ll have to use ``pd.to_numeric`` to force the runtimes to be
 numbers (instead of numbers in a string)
 
-.. code:: ipython3
+.. code:: python3
 
     time_scheduler = []
     time_scheduler
 
 Now let’s find all those two-hour-and-34-minute movies:
 
-.. code:: ipython3
+.. code:: python3
 
     time_scheduler[154]
 
@@ -67,7 +67,7 @@ Now let’s find all those two-hour-and-34-minute movies:
 
 But what is the 154th shortest movie in this collection?
 
-.. code:: ipython3
+.. code:: python3
 
     movie_number_154 = time_scheduler.iloc[154]
     movie_number_154

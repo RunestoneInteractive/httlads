@@ -6,7 +6,7 @@ information by grouping rows together. For example, we could ask
 ourselves how many bike trips were taken for each subscriber type, and
 which subscriber type has the most bike trips?
 
-.. code:: ipython3
+.. code:: python3
 
     %%sql
     SELECT
@@ -67,7 +67,7 @@ We must specify an aggregate function for any column that we ``SELECT``
 in our query (except the column that we’re grouping by) in order for the
 command to succeed. If we don’t specify a way to aggregate the value most database servers will complain.  However, SQLITE does not.  SQLite lets you do silly things without giving you an error.   For example, the following query will work, but you have no idea what the results actually mean.
 
-.. code:: ipython3
+.. code:: python3
 
     %%sql
 
@@ -130,7 +130,7 @@ specify multiple columns to aggregate within the ``GROUP BY`` clause,
 for example: further breakdown the aggregate count by the start station
 IDs:
 
-.. code:: ipython3
+.. code:: python3
 
     %%sql
 
@@ -284,7 +284,7 @@ Some common ones include:
 So we could for example compute the **total** number of minutes of all
 bike trips for all subscriber types
 
-.. code:: ipython3
+.. code:: python3
 
     %%sql
 
@@ -345,7 +345,7 @@ Practice Exercises
 .. reveal:: bikes_agg
     :instructoronly:
 
-    .. code:: ipython3
+    .. code:: python3
 
         %%sql
 

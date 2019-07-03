@@ -88,7 +88,7 @@ You might think that counting the number of times Mexico refers to Cuba will be 
 
 .. reveal:: mex_to_cuba
 
-    .. code:: ipython3
+    .. code:: python3
 
         test_cases.loc['MEX'].text.count('Cuba')
 
@@ -97,7 +97,7 @@ What about counting the number of times that ALL the countries mention Cuba?  Yo
 
 The answer should look like this:
 
-.. code:: ipython3
+.. code:: python3
 
     code
     CAN     0
@@ -217,7 +217,7 @@ Your initial result should look like this:
 
     Here's the nicest solution for this I can think of:
 
-    .. code:: ipython3
+    .. code:: python3
 
         dfl = []
         for row in test_cases.itertuples():
@@ -359,7 +359,7 @@ The result we are after for our 2014, 2015 dataset looks like this:
 
 With the narrow representation of the data it is easy to have Altair make a heat map using using a mark_bar and encoding y axis as the speaking_c, the x axis as the referenced_c and the color as ref_count.
 
-.. code:: ipython3
+.. code:: python3
 
     alt.Chart(narrow_test, height=200, width=200).mark_rect().encode(
         x='speaking_c:O',
@@ -487,7 +487,7 @@ Both packages are well documented:
 
 Lets look at some example code that shows how easy it was to build the graph above.
 
-.. code:: ipython3
+.. code:: python3
 
     from graphviz import Digraph
     g = Digraph()
@@ -501,7 +501,7 @@ Lets look at some example code that shows how easy it was to build the graph abo
 
 Using networkx we can build the graph directly from the DataFrame, but the graph produced is not very aesthetically pleasing.
 
-.. code:: ipython3
+.. code:: python3
 
     g = nx.from_pandas_edgelist(narrow_test[narrow_test.ref_count > 0],
                             'speaking_c',
@@ -519,7 +519,7 @@ The above produces the rather unattractive graph:
 Its missing the arrows, and the text doesn't fit, and the bright red is a bit alarming for no good reason.  Not to mention that the layout is not very easy to understand.
 We can immediately do much better by saving the graph we created with networkx as a dot file and then reading it back again and letting graphviz render the graph for us!
 
-.. code:: ipython3
+.. code:: python3
 
     from networkx.drawing.nx_agraph import write_dot
     from graphviz import Source

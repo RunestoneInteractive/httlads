@@ -9,7 +9,7 @@ criteria.
 For example, to see the bike trips in the order of the duration in
 seconds:
 
-.. code:: ipython3
+.. code:: python3
 
     %%sql
 
@@ -97,7 +97,7 @@ seconds:
 Well, it turns out by default the sorting order is **ascending**. To
 sort the rows in **descending** order, add the keyword ``DESC``.
 
-.. code:: ipython3
+.. code:: python3
 
     %%sql
 
@@ -185,7 +185,7 @@ sort the rows in **descending** order, add the keyword ``DESC``.
 Of course, we can mix ``WHERE`` and ``ORDER BY``, to get only the bike
 trips from Member type of Casual in the order of the duration.
 
-.. code:: ipython3
+.. code:: python3
 
     %%sql
 
@@ -292,7 +292,7 @@ Practice Exercises
 .. reveal:: bikes_sort
     :instructoronly:
 
-    .. code:: ipython3
+    .. code:: python3
 
         %%sql
 

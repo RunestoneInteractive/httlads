@@ -11,7 +11,7 @@ make.
 Create a variable called ``budget_df`` that contains all columns for the
 movies whose budget was over a million dollars.
 
-.. code:: ipython3
+.. code:: python3
 
     budget_df = []
     budget_df.shape
@@ -33,7 +33,7 @@ Create a Series object called ``budget_lookup`` such that you are able
 to use a call to ``budget_lookup['Dead Presidents']`` to find the budget
 of that movie.
 
-.. code:: ipython3
+.. code:: python3
 
     budget_lookup = []
     budget_lookup['Dead Presidents']
@@ -51,7 +51,7 @@ I have figured out that the first (alphabetically) movie whose title
 starts with an ‘A’ is ‘A Bag of Hammers’ and the last movie that starts
 with a ‘B’ is ‘Byzantium’.
 
-.. code:: ipython3
+.. code:: python3
 
     budget_lookup[budget_lookup.index.str.startswith('A')].sort_index()[[0]]
 
@@ -66,7 +66,7 @@ with a ‘B’ is ‘Byzantium’.
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     budget_lookup[budget_lookup.index.str.startswith('B')].sort_index()[[-1]]
 
@@ -87,7 +87,7 @@ for all the movies that start with an ‘A’ or a ‘B’.
 HINT: No need to use startswith like I did above, just use the movie
 titles to do a slice.
 
-.. code:: ipython3
+.. code:: python3
 
     budget_lookup_as_and_bs = []
     budget_lookup_as_and_bs.shape

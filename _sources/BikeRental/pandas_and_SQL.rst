@@ -6,7 +6,7 @@ Running the kind of queries we did in the last few sections is great for explori
 
 Pandas provides us with a great way to use our SQL knowledge to create create a DataFrame with the results.  The ``pd.read_sql``  allows us to pass in a SQL query as a string, along with a URL to connect to the database, and will return a DataFrame.  Let's try that on our bikeshare_stations table now.
 
-.. code:: ipython3
+.. code:: python3
 
     import pandas as pd
     stations = pd.read_sql_query("""select * from bikeshare_stations where latitude is not NULL""",'sqlite:///bikeshare.db')
@@ -110,14 +110,14 @@ Lets proceed under the assumption that you have all of the prerequisites install
 
 Suppose we have two lists:
 
-.. code:: ipython3
+.. code:: python3
 
     list1 = ['a', 'b', 'c']
     list2 = [1, 2, 3]
 
 We want to combine these into ``[('a', 1), ('b', 2), ('c', 3)]`` We can do that using Python's ``zip`` function like ``zip(list1, list2)``.  The zip function takes any number of iterable objects and "zips" them together taking the first element from each and making a tuple, then the second element of each etc.  If we expand our example
 
-.. code:: ipython3
+.. code:: python3
 
     list1 = ['a', 'b', 'c']
     list2 = [1, 2, 3]
@@ -128,14 +128,14 @@ Then ``list(zip(list1, list2, str1))`` returns ``[('a', 1, 'X'), ('b', 2, 'Y'), 
 The good news is that Series are also iterables so we can pass a series to the zip function and it will work great.
 
 
-.. code:: ipython3
+.. code:: python3
 
     import gmaps
     gmaps.configure(api_key='YOUR KEY HERE')
 
 This gets everything set up to use ``gmaps``.  Now lets use the stations DataFrame we created earlier to make our first map.
 
-.. code:: ipython3
+.. code:: python3
 
     locations = list(zip(stations.latitude, stations.longitude))
     dc_center = (38.9072, -77.0369)
