@@ -39,7 +39,7 @@ of work.
 
 Lets take a look at the file structure of the downloaded data from 2017
 
-.. code:: ipython3
+.. code:: python3
 
     ls factbook/2017
 
@@ -55,7 +55,7 @@ Lets take a look at the file structure of the downloaded data from 2017
 The folder that may jump out at you is called fields, so lets look at
 that in more detail.
 
-.. code:: ipython3
+.. code:: python3
 
     import os
     files = os.listdir('factbook/2017/fields')
@@ -142,7 +142,7 @@ Now that we know the pattern we are looking for, the big question is how do we g
 
 First lets import the module, and read the entire webpage as a string.
 
-.. code:: ipython3
+.. code:: python3
 
     from bs4 import BeautifulSoup
     page = open('../Data/factbook/2017/docs/notesanddefs.html').read()
@@ -154,7 +154,7 @@ First lets import the module, and read the entire webpage as a string.
 
 Now lets have BeautifulSoup take control
 
-.. code:: ipython3
+.. code:: python3
 
     page = BeautifulSoup(page)
     print(page.prettify()[:1000])
@@ -204,7 +204,7 @@ The search syntax is uses a couple of special characters to indicate relationshi
 
 You can definitely get more complicated than that, but knowing only those 3 concepts is a really good start.  To make use of the search capability we will use the `select <https://www.crummy.com/software/BeautifulSoup/bs4/doc/#css-selectors>`_ method of a BeautifulSoup object.  In our case we have created a BeautifulSoup object called `page`.  select will always return a list, so you can iterate over the list or index into the list. Lets try an example:
 
-.. code:: ipython3
+.. code:: python3
 
     links = page.select('a')
     print(len(links))
@@ -236,7 +236,7 @@ Now lets put this all together and see if we can make a list of the columns and 
 
 Starting small, lets print the column names
 
-.. code:: ipython3
+.. code:: python3
 
     cols = page.select("span.category")
     for col in cols:
@@ -262,7 +262,7 @@ Starting small, lets print the column names
 
 Next lets expand on this example to get the path to the file.
 
-.. code:: ipython3
+.. code:: python3
 
     cols = page.select("span.category")
     for col in cols:
@@ -353,7 +353,7 @@ If you use the structure given above you can just pass that to the
 DataFrame constructor and you should have something that looks like
 this:
 
-.. code:: ipython3
+.. code:: python3
 
     #pd.DataFrame(data).head()
 

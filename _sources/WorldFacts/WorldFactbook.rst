@@ -28,7 +28,7 @@ You may have some experience with reading and parsing CSV files on your
 own with Python. If not you may wish to `have a quick
 review <https://runestone.academy/runestone/static/fopp/Files/ReadingCSVFiles.html>`__
 
-.. code:: ipython3
+.. code:: python3
 
     %matplotlib inline
 
@@ -51,11 +51,11 @@ review <https://runestone.academy/runestone/static/fopp/Files/ReadingCSVFiles.ht
 Meanwhile, we will make use of one of the many data reading functions
 pandas provides for us ``read_csv``
 
-.. code:: ipython3
+.. code:: python3
 
     wd = pd.read_csv('world_countries.csv')
 
-.. code:: ipython3
+.. code:: python3
 
     wd.head()
 
@@ -265,7 +265,7 @@ The Climate numbers are as follows:
 Somehow some values of 1.5 and 2.5 have crept in, so we will assume that 1.5 is mixed tropical and 2.5 mixed.
 
 
-.. code:: ipython3
+.. code:: python3
 
     wd.describe()
 
@@ -497,7 +497,7 @@ Somehow some values of 1.5 and 2.5 have crept in, so we will assume that 1.5 is 
 Visualizing Distribution with Histograms
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code:: ipython3
+.. code:: python3
 
     c = Chart(wd) # make a chart
     m = c.mark_bar() # set the mark -- returns a new Chart
@@ -517,7 +517,7 @@ single line. We also do not need to explicitly call display because
 Altair returns an object that the Jupyter environment knows how to
 display automatically.
 
-.. code:: ipython3
+.. code:: python3
 
     Chart(wd).mark_bar().encode(x=X('Birthrate', bin=True), y='count()')
 
@@ -566,7 +566,7 @@ Scatter Plots for discovering relationships
 Now lets make a simple scatter plot of area versus population of the
 countries.
 
-.. code:: ipython3
+.. code:: python3
 
     Chart(wd).mark_point().encode(x='Population', y='Area', tooltip='Country')
 
@@ -591,7 +591,7 @@ The statement below produces a Series of boolean values. These boolean
 values are used to index the data frame and only the rows corresponding
 to True values are returned in the result.
 
-.. code:: ipython3
+.. code:: python3
 
     (wd.Population < 150000000).head(20)
 
@@ -627,7 +627,7 @@ to True values are returned in the result.
 To be a bit more dramatic lets look at the countries of less than
 150,000
 
-.. code:: ipython3
+.. code:: python3
 
     wd[wd.Population < 150000]
 
@@ -1577,7 +1577,7 @@ Now lets graph these countries. The easiest way to do this is to plug
 the query right into the call to create a Chart rather than assigning it
 to a variable first.
 
-.. code:: ipython3
+.. code:: python3
 
     Chart(wd[wd.Population < 150000]).mark_point().encode(x='Population', y='Area', tooltip='Country').interactive()
 
@@ -1600,7 +1600,7 @@ two operators are used for bitwise or and bitwise and. So we can create
 a more complicated boolean expression to limit our DataFrame in both
 directions.
 
-.. code:: ipython3
+.. code:: python3
 
     wd[(wd.Population < 150000) & (wd.Area < 200000)]
 
@@ -2522,7 +2522,7 @@ directions.
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     Chart(wd[(wd.Population < 150000) & (wd.Area < 200000)]).mark_point().encode(x='Population', y='Area', tooltip='Country').interactive()
 
@@ -2538,7 +2538,7 @@ some point. I lived in Malta for six months, so I’m always curious about
 Malta. Lets see what data we have in the data frame for Malta using an
 equality:
 
-.. code:: ipython3
+.. code:: python3
 
     wd[wd.Country == 'Malta']
 
@@ -2604,7 +2604,7 @@ horrible. We don’t want to have to remember to put spaces at the end of
 every string all the time. We should do a little data cleanup and strip
 those spaces.
 
-.. code:: ipython3
+.. code:: python3
 
     wd[wd.Country == 'Malta ']
 
@@ -2692,7 +2692,7 @@ strings in the Series? Pandas allows us to do this using the str
 attribute of the series in combination with most of the standard string
 methods you know about.
 
-.. code:: ipython3
+.. code:: python3
 
     wd.Country.str.strip()
 
@@ -2768,11 +2768,11 @@ methods you know about.
 
 Now we can replace our original Country column with the stripped column.
 
-.. code:: ipython3
+.. code:: python3
 
     wd['Country'] = wd.Country.str.strip()
 
-.. code:: ipython3
+.. code:: python3
 
     wd[wd.Country == 'Malta']
 
@@ -2861,7 +2861,7 @@ It would be pretty tedius to look at all the different pairs of things
 we might want to look at for correlation one at a time, but we can Use a
 scatter matrix to make life easier.
 
-.. code:: ipython3
+.. code:: python3
 
     alt.Chart(wd).mark_circle().encode(
         alt.X(alt.repeat("column"), type='quantitative'),
@@ -2882,7 +2882,7 @@ scatter matrix to make life easier.
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     list(reversed(['a','b']))
 

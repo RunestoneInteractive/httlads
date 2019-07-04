@@ -7,7 +7,7 @@ Merging and Tidying Data
 
 Now that we know how the file is encoded we can read it easily
 
-.. code:: ipython3
+.. code:: python3
 
     c_codes = pd.read_csv('Data/country_codes.csv', encoding='iso-8859-1')
     c_codes.head()
@@ -120,7 +120,7 @@ method.
 Before we merge lets clean up the column names on the undf data frame
 and rename country to code_3 to be consistent with the above.
 
-.. code:: ipython3
+.. code:: python3
 
     undf.columns = ['session', 'year', 'code_3', 'text']
     undf.head()
@@ -211,7 +211,7 @@ undf data frame code_3 is a ‘Foreign key’ as we use it to lookup
 additional information in a table where code_3 is a primary key. More on
 this when we study SQL queries.
 
-.. code:: ipython3
+.. code:: python3
 
     undfe = undf.merge(c_codes[['code_3', 'country', 'continent', 'sub_region']])
     undfe.head()
@@ -305,7 +305,7 @@ this when we study SQL queries.
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     undfe[undf.code_3 == 'EU ']
 
@@ -362,7 +362,7 @@ key must be in BOTH data frames in order for it to be in the result. We
 can do our merge using an outer join to preserve the data and then see
 which countries have no text and which texts have no country name.
 
-.. code:: ipython3
+.. code:: python3
 
     undfe = undf.merge(c_codes[['code_3', 'country', 'continent', 'sub_region']], how='outer')
     undfe.head()
@@ -464,7 +464,7 @@ which countries have no text and which texts have no country name.
 
 Now lets see which country names are not filled in.
 
-.. code:: ipython3
+.. code:: python3
 
     undfe[undfe.country.isna()].code_3.unique()
 
@@ -477,7 +477,7 @@ Now lets see which country names are not filled in.
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     undfe[undfe.text.isna()].code_3.unique()
 
@@ -496,7 +496,7 @@ Now lets see which country names are not filled in.
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     undfe[undfe.text.isna()].country.unique()
 
@@ -531,12 +531,12 @@ Now lets see which country names are not filled in.
 Do some research and fill in the country names for YDYE, CSK, YUG, DDR,
 and EU by hand.
 
-.. code:: ipython3
+.. code:: python3
 
     undfe.loc[undfe.code_3 == 'EU', 'country'] = 'European Union'
 
 
-.. code:: ipython3
+.. code:: python3
 
     by_country = undfe.groupby('country',as_index=False)['text'].count()
     by_country.loc[by_country.text.idxmin()]
@@ -554,7 +554,7 @@ and EU by hand.
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     c_codes[c_codes.code_2 == 'EU']
 
@@ -608,7 +608,7 @@ they?
 Ok, but why did EU seem to dissappear? When we do a merge if the key is
 missing then the row is not included in the final result.
 
-.. code:: ipython3
+.. code:: python3
 
     len(undfe)
 
@@ -621,7 +621,7 @@ missing then the row is not included in the final result.
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     len(undf.code_3.unique())
 
@@ -634,7 +634,7 @@ missing then the row is not included in the final result.
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     len(undfe.code_3.unique())
 
@@ -647,7 +647,7 @@ missing then the row is not included in the final result.
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     set(undf.code_3.unique()) - set(undfe.code_3.unique())
 
@@ -715,7 +715,7 @@ Lets look at the genres column of the movies dataset.   You may recall that it l
 It looks like a list of dictionary literals.  Except it is in double quotes like a string.  Lets first figure out how we can get it to be an actual list of dictionaries.  Then we'll figure out what to do with it.  Python has a nifty function called `eval` that allows you to evaluate a Python expression that is a string. For example:
 
 
-.. code:: ipython3
+.. code:: python3
 
     eval(df.iloc[0].genres)
 
@@ -729,7 +729,7 @@ Will return this:
 
 Even better, we can assign the result of `eval` to a variable and then we can use the list and dictionary index syntax to access parts of the result!  Just like we learned about when we discussed JSON in an earlier chapter!
 
-.. code:: ipython3
+.. code:: python3
 
     glist = eval(df.iloc[0].genres)
     glist[1]['name']
@@ -747,7 +747,7 @@ The better strategy for doing solving this problem is to create a new DataFrame 
 To construct this table we need to iterate over all the rows of the DataFrame and gather the genres for this movie.  For each genre of the movie we will add a an item to a list that contains the `imdb_id` of the movie and and item to a list that contains the name of the genre.  These two lists are in sync with each other so that the i\ :sup:`th` element of each list will represent the same movie.
 
 Here is some code you can use to construct two lists
-.. code:: ipython3
+.. code:: python3
 
     movie_list = []
     genre_list = []

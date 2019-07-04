@@ -18,7 +18,7 @@ latitude   FLOAT   latitude of the station
 longitude  FLOAT   longitude of the station
 ========== ======= ============================================
 
-.. code:: ipython3
+.. code:: python3
 
     %%sql
 
@@ -153,7 +153,7 @@ Instead we leave the data in two separate tables and need a way to
 ‘join’ the values together. We can do that by just listing multiple
 table names but the result is a mess:
 
-.. code:: ipython3
+.. code:: python3
 
     %%sql
 
@@ -375,7 +375,7 @@ In our bike sharing example, the ``station_id`` column of
 ``end_station`` column of ``trip_data``. To force this match, we filter
 out the ones that don’t have the same value for both of these columns:
 
-.. code:: ipython3
+.. code:: python3
 
     %%sql
 
@@ -589,7 +589,7 @@ Notice that the result looks more sensical: we end up with one row from
 
 We can check the size of the resulting table by running:
 
-.. code:: ipython3
+.. code:: python3
 
     %%sql
 
@@ -629,7 +629,7 @@ replaced with the keyword ``JOIN`` and ``WHERE`` is replaced with
 you are joining two tables and that your filters are there to specify
 how those tables are to be joined:
 
-.. code:: ipython3
+.. code:: python3
 
     %%sql
 
@@ -666,7 +666,7 @@ table. For example, to find out which **open** bike station which has
 the highest bike trip counts so we can ensure there is always plenty of
 bikes available, we can run:
 
-.. code:: ipython3
+.. code:: python3
 
     %%sql
 
@@ -761,7 +761,7 @@ Practice Exercises
 .. reveal:: bikes_join1
     :instructoronly:
 
-    .. code:: ipython3
+    .. code:: python3
 
         %%sql
 

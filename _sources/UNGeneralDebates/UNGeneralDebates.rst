@@ -51,7 +51,7 @@ Exploratory Questions
 7. What were the 25 most commonly used words in the 1970 session?
 8. What were the 25 most commonly used words in the 2015 session?
 
-.. code:: ipython3
+.. code:: python3
 
     %matplotlib inline
     import string
@@ -72,11 +72,11 @@ Exploratory Questions
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     undf = pd.read_csv('Data/un-general-debates.csv')
 
-.. code:: ipython3
+.. code:: python3
 
     len(undf)
 
@@ -89,7 +89,7 @@ Exploratory Questions
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     undf.sort_values('year', ascending=False).head()
 
@@ -173,7 +173,7 @@ option to see it all. You’ll probably want to set it back because as you
 can see in the following example looking at the entire thing is largely
 useless.
 
-.. code:: ipython3
+.. code:: python3
 
     pd.set_option('display.max_colwidth', -1)
     print(undf[(undf.year == 1970) & (undf.country == 'USA')].text)
@@ -669,7 +669,7 @@ grouping data. This is the split-apply-combine pattern that you may have
 learned about previously, but it is so commonly used in data science that
 Pandas makes it convenient for us.
 
-.. code:: ipython3
+.. code:: python3
 
     by_year = undf.groupby('year', as_index=False)['text'].count()
     by_year.head()
@@ -733,7 +733,7 @@ Pandas makes it convenient for us.
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     alt.Chart(by_year).mark_bar().encode(x='year:N',y='text')
 
@@ -744,7 +744,7 @@ Pandas makes it convenient for us.
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     by_country = undf.groupby('country',as_index=False)['text'].count()
     by_country.head()
@@ -808,7 +808,7 @@ Pandas makes it convenient for us.
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     alt.Chart(by_country,title='speech distribution').mark_bar().encode(x=alt.X('text',bin=True),y='count()')
 
@@ -820,7 +820,7 @@ Pandas makes it convenient for us.
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     by_country.loc[by_country.text.idxmax()]
 
@@ -835,7 +835,7 @@ Pandas makes it convenient for us.
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     by_country.loc[by_country.text.idxmin()]
 
@@ -857,7 +857,7 @@ will want to augment this data using our world factbook data or the data
 we scraped. I have a complete table ready for you to load so you don’t
 have to scrape it again.
 
-.. code:: ipython3
+.. code:: python3
 
     c_codes = pd.read_csv('Data/country_codes.csv')
     c_codes.head()
@@ -956,7 +956,7 @@ The important part of the result of that command is that it tells us that the ch
 
 So, lets try a little experiment.  We can represent 169 as 10101001 or as the hexadecimal value a9, which is easier to work with in Python.
 
-.. code:: ipython3
+.. code:: python3
 
     b'\xa9'.decode('utf8')
 
@@ -973,7 +973,7 @@ Aha!  That error message looks familiar.  And you will run into this many times 
 
 Lets give ASCII a try:
 
-.. code:: ipython3
+.. code:: python3
 
     b'\xa9'.decode('ascii')
 
@@ -989,7 +989,7 @@ Lets give ASCII a try:
 See the message not in range(128), yes 169 is definitely not in range(128)
 
 
-.. code:: ipython3
+.. code:: python3
 
     b'\xa9'.decode('iso-8859-1')
 
@@ -1000,7 +1000,7 @@ See the message not in range(128), yes 169 is definitely not in range(128)
 Success!!
 
 
-.. code:: ipython3
+.. code:: python3
 
     topics = [' nuclear', ' weapons', ' nuclear weapons', ' chemical weapons',
               ' biological weapons', ' mass destruction', ' peace', ' war',
@@ -1016,7 +1016,7 @@ Success!!
               ' violence', ' agriculture', ' diplomatic', ' drugs', ' obesity',
               ' islam', ' housing', ' sustainable', 'nuclear energy']
 
-.. code:: ipython3
+.. code:: python3
 
     undf.head()
 
@@ -1091,11 +1091,11 @@ Success!!
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     year_summ = undf.groupby('year', as_index=False)['text'].sum()
 
-.. code:: ipython3
+.. code:: python3
 
     year_summ.head()
 
@@ -1158,7 +1158,7 @@ Success!!
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     year_summ['gw'] = year_summ.text.str.count('global warming')
     year_summ['cc'] = year_summ.text.str.count('climate change')
@@ -1522,7 +1522,7 @@ Success!!
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     alt.Chart(year_summ[['year', 'gw', 'cc']]).mark_line().encode(x='year',y='gw')
 
@@ -1533,7 +1533,7 @@ Success!!
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     alt.Chart(year_summ[['year', 'gw', 'cc']].melt(id_vars='year', value_vars=['cc','gw'])
              ).mark_line().encode(x='year:O',y='value', color='variable')
@@ -1553,15 +1553,15 @@ topics and when? This is exactly the kind of thing that happens in data
 science. One question or the visualization of one or more items often
 leads to further and even more interesting questions.
 
-.. code:: ipython3
+.. code:: python3
 
     year_summ['pollution'] = year_summ.text.str.count('pollution')
 
-.. code:: ipython3
+.. code:: python3
 
     year_summ['terror'] = year_summ.text.str.count('terror')
 
-.. code:: ipython3
+.. code:: python3
 
     alt.Chart(year_summ[['year','terror']]).mark_line().encode(x='year:O', y='terror')
 
@@ -1572,14 +1572,14 @@ leads to further and even more interesting questions.
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     import numpy as np
     nrows, ncols = 100000, 100
     rng = np.random.RandomState(43)
     df1, df2, df3, df4 = (pd.DataFrame(rng.rand(nrows,ncols)) for i in range(4))
 
-.. code:: ipython3
+.. code:: python3
 
     %timeit df1 + df2 + df3 + df4
 
@@ -1589,7 +1589,7 @@ leads to further and even more interesting questions.
     84.9 ms ± 1.02 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
 
 
-.. code:: ipython3
+.. code:: python3
 
     %timeit pd.eval('df1 + df2 + df3 + df4')
 
@@ -1599,11 +1599,11 @@ leads to further and even more interesting questions.
     38.7 ms ± 1.16 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
 
 
-.. code:: ipython3
+.. code:: python3
 
     undf['text_len'] = undf.text.map(lambda x : len(x.split()))
 
-.. code:: ipython3
+.. code:: python3
 
     undf.head()
 
@@ -1684,7 +1684,7 @@ leads to further and even more interesting questions.
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     undf.groupby('code_3', as_index=False)['text_len'].mean().head()
 
@@ -1747,7 +1747,7 @@ leads to further and even more interesting questions.
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     alt.Chart(undf.groupby('code_3', as_index=False)['text_len'].mean()).mark_bar().encode(
     alt.X('text_len', bin=True), y='count()')
@@ -1759,7 +1759,7 @@ leads to further and even more interesting questions.
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     undf.groupby('code_3', as_index=False)['text_len'].mean().sort_values('text_len').head()
 
@@ -1822,7 +1822,7 @@ leads to further and even more interesting questions.
 
 
 
-.. code:: ipython3
+.. code:: python3
 
     undf.groupby('code_3', as_index=False)['text_len'].mean().sort_values('text_len').tail()
 

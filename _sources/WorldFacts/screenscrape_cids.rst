@@ -19,7 +19,7 @@ need to do based on understanding the example.
 The counties data that is passed to the chart is the data needed to
 create and outline the map
 
-.. code:: ipython3
+.. code:: python3
 
     import altair as alt
     from vega_datasets import data
@@ -49,7 +49,7 @@ no unemployment data in counties so we have to use a
 ``transform_lookup`` to **map** from the way counties are identified in
 the geo data to our DataFrame that contains unemployment data.
 
-.. code:: ipython3
+.. code:: python3
 
     unemp_data = pd.read_csv('http://vega.github.io/vega-datasets/data/unemployment.tsv',sep='\t')
     unemp_data.head()
@@ -123,7 +123,7 @@ parameter to the LookupData call is the name of the column in the
 unemp_data DataFrame. It is just a coincidence that they have the same
 name in this example.
 
-.. code:: ipython3
+.. code:: python3
 
 
     alt.Chart(counties).mark_geoshape(
@@ -187,7 +187,7 @@ The website called restcountries.eu provides an interface for us to get data fro
 
 Open a new tab in your browser and paste this URL - `https://restcountries.eu/rest/v2/alpha/usa`  You will see that you don't get a web page in response, but rather some information that looks like a Python dictionary.  We'll explore that more below.  We can do the same thing from a Python program using the requests library.
 
-.. code:: ipython3
+.. code:: python3
 
     import requests
     res = requests.get('https://restcountries.eu/rest/v2/alpha/usa')
@@ -201,7 +201,7 @@ The status code of 200 tells us that everything went fine.  If you make a typo i
 
 We can also look at the text that was returned.
 
-.. code:: ipython3
+.. code:: python3
 
     res.text
 
@@ -213,7 +213,7 @@ That looks like an ugly mess!  Fortunately its not as bad as it seems.  if you l
 
 The official name for the format that we saw above is called JSON - JavaScript Object Notation.  Its a good Acronym to know, but you don't have to know anything about Javascript in order to make use of JSON!
 
-.. code:: ipython3
+.. code:: python3
 
     usa_info = res.json()
     usa_info
@@ -274,7 +274,7 @@ The official name for the format that we saw above is called JSON - JavaScript O
      'cioc': 'USA'}
 
 
-.. code:: ipython3
+.. code:: python3
 
     usa_info['timezones']
 
@@ -325,7 +325,7 @@ When we use pandas the difference is that we don't pass the list as a parameter 
 
 For our case we need to write a function that takes a three letter country code as a parameter and returns the numeric code we lookup **converted to an integer**, lets call it `get_num_code`.  You have all the details you need to write this function.  Once you write this function you can use as shown below:
 
-.. code:: ipython3
+.. code:: python3
 
     wd['CodeNum'] = wd.Code.map(get_num_code)
     wd.head()
@@ -509,7 +509,7 @@ For our case we need to write a function that takes a three letter country code 
 
 You can make a gray map of the world like this:
 
-.. code:: ipython3
+.. code:: python3
 
     countries = alt.topo_feature(data.world_110m.url, 'countries')
 
@@ -524,7 +524,7 @@ You can make a gray map of the world like this:
 So, now you have the information you need to use the example of the
 counties above and apply that to the world below.
 
-.. code:: ipython3
+.. code:: python3
 
     base = alt.Chart(countries).mark_geoshape(
         fill='#666666',

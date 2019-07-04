@@ -16,7 +16,7 @@ some data with Pandas.
 
 We start with some standard imports:
 
-.. code:: ipython3
+.. code:: python3
 
     import ast
     import pandas as pd
@@ -26,7 +26,7 @@ We are providing you with data for this exercise that comes from The `Movie Data
 
 Then we load the data from a local file and checkout the data:
 
-.. code:: ipython3
+.. code:: python3
 
     df = pd.read_csv('../Data/movies_metadata.csv').dropna(axis=1, how='all')
     df.head()
@@ -217,7 +217,7 @@ movies that are listed in the MovieLens Latest Full Dataset.
 
 Let’s see what data we have:
 
-.. code:: ipython3
+.. code:: python3
 
     df.shape
 
@@ -233,7 +233,7 @@ Let’s see what data we have:
 Twenty-three columns of data for over 45,000 movies is going be a lot to
 look at but let’s start by looking at what the columns represent:
 
-.. code:: ipython3
+.. code:: python3
 
     df.columns
 

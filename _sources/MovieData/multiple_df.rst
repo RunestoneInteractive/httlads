@@ -13,7 +13,7 @@ Let’s create a variable called ``df_high_rated`` that only contains
 movies that have received more than 20 votes and whose average score is
 greater than 8.
 
-.. code:: ipython3
+.. code:: python3
 
     df_highly_voted = []
     df_high_rated = []
@@ -42,7 +42,7 @@ movies that are both my favorites and popular favorites.
 HINT: You’ll need to create two Series, one for my ratings and one that
 maps titles to vote_average.
 
-.. code:: ipython3
+.. code:: python3
 
     {
         "Star Wars": 9,
@@ -63,7 +63,7 @@ difference between my rating and the popular rating for each movie.
 You’ll need to take the different between the vote_average and my_vote
 and divide it by my_vote.
 
-.. code:: ipython3
+.. code:: python3
 
     compare_votes
 

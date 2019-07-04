@@ -71,14 +71,14 @@ One line loads an extension so that we can write SQL in the cells of our
 notebook. The second ‘connects’ to our SQLLite database. You may need to
 install the ``ipython-sql`` module using ``conda install ipython-sql`` or ``conda install -c conda-forge ipython-sql ``
 
-.. code:: ipython3
+.. code:: python3
 
     %load_ext sql
 
 
 Now connect to the bikeshare database
 
-.. code:: ipython3
+.. code:: python3
 
     %sql sqlite:///bikeshare.db
 
@@ -106,7 +106,7 @@ words are the names of tables or columns. The SQL statement translates
 to: grab (SELECT) all the values (*) in the table called trip_data but
 only show me the first ten (LIMIT 10).
 
-.. code:: ipython3
+.. code:: python3
 
     %%sql
     SELECT
@@ -260,7 +260,7 @@ We don’t always want to read all the columns in a table. For example, if
 we just want the subscriber type, start time, and duration in minutes
 columns we could select:
 
-.. code:: ipython3
+.. code:: python3
 
     %%sql
 
@@ -349,7 +349,7 @@ query over multiple lines just to make it easier to read.
 
 Its also really easy to forget the exact names of all of the columns in a table, especially when you are just getting started with a new database.  Here's a handy one-liner that will remind you of the names of your tables and all of their columns and types:
 
-.. code:: ipython3
+.. code:: python3
 
     %sql select name, sql from sqlite_master
 

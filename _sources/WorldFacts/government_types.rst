@@ -46,7 +46,7 @@ Lets change our climate classification from numeric to nominal.  We can do this 
 
 Now lets pivot the table.  The pivot table method takes three parameters: ``index``, ``columns``, and ``values``. The index parameter says "What values from the original table should I use as the new row index?"  The columns parameter asks "what values from the original table should I use as the column headings?", and the values parameter says what values to include in the cells.  In most cases these values will need to be aggregated in some way, and by default the aggregation is to take the mean.
 
-.. code:: ipython3
+.. code:: python3
 
     wd.pivot_table(index='Region', columns='Climate', values='Agriculture')
 
