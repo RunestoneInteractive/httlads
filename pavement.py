@@ -39,7 +39,7 @@ options(
                        'loglevel': 0,
                        'course_url':master_url,
                        'dynamic_pages': dynamic_pages,
-                       'use_services': 'false',
+                       'use_services': 'true',
                        'python3': 'true',
                        'dburl': 'postgresql://user:password@localhost/runestone',
                        'default_ac_lang': 'python',
