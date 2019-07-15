@@ -39,7 +39,7 @@ Here is a function that we can use to map each of the speeches to a sentiment sc
     from nltk.sentiment.vader import SentimentIntensityAnalyzer
     analyzer = SentimentIntensityAnalyzer()
 
-    def score_text(text, analyzer):
+    def score_text(text):
         sentence_list = tokenize.sent_tokenize(text)
         cscore = 0.0
         for sent in sentence_list:
