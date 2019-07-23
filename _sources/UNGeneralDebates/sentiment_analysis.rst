@@ -53,7 +53,7 @@ With our analyzer ready to go we can add a column to the undf DataFrame containi
 
 .. code:: python3
 
-    undf['sentiment'] = undf.text.map(lambda t : score_text(t, analyzer))
+    undf['sentiment'] = undf.text.map(lambda t : score_text(t))
 
 You can start that line running in your notebook and grab a cup of coffee as it will take a bit of time to run.
 
