@@ -39,7 +39,7 @@ Here is a function that we can use to map each of the speeches to a sentiment sc
     from nltk.sentiment.vader import SentimentIntensityAnalyzer
     analyzer = SentimentIntensityAnalyzer()
 
-    def score_text(text, analyzer):
+    def score_text(text):
         sentence_list = tokenize.sent_tokenize(text)
         cscore = 0.0
         for sent in sentence_list:
@@ -53,7 +53,7 @@ With our analyzer ready to go we can add a column to the undf DataFrame containi
 
 .. code:: python3
 
-    undf['sentiment'] = undf.text.map(lambda t : score_text(t, analyzer))
+    undf['sentiment'] = undf.text.map(lambda t : score_text(t))
 
 You can start that line running in your notebook and grab a cup of coffee as it will take a bit of time to run.
 
