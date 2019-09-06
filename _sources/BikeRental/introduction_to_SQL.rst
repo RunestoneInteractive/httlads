@@ -64,30 +64,8 @@ Getting Started with the Bike Data
 ==================================
 
 In this Lesson, we will be hands on and try out SQL with the Capital
-bike sharing dataset, hosted on a SQLLite database. To get started you will need to download `bikeshare.db <../_static/bikeshare.db>`_ and move it to your folder where you have your notebooks.
+bike sharing dataset, hosted on a SQLLite database. You don't have to do anything as we have a full version of the SQLLite database management system running the browser.
 
-There are just two lines we need to execute at the top of our notebook,
-One line loads an extension so that we can write SQL in the cells of our
-notebook. The second ‘connects’ to our SQLLite database. You may need to
-install the ``ipython-sql`` module using ``conda install ipython-sql`` or ``conda install -c conda-forge ipython-sql ``
-
-.. code:: python3
-
-    %load_ext sql
-
-
-Now connect to the bikeshare database
-
-.. code:: python3
-
-    %sql sqlite:///bikeshare.db
-
-
-
-
-.. parsed-literal::
-
-    'Connected: @bikeshare.db'
 
 
 
@@ -106,9 +84,10 @@ words are the names of tables or columns. The SQL statement translates
 to: grab (SELECT) all the values (*) in the table called trip_data but
 only show me the first ten (LIMIT 10).
 
-.. code:: python3
+.. activecode:: sql_bikeshare_intro_1
+    :language: sql
+    :dburl: /runestone/books/published/httlads/_static/bikeshare.db
 
-    %%sql
     SELECT
       *
     FROM
@@ -117,129 +96,6 @@ only show me the first ten (LIMIT 10).
       10
 
 
-
-.. parsed-literal::
-
-     * sqlite:///bikeshare.db
-    Done.
-
-
-
-
-.. raw:: html
-
-    <table>
-        <tr>
-            <th>index</th>
-            <th>duration</th>
-            <th>start_date</th>
-            <th>end_date</th>
-            <th>start_station</th>
-            <th>end_station</th>
-            <th>bike_number</th>
-            <th>member_type</th>
-        </tr>
-        <tr>
-            <td>0</td>
-            <td>3548</td>
-            <td>2011-01-01 00:01:29.000000</td>
-            <td>2011-01-01 01:00:37.000000</td>
-            <td>31620</td>
-            <td>31620</td>
-            <td>W00247</td>
-            <td>Member</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>346</td>
-            <td>2011-01-01 00:02:46.000000</td>
-            <td>2011-01-01 00:08:32.000000</td>
-            <td>31105</td>
-            <td>31101</td>
-            <td>W00675</td>
-            <td>Casual</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>562</td>
-            <td>2011-01-01 00:06:13.000000</td>
-            <td>2011-01-01 00:15:36.000000</td>
-            <td>31400</td>
-            <td>31104</td>
-            <td>W00357</td>
-            <td>Member</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>434</td>
-            <td>2011-01-01 00:09:21.000000</td>
-            <td>2011-01-01 00:16:36.000000</td>
-            <td>31111</td>
-            <td>31503</td>
-            <td>W00970</td>
-            <td>Member</td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>233</td>
-            <td>2011-01-01 00:28:26.000000</td>
-            <td>2011-01-01 00:32:19.000000</td>
-            <td>31104</td>
-            <td>31106</td>
-            <td>W00346</td>
-            <td>Casual</td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td>158</td>
-            <td>2011-01-01 00:32:33.000000</td>
-            <td>2011-01-01 00:35:11.000000</td>
-            <td>31605</td>
-            <td>31618</td>
-            <td>W01033</td>
-            <td>Member</td>
-        </tr>
-        <tr>
-            <td>6</td>
-            <td>560</td>
-            <td>2011-01-01 00:35:48.000000</td>
-            <td>2011-01-01 00:45:09.000000</td>
-            <td>31203</td>
-            <td>31201</td>
-            <td>W00766</td>
-            <td>Member</td>
-        </tr>
-        <tr>
-            <td>7</td>
-            <td>503</td>
-            <td>2011-01-01 00:36:42.000000</td>
-            <td>2011-01-01 00:45:05.000000</td>
-            <td>31203</td>
-            <td>31201</td>
-            <td>W00506</td>
-            <td>Member</td>
-        </tr>
-        <tr>
-            <td>8</td>
-            <td>449</td>
-            <td>2011-01-01 00:45:55.000000</td>
-            <td>2011-01-01 00:53:24.000000</td>
-            <td>31201</td>
-            <td>31202</td>
-            <td>W00506</td>
-            <td>Member</td>
-        </tr>
-        <tr>
-            <td>9</td>
-            <td>442</td>
-            <td>2011-01-01 00:46:06.000000</td>
-            <td>2011-01-01 00:53:28.000000</td>
-            <td>31201</td>
-            <td>31202</td>
-            <td>W00766</td>
-            <td>Member</td>
-        </tr>
-    </table>
 
 
 
@@ -260,9 +116,9 @@ We don’t always want to read all the columns in a table. For example, if
 we just want the subscriber type, start time, and duration in minutes
 columns we could select:
 
-.. code:: python3
-
-    %%sql
+.. activecode:: sql_bikeshare_intro_2
+    :language: sql
+    :dburl: /runestone/books/published/httlads/_static/bikeshare.db
 
     SELECT
       member_type, start_date, duration
@@ -272,127 +128,18 @@ columns we could select:
       10
 
 
-
-.. parsed-literal::
-
-     * sqlite:///bikeshare.db
-    Done.
-
-
-
-
-.. raw:: html
-
-    <table>
-        <tr>
-            <th>member_type</th>
-            <th>start_date</th>
-            <th>duration</th>
-        </tr>
-        <tr>
-            <td>Member</td>
-            <td>2011-01-01 00:01:29.000000</td>
-            <td>3548</td>
-        </tr>
-        <tr>
-            <td>Casual</td>
-            <td>2011-01-01 00:02:46.000000</td>
-            <td>346</td>
-        </tr>
-        <tr>
-            <td>Member</td>
-            <td>2011-01-01 00:06:13.000000</td>
-            <td>562</td>
-        </tr>
-        <tr>
-            <td>Member</td>
-            <td>2011-01-01 00:09:21.000000</td>
-            <td>434</td>
-        </tr>
-        <tr>
-            <td>Casual</td>
-            <td>2011-01-01 00:28:26.000000</td>
-            <td>233</td>
-        </tr>
-        <tr>
-            <td>Member</td>
-            <td>2011-01-01 00:32:33.000000</td>
-            <td>158</td>
-        </tr>
-        <tr>
-            <td>Member</td>
-            <td>2011-01-01 00:35:48.000000</td>
-            <td>560</td>
-        </tr>
-        <tr>
-            <td>Member</td>
-            <td>2011-01-01 00:36:42.000000</td>
-            <td>503</td>
-        </tr>
-        <tr>
-            <td>Member</td>
-            <td>2011-01-01 00:45:55.000000</td>
-            <td>449</td>
-        </tr>
-        <tr>
-            <td>Member</td>
-            <td>2011-01-01 00:46:06.000000</td>
-            <td>442</td>
-        </tr>
-    </table>
-
-
-
 **Tips:** SQL doesn’t care about line breaks so we can spread a SQL
 query over multiple lines just to make it easier to read.
 
 
 Its also really easy to forget the exact names of all of the columns in a table, especially when you are just getting started with a new database.  Here's a handy one-liner that will remind you of the names of your tables and all of their columns and types:
 
-.. code:: python3
+.. activecode:: sql_bikeshare_intro_3
+    :language: sql
+    :dburl: /runestone/books/published/httlads/_static/bikeshare.db
 
-    %sql select name, sql from sqlite_master
+    select name, sql from sqlite_master
 
-.. raw:: html
-
-    <table border="1" class="dataframe">
-    <thead>
-        <tr style="text-align: right;">
-        <th></th>
-        <th>name</th>
-        <th>sql</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-        <th>0</th>
-        <td>trip_data</td>
-        <td> <pre>
-    CREATE TABLE trip_data (
-    "index" BIGINT,
-    duration BIGINT,
-    start_date DATETIME,
-    end_date DATETIME,
-    start_station BIGINT,
-    end_station BIGINT,
-    bike_number TEXT,
-    member_type TEXT
-    )</pre></td>
-        </tr>
-        <tr>
-        <th>1</th>
-        <td>bikeshare_stations</td>
-        <td><pre>CREATE TABLE bikeshare_stations (
-    "index" BIGINT,
-    station_id BIGINT,
-    name TEXT,
-    status TEXT,
-    latitude FLOAT,
-    longitude FLOAT
-    )</pre></td>
-        </tr>
-    </tbody>
-    </table>
 
 Note, this works fine for SQLITE but will not work for Postgresql or MySQL or other databases, each database has their own query for things like this, and once you get more experience you'll be able to easily find them on the internet.
 
