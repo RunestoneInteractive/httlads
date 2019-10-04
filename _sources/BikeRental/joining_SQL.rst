@@ -1,3 +1,8 @@
+.. Copyright (C)  Google, Runestone Interactive LLC
+   This work is licensed under the Creative Commons Attribution-ShareAlike 4.0
+   International License. To view a copy of this license, visit
+   http://creativecommons.org/licenses/by-sa/4.0/.
+
 Joining
 =======
 
@@ -11,8 +16,8 @@ Here’s the columns in table ``bikeshare_stations``
 ========== ======= ============================================
 Field name Type    Description
 ========== ======= ============================================
-station_id INTEGER Unique identifier of a station.
-name       STRING  Public name of the station.
+station_id INTEGER Unique identifier of a station
+name       STRING  Public name of the station
 status     STRING  Status of the station, either open or closed
 latitude   FLOAT   latitude of the station
 longitude  FLOAT   longitude of the station
@@ -41,7 +46,7 @@ We could imagine storing the ``name`` column in our ``trip_data`` table
 since we list the start and end stations IDs for each trip but there are
 a few important reasons why that’s a bad idea:
 
-1. We would waste space by duplicating data (not a big deal for this
+1. We would waste space by duplicating data (This is not a big deal for this
    example but a real concern for large systems)
 2. Updating data (for example status of station from active to closed)
    would require updating each row in ``trip_data`` that refers to that
