@@ -1,10 +1,10 @@
 Aggregation or Group By
 =======================
 
-One very powerful features of SQL is that it allows us to create summary
+One very powerful feature of SQL is that it allows us to create summary
 information by grouping rows together. For example, we could ask
 ourselves how many bike trips were taken for each subscriber type, and
-which subscriber type has the most bike trips?
+which subscriber type has the most bike trips.
 
 .. activecode:: sql_bikeshare_agg_1
     :language: sql
@@ -24,19 +24,21 @@ which subscriber type has the most bike trips?
 
 
 
-``GROUP BY member_type`` takes all the rows with a given
-member_type and produces a single row in the result. This means that
-we need to tell SQL how we want to combine the other columns’ values
-into a single row. The above example uses ``COUNT(*)`` which reports the number of rows that were combined.
+``GROUP BY member_type`` takes all the rows with a given member_type and produces a
+single row in the result. This means that we need to tell SQL how we want to combine the
+other columns’ values into a single row. The above example uses ``COUNT(*)`` which
+reports the number of rows that were combined.
 
-Aggregating the values for ``member_type`` is not hard, since
-they’re all the same, SQL just gives us a single copy of the publisher
-name. Other columns, we need to either ignore (causing them to be
-omitted from the output) or specify a way to aggregate them.
+Aggregating the values for ``member_type`` is not hard, since they are all the same, SQL
+just gives us a single copy of the publisher name. Other columns, we need to either
+ignore (causing them to be omitted from the output) or specify a way to aggregate them.
 
-We must specify an aggregate function for any column that we ``SELECT``
-in our query (except the column that we’re grouping by) in order for the
-command to succeed. If we don’t specify a way to aggregate the value most database servers will complain.  However, SQLITE does not.  SQLite lets you do silly things without giving you an error.   For example, the following query will work, but you have no idea what the results actually mean.
+We must specify an aggregate function for any column that we ``SELECT`` in our query
+(except the column that we’re grouping by) in order for the command to succeed. If we
+don’t specify a way to aggregate the value most database servers will complain.
+However, SQLITE does not.  SQLite lets you do silly things without giving you an error.
+For example, the following query will work, but you have no idea what the results
+actually mean.
 
 .. activecode:: sql_bikeshare_agg_2
     :language: sql
@@ -52,14 +54,19 @@ command to succeed. If we don’t specify a way to aggregate the value most data
       COUNT(*) DESC
 
 
-Here you have grouped by ``member_type``, but without ``member_type`` in the select clause you have no idea which rows correspond to which member type. That is why most databases will flag this as a error.  Furthermore the duration field may be the first duration in the group or maybe the last duration in the group or possibly in between, But its not defined.  The best practices for writing group by queries that work well across database systems are as follows:
+Here you have grouped by ``member_type``, but without ``member_type`` in the select
+clause you have no idea which rows correspond to which member type. That is why most
+databases will flag this as a error.  Furthermore the duration field may be the first
+duration in the group or maybe the last duration in the group or possibly in between,
+But its not defined.  The best practices for writing group by queries that work well
+across database systems are as follows:
 
 * Always include the GROUP BY column(s) in your SELECT clause.
 * If you include a column that is **not** in the GROUP BY clause in your SELECT clause you must do some form of aggregation on the values in that column.  For example, min, max, mean, count, etc.
 
 
-Let’s go back briefly to the first query in the Aggregation section. The
-top result was the count of bike trips for member_type ``Member``:
+Let’s go back briefly to the first query in the Aggregation section. The top result was
+the count of bike trips for member_type ``Member``:
 
 =========== ========
 member_type COUNT(*)
@@ -67,10 +74,9 @@ member_type COUNT(*)
 Member      979814
 =========== ========
 
-If you’d like to get a more granular break down of the count, you may
-specify multiple columns to aggregate within the ``GROUP BY`` clause,
-for example: further breakdown the aggregate count by the start station
-IDs:
+If you’d like to get a more granular break down of the count, you may specify multiple
+columns to aggregate within the ``GROUP BY`` clause, for example: further breakdown the
+aggregate count by the start station IDs:
 
 .. activecode:: sql_bikeshare_agg_3
     :language: sql
@@ -91,9 +97,9 @@ IDs:
 
 
 
-Great! Now that you’re familiar with how to aggregate data using SQL
-query by using ``COUNT()`` as your aggregation function, let’ take a
-look at other aggregation functions.
+Great! Now that you’re familiar with how to aggregate data using SQL query by using
+``COUNT()`` as your aggregation function, let’ take a look at other aggregation
+functions.
 
 There are `many such
 functions <https://www.postgresql.org/docs/9.5/functions-aggregate.html>`__.
