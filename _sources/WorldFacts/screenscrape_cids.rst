@@ -167,7 +167,7 @@ Lets make a to-do list:
    returned.
 
 2. Once we have the new column, we can follow the example from above to make a
-  world map and show birthrate data.
+   world map and show birthrate data.
 
 The first step is to make use of the awesome
 `requests module <http://http://docs.python-requests.org>`_. The requests module
@@ -242,7 +242,7 @@ anything about Javascript in order to make use of JSON.
    usa_info
 
 
-.. code:: json
+.. code:: javascript
 
    {'name': 'United States of America',
     'topLevelDomain': ['.us'],

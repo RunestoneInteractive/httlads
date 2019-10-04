@@ -7,7 +7,7 @@
 What Is Data Science?
 =====================
 
-`90% of the data in the world today has been created in the last two years alone.<http://www.iflscience.com/technology/how-much-data-does-the-world-generate-every-minute>`_
+`90% of the data in the world today has been created in the last two years alone. <http://www.iflscience.com/technology/how-much-data-does-the-world-generate-every-minute>`_
 This is the result of the continuing acceleration of the rate at which we store
 data. Some estimates indicate that roughly 2.5 quintillion bytes of data are
 generated per day; that's 2,500,000,000,000,000,000 bytes! By comparison, all

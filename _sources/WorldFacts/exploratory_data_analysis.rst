@@ -29,7 +29,7 @@ file for this project look like this.
 
 You may have some experience with reading and parsing CSV files on your own with
 Python. If not, you may wish to
-`review this material<https://runestone.academy/runestone/static/fopp/Files/ReadingCSVFiles.html>`_.
+`review this material <https://runestone.academy/runestone/static/fopp/Files/ReadingCSVFiles.html>`_.
 
 
 .. code:: python3

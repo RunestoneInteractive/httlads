@@ -254,10 +254,8 @@ Visualization
 
    a. Click on the insert graph icon.
    b. Choose chart type of histogram.
-   c. Enter or drag the rows in column D. It should look like most of the bars
-      are between 4 and 6.6 on your histogram?
-   e. Try editing the details of the histogram to look at the distribution in
-      other columns.
+   c. Enter or drag the rows in column D. It should look like most of the bars are between 4 and 6.6 on your histogram?
+   d. Try editing the details of the histogram to look at the distribution in other columns.
 
 2. Because we are exploring you might also wonder "which country has the largest
    GDP, or which country scores the highest on Family, or Generosity? Learning
