@@ -42,7 +42,7 @@ We are going to use it to warm up our pandas skills. In this first part of the
 module, we will continue with some data that should be familiar to you, but we
 will use it in Pandas instead of a spreadsheet. In the second part, we will
 focus on several different kinds of textual analysis using data from the United
-Nations.
+Nations.  Download The `world countries csv file <../_static/world_countries.csv>`_ to get started.
 
 The goals for Part I of the module are:
 
