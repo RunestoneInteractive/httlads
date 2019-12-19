@@ -402,8 +402,8 @@ Visualization
    their scores in some category like generosity are significantly different
    from the countries around them. For example the country of Myanmar stands out
    on a Choropleth as being the most generous country. Yet its happiness rank is
-   114. Its Generosity score is 0.8 but the country right above it has a score
-   of 0.3 and the country below 0.1.
+   105. Its Generosity score is 0.629 but the country right above it has a score
+   of -0.022 and the country below -0.029.
 
    a. For each country, compute the total difference between its score and the
       country above it and below it.
