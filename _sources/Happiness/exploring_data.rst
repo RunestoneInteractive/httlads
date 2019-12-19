@@ -252,9 +252,9 @@ Visualization
    Sheets. Note: To do this same thing in Excel you would need to install an
    extension.
 
-   a. Click on the insert graph icon.
-   b. Choose chart type of histogram.
-   c. Enter or drag the rows in column D. It should look like most of the bars are between 4 and 6.6 on your histogram?
+   a. Click on the insert chart icon or select Insert | Chart from the menu.
+   b. In the Chart Editor to the right, choose chart type of histogram.
+   c. Type D2:D141 under Data range or click the Select Data Range icon and drag the rows in column D. Does it  look like most of the bars are between 4 and 6.6 on your histogram?
    d. Try editing the details of the histogram to look at the distribution in other columns.
 
 2. Because we are exploring you might also wonder "which country has the largest
