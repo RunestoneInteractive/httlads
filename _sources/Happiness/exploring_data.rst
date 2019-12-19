@@ -366,9 +366,9 @@ Visualization
    data such as the happiness score. Sheets make it very easy to graph data by
    country.
 
-   a. Click on the insert graph icon.
-   b. Choose Geo Chart.
-   c. Use the country column and the happiness score column.
+   a. Click on the insert chart icon or select Insert | Chart from the menu.
+   b. In the Chart Editor to the right, choose Map, then Geo Chart.
+   c. Use the country column and the happiness score column by typing A2:A141,D2:D141 as the Data Range.
    d. Experiment with using other columns such as freedom or generosity.
 
 4. The exploration of the happiness scores and the different factors related may
@@ -376,7 +376,7 @@ Visualization
    others. Is it their level of freedom, or their level of wealth?  One way we
    can answer this question is to calculate a correlation between the happiness
    index and the various factors. This will create a small table that computes a
-   correlation score between of of our columns of data. Happiness score to
+   correlation score between all of our columns of data. Happiness score to
    Economy, Happiness score to Family etc.
 
    a. First, let's calculate a correlation between happiness score and each
@@ -392,7 +392,7 @@ Visualization
    countries and the least happy countries.
 
    a. Recompute the correlation scores, but don't do it for all of the
-   countries. Do it only for the top 25 and bottom 25. What stands out for you?
+      countries. Do it only for the top 25 and bottom 25. What stands out for you?
 
    b. Calculate the mean value for each of the factors for the 25 and bottom 25
       countries and then calculate a difference between these values. Which have
