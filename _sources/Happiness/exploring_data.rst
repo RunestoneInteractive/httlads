@@ -273,6 +273,7 @@ Visualization
          What is the maximum value in the generosity column?
 
          - :0.629: Is the correct answer
+           :0.62870574: Remember to round to three decimal places
            :0.9.*: Looks like you might be off by a column
            :x: Please check your ranges and try again
 
