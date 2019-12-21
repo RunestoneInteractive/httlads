@@ -20,9 +20,9 @@ questions.
 * How can we compute an average for the countries that are in the same region?
 
 1. We can get a table of the unique region names by using the ``UNIQUE``
-   function. In cell A180, the ``UNIQUE`` function takes the range that contains
+   function. The ``UNIQUE`` function takes the range that contains
    all of the region names and will populate a few rows with just the unique
-   names.
+   names. Try using this now in cell A180.
 
 
    .. fillintheblank:: fb_region_count
@@ -98,6 +98,8 @@ mean by dividing our two columns.
    The average happiness score for Latin America and Caribbean is |blank|
 
    - :6.020: Is the correct answer
+     :6.02: Make sure you round to three decimal places
+	 :6.019631579: Make sure you round to three decimal places
      :x: Please check your formula again
 
 
@@ -109,16 +111,13 @@ mean by dividing our two columns.
 2. Last but not least, let's sort the happiness scores so we can see the regions
    from most to least happy.
 
-3. Select the table and then from the Data menu select Sort Range, choose column
-   B and check the box for Z->A then sort.
+3. Select the table and then from the Data menu select Sort Range, choose the average happiness column
+   and check the box for Z->A then sort.
 
 4. North America and ANZ (Australia / New Zealand) are the happiest (Aussie
    Aussie Aussie) and Sub-Saharan Africa is the least happy.
 
-5. Add another column to our table that tells us how many countries are in each
-   region (``COUNTIF``).
-
-6. Using ``MAXIFS``, ``MINIFS``, ``MATCH`` and ``INDEX``, let's find the most
+5. Using ``MAXIFS``, ``MINIFS``, ``MATCH`` and ``INDEX``, let's find the most
    and least happy country in each region. ``MAXIFS`` and ``MINIFS`` work like
    ``AVERAGEIF`` and ``COUNTIF``,  but allow for more conditions. In our case,
    we still need only one. (If you read the popup you will know what to do.)
@@ -173,27 +172,27 @@ When we use ``VLOOKUP``, our goal is to join together these two sheets, adding
 columns to the happiness sheet using values from the row in the countries of the
 world sheet from the row where the country names match. For example, in our
 happiness sheet, Ireland is on row 15, but in the countries of the world sheet,
-it is on row 101. What we want to do is take (at least) column B row 101 from
-the countries sheet, and add it to the happiness sheet on row 15 column M.
+it is on row 99. What we want to do is take (at least) column B row 99 from
+the countries sheet, and add it to the happiness sheet on row 15 column O.
 
 With ``VLOOKUP``, we do this by allowing the function to search for the value in
 one cell in another column, and then return the value from a different cell in
-the same row but in some other column. To find the continent of Israel, we would
-use ``VLOOKUP(A15, Sheet1!$A$6:$F$229, 5, FALSE)``.
+the same row but in some other column. To find the region for Ireland, we would
+use ``=VLOOKUP(A15, Sheet1!$A$2:$U$225, 3, FALSE)``.
 
 * A15 is the cell containing Ireland
-* ``Sheet1!$A$6:$F$229`` is the range of cells we can search in as well as get
+* ``Sheet1!$A$2:$U$225`` is the range of cells we can search in as well as get
   values from
-* 2 tells Sheets that when we find a match for Israel, we want the value from
-  the same row but in column 2 of our range
+* 3 tells Sheets that when we find a match for Ireland, we want the value from
+  the same row but in column 3 of our range
 
-Notice that column 5 of our range is the continent/region column. You may have
+Notice that column 3 of our range is the continent/region column. You may have
 noticed that ``VLOOKUP`` is a bit like using ``MATCH`` and ``INDEX`` together,
 but it is a little less flexible, as the column you search in must always be on
 the far left side of the range.
 
 To add a whole new column to fill in the region for each country, we would type
-the following into O2: ``=VLOOKUP(A2, Sheet1!$A$6:$F$229, 5, FALSE)``. Now if
+the following into O2: ``=VLOOKUP(A2, Sheet1!$A$2:$U$225, 3, FALSE)``. Now if
 you double-click on the blue square in the lower right corner when you have M2
 selected, you will see that Sheets will automatically copy/paste the formula
 down the column. It will do this until it finds a blank cell to the left, then
@@ -230,7 +229,10 @@ one common spelling.
 Any time you are introducing data from another source, you are likely to run
 into inconsistencies and missing data. That is just a simple fact of life for a
 data scientist. You will need to either search further to fill in the missing
-pieces, or learn to live without some pieces of data.
+pieces, or learn to live without some pieces of data. Go ahead and try to fix as much
+of the data as you can, then answer the following question. Note: There are some other 
+countries that don't have a direct match. You may need to search for what countries Kinshasa 
+and Brazzaville are related to, for example. 
 
 
 .. mchoice:: mc_missing_data
@@ -245,6 +247,10 @@ pieces, or learn to live without some pieces of data.
 
      + Correct
 
+   - Montenegro
+   
+     + Correct
+	 
    - Palau
 
      - No, Palau is there
@@ -253,11 +259,13 @@ pieces, or learn to live without some pieces of data.
 
      - Technically this one is there but you need to make it "Côte d'Ivoire"
 
+	 
+	 
+Now that you have country names unified, you need to get the population data in place.
+Go ahead an add columns to the right of O, adding the data needed to answer the questions below.
+Make sure you use the region from the original happiness data, not the new data.
 
-Now that you have country names unified and the population data in place, you
-can practice some calculations on this new piece of data.
-
-1. Calculate the average population for each region?
+1. Can you calculate the average population for each region?
 
 
 .. fillintheblank:: fb_ea_avg_pop
@@ -268,7 +276,7 @@ can practice some calculations on this new piece of data.
      :x: Please check your formula
 
 
-2. Find the name of the country in each region with the largest population.
+2. Can you find the name of the country in each region with the largest population.
 
 
 .. fillintheblank:: fb_reg_lg_pop
@@ -285,7 +293,7 @@ can practice some calculations on this new piece of data.
 .. fillintheblank:: fb_reg_sm_pop
 
    |blank| has the smallest population in the Middle East and North Africa
-   region.
+   region. Make sure you don't include Palestine, since you don't have data for this.
 
    - :Bahrain: Is the correct answer
      :x: Keep trying
@@ -308,14 +316,14 @@ Now, using your new spreadsheet skills answer your own questions.
 Introducing Pivot Tables
 ------------------------
 
-We can make all of this a bit easier using pivot table! This is a really useful
+We can make all of this a bit easier using pivot tables! This is a really useful
 tool to have in your toolbox, and many other tools you use will support the
 creation of pivot tables as well.
 
 1. The idea behind a pivot table is to take the unique values from some column
    and make them the titles of a bunch of columns, while summarizing the data
    for those columns from a number of rows. For example, suppose you had a table
-   with three columns: user, movie, rating. What would be more easy to look at
+   with three columns: user, movie, rating. What would be easier to look at
    would be to have a column for each movie and a row for each user with the
    rating in the cell corresponding to a user and a movie. This is exactly the
    use case for pivot tables. You can see an example of transforming the orginal
@@ -326,10 +334,12 @@ creation of pivot tables as well.
 
 
 Start a new worksheet, and recreate the data and pivot table you see in the
-example above.
+example above. Type the data in the first table, then choose Data | Pivot Table
+from the menu. In the dialog box that appears, insert the pivot table into an existing sheet
+and use Sheet1!A13. Then use the screenshot to finish the pivot table.
 
-2. Another good use case is to replace what we have just done. We want to use
-   the unique values for each continent as the row, and then calculate a number
+2. Another good use case is to replace what we did when finding average values in a region. 
+   We want to use the unique values for each region as the row, and then calculate a number
    of summary statistics for each. For practice, you should redo the exercise of
    finding the average population for each region that you did above.
 
@@ -359,7 +369,7 @@ table to find the least happy country in each region. Then using ``MATCH`` and
 
 .. fillintheblank:: act_fb_most_happy
 
-   Without adding another column, change the function to summarize, to find the
+   Without adding another column, change the pivot table's function to summarize, to find the
    most happy country in Southeast Asia. |blank|
 
    - :Singapore: Is the correct answer
