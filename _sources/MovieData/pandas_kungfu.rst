@@ -213,7 +213,7 @@ Exploring the Data
 ------------------
 
 This dataset was obtained from
-`Kaggle <https://www.kaggle.com/rounakbanik/the-movies-dataset/home>`_ who
+`Kaggle <https://www.kaggle.com/rounakbanik/the-movies-dataset>`_ who
 downloaded it through the TMDB API.
 
 The movies available in this dataset are in correspondence with the movies that
