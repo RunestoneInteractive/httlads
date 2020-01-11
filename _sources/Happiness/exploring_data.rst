@@ -202,7 +202,7 @@ Summary Statistics
 
    c. Now calculate the ``STDEV`` and ``MEDIAN`` for the Happiness Score column
       as well. If you are fuzzy about standard deviation,
-      `this article <https://runestone.academy/runestone/static/cppds/index.html>`_
+      `this article <https://towardsdatascience.com/intro-to-descriptive-statistics-252e9c464ac9>`_
       is a nice intuitive explanation.
 
       .. fillintheblank:: fb_stdhappiness
