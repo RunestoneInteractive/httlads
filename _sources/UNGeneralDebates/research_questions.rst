@@ -5,7 +5,7 @@
 
 
 Working with Text
------------------
+=================
 
 The ``Series`` and ``index`` objects in Pandas each have a set of string
 processing methods that make all of the standard Python string methods more
