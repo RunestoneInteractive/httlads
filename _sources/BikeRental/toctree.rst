@@ -11,6 +11,7 @@ Pizza and Bike Rental
 
    bike_share_intro.rst
    introduction_to_SQL.rst
+   bike_data_starter.rst
    filtering_SQL.rst
    sorting_SQL.rst
    aggregation_SQL.rst
