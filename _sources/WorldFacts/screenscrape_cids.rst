@@ -24,6 +24,7 @@ create and outline the map.
 
 .. code:: python3
 
+   import pandas as pd
    import altair as alt
    from vega_datasets import data
    counties = alt.topo_feature(data.us_10m.url, 'counties')
