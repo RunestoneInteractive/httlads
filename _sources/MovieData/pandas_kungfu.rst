@@ -19,7 +19,6 @@ We start with some standard imports.
 
 .. code:: python3
 
-   import ast
    import pandas as pd
    import numpy as np
 
