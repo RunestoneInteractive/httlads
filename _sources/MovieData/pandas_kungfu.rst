@@ -19,7 +19,6 @@ We start with some standard imports.
 
 .. code:: python3
 
-   import ast
    import pandas as pd
    import numpy as np
 
@@ -213,7 +212,7 @@ Exploring the Data
 ------------------
 
 This dataset was obtained from
-`Kaggle <https://www.kaggle.com/rounakbanik/the-movies-dataset/home>`_ who
+`Kaggle <https://www.kaggle.com/rounakbanik/the-movies-dataset>`_ who
 downloaded it through the TMDB API.
 
 The movies available in this dataset are in correspondence with the movies that

@@ -102,7 +102,7 @@ But what is the 154th shortest movie in this collection?
    Copy and paste the name of the 154th shortest movie in this collection,
    without quotes. |blank|
 
-   - :(Tears of Steel|Presentation, or Charlotte and Her Steak): Correct
+   - :(Tears of Steel|Presentation, or Charlotte and Her Steak|The Fox and the Hare): Correct
      :Casper: Close, but make sure you have your DataFrame sorted properly
      :x: Make sure you are using `iloc` and not `loc`
 

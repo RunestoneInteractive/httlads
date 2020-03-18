@@ -23,7 +23,7 @@ Table of Contents
 .. raw:: html
 
    <ul>
-   <li><a href="../../assignments/chooseAssignment.html">Assignments</a></li>
+   <li><a href="/runestone/assignments/chooseAssignment.html">Assignments</a></li>
    </ul>
 
 .. toctree::
