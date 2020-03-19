@@ -11,74 +11,12 @@ Running the kind of queries we did in the last few sections is great for explori
 
 Pandas provides us with a great way to use our SQL knowledge to create create a DataFrame with the results.  The ``pd.read_sql``  allows us to pass in a SQL query as a string, along with a URL to connect to the database, and will return a DataFrame.  Let's try that on our bikeshare_stations table now.
 
-.. code:: python3
+.. jupyter-execute::
 
     import pandas as pd
-    stations = pd.read_sql_query("""select * from bikeshare_stations where latitude is not NULL""",'sqlite:///bikeshare.db')
+    stations = pd.read_sql_query("""select * from bikeshare_stations where latitude is not NULL""",'sqlite:///_static/bikeshare.db')
     stations.head()
 
-.. raw:: html
-
-    <table border="1" class="dataframe">
-    <thead>
-        <tr style="text-align: right;">
-        <th></th>
-        <th>index</th>
-        <th>station_id</th>
-        <th>name</th>
-        <th>status</th>
-        <th>latitude</th>
-        <th>longitude</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-        <th>0</th>
-        <td>0</td>
-        <td>31620</td>
-        <td>5th &amp; F St NW</td>
-        <td>open</td>
-        <td>38.897637</td>
-        <td>-77.018126</td>
-        </tr>
-        <tr>
-        <th>1</th>
-        <td>1</td>
-        <td>31105</td>
-        <td>14th &amp; Harvard St NW</td>
-        <td>open</td>
-        <td>38.926638</td>
-        <td>-77.032126</td>
-        </tr>
-        <tr>
-        <th>2</th>
-        <td>2</td>
-        <td>31400</td>
-        <td>Georgia &amp; New Hampshire Ave NW</td>
-        <td>closed</td>
-        <td>38.935638</td>
-        <td>-77.024126</td>
-        </tr>
-        <tr>
-        <th>3</th>
-        <td>3</td>
-        <td>31111</td>
-        <td>10th &amp; U St NW</td>
-        <td>open</td>
-        <td>38.917638</td>
-        <td>-77.025126</td>
-        </tr>
-        <tr>
-        <th>4</th>
-        <td>4</td>
-        <td>31104</td>
-        <td>Adams Mill &amp; Columbia Rd NW</td>
-        <td>open</td>
-        <td>38.922638</td>
-        <td>-77.042126</td>
-        </tr>
-    </tbody>
-    </table>
 
 We can use any SQL query we want and pandas is 'smart' enough to look at the results and create columns that match the columns in the database.  If we know we are going to have columns containing dates its a good idea to use the ``parse_dates`` parameter when we call ``read_sql_query`` This will ensure that our date columns are of the correct type without us having to convert them later.
 
@@ -109,7 +47,7 @@ Mapping Bike Stations
 
 Now lets have some fun.  We are going to map the location of all of the bike stations on a google map!  Later you can explore all kinds of ways to visualize rides and ride frequencies routes between starting and ending point and many more things.
 
-To map our stations we will use the ``gmaps`` module.  You will need to ``conda install gmaps`` to install this.  You will also need to install the `jupyter-gmaps extension <https://github.com/pbugnion/gmaps#installing-jupyter-gmaps-for-jupyterlab>`_ for Jupyterlab.  When you have followed the directions there you will need to use the exentions manager to install the ``jupyter-gmaps`` extension. The instructions give you a link to the directions on how you can get your own API key to use the Google maps in a notebook.  Your instructor may also be able to provide you with an API key as well.  This is probably the hardest part!
+To map our stations we will use the ``ipyleaflet`` module.  You will need to ``conda install -c conda-forge ipyleaflet`` to install this.  You will also need to install the `jupyter-leaflet extension <https://ipyleaflet.readthedocs.io/en/latest/installation.html#jupyterlab-extension>`_ for Jupyterlab.  You can also enable the extension manager in Jupyterlab and use that to install the extension.
 
 Lets proceed under the assumption that you have all of the prerequisites installed and working.  Our next task is to create a list of all the latitude and longitude values for each of the bikeshare stations.  The challenge here is that the Google Maps interface wants to get a list of that looks like this:  ``[(lat1, long1), (lat2, long2), ...]`` that means we need to combine the two columns from the DataFrame into a list of tuples.  You could, of course, do this with a for loop, iterating over all the rows and making a tuple, but there is a much easier way.
 
@@ -132,26 +70,28 @@ Then ``list(zip(list1, list2, str1))`` returns ``[('a', 1, 'X'), ('b', 2, 'Y'), 
 
 The good news is that Series are also iterables so we can pass a series to the zip function and it will work great.
 
+.. jupyter-execute::
 
-.. code:: python3
+    import pandas as pd
 
-    import gmaps
-    gmaps.configure(api_key='YOUR KEY HERE')
+    stations = pd.read_csv("https://media.githubusercontent.com/media/bnmnetp/httlads/master/Data/bikeshare_stations.csv")
+    stations.head()
 
-This gets everything set up to use ``gmaps``.  Now lets use the stations DataFrame we created earlier to make our first map.
+First we can load the stations data.  You can get this from your database, from a local file, or even remotely as we are demonstrating here.  Next we will use the latitude and longitude data to create a marker for each station.
 
-.. code:: python3
+.. jupyter-execute::
+
+    from ipyleaflet import Map, Marker, Icon, CircleMarker
 
     locations = list(zip(stations.latitude, stations.longitude))
     dc_center = (38.9072, -77.0369)
-    fig = gmaps.figure(center=dc_center, zoom_level=12)
 
-    marker_layer = gmaps.marker_layer(locations)
-    fig.add_layer(marker_layer)
-    fig
+    dcmap = Map(center=dc_center, zoom=12)
+    for loc in locations:
+        marker = CircleMarker(location=loc, radius=2)
+        dcmap.add_layer(marker)
 
-
-.. image:: Figures/map.png
+    dcmap
 
 
 Practice and Further Exploration
@@ -163,9 +103,10 @@ Practice and Further Exploration
 
 3. Investigate the interface to see if there is a way for you to color code the markers based on the number of rides originating from that station.  Show the 50 most popular stations using five different colors. 1 color for the top 10 another for the next 10 and so on.
 
-4. Bikeshare datasets are available for many cities.  Most of them come a similar format to this one.  Find some bikeshare data for a city close to you or for your favorite city and see if you can reproduce this map.  Hint, if your data does not come with latitude and longitude then investigate the ``geopy`` package, you can use your Google API or a free service like GeocodeFarm to use the address of the station to get the latitude and longitude.
+4. Bikeshare datasets are available for many cities.  Most of them come a similar format to this one.  Find some bikeshare data for a city close to you or for your favorite city and see if you can reproduce this map.  Hint, if your data does not come with latitude and longitude then investigate the ``geopy`` package, you can use a free service like GeocodeFarm to use the address of the station to get the latitude and longitude.
 
-5.  Here a real **challenge** for you, pick a station and then follow the rentals, but only map the stations where a bike ends up back at your original starting point.  In other words for the bikes that started at station A, go to station B, then D then pause for a while then on to station X and finally back to A.  Others may take a different route.    If you can do this you can investigate the layer that lets you add a route to the map!  Then you can show the probably routes that the various bikes took to make their way back to the starting point.  You may want to limit the time on this to one day or a week.
+5.  Here is a real **challenge** for you, pick a station and then follow the rentals, but only map the stations where a bike ends up back at your original starting point.  In other words for the bikes that started at station A, go to station B, then D then pause for a while then on to station X and finally back to A.  Others may take a different route.    If you can do this you can investigate the AntPath layer that lets you add a route to the map!  Then you can show the routes that the various bikes took to make their way back to the starting point.  You may want to limit the time on this to one day or a week.
 
-6. **Research Challenge** The ``gmaps`` interface allows you to add a heatmap layer.  This sounds like it could a very interesting way to overlay the popularity of different stations and routes on the map.  Investigate this layer and what the data should look like, then see if you can find a way to get the data into the appropriate form to make a heatmap.
+6. **Another Challenge** The ``ipyleaflet`` interface allows you to add a heatmap layer.  This sounds like it could a very interesting way to overlay the popularity of different stations and routes on the map.  Investigate this layer and what the data should look like, then see if you can find a way to get the data into the appropriate form to make a heatmap.
 
+To get started you can download :jupyter-download:notebook:`pandas_and_SQL` and open it in Jupyterlab.
