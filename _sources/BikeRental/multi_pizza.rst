@@ -191,21 +191,23 @@ Build another model using only the diameter and plot the predictions from that
 model along with the actual values and the predicted values from using both.
 Hint: sklearn expects to have the data it uses to build the model in a certain
 format. By default a single series gets converted into an array that looks like
-this: ``array([ 6,  8, 10, 14, 18])`` but sklearn wants it to look as below.
+this:
 
 
-.. parsed-literal::
+.. jupyter-execute::
 
-    array([[ 6],
-        [ 8],
-        [10],
-        [14],
-        [18]])
+    pdf.diameter.values
 
 
-The error message you likely got tells you how to reshape the data. You can use
+
+But sklearn wants it to look as below. The error message you likely got tells you how to reshape the data. You can use
 ``pdf.diameter.values.reshape(-1,1)`` to get the diameter into the correct
 shape.
+
+.. jupyter-execute::
+
+    pdf.diameter.values.reshape(-1,1)
+
 
 
 .. fillintheblank:: sklearn_pizza_top

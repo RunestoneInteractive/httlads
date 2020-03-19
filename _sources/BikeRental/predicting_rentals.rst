@@ -92,6 +92,40 @@ we are all getting the same randomness. This will allow you to compare your
 results against mine and your classmates'. It will also make your results
 reproducible from one day to the next.
 
+Lets try this:
+
+.. jupyter-execute::
+
+     import pandas as pd
+     from sklearn.model_selection import train_test_split
+
+     trips = pd.read_csv("https://media.githubusercontent.com/media/bnmnetp/httlads/master/Data/trip_data.csv",
+                   parse_dates=['start_date','end_date'])
+
+Now lets make start date the index, resample, and count the number of trips on each day.
+
+.. jupyter-execute::
+
+     trips = trips.set_index('start_date')
+     trips = trips.resample('D').count()
+     trips = trips[['duration']]
+     trips.columns=['trip_count']
+     trips = trips.reset_index()
+     trips.head()
+
+Now we have a simple data frame, the feature is the date and the thing we want
+to predict is the number of rides on each day
+
+.. jupyter-execute::
+
+     X_train, X_test, y_train, y_test = train_test_split(trips.start_date, trips.trip_count, test_size=0.20, random_state=997)
+     print(X_train)
+     print(y_train)
+
+Notice that when we print the values for X_train and y_train that the index values match row by row.
+The next step is to train our model using the X_train and y_train data.  Then we can come back and try
+to use the model to make predictions using the X_test data.  Having the y_test data in hand will allow us to
+evaluate the model.
 
 Evaluating the Model
 --------------------
@@ -135,6 +169,8 @@ Your task list for this project is as follows
   rentals from the test data and the predicted values from the model.
 * Make a graph to compare the training and test data.
 
+You can use this colab notebook `PredictingBikeRentals <https://colab.research.google.com/drive/1Whc4uLQdp33B1CrMnMHpbMExeWc1zlOj>`_ to get
+started.  You will need to save a copy of the notebook in order to work with it for the exercises below.
 
 .. fillintheblank:: modelv1_len
 
