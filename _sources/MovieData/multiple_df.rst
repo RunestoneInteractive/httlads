@@ -14,12 +14,15 @@ and ``vote_count``.
 Let's create a variable called ``df_high_rated`` that only contains movies that
 have received more than 20 votes, and whose average score is greater than 8.
 
+.. jupyter-execute::
 
-.. code:: python3
+   import pandas as pd
+   df = pd.read_csv("https://media.githubusercontent.com/media/bnmnetp/httlads/master/Data/movies_metadata.csv").dropna(axis=1, how='all')
 
-   df_highly_voted = []
-   df_high_rated = []
-   df_high_rated[['title', 'vote_average', 'vote_count']]
+   df_highly_voted = df[df.vote_count > 20]
+   df_high_rated = df_highly_voted[df_highly_voted.vote_average > 8]
+   df_high_rated[['title', 'vote_average', 'vote_count']].head()
+
 
 
 Here we have some high-quality movies, at least according to some people.
@@ -44,9 +47,9 @@ are both my favorites and popular favorites.
 titles to vote_average.
 
 
-.. code:: python3
+.. jupyter-execute::
 
-   {
+   my_votes = {
        "Star Wars": 9,
        "Paris is Burning": 8,
        "Dead Poets Society": 7,
@@ -57,7 +60,7 @@ titles to vote_average.
        "Forrest Gump": 7.5,
    }
 
-   compare_votes
+.. thebe-button:: Go Live
 
 
 There should be only 6 movies remaining.
