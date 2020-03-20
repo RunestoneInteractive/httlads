@@ -53,7 +53,7 @@ cell will execute the content of the cell and print out the output of the code
 snippet right below the code cell. Try running this cell.
 
 
-.. code:: python3
+.. jupyter-execute::
 
    3+5*4%43
 
@@ -62,7 +62,7 @@ This doesn’t work just for arithmetic operations but any Python code that you
 might write.
 
 
-.. code:: python3
+.. jupyter-execute::
 
    import math
 
@@ -79,7 +79,7 @@ gets printed in the output. This doesn't work if the cell ends with an
 assignment of a value to a variable.
 
 
-.. code:: python3
+.. jupyter-execute::
 
    a = 5
 
@@ -88,7 +88,7 @@ Note that no output is produced when you run the previous cell. However, the
 value of ``a`` is saved and is available in other cells.
 
 
-.. code:: python3
+.. jupyter-execute::
 
    a * a
 
@@ -106,19 +106,19 @@ is executed when you run it, so you could accidentally or willfully run cells
 out of order. Below is an example.
 
 
-.. code:: python3
+.. jupyter-execute::
 
    # Run this cell once
    my_list = ["red", "green", "blue"]
 
 
-.. code:: python3
+.. jupyter-execute::
 
    # Run this cell twice
    my_list.append("purple")
 
 
-.. code:: python3
+.. jupyter-execute::
 
    # Run this cell once
    print(my_list)
