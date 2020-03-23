@@ -597,6 +597,30 @@ Your final result should look like this.
 .. image:: Figures/WorldFactbook_75_0.png
 
 
+.. reveal:: sol_infant_mort_map
+    :instructoronly:
+
+    This assumes that you have used the web api to add the CodeNum column to your wd dataframe.
+    One key thing to point out is that the CodeNum field in wd and the id field in countries must
+    match, if you have covered merging of dataframes or even vlookup this should make sense to
+    the students.
+
+    .. code:: python3
+
+        countries = alt.topo_feature(data.world_110m.url, 'countries')
+        base = alt.Chart(countries).mark_geoshape(
+        ).encode(#color='Infant mortality:Q',
+                tooltip='Country:N',
+                color=alt.Color('Infant mortality:Q', scale=alt.Scale(scheme="plasma")),
+        ).properties(
+            width=750,
+            height=450
+        ).project('equirectangular').transform_lookup(
+                lookup='id',
+                from_=alt.LookupData(wd, 'CodeNum', ['Infant mortality', 'Country']))
+
+        base
+
 Using a Web API on Your Own
 ---------------------------
 
