@@ -87,7 +87,7 @@ into it if it's too short) or longer than 3 hours (who's got time for that?).
 **Hint:** You may have to use ``pd.to_numeric`` to force the runtimes to be
 numbers (instead of numbers in a string).
 
-Here is a simpler example:
+Here is a simpler example that shows the movies that are 7 minutes long
 
 .. jupyter-execute::
 
@@ -95,16 +95,12 @@ Here is a simpler example:
    df = pd.read_csv("https://media.githubusercontent.com/media/bnmnetp/httlads/master/Data/movies_metadata.csv").dropna(axis=1, how='all')
   time_scheduler = df.set_index('runtime')
   time_scheduler = time_scheduler[['title', 'release_date']]
-  time_scheduler.loc[154].head()
+  time_scheduler.loc[7].head()
 
 
 
 Now let's find all those two-hour-and-34-minute movies.
 
-
-.. code:: python3
-
-   time_scheduler[154]
 
 
 .. fillintheblank:: mov_154_min_movies

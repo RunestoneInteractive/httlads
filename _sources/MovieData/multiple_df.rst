@@ -60,8 +60,6 @@ titles to vote_average.
        "Forrest Gump": 7.5,
    }
 
-.. thebe-button:: Go Live
-
 
 There should be only 6 movies remaining.
 
