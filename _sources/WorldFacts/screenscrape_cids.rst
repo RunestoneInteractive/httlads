@@ -576,8 +576,7 @@ above and apply that to the world below.
 .. code:: python3
 
    base = alt.Chart(countries).mark_geoshape(
-       fill='#666666',
-       stroke='white'
+       color='Infant Mortality:Q'
    ).encode( #your code here
 
    ).transform_lookup( # your code here
