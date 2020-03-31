@@ -98,6 +98,8 @@ for all of the speeches.
 
 .. code:: python3
 
+   import altair as alt
+   alt.data_transformers.enable('json')
    alt.Chart(undf).mark_bar().encode(x=X('sentiment', bin=True), y='count()')
 
 
@@ -107,6 +109,12 @@ for all of the speeches.
 Well, it seems that the vast majority of the speeches are neutral to positive.
 But that may not be a big surprise, as you might expect that in the general
 assembly, everyone tries to be careful and diplomatic with their speeches.
+
+If you are doing the above in colab you may need to use ``alt.data_transformers.disable_max_rows()``
+instead of ``alt.data_transformers.enable('json')``.  Both are useful when you have really large data sets
+that you are visualizing.  The json approach keeps the size of your notebook smaller as it stores the
+data needed for visualization in a separate file.  The disadvantage is that it fills up your folder with lots
+of json files.
 
 What is more interesting to investigate further are the speeches on the edges.
 
