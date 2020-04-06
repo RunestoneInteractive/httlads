@@ -28,9 +28,18 @@ import pkg_resources
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['sphinx.ext.mathjax'] + runestone_extensions()
+extensions = ['sphinx.ext.mathjax', 'jupyter_sphinx.execute'] + runestone_extensions()
 
-#,'runestone.video','runestone.reveal','runestone.poll','runestone.tabbedStuff','runestone.disqus','runestone.codelens','runestone.activecode', 'runestone.assess', 'runestone.animation','runestone.meta', 'runestone.parsons', 'runestone.blockly', 'runestone.livecode','runestone.accessibility']
+# Uncommenting the following will enable thebelab integration... That is all of the
+# jupyter-execute cells will become editable and runnable on the mybinder.org
+
+# jupyter_sphinx_thebelab_config = {
+#     'requestKernel': True,
+#     'binderOptions': {
+#         'repo': "binder-examples/requirements",
+#     },
+# }
+
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = [pkg_resources.resource_filename('runestone', 'common/project_template/_templates')]

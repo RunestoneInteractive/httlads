@@ -50,6 +50,28 @@ return the first row regardless of the index value. ``df.iloc[0:5]`` is the same
 as doing ``df.head()``, and ``df.iloc[[1, 3, 5, 7]]`` will return four rows: the
 2nd, 4th, 6th and 8th.
 
+.. jupyter-execute::
+
+    import pandas as pd
+    df = pd.DataFrame({'a':list("pythonrocks"), 'b':[1,2,3,4,5,6,7,8,9,10,11]})
+    df = df.set_index('a')
+    df.loc['p':'n']
+
+OK, but what if we do this:
+
+.. jupyter-execute::
+    :raises:
+
+    df.loc['p':'o']
+
+Pandas raises an error because there are two 'o's in the index.  It doesn't know which one you mean, first? last? If you argue it should use the last then consider the performance implications if thsi was a really large index? In that case it would be very time consuming to search the index for the last occurance.
+
+On the other hand, if we sort the index then the last instance can be found quite quickly, and with a sorted index loc will work for this example.
+
+.. jupyter-execute::
+
+    df = df.sort_index()
+    df.loc['c':'o']
 
 Practice Questions
 ------------------
@@ -62,22 +84,23 @@ rather than ``budget_df``.
 While you’re at it, remove any movie that is less than 10 minutes (you can’t get
 into it if it's too short) or longer than 3 hours (who's got time for that?).
 
-**Hint:** You’ll have to use ``pd.to_numeric`` to force the runtimes to be
+**Hint:** You may have to use ``pd.to_numeric`` to force the runtimes to be
 numbers (instead of numbers in a string).
 
+Here is a simpler example that shows the movies that are 7 minutes long
 
-.. code:: python3
+.. jupyter-execute::
 
-   time_scheduler = []
-   time_scheduler
+   import pandas as pd
+   df = pd.read_csv("https://media.githubusercontent.com/media/bnmnetp/httlads/master/Data/movies_metadata.csv").dropna(axis=1, how='all')
+  time_scheduler = df.set_index('runtime')
+  time_scheduler = time_scheduler[['title', 'release_date']]
+  time_scheduler.loc[7].head()
+
 
 
 Now let's find all those two-hour-and-34-minute movies.
 
-
-.. code:: python3
-
-   time_scheduler[154]
 
 
 .. fillintheblank:: mov_154_min_movies
@@ -88,23 +111,32 @@ Now let's find all those two-hour-and-34-minute movies.
      :x: catchall feedback
 
 
-But what is the 154th shortest movie in this collection?
-
-
-.. code:: python3
-
-   movie_number_154 = time_scheduler.iloc[154]
-   movie_number_154
+But what is the 155th shortest movie in this collection?
 
 
 .. fillintheblank:: mov_154_shortest
 
-   Copy and paste the name of the 154th shortest movie in this collection,
+   Copy and paste the name of the 155th shortest movie in this collection,
    without quotes. |blank|
 
    - :(Tears of Steel|Presentation, or Charlotte and Her Steak|The Fox and the Hare): Correct
      :Casper: Close, but make sure you have your DataFrame sorted properly
      :x: Make sure you are using `iloc` and not `loc`
+
+.. reveal:: sol_movie_times
+    :instructoronly:
+
+    .. jupyter-execute::
+
+        df = df[(df.runtime >= 10) & (df.runtime <= 180)]
+        ts = df.set_index('runtime')
+        ts = ts[['title','release_date']]
+
+        print(len(ts.loc[154]))
+
+        ts = ts.sort_index()
+        ts.iloc[154]
+
 
 
 **Lesson Feedback**

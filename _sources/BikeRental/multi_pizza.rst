@@ -111,73 +111,22 @@ Create a new notebook and let's give this a try.
 First, import pandas, sklearn, and altair.
 
 
-.. code:: python3
+.. jupyter-execute::
 
     import pandas as pd
     from sklearn.linear_model import LinearRegression, LogisticRegression
     from sklearn.metrics import mean_squared_error
     from altair import Chart, X, Y
-
-
-.. code:: python3
-
-    pdf = pd.read_csv('../Data/pizza.csv')
+    pdf = pd.read_csv('./Data/pizza.csv')
     pdf
 
 
-.. raw:: html
+.. jupyter-execute::
 
-    <table border="1" class="dataframe">
-    <thead>
-        <tr style="text-align: right;">
-        <th></th>
-        <th>diameter</th>
-        <th>toppings</th>
-        <th>price</th>
-        <th>predictions</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-        <th>0</th>
-        <td>6</td>
-        <td>2</td>
-        <td>7.0</td>
-        <td>7.259036</td>
-        </tr>
-        <tr>
-        <th>1</th>
-        <td>8</td>
-        <td>1</td>
-        <td>9.0</td>
-        <td>9.903614</td>
-        </tr>
-        <tr>
-        <th>2</th>
-        <td>10</td>
-        <td>0</td>
-        <td>13.0</td>
-        <td>12.548193</td>
-        </tr>
-        <tr>
-        <th>3</th>
-        <td>14</td>
-        <td>2</td>
-        <td>17.5</td>
-        <td>15.367470</td>
-        </tr>
-        <tr>
-        <th>4</th>
-        <td>18</td>
-        <td>2</td>
-        <td>18.0</td>
-        <td>19.421687</td>
-        </tr>
-    </tbody>
-    </table>
+    c = Chart(pdf).mark_point().encode(x='diameter',y='price')
+    c
 
-
-.. code:: python3
+.. jupyter-execute::
 
     model = LinearRegression()
     model.fit(pdf[['diameter','toppings']], pdf.price)
@@ -192,14 +141,11 @@ Now, using the diameter and toppings make predictions about what the price will
 be.
 
 
-.. code:: python3
+.. jupyter-execute::
 
     model.predict(pdf[['diameter','toppings']])
 
 
-.. parsed-literal::
-
-    array([ 7.25903614,  9.90361446, 12.54819277, 15.36746988, 19.42168675])
 
 
 If you look at those predictions, you will see they are identical to the
@@ -220,28 +166,22 @@ the mean squared error of our predictions. This function takes two parameters
 the "true" values, in our case, the known price, and the predicted values.
 
 
-.. code:: python3
+.. jupyter-execute::
 
     mean_squared_error(pdf.price, model.predict(pdf[['diameter', 'toppings']]))
 
-
-.. parsed-literal::
-
-    1.5313253012048187
 
 
 We can also add the predictions to our dataframe so that we can graph the actual
 values and predicted values together.
 
 
-.. code:: python3
+.. jupyter-execute::
 
     pdf['predictions'] = model.predict(pdf[['diameter', 'toppings']])
     Chart(pdf).mark_circle().encode(x='diameter', y='price') + \
     Chart(pdf).mark_circle(color='red').encode(x='diameter', y='predictions')
 
-
-.. figure:: Figures/plot_both.png
 
 
 Practice
@@ -251,21 +191,23 @@ Build another model using only the diameter and plot the predictions from that
 model along with the actual values and the predicted values from using both.
 Hint: sklearn expects to have the data it uses to build the model in a certain
 format. By default a single series gets converted into an array that looks like
-this: ``array([ 6,  8, 10, 14, 18])`` but sklearn wants it to look as below.
+this:
 
 
-.. parsed-literal::
+.. jupyter-execute::
 
-    array([[ 6],
-        [ 8],
-        [10],
-        [14],
-        [18]])
+    pdf.diameter.values
 
 
-The error message you likely got tells you how to reshape the data. You can use
+
+But sklearn wants it to look as below. The error message you likely got tells you how to reshape the data. You can use
 ``pdf.diameter.values.reshape(-1,1)`` to get the diameter into the correct
 shape.
+
+.. jupyter-execute::
+
+    pdf.diameter.values.reshape(-1,1)
+
 
 
 .. fillintheblank:: sklearn_pizza_top

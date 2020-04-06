@@ -234,7 +234,10 @@ dictionary using the usual Python syntax!
 
 The official name for the format that we saw above is called JSON: JavaScript
 Object Notation. It's a good acronym to know, but you don't have to know
-anything about Javascript in order to make use of JSON.
+anything about Javascript in order to make use of JSON.  You can think of the
+results as a Python dictionary.  It can be a bit daunting at first as there can be
+many keys and in fact JSON is often full of dictionaries of dictionaries of lists of dictionaries
+but fear not, you can figure it out with a bit of experiementation.
 
 
 .. code:: python3
@@ -298,6 +301,7 @@ anything about Javascript in order to make use of JSON.
         'Accord de Libre-échange Nord-Américain']}],
     'cioc': 'USA'}
 
+For example timezones is a top level key, which produces a list of the valid timezones in the USA.
 
 .. code:: python3
 
@@ -317,6 +321,23 @@ anything about Javascript in order to make use of JSON.
     'UTC-04:00',
     'UTC+10:00',
     'UTC+12:00']
+
+But, languages is more complicated It also returns a list but each element of the list corresponds
+to one of the official languages of the country.  The USA has only one official language but other countries
+have more.  For example Malta has both Maltese and English as official languages.  Notice that the two dictionaries
+have an identical structure, a key for the two letter abbreviation, a key for the three letter abbreviation, the name
+and the native name.
+
+.. parsed-literal::
+
+    [{'iso639_1': 'mt',
+      'iso639_2': 'mlt',
+      'name': 'Maltese',
+      'nativeName': 'Malti'},
+    {'iso639_1': 'en',
+      'iso639_2': 'eng',
+      'name': 'English',
+      'nativeName': 'English'}]
 
 
 **Check Your Understanding**
@@ -576,10 +597,8 @@ above and apply that to the world below.
 .. code:: python3
 
    base = alt.Chart(countries).mark_geoshape(
-       fill='#666666',
-       stroke='white'
-   ).encode( #your code here
-
+   ).encode(tooltip='Country:N',
+            color=alt.Color('Infant mortality:Q', scale=alt.Scale(scheme="plasma"))
    ).transform_lookup( # your code here
 
    ).properties(
@@ -598,6 +617,30 @@ Your final result should look like this.
 
 .. image:: Figures/WorldFactbook_75_0.png
 
+
+.. reveal:: sol_infant_mort_map
+    :instructoronly:
+
+    This assumes that you have used the web api to add the CodeNum column to your wd dataframe.
+    One key thing to point out is that the CodeNum field in wd and the id field in countries must
+    match, if you have covered merging of dataframes or even vlookup this should make sense to
+    the students.
+
+    .. code:: python3
+
+        countries = alt.topo_feature(data.world_110m.url, 'countries')
+        base = alt.Chart(countries).mark_geoshape(
+        ).encode(#color='Infant mortality:Q',
+                tooltip='Country:N',
+                color=alt.Color('Infant mortality:Q', scale=alt.Scale(scheme="plasma")),
+        ).properties(
+            width=750,
+            height=450
+        ).project('equirectangular').transform_lookup(
+                lookup='id',
+                from_=alt.LookupData(wd, 'CodeNum', ['Infant mortality', 'Country']))
+
+        base
 
 Using a Web API on Your Own
 ---------------------------
