@@ -830,11 +830,11 @@ couple of steps.
    What is the title |blank| and number of genres |blank| of the movie that is
    in the most genres?
 
-   - :The Warrior: Is the correct answer
-     :incorrect: Is feedback on a specific incorrect
+   - :(Princes and Princesses|Yu-Gi-Oh! The Movie|Cool Cat Saves the Kids): Is Correct
+     :The Warrior: Is not correct -- make sure you check for duplicates!
      :x: catchall feedback
 
-   - :10: Is the correct answer
+   - :8: Is the correct answer
      :x: Hint: Use sort and head then merge with the movies data frame
 
 
