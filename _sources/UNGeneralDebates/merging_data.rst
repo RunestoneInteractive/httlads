@@ -792,7 +792,8 @@ and ``genre``.
 
    How many movies are in the Family genre? |blank|
 
-   - :2770: Is the correct answer
+   - :2767: Is Correct
+     :2770: Includes some duplicate movies.  Remove duplicates or clean your data.
      :x: Use the len function on the results from querying the genres data frame
 
 

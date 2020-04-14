@@ -174,9 +174,9 @@ business day and week, instead of day, to get an idea.
 
 .. fillintheblank:: ts_bw_weekly
 
-   For the week ending June 12 2011 how many rentals were there? |blank|
+   For the week ending June 12 2011 how many rides were complete? |blank|
 
-   - :31371|: Is the correct answer
+   - :31371: Is the correct answer
      :31367: Is close but you may be indexing by ``start_date``
      :x: The date used as the index is the ending date
 
