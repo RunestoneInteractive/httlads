@@ -14,6 +14,8 @@ prepared version of this data that has already been augmented with additional
 weather data which you can download from the
 `UCI Machine Learning Repository <https://archive.ics.uci.edu/ml/datasets/bike+sharing+dataset#>`_.
 
+The basic data for the sql lessons is in `bikeshare.db <../_static/bikeshare.db>`_  The additional data about whether is not needed until the last section of this chapter in which we try to predict bike rentals.  Later sections of this chapter use `bikeshare_11_12.db <../_static/bikeshare_11_12.db>`_ which has the same schema as bikeshare.db but data for two years instead of just one.  These two files are sqllite database files, feel free to download them and use them with sqllite directly.
+
 Predicting bike rental trends is very important from both an operational and
 planning perspective. Bikeshare companies need to stay up to date on rental
 trends to know where they should add new facilities, and how to reposition bikes
