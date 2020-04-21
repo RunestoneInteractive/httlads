@@ -1,7 +1,12 @@
 runestone>=4.0.0
 SQLAlchemy>=1.0.8
+pandas
 psycopg2-binary
 sklearn
 jupyter-sphinx
 altair
 ipyleaflet
+jupyter
+
+# for JupyterLab run
+# jupyter labextension install @jupyter-widgets/jupyterlab-manager jupyter-leaflet
