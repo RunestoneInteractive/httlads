@@ -99,6 +99,21 @@ Below are some regular expression methods for strings.
 * ``split()``
 * ``rsplit()``
 
+.. reveal:: extract1_sol
+    :instructoronly:
+
+    .. code-block:: python
+
+        undf['text'] = undf.text.apply(lambda x: x.lower())
+        undf['text'] = undf.text.apply(lambda x: x.translate(str.maketrans(string.punctuation, ' '*len(string.punctuation))))
+        undf['text'] = undf.text.str.replace('\ufeff','') # remove strange character
+        undf['text'] = undf.text.str.strip() # eliminate whitespace from beginning and end
+
+        x = undf.text.str.extractall(r"\bglobal\s+(\w+)")
+        x = x.reset_index()
+        x.columns=['ignore','match','word']
+        x.groupby('word').agg(wcount=('word','count')).sort_values('wcount', ascending=False)
+
 
 .. fillintheblank:: fn_un_extract1
 
@@ -112,7 +127,7 @@ Below are some regular expression methods for strings.
      :economy: The correct answer is very similar
      :x: catchall feedback
 
-   - :1033: Is the correct answer
+   - :1044: Is the correct answer
      :256: make sure you use extractall
 
 
