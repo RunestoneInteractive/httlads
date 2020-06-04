@@ -64,8 +64,8 @@ titles to vote_average.
 There should be only 6 movies remaining.
 
 Now add a column to ``compare_votes`` that measures the percentage difference
-between my rating and the popular rating for each movie. You'll need to take the
-different between the ``vote_average`` and ``my_vote`` and divide it by
+between the popular rating and my rating for each movie. You'll need to take the
+difference between the ``vote_average`` and ``my_vote`` and divide it by
 ``my_vote``.
 
 
@@ -76,10 +76,12 @@ different between the ``vote_average`` and ``my_vote`` and divide it by
 
 .. fillintheblank:: mov_star_wars_difference
 
-   What's the percentage difference between my rating for Star Wars and its
-   popular rating? |blank|
+   What's the percentage difference between the popular rating for Star Wars and my vote 
+   for it? |blank|
 
-   - :-0.10: Is the correct answer
+   - :-10: Is the correct answer
+     :10: Make sure you use the popular rating minus my rating
+     :-0.10: Make sure you convert your answer to a percentage
      :x: catchall feedback
 
 
