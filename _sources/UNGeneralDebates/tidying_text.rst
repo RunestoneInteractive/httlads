@@ -13,7 +13,7 @@ going to want to clean up our text, then we need to learn about stop words. If
 you think about it for a minute, you can probably answer the question of the
 most used words already. They will be words like "a", "an", "the", "and" etc.
 These words are pretty useless if we are trying to extract some meaning from
-long texts. Our initial list of cleaening tasks is as follows.
+long texts. Our initial list of cleaning tasks is as follows.
 
 1. Convert all text to lower case.
 2. Remove all punctuation.
