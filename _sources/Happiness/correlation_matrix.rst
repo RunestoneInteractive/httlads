@@ -80,10 +80,12 @@ spreadsheet work together.
 
 .. fillintheblank:: act_corr_free_gen
 
-   What is the correlation between Freedom to Make life choices and Generosity?
+   What is the correlation between Freedom to Make life choices and Generosity? (round to three decimal places)
    |blank|
 
-   - :0.317: Is the correct answer
+   - :0.318: Is the correct answer
+     :0.317: Use the ROUND function to perform the rounding, don't just truncate the result
+     :0.3175795514: Make sure you round to three decimal places
      :x: catchall feedback
 
 
