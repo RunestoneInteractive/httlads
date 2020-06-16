@@ -4,8 +4,8 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-Text Analysis with UN General Debates
-=====================================
+Qualitative Analytics
+=====================
 
 .. toctree::
    :caption: UN General Debates

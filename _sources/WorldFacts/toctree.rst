@@ -4,8 +4,8 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-CIA World Factbook Data
-=======================
+Exploratory Data Analysis
+=========================
 
 .. toctree::
    :caption: Practicing with World Factbook
