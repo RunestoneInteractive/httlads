@@ -4,7 +4,7 @@ Sorting
 So far, we’ve only looked at rows of data in the order of the query is
 returning to us. What if we want to see the rows in a certain sorting
 order? We use the ``ORDER BY`` command to sort them by some other
-criteria.
+criteria. 
 
 For example, to see the bike trips in the order of the duration in
 seconds:
