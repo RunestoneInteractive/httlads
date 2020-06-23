@@ -40,7 +40,7 @@ images like this one that explains the various parts of Jupyter.
 
 
 .. figure:: Figures/anatomy_of_jupyter_notebook.png
-   :alt: anatomy of JupyterLab
+   :alt: Jupyter Notebook opened with arrows pointing to icons that can be pressed, text cells, and code cells in the UI.
 
    Figure 1:  Anatomy of JupyterLab Notebook
 
