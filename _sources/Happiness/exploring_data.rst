@@ -158,8 +158,8 @@ statistics and visualization.
 
 .. _hf33f5c6794a1d5ee7c64395b788:
 
-Research Questions
-------------------
+Case study 1: Happiness Index Research Questions
+------------------------------------------------
 
 1. What are the different factors that lead to happiness of a country?
 
