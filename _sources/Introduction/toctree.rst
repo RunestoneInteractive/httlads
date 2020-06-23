@@ -12,3 +12,4 @@ Introduction
    :maxdepth: 2
 
    introduction.rst
+   Glossary.rst
