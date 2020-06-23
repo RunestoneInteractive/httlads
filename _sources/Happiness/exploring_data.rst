@@ -156,6 +156,30 @@ statistics and visualization.
 
      + Correct
 
+.. _hf33f5c6794a1d5ee7c64395b788:
+
+Research Questions
+------------------
+
+1. What are the different factors that lead to happiness of a country?
+
+2. What role does the economy play in determining the happiness of a country?
+
+3. Which factor, on average, contributes most/least to happiness?
+
+4. What similarities and differences do the countries experiencing the
+   highest/lowest WHS have? Are there any countries where there scores for some
+   factor are very different than those of the countries around it in the
+   rankings?
+
+5. Does being in a certain region (continent) have any correlation to the
+   average score of countries?
+
+6. How have the happiness numbers changed over time? Which countries have
+   increased the most? Which countries have decreased the most?
+
+7. For the countries with the largest increase which factors changed the most?
+   Are those factors the same as you identified in the first 3 questions?
 
 Summary Statistics
 ------------------
