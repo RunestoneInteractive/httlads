@@ -124,7 +124,7 @@ yourself, so you can see the recalculation happening. Now, let's set up solver
 to find the best values for that column.
 
 
-.. image:: Figures/solver.png
+.. image:: Figures/Solver_.png
    :width: 300px
    :align: left
 
