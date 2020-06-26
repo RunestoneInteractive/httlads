@@ -72,7 +72,7 @@ Now, add a column called "profit" and figure out the profit margin for each
 item. It looks like cheese curds and burgers are your most profitable items.
 You must be in Wisconsin! But you only have 50 cheese curds and 80 burgers. So
 you have lots more to sell. Let's set this up as an optimization problem, and
-use the Open Solver tool to find the best answer for us.
+use the Solver tool to find the best answer for us.
 
 Add another column called "numsold" to keep track of how many items you have
 sold, and another column called "total profit" that multiplies the number sold
@@ -131,25 +131,25 @@ to find the best values for that column.
 
 We said that our objective function was to maximize profit. That value is the
 total that shows up as 894.75 and is in cell G11 in the spreadsheet. So, in our
-solver tab in the **Objective Cell** input box, we will set G11 as our objective
+solver tab in the **Set Objective** input box, we will set G11 as our objective
 cell. You can see that at the right. You can also see that I have checked the
 box to maximize that objective.
 
-Next, you can see the **Variable Cells** input box. This is where we tell solver
+Next, you can see the **By Changing** input box. This is where we tell solver
 the values it can change. We are allowing solver to decide how much of each item
 we should sell. Those are in cells F2:F9. It doesn't matter if you have already
 entered a few values into those cells, as solver will override them.
 
-Finally, we have the **Constraints** entry area. Recall that our two constraints
+Finally, we have the **Subject To** entry area. Recall that our two constraints
 were that we could not sell more than 500 total items. That means that in our
-spreadsheet, F11 must be less than or equal to the value in F13. Note that makes
-it easy for us to change our constraint by just changing the value in cell F13
+spreadsheet, F11 must be less than or equal to the value in F12. Note that makes
+it easy for us to change our constraint by just changing the value in cell F12
 and rerunning solver.
 
 Also, we said that you could not sell more items than you have in the inventory.
-So F2:F2 must be less than or equal to D2:D9.
+So F2:F9 must be less than or equal to D2:D9.
 
-When you have all of the above, click the "solve model" button. You should end
+When you have all of the above, click the "solve" button. You should end
 up with the same values as shown in the table above.
 
 Now, this model is not very realistic. Let's add in the fact that you have to
