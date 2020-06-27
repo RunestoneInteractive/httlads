@@ -95,7 +95,7 @@ Practice Exercises
     :autograde: unittest
     :dburl: /runestone/books/published/httlads/_static/bikeshare.db
 
-    Get the start and end station IDs for bike trips that are longer 60 minutes or longer, in the order of largest number of seconds first and display the top 40 results.
+    Get the duration, start station ID, and end station ID for bike trips that are 60 minutes or longer, in the order of largest number of seconds first and display the top 40 results.
     ~~~~
 
 
