@@ -135,10 +135,6 @@ tell.
 The Data Science Pipeline
 -------------------------
 
-.. image:: Figures/DSPipeline.svg
-   :align: left
-
-
 One of the primary goals of this course is to familiarize you with the data
 science pipeline. That is the series of steps you will go through as you seek to
 analyze and communicate with data. There are many steps in the pipeline and as
@@ -147,6 +143,11 @@ is a very iterative process whereby you will often repeat previous steps because
 of something you learn in later steps. This is part of the exploratory nature of
 data science. There is not a single formula for success, or a single process
 that works for every data set. Let's look at each of the steps.
+
+.. image:: Figures/DS_Pipeline.png
+  :align: left
+  :width: 250
+  :height: 625
 
 * **Get Data:** Acquiring data can come in many forms. Data is sometimes found
   in a simple file, or in relational database, from a web based interface, or in
