@@ -81,7 +81,7 @@ data skills!
 
 
 .. figure:: https://static1.squarespace.com/static/5150aec6e4b0e340ec52710a/t/51525c33e4b0b3e0d10f77ab/1364352052403/Data_Science_VD.png?format=1500w
-
+  :alt:Venn Diagram depicting the different components of Data Science: Hacking Skills, Substantive Expertise, and Math and Statistics Knowledge.
    Venn Diagram |CCBYANC| Drew Conway
 
 
@@ -148,6 +148,7 @@ that works for every data set. Let's look at each of the steps.
   :align: left
   :width: 250
   :height: 625
+  :alt: Chart outlining the different steps in the Data Science pipeline.
 
 * **Get Data:** Acquiring data can come in many forms. Data is sometimes found
   in a simple file, or in relational database, from a web based interface, or in
