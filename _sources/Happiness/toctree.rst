@@ -4,8 +4,8 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-World Happiness Rankings
-========================
+Fundamental Spreadsheet Operations and The Data Science Pipeline
+================================================================
 
 .. toctree::
    :caption: World Happiness
