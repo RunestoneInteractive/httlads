@@ -12,6 +12,7 @@ World Happiness Rankings
    :maxdepth: 2
 
    introduction.rst
+   CS2_business_score.rst
    exploring_data.rst
    more_data.rst
    yearly_happiness.rst
