@@ -2686,7 +2686,7 @@ combination with most of the standard string methods you know about.
 
 
 .. parsed-literal::
-
+   
    0                                            Afghanistan
    1                                                Albania
    2                                                Algeria
@@ -2933,4 +2933,5 @@ Practice Questions
     :option_2: Within reach if I try my hardest
     :option_3: Out of reach no matter how hard I try
 
-    For me to master the things taught in this lesson feels...
+    For me to master the things taught in this lesson feels... 
+
