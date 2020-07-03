@@ -14,7 +14,7 @@ Fundamental Spreadsheet Operations and The Data Science Pipeline
    introduction.rst
    CaseStudy1_P1.rst
    CaseStudy1_P2.rst
-   
+   CaseStudy1_P3.rst
    exploring_data.rst
    more_data.rst
    yearly_happiness.rst
