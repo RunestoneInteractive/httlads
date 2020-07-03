@@ -164,8 +164,8 @@ Replicate the same procedure to import the population of each country into the S
 
 
 As you found out, there are some rows that have a value of #N/A in them. This is
-because one spreadsheet has the name "United States" and the other spreadsheet
-has "United States of America". We know these are the same but the computer does
+because one spreadsheet has the name "Venezuela, RB" and the other spreadsheet
+has "Venezuela (Bolivarian Republic of)". We know these are the same but the computer does
 not make the match. You will need to clean up this data manually by making the
 names match where they don't already. This is also why the countries of the
 world spreadsheet contains the column that has a three letter code for each
@@ -218,7 +218,7 @@ can practice some calculations on this new piece of data.
 
    .. fillintheblank:: q9_cs1_sbd
 
-      |blank| has the largest population in Americas
+      |blank| has the largest population in Americas.
       
       - :Venezuela: Is the correct answer!
         :x: Incorrect.

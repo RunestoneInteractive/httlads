@@ -94,7 +94,7 @@ see that we get interesting values for maximum and minimum.
 **Challenge**
 
 
-5. Lets use the data we have to learn something new about starting a business in different countries. You can find the population over time of the countries in the `world_countries <../_static/world_countries_2019.csv>`_ data we used in the previous section. Import the dataset into a new tab in your sheet. Create two new columnns for each year and use appropriate functions (hint: ``VLOOKUP``) to input the population data for both years. Use the population data from 2014 and the one from 2019 to find out which countries (at least 10) had the largest increase in population over that 4 year period. Is there a correlation between change in a country's population and its change in Starting a Business rank?
+5. Lets use the data we have to learn something new about starting a business in different countries. You can find the population over time of the countries in the `world_countries <../_static/world_countries_2019.csv>`_ data we used in the previous section. Import the dataset into a new tab in your sheet. Create two new columns for each year and use appropriate functions (hint: ``VLOOKUP``) to input the population data for both years. Use the population data from 2014 and the one from 2019 to find out which countries (at least 10) had the largest increase in population over that 5 year period. Is there a correlation between change in a country's population and its change in Starting a Business rank?
    
 **Lesson Feedback**
 

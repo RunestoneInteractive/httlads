@@ -11,10 +11,8 @@ Before class, you should read about the data science processing pipeline and exp
 data analysis, and the other resources on spreadsheets and summary statistics linked in 
 the introduction (section 2.1).
 
-Introducing CS1: `Starting a Business`_
------------------------------------------
-.. _Starting a Business: https://www.doingbusiness.org/en/methodology/starting-a-Business
-
+Introducing CS1: `Starting a Business <../_static/Starting_a_Business_2019.csv>`_
+-----------------------------------------------------------------------------------
 
 This case study measures indicators such as the number of procedures, time, cost and paid-in 
 minimum capital (see definitions below) requirement for a small- to medium-size limited liability 
@@ -34,8 +32,9 @@ collection for the case study was completed in May 2019. (Source: `Starting a Bu
 
 .. _Starting a Business Report: https://www.doingbusiness.org/en/data/exploretopics/starting-a-business#
 
-We will use spreadsheets to help us explore what indicators may be most important to start up 
-and formally operate a new business in each economy’s largest business city.   
+We will use Google Sheets to help us explore what indicators may be most important to start up 
+and formally operate a new business in each economy’s largest business city.  Click on the section name (Starting a Business) to 
+download the data. Import it into your Google Spreadsheets. 
 
 The following definitions are reproduced from the `Starting a Business Report`_ 
 
