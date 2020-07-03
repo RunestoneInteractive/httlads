@@ -12,6 +12,9 @@ Fundamental Spreadsheet Operations and The Data Science Pipeline
    :maxdepth: 2
 
    introduction.rst
+   CaseStudy1_P1.rst
+   CaseStudy1_P2.rst
+   CaseStudy1_P3.rst
    CaseStudy1_Challenge.rst
    exploring_data.rst
    more_data.rst
