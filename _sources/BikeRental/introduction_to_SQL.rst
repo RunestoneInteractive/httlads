@@ -38,7 +38,7 @@ Store <https://code.fb.com/core-data/needle-in-a-haystack-efficient-storage-of-b
 Query Language
 --------------
 
-Whatever the database might, there needs to be a way to extract data
+Whatever the database might be, there needs to be a way to extract data
 from it and a lot of these systems have agreed on a shared language for
 accessing data. For relational database, this language is called SQL
 (Structured Query Language, pronounced like “sequel”).
