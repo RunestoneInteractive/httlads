@@ -45,3 +45,4 @@ Table of Contents
     UNGeneralDebates/toctree.rst
     BikeRental/toctree.rst
     Instacart/toctree.rst
+    Google_Colab/toctree.rst
