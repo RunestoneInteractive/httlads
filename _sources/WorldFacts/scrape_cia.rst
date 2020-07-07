@@ -89,7 +89,7 @@ The webpage for that file looks like this.
 
 
 .. figure:: Figures/factbook_notes.png
-
+  :alt: Screen capture of the Definitions and Notes page for the references section in the World Factbook 2017.
    Part of the Definitions and Notes page for the World Factbook 2017.
 
 
@@ -159,7 +159,7 @@ relationships as follows.
 
 
 .. figure:: Figures/htmltree.png
-
+  :alt: A tree diagram of the different HTML elements and tags from the above code that shows the parent-child relationship between those elements and tags.
 
 So, what we need to do is look at the page as a whole and see if we can find a
 pattern that will allow us to find the two items we are interested in. In newer
