@@ -103,8 +103,8 @@ available at a liberal arts college, all of which are looking for people with
 data skills!
 
 
-.. figure:: https://static1.squarespace.com/static/5150aec6e4b0e340ec52710a/t/51525c33e4b0b3e0d10f77ab/1364352052403/Data_Science_VD.png?format=1500w
-   :alt:Venn Diagram depicting the different components of Data Science: Hacking Skills, Substantive Expertise, and Math and Statistics Knowledge.
+.. image:: https://static1.squarespace.com/static/5150aec6e4b0e340ec52710a/t/51525c33e4b0b3e0d10f77ab/1364352052403/Data_Science_VD.png?format=1500w
+  :alt: Venn Diagram depicting the different components of Data Science: Hacking Skills, Substantive Expertise, and Math and Statistics Knowledge.
    Venn Diagram |CCBYANC| Drew Conway
 
 
