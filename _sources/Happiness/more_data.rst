@@ -323,6 +323,7 @@ creation of pivot tables as well.
 
 
 .. image:: Figures/pivot_example.png
+   :alt: An excel sheet with Pivot table editor opened to the far left, and cell with ‘SUM of rating’ selected. 
 
 
 Start a new worksheet, and recreate the data and pivot table you see in the
