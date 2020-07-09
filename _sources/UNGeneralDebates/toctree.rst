@@ -11,7 +11,6 @@ Text Analysis with UN General Debates
    :caption: UN General Debates
    :maxdepth: 2
 
-   colab_UNGeneralDebates.rst
    UNGeneralDebates.rst
    merging_data.rst
    tidying_text.rst

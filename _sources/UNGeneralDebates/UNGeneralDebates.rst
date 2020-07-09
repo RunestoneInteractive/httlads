@@ -957,6 +957,8 @@ hexadecimal value a9, which is easier to work with in Python.
 
    b'\xa9'.decode('utf8')
 
+The above code takes the hexadecimal value of a9 and decodes it using the utf8
+character set.
 
 .. parsed-literal::
 
@@ -971,7 +973,7 @@ hexadecimal value a9, which is easier to work with in Python.
 Aha! That error message looks familiar. (And you will run into this many times
 when working with data from the internet).
 
-Lets give ASCII a try.
+Lets try decoding hexadecimal a9 using the ASCII character set.
 
 .. code:: python3
 
@@ -991,6 +993,7 @@ Lets give ASCII a try.
 The message is that the character is not in range(128); yes 169 is definitely
 not in range(128).
 
+Lets try it with iso-8859-1.
 
 .. code:: python3
 
@@ -1003,6 +1006,13 @@ not in range(128).
 
 
 Success!!
+
+Now let's reread the file using the new character set.
+
+.. code:: python3
+
+   c_codes = pd.read_csv('Data/country_codes.csv', encoding = 'iso-8859-1')
+   c_codes.head()
 
 
 .. code:: python3
@@ -1050,7 +1060,7 @@ Success!!
           <th></th>
           <th>session</th>
           <th>year</th>
-          <th>code_3</th>
+          <th>country</th>
           <th>text</th>
         </tr>
       </thead>
@@ -1158,6 +1168,388 @@ Success!!
       </tbody>
     </table>
     </div>
+
+.. code:: python3
+
+    year_summ['i'] = year_summ.text.str.count('income')
+    year_summ['ir'] = year_summ.text.str.count('interest rate')
+    year_summ
+
+
+.. raw:: html
+
+    <div>
+    <style scoped>
+        .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+        }
+
+        .dataframe tbody tr th {
+            vertical-align: top;
+        }
+
+        .dataframe thead th {
+            text-align: right;
+        }
+    </style>
+    <table border="1" class="dataframe">
+    <thead><tr><th title="Field #1"></th>
+      <th title="Field #2">year</th>
+      <th title="Field #3">text</th>
+      <th title="Field #4">i</th>
+      <th title="Field #5">ir</th>
+      </tr></thead>
+      <tbody><tr>
+      <td align="right">0</td>
+      <td align="right">1970</td>
+      <td>126.\t In this anniversary year the General As...</td>
+      <td align="right">37</td>
+      <td align="right">0</td>
+      </tr>
+      <tr>
+      <td align="right">1</td>
+      <td align="right">1971</td>
+      <td>83.\t Mr. President, the first words of my del...</td>
+      <td align="right">27</td>
+      <td align="right">1</td>
+      </tr>
+      <tr>
+      <td align="right">2</td>
+      <td align="right">1972</td>
+      <td>Since the twenty-sixth session of the General ...</td>
+      <td align="right">31</td>
+      <td align="right">2</td>
+      </tr>
+      <tr>
+      <td align="right">3</td>
+      <td align="right">1973</td>
+      <td>﻿1.\tIt is a great pleasure for me to congratu...</td>
+      <td align="right">36</td>
+      <td align="right">2</td>
+      </tr>
+      <tr>
+      <td align="right">4</td>
+      <td align="right">1974</td>
+      <td>Mr. President, first I should like to extend m...</td>
+      <td align="right">57</td>
+      <td align="right">3</td>
+      </tr>
+      <tr>
+      <td align="right">5</td>
+      <td align="right">1975</td>
+      <td>104.\t Mr. President, on behalf of the delegat...</td>
+      <td align="right">29</td>
+      <td align="right">1</td>
+      </tr>
+      <tr>
+      <td align="right">6</td>
+      <td align="right">1976</td>
+      <td>Allow me first to say how pleased I am to see ...</td>
+      <td align="right">52</td>
+      <td align="right">0</td>
+      </tr>
+      <tr>
+      <td align="right">7</td>
+      <td align="right">1977</td>
+      <td>﻿ \n1.\t&#39;O praise the Lord, all ye nations: pr...</td>
+      <td align="right">42</td>
+      <td align="right">0</td>
+      </tr>
+      <tr>
+      <td align="right">8</td>
+      <td align="right">1978</td>
+      <td>﻿210.\tI am particularly happy to be able in m...</td>
+      <td align="right">30</td>
+      <td align="right">1</td>
+      </tr>
+      <tr>
+      <td align="right">9</td>
+      <td align="right">1979</td>
+      <td>﻿My delegation is pleased to convey to the rep...</td>
+      <td align="right">45</td>
+      <td align="right">2</td>
+      </tr>
+      <tr>
+      <td align="right">10</td>
+      <td align="right">1980</td>
+      <td>﻿I should like first of all to extend to Ambas...</td>
+      <td align="right">34</td>
+      <td align="right">6</td>
+      </tr>
+      <tr>
+      <td align="right">11</td>
+      <td align="right">1981</td>
+      <td>\n73.\t Mr. President, the Republic of Iraq an...</td>
+      <td align="right">40</td>
+      <td align="right">32</td>
+      </tr>
+      <tr>
+      <td align="right">12</td>
+      <td align="right">1982</td>
+      <td>First of all I wish to convey my warm \ncongra...</td>
+      <td align="right">34</td>
+      <td align="right">51</td>
+      </tr>
+      <tr>
+      <td align="right">13</td>
+      <td align="right">1983</td>
+      <td>﻿1.\t It is my pleasure to address, in the nam...</td>
+      <td align="right">40</td>
+      <td align="right">53</td>
+      </tr>
+      <tr>
+      <td align="right">14</td>
+      <td align="right">1984</td>
+      <td>﻿I have the honour to convey to the President ...</td>
+      <td align="right">41</td>
+      <td align="right">106</td>
+      </tr>
+      <tr>
+      <td align="right">15</td>
+      <td align="right">1985</td>
+      <td>I wish to convey to you, Sir, the felicitation...</td>
+      <td align="right">41</td>
+      <td align="right">68</td>
+      </tr>
+      <tr>
+      <td align="right">16</td>
+      <td align="right">1986</td>
+      <td>Allow me first, Sir, to congratulate you on y...</td>
+      <td align="right">34</td>
+      <td align="right">49</td>
+      </tr>
+      <tr>
+      <td align="right">17</td>
+      <td align="right">1987</td>
+      <td>﻿\nAllow me at the outset. Sic, to convey to y...</td>
+      <td align="right">36</td>
+      <td align="right">37</td>
+      </tr>
+      <tr>
+      <td align="right">18</td>
+      <td align="right">1988</td>
+      <td>﻿\nI ask the President to accept our congratul...</td>
+      <td align="right">47</td>
+      <td align="right">32</td>
+      </tr>
+      <tr>
+      <td align="right">19</td>
+      <td align="right">1989</td>
+      <td>﻿It is indeed a pleasure for me and the member...</td>
+      <td align="right">45</td>
+      <td align="right">32</td>
+      </tr>
+      <tr>
+      <td align="right">20</td>
+      <td align="right">1990</td>
+      <td>﻿Mr. President, allow me to congratulate you o...</td>
+      <td align="right">50</td>
+      <td align="right">16</td>
+      </tr>
+      <tr>
+      <td align="right">21</td>
+      <td align="right">1991</td>
+      <td>﻿On behalf of my delegation and on my own beha...</td>
+      <td align="right">38</td>
+      <td align="right">7</td>
+      </tr>
+      <tr>
+      <td align="right">22</td>
+      <td align="right">1992</td>
+      <td>I shall read out the following statement\non b...</td>
+      <td align="right">45</td>
+      <td align="right">6</td>
+      </tr>
+      <tr>
+      <td align="right">23</td>
+      <td align="right">1993</td>
+      <td>Allow me to congratulate you sincerely, Sir,\n...</td>
+      <td align="right">35</td>
+      <td align="right">0</td>
+      </tr>
+      <tr>
+      <td align="right">24</td>
+      <td align="right">1994</td>
+      <td>On behalf of the Namibian\ndelegation, I wish ...</td>
+      <td align="right">43</td>
+      <td align="right">7</td>
+      </tr>
+      <tr>
+      <td align="right">25</td>
+      <td align="right">1995</td>
+      <td>Allow me at the outset, on behalf of the\ndele...</td>
+      <td align="right">28</td>
+      <td align="right">3</td>
+      </tr>
+      <tr>
+      <td align="right">26</td>
+      <td align="right">1996</td>
+      <td>﻿The delegation of the Republic of the Congo\n...</td>
+      <td align="right">20</td>
+      <td align="right">2</td>
+      </tr>
+      <tr>
+      <td align="right">27</td>
+      <td align="right">1997</td>
+      <td>﻿I wish to congratulate the President on his\n...</td>
+      <td align="right">27</td>
+      <td align="right">0</td>
+      </tr>
+      <tr>
+      <td align="right">28</td>
+      <td align="right">1998</td>
+      <td>The General Assembly has\nunanimously chosen M...</td>
+      <td align="right">31</td>
+      <td align="right">3</td>
+      </tr>
+      <tr>
+      <td align="right">29</td>
+      <td align="right">1999</td>
+      <td>Today, we look ahead to the\nnew millennium. A...</td>
+      <td align="right">45</td>
+      <td align="right">2</td>
+      </tr>
+      <tr>
+      <td align="right">30</td>
+      <td align="right">2000</td>
+      <td>I join my colleagues in\ncongratulating the Pr...</td>
+      <td align="right">54</td>
+      <td align="right">2</td>
+      </tr>
+      <tr>
+      <td align="right">31</td>
+      <td align="right">2001</td>
+      <td>﻿On\nbehalf of the Comorian delegation, which ...</td>
+      <td align="right">33</td>
+      <td align="right">1</td>
+      </tr>
+      <tr>
+      <td align="right">32</td>
+      <td align="right">2002</td>
+      <td>﻿Allow me\nto begin my statement by expressing...</td>
+      <td align="right">19</td>
+      <td align="right">0</td>
+      </tr>
+      <tr>
+      <td align="right">33</td>
+      <td align="right">2003</td>
+      <td>﻿The people of Tuvalu,\non whose behalf I have...</td>
+      <td align="right">26</td>
+      <td align="right">2</td>
+      </tr>
+      <tr>
+      <td align="right">34</td>
+      <td align="right">2004</td>
+      <td>The United Nations\nfaces unprecedented challe...</td>
+      <td align="right">39</td>
+      <td align="right">1</td>
+      </tr>
+      <tr>
+      <td align="right">35</td>
+      <td align="right">2005</td>
+      <td>Sixty years ago at San Francisco, the United\n...</td>
+      <td align="right">61</td>
+      <td align="right">1</td>
+      </tr>
+      <tr>
+      <td align="right">36</td>
+      <td align="right">2006</td>
+      <td>In 2006, several important anniversaries coinc...</td>
+      <td align="right">68</td>
+      <td align="right">2</td>
+      </tr>
+      <tr>
+      <td align="right">37</td>
+      <td align="right">2007</td>
+      <td>It is a pleasure, Sir, to congratulate you on...</td>
+      <td align="right">65</td>
+      <td align="right">0</td>
+      </tr>
+      <tr>
+      <td align="right">38</td>
+      <td align="right">2008</td>
+      <td>It is an \nhonour for me to represent my count...</td>
+      <td align="right">68</td>
+      <td align="right">0</td>
+      </tr>
+      <tr>
+      <td align="right">39</td>
+      <td align="right">2009</td>
+      <td>I begin by joining others \nin congratulating ...</td>
+      <td align="right">83</td>
+      <td align="right">1</td>
+      </tr>
+      <tr>
+      <td align="right">40</td>
+      <td align="right">2010</td>
+      <td>It is a privilege and a \ngreat honour for me ...</td>
+      <td align="right">63</td>
+      <td align="right">0</td>
+      </tr>
+      <tr>
+      <td align="right">41</td>
+      <td align="right">2011</td>
+      <td>\nAllow me, first of all, to warmly congratula...</td>
+      <td align="right">60</td>
+      <td align="right">0</td>
+      </tr>
+      <tr>
+      <td align="right">42</td>
+      <td align="right">2012</td>
+      <td>﻿First, I would like\nto express my sincere ap...</td>
+      <td align="right">80</td>
+      <td align="right">1</td>
+      </tr>
+      <tr>
+      <td align="right">43</td>
+      <td align="right">2013</td>
+      <td>Allow me at the outset, on \nbehalf of the Pre...</td>
+      <td align="right">91</td>
+      <td align="right">0</td>
+      </tr>
+      <tr>
+      <td align="right">44</td>
+      <td align="right">2014</td>
+      <td>I congratulate Mr. Sam \nKutesa on his assumpt...</td>
+      <td align="right">74</td>
+      <td align="right">0</td>
+      </tr>
+      <tr>
+      <td align="right">45</td>
+      <td align="right">2015</td>
+      <td>The Head of State of the Transition, Her Excel...</td>
+      <td align="right">57</td>
+      <td align="right">1</td>
+      </tr>
+
+      </tbody>
+    </table>
+    </div>
+
+
+.. code:: python3
+
+   alt.Chart(year_summ[['year', 'i', 'il']]).mark_line().encode(
+       x='year',y='i')
+
+
+.. image:: Figures/Colab_iOverTime.png
+
+
+.. code:: python3
+
+    alt.Chart(year_summ[['year', 'i', 'il']].melt(
+        id_vars='year', value_vars=['il','i'])).mark_line().encode(
+        x='year:O',y='value', color='variable')
+
+
+.. image:: Figures/Colab_i_vs_ir.png
+
+
+Interesting! The mention of interest rate in the UN general speeches
+spiked in 1980. It dropped after 1984 and has returned to what 
+it was before 1980. Now, let's take a look at how often climate 
+change and global warming are mentioned.
 
 
 .. code:: python3
@@ -1548,6 +1940,7 @@ kind of thing that happens in data science. One question or the visualization of
 one or more items often leads to further and even more interesting questions.
 
 
+
 .. code:: python3
 
    year_summ['pollution'] = year_summ.text.str.count('pollution')
@@ -1623,7 +2016,7 @@ one or more items often leads to further and even more interesting questions.
           <th></th>
           <th>session</th>
           <th>year</th>
-          <th>code_3</th>
+          <th>country</th>
           <th>text</th>
           <th>text_len</th>
         </tr>
@@ -1676,7 +2069,7 @@ one or more items often leads to further and even more interesting questions.
 
 .. code:: python3
 
-   undf.groupby('code_3', as_index=False)['text_len'].mean().head()
+   undf.groupby('country', as_index=False)['text_len'].mean().head()
 
 
 .. raw:: html
@@ -1699,7 +2092,7 @@ one or more items often leads to further and even more interesting questions.
       <thead>
         <tr style="text-align: right;">
           <th></th>
-          <th>code_3</th>
+          <th>country</th>
           <th>text_len</th>
         </tr>
       </thead>
@@ -1737,7 +2130,7 @@ one or more items often leads to further and even more interesting questions.
 .. code:: python3
 
    alt.Chart(undf.groupby(
-       'code_3', as_index=False)['text_len'].mean()).mark_bar().encode(
+       'country', as_index=False)['text_len'].mean()).mark_bar().encode(
        alt.X('text_len', bin=True), y='count()')
 
 
@@ -1746,7 +2139,7 @@ one or more items often leads to further and even more interesting questions.
 
 .. code:: python3
 
-   undf.groupby('code_3', as_index=False)['text_len'].mean().sort_values('text_len').head()
+   undf.groupby('country', as_index=False)['text_len'].mean().sort_values('text_len').head()
 
 
 .. raw:: html
@@ -1769,7 +2162,7 @@ one or more items often leads to further and even more interesting questions.
       <thead>
         <tr style="text-align: right;">
           <th></th>
-          <th>code_3</th>
+          <th>country</th>
           <th>text_len</th>
         </tr>
       </thead>
@@ -1806,7 +2199,7 @@ one or more items often leads to further and even more interesting questions.
 
 .. code:: python3
 
-   undf.groupby('code_3', as_index=False)['text_len'].mean().sort_values(
+   undf.groupby('country', as_index=False)['text_len'].mean().sort_values(
        'text_len').tail()
 
 
@@ -1830,7 +2223,7 @@ one or more items often leads to further and even more interesting questions.
       <thead>
         <tr style="text-align: right;">
           <th></th>
-          <th>code_3</th>
+          <th>country</th>
           <th>text_len</th>
         </tr>
       </thead>
