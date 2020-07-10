@@ -34,8 +34,8 @@ questions.
 
 
 2. Now, let's make that list of countries look a little nicer by sorting it.
-   Select the countries and then from the menu select Data -> Sort range. Then
-   click on the Sort button.
+   Select the countries and then from the menu select Data -> Sort sheet by. Then select 
+   ascending order(A->Z). 
 
 3. You should have noticed an issue. The problem is that ``UNIQUE`` is a special
    kind of function that returns an array of values. We need to make the values
