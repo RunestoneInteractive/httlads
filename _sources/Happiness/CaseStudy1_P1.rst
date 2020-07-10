@@ -19,6 +19,7 @@ minimum capital (see definitions below) requirement for a small- to medium-size 
 company to start up and formally operate in each economy’s largest business city.  These cities 
 are then ranked based on these indicators.
 
+
 To make the data comparable across 190 economies, this case study uses a standardized business 
 that is 100% domestically owned, has a start-up capital equivalent to 10 times the income per 
 capita, engages in general industrial or commercial activities and employs between 10 and 50 

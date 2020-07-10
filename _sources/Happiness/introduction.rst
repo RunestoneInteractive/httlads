@@ -9,7 +9,11 @@
 Introduction
 ============
 
-In this chapter, we will explore the concepts of descriptive statistics and data types in statistics. We will also begin using Google Sheets to manipulate data to solve a business problem.  We will discuss the difference between correlation and causation and explain why correlation does not imply causation.
+In this chapter, we will explore the concepts of descriptive statistics such as normal distribution, measures of central tendency (such as mean, mode & median), measures of variability (such as range & interquartile range), variance, standard deviation and others.  Additionally, we will explore the various data types in statistics such as categorical & numerical types.
+
+We will need a spreadsheet application to manipulate the data in the chapter to solve business problems.  There are many types of spreadsheets such as Excel (a proprietary spreadsheet application) & Google Sheets (a web-based spreadsheet application).  We will use Google Sheets because it is free, works from any device (like your laptop, tablet or phone) and includes almost all the same functions as Excel.  So, if you are familiar with Microsoft Excel, you will find Google Sheets easy to use.
+
+Lastly, we will discuss the difference between correlation and causation.  We will explore why correlation does not imply causation.  Understanding this concept is important for making correct business assumptions and decisions when analyzing business data.
 
 Learning Goals
 --------------
