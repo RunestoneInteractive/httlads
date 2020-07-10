@@ -25,6 +25,8 @@ If you do not already have a Gmail account then you will have to create one.
 Once you are signed in, you should see a pop up box similar to the one shown below.
 
 .. image:: Figures/colab_new_notebook.JPG
+  :alt: Pop-up window to create a new notebook or open an existing one on google colab.
+
 
 You can create a new notebook file by clicking on NEW NOTEBOOK, but for now close the pop up by clicking on cancel 
 or by clicking on the shaded area outside of the pop up. Another way of creating a new notebook is to  click on File tab (top left) -> New Notebook. 
@@ -40,6 +42,7 @@ Before we start getting into the coding, let's familiarize ourselves with the us
 **What the different buttons mean:**
 
 .. image:: Figures/colab_UI_left.JPG
+  :alt: Left side Google Colab notebook with arrows pointing at different features.
 
 1. **Files:** Here you will be able to upload datasets and other files from both your computer and Google Drive
 2. **Code Snippets:** Here you will be able to find prewritten snippets of code for different functionalities like adding new libraries or referencing one cell from another.
@@ -55,6 +58,7 @@ Before we start getting into the coding, let's familiarize ourselves with the us
 11. **Clear Output:** This button will remove the output.
 
 .. image:: Figures/colab_UI_right.JPG
+  :alt: Left side Google Colab notebook with arrows pointing at different features.
 
 12. **Ram & Disk:** All of the code you write will run on Google's computer and you will only see the output. This means that even if you have a slow computer running big chunks of code will not be an issue. 
     Google only allots a certain amount of Ram and Disk space for each *user* so be mindful of that as you work on larger projects. 
@@ -82,6 +86,8 @@ There are multiple ways to customize a text cell in Google Colab. In the image b
 are available in the UI. 
 
 .. image:: Figures/text_cells.png
+  :alt: Snippet of a text cell from Google colab with text in showing different formatting styles.
+
 
 There is an option to bold, italicize, add bullet points, add numbered lists, and toggle text(s) as headers using the clickable options. 
 There are many more options to customize your text cells if you use Markdown. 
