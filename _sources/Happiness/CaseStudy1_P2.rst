@@ -91,13 +91,13 @@ continent (see question 5). This is an important lesson as it sets the stage
 nicely for what we will learn about later when using SQL to "join" two tables of
 data.
 
-1. The first thing we need to do is to import the
-   `countries of the world <../_static/world_countries_2019.csv>`_ spreadsheet. This
+1. The first thing we need to do is to import
+   the `countries of the world <../_static/world_countries_2019.csv>`_ spreadsheet. This 
    has a huge amount of data about each country and you may wish to explore some
    of the other data provided later. For now, we are interested in how we can
    use the information on this new spreadsheet to give us the continent of each
    country.
-   
+
 
 2. You can start by either copy/pasting the whole sheet into a new tab in the same spreadsheet or importing the csv file into a new tab in the same spreadsheet.
 
