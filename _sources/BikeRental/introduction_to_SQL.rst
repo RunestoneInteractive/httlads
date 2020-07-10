@@ -7,7 +7,7 @@ Exploring Bike Rental Data with SQL
 ===================================
 
 .. figure:: https://imgs.xkcd.com/comics/exploits_of_a_mom.png
-   :alt: exploits_of_a_mom.png
+   :alt: xkcd comic about sanitizing data. 
 
    exploits_of_a_mom.png
 

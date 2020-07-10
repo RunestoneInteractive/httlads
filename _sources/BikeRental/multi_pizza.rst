@@ -50,6 +50,7 @@ go in there in order to minimize the MSE with the yellow background.
 
 
 .. figure:: Figures/multi_solver.png
+  :alt: Screen capture of Google Sheets with Solver add on opened and with cell containing MSE and its value highlighted yellow. Area of coefficients found under pizza diameter num toppings and bias highlihted in Green. 
 
 
 Computing the prediction for each row could be quite error prone as there are a
