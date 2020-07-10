@@ -1190,7 +1190,9 @@ used in industry.
 
 
 .. image:: Figures/Instacart_69_0.png
-
+  :alt: Histogram with allvais(binned) as the x-axis and Number of Records as the y-axis. 
+        From 0 to 200 (on the x-axis) there is one bar that goes to 5,000 and from 200 to 
+        400 the bar goes up to less than 200. 
 
 Experimenting with Item-Item Recommendations
 --------------------------------------------

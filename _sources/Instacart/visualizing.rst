@@ -85,7 +85,9 @@ build our chord diagram and other graph like visualizations.
 
 
 .. image:: Figures/Instacart_84_1.png
-
+  :alt: A heat map that represents the squere adjacency matrix. The colors range from 
+        black to red to white in accending order. Most of the map is black with some red 
+        and white.
 
 Looks like a lot of small values. Let's make a histogram of the whole thing and
 see.
@@ -110,7 +112,8 @@ see.
 
 
 .. image:: Figures/Instacart_92_1.png
-
+  :alt: The same heat map as above but the smaller values (in black) are removed so that the 
+        larger values are more obvious.
 
 .. code:: python3
 
