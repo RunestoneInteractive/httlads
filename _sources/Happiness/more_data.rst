@@ -178,14 +178,14 @@ the countries sheet, and add it to the happiness sheet on row 15 column M.
 
 With ``VLOOKUP``, we do this by allowing the function to search for the value in
 one cell in another column, and then return the value from a different cell in
-the same row but in some other column. To find the continent of Israel, we would
+the same row but in some other column. To find the continent of Ireland, we would
 use ``VLOOKUP(A15, Sheet1!$A$6:$F$229, 5, FALSE)``.
 
 * A15 is the cell containing Ireland
 * ``Sheet1!$A$6:$F$229`` is the range of cells we can search in as well as get
   values from
-* 2 tells Sheets that when we find a match for Israel, we want the value from
-  the same row but in column 2 of our range
+* 5 tells Sheets that when we find a match for Ireland, we want the value from
+  the same row but in column 5 of our range
 
 Notice that column 5 of our range is the continent/region column. You may have
 noticed that ``VLOOKUP`` is a bit like using ``MATCH`` and ``INDEX`` together,
