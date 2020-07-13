@@ -4,72 +4,32 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-Exploring Case Study 1: Starting a Business Data
-=================================================
+Exploring Case Study 1: "Starting a Business" Data
+==================================================
 
 Before class, you should read about the data science processing pipeline and exploratory 
-data analysis, and the other resources on spreadsheets and summary statistics linked in 
-the introduction (section 2.1).
+data analysis, and the other resources on spreadsheets and summary statistics in the 
+Chapter 2 introduction (section 2.1).
 
-Introducing CS1: `Starting a Business <../_static/Starting_a_Business_2019.csv>`_
+Introducing CS1: Starting A Business
 -----------------------------------------------------------------------------------
 
-This case study measures indicators such as the number of procedures, time, cost and paid-in 
-minimum capital (see definitions below) requirement for a small- to medium-size limited liability 
-company to start up and formally operate in each economy’s largest business city.  These cities 
-are then ranked based on these indicators.
+This case study utilizes the `"Starting a Business" <../_static/Starting_a_Business_2019.csv>`_ dataset obtained from the Doing Business-World Bank website. The dataset contains indicators from over 190 countries that measure the relative ease of starting a business in those countries.  The dataset looks at two limited liability companies in various regions and countries around the world.  Both companies are identical in every way, except one company is owned by five married women and the other is owned by five married men.  
 
+Each country in the dataset has an ease-of-doing-business ranking score which ranks the amount of time (in days) it takes the business to set up everything needed to open the business, the minimum amount of capital (money) an entrepreneur must have available to start the business and the number of procedures (activities) in the registration process that must be completed before, during and after registering the business with its associated governmental entity. The dataset identifies these as important indicators a limited liability company must consider to successfully start a business.  
 
-To make the data comparable across 190 economies, this case study uses a standardized business 
-that is 100% domestically owned, has a start-up capital equivalent to 10 times the income per 
-capita, engages in general industrial or commercial activities and employs between 10 and 50 
-people one month after the commencement of operations, all of whom are domestic nationals.  
+The ease-of-doing-business ranking score for each country is reflected on a scale from 0-100. A score of zero represents the country with the lowest performance of these indicators and 100 represents the country with the highest performance of these indicators. 
 
-The starting a business indicators consider two cases of local limited liability companies 
-that are identical in all aspects, except that one company is owned by five married women 
-and the other by five married men.  The overall score for starting a business is the average 
-of the scores obtained for each of the component indicators.  The most recent round of data 
-collection for the case study was completed in May 2019. (Source: `Starting a Business Report`_ )
+Below are definitions of the indicators found in the dataset.
+   - •	**Starting a Business Rank:** Countries are ranked on a score that represents the relative ease of starting a business.
+   - •	**Starting a Business Score:** These scores are calculated by taking the simple average of all the indicators’ scores.
+   - •	**Procedures:** The activities that must be accomplished to get the business registered with its associated governmental entity.
+   - •	**Time (days):** The median number of days needed to get the business up and running for each country/region.
+   - •	**Cost:** The amount of money that must be expended to get the business started (such as official, legal and professional services fees, etc.).
+   - •	**Paid-In Minimum Capital:** The minimum amount of money the entrepreneur must have available (as deposits in the bank) for the business registration process to be completed.
+   - •	**Income Level:** This represents the income levels of each country's economy. This indicator is divided into four categories: low, lower-middle, upper-middle and high, based on a country’s gross national income (GNI) per person.
 
-.. _Starting a Business Report: https://www.doingbusiness.org/en/data/exploretopics/starting-a-business#
-
-We will use Google Sheets to help us explore what indicators may be most important to start up 
-and formally operate a new business in each economy’s largest business city.  Click on the section name (Starting a Business) to 
-download the data. Import it into your Google Spreadsheets. 
-
-The following definitions are reproduced from the `Starting a Business Report`_ 
-
-.. _Starting a Business Report: https://www.doingbusiness.org/en/data/exploretopics/starting-a-business#
-
-
-- **Starting a Business rank:** “The ranking of economies on the ease of starting a business is determined by sorting their scores for starting a business.” 
-
-- **Starting a Business score:** “These scores are the simple average of the scores for each of the component indicators.”
-
-- **Procedure (number):** “A procedure is deﬁned as any interaction of the company founders (company officers, employees or spouses, if legally required) with external parties (for example, government agencies, lawyers, auditors or notaries).”
-
-- **Time (days):** "Time is recorded in calendar days. The measure captures the median duration that incorporation lawyers or notaries indicate is necessary in practice to complete a procedure with minimum follow-up with government agencies and no unofficial payments.”
-
-- **Cost (% of income per capita):** “Cost is recorded as a percentage of the economy’s income per capita. It includes all official fees and fees for legal or professional services if such services are required by law or commonly used in practice.”
-
-- **Paid-in min. capital (% of income per capita):** “The paid-in minimum capital requirement reﬂects the amount that the entrepreneur needs to deposit in a bank or with a third-party (for example, a notary) before registration or up to three months after incorporation and it is recorded as a percentage of the economy’s income per capita.”
-
-- **Income Level:** “Economies are currently divided into four income groupings: low, lower-middle, upper-middle, and high, based on GNI per capita (in U.S. dollars, converted from local currency using the Atlas method).” (Source: `Why use GNI per capita to classify economies into income groupings`_ ?).
-
-  .. _Why use GNI per capita to classify economies into income groupings: https://datahelpdesk.worldbank.org/knowledgebase/articles/378831-why-use-gni-per-capita-to-classify-economies-into
-
-  - Low-Income Economies ($1,025 or less)
-  - Lower-Middle Income Economies  ($1,026 - $3,995)
-  - Upper-Middle Income Economies ($3,996 - $12,375)
-  - High-Income Economies ($12,376 or more)
-
-Source: `World Bank Country and Lending Groups`_
-
-.. _World Bank Country and Lending Groups: https://datahelpdesk.worldbank.org/knowledgebase/articles/906519-world-bank-country-and-lending-groups
-
-- GNI: “In calculating gross national income (GNI -- formerly referred to as GNP) and GNI per capita in U.S. dollars for certain operational purposes, the World Bank uses the Atlas conversion factor. The purpose of the Atlas conversion factor is to reduce the impact of exchange rate fluctuations in the cross-country comparison of national incomes.” (Source: `World Bank Atlas Method`_ ).
-
-.. _World Bank Atlas Method: https://datahelpdesk.worldbank.org/knowledgebase/articles/906531-methodologies#:~:text=In%20calculating%20gross%20national%20income,uses%20the%20Atlas%20conversion%20factor.&text=The%20Atlas%20conversion%20factor%20is%20then%20applied%20to%20a%20country's%20GNI
+We will use Google Sheets to help us explore which of these indicators are most important to starting and formally operating a new business in each economy’s largest business city. `Click here <../_static/Starting_a_Business_2019.csv>`_ to download the data. Then, import the dataset into your Google Spreadsheets.
 
 .. mchoice:: dat_sab1
 
