@@ -121,7 +121,7 @@ Summary Statistics
 
 1. The data set lists countries based on their “Starting a Business” score. While it is easy to see the best countries for starting a business using the “Starting a Business rank”, it is not as easy to grasp the relative simplicity of each country. For this, one common baseline is needed to measure all of the countries against. Average, Standard Deviation and Median are all ways of creating such a baseline. One way of creating such a baseline is by averaging the “starting a business” score of all of the countries together.
 
-   a. Use the ``AVERAGE`` function of sheets to calculate the mean in column E. Scroll down and click in the cell E. That should be an empty cell below the column of numbers for the Starting a Business score. Now type ``=AVERAGE(E2:E192)``. You can also type ``=AVERAGE(`` and then click and drag the numbers you want. E2:E192 specifies a range, from Column E Row 2 down to Column E Row 192.
+   a. Use the ``AVERAGE`` function of sheets to calculate the mean in column E. Scroll down and click on a cell in column 194. That should be an empty cell below the column of numbers for the Starting a Business score. Now type ``=AVERAGE(E2:E192)``. You can also type ``=AVERAGE(`` and then click and drag the numbers you want. E2:E192 specifies a range, from Column E Row 2 down to Column E Row 192.
 
       .. fillintheblank:: fb_sab5
  
@@ -131,7 +131,7 @@ Summary Statistics
           :84.3664: 84.3664 should be rounded down to 84.366
           :x: USE the AVERAGE function and the range from E2 to E192
     
-   b. Many formulas in Sheets use ranges. Ranges can span cells in a single column like we did in a. Or, they can span cells in a single row such as A1: L1. They can even span rows and columns to form a rectangle such as A1:L141. Ranges can be calculated for a single column, a single row, or a rectangle. Calculate the range of:
+   b. Many formulas in Sheets use ranges. Ranges can span cells in a single column like we did in 1a. Or, they can span cells in a single row such as A1: L1. They can even span rows and columns to form a rectangle such as A1:L141. Ranges can be calculated for a single column, a single row, or a rectangle. Calculate the range of:
 
       - E2:O2
       - E2:E192

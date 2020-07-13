@@ -6,7 +6,7 @@
 Cases Study 1 Part II: Adding more data
 =======================================
 
-Before we begin, make sure that the google sheets file you are working on is exactly like the one given at the bigining of this case study. Any changes you made to the google sheets while following along in the previous section should be deleted.
+Before we begin, make sure that the google sheets file you are working on is exactly like the one given at the beginning of this case study. Any changes you made to the google sheets while following along in the previous section should be deleted.
 
 Business Score by Region
 ------------------------
@@ -69,11 +69,11 @@ With a column for the count and a column for the sum, you can now calculate the 
 
 4. Add another column to our table that tells us how many countries are in each region (COUNTIF).
 
-5. Using ``MAXIFS``, ``MINIFS``, ``MATCH`` and ``INDEX``, let’s find the easiest and hardest country to start a business in for each region. ``MAXIFS`` and ``MINIFS`` work like ``AVERAGEIF`` and ``COUNTIF``, but allow for more conditions. In our case, we still need only one. (If you read the popup you will know what to do.)
+5. Using ``MAXIFS``, ``MINIFS``, ``MATCH`` and ``INDEX``, let’s find the easiest and hardest country to start a business in for each region. ``MAXIFS`` and ``MINIFS`` work like ``AVERAGEIF`` and ``COUNTIF``, but allow for more conditions. In our case, we still need only one. (If you read the POPUP you will know what to do.)
 
    .. fillintheblank:: q5_cs1_sbd
       
-      What is the easiest country to start a business in in the Americas?
+      What is the easiest country to start a business in the Americas?
       
       - :Canada: Is the correct answer!
         :x: Incorrect. Try using the functions one at a time in different cells before combining them.
@@ -82,9 +82,8 @@ Joining Data from Other Sources
 -------------------------------
 
 So far, we have limited our analysis to the data provided for us in the original
-happiness spreadsheet. But what if we wanted to look at other factors for
-happiness, such as cell phone ownership, internet access, birth rates, or
-anything else we can think of? Seldom does one file contain all the data you
+Starting A Business spreadsheet. But what if we wanted to look at other factors for
+Starting A Business, such as population? Seldom does one file contain all the data you
 need to answer the questions you may have. In this part of the project, we will
 import a spreadsheet that has a lot more data about each country, including its
 continent (see question 5). This is an important lesson as it sets the stage
@@ -120,7 +119,7 @@ When we use ``VLOOKUP``, our goal is to join together these two sheets, adding
 columns to the Starting a Business sheet using values from the population row in the countries of the
 world sheet in the rows where the country names match. For example, in our
 Starting a Business sheet, Ethiopia is on row 170, but in the countries of the world sheet,
-it is on row 72. What we want to do is take (at least) column A row 72 from
+it is on row 67. What we want to do is take (at least) column A row 67 from
 the countries sheet, and add it to the Starting a Business sheet on row 170 column Q.
 
 With ``VLOOKUP``, we do this by allowing the function to search for the value in
@@ -183,7 +182,7 @@ pieces, or learn to live without some pieces of data.
 
    Which of the following countries are NOT in the world countries spreadsheet?
 
-   - Taiwan, China
+   - Siberia
 
      + Correct
 
@@ -281,7 +280,7 @@ example above.
    - :4353.4: Is the correct answer
      :x: Incorrect. You should have Starting a Business Score column summarized by Median
 
-Pivot tables can be treated like any other part of your spreadsheet. Use a pivot table to find the least happy country in each region. Then using ``MATCH`` and ``INDEX``, add an additional column that contains the name of that country.
+Pivot tables can be treated like any other part of your spreadsheet. Use a pivot table to find the country with the lowest Starting A Business score in each region. Then using ``MATCH`` and ``INDEX``, add an additional column that contains the name of that country.
 
 .. fillintheblank:: q14_cs1_sbd
    
