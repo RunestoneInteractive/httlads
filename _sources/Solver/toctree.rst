@@ -14,3 +14,4 @@ Using Solver (Optional)
    solver.rst
    small_probs.rst
    class_schedule.rst
+   glossary.rst
