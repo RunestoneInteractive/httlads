@@ -16,4 +16,8 @@ Or, you might want to minimize the total cost.
 For example, you can’t sell more things than you have. You can’t spend more money than you 
 have in the bank. You can only make so many pizzas every hour.
 
+**Independent Variable:** Is a variable that is not directly affected by another variable. It can affect 
+the dependent variable.
 
+**Dependent Variable:** Is a variable whose value is based on the change in a seperate variable. For example, 
+the profits from the sale of Lemons depends on the price of Lemons. 
