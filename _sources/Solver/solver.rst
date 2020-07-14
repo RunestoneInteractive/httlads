@@ -134,12 +134,14 @@ We said that our objective function was to maximize profit. That value is the
 total that shows up as 894.75 and is in cell G11 in the spreadsheet. So, in our
 solver tab in the **Set Objective** input box, we will set G11 as our objective
 cell. You can see that at the right. You can also see that I have checked the
-box to maximize that objective.
+box to maximize that objective. You can think of Set Objective as the **dependent variable**. 
+
 
 Next, you can see the **By Changing** input box. This is where we tell solver
 the values it can change. We are allowing solver to decide how much of each item
 we should sell. Those are in cells F2:F9. It doesn't matter if you have already
-entered a few values into those cells, as solver will override them.
+entered a few values into those cells, as solver will override them. You can think
+of By Changing as the **independent variable**.
 
 Finally, we have the **Subject To** entry area. Recall that our two constraints
 were that we could not sell more than 500 total items. That means that in our
