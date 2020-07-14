@@ -12,8 +12,8 @@ CIA World Factbook Data
    :maxdepth: 2
 
    introduction.rst
-   case_study_1.rst
    exploratory_data_analysis.rst
+   (old version)_exploratory_data_analysis.rst
    screenscrape_cids.rst
    scrape_cia.rst
    government_types.rst
