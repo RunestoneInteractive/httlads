@@ -11,6 +11,7 @@ Using Solver (Optional)
    :caption: Using Solver
    :maxdepth: 2
 
+   introduction.rst
    solver.rst
    small_probs.rst
    class_schedule.rst
