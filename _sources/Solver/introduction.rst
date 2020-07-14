@@ -8,10 +8,14 @@ Introduction
 
 Learning Goals
 --------------
-- Know how to install and add Solver to sheets.
-- Know how to set "Subject To", "Objective", and "By Changing" cells in Solver.
+
+- Find out the importance of **optimization**
+- Learn how to maximize or minimize an **objective function** under specific **constraints**.
 
 Learning Objectives
 -------------------
-- Be able to optimize problems using Solver in Google Sheets.
-- Be able to recognize "Set Objective", "Subject To" and "By Changing" values in the dataset.
+
+- Be able to recognize an **objective function** and any **constraints** in a specific set of data.
+- Be able to apply opitimization in order to maximize profit or minimize loss given 
+  a certain amount of inventory, money, or time.
+- Be able to use tools to optimize an **objective function**.
