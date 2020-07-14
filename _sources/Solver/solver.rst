@@ -6,8 +6,8 @@
 
 .. _h2b207b587f1f7c6d7e167056a1f7c7f:
 
-Optimization with Solver
-========================
+Optimization Using Solver
+==========================
 
 A lot of data science and machine learning concerns itself with optimization. In
 the business word, people are often trying to maximize profit and/or minimize

@@ -4,8 +4,8 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-Using Solver (Optional)
-=======================
+Optimization 
+=============
 
 .. toctree::
    :caption: Using Solver
