@@ -15,4 +15,5 @@ CIA World Factbook Data
    exploratory_data_analysis.rst
    screenscrape_cids.rst
    scrape_cia.rst
+   summarize_data_with_pandas_pivot_table.rst
    government_types.rst
