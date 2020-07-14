@@ -127,6 +127,7 @@ to find the best values for that column.
 .. image:: Figures/Solver_.png
    :width: 300px
    :align: left
+   :alt: Solver window with "Set Objective" Cell, "By Changing" Cell, and "Subject To" Cell with buttons to add, change, or delete constraints.
 
 
 We said that our objective function was to maximize profit. That value is the
