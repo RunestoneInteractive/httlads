@@ -25,8 +25,8 @@ from `this page <../_static/government_type.html>`_.
 
 Now, let's look at making a pivot table. We will leave pivoting on the form of
 government up to you. Instead, we will do an example where we explore how climate is related
-economy. Climate affects economy in more ways than we realize. In 2017, extreme weather cost the U.S $306 billion in damages. 
-If climate denial continues, these costs will only increase (`reference <https://getpocket.com/explore/item/can-civilization-survive-what-s-coming>`_).
+economy. Climate affects economy in more ways than we realize. According to the article *Can Civilization Survive What’s Coming*?, extreme weather cost the U.S $306 billion in damages in 2017. 
+If climate denial continues, these costs will only increase.
 Therefore, we will do an example to see how climate, region
 of the world, and parts of the economy might be related. We have a column for
 region, we have a column for climate, and we have information on the economy.
