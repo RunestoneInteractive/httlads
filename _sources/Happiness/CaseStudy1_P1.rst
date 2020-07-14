@@ -29,7 +29,9 @@ Below are definitions of the indicators found in the dataset.
    - •	**Paid-In Minimum Capital:** The minimum amount of money the entrepreneur must have available (as deposits in the bank) for the business registration process to be completed.
    - •	**Income Level:** This represents the income levels of each country's economy. This indicator is divided into four categories: low, lower-middle, upper-middle and high, based on a country’s gross national income (GNI) per person.
 
-We will use Google Sheets to help us explore which of these indicators are most important to starting and formally operating a new business in each economy’s largest business city. `Click here <../_static/Starting_a_Business_2019.csv>`_ to download the data. Then, import the dataset into your Google Spreadsheets.
+We will use Google Sheets to help us explore which of these indicators are most important to starting and formally operating a new business in each economy’s largest business city. `Click here <../_static/Starting_a_Business_2019.csv>`_ to download the data. Then, import the dataset into your Google Spreadsheets. (Source: `Starting a Business Report`_ )
+
+.. _Starting a Business Report: https://www.doingbusiness.org/en/data/exploretopics/starting-a-business#
 
 .. mchoice:: dat_sab1
 
@@ -121,7 +123,7 @@ Summary Statistics
 
 1. The data set lists countries based on their “Starting a Business” score. While it is easy to see the best countries for starting a business using the “Starting a Business rank”, it is not as easy to grasp the relative simplicity of each country. For this, one common baseline is needed to measure all of the countries against. Average, Standard Deviation and Median are all ways of creating such a baseline. One way of creating such a baseline is by averaging the “starting a business” score of all of the countries together.
 
-   a. Use the ``AVERAGE`` function of sheets to calculate the mean in column E. Scroll down and click on a cell in column 194. That should be an empty cell below the column of numbers for the Starting a Business score. Now type ``=AVERAGE(E2:E192)``. You can also type ``=AVERAGE(`` and then click and drag the numbers you want. E2:E192 specifies a range, from Column E Row 2 down to Column E Row 192.
+   a. Use the ``AVERAGE`` function of sheets to calculate the mean in column E. Scroll down and click on a cell in column E. That should be an empty cell below the column of numbers for the Starting a Business score. Now type ``=AVERAGE(E2:E192)``. You can also type ``=AVERAGE(`` and then click and drag the numbers you want. E2:E192 specifies a range, from Column E Row 2 down to Column E Row 192.
 
       .. fillintheblank:: fb_sab5
  
