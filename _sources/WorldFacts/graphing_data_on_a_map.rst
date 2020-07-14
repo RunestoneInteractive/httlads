@@ -1,5 +1,11 @@
-Graphing Infant Mortality rates on a Map
-=========================================
+.. Copyright (C)  Google, Runestone Interactive LLC
+   This work is licensed under the Creative Commons Attribution-ShareAlike 4.0
+   International License. To view a copy of this license, visit
+   http://creativecommons.org/licenses/by-sa/4.0/.
+
+
+Graphing Data on a Map
+=======================
 
 Let's take on the seemingly simple task of plotting some of the country data on
 a map, like we did in Google Sheets earlier. We'll see that this is one area
@@ -335,8 +341,34 @@ and the native name.
 
 
 **Check Your Understanding**
- 
-   Questions to be added later.
+
+
+.. fillintheblank:: fb_api1
+
+   What is the numericCode for the country of Peru? |blank|
+
+   - :(604|'604'): Is the correct answer
+     :51: Is the callingCode for Peru, use that if you are phoning a friend
+     :x: Check your answer again
+
+
+.. fillintheblank:: fb_api2
+
+   Copy and paste the list of the three letter country codes of the countries
+   that border Peru. Do not include the square brackets. |blank|
+
+   - :'BOL', 'BRA', 'CHL', 'COL', 'ECU': Is the correct answer
+     :200: 200 is the status code of the request
+     :x: There are five country codes, in single quotes separated ', '
+
+
+.. fillintheblank:: fb_api3
+
+   How many keys are in the dictionary returned for the country of Peru? |blank|
+
+   - :24: Is the correct answer
+     :x: Use the keys method after .json() to see the list of keys
+
 
 For this example, we will use the Starting a Business data set and look at the Starting_a_Business_score in different countries around the world.
 
@@ -719,6 +751,37 @@ by the time you finish this project.
 
 3. Take some time to talk about and present the data and the graph you created
    to the class.
+   
+
+**Lesson Feedback**
+
+.. poll:: LearningZone_6_3
+    :option_1: Comfort Zone
+    :option_2: Learning Zone
+    :option_3: Panic Zone
+
+    During this lesson I was primarily in my...
+
+.. poll:: Time_6_3
+    :option_1: Very little time
+    :option_2: A reasonable amount of time
+    :option_3: More time than is reasonable
+
+    Completing this lesson took...
+
+.. poll:: TaskValue_6_3
+    :option_1: Don't seem worth learning
+    :option_2: May be worth learning
+    :option_3: Are definitely worth learning
+
+    Based on my own interests and needs, the things taught in this lesson...
+
+.. poll:: Expectancy_6_3
+    :option_1: Definitely within reach
+    :option_2: Within reach if I try my hardest
+    :option_3: Out of reach no matter how hard I try
+
+    For me to master the things taught in this lesson feels...
 
 
 

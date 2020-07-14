@@ -13,7 +13,8 @@ CIA World Factbook Data
 
    introduction.rst
    exploratory_data_analysis.rst
-   graphing_infant_mortality_rate.rst
+   graphing_data_on_a_map.rst
+   old_version_graphing_infant_mortality
    screenscrape_cids.rst
    scrape_cia.rst
    government_types.rst

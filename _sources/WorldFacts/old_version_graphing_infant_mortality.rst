@@ -4,8 +4,8 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-Graphing Infant Mortality on a Map
-==================================
+(Old Version) Graphing Infant Mortality on a Map
+=================================================
 
 Let's take on the seemingly simple task of plotting some of the country data on
 a map, like we did in Google Sheets earlier. We'll see that this is one area
