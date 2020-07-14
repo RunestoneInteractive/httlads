@@ -4,8 +4,8 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-Comparing Forms of Government
-=============================
+Summarzing Data Using Pandas Pivot Table
+==========================================
 
 The goal of this section is to be able to do some comparison of the different
 forms of government, and how the form of government might have an impact some of
@@ -24,10 +24,13 @@ When you are comfortable with that, you can dig in to getting the information
 from `this page <../_static/government_type.html>`_.
 
 Now, let's look at making a pivot table. We will leave pivoting on the form of
-government up to you. Instead, we will do an example to see how climate, region
+government up to you. Instead, we will do an example where we explore how climate is related
+economy. Climate affects economy in more ways than we realize. In 2017, extreme weather cost the U.S $306 billion in damages. 
+If climate denial continues, these costs will only increase (`reference <https://getpocket.com/explore/item/can-civilization-survive-what-s-coming>`_).
+Therefore, we will do an example to see how climate, region
 of the world, and parts of the economy might be related. We have a column for
 region, we have a column for climate, and we have information on the economy.
-What we want to do is summarize that information in a table where we have a row
+What we want to do is summarize that information in a table where we h`ave a row
 for each region, and a column for each classification of climate. Then in each
 cell, we would like to summarize the fraction of the economy that comes from
 agriculture.
