@@ -9,7 +9,7 @@ Introduction
 Learning Goals
 --------------
 - Know how to install and add Solver to sheets.
-- Know how to set "Subject To", "Objectives", and "By Changing" cells in Solver.
+- Know how to set "Subject To", "Objective", and "By Changing" cells in Solver.
 
 Learning Objectives
 -------------------

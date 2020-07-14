@@ -77,8 +77,8 @@ use the Solver tool to find the best answer for us.
 Add another column called "numsold" to keep track of how many items you have
 sold, and another column called "total profit" that multiplies the number sold
 by the profit for that item. The sum of that column will be your total profit.
-It is the grand total that we want to maximize. That sum is our **objective
-function**.
+It is the grand total that we want to maximize. That sum is our objective
+function.
 
 The next question is: What are our constraints?
 
