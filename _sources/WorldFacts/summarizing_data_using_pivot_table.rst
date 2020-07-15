@@ -74,7 +74,7 @@ from the original table should I use as the new row index?". The columns
 parameter asks "what values from the original table should I use as the column
 headings?". The values parameter says what values to include in the cells. In
 most cases, these values will need to be aggregated in some way, and by default
-the aggregation is to take the mean.
+the **aggregation** is to take the **mean**.
 
 .. code:: python3
 
