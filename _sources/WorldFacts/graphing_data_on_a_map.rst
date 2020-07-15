@@ -167,7 +167,7 @@ Lets make a to-do list:
 1. We need to add a column to our ``wd`` DataFrame that contains the numerical
    country id. Where can we get this data? There may be some CSV files with this
    information already in them, but this is a good chance to learn about a
-   common technique used by data scientists everywhere: **web APIs**. API stands
+   common technique used by data scientists everywhere: **web APIs**. **API** stands
    for Application Programmer Interface. Each website will have its own
    convention for how you ask it for data, and the format in which the data is
    returned.
@@ -201,7 +201,7 @@ These other methods are in the documentation.
 Open a new tab in your browser and paste this URL:
 `https://restcountries.eu/rest/v2/alpha/usa`. You will see that you don't get a
 web page in response, but rather some information that looks like a Python
-dictionary. We'll explore that more below. We can do the same thing from a
+**dictionary**. We'll explore that more below. We can do the same thing from a
 Python program using the requests library.
 
 .. code:: python3
@@ -239,7 +239,7 @@ Python dictionary. Better yet, we can convert this string into an actual Python
 dictionary and then access the individual key-value pairs stored in the
 dictionary using the usual Python syntax!
 
-The official name for the format that we saw above is called JSON: JavaScript
+The official name for the format that we saw above is called **JSON**: JavaScript
 Object Notation. It's a good acronym to know, but you don't have to know
 anything about Javascript in order to make use of JSON.  You can think of the
 results as a Python dictionary.  It can be a bit daunting at first as there can be
@@ -308,7 +308,7 @@ but fear not, you can figure it out with a bit of experiementation.
         'Accord de Libre-échange Nord-Américain']}],
     'cioc': 'USA'}
 
-For example timezones is a top level key, which produces a list of the valid timezones in the USA.
+For example, timezones is a top level key, which produces a list of the valid timezones in the USA.
 
 .. code:: python3
 
@@ -332,7 +332,7 @@ For example timezones is a top level key, which produces a list of the valid tim
 
 But, languages is more complicated It also returns a list but each element of the list corresponds
 to one of the official languages of the country.  The USA has only one official language but other countries
-have more.  For example Malta has both Maltese and English as official languages.  Notice that the two dictionaries
+have more.  For example, Malta has both Maltese and English as official languages.  Notice that the two dictionaries
 have an identical structure, a key for the two letter abbreviation, a key for the three letter abbreviation, the name
 and the native name.
 
