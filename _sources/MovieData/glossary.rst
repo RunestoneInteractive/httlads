@@ -36,11 +36,11 @@ Keywords
 
 ``df[<string>]:`` gets me a column and return the Series corresponding to that column.
 
-``df[<string>]``: returns the series with the <string> named column. **<-------- ASK DR. JAN**
+``df[<string>]``: returns the series with the <string> named column. 
 
 ``df[<list of strings>]:``  gets me a bunch of columns and return a DataFrame.
 
-``df[<list of strings>]``:  returns the dataframe from the column named in the <list of strings>. **<-------- ASK DR. JAN**
+``df[<list of strings>]``:  returns the dataframe from the column named in the <list of strings>. 
 
 ``df[<series/list of Boolean>]``: accesses the rows for each element in the listlike thing you 
 passed me that is True. However, I think this is confusing and whenever you want to select some 
@@ -51,19 +51,13 @@ rows of a DataFrame you should use df.loc[].
 ``df.loc[<string>]``: behaves just like df[<series/list of Boolean>]. uses the non-numeric row index and return 
 the row(s) for that index value.
 
-**Definition we are struggling with**
+
 
 ``df.loc[<list/Series of strings>]``: returns a data frame composed of each row from df with an index value that matches a string in the list.
 
-``df.loc[<list/**Series** of strings>]``: returns a data frame composed of each row from df with an 
-index value that matches a string in the list.
-
-``df.loc[<list/**Series** of strings>]``: returns a new data frame that contains each row from df that match the index values of df and the strings in <list/Series of strings>. 
-
-
-**--------------**
-
 ``df.loc[<list/**Series** of strings>]``: Returns a data frame composed of each row from df and it sets the <strings> as the indices of the new data frame.
+
+
 
 ``df.iloc[<index, range of indices>]``: Returns the values in the corresponding index. Works only with integers.
 
