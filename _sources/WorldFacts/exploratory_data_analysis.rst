@@ -7,6 +7,12 @@
 Exploratory Data Analysis
 =========================
 
+In this section, we will walk you through the process of analyzing and inspecting data. We 
+will go over the process of modeling and visualing a data set with different set of tools. 
+For this exercies, we will use the World Bank Data on Protecting Minority Investors which was 
+provided to you in the Introduction.
+
+
 Loading Data into a DataFrame from a CSV File
 ----------------------------------------------
 
@@ -49,7 +55,7 @@ Python. If not, you may wish to
    matplotlib.style.use('ggplot')
    # for plotly py.offline.init_notebook_mode()
 
-Meanwhile, we will make use of one of the many data reading functions Pandas
+First, let us start by making use of one of the data reading functions that pandas
 provides for us, ``read_csv``.
 
 
@@ -178,7 +184,10 @@ Describing the Data
 - Extent of ownership and control index (0-7)
 - Extent of corporate transparency index (0-7)
 
-
+A really useful method that pandas provides us with is ``describe``. ``describe`` is a method that 
+is used to analyze and calculate statistical data. Below is an example of what this method is 
+capable of.
+ 
 .. code:: python3
 
    wd.describe()
@@ -324,12 +333,11 @@ Describing the Data
 Visualizing Data
 ------------------
 
-
 .. code:: python3
 
    c = Chart(wd) # make a chart
    m = c.mark_bar() # set the mark -- returns a new Chart
-   e = m.encode(X('Protecting Minority Investors score',bin=True),y='count()') # set the encoding
+   e = m.encode(X('protecting_minority_investors_score',bin=True),y='count()') # set the encoding
    e.display()
 
 .. image:: Figures/visualization_1.png
@@ -344,7 +352,7 @@ Jupyter environment knows how to display automatically.
 
 .. code:: python3
 
-   Chart(wd).mark_bar().encode(x=X('Protecting Minority Investors score', bin=True), y='count()')
+   Chart(wd).mark_bar().encode(x=X('protecting_minority_investors_score', bin=True), y='count()')
 
 
 .. image:: Figures/visualization_2.png
@@ -353,39 +361,41 @@ Jupyter environment knows how to display automatically.
 Practice
 --------
 
-.. fillintheblank:: fact_literacy
+.. fillintheblank:: fact_disclosure_index
+   :casei:
+   
+   What is the range of values for the tallest bar when creating a histogram of the extent of disclosure index (0-10)? Lower: |blank| Upper: |blank|
+
+   - :7: Is the correct answer
+     :6: Just a little too low
+     :x: Try again, look closer at the histogram
+
+   - :8: Is correct
+     :x: Try again, look closer at the histogram
+
+
+
+.. fillintheblank:: fact_direct_liability_index
+   :casei:
 
    What is the range of values for the tallest bar when creating a histogram of
-   the literacy rate? Lower: |blank| Upper: |blank|
+   the extent of director liability index? Lower: |blank| Upper: |blank|
 
-   - :90: Is the correct answer
-     :89: Just a little too low
-     :x: Try again, the number will be between 10 and 100
+   - :(5): Is the correct answer
+     :.4: Just a little too low
+     :x: Try again, look closer at the histogram
 
-   - :100: Is correct
-     :x: Try again, the number will be between 10 and 100
-
-
-.. fillintheblank:: fact_service1
-
-   What is the range of values for the tallest bar when creating a histogram of
-   the fraction of the economy due to service? Lower: |blank| Upper: |blank|
-
-   - :(.5|.50|0.50): Is the correct answer
-     :.49: Just a little too low
-     :x: Try again, the number will be between 0 and 1.0
-
-   - :(.60|.6|0.60): Is correct
-     :x: Try again, the number will be between 0.0 and 1.0
+   - :(6): Is correct
+     :x: Try again, look closer at the histogram
 
 
-.. fillintheblank:: fact_service2
+.. fillintheblank:: fact_liability_index2
+   :casei:
 
-   Approximately how many countries (to the nearest 5) have between 90% and 100%
-   of their economy based on service? |blank|
+   Approximately how many countries have a score between 8.0 and 9.0 in the extent of the director liability index? |blank|
 
-   - :(5|6): Is the correct answer
-     :x: Try again, the number is less than 15
+   - :(23|24): Is the correct answer
+     :x: Try again, the number is less than 25
 
 
 
@@ -397,15 +407,19 @@ locations.
 
 .. code:: python3
 
-   Chart(wd).mark_point().encode(x='Protecting Minority Investors rank', y='Extent of disclosure index (0-10)', tooltip='Location')
+   Chart(wd).mark_point().encode(x='protecting_minority_investors_score', y='starting_a_business_score', tooltip='location')
 
 .. image:: Figures/visualization_3.png
 
-As we can see that is a very scattered graph that does not focus on one area. Let’s redo the graph so we can focus on one area, let us focus on countries where Protecting Minority Investors score is less than 50, and the locations starting a business score is less than 70. Let’s start with the first part.
+As we can see, that is a very scattered graph that does not focus on one area. Let’s redo the graph so we can focus on one area, 
+let us focus on the locations where Protecting Minority Investors score is less than 50, and the locations starting a business 
+score is less than 70. Let’s start with the first part.
 
-To do this, we will create a new DataFrame where we focus on the countries where the Protecting Minority Investors score is less than 50, and the locations starting a business score is less than 70. Pandas make this really easy with its querying power. 
+To do this, we will create a new DataFrame where we focus on the locations where the Protecting Minority Investors score is less 
+than 50, and the locations starting a business score is less than 70. Pandas make this really easy with its querying power. 
 
-The statement below produces a series of boolean values. These boolean values are used to index the data frame, and only the rows corresponding to True values are returned in the result.
+The statement below produces a series of boolean values. These boolean values are used to index the data frame, and only the rows 
+corresponding to True values are returned in the result.
 
 .. code:: python3
 
@@ -435,7 +449,7 @@ The statement below produces a series of boolean values. These boolean values ar
    19    True
    Name: Population, dtype: bool
 
-To be a bit more dramatic, let's look at the countries of less than 20.
+To be a bit more dramatic, let's look at the locations of less than 20.
 
 .. code:: python3
 
@@ -887,7 +901,9 @@ boolean expression to limit our DataFrame in both directions.
 
 .. image:: Figures/visualization_5.png
 
-Now, let’s suppose you want to travel and start your dream business in one of your favorite locations. For example, let’s say you have always wanted to go to Malta and start your business, you might be curious about Malta . Let’s see what data we have in the data frame for Venezuela using equality. 
+Now, let’s suppose you want to travel and start your dream business in one of your favorite locations. For example, 
+let’s say you have always wanted to go to Malta and start your business, you might be curious about Malta . Let’s see 
+what data we have in the data frame for Malta using equality. 
 
 
 .. code:: python3
@@ -931,7 +947,11 @@ Now, let’s suppose you want to travel and start your dream business in one of 
 
 
 
-It seems odd that Malta would not be in the dataset. Let’s try some other countries; nothing seems to work. One common problem is that names and other strings can end up with spaces at the beginning or the end of the word or phrase. If you do a quick try, you will see that ‘Malta ‘ works, but that is inconvenient. We don’t want to have to remember to put spaces at the end of every string all the time. We should do a bit of data cleanup and strip those spaces.
+It seems odd that Malta would not be in the dataset. Let’s try some other countries; nothing seems to work. 
+One common problem is that names and other strings can end up with spaces at the beginning or the end of the 
+word or phrase. If you do a quick try, you will see that ‘Malta ‘ works, but that is inconvenient. We don’t 
+want to have to remember to put spaces at the end of every string all the time. We should do a bit of data cleanup 
+and strip those spaces.
 
 
 .. code:: python3
@@ -1119,18 +1139,12 @@ documentation in order to become efficient.
 Practice Questions
 ------------------
 
-1. What are the top 10 countries by GDP?
-2. What are the top 20 countries by population?
-3. What are the 10 countries with the largest net migration?
-4. What is the distribution of Argiculture, Industry, and service for the
-   countries in Western Europe?
-5. What are the names, population and Area of the 5 largest (by area) landlocked
-   countries?
-6. What are the names and population of the five most populous landlocked
-   countries?
-7. What is the name and GDP of the 10 countries with the most cell phones/1000
-   people?
-8. What are the 10 "Wet Tropical" countries with the highest GDP?
+1. What are the top 10 countries by starting a business score?
+2. What are the top 20 countries by protecting minority investors' scores?
+3. What are the 10 countries with the highest score in the extent of ownership and control index (0-7)?
+4. What are the names, protecting minority investors rank, and starting a business score of the 5 largest countries?
+5. What are the names and their starting a business score of the five ranked countries?
+
 
 
 **Lesson Feedback**
