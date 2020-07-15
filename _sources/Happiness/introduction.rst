@@ -9,23 +9,25 @@
 Introduction
 ============
 
-In this chapter, we will explore the concepts of descriptive statistics such as normal distribution, measures of central tendency (such as mean, mode & median), measures of variability (such as range & interquartile range), variance, standard deviation and others.  Additionally, we will explore the various data types in statistics such as categorical & numerical types.
+In this chapter, we will explore the concepts of descriptive statistics such as normal distribution, measures of central tendency, measures of variability and other related concepts.  We will learn the difference between descriptive and inferential statistics and will explore various data types in statistics such as categorical & numerical types.
 
-We will need a spreadsheet application to manipulate the data in the chapter to solve business problems.  There are many types of spreadsheets such as Excel (a proprietary spreadsheet application) & Google Sheets (a web-based spreadsheet application).  We will use Google Sheets because it is free, works from any device (like your laptop, tablet or phone) and includes almost all the same functions as Excel.  So, if you are familiar with Microsoft Excel, you will find Google Sheets easy to use.
+We will need a spreadsheet application to manipulate the data in the chapter to solve problems.  There are many types of spreadsheets, such as Excel (a proprietary spreadsheet application) & Google Sheets (a web-based spreadsheet application).  We will use Google Sheets because it is free, works from any device (like your laptop, tablet or phone) and includes functions that are very similar to Excel.  So, if you are familiar with Microsoft Excel, you will find Google Sheets easy to use.
 
-Lastly, we will discuss the difference between correlation and causation.  We will explore why correlation does not imply causation.  Understanding this concept is important for making correct business assumptions and decisions when analyzing business data.
+Lastly, we will discuss the difference between correlation and causation and explore why correlation does not imply causation.  Understanding this concept is important for making correct assumptions and decisions when analyzing data.
 
 Learning Goals
 --------------
-- Know the difference between Statistics and Descriptive Statistical Analysis and be able to distinguish between the two types of Statistics: Descriptive and Inferential. 
-- Compare and contrast central tendency, types of variability such as range, interquartile range, variance and standard deviation, modality, skewness, and kurtosis.
-- Become familiar with basic spreadsheet operations such as:  addressing cells: relative versus absolute, on the same sheet versus across sheets: working with Ranges: ``SUM``, ``AVERAGE``, ``CORRELL``, tricks for copying and pasting down and across, ``VLOOKUP`` (match/index), grouping ``AVERAGEIF``, ``COUNTIF``, ``IF``, making a Pivot Table, cleaning ``TRIM`` and exploring ``UNIQUE``.
+- Study the concepts of data types in statistics and descriptive statistical analysis.
+- Learn to distinguish between descriptive and inferential statistics. 
+- Learn the various measures of central tendency and the measures of variability.
+- Become familiar with basic spreadsheet operations.
 
 Learning Objectives
 -------------------
 - Know how to import, organize, and visualize data using Google Sheets.
-- Extrapolate central tendencies and standard deviation of a given data set.
-- Combine different datasets and use them to extract new data or compare/contrast their data with visuals such as graphs. 
+- Extrapolate measures of central tendencies and measures of variability of a given data set.
+- Combine different datasets and use them to extract new data.
+- Compare and contrast data from various datasets using visuals such as graphs. 
 - Be able to create and use pivot tables.
 
 
@@ -53,5 +55,5 @@ Reading List
 Time Required
 -------------
 
-This can easily take four class periods. But you can be less depending on how
-much is done as homework versus in-class work.
+This can take up to four hours (or more) to complete. But it could take less time depending on how
+quickly you are able to work through the material.
