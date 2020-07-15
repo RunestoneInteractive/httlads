@@ -7,6 +7,11 @@
 Graphing Data on a Map
 =======================
 
+ 
+In this section, we will explore data visualization techniques that uses data to display information in a more abstract and helpful format so that the results of the data analysis are better understood.
+For this exercise we will focus on graphing data on a map using Altair.
+
+
 Let's take on the seemingly simple task of plotting some of the country data on
 a map, like we did in Google Sheets earlier. We'll see that this is one area
 where things are not quite as simple as they are in Sheets. But we can make it
@@ -190,6 +195,9 @@ telling us.
   tell it is the three-letter code for the country.
 * ``XXX``: This can be any valid three-letter country code, for example "usa".
 
+**NOTE** there are other ways to look up information, such as the countries numericCode, language, currency, and more. 
+These other methods are in the documentation.
+
 Open a new tab in your browser and paste this URL:
 `https://restcountries.eu/rest/v2/alpha/usa`. You will see that you don't get a
 web page in response, but rather some information that looks like a Python
@@ -343,26 +351,31 @@ and the native name.
 **Check Your Understanding**
 
 
-.. fillintheblank:: fb_api1
+.. fillintheblank:: ecuador_code_6
+   :casei:
 
-   What is the numericCode for the country of Peru? |blank|
+   What is the the three letter country codes of Ecuador? |blank|
 
-   - :(604|'604'): Is the correct answer
-     :51: Is the callingCode for Peru, use that if you are phoning a friend
+   - :(ecu|'ecu'): Is the correct answer
      :x: Check your answer again
 
 
-.. fillintheblank:: fb_api2
+.. fillintheblank:: numeric_code_6
+   :casei:
 
-   Copy and paste the list of the three letter country codes of the countries
-   that border Peru. Do not include the square brackets. |blank|
+   Copy and paste the numericCode for the following countries: Colombia, Switzerland, and Spain. 
+   Do not include the square brackets. |blank|, |blank|, |blank|
 
-   - :'BOL', 'BRA', 'CHL', 'COL', 'ECU': Is the correct answer
-     :200: 200 is the status code of the request
-     :x: There are five country codes, in single quotes separated ', '
+   - :170: Correct
+     :x: Incorrect. Try again
+   - :756: Correct
+     :x: Incorrect. Try again
+   - :724: Correct
+     :x: Incorrect. Try again.
 
 
-.. fillintheblank:: fb_api3
+.. fillintheblank:: peru_6
+   :casei:
 
    How many keys are in the dictionary returned for the country of Peru? |blank|
 
@@ -755,28 +768,28 @@ by the time you finish this project.
 
 **Lesson Feedback**
 
-.. poll:: LearningZone_6_3
+.. poll:: LearningZone_measure_6_3
     :option_1: Comfort Zone
     :option_2: Learning Zone
     :option_3: Panic Zone
 
     During this lesson I was primarily in my...
 
-.. poll:: Time_6_3
+.. poll:: Time_measure_6_3
     :option_1: Very little time
     :option_2: A reasonable amount of time
     :option_3: More time than is reasonable
 
     Completing this lesson took...
 
-.. poll:: TaskValue_6_3
+.. poll:: TaskValue_measure_6_3
     :option_1: Don't seem worth learning
     :option_2: May be worth learning
     :option_3: Are definitely worth learning
 
     Based on my own interests and needs, the things taught in this lesson...
 
-.. poll:: Expectancy_6_3
+.. poll:: Expectancy_measure_6_3
     :option_1: Definitely within reach
     :option_2: Within reach if I try my hardest
     :option_3: Out of reach no matter how hard I try
