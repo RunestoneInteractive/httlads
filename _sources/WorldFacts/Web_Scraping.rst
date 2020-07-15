@@ -1,8 +1,19 @@
-Web Scraping using Panda and BeautifulSoup 
+
+.. Copyright (C)  Google, Runestone Interactive LLC
+   This work is licensed under the Creative Commons Attribution-ShareAlike 4.0
+   International License. To view a copy of this license, visit
+   http://creativecommons.org/licenses/by-sa/4.0/.
+
+
+Web Scraping Using Panda and BeautifulSoup 
 ===========================================
 
-Below are some great articles that will help you understand web scrapping and the BeauituflSoup library. Make sure
-you read all three articles before you move on to section 6.4.
+
+In this chapter, we will learn how to extract data from any source. Often, data cannot be obtained in a simple CSV format and we need to extract it in other ways. 
+Web scraping is one of these processes that allows us to quickly and efficiently extract data from different sources. 
+
+Below are some great articles that will help you better understand web scrapping and the BeauituflSoup library. 
+Make sure you read all three articles before you move on to section 6.4.
 
 -  `Screen Scraping 101 <https://hackernoon.com/web-scraping-tutorial-with-python-tips-and-tricks-db070e70e071>`_
 -  `Web Scraping Weather Forecasts <https://www.dataquest.io/blog/web-scraping-tutorial-python/>`_
@@ -43,7 +54,6 @@ Copy path from your file explorer. Here is an example of how it should look like
 
    C:\Users\mainuser\factbook
    
-
 Lets take a look at the file structure of the downloaded data from 2017.
 
 .. code:: python3
@@ -67,9 +77,9 @@ contained in each.
 
 Since you are investigating, if you stop and think, just like any other web page there 
 should be some kind of nice human-readble table of contents that can help us. Luckily, 
-there is one and we can find it in the file ``rankorderguide.html``.
+there is one and we can find it in the file, ``rankorderguide.html``.
 
-For now, let's start small and work our way up to the bigger problem. We can write
+For now, let's start small and work our way up to the bigger picture. We can write
 some code to scrape all the fields and the file they are in from the ``rankorderguide.html`` file.
 
 The webpage for that file looks like this.
@@ -82,7 +92,7 @@ There are a couple of important things on this page that we will want to get:
 the feature name (like Inflation rate (consumer prices) or Industrial production growth rate) and the link to the
 page that has all of the data for this feature for each country.
 
-Before we start scrapping the CIA World Factbook data, let's get a little bit more familiar with html structure.
+Before we start scrapping the CIA World Factbook data, let's get a little bit more familiar with **html** structure.
 Below is an excerpt of the html page that has information about inflation rate. Let us closely examine each tag and element in html so we 
 can scrape the data more effeciently.
 
@@ -139,9 +149,7 @@ The indentation in the code shows the hierarchical structure of an HTML document
 blocks that are indented to the same level are sibling, and blocks that are nested inside other blcks have a parent-child relationship. 
 We can take a look at examples of these relationships in the following diagram. 
 
-
 .. figure:: Figures/htmltree.png
-
 
 Now, we need to look closely at the html page as a whole and see if we can find a pattern
 that can help us find the two items that we are interested in. 
@@ -160,7 +168,7 @@ manageable. That package is called
 `BeautifulSoup <https://www.crummy.com/software/BeautifulSoup/bs4/doc/>`_. The
 name "Beautiful Soup" comes from *Alice in Wonderland*; it is the title of a
 song sung by the Mock Turtle. (Yes, its turtles everywhere!) Using
-BeautifulSoup, we can get the web page into a form that we can use some real
+**BeautifulSoup**, we can get the web page into a form that we can use some real
 power search tools.
 
 First, let's import the module, and read the entire webpage as a string. In this exercise, since we downloaded
@@ -221,7 +229,7 @@ So far, this doesn't seem like much help, but let's see how we can use the
 search capabilities of BeautifulSoup to find all of the ``span`` tags with the
 ``class`` "category". To do this, we will use a search syntax that is commonly
 used in the web development community. It is the same syntax that is used to
-write the rules for the Cascading Style Sheets (CSS) that are used to make our
+write the rules for the **Cascading Style Sheets (CSS)** that are used to make our
 web pages look nice.
 
 The search syntax allows us to:
@@ -273,9 +281,22 @@ So, this tells us that there are 625 ``a`` tags on the page, and the last one
 takes us to the top of the page.
 
 
-Practice Questions
-====================
-Questions to be added later
+
+.. fillintheblank:: div_count
+    :casei:
+
+   How many ``div`` tags are on the page? |blank|
+
+   - :793: Is the correct answer
+     :x: Use the select method to find only a div tag
+
+.. fillintheblank:: cfclose_tag
+    :casei:
+
+   What kind of tag is the last tag to have the class of "cfclose"? |blank|
+
+   - :button: Is correct
+     :x: Hint: There are three items with class="cfclose", all are the same tag
 
 
 Now, let's put this all together and see if we can make a list of the columns
@@ -344,6 +365,20 @@ Next, let's expand on this example to get the path to the file.
    Broadcast media ../fields/2213.html#14
    Budget ../fields/2056.html#15
    Budget surplus (+) or deficit (-) ../fields/2222.html#16
+
+
+
+
+.. fillintheblank:: path_gdp_num
+   :casei:
+
+   What is the path and filename for the file containing the data for GDP - Real Growth Rate |blank|
+   
+   - :../fields/2003.html: Is the correct answer
+     :../fields/2003.html#86: No, #86 is not part of the filename
+     :2003.html: Is only the filename
+     :#86: Is not part of the filename
+     :x: Incorrect. Please try again.
 
 
 Success!
@@ -514,11 +549,16 @@ else, or if you don’t have enough students, then each team can take one or mor
 columns.
 
 
+.. shortanswer:: budget_av
+
+   What is the average value for the column Budget, to two
+   significant digits?
+
+
 Saving the Data
 ---------------
 
 We can save the data using ``to_csv``.
-
 
 Comparing Across the Years
 --------------------------
@@ -527,7 +567,7 @@ If you try to repeat the exercise above for 2016, it works great! How about
 2015? Earlier? How far back can you go before your code breaks?
 
 What you will find when you go back illustrates one of the really ugly parts of
-screen scraping, which is that you are at the mercy of the website designer. All
+**screen scraping**, which is that you are at the mercy of the website designer. All
 they have to do is make one little change to a CSS class or the id of an
 element, and your whole strategy goes away.
 
@@ -535,12 +575,6 @@ If you or your classmates can scrape all 17 years of world factbook data, you
 will really have achieved something special. (And, you will be destined for
 internet fame if you make your notebooks public.) You will likely have noticed
 that lots of people want this data in a more convenient format.
-
-
-Practice Questions
--------------------
-Questions to be added here.
-
 
 .. reveal:: web_scrapping_2017_data
     :instructoronly:
@@ -621,3 +655,34 @@ Questions to be added here.
          
           # print(all_data)
           web_scrape = pd.DataFrame(all_data).head()
+
+
+**Lesson Feedback**
+
+.. poll:: LearningZone_measure_6_4
+    :option_1: Comfort Zone
+    :option_2: Learning Zone
+    :option_3: Panic Zone
+
+    During this lesson I was primarily in my...
+
+.. poll:: Time_measure_6_4
+    :option_1: Very little time
+    :option_2: A reasonable amount of time
+    :option_3: More time than is reasonable
+
+    Completing this lesson took...
+
+.. poll:: TaskValue_measure_6_4
+    :option_1: Don't seem worth learning
+    :option_2: May be worth learning
+    :option_3: Are definitely worth learning
+
+    Based on my own interests and needs, the things taught in this lesson...
+
+.. poll:: Expectancy_measure_6_4
+    :option_1: Definitely within reach
+    :option_2: Within reach if I try my hardest
+    :option_3: Out of reach no matter how hard I try
+
+    For me to master the things taught in this lesson feels...
