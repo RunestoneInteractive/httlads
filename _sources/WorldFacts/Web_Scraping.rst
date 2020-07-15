@@ -10,7 +10,7 @@ Web Scraping Using Panda and BeautifulSoup
 
 
 In this chapter, we will learn how to extract data from any source. Often, data cannot be obtained in a simple CSV format and we need to extract it in other ways. 
-Web scraping is one of these processes that allows us to quickly and efficiently extract data from different sources. 
+**Web scraping** is one of these processes that allows us to quickly and efficiently extract data from different sources. 
 
 Below are some great articles that will help you better understand web scrapping and the BeauituflSoup library. 
 Make sure you read all three articles before you move on to section 6.4.
@@ -123,7 +123,7 @@ If you are using other browerser, you can always look up online how to view the 
 			</li>
 			</div> 
 
-If you have not seen HTML before, this may look a bit confusing. One of the
+If you have not seen **HTML** before, this may look a bit confusing. One of the
 skills you will develop as a data scientist is learning what to focus on and
 what to ignore. This takes practice and experience, so don't be frustrated if it
 seems a bit overwhelming at the beginning.
