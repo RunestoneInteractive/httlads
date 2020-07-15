@@ -16,9 +16,9 @@ provided to you in the Introduction.
 Loading Data into a DataFrame from a CSV File
 ----------------------------------------------
 
-The CSV file is one of the most common ways you will find data. CSV stands for
+The **CSV file** is one of the most common ways you will find data. CSV stands for
 "comma separated value", and this format allows us to share data files in a
-simple text format. The data we will use to get started with Pandas is the data
+simple text format. The data we will use to get started with **Pandas** is the data
 about countries we used in the spreadsheet module. You can open a CSV file in
 any text editor, but it may not be particularly easy to read. But because of its
 structure, it is easy to parse for analysis. The first few lines of the raw CSV
@@ -415,15 +415,17 @@ As we can see, that is a very scattered graph that does not focus on one area. L
 let us focus on the locations where Protecting Minority Investors score is less than 50, and the locations starting a business 
 score is less than 70. Let’s start with the first part.
 
-To do this, we will create a new DataFrame where we focus on the locations where the Protecting Minority Investors score is less 
+To do this, we will create a new **DataFrame** where we focus on the locations where the Protecting Minority Investors score is less 
 than 50, and the locations starting a business score is less than 70. Pandas make this really easy with its querying power. 
 
-The statement below produces a series of boolean values. These boolean values are used to index the data frame, and only the rows 
+The statement below produces a series of **boolean values**. These boolean values are used to index the data frame, and only the rows 
 corresponding to True values are returned in the result.
+
 
 .. code:: python3
 
    (wd.protecting_minority_investors_score < 50).head(20) 
+   
 
 .. parsed-literal::
 
