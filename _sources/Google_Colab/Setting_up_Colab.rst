@@ -92,12 +92,11 @@ are available in the UI.
 There is an option to bold, italicize, add bullet points, add numbered lists, and toggle text(s) as headers using the clickable options. 
 There are many more options to customize your text cells if you use Markdown. 
 
-Markdown is a text-to-HTML conversion tool for the web. Markdown allows you to write using an easy-to-read, easy-to-write plain text format, 
-then convert it to structurally valid XHTML (or HTML) (Source: `Markdown <https://daringfireball.net/projects/markdown/>`_ ). 
+Markdown is a lightweight markup language that uses a plain text format which is used in programming to edit and present HTML, XHTML, pdf 
+and other file types. Refer to the relevant appendix for more about Markdown.
 
 You can view a cell's source by double clicking on it or by pressing Enter to edit it while it is selected. You can also use Shift-Enter if 
-you would like to re-render it. If you are curious about more customizations using Markdown you may read more about it 
-on `Google Colab's guide <https://colab.research.google.com/notebooks/markdown_guide.ipynb>`_ .
+you would like to re-render it. 
 
 
 Code Cells
