@@ -4,35 +4,17 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-Introduction
-=============
+(Old) Introduction
+===================
 
-In this chapter, we will explore the concept of analyzing data sets in order to 
-summarize their main characteristics and information. We will start by  exploring
-the dataset in more depth, and use Pandas and Altair  to explore and visualize the
-data in different formats such as with Histograms and on a Map. As we go further in
-the chapter, you will realize that we do not have access to  every database and often
-we need to find other means to obtain the data. We will learn how to extract data from 
-such databases using web scraping methods. Finally, you will be able to use Pandas pivot 
-table to summarize the data.
-
-
-Learning Goals
-----------------
-
-* Learn how to visualize, analyze, and describe data in various formats
-* Learn how to extract data from different sources
-* Learn how to summarizes the data of a more extensive table
-
-
-Learning Objectives
---------------------
-
-* Be able to use Pandas to analyze and describe data
-* Be able to visualize data with Histograms and Scatter Plots
-* Be able to graph data on map using web API
-* Be able to extract, clean, and save data from web documents
-
+The World Factbook provides information on the history, people, government,
+economy, geography, communications, transportation, military, and transnational
+issues for 267 world entities. It is a rich source of information that can be
+combined with many datasets. In fact, you used a form of this data in the World
+Happiness project. In this module, we will explore the dataset in more depth,
+and use Pandas to explore and visualize the data. The Factbook is in the public
+domain. Accordingly, it may be copied freely without permission of the Central
+Intelligence Agency.
 
 Reading List
 ------------
@@ -50,40 +32,62 @@ Reading List
 -  `Web Scraping Weather Forecasts <https://www.dataquest.io/blog/web-scraping-tutorial-python/>`_
 -  `Beautiful Soup Docs <https://www.crummy.com/software/BeautifulSoup/bs4/doc/>`_
 
+As a warmup exercise (and maybe to stimulate some questions for investigation),
+take the `Gapminder quiz <http://forms.gapminder.org/s3/test-2018>`_.
+
+Let's start by loading some data about countries. This data has been compiled by
+combining information from files at http://gsociology.icaap.org/dataupload.html.
 We are going to use it to warm up our pandas skills. In this first part of the
 module, we will continue with some data that should be familiar to you, but we
 will use it in Pandas instead of a spreadsheet. In the second part, we will
-focus on several different kinds of textual analysis using data. Download The `world countries csv file <../_static/world_countries.csv>`_,
+focus on several different kinds of textual analysis using data from the United
+Nations.  Download The `world countries csv file <../_static/world_countries.csv>`_,
 `Protecting Minority Investors csv file <../_static/protecting_minority_investors.csv>`_, and
-`Starting a Business csv file <../_static/starting_a_business.csv>`_ to get started. We
-will be working with these files in this chapter.
+`Starting a Business csv file <../_static/starting_a_business.csv>`_ to get started.
 
+The goals for Part I of the module are:
+
+-  Loading data into pandas
+-  Using Altair to make some quick visualization of the data
+-  Querying (filtering) our data
+-  Sorting data
+-  Adding new columns of data
+
+
+Exploratory Questions to Get Started
+------------------------------------
+
+-  What are the minimum and maximum values of the data in each column?
+-  How does the birth rate compare across countries? What is the distribution of
+   the birth rates?
+-  Is there are connection between the area of a country and its population?
+-  How can we find all of the details on a specific country?
 
 
 **Lesson Feedback**
 
-.. poll:: LearningZone_measure_6_1
+.. poll:: LearningZone_6_1
     :option_1: Comfort Zone
     :option_2: Learning Zone
     :option_3: Panic Zone
 
     During this lesson I was primarily in my...
 
-.. poll:: Time_measure_6_1
+.. poll:: Time_6_1
     :option_1: Very little time
     :option_2: A reasonable amount of time
     :option_3: More time than is reasonable
 
     Completing this lesson took...
 
-.. poll:: TaskValue_measure_6_1
+.. poll:: TaskValue_6_1
     :option_1: Don't seem worth learning
     :option_2: May be worth learning
     :option_3: Are definitely worth learning
 
     Based on my own interests and needs, the things taught in this lesson...
 
-.. poll:: Expectancy_measure_6_1
+.. poll:: Expectancy_6_1
     :option_1: Definitely within reach
     :option_2: Within reach if I try my hardest
     :option_3: Out of reach no matter how hard I try
