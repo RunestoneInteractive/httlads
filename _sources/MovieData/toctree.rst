@@ -16,3 +16,4 @@ Learning Pandas with Movie Data
    filtering.rst
    indexing.rst
    multiple_df.rst
+   glossary.rst
