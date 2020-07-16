@@ -17,9 +17,5 @@ CIA World Factbook Data
    Web_Scraping.rst
    summarizing_data_using_pivot_table
    glossary.rst                            
-   old_introduction.rst
-   old_version_exploratory_data_analysis.rst
-   old_version_graphing_infant_mortality
-   old_version_scrape_cia.rst
-   government_types.rst
+   
    
