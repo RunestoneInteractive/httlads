@@ -4,8 +4,13 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-Graphing Infant Mortality on a Map
-==================================
+Graphing Data on a Map
+=======================
+
+ 
+In this section, we will explore data visualization techniques that uses data to display information in a more abstract and helpful format so that the results of the data analysis are better understood.
+For this exercise we will focus on graphing data on a map using Altair.
+
 
 Let's take on the seemingly simple task of plotting some of the country data on
 a map, like we did in Google Sheets earlier. We'll see that this is one area
@@ -162,13 +167,14 @@ Lets make a to-do list:
 1. We need to add a column to our ``wd`` DataFrame that contains the numerical
    country id. Where can we get this data? There may be some CSV files with this
    information already in them, but this is a good chance to learn about a
-   common technique used by data scientists everywhere: **web APIs**. API stands
+   common technique used by data scientists everywhere: **web APIs**. **API** stands
    for Application Programmer Interface. Each website will have its own
    convention for how you ask it for data, and the format in which the data is
    returned.
 
 2. Once we have the new column, we can follow the example from above to make a
-   world map and show birthrate data.
+   world map and show Starting_a_Business_score.
+
 
 The first step is to make use of the awesome
 `requests module <http://http://docs.python-requests.org>`_. The requests module
@@ -189,12 +195,14 @@ telling us.
   tell it is the three-letter code for the country.
 * ``XXX``: This can be any valid three-letter country code, for example "usa".
 
+**NOTE** there are other ways to look up information, such as the countries numericCode, language, currency, and more. 
+These other methods are in the documentation.
+
 Open a new tab in your browser and paste this URL:
 `https://restcountries.eu/rest/v2/alpha/usa`. You will see that you don't get a
 web page in response, but rather some information that looks like a Python
-dictionary. We'll explore that more below. We can do the same thing from a
+**dictionary**. We'll explore that more below. We can do the same thing from a
 Python program using the requests library.
-
 
 .. code:: python3
 
@@ -206,7 +214,6 @@ Python program using the requests library.
 .. parsed-literal::
 
    200
-
 
 The status code of 200 tells us that everything went fine. If you make a typo in
 the URL, you may see the familiar status code of 404, meaning not found.
@@ -232,7 +239,7 @@ Python dictionary. Better yet, we can convert this string into an actual Python
 dictionary and then access the individual key-value pairs stored in the
 dictionary using the usual Python syntax!
 
-The official name for the format that we saw above is called JSON: JavaScript
+The official name for the format that we saw above is called **JSON**: JavaScript
 Object Notation. It's a good acronym to know, but you don't have to know
 anything about Javascript in order to make use of JSON.  You can think of the
 results as a Python dictionary.  It can be a bit daunting at first as there can be
@@ -301,7 +308,7 @@ but fear not, you can figure it out with a bit of experiementation.
         'Accord de Libre-échange Nord-Américain']}],
     'cioc': 'USA'}
 
-For example timezones is a top level key, which produces a list of the valid timezones in the USA.
+For example, timezones is a top level key, which produces a list of the valid timezones in the USA.
 
 .. code:: python3
 
@@ -322,9 +329,10 @@ For example timezones is a top level key, which produces a list of the valid tim
     'UTC+10:00',
     'UTC+12:00']
 
+
 But, languages is more complicated It also returns a list but each element of the list corresponds
 to one of the official languages of the country.  The USA has only one official language but other countries
-have more.  For example Malta has both Maltese and English as official languages.  Notice that the two dictionaries
+have more.  For example, Malta has both Maltese and English as official languages.  Notice that the two dictionaries
 have an identical structure, a key for the two letter abbreviation, a key for the three letter abbreviation, the name
 and the native name.
 
@@ -343,26 +351,31 @@ and the native name.
 **Check Your Understanding**
 
 
-.. fillintheblank:: fb_api1
+.. fillintheblank:: ecuador_code_6
+   :casei:
 
-   What is the numericCode for the country of Peru? |blank|
+   What is the the three letter country codes of Ecuador? |blank|
 
-   - :(604|'604'): Is the correct answer
-     :51: Is the callingCode for Peru, use that if you are phoning a friend
+   - :(ecu|'ecu'): Is the correct answer
      :x: Check your answer again
 
 
-.. fillintheblank:: fb_api2
+.. fillintheblank:: numeric_code_6
+   :casei:
 
-   Copy and paste the list of the three letter country codes of the countries
-   that border Peru. Do not include the square brackets. |blank|
+   Copy and paste the numericCode for the following countries: Colombia, Switzerland, and Spain. 
+   Do not include the square brackets. |blank|, |blank|, |blank|
 
-   - :'BOL', 'BRA', 'CHL', 'COL', 'ECU': Is the correct answer
-     :200: 200 is the status code of the request
-     :x: There are five country codes, in single quotes separated ', '
+   - :170: Correct
+     :x: Incorrect. Try again
+   - :756: Correct
+     :x: Incorrect. Try again
+   - :724: Correct
+     :x: Incorrect. Try again.
 
 
-.. fillintheblank:: fb_api3
+.. fillintheblank:: peru_6
+   :casei:
 
    How many keys are in the dictionary returned for the country of Peru? |blank|
 
@@ -370,29 +383,15 @@ and the native name.
      :x: Use the keys method after .json() to see the list of keys
 
 
-Now that we have a really nice way to get the additional country information,
-let's add the numeric country code as a new column in our ``wd`` DataFrame. We
-can think of adding the column as a transformation of our three-letter country
-code to a number. We can do this using the ``map`` function. You learned about
-``map`` in the Python Review section of this book. If you need to refresh your
-memory, see here :ref:`PythonReview`.
+For this example, we will use the Starting a Business data set and look at the Starting_a_Business_score in different countries around the world.
 
-When we use Pandas, the difference is that we don't pass the list as a parameter
-to ``map``. ``map`` is a method of a Series, so we use the syntax
-``df.myColumn.map(function)``. This applies the function we pass as a parameter
-to each element of the series and constructs a brand new series.
-
-For our case, we need to write a function that takes a three-letter country code
-as a parameter and returns the numeric code we lookup **converted to an
-integer**, let's call it ``get_num_code``. You have all the details you need to
-write this function. Once you write this function, you can use the code below.
-
+.. code:: python3
+   
+   wd = pd.read_csv('Starting_a_Business.csv')
 
 .. code:: python3
 
-   wd['CodeNum'] = wd.Code.map(get_num_code)
    wd.head()
-
 
 .. raw:: html
 
@@ -410,158 +409,253 @@ write this function. Once you write this function, you can use the code below.
             text-align: right;
         }
     </style>
-    <table border="1" class="dataframe">
-      <thead>
-        <tr style="text-align: right;">
-          <th></th>
-          <th>Country</th>
-          <th>Ctry</th>
-          <th>Code</th>
-          <th>CodeNum</th>
-          <th>Region</th>
-          <th>Population</th>
-          <th>Area</th>
-          <th>Pop. Density</th>
-          <th>Coastline</th>
-          <th>Net migration</th>
-          <th>...</th>
-          <th>Phones</th>
-          <th>Arable</th>
-          <th>Crops</th>
-          <th>Other</th>
-          <th>Climate</th>
-          <th>Birthrate</th>
-          <th>Deathrate</th>
-          <th>Agriculture</th>
-          <th>Industry</th>
-          <th>Service</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th>0</th>
-          <td>Afghanistan</td>
-          <td>Afghanistan</td>
-          <td>AFG</td>
-          <td>4.0</td>
-          <td>ASIA (EX. NEAR EAST)</td>
-          <td>31056997</td>
-          <td>647500</td>
-          <td>48.0</td>
-          <td>0.00</td>
-          <td>23.06</td>
-          <td>...</td>
-          <td>3.2</td>
-          <td>12.13</td>
-          <td>0.22</td>
-          <td>87.65</td>
-          <td>1.0</td>
-          <td>46.60</td>
-          <td>20.34</td>
-          <td>0.380</td>
-          <td>0.240</td>
-          <td>0.380</td>
-        </tr>
-        <tr>
-          <th>1</th>
-          <td>Albania</td>
-          <td>Albania</td>
-          <td>ALB</td>
-          <td>8.0</td>
-          <td>EASTERN EUROPE</td>
-          <td>3581655</td>
-          <td>28748</td>
-          <td>124.6</td>
-          <td>1.26</td>
-          <td>-4.93</td>
-          <td>...</td>
-          <td>71.2</td>
-          <td>21.09</td>
-          <td>4.42</td>
-          <td>74.49</td>
-          <td>3.0</td>
-          <td>15.11</td>
-          <td>5.22</td>
-          <td>0.232</td>
-          <td>0.188</td>
-          <td>0.579</td>
-        </tr>
-        <tr>
-          <th>2</th>
-          <td>Algeria</td>
-          <td>Algeria</td>
-          <td>DZA</td>
-          <td>12.0</td>
-          <td>NORTHERN AFRICA</td>
-          <td>32930091</td>
-          <td>2381740</td>
-          <td>13.8</td>
-          <td>0.04</td>
-          <td>-0.39</td>
-          <td>...</td>
-          <td>78.1</td>
-          <td>3.22</td>
-          <td>0.25</td>
-          <td>96.53</td>
-          <td>1.0</td>
-          <td>17.14</td>
-          <td>4.61</td>
-          <td>0.101</td>
-          <td>0.600</td>
-          <td>0.298</td>
-        </tr>
-        <tr>
-          <th>3</th>
-          <td>American Samoa</td>
-          <td>American Samoa</td>
-          <td>ASM</td>
-          <td>16.0</td>
-          <td>OCEANIA</td>
-          <td>57794</td>
-          <td>199</td>
-          <td>290.4</td>
-          <td>58.29</td>
-          <td>-20.71</td>
-          <td>...</td>
-          <td>259.5</td>
-          <td>10.00</td>
-          <td>15.00</td>
-          <td>75.00</td>
-          <td>2.0</td>
-          <td>22.46</td>
-          <td>3.27</td>
-          <td>NaN</td>
-          <td>NaN</td>
-          <td>NaN</td>
-        </tr>
-        <tr>
-          <th>4</th>
-          <td>Andorra</td>
-          <td>Andorra</td>
-          <td>AND</td>
-          <td>20.0</td>
-          <td>WESTERN EUROPE</td>
-          <td>71201</td>
-          <td>468</td>
-          <td>152.1</td>
-          <td>0.00</td>
-          <td>6.60</td>
-          <td>...</td>
-          <td>497.2</td>
-          <td>2.22</td>
-          <td>0.00</td>
-          <td>97.78</td>
-          <td>3.0</td>
-          <td>8.71</td>
-          <td>6.25</td>
-          <td>NaN</td>
-          <td>NaN</td>
-          <td>NaN</td>
-        </tr>
-      </tbody>
-    </table>
-    <p>5 rows × 23 columns</p>
+    <table class="table table-bordered table-hover table-condensed">
+    <thead><tr><th title="Field #1"></th>
+    <th title="Field #2">Location</th>
+    <th title="Field #3">Code</th>
+    <th title="Field #4">Starting_a_Business_rank</th>
+    <th title="Field #5">Starting_a_Business_score</th>
+    <th title="Field #6">Procedure</th>
+    <th title="Field #7">Time</th>
+    <th title="Field #8">Cost</th>
+    <th title="Field #9">Procedure.1</th>
+    <th title="Field #10">Time.1</th>
+    <th title="Field #11">Cost.1</th>
+    <th title="Field #12">Paid_in_min</th>
+    <th title="Field #13">Income_Level</th>
+    <th title="Field #14">GNI</th>
+    </tr></thead>
+    <tbody><tr>
+    <td align="right">0 </td>
+    <td>Afghanistan </td>
+    <td>AFG </td>
+    <td align="right">33 </td>
+    <td align="right">92.0 </td>
+    <td align="right">4 </td>
+    <td align="right">8.0 </td>
+    <td align="right">6.8 </td>
+    <td align="right">5 </td>
+    <td align="right">9.0 </td>
+    <td align="right">6.8 </td>
+    <td align="right">0.0 </td>
+    <td>Low income </td>
+    <td align="right">550</td>
+    </tr>
+    <tr>
+    <td align="right">1 </td>
+    <td>Albania </td>
+    <td>ALB </td>
+    <td align="right">34 </td>
+    <td align="right">91.8 </td>
+    <td align="right">5 </td>
+    <td align="right">4.5 </td>
+    <td align="right">10.8 </td>
+    <td align="right">5 </td>
+    <td align="right">4.5 </td>
+    <td align="right">10.8 </td>
+    <td align="right">0.0 </td>
+    <td>Upper middle income </td>
+    <td align="right">4860</td>
+    </tr>
+    <tr>
+    <td align="right">2 </td>
+    <td>Algeria </td>
+    <td>DZA </td>
+    <td align="right">98 </td>
+    <td align="right">78.0 </td>
+    <td align="right">12 </td>
+    <td align="right">18.0 </td>
+    <td align="right">11.3 </td>
+    <td align="right">12 </td>
+    <td align="right">18.0 </td>
+    <td align="right">11.3 </td>
+    <td align="right">0.0 </td>
+    <td>Upper middle income </td>
+    <td align="right">4060</td>
+    </tr>
+    <tr>
+    <td align="right">3 </td>
+    <td>Angola </td>
+    <td>AGO </td>
+    <td align="right">93 </td>
+    <td align="right">79.4 </td>
+    <td align="right">8 </td>
+    <td align="right">36.0 </td>
+    <td align="right">11.1 </td>
+    <td align="right">8 </td>
+    <td align="right">36.0 </td>
+    <td align="right">11.1 </td>
+    <td align="right">0.0 </td>
+    <td>Lower middle income </td>
+    <td align="right">3370</td>
+    </tr>
+    <tr>
+    <td align="right">4 </td>
+    <td>Argentina </td>
+    <td>ARG </td>
+    <td align="right">89 </td>
+    <td align="right">80.4 </td>
+    <td align="right">12 </td>
+    <td align="right">11.5 </td>
+    <td align="right">5.0 </td>
+    <td align="right">12 </td>
+    <td align="right">11.5 </td>
+    <td align="right">5.0 </td>
+    <td align="right">0.0 </td>
+    <td>Upper middle income </td>
+    <td align="right">12370</td>
+    </tr>
+    </tbody></table>
     </div>
+
+
+
+
+Now that we have a really nice way to get the additional country information,
+let's add the numeric country code as a new column in our ``wd`` DataFrame. We
+can think of adding the column as a transformation of our three-letter country
+code to a number. We can do this using the ``map`` function. You learned about
+``map`` in the Python Review section of this book. If you need to refresh your
+memory, see here :ref:`PythonReview`.
+
+When we use Pandas, the difference is that we don't pass the list as a parameter
+to ``map``. ``map`` is a method of a Series, so we use the syntax
+``df.myColumn.map(function)``. This applies the function we pass as a parameter
+to each element of the series and constructs a brand new series.
+
+
+For our case, we need to write a function that takes a three-letter country code as a parameter and returns the numeric code we lookup converted to an integer, let’s call it get_num_code. You have all the details you need to write this function. Once you write this function, you can use the code below.
+
+
+
+
+.. code:: python3
+
+  wd['CodeNum'] = wd.Code.map(get_num_code)
+  wd.head()
+
+.. raw:: html
+
+    <div style="max-width: 800px; overflow: scroll;">
+    <style scoped>
+        .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+        }
+
+        .dataframe tbody tr th {
+            vertical-align: top;
+        }
+
+        .dataframe thead th {
+            text-align: right;
+        }
+    </style>
+    <table class="table table-bordered table-hover table-condensed">
+    <thead><tr><th title="Field #1"></th>
+    <th title="Field #2">Location</th>
+    <th title="Field #3">Code</th>
+    <th title="Field #4">Starting_a_Business_rank</th>
+    <th title="Field #5">Starting_a_Business_score</th>
+    <th title="Field #6">Procedure</th>
+    <th title="Field #7">Time</th>
+    <th title="Field #8">Cost</th>
+    <th title="Field #9">Procedure.1</th>
+    <th title="Field #10">Time.1</th>
+    <th title="Field #11">Cost.1</th>
+    <th title="Field #12">Paid_in_min</th>
+    <th title="Field #13">Income_Level</th>
+    <th title="Field #14">GNI</th>
+    <th title="Field #15">CodeNum</th>
+    </tr></thead>
+    <tbody><tr>
+    <td align="right">0 </td>
+    <td>Afghanistan </td>
+    <td>AFG </td>
+    <td align="right">33 </td>
+    <td align="right">92.0 </td>
+    <td align="right">4 </td>
+    <td align="right">8.0 </td>
+    <td align="right">6.8 </td>
+    <td align="right">5 </td>
+    <td align="right">9.0 </td>
+    <td align="right">6.8 </td>
+    <td align="right">0.0 </td>
+    <td>Low income </td>
+    <td align="right">550 </td>
+    <td align="right">004</td>
+    </tr>
+    <tr>
+    <td align="right">1 </td>
+    <td>Albania </td>
+    <td>ALB </td>
+    <td align="right">34 </td>
+    <td align="right">91.8 </td>
+    <td align="right">5 </td>
+    <td align="right">4.5 </td>
+    <td align="right">10.8 </td>
+    <td align="right">5 </td>
+    <td align="right">4.5 </td>
+    <td align="right">10.8 </td>
+    <td align="right">0.0 </td>
+    <td>Upper middle income </td>
+    <td align="right">4860 </td>
+    <td align="right">008</td>
+    </tr>
+    <tr>
+    <td align="right">2 </td>
+    <td>Algeria </td>
+    <td>DZA </td>
+    <td align="right">98 </td>
+    <td align="right">78.0 </td>
+    <td align="right">12 </td>
+    <td align="right">18.0 </td>
+    <td align="right">11.3 </td>
+    <td align="right">12 </td>
+    <td align="right">18.0 </td>
+    <td align="right">11.3 </td>
+    <td align="right">0.0 </td>
+    <td>Upper middle income </td>
+    <td align="right">4060 </td>
+    <td align="right">012</td>
+    </tr>
+    <tr>
+    <td align="right">3 </td>
+    <td>Angola </td>
+    <td>AGO </td>
+    <td align="right">93 </td>
+    <td align="right">79.4 </td>
+    <td align="right">8 </td>
+    <td align="right">36.0 </td>
+    <td align="right">11.1 </td>
+    <td align="right">8 </td>
+    <td align="right">36.0 </td>
+    <td align="right">11.1 </td>
+    <td align="right">0.0 </td>
+    <td>Lower middle income </td>
+    <td align="right">3370 </td>
+    <td align="right">024</td>
+    </tr>
+    <tr>
+    <td align="right">4 </td>
+    <td>Argentina </td>
+    <td>ARG </td>
+    <td align="right">89 </td>
+    <td align="right">80.4 </td>
+    <td align="right">12 </td>
+    <td align="right">11.5 </td>
+    <td align="right">5.0 </td>
+    <td align="right">12 </td>
+    <td align="right">11.5 </td>
+    <td align="right">5.0 </td>
+    <td align="right">0.0 </td>
+    <td>Upper middle income </td>
+    <td align="right">12370 </td>
+    <td align="right">032</td>
+    </tr>
+    </tbody></table>
+    </div>
+    
+
 
 
 .. warning:: DataFrame Gotcha
@@ -579,7 +673,7 @@ You can make a gray map of the world like this.
 
 .. code:: python3
 
-   countries = alt.topo_feature(data.world_110m.url, 'countries')
+ countries = alt.topo_feature(data.world_110m.url, 'countries')
 
    alt.Chart(countries).mark_geoshape(
        fill='#666666',
@@ -589,16 +683,14 @@ You can make a gray map of the world like this.
        height=450
    ).project('equirectangular')
 
-
 So, now you have the information you need to use the example of the counties
 above and apply that to the world below.
-
 
 .. code:: python3
 
    base = alt.Chart(countries).mark_geoshape(
    ).encode(tooltip='Country:N',
-            color=alt.Color('Infant mortality:Q', scale=alt.Scale(scheme="plasma"))
+            color=alt.Color('Starting_a_business score:Q', scale=alt.Scale(scheme="plasma"))
    ).transform_lookup( # your code here
 
    ).properties(
@@ -609,38 +701,49 @@ above and apply that to the world below.
    base
 
 
+
 .. image:: Figures/WorldFactbook_74_0.png
 
 
 Your final result should look like this.
 
 
-.. image:: Figures/WorldFactbook_75_0.png
+.. image:: Figures/Visualization_7.png
 
 
-.. reveal:: sol_infant_mort_map
+.. reveal:: sol_business_score_map
     :instructoronly:
 
     This assumes that you have used the web api to add the CodeNum column to your wd dataframe.
     One key thing to point out is that the CodeNum field in wd and the id field in countries must
     match, if you have covered merging of dataframes or even vlookup this should make sense to
     the students.
+    
+    # This is the function, get_num_code, that converts the three letter code of each country and gets its numericCode.
 
     .. code:: python3
+      def get_num_code(code):
+        res = requests.get('https://restcountries.eu/rest/v2/alpha/' + code) # gets all the information of the country using their three letter code
+        country_info = res.json() # formats all the information
+        return country_info['numericCode'] # returns the correct numericCode of the country
+      
+    The following is the implementation of transform_lookup() in the Starting_a_Business_score data.
+    
+    .. code:: python3
+       countries = alt.topo_feature(data.world_110m.url, 'countries')
+      base = alt.Chart(countries).mark_geoshape(
+      ).encode(#color='Infant mortality:Q',
+              tooltip='Country:N',
+              color=alt.Color('Starting_a_Business_score:Q', scale=alt.Scale(scheme="plasma")),
+      ).properties(
+          width=750,
+          height=450
+      ).project('equirectangular').transform_lookup(
+              lookup='id',
+              from_=alt.LookupData(wd, 'CodeNum', ['Starting_a_Business_score']))
 
-        countries = alt.topo_feature(data.world_110m.url, 'countries')
-        base = alt.Chart(countries).mark_geoshape(
-        ).encode(#color='Infant mortality:Q',
-                tooltip='Country:N',
-                color=alt.Color('Infant mortality:Q', scale=alt.Scale(scheme="plasma")),
-        ).properties(
-            width=750,
-            height=450
-        ).project('equirectangular').transform_lookup(
-                lookup='id',
-                from_=alt.LookupData(wd, 'CodeNum', ['Infant mortality', 'Country']))
+      base
 
-        base
 
 Using a Web API on Your Own
 ---------------------------
@@ -661,34 +764,37 @@ by the time you finish this project.
 
 3. Take some time to talk about and present the data and the graph you created
    to the class.
-
+   
 
 **Lesson Feedback**
 
-.. poll:: LearningZone_6_3
+.. poll:: LearningZone_measure_6_3
     :option_1: Comfort Zone
     :option_2: Learning Zone
     :option_3: Panic Zone
 
     During this lesson I was primarily in my...
 
-.. poll:: Time_6_3
+.. poll:: Time_measure_6_3
     :option_1: Very little time
     :option_2: A reasonable amount of time
     :option_3: More time than is reasonable
 
     Completing this lesson took...
 
-.. poll:: TaskValue_6_3
+.. poll:: TaskValue_measure_6_3
     :option_1: Don't seem worth learning
     :option_2: May be worth learning
     :option_3: Are definitely worth learning
 
     Based on my own interests and needs, the things taught in this lesson...
 
-.. poll:: Expectancy_6_3
+.. poll:: Expectancy_measure_6_3
     :option_1: Definitely within reach
     :option_2: Within reach if I try my hardest
     :option_3: Out of reach no matter how hard I try
 
     For me to master the things taught in this lesson feels...
+
+
+
