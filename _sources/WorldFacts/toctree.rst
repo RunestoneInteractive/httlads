@@ -12,8 +12,8 @@ CIA World Factbook Data
    :maxdepth: 2
 
    introduction.rst
-   old_introduction.rst
    exploratory_data_analysis.rst
+   old_introduction.rst
    old_version_exploratory_data_analysis.rst
    screenscrape_cids.rst
    scrape_cia.rst
