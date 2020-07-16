@@ -2142,7 +2142,7 @@ one or more items often leads to further and even more interesting questions.
        alt.X('text_len', bin=True), y='count()')
 
 
-.. image:: Figures/UNGeneralDebates_81_0.
+.. image:: Figures/UNGeneralDebates_81_0.png
   :alt: Bar chart showing the number of records as the y axis and text(binned) as the x axis. 
 
 
