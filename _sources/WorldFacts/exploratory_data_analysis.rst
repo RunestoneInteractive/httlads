@@ -16,13 +16,12 @@ provided to you in the Introduction.
 Loading Data into a DataFrame from a CSV File
 ----------------------------------------------
 
-The **CSV file** is one of the most common ways you will find data. CSV stands for
-"comma separated value", and this format allows us to share data files in a
-simple text format. The data we will use to get started with **Pandas** is the data
-about countries we used in the spreadsheet module. You can open a CSV file in
-any text editor, but it may not be particularly easy to read. But because of its
-structure, it is easy to parse for analysis. The first few lines of the raw CSV
-file for this project look like this.
+In the contemporary world, one of the most common ways you will find data is in a **CSV file** format. CSV stands for
+"comma separated value", and this format allows us to share data files in a simple text format. To get our first glimpse at **Pandas** and its capabilities,
+we will be using the data about countries we used in the spreadsheet module. A CSV file can be opened in any text editor, 
+however, it is sometimes hard to read. Although it is hard to read, the structure makes it really easy to parse for analysis, which we 
+will use to our advantage. In the following block of code you will see the first few lines of the raw CSV file for this project. 
+It may look intimidating, but we will unpack it as we go. 
 
 .. code-block:: none
    
@@ -32,8 +31,7 @@ file for this project look like this.
    Algeria,179,20.0,10,4.0,1.0,5.0,0.0,0.0,0.0,78
    Angola,147,32.0,16,4.0,6.0,6.0,0.0,0.0,0.0,79.4
 
-You may have some experience with reading and parsing CSV files on your own with
-Python. If not, you may wish to
+You can review the following material to get more familiar with reading and parsing CSV files with Python.
 `review this material <https://runestone.academy/runestone/static/fopp/Files/ReadingCSVFiles.html>`_.
 
 
@@ -186,7 +184,7 @@ Describing the Data
 
 A really useful method that pandas provides us with is ``describe``. ``describe`` is a method that 
 is used to analyze and calculate statistical data. Below is an example of what this method is 
-capable of.
+capable of. 
  
 .. code:: python3
 
@@ -330,8 +328,8 @@ capable of.
 
 
 
-Visualizing Data
-------------------
+Visualizing Data with Histogram
+--------------------------------
 
 .. code:: python3
 
@@ -342,13 +340,14 @@ Visualizing Data
 
 .. image:: Figures/visualization_1.png
 
-We can shortcut a lot of what we did above into a single line, because once we
-have created a mark, there is really nothing more to do with it besides to add
-the encoding. Because the methods are all cleverly designed to return the proper
-object, we can string all of the calls above into a single line. We also do not
-need to explicitly call "display", because Altair returns an object that the
-Jupyter environment knows how to display automatically.
 
+The code above explains every step in detail on how to make a chart, creating a mark that returns
+the new chart to adding encoding. However, There is also a shortcut to what we did above. We can 
+write that code into a single line because once we create a mark, we can start to add the encoidng right away.
+All of the other methods are designed to return the proper object, therefore, we can write all of the
+calls above into a single line. We also do not need to explicitly call "display", because Altair returns 
+an object that the Jupyter environment knows how to display automatically.
+ 
 
 .. code:: python3
 
@@ -402,8 +401,10 @@ Practice
 Scatter Plots for Discovering Relationships
 --------------------------------------------
 
-Now, let's make a simple scatter plot of Protecting Minority Investors score versus Starting a business score of the
-locations.
+We can visualize and show the relationship between data using scatter plots.
+Let's make a simple scatter plot of protecting_minority_investors_score versus starting_a_business_score of the
+locations. For this exercies, we will use `Protecting Minority Investors csv file <../_static/protecting_minority_investors.csv>`_
+
 
 .. code:: python3
 
@@ -411,12 +412,11 @@ locations.
 
 .. image:: Figures/visualization_3.png
 
-As we can see, that is a very scattered graph that does not focus on one area. Let’s redo the graph so we can focus on one area, 
-let us focus on the locations where Protecting Minority Investors score is less than 50, and the locations starting a business 
-score is less than 70. Let’s start with the first part.
+As we can see, that is a very scattered graph that does not focus on one area. Let’s redo the graph so we can focus on one area.
+Let us focus on the locations where protecting_minority_investors_score is less than 50, and the locations where starting_a_business_score is less than 70. Let’s start with the first part.
 
-To do this, we will create a new **DataFrame** where we focus on the locations where the Protecting Minority Investors score is less 
-than 50, and the locations starting a business score is less than 70. Pandas make this really easy with its querying power. 
+To do this, we will create a new **DataFrame** where we focus on the locations where the protecting_minority_investors_score is less 
+than 50, and the locations starting_a_business_score is less than 70. Pandas make this really easy with its querying power. 
 
 The statement below produces a series of **boolean values**. These boolean values are used to index the data frame, and only the rows 
 corresponding to True values are returned in the result.
@@ -451,7 +451,7 @@ corresponding to True values are returned in the result.
    19    True
    Name: Population, dtype: bool
 
-To be a bit more dramatic, let's look at the locations of less than 20.
+Let's look at the locations of less than 20.
 
 .. code:: python3
 
@@ -604,9 +604,10 @@ To be a bit more dramatic, let's look at the locations of less than 20.
 
 
 
-Now, let's graph these locations. The easiest way to do this is to plug the
-query right into the call to create a Chart rather than assigning it to a
-variable first.
+Next, we can use this information and graph these locations to get a visual representation of the data.
+You can do this two ways, you can assign your query to a variable and putting the variable in the call to create a chart.
+Or, you can simply put the query right into the call to create a Chart.  
+
 
 
 .. code:: python3
@@ -619,16 +620,14 @@ variable first.
 
 
 Pretty neat! As we can see one location has a very small value while others are 
-farther to the right. This graph encapsulates all the protecting minority investors' 
-scores that are less than twenty, we also added a tooltip parameter so that if you 
+farther to the right. This graph encapsulates all the protecting_minority_investors_score
+that is less than 20, we also added a tooltip parameter so that if you 
 hover over that point, you will see it is Somalia. Let’s improve our query to focus 
-on the locations starting a business score less than 70.
+on the locations where starting_a_business_score is less than 70.
 
-We can do more complicated boolean expressions by using the ``|`` (logical *or*)
-and ``&`` (logical *and*) operators. Normally in Python, these two operators are
-used for bitwise *or* and bitwise *and*. So, we can create a more complicated
-boolean expression to limit our DataFrame in both directions.
-
+We can create create a more compliated boolean expression by using ``|`` (logical *or*)
+and ``&`` (logical *and*) operators. in Python, these two operators are
+used for bitwise *or* and bitwise *and*.
 
 
 .. code:: python3
@@ -910,55 +909,8 @@ what data we have in the data frame for Malta using equality.
 
 .. code:: python3
    
-   wd[wd.location == 'Malta ']
-
-
-
-.. raw:: html
-
-    <div style="max-width: 800px; overflow: scroll;">
-    <style scoped>
-        .dataframe tbody tr th:only-of-type {
-            vertical-align: middle;
-        }
-
-        .dataframe tbody tr th {
-            vertical-align: top;
-        }
-
-        .dataframe thead th {
-            text-align: right;
-        }
-    </style>
-    <table class="table table-bordered table-hover table-condensed">
-    <thead><tr><th title="Field #1"></th>
-    <th title="Field #2">location</th>
-    <th title="Field #3">protecting_minority_investors_rank</th>
-    <th title="Field #4">protecting_minority_investors_score</th>
-    <th title="Field #5">strength_of_minority_investor_protection_index_(0-50)</th>
-    <th title="Field #6">extent_of_disclosure_index_(0-10)</th>
-    <th title="Field #7">extent_of_director_liability_index_(0-10)</th>
-    <th title="Field #8">ease_of_shareholder_suits_index_(0-10)</th>
-    <th title="Field #9">extent_of_shareholder_rights_index_(0-6)</th>
-    <th title="Field #10">extent_of_ownership_and_control_index_(0-7)</th>
-    <th title="Field #11">extent_of_corporate_transparency_index_(0-7)</th>
-    <th title="Field #12">starting_a_business_score</th>
-    </tr></thead>
-    <tbody></tbody></table>
-    </div>
-
-
-
-It seems odd that Malta would not be in the dataset. Let’s try some other countries; nothing seems to work. 
-One common problem is that names and other strings can end up with spaces at the beginning or the end of the 
-word or phrase. If you do a quick try, you will see that ‘Malta ‘ works, but that is inconvenient. We don’t 
-want to have to remember to put spaces at the end of every string all the time. We should do a bit of data cleanup 
-and strip those spaces.
-
-
-.. code:: python3
-
    wd[wd.location == 'Malta']
+
 
 
 .. raw:: html
@@ -1008,10 +960,20 @@ and strip those spaces.
     </tbody></table>
     </div>
 
-You may recall that Python has a string method called ``strip`` that does
-exactly what we want. How can we get that to apply to all of the strings in the
-Series? Pandas allows us to do this using the ``str`` attribute of the series in
-combination with most of the standard string methods you know about.
+
+
+As you can see, we found very interesting information about Malta. You can try some other countries on your own but
+keep in mind that sometimes names and other string can end up with spaces at the beginning or the end of the word or phrase. 
+For instance, Malta could have ended up with space at the end in the data set. We might not have been able to get the information using 'Malta' and might have
+had to type ‘Malta ‘. This would have been very inconvenient and we don't want to have to remember to put spaces at the beginning or end of every string. 
+Therefore, we always need to do a bit of cleanup to strip those spaces.
+
+
+Python has a method called ``strip`` which does exactly what we want, it removes characters
+from left and right based on the argument passed. You may be wondering, how can we apply this to all of the strings
+in the Series. Well, Pandas allows us to do this using ``str`` attribute of the series in combination with most of the 
+standard string methods you know about.
+
 
 .. code:: python3
    
@@ -1033,8 +995,9 @@ combination with most of the standard string methods you know about.
    190               Zimbabwe
    Name: location, Length: 191, dtype: object
 
-Now, we can replace our original ``location`` column with the stripped column.
 
+If Malta had a space after it, the strip method would get rid of it and we could just use 'Malta' to get the 
+necessary information from our data set.
 
 .. code:: python3
 
@@ -1091,9 +1054,10 @@ Now, we can replace our original ``location`` column with the stripped column.
 Power Tools: Scatter Matrix
 ---------------------------
 
-It would be pretty tedius to look at all the different pairs of things we might
-want to look at for correlation one at a time, but we can use a scatter matrix
-to make life easier.
+There might be endless pairs of things we might want to look at to see if there is any correlation. However, this would 
+take a long time and can be very tedius. This is where Scatter Matrix comes in to the rescue. Scatter Matrix allows you to 
+see multiple pairs of things at once as shown below. 
+
 
 
 .. code:: python3
@@ -1127,11 +1091,10 @@ to make life easier.
 Developing Fluency
 ------------------
 
-Pandas will only become a part of your daily workflow when you develop fluency
-with the basics. You need to be able to do easy queries without having to think
-hard about the syntax. The only way to accomplish this is through repetition:
-lots of repetition, and ideally that repetitive practice is spread out over
-time.
+As we saw, Pandas can be very useful and powerful. It was probably a lot to take in, 
+but if you develop fluency in the basics it can be part of your daily workflow. Queries 
+is a big part of Pandas, therefore, you should strive to make simple queries without having to 
+think about the syntax. This can be achieved by lots of practice and repetition. 
 
 That doesn’t mean you can't go on and do lots of much harder things, it just
 means that it will take longer at first, as you have to go back and review

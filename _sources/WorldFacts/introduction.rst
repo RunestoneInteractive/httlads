@@ -10,10 +10,10 @@ Introduction
 In this chapter, we will explore the concept of analyzing data sets in order to 
 summarize their main characteristics and information. We will start by  exploring
 the dataset in more depth, and use Pandas and Altair  to explore and visualize the
-data in different formats such as with Histograms and on a Map. As we go further in
-the chapter, you will realize that we do not have access to  every database and often
-we need to find other means to obtain the data. We will learn how to extract data from 
-such databases using web scraping methods. Finally, you will be able to use Pandas pivot 
+data in different formats such as with histograms and on a map. As we go further in
+the chapter, you will realize that we do not have access to  every database. Often
+we need to find other means to obtain the data. We will learn how to extract data from websites
+using web scraping methods. Finally, you will be able to use Pandas pivot 
 table to summarize the data.
 
 
@@ -22,14 +22,14 @@ Learning Goals
 
 * Learn how to visualize, analyze, and describe data in various formats
 * Learn how to extract data from different sources
-* Learn how to summarizes the data of a more extensive table
+* Learn how to summarizes the data of a large data set
 
 
 Learning Objectives
 --------------------
 
 * Be able to use Pandas to analyze and describe data
-* Be able to visualize data with Histograms and Scatter Plots
+* Be able to visualize data with histograms and scatter plots
 * Be able to graph data on map using web API
 * Be able to extract, clean, and save data from web documents
 
@@ -50,8 +50,7 @@ Reading List
 -  `Web Scraping Weather Forecasts <https://www.dataquest.io/blog/web-scraping-tutorial-python/>`_
 -  `Beautiful Soup Docs <https://www.crummy.com/software/BeautifulSoup/bs4/doc/>`_
 
-We are going to use it to warm up our pandas skills. In this first part of the
-module, we will continue with some data that should be familiar to you, but we
+In this first part of the module, we will continue with some data that should be familiar to you, but we
 will use it in Pandas instead of a spreadsheet. In the second part, we will
 focus on several different kinds of textual analysis using data. Download The `world countries csv file <../_static/world_countries.csv>`_,
 `Protecting Minority Investors csv file <../_static/protecting_minority_investors.csv>`_, and

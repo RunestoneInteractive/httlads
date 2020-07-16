@@ -11,15 +11,15 @@ CIA World Factbook Data
    :caption: Practicing with World Factbook
    :maxdepth: 2
 
-   introduction.rst
+   introduction.rst                        
    exploratory_data_analysis.rst
+   graphing_data_on_a_map.rst
+   Web_Scraping.rst
+   summarizing_data_using_pivot_table
+   glossary.rst                            
    old_introduction.rst
    old_version_exploratory_data_analysis.rst
-   graphing_data_on_a_map.rst
    old_version_graphing_infant_mortality
-   screenscrape_cids.rst
-   Web_Scraping.rst
-   scrape_cia.rst
-   summarizing_data_using_pivot_table
+   old_version_scrape_cia.rst
    government_types.rst
-   glossary.rst
+   
