@@ -609,12 +609,13 @@ else, or if you don’t have enough students, then each team can take one or mor
 columns.
 
 
-.. shortanswer:: fb_wfb_avg_im
+.. fillintheblank:: fb_wfb_avg_im
 
    What is the average value for the column Infant mortality rate, to two
-   significant digits?
+   significant digits? |blank|
 
-
+   - :22.13: Is the correct answer
+     :x: Check your answer again
 
 
 Saving the Data
