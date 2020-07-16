@@ -5,6 +5,8 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
+.. _screenscrape:
+
 Web Scraping Using Panda and BeautifulSoup 
 ===========================================
 
@@ -12,7 +14,7 @@ Web Scraping Using Panda and BeautifulSoup
 In this chapter, we will learn how to extract data from any source. Often, data cannot be obtained in a simple CSV format and we need to extract it in other ways. 
 **Web scraping** is one of these processes that allows us to quickly and efficiently extract data from different sources. 
 
-Below are some great articles that will help you better understand web scrapping and the BeauituflSoup library. 
+Below are some great articles that will help uyou better understand web scrapping and the BeauituflSoup library. 
 Make sure you read all three articles before you move on to section 6.4.
 
 -  `Screen Scraping 101 <https://hackernoon.com/web-scraping-tutorial-with-python-tips-and-tricks-db070e70e071>`_

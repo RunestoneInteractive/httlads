@@ -3,7 +3,6 @@
    International License. To view a copy of this license, visit
    http://creativecommons.org/licenses/by-sa/4.0/.
 
-
 Summarzing Data Using Pandas Pivot Table
 ==========================================
 
@@ -13,23 +12,25 @@ we will focus on summarizing the collected data and group them together in a mea
 
 We'll do this by building a pivot table in Pandas. You have
 already done this in a spreadsheet, so it's good to see how to do it in Pandas
-as well. In order to accomplish this, we are going to have to do the following.
-
-1. Learn or review how you can do some screen scraping to get the form of
-   government.
-2. Learn about the ``pivot_table`` and ``pivot`` methods
-3. Practice adding new data to a data frame
-
-If you haven't already, you should review the example of :ref:`screenscrape`.
+as well. In order to accomplish this, you shold know how to do some web scraping to get data. In this
+section we will learn about ``pivot_table`` and ``pivot`` methods.
+ 
+If you don't remember web scraping, you should review the example of :ref:`screenscrape`.
 This will show you the basics of reading and grabbing information out of a page.
 
-Now, let's look at making a pivot table. We will leave pivoting on the form of
-government up to you. Instead, we will do an example where we explore how climate is related
-economy. Climate affects economy in more ways than we realize. According to the article *Can Civilization Survive What’s Coming*?, extreme weather cost the U.S $306 billion in damages in 2017. 
-If climate denial continues, these costs will only increase.
-Therefore, we will do an example to see how climate, region
-of the world, and parts of the economy might be related. We have a column for
-region, we have a column for climate, and we have information on the economy.
+Let's learn how to create a pivot table. We will use pivot_table to summarize and analyze a large amount of data. 
+We also use it to comapare different elements in our data set. To illustrate this, we will do an example where we
+explore how climate affects the economy. For this example, we will use the data that was scraped from CIA World 
+Factbook website and was saved as a CSV file.
+
+
+**Why analyze relationship between Climate and Economy?**
+Climate affects economy in more ways than we realize. According to the article *Can Civilization Survive What’s Coming*?, 
+extreme weather cost the U.S $306 billion in damages in 2017. If climate denial continues, these costs will only increase. 
+Therefore, we will do an example to see how climate, region of the world, and parts of the economy might be related. 
+
+
+We have a column for region, we have a column for climate, and we have information on the economy.
 What we want to do is summarize that information in a table where we have a row
 for each region, and a column for each classification of climate. Then in each
 cell, we would like to summarize the fraction of the economy that comes from
@@ -104,12 +105,12 @@ Try changing the values parameter to be a list of of columns maybe Agriculture,
 Service, and Industry. How does that change your table?
 
 Project
--------
-
-You can dig in to getting the information from `this page <../_static/government_type.html>`_.
+---------
 
 The goal of this project is to be able to do some comparison of the different forms of government, 
 and how the form of government might have an impact some of our other variables. 
+
+You can dig in to getting the information from `this page <../_static/government_type.html>`_.
 
 Add a "form of government" column to your data frame. There may be other
 alternatives for finding the data besides the web page presented earlier to
