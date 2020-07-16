@@ -341,9 +341,9 @@ Visualizing Data with Histogram
 .. image:: Figures/visualization_1.png
 
 
-The code above explains every step in detail on how to make a chart, creating a mark that returns
+The code above explains every step in detail on how to make a **histogram** chart, creating a mark that returns
 the new chart to adding encoding. However, There is also a shortcut to what we did above. We can 
-write that code into a single line because once we create a mark, we can start to add the encoidng right away.
+write that code into a single line because once we create a mark, we can start to add the encoding right away.
 All of the other methods are designed to return the proper object, therefore, we can write all of the
 calls above into a single line. We also do not need to explicitly call "display", because Altair returns 
 an object that the Jupyter environment knows how to display automatically.
@@ -401,9 +401,9 @@ Practice
 Scatter Plots for Discovering Relationships
 --------------------------------------------
 
-We can visualize and show the relationship between data using scatter plots.
+We can visualize and show the relationship between data using **scatter plots**.
 Let's make a simple scatter plot of protecting_minority_investors_score versus starting_a_business_score of the
-locations. For this exercies, we will use `Protecting Minority Investors csv file <../_static/protecting_minority_investors.csv>`_
+locations. For this exercies, we will use `Protecting Minority Investors csv file <../_static/protecting_minority_investors.csv>`_.
 
 
 .. code:: python3
@@ -606,7 +606,7 @@ Let's look at the locations of less than 20.
 
 Next, we can use this information and graph these locations to get a visual representation of the data.
 You can do this two ways, you can assign your query to a variable and putting the variable in the call to create a chart.
-Or, you can simply put the query right into the call to create a Chart.  
+Or, you can simply put the query right into the call to create a chart.  
 
 
 

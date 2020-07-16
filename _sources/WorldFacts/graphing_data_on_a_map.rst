@@ -175,7 +175,7 @@ The request module documentation is really helpful, so we recommend you using it
 For now, we will give you the bare bones here to get you started. 
 
 
-This website, ``restcountries.eu`` provides an interface where we can get data from their site
+This website, ``restcountries.eu``, provides an interface where we can get data from their site
 rather than a web page. It is really important that when you think of a web API, you understand how to ask
 it for the data that you want. For our purposes, we are going to use ``/rest/v2/alpha/XXX``. Let's take a look
 at what this means.  
