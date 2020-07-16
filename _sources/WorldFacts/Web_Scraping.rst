@@ -36,12 +36,12 @@ You can download each year of the factbook going back to the year 2000
 the data from the year 2017. Once you have downloaded the data, you can unzip the file on your
 local computer.
 
-The challenge of this project is that each variable is on its own page. So, we
-are going to have to combine many pages into a single coherent data frame. Then,
+The challenge of this project is that each variable, such as budget, GDP, inflation rate, etc., is on its own page.
+So, we are going to have to combine data from many pages into a single coherent data frame. Then,
 when we have gathered all of the columns, we can pull them together into one
 nice data frame and we'll learn how to save that to a CSV file.
 
-Again, think generally. If you design a good function for finding and scraping
+If you design a good function for finding and scraping
 one piece of information, make it work for all pieces of information, and at the
 end you will have a minimal amount of code that does a LOT of work. Therefore, try scraping 
 one or two pages and when you have become comfortable scraping single pages. You can gather 
@@ -88,8 +88,7 @@ The webpage for that file looks like this.
 
    Part of the Definitions and Notes page for the World Factbook 2017.
 
-There are a couple of important things on this page that we will want to get:
-the feature name (like Inflation rate (consumer prices) or Industrial production growth rate) and the link to the
+Each page containes different information about countries. We can scrape features such as, Inflation rate (consumer prices), industrial production growth rate, etc., and the link to the
 page that has all of the data for this feature for each country.
 
 Before we start scrapping the CIA World Factbook data, let's get a little bit more familiar with **html** structure.
