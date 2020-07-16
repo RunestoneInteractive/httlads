@@ -170,7 +170,10 @@ Lets make a to-do list:
 2. Once we have the new column, we can follow the example from above to make a
    world map and show birthrate data.
 
-The first step is to make use of the awesome
+First, we want to familiarize and make use of the `requests module <http://http://docs.python-requests.org>`_.
+
+
+(OLD)The first step is to make use of the awesome
 `requests module <http://http://docs.python-requests.org>`_. The requests module
 allows us to easily communicate to databases across the web. The documentation
 for it is fantastic, so you should use that to learn about requests in more

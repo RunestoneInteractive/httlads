@@ -151,42 +151,35 @@ coincidence that they have the same name in this example.
 Using a Web API to get Country Codes
 ------------------------------------
 
-Can you make use of the provided example and the altair documentation to produce
-a graph of the world where the countries are colored by one of the features in
-the data?
+Now that you are familiar with graphing data on a map using Altair. We can
+make use of the provided example above to create a graph of the world where
+the countries are colored by one of the features in the `Starting a Business csv file <../_static/starting_a_business.csv>`_ data set.
 
-In this part of the project we will:
+The goal of this section is to learn how to use web API to gather data. In this
+specific exercise we will use a web API to get data that maps country codes to 
+country numbers. We will learn how to add columns to our Starting a Business data set
+using the ``map`` function. This new column will contain country codes.
 
--  Learn about using web apis for data gathering
--  Use a web api to get data that maps country codes to country numbers
--  Learn how to add columns to a data frame using the ``map`` function, and
-   possibly learn to use a lambda function if you've never used one before
+The goals for this exercies is to add a new column to our data set and then graph it on a map.
+We can get the information for the new column from different sources. But this is a good chance
+to learn how to get the information using web API. In order to get this information we will use a web API from a 
+website. **API** stands for Application Programmer Interface. Each website will have its own
+convention for how you ask it for data, and the format in which the data is
+returned. Once we obtained the required data using web API, we can follow the example
+in the beginning of this section to add the new column and then make a world map and show Starting_a_Business_score
+from the Starting a Business data set.
 
-Lets make a to-do list:
-
-1. We need to add a column to our ``wd`` DataFrame that contains the numerical
-   country id. Where can we get this data? There may be some CSV files with this
-   information already in them, but this is a good chance to learn about a
-   common technique used by data scientists everywhere: **web APIs**. **API** stands
-   for Application Programmer Interface. Each website will have its own
-   convention for how you ask it for data, and the format in which the data is
-   returned.
-
-2. Once we have the new column, we can follow the example from above to make a
-   world map and show Starting_a_Business_score.
+First, lets familiarize ourselves with the `requests module <http://http://docs.python-requests.org>`_.
+This tool is amazing because the request module is what allows us to communicate to databases across the web.
+The request module documentation is really helpful, so we recommend you using it to learn about its features in detail. 
+For now, we will give you the bare bones here to get you started. 
 
 
-The first step is to make use of the awesome
-`requests module <http://http://docs.python-requests.org>`_. The requests module
-allows us to easily communicate to databases across the web. The documentation
-for it is fantastic, so you should use that to learn about requests in more
-detail. We'll just give you the bare bones here to get started.
+This website, ``restcountries.eu`` provides an interface where we can get data from their site
+rather than a web page. It is really important that when you think of a web API, you understand how to ask
+it for the data that you want. For our purposes, we are going to use ``/rest/v2/alpha/XXX``. Let's take a look
+at what this means.  
 
-The website called ``restcountries.eu`` provides an interface for us to get data
-from their site rather than a web page. When thinking about a web API, you have
-to understand how to ask it for the data you want. In this case, we will use
-``/rest/v2/alpha/XXX``. If we unpack that into pieces, let's look at what its
-telling us.
 
 * ``/rest``: Technically, REST stands for REpresentational State Transfer. This
   uses the HTTP protocol to ask for and respond with data.
@@ -195,14 +188,14 @@ telling us.
   tell it is the three-letter code for the country.
 * ``XXX``: This can be any valid three-letter country code, for example "usa".
 
-**NOTE** there are other ways to look up information, such as the countries numericCode, language, currency, and more. 
-These other methods are in the documentation.
 
-Open a new tab in your browser and paste this URL:
-`https://restcountries.eu/rest/v2/alpha/usa`. You will see that you don't get a
-web page in response, but rather some information that looks like a Python
-**dictionary**. We'll explore that more below. We can do the same thing from a
-Python program using the requests library.
+**NOTE** there are other ways to look up information, such as the countries numericCode, language, currency, and more. 
+These other methods are in the website ``restcountries.eu``.
+
+Now that we know the format, lets open a new tab in your browser and see the call in action. Paste the following 
+URL in your web browser: `https://restcountries.eu/rest/v2/alpha/usa`. As you may have noticed, you do not get a 
+web page in response. You get information that looks like a Python **dictionary**. We will come back to this later
+on in this section, but we can do something similiar with a python program using the requests library. 
 
 .. code:: python3
 
