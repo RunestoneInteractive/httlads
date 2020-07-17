@@ -7,6 +7,11 @@
 Working with Text
 =================
 
+Since we are working with data frames, sometimes when extracting text, blank spaces 
+or trailing characters come with the data. That is not good, so we have to clean it 
+up. Therefore, in this section we will look at how we can clean up the text. 
+
+
 The ``Series`` and ``index`` objects in Pandas each have a set of string
 processing methods that make all of the standard Python string methods more
 available to work on all of the string elements in a Series. We call these
