@@ -15,3 +15,4 @@ Recommending Groceries
    exploratory.rst
    market_basket.rst
    visualizing.rst
+   glossary.rst
