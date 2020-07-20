@@ -9,28 +9,27 @@
 Introduction
 ============
 
-Learning Goals for this Module
-------------------------------
+In this chapter, we will explore the concepts of descriptive statistics such as normal distribution, measures of central tendency, measures of variability and other related concepts.  We will learn the difference between descriptive and inferential statistics and will explore various data types in statistics such as categorical & numerical types.
 
-* Become familiar with basic spreadsheet operations
-    * Addressing cells: relative versus absolute, on the same same sheet versus
-      across sheets
-    * Working with Ranges:  ``SUM``, ``AVERAGE``, ``CORRELL``
-    * Tricks for Copying and pasting down and across
-    * ``VLOOKUP`` (match / index)
-    * Grouping
-      * ``AVERAGEIF``
-      * ``COUNTIF``
-      * ``IF``
-      * Making a Pivot Table
-    * Cleaning
-      * ``TRIM``
-    * Exploring
-      * ``UNIQUE``
+We will need a spreadsheet application to manipulate the data in the chapter to solve problems.  There are many types of spreadsheets, such as Excel (a proprietary spreadsheet application) & Google Sheets (a web-based spreadsheet application).  We will use Google Sheets because it is free, works from any device (like your laptop, tablet or phone) and includes functions that are very similar to Excel.  So, if you are familiar with Microsoft Excel, you will find Google Sheets easy to use.
 
-* Use a spreadsheet to explore data
+Lastly, we will discuss the difference between correlation and causation and explore why correlation does not imply causation.  Understanding this concept is important for making correct assumptions and decisions when analyzing data.
 
-* Introduce the "data science pipeline"
+Learning Goals
+--------------
+- Study the concepts of data types in statistics and descriptive statistical analysis.
+- Learn to distinguish between descriptive and inferential statistics. 
+- Learn the various measures of central tendency and the measures of variability.
+- Become familiar with basic spreadsheet operations.
+
+Learning Objectives
+-------------------
+- Know how to import, organize, and visualize data using Google Sheets.
+- Extrapolate measures of central tendencies and measures of variability of a given data set.
+- Combine different datasets and use them to extract new data.
+- Compare and contrast data from various datasets using visuals such as graphs. 
+- Be able to create and use pivot tables.
+
 
 
 .. _h257e47683de51231245397924107b3:
@@ -56,5 +55,5 @@ Reading List
 Time Required
 -------------
 
-This can easily take four class periods. But you can be less depending on how
-much is done as homework versus in-class work.
+This can take up to four hours (or more) to complete. But it could take less time depending on how
+quickly you are able to work through the material.

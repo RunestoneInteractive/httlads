@@ -270,8 +270,7 @@ Summary Statistics
 Visualization
 -------------
 
-1. The `STDDEV <https://runestone.academy/runestone/static/cppds/index.html>`_
-   value tells us that the majority of the values are between 4.0 and 6.6 so let
+1. The STDDEV value tells us that the majority of the values are between 4.0 and 6.6 so let
    us check that graphically. It is easy to make a histogram of the values in
    Sheets. Note: To do this same thing in Excel you would need to install an
    extension.
