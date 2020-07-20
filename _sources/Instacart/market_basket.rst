@@ -7,6 +7,12 @@
 Market Basket Analysis
 ======================
 
+In order for retailers to increase sales, and make as much profit they need to know 
+their customers and understand their needs and behaviors. In order to do this retailers 
+use a technique called market basket analysis. Market basket analysis consists of analyzing 
+large data sets, that include purchase history, to reveal product groupings, as well as 
+products that are likely to be purchased together. 
+
 The key question in the market basket analysis is what products are most
 frequently purchased together.
 
