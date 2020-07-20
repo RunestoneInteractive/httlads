@@ -64,7 +64,7 @@ OK, but what if we do this:
 
     df.loc['p':'o']
 
-Pandas raises an error because there are two 'o's in the index.  It doesn't know which one you mean, first? last? If you argue it should use the last then consider the performance implications if thsi was a really large index? In that case it would be very time consuming to search the index for the last occurance.
+Pandas raises an error because there are two 'o's in the index.  It doesn't know which one you mean, first? last? If you argue it should use the last then consider the performance implications if this was a really large index? In that case it would be very time consuming to search the index for the last occurance.
 
 On the other hand, if we sort the index then the last instance can be found quite quickly, and with a sorted index loc will work for this example.
 

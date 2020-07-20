@@ -6,14 +6,20 @@
 Introduction
 ============
 
+Data scientists have to deal with a lot of data at once. While Google Sheets 
+and Excel are great ways to visualize and manipulate data, they are not as versatile 
+as we might want. That is where **data frames** come in. In this chapter, you will be introduced 
+to **data frames** and learn to use them to obtain information from data. 
+
 Learning Goals
 ---------------
-- Learn how to create and manipulate a **data frame**.
-- Learn how to use data from multiple **data frames**.
+- Learn how to create and manipulate a ``DataFrames``.
+- Learn how to use data from multiple ``DataFrames``.
 
 Learning Objectives
 --------------------
 - Be able to use Jupyter Notebooks and Pandas.
-- Be able to import data into a **data frame**.
-- Be able to manipulate ``DataFrames`` to gain specific information. 
+- Be able to import data into a ``DataFrames``.
+- Be able to manipulate ``DataFrames`` to gain specific information.
+
 
