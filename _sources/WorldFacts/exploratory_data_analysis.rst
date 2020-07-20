@@ -625,8 +625,8 @@ that is less than 20, we also added a tooltip parameter so that if you
 hover over that point, you will see it is Somalia. Let’s improve our query to focus 
 on the locations where starting_a_business_score is less than 70.
 
-We can create create a more compliated boolean expression by using ``|`` (logical *or*)
-and ``&`` (logical *and*) operators. in Python, these two operators are
+We can create a more compliated boolean expression by using ``|`` (logical *or*)
+and ``&`` (logical *and*) operators. In Python, these two operators are
 used for bitwise *or* and bitwise *and*.
 
 
@@ -965,7 +965,7 @@ what data we have in the data frame for Malta using equality.
 As you can see, we found very interesting information about Malta. You can try some other countries on your own but
 keep in mind that sometimes names and other string can end up with spaces at the beginning or the end of the word or phrase. 
 For instance, Malta could have ended up with space at the end in the data set. We might not have been able to get the information using 'Malta' and might have
-had to type ‘Malta ‘. This would have been very inconvenient and we don't want to have to remember to put spaces at the beginning or end of every string. 
+had to type 'Malta '. This would have been very inconvenient and we don't want to have to remember to put spaces at the beginning or end of every string. 
 Therefore, we always need to do a bit of cleanup to strip those spaces.
 
 
