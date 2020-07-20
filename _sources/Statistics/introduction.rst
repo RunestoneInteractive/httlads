@@ -9,33 +9,34 @@
 Introduction
 ============
 
-In this chapter, we will explore the concepts of descriptive statistics such as normal distribution, measures of central tendency, measures of variability and other related concepts.  We will learn the difference between descriptive and inferential statistics and will explore various data types in statistics such as categorical & numerical types.
+In this chapter, we will explore concepts of descriptive statistics such as normal distribution, measures of central tendency, measures of variability, and other related concepts.  We will learn the difference between descriptive and inferential statistics and will explore various data types in statistics such as categorical and numerical types.
 
-We will need a spreadsheet application to manipulate the data in the chapter to solve problems.  There are many types of spreadsheets, such as Excel (a proprietary spreadsheet application) & Google Sheets (a web-based spreadsheet application).  We will use Google Sheets because it is free, works from any device (like your laptop, tablet or phone) and includes functions that are very similar to Excel.  So, if you are familiar with Microsoft Excel, you will find Google Sheets easy to use.
+We will use a spreadsheet application to manipulate the data in the chapter to solve problems because they are one of the best tools for this particular work.  Many spreadsheets exist but perhaps the most ubiquitous are Excel (a commercial spreadsheet application) and Google Sheets (a web-based spreadsheet application).  We will use Google Sheets because it is free, works from almost any device (including your laptop, tablet, or phone) and because it includes functions that are very similar to Excel.  So, if you are familiar with Microsoft Excel, you will find Google Sheets very easy to use.
 
 Lastly, we will discuss the difference between correlation and causation and explore why correlation does not imply causation.  Understanding this concept is important for making correct assumptions and decisions when analyzing data.
 
 Learning Goals
 --------------
-- Study the concepts of data types in statistics and descriptive statistical analysis.
-- Learn to distinguish between descriptive and inferential statistics. 
-- Learn the various measures of central tendency and the measures of variability.
-- Become familiar with basic spreadsheet operations.
+- Explore the concepts of descriptive statistics and visualization.
+- Distinguish between descriptive and inferential statistics.
+- Learn to apply the various measures of central tendency and the measures of variability.
+- Become familiar with several basic spreadsheet operations.
 
 Learning Objectives
 -------------------
-- Know how to import, organize, and visualize data using Google Sheets.
+- Become adepta at importing, organizing, and visualizing data using Google Sheets.
 - Extrapolate measures of central tendencies and measures of variability of a given data set.
 - Combine different datasets and use them to extract new data.
-- Compare and contrast data from various datasets using visuals such as graphs. 
-- Be able to create and use pivot tables.
-
+- Compare and contrast data from various datasets using visual representations.
+- Learn to create and use pivot tables.
 
 
 .. _h257e47683de51231245397924107b3:
 
 Reading List
 ------------
+
+Be sure to read or watch the following key references before moving on:
 
 * `Intro to Descriptive Statistics <https://towardsdatascience.com/intro-to-descriptive-statistics-252e9c464ac9>`_
 
@@ -55,5 +56,5 @@ Reading List
 Time Required
 -------------
 
-This can take up to four hours (or more) to complete. But it could take less time depending on how
+These readings and exercises could take up to four hours (or more) to complete. But they could take less time depending on how
 quickly you are able to work through the material.

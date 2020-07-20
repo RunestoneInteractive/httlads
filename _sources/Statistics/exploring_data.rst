@@ -6,10 +6,10 @@
 
 .. _h651bd6f7d3125664c517b446bc5d4b:
 
-Part I: Exploring the Data
-==========================
+Case Study 2: The Happiness Report
+==================================
 
-Before class, you should read about the data science processing pipeline and
+Before proceeding, you need to have read the required readings about the data science processing pipeline,
 exploratory data analysis, and the other resources on spreadsheets and summary
 statistics linked in the previous section.
 
@@ -158,7 +158,7 @@ statistics and visualization.
 
 .. _hf33f5c6794a1d5ee7c64395b788:
 
-Case study 1: Happiness Index Research Questions
+Case Study 2: Happiness Index Research Questions
 ------------------------------------------------
 
 1. What are the different factors that lead to happiness of a country?

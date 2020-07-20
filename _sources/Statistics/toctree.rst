@@ -3,12 +3,11 @@
    International License. To view a copy of this license, visit
    http://creativecommons.org/licenses/by-sa/4.0/.
 
-
-Fundamental Spreadsheet Operations and The Data Science Pipeline
-================================================================
+Exploring the Data Science Pipeline via Descriptive Statistics
+==============================================================
 
 .. toctree::
-   :caption: World Happiness
+   :caption: Descriptive Statistics
    :maxdepth: 2
 
    introduction.rst

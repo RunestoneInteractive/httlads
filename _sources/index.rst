@@ -36,7 +36,7 @@ Table of Contents
     :maxdepth: 3
 
     Introduction/toctree.rst
-    Happiness/toctree.rst
+    Statistics/toctree.rst
     Solver/toctree.rst
     PythonReview/toctree.rst
     MovieData/toctree.rst
