@@ -4,13 +4,13 @@ Glossary
 
 **Adjacency matrix:** is a square matrix that is used to represent a finite graph. The elements of the matrix indicate whether pairs of vertices are adjacent or not.
 
-**Data modeling:** is the process in which an organization creates a data model to show how the data will be stored in the database. With this data model, one can see a conceptual representation of the Data objects, and the assciations between different data objects and the rules.
+**Data modeling:** is when an organization creates a data model to show how the data will be stored in the database. With this data model, one can see a conceptual representation of the Data objects and the association between different data objects and the rules.
 
-**Database design:** is a protocal that is done by the organization to establish how data must be stored and how the data elements interrelate. This also involves classifying data and identifying interrelationships.
+**Database design:** is a protocol that is done by the organization to establish how data must be stored and how the data elements interrelate. This also involves classifying data and identifying interrelationships.
 
 **Edge:** is a line segment that connects two or more nodes in a tree or a graph.
 
-**Encoding:** in general sense, when we convert data from one form to another. Character encoding referred to in the book is converting each character such as letters, numbers, symbols, etc. to binary code. ASCII and Unicode are common types of encoding.
+**Encoding:** in a general sense, when we convert data from one form to another. Character encoding referred to in the book is converting each character, such as letters, numbers, symbols, etc. to binary code. ASCII and Unicode are common types of encoding.
 
 **Foreign Key** is a column or group of columns in a data set that provides a link between data in two tables.
 
@@ -22,7 +22,7 @@ Glossary
 
 ``networkx`` it is a Python library that is used for studying graphs.
 
-**node:** A node is a basic unit of a  a linked list or tree data structure that contain data.
+**node:** A node is a basic unit of a linked list or tree data structure that contains data.
 
 **Observational Unit:** is the overall unit for which information is received, and then statistics are compiled in the process of collecting statistical data.
 
@@ -32,20 +32,14 @@ Glossary
 
 ``pd.concat`` is used to concatenate the small data frames together into one large data frame.
 
-**Primary key:** is a key that is unique identifier for each record in a relational database.
+**Primary key:** is a key that is a unique identifier for each record in a relational database.
 
-``Series`` is a one-dimensional data structure in pandas, it is a one-dimenstional array that can hold any data type.
+``Series`` is a one-dimensional data structure in pandas, it is a one-dimensional array that can hold any data type.
 
 **Text Complexity:** is the level of challenge a book provides on the following criteria: its quantitative features, its qualitative features, and reader/text factors.
 
-**UTF-8:** stands for 8-bit Unicode Transformation Format. It is a character encoding that can encode all 1,112,064 characters in Unicode.
+**UTF-8:** stands for an 8-bit Unicode Transformation Format. It is a character encoding that can encode all 1,112,064 characters in Unicode.
 
-**Unicode errors:**  Unicode is an encoding standard that is used internationally.The unicode error usually arises when you try to write a Unicode string to a file or device that does not handle a Unicode string. For instance, you will get an error if the output file or device only handles ASCII.
+**Unicode errors:**  Unicode is an encoding standard that is used internationally. The Unicode error usually arises when you try to write a Unicode string to a file or device that does not handle a Unicode string. For instance, you will get an error if the output file or device only handles ASCII.
 
-**Vectorized String Methods:** is a set of string methods, much like the ones in python, that enables the handling and manipulation of strings in series.
-
-
-
-
-
-
+**Vectorized String Methods:** is a set of string methods, much like the ones in python, that enable the handling and manipulation of strings in series.
