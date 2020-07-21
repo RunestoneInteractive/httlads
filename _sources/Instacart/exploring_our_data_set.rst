@@ -7,9 +7,8 @@
 Exploring Our Data Set
 =======================
 
-In this section we will learn how to analyze an enormous data set to find interesting
-associations between its various items. We will also learn how to evaluate the different 
-behaviors of the data set to make predictions about its future behaviors. For this 
+In this section, we will learn how to analyze an enormous data set to find interesting
+associations between its various items. We will also learn how to evaluate the data set's different behaviors to make predictions about its future behaviors. For this 
 exercise, we will use shopping data from Instacar.
 
 Instacart is a shopping and delivery service that works with stores in your city
