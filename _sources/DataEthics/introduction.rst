@@ -6,37 +6,33 @@
 
 Introduction
 ============
-
 Data are a ubiquitous part of our everyday lives. Through text, pictures, or 
 social media, the data that we upload and interact with reflect who we are. 
 Data are incredibly useful in understanding patterns inherent in both people 
 and the rest of the world. To ensure the appropriateness of their work, 
 data scientists have an obligation to ask themselves the following questions:
 
+
 - Are we using the data for the greater good? 
-- Is the data that we are using invading people's privacy? 
+- Are the data that we are using invading people's privacy? 
+- Does my organization have a data code of conduct?  If, so is it being followed each time data are used by the organization?
 
-In short, it is imperative for data scientists to consider the ethical implications 
-of their work. They must also do so when merging data from multiple sources. They 
-should ask questions such as:
+In short, it is imperative for data scientists to consider the ethical 
+implications of their work. They must also do so when sharing data or 
+merging data from multiple sources. They should ask questions such as:
 
-- Will the ethics of the project stay the same after the merge? 
-
-- Does the merger reveal information that invades people's privacy? 
+- Will the ethics of the project stay the same after the share and/or merge? 
+- Does the share and/or merger reveal information that could be harmful to the privacy of people involved in the data? 
 
 Learning Goals
 --------------
-
-- Learn about the ethical usage of data.
+- Learn about ethical practices when using data.
 
 Learning Objectives
 -------------------
-
-- Learn to identify data that is free to use.
-
+- Learn to identify data that are free to use.
 - Learn to check if screen scraping is legal on different websites. 
-
-- Understand the ethical wrongs of misrepresenting data. 
+- Understand the ethical wrongs of misrepresenting data.  
 
 
 Reading List
