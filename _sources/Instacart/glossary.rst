@@ -9,9 +9,9 @@ Glossary
 
 **Lower Triangular Matrix:** is a square matrix in which all the entries above the main diagonal are zero.
 
-**Market Basket Analysis:**  is a technique used to find associations between different items. It helps retailers uncover the relationship between items that consumers buy frequently together
+**Market Basket Analysis:**  is a technique used to find associations between different items. It helps retailers uncover the relationship between things that consumers frequently buy together
 
 **Matrix:** is a rectangular arrangement of numbers, symbols, or expressions in rows and columns
 
-**Sparse Matrix:** is a matrix that contains mostly zeros. If the matrix has a lot of non-zero values then the matrix would be considered dense.
+**Sparse Matrix:** is a matrix that contains mostly zeros. If the matrix has a lot of non-zero values, then the matrix would be considered dense.
 
