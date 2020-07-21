@@ -323,7 +323,7 @@ For example, timezones is a top level key, which produces a list of the valid ti
     'UTC+12:00']
 
 
-But, languages is more complicated It also returns a list but each element of the list corresponds
+But, languages is more complicated. It also returns a list but each element of the list corresponds
 to one of the official languages of the country.  The USA has only one official language but other countries
 have more.  For example, Malta has both Maltese and English as official languages.  Notice that the two dictionaries
 have an identical structure, a key for the two letter abbreviation, a key for the three letter abbreviation, the name
@@ -741,9 +741,9 @@ Your final result should look like this.
 Using a Web API on Your Own
 ---------------------------
 
-Find a web API that provides some numeric data that interests you. There is tons
+Find a web API that provides some numeric data that interests you. There are tons
 of data available in the world of finance, sports, environment, travel, etc. A
-great place to look is at
+great place to look is 
 `The Programmable Web <https://www.programmableweb.com>`_. Yes, this assignment
 is a bit vague and open-ended, but that is part of the excitement. You get to
 find an API and graph some data that appeals to you, not something some author
@@ -753,7 +753,7 @@ by the time you finish this project.
 1. Use the web API to obtain the data. Most sites are going to provide it in
    JSON format similar to what we saw.
 
-2. Next, create a graph of your using Altair.
+2. Next, create a graph of your data using Altair.
 
 3. Take some time to talk about and present the data and the graph you created
    to the class.

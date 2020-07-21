@@ -14,7 +14,7 @@ Web Scraping Using Panda and BeautifulSoup
 In this chapter, we will learn how to extract data from any source. Often, data cannot be obtained in a simple CSV format and we need to extract it in other ways. 
 **Web scraping** is one of these processes that allows us to quickly and efficiently extract data from different sources. 
 
-Below are some great articles that will help you better understand web scrapping and the BeauituflSoup library. 
+Below are some great articles that will help you better understand web scraping and the BeautifulSoup library. 
 Make sure you read all three articles before you move on to section 6.4.
 
 -  `Screen Scraping 101 <https://hackernoon.com/web-scraping-tutorial-with-python-tips-and-tricks-db070e70e071>`_
@@ -34,7 +34,7 @@ Let's start scrapping the country data from 2017. At the end of this exercise yo
 data from any year.
 
 You can download each year of the factbook going back to the year 2000
-`from the CIA <https://www.cia.gov/library/publications/download/>`_. For this exercise, we will scrape 
+`from the CIA (clicl here) <https://www.cia.gov/library/publications/download/>`_. For this exercise, we will scrape 
 the data from the year 2017. Once you have downloaded the data, you can unzip the file on your
 local computer.
 
@@ -98,7 +98,7 @@ Below is an excerpt of the html page that has information about inflation rate. 
 can scrape the data more effeciently.
 
 **NOTE:** You can view a page in its html format in any browser. For Google Chrome, right-click the page you want to view and click on view page source.
-If you are using other browerser, you can always look up online how to view the page in html.
+If you are using other browser, you can always look up online how to view the page in html.
 
 .. parsed-literal:: html
 
@@ -182,7 +182,7 @@ data from online sources.
    page = open('../Data/factbook/2017/docs/notesanddefs.html').read()
    page[:200]
 
-**NOTE:** If you get an error openning the file. You can place ``r`` before the URL, ``(r'../Data/factbook/2017/docs/notesanddefs.html')``. If you get a ``UnicodeDecodeError``, try
+**NOTE:** If you get an error opening the file, you can place ``r`` before the URL, ``(r'../Data/factbook/2017/docs/notesanddefs.html')``. If you get a ``UnicodeDecodeError``, try
 putting, ``encoding = 'utf-8'``. ``Open(r'../Data/factbook/2017/docs/notesanddefs.html', encoding = 'utf-8')``.
 
 .. parsed-literal::
