@@ -6,7 +6,7 @@
 
 .. _h501f735b0476f5e696e1e2f7175266:
 
-Case Study 2: Adding More Data
+Case Study 2. Adding More Data
 =========================
 
 Happiness by Region

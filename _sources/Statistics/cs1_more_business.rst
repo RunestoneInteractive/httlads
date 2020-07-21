@@ -5,7 +5,7 @@
 
 One of the key features of this textbook is to highlight how data science and data analytics can be used to understand a variety of data types. In this chapter, we explore two data sets, one related to starting a business, and the other related to the happiness index of countries.
 
-Case Study 1: Starting a Business
+Case Study 1. Starting a Business
 =================================
 
 Before beginning this section, you should have watched or read all of the items on the
