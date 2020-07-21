@@ -5,14 +5,14 @@
 
 One of the key features of this textbook is to highlight how data science and data analytics can be used to understand a variety of data types. In this chapter, we explore two data sets, one related to starting a business, and the other related to the happiness index of countries.
 
-Case Study 1: "Starting a Business"
-===================================
+Case Study 1: Starting a Business
+=================================
 
 Before beginning this section, you should have watched or read all of the items on the
 reading list (section 2.1).
 
-Introducing CS1: Starting A Business
-------------------------------------
+Thinking About Starting Your Business
+-------------------------------------
 
 This case study utilizes the `"Starting a Business" <../_static/Starting_a_Business_2019.csv>`_ dataset obtained from the Doing Business-World Bank website. The dataset contains indicators from over 190 countries that measure the relative ease of starting a business in those countries.  The dataset looks at two limited liability companies in various regions and countries around the world.  Both companies are identical in every way, except one company is owned by five married women, and the other is owned by five married men.
 
@@ -104,19 +104,6 @@ Starting a Business Research Questions
 5. Does being in a certain region/continent have any correlation to the average rank of countries?
 6. Have the Starting a Business Ranks changed over time? Which countries have the most improvement in their rank? Which countries have most declined in their rank?
 7. For the countries with the largest change, which factors changed the most? Are these factors the same as you identified in the first 3 questions?
-
-
-Summary Statistics
-------------------
-
-.. dragndrop:: dd_summarystats2
-   :feedback: Check the Reading list for the introduction to summary statistics
-   :match_1: Normal Distribution|||Visualization of data is bell-shaped, symmetrical, centered, and unimodal.
-   :match_2: Range|||The difference between the largest and the smallest point in the data.
-   :match_3: Variance|||The summation of the square differences between every data point and the mean.
-   :match_4: Standard Deviation|||The square root of the summation of the square differences between every data point and the mean.
-
-   Match the Term on the left with the description on the right.
 
 
 1. The data set lists countries based on their “Starting a Business” score. While it is easy to see the best countries for starting a business using the “Starting a Business rank”, it is not as easy to grasp the relative simplicity of each country. For this, one common baseline is needed to measure all of the countries against. Average, Standard Deviation and Median are all ways of creating such a baseline. One way of creating such a baseline is by averaging the “starting a business” score of all of the countries together.

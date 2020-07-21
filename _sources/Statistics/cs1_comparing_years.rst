@@ -4,8 +4,8 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-Part III: Comparing Starting a Business data across years
-=========================================================
+Case Study 1. Comparing Starting a Business data across years
+=============================================================
 
 We have two files of Starting a Business data, one for 2019 that you have been using, and
 another for `2014 <../_static/Starting_a_Business_2014.csv>`_, so you can do some
@@ -18,15 +18,15 @@ comparisons across a span of 5 years.
    each country for each year. You'll have 3 columns: country name, 2014 rank,
    and 2019 rank. (Hint: Use ``VLOOKUP``.) But wait! What is the deal with these
    ``#N/A`` values? Shouldn't the Starting a Business report have the same countries for
-   every year? There are some countries that did not have their data reported for a variety of 
-   reasons. 
+   every year? There are some countries that did not have their data reported for a variety of
+   reasons.
 
 Now, create a column where you calculate the change between the 2019 rank and
 the 2014 rank. Then create a new cell where you find the maximum value of this
 new column.
 
-You will notice that the result of looking for the maximum value in a column that 
-contains one of these ``#N/A`` values results in the function returning ``#N/A`` as well. 
+You will notice that the result of looking for the maximum value in a column that
+contains one of these ``#N/A`` values results in the function returning ``#N/A`` as well.
 It appears we will have to find a better strategy.
 
 The right way to handle this problem is to use the ``IFERROR`` function. This is
@@ -41,12 +41,12 @@ see that we get interesting values for maximum and minimum.
 
 .. fillintheblank:: q1_p3_sab
 
-      What is the name of the country with the largest positive change in their starting a business score? 
+      What is the name of the country with the largest positive change in their starting a business score?
       |blank| What about the largest negative change? |blank|
 
       - :Myanmar: Is the correct answer!
         :x: Check and make sure that the countries with no values for 2014 are not skewing the data.
-      
+
       - :Venezuela: Is the correct answer!
         :x: Check and make sure that the countries with no values for 2014 are not skewing the data.
 
@@ -67,27 +67,27 @@ see that we get interesting values for maximum and minimum.
 
    .. fillintheblank:: q3_p3_sab
 
-      What is the name of the country with the largest positive change in their starting a business rank? 
+      What is the name of the country with the largest positive change in their starting a business rank?
       |blank| What about the largest negative change? |blank|
 
       - :Mozambique: Is the correct answer!
         :x: Check and make sure that the countries with no values for 2014 are not skewing the data.
-      
+
       - :Togo: Is the correct answer!
         :x: Check and make sure that the countries with no values for 2014 are not skewing the data.
 
    .. shortanswer:: q4_p3_sab
-      
-      Give an explanation for why you think the two are different. Outline an experiment or calculation 
+
+      Give an explanation for why you think the two are different. Outline an experiment or calculation
       that you can do with a spreadsheet to back up your answer.
 
 
-4. For the five countries with the largest changes in ranking between 2014 and 2019, what are 
-   the factors that changed the most? For this part, you can do this by making comparisons between 
+4. For the five countries with the largest changes in ranking between 2014 and 2019, what are
+   the factors that changed the most? For this part, you can do this by making comparisons between
    sheets rather than creating a huge number of new columns on this summary sheet.
 
    .. shortanswer:: q5_p3_sab
-   
+
       What did you learn in the previous investigation? What were the factors that changed the most?
 
 
@@ -95,7 +95,7 @@ see that we get interesting values for maximum and minimum.
 
 
 5. Lets use the data we have to learn something new about starting a business in different countries. You can find the population over time of the countries in the `world_countries <../_static/world_countries_2019.csv>`_ data we used in the previous section. Import the dataset into a new tab in your sheet. Create two new columns for each year and use appropriate functions (hint: ``VLOOKUP``) to input the population data for both years. Use the population data from 2014 and the one from 2019 to find out which countries (at least 10) had the largest increase in population over that 5 year period. Is there a correlation between change in a country's population and its change in Starting a Business rank?
-   
+
 **Lesson Feedback**
 
 .. poll:: LearningZone_2_3_sab

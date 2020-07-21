@@ -11,11 +11,11 @@ Exploring the Data Science Pipeline via Descriptive Statistics
    :maxdepth: 2
 
    introduction.rst
-   CaseStudy1_P1.rst
-   CaseStudy1_P2.rst
-   CaseStudy1_P3.rst
-   CaseStudy1_Challenge.rst
-   exploring_data.rst
-   more_data.rst
-   yearly_happiness.rst
-   correlation_matrix.rst
+   cs1_exploring_business.rst
+   cs1_more_business.rst
+   cs1_comparing_years.rst
+   cs1_correlation_matrix.rst
+   cs2_exploring_happiness.rst
+   cs2_more_happiness.rst
+   cs2_yearly_happiness.rst
+   cs2_correlation_matrix.rst

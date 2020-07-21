@@ -6,7 +6,7 @@
 
 .. _h651bd6f7d3125664c517b446bc5d4b:
 
-Case Study 2: The Happiness Report
+Case Study 2. The Happiness Report
 ==================================
 
 Before proceeding, you need to have read the required readings about the data science processing pipeline,

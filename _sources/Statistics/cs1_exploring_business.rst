@@ -3,8 +3,8 @@
    International License. To view a copy of this license, visit
    http://creativecommons.org/licenses/by-sa/4.0/.
 
-Cases Study 1 Part II: Adding more data
-=======================================
+Case Study 1: Adding More Data
+==============================
 
 Before we begin, make sure that the google sheets file you are working on is exactly like the one given at the beginning of this case study. Any changes you made to the google sheets while following along in the previous section should be deleted.
 
@@ -16,7 +16,7 @@ Let’s create a table displaying the average business score for all of the coun
 - What are the unique region names?
 - How can we compute an average for the countries that are in the same region?
 
-1. Lets start by first sorting the data by regions. Select Column C and then from the menu select Data -> Sort sheet by column C, A -> Z. 
+1. Lets start by first sorting the data by regions. Select Column C and then from the menu select Data -> Sort sheet by column C, A -> Z.
 
 2. We can get a table of the unique region names by using the ``UNIQUE`` function. The ``UNIQUE`` function takes the range that contains all of the region names and will populate a few rows with just the unique names. In Cell C193 use the ``UNIQUE`` function and find the different names for the regions.
 
@@ -26,16 +26,16 @@ Let’s create a table displaying the average business score for all of the coun
 
       - :5: Is the correct answer!
         :x: Incorrect. Try the following command ``=UNIQUE(C2:C192)``
-      
+
 3. With the table of Regions, we can use a combination of ``SUMIF`` and ``COUNTIF`` to compute the average business score. Let’s do this incrementally to start. Let’s create a column right next to the region names that contains the number of countries in the region. The ``COUNTIF`` function takes a range of cells and a condition for those cells to match. In our case, the range is C2:C141, that is, all of the regions. The condition is the name of the region which we can get from a cell in our newly created table of region names.
 
    .. fillintheblank:: q2_cs1_sbd
-   
+
       There are |blank| countries in Europe and |blank| countries in Africa.
 
       - :42: Is the correct answer!
         :x: Incorrect. Check to make sure than when you copy pasted the formual the cell ranges did not get changed.
-        
+
       - :54: Is the correct answer!
         :x: Incorrect. Check to make sure than when you copy pasted the formual the cell ranges did not get changed.
 
@@ -43,19 +43,19 @@ Now, let’s create a column that sums the business score for each region using 
 
 
 .. fillintheblank:: q3_cs1_sbd
-   
+
    The sum of all business scores in Asia is |blank| and the sum of all business scores in Europe is |blank|.
 
    - :4167.9: Is the correct answer!
      :x: Incorrect.
-      
+
    - :3744: Is the correct answer!
      :x: Incorrect.
 
 With a column for the count and a column for the sum, you can now calculate the mean by dividing our two columns.
- 
+
 .. fillintheblank:: q4_cs1_sbd
-    
+
    The average business score for Oceania is |blank|.
 
    - :84.95: Is the correct answer!
@@ -72,9 +72,9 @@ With a column for the count and a column for the sum, you can now calculate the 
 5. Using ``MAXIFS``, ``MINIFS``, ``MATCH`` and ``INDEX``, let’s find the easiest and hardest country to start a business in for each region. ``MAXIFS`` and ``MINIFS`` work like ``AVERAGEIF`` and ``COUNTIF``, but allow for more conditions. In our case, we still need only one. (If you read the POPUP you will know what to do.)
 
    .. fillintheblank:: q5_cs1_sbd
-      
+
       What is the easiest country to start a business in the Americas?
-      
+
       - :Canada: Is the correct answer!
         :x: Incorrect. Try using the functions one at a time in different cells before combining them.
 
@@ -96,7 +96,7 @@ data.
    of the other data provided later. For now, we are interested in how we can
    use the information on this new spreadsheet to give us the continent of each
    country.
-   
+
 
 2. You can start by either copy/pasting the whole sheet into a new tab in the same spreadsheet or importing the csv file into a new tab in the same spreadsheet.
 
@@ -139,13 +139,13 @@ but it is a little less flexible, as the column you search in must always be on
 the far left side of the range.
 
 
-To fill in a new column with the country codes, paste the following into Q2: 
-``=VLOOKUP(B2, countries_of_the_world!$A$2:$BK$265, 2, FALSE)``. Have Q2 selected 
-then double click blue square in the lower right corner of the cell. Sheets will automatically 
-paste the values into the remaining cells until it reaches a black cell in the left column. 
-Double check the entire column to make sure that all the data is filled. 
+To fill in a new column with the country codes, paste the following into Q2:
+``=VLOOKUP(B2, countries_of_the_world!$A$2:$BK$265, 2, FALSE)``. Have Q2 selected
+then double click blue square in the lower right corner of the cell. Sheets will automatically
+paste the values into the remaining cells until it reaches a black cell in the left column.
+Double check the entire column to make sure that all the data is filled.
 
-Replicate the same procedure to import the population of each country into the Starting a Business sheet. 
+Replicate the same procedure to import the population of each country into the Starting a Business sheet.
 
 
 .. fillintheblank:: q6_cs1_sbd
@@ -196,8 +196,8 @@ pieces, or learn to live without some pieces of data.
 
    - Eritrea
 
-     - Incorrect, it is there. It just doesn't have population data. 
-     
+     - Incorrect, it is there. It just doesn't have population data.
+
 
 Now that you have country names unified and the population data in place, you
 can practice some calculations on this new piece of data.
@@ -209,7 +209,7 @@ can practice some calculations on this new piece of data.
       The average population is |blank| for Europe.
 
       - :23647200.31: Is the correct answer
-        :993182413: You must devide it by the number of countries in Europe. 
+        :993182413: You must devide it by the number of countries in Europe.
         :x: Please check your formula
 
 
@@ -218,27 +218,27 @@ can practice some calculations on this new piece of data.
    .. fillintheblank:: q9_cs1_sbd
 
       |blank| has the largest population in Americas.
-      
+
       - :Venezuela: Is the correct answer!
         :x: Incorrect.
 
 3. What is the country in each region with the smallest population?
 
    .. fillintheblank:: q10_cs1_sbd
-   
+
       |blank| has the smallest population in Africa.
 
       - :Seychelles: Is the correct answer!
         :x: Incorrect.
 
 .. shortanswer:: q11_cs1_sbd
-   
+
    Write down two questions of your own, that you can explore with the combined data set.
 
 Now, using your new spreadsheet skills answer your own questions.
 
 .. shortanswer:: q12_cs1_sbd
-   
+
    Use this space to provide answers to the questions above, explaining briefly how you arrived at the answers.
 
 
@@ -258,7 +258,7 @@ creation of pivot tables as well.
    use case for pivot tables. You can see an example of transforming the orginal
    data to the pivot table view below.
 
-   
+
 .. image:: Figures/pivot_example.png
 
 
@@ -283,7 +283,7 @@ example above.
 Pivot tables can be treated like any other part of your spreadsheet. Use a pivot table to find the country with the lowest Starting A Business score in each region. Then using ``MATCH`` and ``INDEX``, add an additional column that contains the name of that country.
 
 .. fillintheblank:: q14_cs1_sbd
-   
+
    The country with the lowest starting a business score in Asia is |blank|.
 
    - :Cambodia: Is the correct answer

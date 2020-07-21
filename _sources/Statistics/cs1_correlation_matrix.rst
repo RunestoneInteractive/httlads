@@ -3,13 +3,13 @@
    International License. To view a copy of this license, visit
    http://creativecommons.org/licenses/by-sa/4.0/.
 
-Case Study 1 Challenge: Calculating a Correlation Matrix
-========================================================
+Challenge in Case Study1: Calculating a Correlation Matrix
+===========================================================
 
-Early on in our exploration of the business data, we calculated the correlation 
-between the business score and the different factors. Now we have more data and we might ask a more 
-general question about which of our columns are correlated with each other. A common way to do this is 
-to build a correlation matrix. The rows and the columns of the correlation matrix represent each of our different factors 
+Early on in our exploration of the business data, we calculated the correlation
+between the business score and the different factors. Now we have more data and we might ask a more
+general question about which of our columns are correlated with each other. A common way to do this is
+to build a correlation matrix. The rows and the columns of the correlation matrix represent each of our different factors
 and the individual values in the cells of the matrix represent the correlation between each pair of factors.
 
 The following table is an example of a correlation matrix. Suppose we have three factors A, B, and C.
@@ -30,12 +30,12 @@ The following table is an example of a correlation matrix. Suppose we have three
 
 Notice that the diagonal of this matrix has all values of 1.0. Each factor is perfectly correlated with itself.
 
-In the next steps, you will build a correlation matrix between the various factors of our starting a business data. This 
+In the next steps, you will build a correlation matrix between the various factors of our starting a business data. This
 will challenge your use of the ``$`` in defining ranges as well as your ability to think about having several cells of a spreadsheet work together.
 
-1. To calculate a correlation matrix we will make use of sheets ``INDEX`` and ``CORREL`` functions. The ``CORREL`` function expects 
-   two ranges: in our case, two columns of numbers to compute the correlation between. For example, the starting a business score and 
-   the income level. However, to make our correlation matrix, we need to compute the correlation between all pairs of columns. 
+1. To calculate a correlation matrix we will make use of sheets ``INDEX`` and ``CORREL`` functions. The ``CORREL`` function expects
+   two ranges: in our case, two columns of numbers to compute the correlation between. For example, the starting a business score and
+   the income level. However, to make our correlation matrix, we need to compute the correlation between all pairs of columns.
    Using the column letters is more compact so lets write out a few.
 
    a. DD, DE, DF, DG, DH, DI, DJ, DK, DL, ED, EE, EF, EG, EH, EI, EJ, EK, …
@@ -50,11 +50,11 @@ will challenge your use of the ``$`` in defining ranges as well as your ability 
 
    c. The aptly named ``INDEX`` function is what allows us to do this by writing one clever function and then copying and pasting it to fill out our matrix.
 
-2. It may take a bit of experimentation to get the indexes and the $ notation correct but you will eventually end up with a 
+2. It may take a bit of experimentation to get the indexes and the $ notation correct but you will eventually end up with a
    matrix where the diagonal is 1. This is a good indicator that you have things right. `This link <https://www.youtube.com/watch?v=uc55cnr8A14>`_ may also be useful
    for getting this right.
 
-3. Once you have the numbers, we can make a rough heat map by using conditional formatting. Using some conditional formatting rules, we can change 
+3. Once you have the numbers, we can make a rough heat map by using conditional formatting. Using some conditional formatting rules, we can change
    the foreground and background color of the cells. Let’s start by adding a rule that says if the correlation is between 0.75 and 1.0, then color the background green.
 
 4. You can add other rules to cover different ranges, but you will immediately see which cells we might want to focus on the most.
@@ -62,7 +62,7 @@ will challenge your use of the ``$`` in defining ranges as well as your ability 
 .. fillintheblank:: q1_sab_challenge
 
     What is the correlation between procedure-men and time-men? (round to three decimal places) |blank|
-    
+
     - :0.619: Is the correct answer
       :0.618: Use the ``ROUND`` function to perform the rounding
       :0.618898227: Round to three decimal places
@@ -121,6 +121,3 @@ will challenge your use of the ``$`` in defining ranges as well as your ability 
     :option_3: Out of reach no matter how hard I try
 
     For me to master the things taught in this lesson feels...
-
-    
-
