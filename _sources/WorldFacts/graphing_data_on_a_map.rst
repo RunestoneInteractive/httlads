@@ -174,7 +174,7 @@ The request module documentation is really helpful, so we recommend you using it
 For now, we will give you the bare bones here to get you started. 
 
 
-This website, ``restcountries.eu``provides an interface where we can get data from their site
+This website, ``restcountries.eu`` provides an interface where we can get data from their site
 rather than a web page. It is important that when you think of a web API, you understand how to ask
 it for the data that you want. For our purposes, we are going to use ``/rest/v2/alpha/XXX``. Let's take a look
 at what this means.  
@@ -753,36 +753,3 @@ by the time you finish this project.
 
 3. Take some time to talk about and present the data and the graph you created for the class.
    
-
-**Lesson Feedback**
-
-.. poll:: LearningZone_measure_6_3
-    :option_1: Comfort Zone
-    :option_2: Learning Zone
-    :option_3: Panic Zone
-
-    During this lesson I was primarily in my...
-
-.. poll:: Time_measure_6_3
-    :option_1: Very little time
-    :option_2: A reasonable amount of time
-    :option_3: More time than is reasonable
-
-    Completing this lesson took...
-
-.. poll:: TaskValue_measure_6_3
-    :option_1: Don't seem worth learning
-    :option_2: May be worth learning
-    :option_3: Are definitely worth learning
-
-    Based on my own interests and needs, the things taught in this lesson...
-
-.. poll:: Expectancy_measure_6_3
-    :option_1: Definitely within reach
-    :option_2: Within reach if I try my hardest
-    :option_3: Out of reach no matter how hard I try
-
-    For me to master the things taught in this lesson feels...
-
-
-

@@ -13,24 +13,24 @@ the dataset in more depth and use Pandas and Altair to explore and visualize the
 data in different formats, such as histograms and maps. As we go further in
 the chapter, you will realize that we do not have access to every database. Often
 we need to find other means to obtain the data. We will learn how to extract data from websites
-using web scraping methods. Finally, you will be able to use Pandas pivot table to summarize the data.
+using web scraping methods. Finally, you will be able to use the Pandas pivot table to summarize the data.
 
 
 Learning Goals
 ----------------
 
-* Learn how to visualize, analyze, and describe data in various formats
-* Learn how to extract data from different sources
-* Learn how to summarizes the data of a large data set
+* Visualize, analyze, and describe data in various formats
+* Extract data from different sources
+* Summarizes the data of a large data set
 
 
 Learning Objectives
 --------------------
 
-* Be able to use Pandas to analyze and describe data
-* Be able to visualize data with histograms and scatter plots
-* Be able to graph data on a map using web API
-* Be able to extract, clean, and save data from web documents
+* Use Pandas to analyze and describe data
+* Visualize data with histograms and scatter plots
+* Graph data on a map using web API
+* Extract, clean, and save data from web documents
 
 
 Reading List

@@ -174,7 +174,7 @@ data from online sources.
    page[:200]
 
 **NOTE:** If you get an error opening the file, you can place ``r`` before the URL, ``(r'../Data/factbook/2017/docs/notesanddefs.html')``. If you get a ``UnicodeDecodeError``, try
-putting, ``encoding = 'utf-8'``. ``Open(r'../Data/factbook/2017/docs/notesanddefs.html', encoding = 'utf-8')``.
+putting, ``encoding = 'utf-8'``. For example, ``Open(r'../Data/factbook/2017/docs/notesanddefs.html', encoding = 'utf-8')``.
 
 .. parsed-literal::
 
@@ -642,33 +642,3 @@ that lots of people want this data in a more convenient format.
           # print(all_data)
           web_scrape = pd.DataFrame(all_data).head()
 
-
-**Lesson Feedback**
-
-.. poll:: LearningZone_measure_6_4
-    :option_1: Comfort Zone
-    :option_2: Learning Zone
-    :option_3: Panic Zone
-
-    During this lesson I was primarily in my...
-
-.. poll:: Time_measure_6_4
-    :option_1: Very little time
-    :option_2: A reasonable amount of time
-    :option_3: More time than is reasonable
-
-    Completing this lesson took...
-
-.. poll:: TaskValue_measure_6_4
-    :option_1: Don't seem worth learning
-    :option_2: May be worth learning
-    :option_3: Are definitely worth learning
-
-    Based on my own interests and needs, the things taught in this lesson...
-
-.. poll:: Expectancy_measure_6_4
-    :option_1: Definitely within reach
-    :option_2: Within reach if I try my hardest
-    :option_3: Out of reach no matter how hard I try
-
-    For me to master the things taught in this lesson feels...

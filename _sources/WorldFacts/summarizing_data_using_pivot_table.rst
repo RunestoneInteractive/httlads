@@ -121,8 +121,6 @@ Then, create a pivot table using the region as the rows, form of government as
 the columns, and summarize the GDP in tabular form.
 
 
-
-
 **Lesson Feedback**
 
 .. poll:: LearningZone_measure_6_5
