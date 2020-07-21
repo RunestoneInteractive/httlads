@@ -6,8 +6,9 @@
 
 Most and Least Common UN words
 ==============================
+
 When analyzing text, it can be beneficial to know the most common and least common 
-word used in the text. This can help us to better analyze the text and understand 
+word used in the text. This can help us to analyze the text better and understand 
 the context of the text. However, there are some obstacles that we will have to 
 overcome before. 
 

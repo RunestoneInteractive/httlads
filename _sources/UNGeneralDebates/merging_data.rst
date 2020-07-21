@@ -7,10 +7,8 @@
 Merging and Tidying Data
 ========================
 
-In this section we will learn how to merge two data frames that contain information that we wish to put together. 
-This will create a new data frame that contains the information of both data frames as long as they have a primary 
-and foreign key, meaning they have to have a unique column in common. Then we will learn the basic principles of tidying 
-up data and the relationships that a data set can have. 
+In this section, we will learn how to merge two data frames that contain information that we wish to put together. 
+This will create a new data frame that contains the information of both data frames as long as they have a primary and foreign key, meaning they have to have a unique column in common. Then we will learn the basic principles of tidying up data and the relationships that a data set can have. 
 
 Now that we know how the file is encoded, we can read it easily.
 
