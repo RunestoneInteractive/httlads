@@ -7,14 +7,13 @@
 Introduction
 =============
 
-In this chapter, we will explore the concept of analyzing data sets in order to 
-summarize their main characteristics and information. We will start by  exploring
-the dataset in more depth, and use Pandas and Altair to explore and visualize the
-data in different formats such as with histograms and on a map. As we go further in
-the chapter, you will realize that we do not have access to  every database. Often
+This chapter will explore the concept of analyzing data sets to 
+summarize their main characteristics and information. We will start by exploring
+the dataset in more depth and use Pandas and Altair to explore and visualize the
+data in different formats, such as histograms and maps. As we go further in
+the chapter, you will realize that we do not have access to every database. Often
 we need to find other means to obtain the data. We will learn how to extract data from websites
-using web scraping methods. Finally, you will be able to use Pandas pivot 
-table to summarize the data.
+using web scraping methods. Finally, you will be able to use Pandas pivot table to summarize the data.
 
 
 Learning Goals

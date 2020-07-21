@@ -8,19 +8,19 @@ Graphing Data on a Map
 =======================
 
  
-In this section, we will explore data visualization techniques that uses data to display information in a more abstract and helpful format so that the results of the data analysis are better understood.
-For this exercise we will focus on graphing data on a map using Altair.
+In this section, we will explore data visualization techniques that use data to display information in a more abstract and helpful format so that the data analysis results are better understood.
+For this exercise, we will focus on graphing data on a map using Altair.
 
 
 Let's take on the seemingly simple task of plotting some of the country data on
-a map, like we did in Google Sheets earlier. We'll see that this is one area
+a map as we did in Google Sheets earlier. We'll see that this is one area
 where things are not quite as simple as they are in Sheets. But we can make it
 work with a bit of effort.
 
 Altair provides us with the facility to make a blank map. But filling in the
 data requires a bit more work on our part.
 
-This is a good example of learning by example, then extrapolating what you need
+This is an excellent example of learning by example, then extrapolating what you need
 to do based on understanding the example.
 
 The counties data that is passed to the chart is the data needed to
@@ -47,13 +47,13 @@ create and outline the map.
 
 
 What about our encoding channels?! The primary data needed to draw the map using
-a ``mark_geoshape`` was passed to the Chart, but that is really secondary data
-for us. What we care about is graphing the unemployment data by county. That is
+a ``mark_geoshape`` was passed to the Chart, but that is secondary data
+. What we care about is graphing the unemployment data by county. That is
 in a different data frame with a column called ``rate``.
 
 With a geoshape, we can encode the county data using color. But, there is no
 unemployment data in counties, so we have to use a ``transform_lookup`` to
-**map** from the way counties are identified in the geo data to our DataFrame
+**map** from the way counties are identified in the geodata to our DataFrame
 that contains unemployment data.
 
 
@@ -121,9 +121,9 @@ that contains unemployment data.
 Using the ``transform_lookup`` method, we can arrange for the id in the
 geographic data to be matched against the id in our ``unemp_data`` data frame.
 This allows us to make use of two data frames in one graph. The example below is
-a bit misleading, in that id is used both as the lookup, as well as the key in
+a bit misleading because id is used both as lookup and key in
 the call to LookupData. The lookup value refers to the column name in the
-DataFrame passed to Chart, where as the second parameter to the LookupData call
+DataFrame passed to Chart, whereas the second parameter to the LookupData call
 is the name of the column in the ``unemp_data`` DataFrame. It is just a
 coincidence that they have the same name in this example.
 
@@ -153,49 +153,46 @@ Using a Web API to get Country Codes
 
 Now that you are familiar with graphing data on a map using Altair. We can
 make use of the provided example above to create a graph of the world where
-the countries are colored by one of the features in the `Starting a Business csv file <../_static/starting_a_business.csv>`_ data set.
+the countries are colored by one of the features in the `Starting a Business CSV file <../_static/starting_a_business.csv>`_ data set.
 
 The goal of this section is to learn how to use web API to gather data. In this
-specific exercise we will use a web API to get data that maps country codes to 
-country numbers. We will learn how to add columns to our Starting a Business data set
+specific exercise, we will use a web API to get data that maps country codes to country numbers. We will learn how to add columns to our Starting a Business data set
 using the ``map`` function. This new column will contain country codes.
 
-The goals for this exercies is to add a new column to our data set and then graph it on a map.
-We can get the information for the new column from different sources. But this is a good chance
-to learn how to get the information using web API. In order to get this information we will use a web API from a 
-website. **API** stands for Application Programmer Interface. Each website will have its own
+This exercise aims to add a new column to our data set and then graph it on a map.
+We can get the information for the new column from different sources. But this is an excellent chance
+to learn how to get the data using web API. To get this information, we will use a web API from a 
+website. **API** stands for Application Programmer Interface. Each website will have its
 convention for how you ask it for data, and the format in which the data is
 returned. Once we obtained the required data using web API, we can follow the example
-in the beginning of this section to add the new column and then make a world map and show Starting_a_Business_score
+at the beginning of this section to add the new column and then make a world map and show Starting_a_Business_score
 from the Starting a Business data set.
 
-First, lets familiarize ourselves with the `requests module <http://http://docs.python-requests.org>`_.
-This tool is amazing because the request module is what allows us to communicate to databases across the web.
+First, let's familiarize ourselves with the `requests module <http://http://docs.python-requests.org>`_.
+This tool is amazing because the request module allows us to communicate with databases across the web.
 The request module documentation is really helpful, so we recommend you using it to learn about its features in detail. 
 For now, we will give you the bare bones here to get you started. 
 
 
-This website, ``restcountries.eu``, provides an interface where we can get data from their site
-rather than a web page. It is really important that when you think of a web API, you understand how to ask
+This website, ``restcountries.eu``provides an interface where we can get data from their site
+rather than a web page. It is important that when you think of a web API, you understand how to ask
 it for the data that you want. For our purposes, we are going to use ``/rest/v2/alpha/XXX``. Let's take a look
 at what this means.  
 
 
-* ``/rest``: Technically, REST stands for REpresentational State Transfer. This
-  uses the HTTP protocol to ask for and respond with data.
+* ``/rest``: Technically, REST stands for REpresentational State Transfer. This uses the HTTP protocol to ask for and respond with data.
 * ``/v2``: This is version 2 of this website's protocol.
-* ``/alpha``: This tells the website that the next thing we are going to pass
-  tell it is the three-letter code for the country.
-* ``XXX``: This can be any valid three-letter country code, for example "usa".
+* ``/alpha``: This tells the website that the next thing we are going to pass is the country's three-letter code.
+* ``XXX``: This can be any valid three-letter country code, for example, "usa".
 
 
-**NOTE** there are other ways to look up information, such as the countries numericCode, language, currency, and more. 
+**NOTE** there are other ways to look up information, such as the countries' numericCode, language, currency, and more. 
 These other methods are in the website ``restcountries.eu``.
 
-Now that we know the format, lets open a new tab in your browser and see the call in action. Paste the following 
+Now that we know the format let's open a new tab in your browser and see the call in action. Paste the following 
 URL in your web browser: `https://restcountries.eu/rest/v2/alpha/usa`. As you may have noticed, you do not get a 
 web page in response. You get information that looks like a Python **dictionary**. We will come back to this later
-on in this section, but we can do something similiar with a python program using the requests library. 
+on in this section, but we can do something similar with a python program using the requests library. 
 
 .. code:: python3
 
@@ -226,18 +223,18 @@ We can also look at the text that was returned.
 
 That looks like an ugly mess! Fortunately, it's not as bad as it seems. If you
 look closely at the data, you will see that it starts with a ``{`` and ends with
-a ``}``. In fact, you may realize this looks a lot like a Python dictionary! If
+a ``}``. You may realize this looks a lot like a Python dictionary! If
 you thought that, you are correct. This is a big long string that represents a
-Python dictionary. Better yet, we can convert this string into an actual Python
+Python dictionary. We can convert this string into an actual Python
 dictionary and then access the individual key-value pairs stored in the
 dictionary using the usual Python syntax!
 
 The official name for the format that we saw above is called **JSON**: JavaScript
-Object Notation. It's a good acronym to know, but you don't have to know
-anything about Javascript in order to make use of JSON.  You can think of the
-results as a Python dictionary.  It can be a bit daunting at first as there can be
-many keys and in fact JSON is often full of dictionaries of dictionaries of lists of dictionaries
-but fear not, you can figure it out with a bit of experiementation.
+Object Notation. It's an excellent acronym to know, but you don't have to know
+anything about Javascript to make use of JSON.  You can think of the
+results as a Python dictionary.  It can be a bit daunting at first, as there can be
+many keys. JSON is often full of dictionaries of dictionaries of lists of dictionaries
+but fear not; you can figure it out with a bit of experimentation.
 
 
 .. code:: python3
@@ -323,11 +320,10 @@ For example, timezones is a top level key, which produces a list of the valid ti
     'UTC+12:00']
 
 
-But, languages is more complicated. It also returns a list but each element of the list corresponds
-to one of the official languages of the country.  The USA has only one official language but other countries
+But languages are more complicated. It also returns a list, but each element of the file corresponds
+to one of the country's official languages.  The USA has only one official language, but other countries
 have more.  For example, Malta has both Maltese and English as official languages.  Notice that the two dictionaries
-have an identical structure, a key for the two letter abbreviation, a key for the three letter abbreviation, the name
-and the native name.
+have an identical structure, a key for the two-letter abbreviation, a key for the three-letter abbreviation, the name, and the native name.
 
 .. parsed-literal::
 
@@ -504,7 +500,7 @@ For this example, we will use the Starting a Business data set and look at the S
 
 
 
-Now that we have a really nice way to get the additional country information,
+Now that we have an excellent way to get the additional country information
 let's add the numeric country code as a new column in our ``wd`` DataFrame. We
 can think of adding the column as a transformation of our three-letter country
 code to a number. We can do this using the ``map`` function. You learned about
@@ -517,7 +513,7 @@ to ``map``. ``map`` is a method of a Series, so we use the syntax
 to each element of the series and constructs a brand new series.
 
 
-For our case, we need to write a function that takes a three-letter country code as a parameter and returns the numeric code we lookup converted to an integer, let’s call it get_num_code. You have all the details you need to write this function. Once you write this function, you can use the code below.
+For our case, we need to write a function that takes a three-letter country code as a parameter and returns the numeric code we lookup converted to an integer; let’s call it get_num_code. You have all the details you need to write this function. Once you write this function, you can use the code below.
 
 
 
@@ -751,12 +747,11 @@ or professor picked out. You might even feel like you have awesome superpowers
 by the time you finish this project.
 
 1. Use the web API to obtain the data. Most sites are going to provide it in
-   JSON format similar to what we saw.
+   JSON format which is similar to what we saw.
 
 2. Next, create a graph of your data using Altair.
 
-3. Take some time to talk about and present the data and the graph you created
-   to the class.
+3. Take some time to talk about and present the data and the graph you created for the class.
    
 
 **Lesson Feedback**

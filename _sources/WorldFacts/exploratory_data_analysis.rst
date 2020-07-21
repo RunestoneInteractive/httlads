@@ -8,19 +8,17 @@ Exploratory Data Analysis
 =========================
 
 In this section, we will walk you through the process of analyzing and inspecting data. We 
-will go over the process of modeling and visualing a data set with different set of tools. 
-For this exercies, we will use the World Bank Data on Protecting Minority Investors which was 
-provided to you in the Introduction.
+will go over the process of modeling and visualizing a data set with a different set of tools. 
+For this exercise, we will use the World Bank Data on Protecting Minority Investors which was 
+provided to you in the introduction.
 
 
 Loading Data into a DataFrame from a CSV File
 ----------------------------------------------
 
-In the contemporary world, one of the most common ways you will find data is in a **CSV file** format. CSV stands for
-"comma separated value", and this format allows us to share data files in a simple text format. To get our first glimpse at **Pandas** and its capabilities,
-we will be using the data about countries we used in the spreadsheet module. A CSV file can be opened in any text editor, 
-however, it is sometimes hard to read. Although it is hard to read, the structure makes it really easy to parse for analysis, which we 
-will use to our advantage. In the following block of code you will see the first few lines of the raw CSV file for this project. 
+One of the most common ways you will find data in the contemporary world is in a **CSV file** format. CSV stands for
+"comma-separated value," This format allows us to share data files in a simple text format. To get our first glimpse at **Pandas** and its capabilities,
+we will be using the data about the countries we used in the spreadsheet module. A CSV file can be opened in any text editor; however, it is sometimes hard to read. Although it is hard to read, the structure makes it easy to parse for analysis, which we will use to our advantage. In the following block of code, you will see the first few lines of the raw CSV file for this project. 
 It may look intimidating, but we will unpack it as we go. 
 
 .. code-block:: none
@@ -182,10 +180,9 @@ Describing the Data
 - Extent of ownership and control index (0-7)
 - Extent of corporate transparency index (0-7)
 
-A really useful method that pandas provides us with is ``describe``. ``describe`` is a method that 
-is used to analyze and calculate statistical data. Below is an example of what this method is 
-capable of. 
- 
+A handy method that pandas provide us with is ``describe``.
+`` describe`` is a method that is used to analyze and calculate statistical data. 
+Below is an example of what this method is capable of. 
 .. code:: python3
 
    wd.describe()
@@ -342,11 +339,9 @@ Visualizing Data with Histogram
 
 
 The code above explains every step in detail on how to make a **histogram** chart, creating a mark that returns
-the new chart to adding encoding. However, There is also a shortcut to what we did above. We can 
-write that code into a single line because once we create a mark, we can start to add the encoding right away.
-All of the other methods are designed to return the proper object, therefore, we can write all of the
-calls above into a single line. We also do not need to explicitly call "display", because Altair returns 
-an object that the Jupyter environment knows how to display automatically.
+the new chart to adding encoding. However, there is also a shortcut to what we did above. We can write that code into a single line because once we create a mark, we can start to add the encoding right away.
+The other methods are designed to return the proper object. Therefore, we can write all of the
+calls above into a single line. We also do not need to explicitly call "display" because Altair returns an object that the Jupyter environment knows how to display automatically.
  
 
 .. code:: python3
@@ -403,7 +398,7 @@ Scatter Plots for Discovering Relationships
 
 We can visualize and show the relationship between data using **scatter plots**.
 Let's make a simple scatter plot of protecting_minority_investors_score versus starting_a_business_score of the
-locations. For this exercies, we will use `Protecting Minority Investors csv file <../_static/protecting_minority_investors.csv>`_.
+locations. For this exercise, we will use `Protecting Minority Investors CSV file <../_static/protecting_minority_investors.csv>`_.
 
 
 .. code:: python3
@@ -413,12 +408,11 @@ locations. For this exercies, we will use `Protecting Minority Investors csv fil
 .. image:: Figures/visualization_3.png
 
 As we can see, that is a very scattered graph that does not focus on one area. Let’s redo the graph so we can focus on one area.
-Let us focus on the locations where protecting_minority_investors_score is less than 50, and the locations where starting_a_business_score is less than 70. Let’s start with the first part.
+Let us focus on the locations where protecting_minority_investors_score is less than 50, and the starting_a_business_score is less than 70. Let’s start with the first part.
 
-To do this, we will create a new **DataFrame** where we focus on the locations where the protecting_minority_investors_score is less 
-than 50, and the locations starting_a_business_score is less than 70. Pandas make this really easy with its querying power. 
+To do this, we will create a new **DataFrame** where we focus on the locations where the protecting_minority_investors_score is less than 50, and the locations starting_a_business_score is less than 70. Pandas make this easy with its querying power. 
 
-The statement below produces a series of **boolean values**. These boolean values are used to index the data frame, and only the rows 
+The statement below produces a series of **boolean values**. These boolean values are used to index the data frame and only the rows 
 corresponding to True values are returned in the result.
 
 
@@ -605,8 +599,8 @@ Let's look at the locations of less than 20.
 
 
 Next, we can use this information and graph these locations to get a visual representation of the data.
-You can do this two ways, you can assign your query to a variable and putting the variable in the call to create a chart.
-Or, you can simply put the query right into the call to create a chart.  
+You can do this two ways; you can assign your query to a variable and putting the variable in the call to create a chart.
+Or, you can put the query right into the call to create a chart.  
 
 
 
@@ -619,13 +613,10 @@ Or, you can simply put the query right into the call to create a chart.
 .. image:: Figures/visualization_4.png
 
 
-Pretty neat! As we can see one location has a very small value while others are 
-farther to the right. This graph encapsulates all the protecting_minority_investors_score
-that is less than 20, we also added a tooltip parameter so that if you 
-hover over that point, you will see it is Somalia. Let’s improve our query to focus 
-on the locations where starting_a_business_score is less than 70.
+Pretty neat! As we can see, one location has a minimal value while others are farther to the right. This graph encapsulates all the protecting_minority_investors_score
+that is less than 20; we also added a tooltip parameter so that if you hover over that point, you will see it is Somalia. Let's improve our query to focus on the locations where starting_a_business_score is less than 70.
 
-We can create a more compliated boolean expression by using ``|`` (logical *or*)
+We can create a more complicated boolean expression by using "| "(logical *or*)
 and ``&`` (logical *and*) operators. In Python, these two operators are
 used for bitwise *or* and bitwise *and*.
 
@@ -903,8 +894,7 @@ used for bitwise *or* and bitwise *and*.
 .. image:: Figures/visualization_5.png
 
 Now, let’s suppose you want to travel and start your dream business in one of your favorite locations. For example, 
-let’s say you have always wanted to go to Malta and start your business, you might be curious about Malta . Let’s see 
-what data we have in the data frame for Malta using equality. 
+let’s say you have always wanted to go to Malta and start your business; you might be curious about Malta. Let’s see what data we have in the data frame for Malta using equality. 
 
 
 .. code:: python3
@@ -964,15 +954,14 @@ what data we have in the data frame for Malta using equality.
 
 As you can see, we found very interesting information about Malta. You can try some other countries on your own but
 keep in mind that sometimes names and other string can end up with spaces at the beginning or the end of the word or phrase. 
-For instance, Malta could have ended up with space at the end in the data set. We might not have been able to get the information using 'Malta' and might have
-had to type 'Malta '. This would have been very inconvenient and we don't want to have to remember to put spaces at the beginning or end of every string. 
+For instance, Malta could have ended up with space at the end of the data set. We might not have been able to get the information using 'Malta' and might have
+had to type 'Malta '. This would have been very inconvenient, and we don't want to have to remember to put spaces at the beginning or end of every string. 
 Therefore, we always need to do a bit of cleanup to strip those spaces.
 
 
-Python has a method called ``strip`` which does exactly what we want, it removes characters
+Python has a method called ``strip`` which does what we want, it removes characters
 from left and right based on the argument passed. You may be wondering, how can we apply this to all of the strings
-in the Series. Well, Pandas allows us to do this using ``str`` attribute of the series in combination with most of the 
-standard string methods you know about.
+in the series. Well, Pandas allows us to do this using the ``str`` attribute of the series in combination with most of the standard string methods you know about.
 
 
 .. code:: python3
@@ -996,7 +985,7 @@ standard string methods you know about.
    Name: location, Length: 191, dtype: object
 
 
-If Malta had a space after it, the strip method would get rid of it and we could just use 'Malta' to get the 
+If Malta had space after it, the strip method would get rid of it, and we could just use 'Malta' to get the 
 necessary information from our data set.
 
 .. code:: python3
@@ -1054,9 +1043,9 @@ necessary information from our data set.
 Power Tools: Scatter Matrix
 ---------------------------
 
-There might be endless pairs of things we might want to look at to see if there is any correlation. However, this would 
-take a long time and can be very tedius. This is where Scatter Matrix comes in to the rescue. Scatter Matrix allows you to 
-see multiple pairs of things at once as shown below. 
+There might be endless pairs of things we might want to see if there is any correlation. 
+However, this would take a long time and can be very tedious. This is where Scatter Matrix 
+comes into the rescue. Scatter Matrix allows you to see multiple pairs of things at once, as shown below. 
 
 
 
@@ -1092,13 +1081,11 @@ Developing Fluency
 ------------------
 
 As we saw, Pandas can be very useful and powerful. It was probably a lot to take in, 
-but if you develop fluency in the basics it can be part of your daily workflow. Queries 
-is a big part of Pandas, therefore, you should strive to make simple queries without having to 
-think about the syntax. This can be achieved by lots of practice and repetition. 
+but if you develop fluency in the basics, it can be part of your daily workflow. Queries are a big part of Pandas; therefore, you should strive to make simple queries without thinking about the syntax. Lots of practice and repetition can achieve this. 
 
-That doesn’t mean you can't go on and do lots of much harder things, it just
+That doesn't mean you can't go on and do lots of much harder things, it just
 means that it will take longer at first, as you have to go back and review
-documentation in order to become efficient.
+documentation to become efficient.
 
 
 Practice Questions
