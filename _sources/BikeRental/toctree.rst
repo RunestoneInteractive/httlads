@@ -21,3 +21,4 @@ Pizza and Bike Rental
    pizza_regression.rst
    multi_pizza.rst
    predicting_rentals.rst
+   glossary.rst
