@@ -4,8 +4,8 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-Case Study 1. Comparing Starting a Business data across years
-=============================================================
+Case Study 2: Comparing Data Across The Years
+=============================================
 
 We have two files of Starting a Business data, one for 2019 that you have been using, and
 another for `2014 <../_static/Starting_a_Business_2014.csv>`_, so you can do some

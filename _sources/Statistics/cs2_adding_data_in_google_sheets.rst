@@ -3,8 +3,8 @@
    International License. To view a copy of this license, visit
    http://creativecommons.org/licenses/by-sa/4.0/.
 
-Case Study 1. Adding More Data
-==============================
+Case Study 2: Adding Data Using Google Sheets
+=============================================
 
 Before we begin, make sure that the google sheets file you are working on is exactly like the one given at the beginning of this case study. Any changes you made to the google sheets while following along in the previous section should be deleted.
 
