@@ -339,7 +339,7 @@ Visualizing Data with Histogram
 
 
 The code above explains every step in detail on how to make a **histogram** chart, creating a mark that returns
-the new chart to adding encoding. However, there is also a shortcut to what we did above. We can write that code into a single line because once we create a mark, we can start to add the encoding right away.
+the new chart to add encoding. However, there is also a shortcut to what we did above. We can write that code into a single line because once we create a mark, we can start to add the encoding right away.
 The other methods are designed to return the proper object. Therefore, we can write all of the
 calls above into a single line. We also do not need to explicitly call "display" because Altair returns an object that the Jupyter environment knows how to display automatically.
  
@@ -599,7 +599,7 @@ Let's look at the locations of less than 20.
 
 
 Next, we can use this information and graph these locations to get a visual representation of the data.
-You can do this two ways; you can assign your query to a variable and putting the variable in the call to create a chart.
+You can do this two ways; you can assign your query to a variable and put the variable in the call to create a chart.
 Or, you can put the query right into the call to create a chart.  
 
 
@@ -616,7 +616,7 @@ Or, you can put the query right into the call to create a chart.
 Pretty neat! As we can see, one location has a minimal value while others are farther to the right. This graph encapsulates all the protecting_minority_investors_score
 that is less than 20; we also added a tooltip parameter so that if you hover over that point, you will see it is Somalia. Let's improve our query to focus on the locations where starting_a_business_score is less than 70.
 
-We can create a more complicated boolean expression by using "| "(logical *or*)
+We can create a more complicated boolean expression by using ``|`` (logical *or*)
 and ``&`` (logical *and*) operators. In Python, these two operators are
 used for bitwise *or* and bitwise *and*.
 
