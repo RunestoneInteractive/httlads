@@ -11,10 +11,15 @@ Exploratory Data Analysis
    :maxdepth: 2
 
    introduction.rst                        
-   exploratory_data_analysis.rst
+   data_analysis.rst
    graphing_data_on_a_map.rst
    Web_Scraping.rst
-   summarizing_data_using_pivot_table
-   glossary.rst                            
+   summarizing_gov_form_using_pandas_pivot_table.rst
+   exploratory_data_analysis.rst
+   screenscrape_cids.rst
+   scrape_cia.rst
+   summarizing_data_using_pivot_table.rst
+   glossary.rst
+
    
    
