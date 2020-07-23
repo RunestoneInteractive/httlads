@@ -53,4 +53,4 @@ of ``hr`` which is not available in ``day.csv``).
 - ``cnt``: count of total rental bikes including both casual and registered
 
 
-`You can read about UCI's work with this data set here. <https://link.springer.com/article/10.1007/s13748-013-0040-3>`
+`You can read about UCI's work with this data set here. <https://link.springer.com/article/10.1007/s13748-013-0040-3>`_

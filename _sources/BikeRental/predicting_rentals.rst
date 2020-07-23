@@ -136,7 +136,7 @@ values for the test data. This is a much fairer model evaluation as we are not
 using any of the data that the model already "knowns" the answer for. In
 addition to the mean squared error, we can also compute the **mean absolute
 error**. This is a little nicer for us because the units of the error are the
-same as the what we are trying to predict. In this case, we are not trying to
+same as what we are trying to predict. In this case, we are not trying to
 predict bike rentals squared (whatever that means), but simply the number of
 bike rentals. We can also compute a measure called :math:`R^2` which is a
 measure of how close the data are to the regression line.
@@ -480,7 +480,7 @@ the n-dimensional space in strange ways. Some axes are elongated with respect to
 other axes. For example, think about the values for our one-hot encoded features
 like the season or weekend. Those values are either 0 or 1. However, the
 temperature values can range from -8 to a max of 102. If you just use those two
-features, think of how the 2-dimensional graph of ``isweekday`` loos, compareed
+features, think of how the 2-dimensional graph of ``isweekday`` looks, compareed
 to temperature.
 
 Now, why is this a problem? Remember that we are trying to minimize the sum of
