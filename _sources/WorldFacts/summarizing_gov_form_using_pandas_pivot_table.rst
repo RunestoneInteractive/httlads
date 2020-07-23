@@ -8,48 +8,45 @@
 Comparing Government Forms
 ============================
 
-The goal of this section is to be able to summarize, sort, organize or count the
-data in a specific database using pivot tables. In this section, we will work with 
-the data that we scraped from CIA World Factbook website. We will compare different forms
-of government, and how the form of government might have an impact on economic success of the countries. For this example, 
-we will measure economic stability based on GDP. We'll do this by building a pivot table in Pandas. You have
+The goal of this section is to be able to summarize, sort, organize, or count the
+data in a specific database using pivot tables. In this section, we will work with the data that we scraped from the CIA World Factbook website. We will compare different forms
+of government and how the form of government might impact the countries' economic success. For this example, 
+we will measure financial stability based on GDP. We'll do this by building a pivot table in Pandas. You have
 already done this in a spreadsheet, so it's good to see how to do it in Pandas
-as well. In order to accomplish this, we are going to have to do the following.
+. To accomplish this, we are going to have to do the following.
 
-1. Learn or review how you can do some web scraping to get the form of
-   government.
+1. Learn or review how you can do some web scraping to get the form of government.
 2. Learn about the ``pivot_table`` and ``pivot`` methods
 3. Practice adding new data to a data frame
 
 
-If you haven't already, you should review the example of :ref:`screenscrape`.
+If you haven't already, you should review the example of ref:`screenscrape`.
 This will show you the basics of reading and grabbing information out of a page.
 
 
-**NOTE:** If you scraped the whole data from CIA World Factbook 2017 in the previous 
-exercies, you should be able to use the Governmenty Type field from the CSV file you saved. However, you can also
-dig in to getting the information the Government type information from `this page <../_static/government_type.html>`_.
+**NOTE:** If you scraped the whole data from CIA World Factbook 2017 in the previous exercise, you should be able to use the Government Type field from the CSV file you saved. However, you can also
+dig into getting the information the Government type information from `this page <../_static/government_type.html>`_.
 If you decide to use this link, make sure to add the new information to your existing data set.
 
 
-Now, let's look at making a pivot table. We will do an example to see how government forms, region
+Now, let's look at making a pivot table. We will do an example to see how government forms, regions
 of the world, and parts of the economy might be related. For this exercise, we will use GDP.
-We have a column for region, a column for government forms, and we have information on the GDP.
-What we want to do is summarize that information in a table where we have a row
-for each region, and a column for each classification of government form. Then in each
+We have a column for the region, a column for government forms, and information on the GDP.
+We want to summarize that information in a table where we have a row
+for each region and a column for each classification of government form. Then in each
 cell, we would like to summarize the fraction of the economy that comes from
 GDP.
 
 
-We have used government forms for our classifaction which is nominal. If the information you choose for column is numeric and you want change it to
-nominal, you can use the ``map`` method, a lambda function, and a dictionary that maps from that specifc column number to a label. 
+We have used government forms for our nominal classification. If the information you choose for the column is numeric and you want to change it to
+nominal, you can use the ``map`` method, a lambda function, and a dictionary that maps from that specific column number to a label. 
 
 Now, let's pivot the table. The pivot table method takes three parameters:
-``index``, ``columns``, and ``values``. The index parameter asks "what values
+``index``, ``columns``, and ``values``. The index parameter asks, "what values
 from the original table should I use as the new row index?". The columns
-parameter asks "what values from the original table should I use as the column
+parameter asks, "what values from the original table should I use as the column
 headings?". The values parameter says what values to include in the cells. In
-most cases, these values will need to be aggregated in some way, and by default
+most cases, these values will need to be aggregated in some way, and by default,
 the aggregation is to take the mean.
 
 
@@ -415,53 +412,23 @@ the aggregation is to take the mean.
 
 
 
-The ``pivot`` function works like the ``pivot_table`` function, but does not do
+The ``pivot`` function works like the ``pivot_table`` function but does not do
 any aggregation. Therefore, it will throw an error if you have duplicate index
 rows.
 
 
-Try changing the values parameter to be a list of of columns maybe Agriculture,
-Service, and Industry. How does that change your table?
+Try changing the values parameter to be a list of columns may be Agriculture,
+Service and Industry. How does that change your table?
 
 
 Project
 -------
 
-In this project, we will see how climate, region of the world, and parts of the economy might be related.
+In this project, we will see how climate, a region of the world, and parts of the economy might be related.
 
-Create a pivot table using the region as the rows, Climate as
+Create a pivot table using the region as the rows, climate as
 the columns, and summarize the fraction of the economy that comes from
 agriculture.
 
-
-**Lesson Feedback**
-
-.. poll:: LearningZone_6
-    :option_1: Comfort Zone
-    :option_2: Learning Zone
-    :option_3: Panic Zone
-
-    During this lesson I was primarily in my...
-
-.. poll:: Time_6_
-    :option_1: Very little time
-    :option_2: A reasonable amount of time
-    :option_3: More time than is reasonable
-
-    Completing this lesson took...
-
-.. poll:: TaskValue_6
-    :option_1: Don't seem worth learning
-    :option_2: May be worth learning
-    :option_3: Are definitely worth learning
-
-    Based on my own interests and needs, the things taught in this lesson...
-
-.. poll:: Expectancy_6
-    :option_1: Definitely within reach
-    :option_2: Within reach if I try my hardest
-    :option_3: Out of reach no matter how hard I try
-
-    For me to master the things taught in this lesson feels...
 
 
