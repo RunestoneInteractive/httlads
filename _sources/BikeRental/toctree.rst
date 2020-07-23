@@ -9,6 +9,7 @@ Pizza and Bike Rental
    :caption: Introduction
    :maxdepth: 2
 
+   introduction.rst
    bike_share_intro.rst
    introduction_to_SQL.rst
    bike_data_starter.rst
