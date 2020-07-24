@@ -18,6 +18,7 @@ Pizza and Bike Rental
    aggregation_SQL.rst
    joining_SQL.rst
    pandas_and_SQL.rst
+   colab_pandas_and_SQL.rst
    time_series_bikes.rst
    pizza_regression.rst
    multi_pizza.rst
