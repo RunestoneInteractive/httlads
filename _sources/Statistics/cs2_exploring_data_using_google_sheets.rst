@@ -15,7 +15,7 @@ related to business.
 Thinking About Starting Your Business
 ---------------------------------------
 
-This case study utilizes the `Starting a Business <../_static/Starting_a_Business_2019.csv>`_ data set obtained from the Doing Business-World Bank website. The dataset contains indicators from over 190 countries that measure the relative ease of starting a business in those countries. The data set looks at two limited liability companies in various regions and countries around the world.
+This case study utilizes the `Starting a Business <../_static/starting_a_business.csv>`_ data set obtained from the Doing Business-World Bank website. The dataset contains indicators from over 190 countries that measure the relative ease of starting a business in those countries. The data set looks at two limited liability companies in various regions and countries around the world.
 
 Each country in the dataset measures things such as the minimum amount of capital investment an entrepreneur must have to start a business, and the number of procedures that must be completed to register the business, etc. 
 
@@ -138,14 +138,14 @@ a. Now, you can use ``MATCH`` and ``INDEX`` functions. The ``MATCH`` function al
    Notice that the match function searches for the value in cell N193 in the range ``N2:N192``, and the 0 tells Google Sheets 
    that the data is not sorted. The 0 is important because, without it, sheets will assume the data is sorted and will stop when it finds a value greater than the value in N194.
 
-b. Type ``=INDEX(B2:B192, N194)`` in cell N195. The ``B2:B192`` parameters is the range from which ``INDEX`` will return a corresponding value; in this 
+b. Type ``=INDEX(A2:A192, N194)`` in cell N195. The ``A2:A192`` parameters is the range from which ``INDEX`` will return a corresponding value; in this 
    case, it is the Location. N194 from the previous question is ``=MATCH(N193, N2:N192, 0)``. So the ``INDEX`` is practically telling sheets to find the 
-   Location (from column B) that is found in the same row as the maximum value.
+   Location (from column A) that is found in the same row as the maximum value.
 
 c. All three steps shown above can be performed in a single cell. Let’s look at the country that has the lowest Procedure Men number . 
    In cell F193 type ``=INDEX($B2:$B141, MATCH(MIN(F2:F141), F2:F141, 0))``. The MATCH and MIN functions both return one value. 
    So, sheets will first find the minimum value in cells ``J2:J141``. Then it will use the MATCH function to find the cell location (column and row) 
-   of where that minimum value is. Finally, it will use the ``INDEX`` function to find what value from ``B2:B141`` matches up with the given parameters. Try
+   of where that minimum value is. Finally, it will use the ``INDEX`` function to find what value from ``A2:A141`` matches up with the given parameters. Try
    this and see what it returns. It should return New Zealand, its region, starting a business rank, and starting a business score.
 
 d. Practice using the functions you have learned by finding the names of locations for other columns.
