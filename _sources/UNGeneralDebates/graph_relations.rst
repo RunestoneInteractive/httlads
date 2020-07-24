@@ -36,7 +36,7 @@ The columns are:
 * ``ref_count``: The number of times a reference is made over all speeches
 
 When we are all done, we will put them together into a matrix that will have the
-country codes as the rows and the columns, and the cells will contain the count
+country codes as the rows. The columns and the cells will contain the count
 of the number of references.
 
 This project might sounds a bit ambitious to tackle all at once, so it's
