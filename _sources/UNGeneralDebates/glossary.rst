@@ -18,17 +18,17 @@ Glossary
 
 **Heatmap:** is a graphical representation that uses a system of color-coding to represent different values in a data set.
 
-**many-to-many:** is a relation in a database where several records in one table are associated with several records in another table.
+**Many-to-many:** is a relation in a database where several records in one table are associated with several records in another table.
 
 ``networkx`` is a Python library that is used for studying graphs.
 
-**node:** is a basic unit of a linked list or tree data structure that contains data.
+**Node:** is a basic unit of a linked list or tree data structure that contains data.
 
 **Observational Unit:** is the overall unit for which information is received, and then statistics are compiled in the process of collecting statistical data.
 
-**one-to-many:**  is a relation in a database where one record, usually called the parent, is associated with several other records, usually called child records, in another table.
+**One-to-many:**  is a relation in a database where one record, usually called the parent, is associated with several other records, usually called child records, in another table.
 
-**one-to-one:** is a relation in a database where one record of a table is associated with one and only one record in another table.
+**One-to-one:** is a relation in a database where one record of a table is associated with one and only one record in another table.
 
 ``pd.concat`` is used to concatenate the small data frames together into one large data frame.
 
