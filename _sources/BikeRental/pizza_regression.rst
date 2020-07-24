@@ -37,6 +37,7 @@ possible to all of them, it would look like this.
 
 
 .. image:: Figures/pizza_best_fit.png
+  :alt: Scatter plot with a line of best fit showing the price of pizza based on diameter.
 
 
 The orange line, called the trendline or the regression line is our best guess
@@ -134,6 +135,7 @@ it for the pizza problem.
 If you are having any trouble, your setup should look like this.
 
 .. figure:: Figures/Solver_screen.png
+  :alt: Screen capture of Google Sheets with Solver add-on being used to calculate the slope and intercept by minimizing the MSE.
 
 
 Closed-Form Solution

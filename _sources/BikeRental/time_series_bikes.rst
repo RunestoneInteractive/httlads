@@ -28,8 +28,9 @@ Let's dive in and take a look at a graph of daily bike rentals.
 
 
 .. figure:: Figures/daily_rentals_all.png
-
-    Daily bike rentals for all days from Sept. 2010 through Feb. 2019.
+  :alt: Line chart showing the daily bike rentals for all days from Sept. 2010 through Feb. 2019.
+  
+  Daily bike rentals for all days from Sept. 2010 through Feb. 2019.
 
 
 Creating this graph is very easy if we use the Pandas ``resample`` method, which
@@ -42,8 +43,9 @@ that is so dense that its pretty useless.
 
 
 .. figure:: Figures/hourly_rentals_all.png
-
-    Hourly bike rentals for all days from Sept. 2010 through Feb. 2019.
+  :alt: Line graph showing the hourly bike rentals for all days from Sept. 2010 through Feb. 2019.
+    
+  Hourly bike rentals for all days from Sept. 2010 through Feb. 2019.
 
 
 The ``resample`` method takes several parameters, but the important one is the
@@ -233,8 +235,9 @@ Let's take another look at the graph of bike rentals.
 
 
 .. figure:: Figures/daily_rentals_all.png
-
-    Daily bike rentals for all days from Sept. 2010 through Feb. 2019.
+  :alt: Line graph showing daily bike rentals for all days from Sept. 2010 through Feb. 2019.
+  
+  Daily bike rentals for all days from Sept. 2010 through Feb. 2019.
 
 
 This graph indicates there is an overall upward trend in bike rentals in the DC
@@ -244,8 +247,9 @@ seasonal variations as well as daily variations.
 
 
 .. figure:: Figures/seasonal_variation.png
+  :alt: Line graph showing the seasonal variation in bike rentals.
 
-    Seasonal variation in bike rentals
+  Seasonal variation in bike rentals
 
 
 A time series graph like this is actually very similar to a graph of airline
