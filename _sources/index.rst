@@ -43,5 +43,5 @@ Table of Contents
     WorldFacts/toctree.rst
     DataEthics/toctree.rst
     UNGeneralDebates/toctree.rst
-    BikeRental/toctree.rst
+    PredictiveAnalytics/toctree.rst
     Instacart/toctree.rst
