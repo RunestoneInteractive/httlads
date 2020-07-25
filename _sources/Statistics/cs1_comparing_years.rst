@@ -4,6 +4,8 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
+.. _CSStartingABusiness:
+
 Case Study 1. Comparing Starting a Business data across years
 =============================================================
 
