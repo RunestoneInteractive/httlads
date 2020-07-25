@@ -6,8 +6,8 @@
 
 .. _h756a797b286237b36797fb1f277d18:
 
-Part III: Comparing Happiness Data across Years
-===============================================
+Case Study 2. Comparing Happiness Data across Years
+===================================================
 
 We have two files of happiness data, one for 2017 that you have been using, and
 another for `2012 <../_static/happiness_2012.csv>`_, so you can do some

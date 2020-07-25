@@ -4,7 +4,7 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-Challenge:  Calculating a Correlation matrix
+Case Study 2 Challenge. A Correlation Matrix
 ============================================
 
 Early on in our exploration of the happiness data, we calculated the correlation

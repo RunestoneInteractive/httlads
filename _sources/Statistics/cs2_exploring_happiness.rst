@@ -6,10 +6,10 @@
 
 .. _h651bd6f7d3125664c517b446bc5d4b:
 
-Part I: Exploring the Data
-==========================
+Case Study 2. The Happiness Report
+==================================
 
-Before class, you should read about the data science processing pipeline and
+Before proceeding, you need to have read the required readings about the data science processing pipeline,
 exploratory data analysis, and the other resources on spreadsheets and summary
 statistics linked in the previous section.
 
@@ -158,7 +158,7 @@ statistics and visualization.
 
 .. _hf33f5c6794a1d5ee7c64395b788:
 
-Case study 1: Happiness Index Research Questions
+Case Study 2: Happiness Index Research Questions
 ------------------------------------------------
 
 1. What are the different factors that lead to happiness of a country?
@@ -270,8 +270,7 @@ Summary Statistics
 Visualization
 -------------
 
-1. The `STDDEV <https://runestone.academy/runestone/static/cppds/index.html>`_
-   value tells us that the majority of the values are between 4.0 and 6.6 so let
+1. The STDDEV value tells us that the majority of the values are between 4.0 and 6.6 so let
    us check that graphically. It is easy to make a histogram of the values in
    Sheets. Note: To do this same thing in Excel you would need to install an
    extension.
