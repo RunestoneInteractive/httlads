@@ -6,7 +6,15 @@
 Case Study 2: Calculating a Correlation Matrix
 ==============================================
 
-Early on in our exploration of the business data, we calculated the correlation
+A correlation matrix is a helpful tool to summarize and compare different factors in a data set. 
+It can also be used to measure the relationship between these factors.
+In a correlation matrix, rows and columns represent different facotrs and the values in the cells represnet 
+the correlation between each pair of factors. In the earlier sections, we calculated the correlation between the starting a 
+business score and various other factors. Now that we have more data, we can use a correlation matrix to compare other columns that 
+are correlated to each other.
+
+
+(OLD)Early on in our exploration of the business data, we calculated the correlation
 between the business score and the different factors. Now we have more data and we might ask a more
 general question about which of our columns are correlated with each other. A common way to do this is
 to build a correlation matrix. The rows and the columns of the correlation matrix represent each of our different factors
@@ -28,12 +36,22 @@ The following table is an example of a correlation matrix. Suppose we have three
     B,0.7,1.0,.9
     C,-.5,.9,1.0
 
-Notice that the diagonal of this matrix has all values of 1.0. Each factor is perfectly correlated with itself.
+If you recall from the previous case study, all the values of 1.0 means that each factor is perfectly correlated with itself. 
 
-In the next steps, you will build a correlation matrix between the various factors of our starting a business data. This
+(OLD) Notice that the diagonal of this matrix has all values of 1.0. Each factor is perfectly correlated with itself.
+
+The following steps are for you to build a correlation matrix between the various factors of our starting a business data. 
+This will be a challenge as it will test your use of the ``$`` in defining ranges, and your ability to think about having
+several cells of a spreadsheet work together. 
+
+(OLD) In the next steps, you will build a correlation matrix between the various factors of our starting a business data. This
 will challenge your use of the ``$`` in defining ranges as well as your ability to think about having several cells of a spreadsheet work together.
 
-1. To calculate a correlation matrix we will make use of sheets ``INDEX`` and ``CORREL`` functions. The ``CORREL`` function expects
+1. To make our correlation matrix we will again make use of sheets ``INDEX`` and ``CORREL`` functions. We will input two of our columns in the ``CORREL`` 
+   function to compute the correlation between them. Remember that for a correlation matrix, we need to compute the correlation between all pairs of columns. 
+   Like in the previous case study we can use the column letters. 
+
+(OLD) 1. To calculate a correlation matrix we will make use of sheets ``INDEX`` and ``CORREL`` functions. The ``CORREL`` function expects
    two ranges: in our case, two columns of numbers to compute the correlation between. For example, the starting a business score and
    the income level. However, to make our correlation matrix, we need to compute the correlation between all pairs of columns.
    Using the column letters is more compact so lets write out a few.
@@ -50,11 +68,16 @@ will challenge your use of the ``$`` in defining ranges as well as your ability 
 
    c. The aptly named ``INDEX`` function is what allows us to do this by writing one clever function and then copying and pasting it to fill out our matrix.
 
-2. It may take a bit of experimentation to get the indexes and the $ notation correct but you will eventually end up with a
+2. You have been successful if you end up with a matrix where the diagonal is 1.
+
+2. (OLD)It may take a bit of experimentation to get the indexes and the $ notation correct but you will eventually end up with a
    matrix where the diagonal is 1. This is a good indicator that you have things right. `This link <https://www.youtube.com/watch?v=uc55cnr8A14>`_ may also be useful
    for getting this right.
 
-3. Once you have the numbers, we can make a rough heat map by using conditional formatting. Using some conditional formatting rules, we can change
+3. You can make a heatmap using conditional formatting once you have the numbers. You can play around with conditional formatting rules. e.g.
+Change the background color of the cells.
+
+3. (OLD) Once you have the numbers, we can make a rough heat map by using conditional formatting. Using some conditional formatting rules, we can change
    the foreground and background color of the cells. Let’s start by adding a rule that says if the correlation is between 0.75 and 1.0, then color the background green.
 
 4. You can add other rules to cover different ranges, but you will immediately see which cells we might want to focus on the most.
