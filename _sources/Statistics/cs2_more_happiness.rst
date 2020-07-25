@@ -4,7 +4,7 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-.. _CS2AddingData:
+.. _CSHappinessAddingData:
 
 Case Study 2. Adding More Data
 =========================

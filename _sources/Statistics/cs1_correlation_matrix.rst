@@ -3,6 +3,9 @@
    International License. To view a copy of this license, visit
    http://creativecommons.org/licenses/by-sa/4.0/.
 
+
+.. _CSBusinessCorrelationMatrix:
+
 Challenge in Case Study1: Calculating a Correlation Matrix
 ===========================================================
 

@@ -4,7 +4,7 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-.. _CS2HappinessReport:
+.. _CSHappinessReport:
 
 Case Study 2. The Happiness Report
 ==================================

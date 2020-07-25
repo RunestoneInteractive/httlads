@@ -3,6 +3,8 @@
    International License. To view a copy of this license, visit
    http://creativecommons.org/licenses/by-sa/4.0/.
 
+.. _CSBusinessMoreBusiness:
+
 One of the key features of this textbook is to highlight how data science and data analytics can be used to understand a variety of data types. In this chapter, we explore two data sets, one related to starting a business, and the other related to the happiness index of countries.
 
 Case Study 1. Starting a Business
