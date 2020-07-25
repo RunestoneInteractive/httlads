@@ -4,7 +4,7 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-.. _h501f735b0476f5e696e1e2f7175266:
+.. _CS2AddingData:
 
 Case Study 2. Adding More Data
 =========================
