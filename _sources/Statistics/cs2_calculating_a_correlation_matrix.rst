@@ -8,17 +8,10 @@ Case Study 2: Calculating a Correlation Matrix
 
 A correlation matrix is a helpful tool to summarize and compare different factors in a data set. 
 It can also be used to measure the relationship between these factors.
-In a correlation matrix, rows and columns represent different facotrs and the values in the cells represnet 
+In a correlation matrix, rows and columns represent different factors and the values in the cells represent 
 the correlation between each pair of factors. In the earlier sections, we calculated the correlation between the starting a 
 business score and various other factors. Now that we have more data, we can use a correlation matrix to compare other columns that 
 are correlated to each other.
-
-
-(OLD)Early on in our exploration of the business data, we calculated the correlation
-between the business score and the different factors. Now we have more data and we might ask a more
-general question about which of our columns are correlated with each other. A common way to do this is
-to build a correlation matrix. The rows and the columns of the correlation matrix represent each of our different factors
-and the individual values in the cells of the matrix represent the correlation between each pair of factors.
 
 The following table is an example of a correlation matrix. Suppose we have three factors A, B, and C.
 
@@ -37,8 +30,6 @@ The following table is an example of a correlation matrix. Suppose we have three
     C,-.5,.9,1.0
 
 If you recall from the previous case study, all the values of 1.0 means that each factor is perfectly correlated with itself. 
-
-(OLD) Notice that the diagonal of this matrix has all values of 1.0. Each factor is perfectly correlated with itself.
 
 The following steps are for you to build a correlation matrix between the various factors of our starting a business data. 
 This will be a challenge as it will test your use of the ``$`` in defining ranges, and your ability to think about having
@@ -70,15 +61,8 @@ will challenge your use of the ``$`` in defining ranges as well as your ability 
 
 2. You have been successful if you end up with a matrix where the diagonal is 1.
 
-2. (OLD)It may take a bit of experimentation to get the indexes and the $ notation correct but you will eventually end up with a
-   matrix where the diagonal is 1. This is a good indicator that you have things right. `This link <https://www.youtube.com/watch?v=uc55cnr8A14>`_ may also be useful
-   for getting this right.
-
 3. You can make a heatmap using conditional formatting once you have the numbers. You can play around with conditional formatting rules. e.g.
 Change the background color of the cells.
-
-3. (OLD) Once you have the numbers, we can make a rough heat map by using conditional formatting. Using some conditional formatting rules, we can change
-   the foreground and background color of the cells. Let’s start by adding a rule that says if the correlation is between 0.75 and 1.0, then color the background green.
 
 4. You can add other rules to cover different ranges, but you will immediately see which cells we might want to focus on the most.
 

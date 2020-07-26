@@ -143,8 +143,8 @@ b. Type ``=INDEX(A2:A192, N194)`` in cell N195. The ``A2:A192`` parameters is th
    Location (from column A) that is found in the same row as the maximum value.
 
 c. All three steps shown above can be performed in a single cell. Let’s look at the country that has the lowest Procedure Men number . 
-   In cell F193 type ``=INDEX($B2:$B141, MATCH(MIN(F2:F141), F2:F141, 0))``. The MATCH and MIN functions both return one value. 
-   So, sheets will first find the minimum value in cells ``J2:J141``. Then it will use the MATCH function to find the cell location (column and row) 
+   In cell F193 type ``=INDEX($B2:$B141, MATCH(MIN(F2:F141), F2:F141, 0))``. The ``MATCH`` and ``MIN`` functions both return one value. 
+   So, sheets will first find the minimum value in cells ``J2:J141``. Then it will use the ``MATCH`` function to find the cell location (column and row) 
    of where that minimum value is. Finally, it will use the ``INDEX`` function to find what value from ``A2:A141`` matches up with the given parameters. Try
    this and see what it returns. It should return New Zealand, its region, starting a business rank, and starting a business score.
 
@@ -166,10 +166,10 @@ d. You may hover around each country to see its respective statistic.
 
 
 4. You may be wondering if there is a correlation between a country’s starting a business score and GNI or Procedure. 
-One way to check this is to use the CORREL to see how the score is affected by each factor i.e., starting a business score to GNI, 
+One way to check this is to use the ``CORREL`` function to see how the score is affected by each factor i.e., starting a business score to GNI, 
 starting a business score to the procedure, starting a business score to time.
 
-a. We can use the CORREL function to calculate the Pearson correlation between two ranges of data. Use a ``$`` sign to anchor the 
+a. We can use the ``CORREL`` function to calculate the Pearson correlation between two ranges of data. Use a ``$`` sign to anchor the 
    column and the values of starting a business ``$E$2:$E192``, so it doesn’t change when it is copy-pasted to use for other columns.
 
 b. Repeat the above exercise by changing or copy-pasting it to different columns to see the correlation with other factors listed.

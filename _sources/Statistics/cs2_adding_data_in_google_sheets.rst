@@ -22,16 +22,16 @@ Before we get started, consider the following questions.
 1. Let's start by first sorting the data by region. Select Column A and then from the menu select Data -> Sort sheet
 by column B, A -> Z.
 
-2. Use ``UNIQUE`` function to create a table of the unique region names. In Cell ``B193`` use the ``UNIQUE`` function 
-and find the different names for the regions. ``UNIQUE`` function returns a list of unique values in a range. 
+2. Use the ``UNIQUE`` function to create a table of the unique region names. In Cell ``B193`` use the ``UNIQUE`` function 
+and find the different names for the regions. The ``UNIQUE`` function returns a list of unique values in a range. 
 In this case, the values are unique region names.
 
-3. Now that we have the table of regions, use ``SUMIF`` and ``COUNTIF`` to compute the average business score. 
+3. Now that we have the table of regions, use ``SUMIF`` and ``COUNTIF`` to compute the average business score. The
 ``COUNTIF`` function counts the number of cells in a range that meets a specific condition. In our case, the range for all 
 regions is ``B2:B192``. The condition is the name of the regions in the newly created table of region names.
 To get started, create a column next to the region names that contains the number of countries in the region. 
 
-4. Now, let’s use ``SUMIF`` function to create a column that sums the business score for each region. 
+4. Now, let’s use the ``SUMIF`` function to create a column that sums the business score for each region. 
 ``SUMIF`` function sums up values in a range that meet specific criteria. The first parameter will be 
 the range containing the regions; the second parameter will be the name of a region to match. In this case, 
 a third parameter is the range of cells containing the business scores. When a row in the region 
@@ -50,9 +50,9 @@ column matches the given region, the function includes the value from the busine
 
 
 
-Last but not least, we can sort the business scores to see the regions from the highest score to the lowest. To get started, 
+Lastly, we can sort the business scores to see the regions from the highest score to the lowest. First, 
 select Column A, and then from the menu select Data -> Sort sheet by column A, A -> Z. Then, add another column to 
-our table that tells us how many countries are in each region (COUNTIF). Finally, Using ``MAXIFS``, ``MINIFS``, ``MATCH`` 
+our table that tells us how many countries are in each region (COUNTIF). Finally, using ``MAXIFS``, ``MINIFS``, ``MATCH`` 
 and ``INDEX``, find the easiest and hardest country to start a business for each region. ``MAXIFS`` and ``MINIFS`` work 
 like ``AVERAGEIF`` and ``COUNTIF``, but they allow for more conditions. In our case, we still need only one condition.
 
@@ -74,10 +74,10 @@ one file does not contain all the data we need. So, if we need to look at other 
 starting a business in different countries, we can import another spreadsheet that has a lot more data. In this lesson,
 we will learn how to join data from various sources.
 
-On our starting a business spreadsheet, we have a column that
+In our starting a business spreadsheet, we have a column that
 contains the name of each country. It has a bunch of business-related data
 about each country in other columns. On our countries of the world sheet, we
-have a column of country names and a bunch of other information about countries
+have a column of country names and other information about countries
 in other columns. The two sheets do not have the countries in the same order. Also, 
 they have most of the same countries, but not all.
 
@@ -85,7 +85,7 @@ The first thing we need to do is import the `countries of the world <../_static/
 This has a huge amount of data about each country. For now, we will use the information on this new spreadsheet to give us 
 the country code of each country
 
-When we use ``VLOOKUP``, our goal is to join together these two sheets, adding
+When we use ``VLOOKUP``, our goal is to join these two sheets together, adding
 columns to the starting a business spreadsheet using values from the population row in the countries of the
 world sheet in the rows where the country names match. For example, in our
 starting a business spreadsheet, Ethiopia is on row 170, but in the countries of the world spreadsheet,
@@ -109,7 +109,12 @@ then double click blue square in the lower right corner of the cell. Google Shee
 paste the values into the remaining cells until it reaches a black cell in the left column.
 Double-check the entire column to make sure that all the data is filled.
 
-As you found out, some rows have a value of #N/A in them. This is
+As in our previous study case, we will have some rows taht have a value of #N/A. In this case,
+it is because in one spreadsheet there is a name "Venezuela, RB" and in the other spreadsheet it has 
+"Venezuela, the Bolivarian Republic of." You will have to manually clean up this data, and make the names 
+match where they don't already.
+
+(OLD) As you found out, some rows have a value of #N/A in them. This is
 because one spreadsheet has the name "Venezuela, RB" and the other spreadsheet
 has "Venezuela, the Bolivarian Republic of." We know these are the same, but the computer does
 not make the match. You will need to manually clean up this data by making the
