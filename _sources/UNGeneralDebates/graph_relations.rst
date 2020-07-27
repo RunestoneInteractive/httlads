@@ -513,9 +513,9 @@ a line between the two circles. Our small example would look like this.
 The arrows on the graph indicate which country is referencing which other
 country. Formally, we call the ovals with the country names **nodes**, and the
 arrows connecting them **edges**. One of the most common ways that computer
-scientists and mathematicians represent a graph is called an adjacency matrix.
+scientists and mathematicians represent a graph is called an **adjacency matrix**.
 Don't worry if this sounds daunting, you have actually already built an
-adjacency matrix!
+**adjacency matrix**!
 
 
 .. raw:: html
@@ -570,7 +570,7 @@ adjacency matrix!
     </table>
 
 
-In an adjacency matrix, the cells indicate if there is an edge from the row node
+In an **adjacency matrix**, the cells indicate if there is an edge from the row node
 to the column node. The values in the cells are often used to represent a weight
 or cost to go from one node to the other. A 0 in the cell indicates that there
 is no relationship.

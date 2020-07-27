@@ -4,6 +4,8 @@ Glossary
 
 **Adjacency matrix:** is a square matrix that is used to represent a finite graph. The elements of the matrix indicate whether pairs of vertices are adjacent or not.
 
+**ASCII:** stands for American Standard Code for Information Interchange. It is a character encoding that can only encode 256 characters.
+
 **Data modeling:** is when an organization creates a data model to show how the data will be stored in the database. With this data model, one can see a conceptual representation of the data objects and the association between different data objects and the rules.
 
 **Database design:** is a protocol that is done by the organization to establish how data must be stored and how the data elements interrelate. This also involves classifying data and identifying interrelationships.
@@ -21,6 +23,9 @@ Glossary
 **Many-to-many:** is a relation in a database where several records in one table are associated with several records in another table.
 
 ``networkx`` is a Python library that is used for studying graphs.
+
+**ISO-8859-1:** is a single-byte coded graphic character set that can only represent the first 256 Unicode Characters. 
+The "-1" means to use "Latin-1" character set because ISO-8859 supports some other languages as well. 
 
 **Node:** is a basic unit of a linked list or tree data structure that contains data.
 
