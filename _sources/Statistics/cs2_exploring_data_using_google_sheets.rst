@@ -8,16 +8,17 @@ Case Study 2: Exploring Data Using Google Sheets
 ================================================
 
 Data science and data analytics can be used to analyze and understand data related to different fields, 
-such as business, healthcare, targeted advertising, etc. In this case study, we will explore a data set 
+such as business, healthcare, targeted advertising, and many more. In this case study, we will explore a data set 
 related to business.
 
 
 Thinking About Starting Your Business
 ---------------------------------------
 
-This case study utilizes the `Starting a Business <../_static/starting_a_business.csv>`_ data set obtained from the Doing Business-World Bank website. The dataset contains indicators from over 190 countries that measure the relative ease of starting a business in those countries. The data set looks at two limited liability companies in various regions and countries around the world.
+This case study utilizes the `Starting a Business <../_static/Starting_a_Business_2019.csv>`_ data set obtained from the Doing Business-World Bank website. The dataset contains indicators from over 190 countries that measure the relative ease of starting a business in those countries. The data set looks at two limited liability companies in various regions and countries around the world.
 
-Each country in the dataset measures things such as the minimum amount of capital investment an entrepreneur must have to start a business, and the number of procedures that must be completed to register the business, etc. 
+Each country in the dataset measures things such as the minimum amount of capital investment an entrepreneur must have to start a business, 
+and the number of procedures that must be completed to register the business, and more that we will look at throughout this case study. 
 
 The ease of starting a business for each country is measured on a scale of 0-100. A score of zero represents the country with the lowest performance, and 100 represents the country with the highest performance.
 
@@ -31,7 +32,7 @@ Below are definitions of the indicators found in the data set.
 -  **Paid-In Minimum Capital:** The minimum amount of money the entrepreneur must have is deposits in the bank for the business registration process to be completed.
 -  **Income Level:** This represents the income levels of each country's economy. This indicator is divided into low, lower-middle, upper-middle, and high, based on a country's gross national income (GNI) per person.
 
-We will use Google Sheets to explore which of these indicators are most important to start a new business in each economy's largest business city. `Click here <../_static/Starting_a_Business_2019.csv>`_ to download the data. Then, import the dataset into Google Sheets.
+We will use Google Sheets to explore which of these indicators are most important to start a new business in each economy's largest businesscity. `Click here <../_static/Starting_a_Business_2019.csv>`_ to download the data. Then, import the dataset into Google Sheets.
 
 .. mchoice:: dat_sab1
 
