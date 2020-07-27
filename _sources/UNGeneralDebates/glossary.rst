@@ -1,6 +1,8 @@
 
 Glossary
 ==========
+Defintions
+----------
 
 **Adjacency matrix:** is a square matrix that is used to represent a finite graph. The elements of the matrix indicate whether pairs of vertices are adjacent or not.
 
@@ -16,16 +18,11 @@ Glossary
 
 **Foreign Key** is a column or group of columns in a data set that provides a link between data in two tables.
 
-``graphviz`` is an open-source package used to represent and study graphs.
-
 **Heatmap:** is a graphical representation that uses a system of color-coding to represent different values in a data set.
 
 **Many-to-many:** is a relation in a database where several records in one table are associated with several records in another table.
 
-``networkx`` is a Python library that is used for studying graphs.
-
-**ISO-8859-1:** is a single-byte coded graphic character set that can only represent the first 256 Unicode Characters. 
-The "-1" means to use "Latin-1" character set because ISO-8859 supports some other languages as well. 
+**ISO-8859-1:** is a single-byte coded graphic character set that can only represent the first 256 Unicode Characters. The "-1" means to use "Latin-1" character set because ISO-8859 supports some other languages as well. 
 
 **Node:** is a basic unit of a linked list or tree data structure that contains data.
 
@@ -35,11 +32,7 @@ The "-1" means to use "Latin-1" character set because ISO-8859 supports some oth
 
 **One-to-one:** is a relation in a database where one record of a table is associated with one and only one record in another table.
 
-``pd.concat`` is used to concatenate the small data frames together into one large data frame.
-
 **Primary key:** is a key that is a unique identifier for each record in a relational database.
-
-``Series`` is a one-dimensional data structure in pandas.  It is a one-dimensional array that can hold any data type.
 
 **Text Complexity:** is the level of challenge a textual reading has based on the following criteria: its quantitative features, its qualitative features, and reader/text factors.
 
@@ -48,3 +41,15 @@ The "-1" means to use "Latin-1" character set because ISO-8859 supports some oth
 **Unicode errors:**  Unicode is an encoding standard that is used internationally. The Unicode error usually arises when you try to write a Unicode string to a file or device that does not handle a Unicode string. For instance, you will get an error if the output file or device only handles ASCII.
 
 **Vectorized String Methods:** is a set of string methods, much like the ones in python, that enable the handling and manipulation of strings in series.
+
+
+Keywords
+---------
+
+``graphviz`` is an open-source package used to represent and study graphs.
+
+``networkx`` is a Python library that is used for studying graphs.
+
+``pd.concat`` is used to concatenate the small data frames together into one large data frame.
+
+``Series`` is a one-dimensional data structure in pandas.  It is a one-dimensional array that can hold any data type.
