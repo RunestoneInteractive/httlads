@@ -143,7 +143,7 @@ b. Type ``=INDEX(A2:A192, N194)`` in cell N195. The ``A2:A192`` parameters is th
    Location (from column A) that is found in the same row as the maximum value.
 
 c. All three steps shown above can be performed in a single cell. Let’s look at the country that has the lowest Procedure Men number . 
-   In cell F193 type ``=INDEX($B2:$B141, MATCH(MIN(F2:F141), F2:F141, 0))``. The ``MATCH`` and ``MIN`` functions both return one value. 
+   In cell E193 type ``=INDEX($A2:$A141, MATCH(MIN(E2:E141), E2:E141, 0))``. The ``MATCH`` and ``MIN`` functions both return one value. 
    So, sheets will first find the minimum value in cells ``J2:J141``. Then it will use the ``MATCH`` function to find the cell location (column and row) 
    of where that minimum value is. Finally, it will use the ``INDEX`` function to find what value from ``A2:A141`` matches up with the given parameters. Try
    this and see what it returns. It should return New Zealand, its region, starting a business rank, and starting a business score.
@@ -160,7 +160,7 @@ a. Click on Insert then select Chart
 
 b. On the new Chart editor section, click on Chart Type and select Geo Chart
 
-c. Select location column (``B2:B192``) as the region and any column that you wish to see as the Color.
+c. Select location column (``A2:A192``) as the region and any column that you wish to see as the Color.
 
 d. You may hover around each country to see its respective statistic.
 
@@ -170,7 +170,7 @@ One way to check this is to use the ``CORREL`` function to see how the score is 
 starting a business score to the procedure, starting a business score to time.
 
 a. We can use the ``CORREL`` function to calculate the Pearson correlation between two ranges of data. Use a ``$`` sign to anchor the 
-   column and the values of starting a business ``$E$2:$E192``, so it doesn’t change when it is copy-pasted to use for other columns.
+   column and the values of starting a business ``$D$2:$D192``, so it doesn’t change when it is copy-pasted to use for other columns.
 
 b. Repeat the above exercise by changing or copy-pasting it to different columns to see the correlation with other factors listed.
 

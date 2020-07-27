@@ -9,18 +9,18 @@ Case Study 2: Comparing Data Across The Years
 
 In this section, we will learn how to compare data across the years.
 Comparing data lets us recognize important patterns and trends over a 
-period of time. It allows us to better analyze data and make important connections. So far, We have 
+period of time. It allows us to analyze data better and make important connections. So far, We have 
 been using starting a business data set from 2019. In this section, we will use the same data set from 
 `2014 <../_static/Starting_a_Business_2014.csv>`_. We can use this file to make some comparisons of our 
 data across a span of 5 years.
 
 1. First, let's start with a new workbook. We want to get each of the CSV files from the starting a business data 
    loaded into separate sheets. Therefore, you will have one sheet containing 2014 starting a business data,
-   and another sheet containing 2019 starting a business data in the same workbook. 
+   and another sheet containing 2019 starting business data in the same workbook. 
 
 
 2. Next, we can create a table on a new sheet with the starting a business rank for each country for each year. 
-   You will have the following 3 columns: country name, 2014 rank, and 2019 rank. Hint: Use ``VLOOKUP``. 
+   You will have the following three columns: country name, 2014 rank, and 2019 rank. Hint: Use ``VLOOKUP``. 
    Some countries did not have their data reported for a variety of reasons. Therefore, we will have 
    ``#N/A`` values like in the previous case study. 
 

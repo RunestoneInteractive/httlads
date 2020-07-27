@@ -3,7 +3,7 @@
    International License. To view a copy of this license, visit
    http://creativecommons.org/licenses/by-sa/4.0/.
 
-Case Study 2: Adding Data Using Google Sheets
+Case Study 2: Adding Data to Google Sheets
 =============================================
 
 Before we begin, make sure that the Google Sheets file you are working on is exactly like the one given at 
@@ -20,7 +20,7 @@ Before we get started, consider the following questions.
 - How can we compute an average for the countries that are in the same region?
 
 1. Let's start by first sorting the data by region. Select Column A and then from the menu select Data -> Sort sheet
-by column B, A -> Z.
+by column A, A -> Z.
 
 2. Use the ``UNIQUE`` function to create a table of the unique region names. In Cell ``B193`` use the ``UNIQUE`` function 
 and find the different names for the regions. The ``UNIQUE`` function returns a list of unique values in a range. 
@@ -109,20 +109,11 @@ then double click blue square in the lower right corner of the cell. Google Shee
 paste the values into the remaining cells until it reaches a black cell in the left column.
 Double-check the entire column to make sure that all the data is filled.
 
-As in our previous study case, we will have some rows taht have a value of #N/A. In this case,
-it is because in one spreadsheet there is a name "Venezuela, RB" and in the other spreadsheet it has 
-"Venezuela, the Bolivarian Republic of." You will have to manually clean up this data, and make the names 
+As in our previous study case, we will have some rows with a value of #N/A. In this case,
+In one spreadsheet there is a name "Venezuela, RB" and in the other spreadsheet it has 
+"Venezuela, the Bolivarian Republic of." You will have to clean up this data, and make the names manually 
 match where they don't already.
 
-(OLD) As you found out, some rows have a value of #N/A in them. This is
-because one spreadsheet has the name "Venezuela, RB" and the other spreadsheet
-has "Venezuela, the Bolivarian Republic of." We know these are the same, but the computer does
-not make the match. You will need to manually clean up this data by making the
-names match where they don't already. This is also why the countries of the
-world spreadsheet contain the column that has a three-letter code for each
-country. These codes are internationally agreed upon and are always the same for
-each country. This avoids the kind of problems we have where there is more than
-one common spelling.
 
 Any time you are introducing data from another source, you are likely to run
 into inconsistencies and missing data.
