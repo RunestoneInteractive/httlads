@@ -3,35 +3,12 @@
    International License. To view a copy of this license, visit
    http://creativecommons.org/licenses/by-sa/4.0/.
 
-Case Study 2: Calculating a Correlation Matrix
-==============================================
+Case Study 2: Calculating a Correlation Matrix for Business Data
+=================================================================
 
-A correlation matrix is a helpful tool to summarize and compare different factors in a data set. 
-It can also be used to measure the relationship between these factors.
-In a correlation matrix, rows and columns represent different factors, and the values in the cells represent 
-the correlation between each pair of factors. In the earlier sections, we calculated the correlation between starting a 
-business score and various other factors. Now that we have more data, we can use a correlation matrix to compare other columns that 
-are correlated with each other.
+If you recall from the previous case study, we used a correlation matrix and all the values of 1.0 mean that each factor is perfectly correlated with itself. 
 
-The following table is an example of a correlation matrix. Suppose we have three factors A, B, and C.
-
-- A and B have a correlation of 0.7
-
-- A and C have a correlation of -0.5
-
-- B and C have a correlation of 0.9
-
-.. csv-table::
-    :header: ,A,B,C
-    :stub-columns: 1
-
-    A,1.0,0.7,-.5
-    B,0.7,1.0,.9
-    C,-.5,.9,1.0
-
-If you recall from the previous case study, all the values of 1.0 mean that each factor is perfectly correlated with itself. 
-
-The following steps are for you to build a correlation matrix between the various factors of our starting a business data. 
+The following steps are a reminder on how to make a correlation matrix between the various factors of our starting a business data. 
 This will be a challenge as it will test your use of the ``$`` in defining ranges, and your ability to think about having
 several cells of a spreadsheet work together. 
 

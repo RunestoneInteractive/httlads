@@ -3,8 +3,8 @@
    International License. To view a copy of this license, visit
    http://creativecommons.org/licenses/by-sa/4.0/.
 
-Case Study 2: Adding Data to Google Sheets
-=============================================
+Case Study 2: Introducing New Data to Starting a Business
+==========================================================
 
 Before we begin, make sure that the Google Sheets file you are working on is exactly like the one given at 
 the beginning of this case study. Any changes you made to the Google Sheets while following along in the 
@@ -22,7 +22,7 @@ Before we get started, consider the following questions.
 1. Let's start by first sorting the data by region. Select Column A and then from the menu select Data -> Sort sheet
 by column A, A -> Z.
 
-2. Use the ``UNIQUE`` function to create a table of the unique region names. In Cell ``B193`` use the ``UNIQUE`` function 
+2. Use the ``UNIQUE`` function to create a table of the unique region names. In cell ``B193`` use the ``UNIQUE`` function 
 and find the different names for the regions. The ``UNIQUE`` function returns a list of unique values in a range. 
 In this case, the values are unique region names.
 
@@ -38,21 +38,15 @@ a third parameter is the range of cells containing the business scores. When a r
 column matches the given region, the function includes the value from the business score column in the sum.
 
 
-.. fillintheblank:: q3_cs1_sbd
+.. shortanswer:: q3_cs1_sbd
 
-   The sum of all business scores in Asia is |blank| and the sum of all business scores in Europe is |blank|.
-
-   - :4167.9: Is the correct answer!
-     :x: Incorrect.
-
-   - :3744: Is the correct answer!
-     :x: Incorrect.
+   What is the sum of all business scores in Asia? 
 
 
 
 Lastly, we can sort the business scores to see the regions from the highest score to the lowest. First, 
 select Column A, and then from the menu select Data -> Sort sheet by column A, A -> Z. Then, add another column to 
-our table that tells us how many countries are in each region (COUNTIF). Finally, using ``MAXIFS``, ``MINIFS``, ``MATCH`` 
+our table that tells us how many countries are in each region (``COUNTIF``). Finally, using ``MAXIFS``, ``MINIFS``, ``MATCH`` 
 and ``INDEX``, find the easiest and hardest country to start a business for each region. ``MAXIFS`` and ``MINIFS`` work 
 like ``AVERAGEIF`` and ``COUNTIF``, but they allow for more conditions. In our case, we still need only one condition.
 
@@ -66,8 +60,8 @@ like ``AVERAGEIF`` and ``COUNTIF``, but they allow for more conditions. In our c
       :x: Incorrect. Try using the functions one at a time in different cells before combining them.
 
 
-Joining Data from Other Sources
--------------------------------
+Joining Data from Other Sources with Starting a Business
+--------------------------------------------------------
 
 So far, we have only used the original starting a business score spreadsheet for our analysis. Often, 
 one file does not contain all the data we need. So, if we need to look at other factors that affect 
@@ -81,7 +75,7 @@ have a column of country names and other information about countries
 in other columns. The two sheets do not have the countries in the same order. Also, 
 they have most of the same countries, but not all.
 
-The first thing we need to do is import the `countries of the world <../_static/world_countries_2019.csv>`_ spreadsheet.
+The first thing we need to do is import the `countries of the world <../_static/world_countries.csv>`_ spreadsheet.
 This has a huge amount of data about each country. For now, we will use the information on this new spreadsheet to give us 
 the country code of each country
 
@@ -95,16 +89,16 @@ We do this with ``VLOOKUP`` by allowing the function to search for the value in
 one cell in another column, and then return the value from a different cell in
 the same row but in some other column.
 
-To find the country code of Ethiopia, we would use ``=VLOOKUP(A170, countries_of_the_world!$A$2:$BK$265, 2, FALSE)``.
+To find the country code of Ethiopia, we would use ``=VLOOKUP(A170, world_countries!$A$2:$BK$265, 2, FALSE)``.
 
-* B170 is the cell containing Ethiopia
-* ``countries_of_the_world!$A$2:$BK$265`` is the range of cells we can search in as well as get
+* A170 is the cell containing Ethiopia
+* ``world_countries!$A$2:$BK$265`` is the range of cells we can search in as well as get
   values from
 * 2 tells Sheets that when we find a match for Ethiopia, we want the value from
   the same row but in column 2 of our range
 
 To fill in a new column with the country codes, paste the following into N2:
-``=VLOOKUP(A2, countries_of_the_world!$A$2:$BK$265, 2, FALSE)``. Have N2 selected
+``=VLOOKUP(A170, world_countries!$A$2:$BK$265, 2, FALSE)``. Have N2 selected
 then double click blue square in the lower right corner of the cell. Google Sheets will automatically
 paste the values into the remaining cells until it reaches a black cell in the left column.
 Double-check the entire column to make sure that all the data is filled.
@@ -126,15 +120,13 @@ Now that you have learned how to use ``VLOOKUP``. Add another column to starting
 2. Next, we will want to add a column to the starting a business spreadsheet that contains
    the population for each country. 
 
+Summarizing Starting a Business Data Using Pivot Table
+------------------------------------------------------
 
+A great way to summarize and analyze data is by using a pivot table. A pivot table takes the unique values from some column and make them 
+the titles of a bunch of columns, while summarizing the data for those columns from a number of rows. 
 
-Summarizing Data Using Pivot Table
------------------------------------
-
-A pivot table takes the unique values from some column and make them the titles of a bunch of columns, while 
-summarizing the data for those columns from a number of rows. 
-
-For practice, you should redo the exercise of finding the average population for each region that you did above.
+For this practice, you should redo the exercise of finding the average population for each region that you did above.
 You should create a pivot table that uses the unique values for each country code as the row and calculates a number
 of summary statistics for each. 
 

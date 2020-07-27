@@ -4,8 +4,8 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-Case Study 2: Exploring Data Using Google Sheets
-================================================
+Case Study 2: Exploring Starting a Business Data
+==================================================
 
 Data science and data analytics can be used to analyze and understand data related to different fields, 
 such as business, healthcare, targeted advertising, and many more. In this case study, we will explore a data set 
@@ -15,12 +15,15 @@ related to business.
 Thinking About Starting Your Business
 ---------------------------------------
 
-This case study utilizes the `Starting a Business <../_static/Starting_a_Business_2019.csv>`_ data set obtained from the Doing Business-World Bank website. The dataset contains indicators from over 190 countries that measure the relative ease of starting a business in those countries. The data set looks at two limited liability companies in various regions and countries around the world.
+This case study utilizes the `starting a business <../_static/Start_a_Business_2019.csv>`_ data set obtained from the Doing Business-World Bank website. 
+The data set contains indicators from over 190 countries that measure the relative ease of starting a business in those countries. The data set looks at 
+two limited liability companies in various regions and countries around the world.
 
-Each country in the dataset measures things such as the minimum amount of capital investment an entrepreneur must have to start a business, 
+Each country in the data set measures things such as the minimum amount of capital investment an entrepreneur must have to start a business, 
 and the number of procedures that must be completed to register the business, and more that we will look at throughout this case study. 
 
-The ease of starting a business for each country is measured on a scale of 0-100. A score of zero represents the country with the lowest performance, and 100 represents the country with the highest performance.
+The ease of starting a business for each country is measured on a scale of 0-100. A score of zero represents the country with the lowest performance, 
+and 100 represents the country with the highest performance.
 
 Below are definitions of the indicators found in the data set.
 
@@ -32,7 +35,8 @@ Below are definitions of the indicators found in the data set.
 -  **Paid-In Minimum Capital:** The minimum amount of money the entrepreneur must have is deposits in the bank for the business registration process to be completed.
 -  **Income Level:** This represents the income levels of each country's economy. This indicator is divided into low, lower-middle, upper-middle, and high, based on a country's gross national income (GNI) per person.
 
-We will use Google Sheets to explore which of these indicators are most important to start a new business in each economy's largest businesscity. `Click here <../_static/Starting_a_Business_2019.csv>`_ to download the data. Then, import the dataset into Google Sheets.
+We will use Google Sheets to explore which of these indicators are most important to start a new business in each economy's largest businesscity. So now, 
+import the data set that you downloaded earlier, starting a business, into Google Sheets.
 
 .. mchoice:: dat_sab1
 
@@ -58,12 +62,12 @@ We will use Google Sheets to explore which of these indicators are most importan
 Starting a Business Research Questions
 --------------------------------------
 
-1. What are the different factors that lead to a high ranking in the “Starting a Business Rank”?
+1. What are the different factors that lead to a high ranking in the “starting a business rank”?
 2. What role does “income level” play in determining the rank of a country?
-3. What factor, on average, contributes most/least to the Starting a Business Rank?
-4. What similarities and differences do the countries experiencing the highest/lowest Starting a Business rank have? Are there any discrepancies between different score factors of countries with similar rankings?
+3. What factor, on average, contributes most/least to the starting a business rank?
+4. What similarities and differences do the countries experiencing the highest/lowest starting a business rank have? Are there any discrepancies between different score factors of countries with similar rankings?
 5. Does being in a certain region/continent have any correlation to the average rank of countries?
-6. Have the Starting a Business Ranks changed over time? Which countries have the most improvement in their rank? Which countries have most declined in their rank?
+6. Have the starting a business rank changed over time? Which countries have the most improvement in their rank? Which countries have most declined in their rank?
 7. For the countries with the largest change, which factors changed the most? Are these factors the same as you identified in the first 3 questions?
 
 
@@ -71,13 +75,13 @@ Starting a Business Research Questions
 The data set lists countries based on their starting a business score. While it is easy to 
 see the best countries for starting a business using the starting a business rank, it is not 
 easy to grasp the relative simplicity of each country. We can use the functions that we 
-have learned to create a common baseline: average, standard deviation, and median. Therefore, let's average
+learned in the previous case study to create a common baseline: average, standard deviation, and median. So, let's average
 the "starting a business score" of all countries together. 
 
-a. Use the ``AVERAGE`` function of sheets to calculate the mean in column E. Scroll down and click on a cell in column 194. 
-   That should be an empty cell below the column of numbers for the Starting a Business score. Now type ``=AVERAGE(E2:E192)``. 
-   You can also type ``=AVERAGE(`` and then click and drag the numbers you want. ``E2:E192`` specifies a range, from Column E Row 2 
-   down to Column E Row 192.
+a. Use the ``AVERAGE`` function to calculate the mean in column D. Scroll down and click on a cell in column 194. 
+   That should be an empty cell below the column of numbers for the starting a business score. Now type ``=AVERAGE(D2:D192)``. 
+   You can also type ``=AVERAGE(`` and then click and drag the numbers you want. ``D2:D192`` specifies a range, from Column D Row 2 
+   down to Column D Row 192.
 
 b. Many formulas in Google Sheets use ranges. They can span cells in a single column, single row, and they can span 
    rows and columns, which form a rectangular shape. Try it yourself, calculate the range of:
@@ -92,7 +96,7 @@ c. Standard deviation is the average distance from the mean. It shows how spread
 
 d. Calculate the standard deviation and median by copying and pasting the formula to other columns.
 
-e. Copy the formula for ``=AVERAGE(E2:E141)`` from a, and the formula for standard deviation from c then calculate:
+e. Copy the formula for ``=AVERAGE(D2:D141)`` from a, and the formula for standard deviation from c then calculate:
 
 .. fillintheblank:: fb_sab8 
 
@@ -117,31 +121,32 @@ e. Copy the formula for ``=AVERAGE(E2:E141)`` from a, and the formula for standa
 f. Remember, use a ``$`` so Google Sheets will not change the cell references when copy/pasting. 
 
 
-Visualization
--------------
+Visualizing Starting a Business
+--------------------------------
 
-
-1. Visualizing the data is a great way to interpret the data. It allows the viewer to easily see trends or find outliers. 
-A histogram is one way to visualize the Standard Deviation of a particular data set. To create a histogram in Google Sheets:
+1. Visualizing the data is a great way to interpret it. It allows the viewer to easily see trends or find outliers. 
+A histogram is one way to visualize the standard deviation of a particular data set. To create a histogram in Google Sheets:
 
 a. Click on Insert then select Chart
 
-b. On the new Chart editor section, click on Chart Type and select Histogram
+b. On the new Chart editor section, click on Chart Type and select histogram
 
-c. Edit the histogram columns to see the distribution of different columns by changing the Series dropdown menu.
+c. Edit the histogram columns to see the distribution of different columns by changing the series dropdown menu.
 
 
-2. When you have a data set covering the entire world, it can be interesting to extrapolate certain knowledge. For instance, 
+2. When you have a data set covering the entire world, it can be interesting to extrapolate certain information. For instance, 
 you can calculate which countries have the largest or smallest GNI, the income per capita of women and men, and so on. 
 
-a. Now, you can use ``MATCH`` and ``INDEX`` functions. The ``MATCH`` function allows us to search for a value 
-   in a range of cells and return the position of that value. In cell N194 type ``=MATCH(N193, N2:N192, 0)``. 
-   Notice that the match function searches for the value in cell N193 in the range ``N2:N192``, and the 0 tells Google Sheets 
-   that the data is not sorted. The 0 is important because, without it, sheets will assume the data is sorted and will stop when it finds a value greater than the value in N194.
 
-b. Type ``=INDEX(A2:A192, N194)`` in cell N195. The ``A2:A192`` parameters is the range from which ``INDEX`` will return a corresponding value; in this 
-   case, it is the Location. N194 from the previous question is ``=MATCH(N193, N2:N192, 0)``. So the ``INDEX`` is practically telling sheets to find the 
-   Location (from column A) that is found in the same row as the maximum value.
+
+a. Remember, finding the maximum value of a column does not mean we know which country it corresponds to. Therefore, we can use the ``MATCH`` and ``INDEX`` functions 
+   to fix this problem. Let's find what country corresponds the maximum value of GNI. First, calculate the maximum GNI in cell M193, then in cell M194 type ``=MATCH(M193, M2:M192, 0)``. 
+   Notice that the match function searches for the value in cell M193 in the range ``M2:M192``, and the 0 tells Google Sheets that the data is not sorted. The 0 is 
+   important because, without it, sheets will assume the data is sorted and will stop when it finds a value greater than the value in M194.
+
+b. Type ``=INDEX(A2:A192, M194)`` in cell M195. The ``A2:A192`` parameters is the range from which ``INDEX`` will return a corresponding value; in this 
+   case, it is the location. M194 from the previous question is ``=MATCH(M193, M2:M192, 0)``. So the ``INDEX`` is practically telling sheets to find the 
+   location, from column A, that is found in the same row as the maximum value.
 
 c. All three steps shown above can be performed in a single cell. Let’s look at the country that has the lowest Procedure Men number . 
    In cell E193 type ``=INDEX($A2:$A141, MATCH(MIN(E2:E141), E2:E141, 0))``. The ``MATCH`` and ``MIN`` functions both return one value. 
@@ -166,7 +171,7 @@ c. Select location column (``A2:A192``) as the region and any column that you wi
 d. You may hover around each country to see its respective statistic.
 
 
-4. You may be wondering if there is a correlation between a country’s starting a business score and GNI or Procedure. 
+4. You may be wondering if there is a correlation between a country’s starting a business score and GNI or procedure. 
 One way to check this is to use the ``CORREL`` function to see how the score is affected by each factor i.e., starting a business score to GNI, 
 starting a business score to the procedure, starting a business score to time.
 
@@ -187,11 +192,11 @@ of starting a business but is ranked 139. The countries above and below South Af
 cost of 0.2.
 
 a. For all countries, compute the countries' average cost immediately above and below it and subtract that from the chosen 
-   country’s average cost. Store your findings in a new separate column.
+   country’s average cost. Store your findings in a new separate column called Average Cost.
 
 b. Use conditional formatting to help visually pick out the outliers.
 
-c. Sort the data by selecting the column containing one of the Costs, clicking on the Data Tab and select the Sort sheet by Cost-Average
+c. Sort the data by selecting the average cost column containing the average costs, clicking on the Data Tab and select the Sort sheet by A -> Z. 
 
 
 

@@ -158,8 +158,8 @@ statistics and visualization.
 
 .. _hf33f5c6794a1d5ee7c64395b788:
 
-Case Study 2: Happiness Index Research Questions
-------------------------------------------------
+Happiness Index Research Questions
+----------------------------------
 
 1. What are the different factors that lead to happiness of a country?
 
@@ -267,8 +267,8 @@ Summary Statistics
       later.
 
 
-Visualization
--------------
+Visualizing Happiness
+---------------------
 
 1. The STDDEV value tells us that the majority of the values are between 4.0 and 6.6 so let
    us check that graphically. It is easy to make a histogram of the values in

@@ -4,8 +4,8 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-Case Study 2: Comparing Data Across The Years
-=============================================
+Case Study 2: Starting a Business Data Across The Years
+=======================================================
 
 In this section, we will learn how to compare data across the years.
 Comparing data lets us recognize important patterns and trends over a 
