@@ -730,6 +730,7 @@ convenient for us.
 
 
 .. image:: Figures/UNGeneralDebates_11_0.png
+  :alt: Bar graph representing the change in text between 1970 to 2015.
 
 
 .. code:: python3
@@ -799,6 +800,7 @@ convenient for us.
 
 
 .. image:: Figures/UNGeneralDebates_13_0.png
+  :alt: Bar chart showing the number of records as the y axis and text(binned) as the x axis. Speech Distribution is the title of the chart.
 
 
 .. code:: python3
@@ -1528,6 +1530,7 @@ Success!!
 
 
 .. image:: Figures/UNGeneralDebates_69_0.png
+  :alt: Line graph showing mentions of global warming over time.  
 
 
 .. code:: python3
@@ -1538,7 +1541,7 @@ Success!!
 
 
 .. image:: Figures/UNGeneralDebates_70_0.png
-
+  :alt: Line charts showing mentions of global warming and climate change and over time from 1970 to 2015. 
 
 Fascinating! Until the late 80's, neither global warming or climate change were
 mentioned with relatively close to the same frequency until 2006 when climate
@@ -1561,6 +1564,7 @@ one or more items often leads to further and even more interesting questions.
 
 
 .. image:: Figures/UNGeneralDebates_74_0.png
+  :alt: Line charts showing mentions of terror over time from 1970 to 2015.  
 
 
 .. code:: python3
@@ -1742,7 +1746,7 @@ one or more items often leads to further and even more interesting questions.
 
 
 .. image:: Figures/UNGeneralDebates_81_0.png
-
+  :alt: "Bar chart showing the number of records as the y axis and text(binned) as the x axis."
 
 .. code:: python3
 
