@@ -679,7 +679,7 @@ relationships that we should consider.
 An example of a one-to-one relationship would be a person and their passport. A
 person can have one passport, and a given passport belongs to only one person.
 There is data that we can collect about a person and that could be stored in a
-DataFrame. There is also data that we can collect ffrom a passport, such as the
+DataFrame. There is also data that we can collect from a passport, such as the
 countries that person has visited, the place the passport was issued, and this
 could also be stored in a DataFrame.
 
