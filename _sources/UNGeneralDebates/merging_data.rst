@@ -748,7 +748,7 @@ as the movie has storing one genre on each line, but that would mean we would
 have to needlessly duplicate all of the other information on our first movie
 three times.
 
-A better strategy for doing solving this problem is to create a new DataFrame
+A better strategy for solving this problem is to create a new DataFrame
 with just two columns: one containing the movie's unique id number, and a second
 containing the genre. This allows you to use the ``merge`` method on the two
 data frames, but only temporarily when you need to know the genre of a
@@ -756,7 +756,7 @@ particular movie.
 
 
 .. figure::  movie_genres.jpg
-
+  :alt: Illustration of the merging of two data frames. One data frame contains movie info, and the other contains genre. The data frames are merged into a single data frame with two columns: genre and movie info.
 
 To construct this table, we need to iterate over all the rows of the DataFrame
 and gather the genres for this movie. For each genre of the movie, we will add

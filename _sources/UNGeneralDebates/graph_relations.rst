@@ -407,6 +407,7 @@ The result we are after for our 2014, 2015 dataset looks like this.
 
 
 .. figure:: Figures/heatmap1.png
+  :alt: Heatmap of how often USA, Mexico, Cuba and Canada are refered to by eachother.  
 
 
 With the narrow representation of the data, it is easy to have Altair make a
@@ -463,6 +464,7 @@ Your new heatmap should look like this.
 
 
 .. image:: Figures/heatmap2.png
+  :alt: Heatmap of how often the USA, Mexico, Cuba and Canada are referred to by each other.  
 
 
 Now, try to make your heatmap for these countries across all years, then move on
@@ -508,7 +510,7 @@ a line between the two circles. Our small example would look like this.
 
 
 .. image:: Figures/Digraph.gv.png
-
+  :alt: Digraph of USA, Mexico, Cuba and Canada based on how often they refer to each other. Mexico, USA and Cuba form a bidirectional line between each other while Canada points to itself. 
 
 The arrows on the graph indicate which country is referencing which other
 country. Formally, we call the ovals with the country names **nodes**, and the
@@ -628,8 +630,8 @@ The above produces a rather unattractive graph.
 
 
 .. image:: Figures/networkx1.png
-
-
+  :alt: A digraph of the Mexico, USA, Cuba, and Canada set as nodes. Three undirected edges connect Mexico, USA and Cuba. Canada is not connected to any other node. All nodes are coloured Red.  
+  
 The graph is missing the arrows, the text doesn't fit, and the bright red is a
 bit alarming for no good reason. The layout is also not very easy to understand.
 We can immediately do much better by saving the graph we created with
@@ -651,7 +653,7 @@ This produces a much nicer looking graph.
 
 
 .. image:: Figures/mydots.dot.png
-
+  :alt: Directed digraph of USA, Mexico, Cuba, and Canada based on how often they refer to each other. Mexico has an edge pointing to Cuba and USA. Cuba has an edge pointing to the USA. USA has an edge pointing to Cuba. Canada has no edges connecting it to any other country. All four countries have edges pointing to themselves.
 
 As with many tools, it's easy to get 80% done in a pretty quick way, but if you
 want to make a graph worthy of a polished presentation, that last 20% can take
