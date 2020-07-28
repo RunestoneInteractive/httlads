@@ -6,7 +6,7 @@
 Introduction
 ============
  
-This chapter will cover the definition and practice of Data Science. 
+This chapter will cover the definition and practice of **Data Science**. 
 It will explore the history and current state of the discipline, explaining 
 how data science began and where it will be going in the future. We will also 
 explore how Data Science is associated with Data Analysis and understand the difference between the two.
@@ -16,12 +16,13 @@ Learning Goals
 - Understand the importance of data collection and its implementation. 
 - Gain awareness of how broad data collection is in all subjects. 
 - Gain an introduction to what a Data Scientist does. 
-- Understand and know the purpose of all the steps in the Data Science Pipeline.
-- Understand what it takes to gain and better skills: Learning Zone vs Performance Zone. 
+- Understand and know the purpose of all the steps in the **Data Science Pipeline**.
+- Understand what it takes to gain and better skills: **Learning Zone** vs **Performance Zone**. 
 - Learn the difference between Data Science and Data Analytics.
 
 Learning Objectives
 ---------------------
+
 - Be able to identify different steps along different data science pipelines, recognizing all the previous and future steps.
 - Be able to identify if you are in a performance zone or learning zone and transition between them as necessary.
 - Be able to effectively navigate the *How to Think Like a Data Scientist* book.
