@@ -4,8 +4,12 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-UN General Debates
-==================
+Text Mining
+==============
+
+In this section, we will learn how to read and explore data on a deeper level. We will learn how to use various 
+tools to group and visualize the diverse text in a data set. Keep in mind that you might encounter some errors along the way. 
+Therefore, we will  also focus on different ways we can fix these errors.
 
 .. raw:: html
 
@@ -916,7 +920,7 @@ complete table ready for you to load, so you don't have to scrape it again.
 OH NO, what the heck!!
 ----------------------
 
-Unicode errors can be a huge pain, but are a fact of life for anyone dealing
+**Unicode errors** can be a huge pain, but are a fact of life for anyone dealing
 with data from multiple sources. In this case, we can use the unix file command
 to get a bit more information:
 
@@ -928,27 +932,30 @@ to get a bit more information:
 
 
 The important part of the result of that command is that it tells us that the
-character set is `iso-8859-1`. This piece of information is important, because
+character set is **`iso-8859-1`**. This piece of information is important, because
 it tells Python how to interpret the 8 bits as a character we would recognize.
 For example, let's take the familiar copyright © symbol. This symbol is stored
 in the computer's memory as 10101001. Aren't you glad you don't have to remember
 that? When Python tries to display a character for us, it has to know how that
-information is **encoded**, that is, how should Python interpret those bits.
-There are several common encodings used today.
+information is encoded, that is, how should Python interpret those bits.
+There are several common **encodings** used today.
 
-* ASCII (American Standard Code for Information Interchange): This is one of the
-  oldest encodings, and has been in use for years, its major limitation is that
+* **ASCII** (American Standard Code for Information Interchange): This is one of the
+  oldest encodings and has been in use for years. Its major limitation is that
   it can only encode 256 characters. And in fact, Python only interprets 0-127
-  as proper ASCII. This was fine for American English, in the early days of
-  computing but it does not work in the world today with many languages and many
+  as proper ASCII. This was fine for American English in the early days of
+  computing, but it does not work in the world today with many languages and many
   more emojis.
 
-* 'utf-8': This is probably the most common encoding in use today. It can
-  efficiently encode over 4 billion characters. Some with just 8 bits and others
+* **'utf-8'**: This is probably the most common encoding in use today. UTF stands for 
+  an 8-bit Unicode Transformation Format, which can encode all 1,112,064 characters in Unicode. 
+  It can efficiently encode over 4 billion characters. Some with just 8 bits and others 
   with up to 32 bits.
 
-* 'iso-8859-1' (also called 'latin-1'): This encoding takes full advantage of
-  all 8 bits of the ascii character set.
+* **'iso-8859-1'** (also called 'latin-1'): This encoding takes full advantage of
+  all 8 bits of the **ASCII** character set. It only uses one byte, so it can only represent
+  the first 256 Unicode characters. ISO-8859 contains encodings of different character sets, 
+  and the '-1' specifies  to use the 'latin-1' character set.
 
 
 So, let's try a little experiment. We can represent 169 as 10101001 or as the
@@ -973,7 +980,7 @@ hexadecimal value a9, which is easier to work with in Python.
 Aha! That error message looks familiar. (And you will run into this many times
 when working with data from the internet).
 
-Lets give ASCII a try.
+Lets give **ASCII** a try.
 
 .. code:: python3
 

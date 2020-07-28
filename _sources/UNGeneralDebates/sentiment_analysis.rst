@@ -4,8 +4,8 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-Sentiment Analysis of UN Speeches
-=================================
+Sentiment Analysis
+===================
 
 Sentiment analysis is a probabilistic evaluation of a piece of text that
 classifies the text as either positive, negative, or neutral. This kind of

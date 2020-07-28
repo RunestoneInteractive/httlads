@@ -4,14 +4,14 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-Graphing Relationships Between Countries
-========================================
+Graphing Relationships Between Data
+=====================================
 
 One thing that we might expect to come out of a bunch of people at the United
 Nations making speeches is that one country might mention another country. In
 fact, this probably happens quite frequently. In this section, we are interested
 in how we might visualize the relationship of one country talking about another
-country. We will do this in two ways: first as a "heatmap", second as a
+country. We will do this in two ways: first as a **"heatmap"**, second as a
 **graph**.
 
 Preparing the Data
@@ -36,7 +36,7 @@ The columns are:
 * ``ref_count``: The number of times a reference is made over all speeches
 
 When we are all done, we will put them together into a matrix that will have the
-country codes as the rows and the columns, and the cells will contain the count
+country codes as the rows. The columns and the cells will contain the count
 of the number of references.
 
 This project might sounds a bit ambitious to tackle all at once, so it's
@@ -515,9 +515,9 @@ a line between the two circles. Our small example would look like this.
 The arrows on the graph indicate which country is referencing which other
 country. Formally, we call the ovals with the country names **nodes**, and the
 arrows connecting them **edges**. One of the most common ways that computer
-scientists and mathematicians represent a graph is called an adjacency matrix.
+scientists and mathematicians represent a graph is called an **adjacency matrix**.
 Don't worry if this sounds daunting, you have actually already built an
-adjacency matrix!
+**adjacency matrix**!
 
 
 .. raw:: html
@@ -572,12 +572,12 @@ adjacency matrix!
     </table>
 
 
-In an adjacency matrix, the cells indicate if there is an edge from the row node
+In an **adjacency matrix**, the cells indicate if there is an edge from the row node
 to the column node. The values in the cells are often used to represent a weight
 or cost to go from one node to the other. A 0 in the cell indicates that there
 is no relationship.
 
-A second common way to represent a graph is through an **edge list**. Our narrow
+A second common way to represent a graph is through an edge list. Our narrow
 representation that we built originally for this project fits that description
 perfectly. Even the names we chose for the columns (``speaking_c``,
 ``referenced_c``) suggest a graph like relationship.
