@@ -9,7 +9,7 @@ Introduction
 Data scientists have to deal with a lot of data at once. While Google Sheets 
 and Excel are great ways to visualize and manipulate data, they are not as versatile 
 as we might want. That is where **data frames** come in. In this chapter, you will be introduced 
-to **data frames** and learn to use them to obtain information from data. 
+to data frames and learn to use them to obtain information from data. 
 
 Learning Goals
 ---------------
