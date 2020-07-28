@@ -15,8 +15,9 @@ Exploring the Data Science Pipeline via Descriptive Statistics
    cs1_more_happiness.rst
    cs1_yearly_happiness.rst
    cs1_correlation_matrix.rst
-   cs2_exploring_data_using_google_sheets.rst
-   cs2_adding_data_in_google_sheets.rst
-   cs2_comparing_data_across_years.rst
-   cs2_calculating_a_correlation_matrix.rst
-   
+   cs2_exploring_business_data.rst
+   cs2_new_business_data.rst
+   cs2_business_across_years.rst
+   cs2_correlation_matrix_business_data.rst
+   glossary.rst
+  

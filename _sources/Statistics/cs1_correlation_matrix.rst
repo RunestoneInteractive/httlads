@@ -11,7 +11,7 @@ Early on in our exploration of the happiness data, we calculated the correlation
 between the happiness score and the different factors. Now we have more data and
 more factors to continue, and we might ask a more general question about which
 of our columns are correlated with each other. A common way to do this is to
-build a correlation matrix. The rows and the columns of the correlation matrix
+build a **correlation matrix**. The rows and the columns of the correlation matrix
 represent each of our different factors and the individual values in the cells
 of the matrix represent the correlation between each pair of factors.
 

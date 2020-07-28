@@ -35,7 +35,7 @@ Below are definitions of the indicators found in the data set.
 -  **Paid-In Minimum Capital:** The minimum amount of money the entrepreneur must have is deposits in the bank for the business registration process to be completed.
 -  **Income Level:** This represents the income levels of each country's economy. This indicator is divided into low, lower-middle, upper-middle, and high, based on a country's gross national income (GNI) per person.
 
-We will use Google Sheets to explore which of these indicators are most important to start a new business in each economy's largest businesscity. So now, 
+We will use **Google Sheets** to explore which of these indicators are most important to start a new business in each economy's largest businesscity. So now, 
 import the data set that you downloaded earlier, starting a business, into Google Sheets.
 
 .. mchoice:: dat_sab1
@@ -90,7 +90,7 @@ b. Many formulas in Google Sheets use ranges. They can span cells in a single co
    - E2:E192
    - E2:L192
 
-c. Standard deviation is the average distance from the mean. It shows how spread out the data is more 
+c. **Standard deviation** is the average distance from the mean. It shows how spread out the data is more 
    than other types of variabilities. The median is also as important because it provides another kind of 
    baseline besides mean and mode. Calculate the ``STDEV`` and ``MEDIAN`` for the starting a business score column. 
 
@@ -125,7 +125,7 @@ Visualizing Starting a Business
 --------------------------------
 
 1. Visualizing the data is a great way to interpret it. It allows the viewer to easily see trends or find outliers. 
-A histogram is one way to visualize the standard deviation of a particular data set. To create a histogram in Google Sheets:
+A **histogram** is one way to visualize the standard deviation of a particular data set. To create a histogram in Google Sheets:
 
 a. Click on Insert then select Chart
 
@@ -159,7 +159,7 @@ d. Practice using the functions you have learned by finding the names of locatio
 e. If you want to copy/paste, check the ranges carefully and add the ``$`` sign to avoid running into errors.
 
 
-3. Another great way of visualizing data is to use a choropleth. A choropleth takes in a set of geographic data and uses a map 
+3. Another great way of visualizing data is to use a **choropleth**. A choropleth takes in a set of geographic data and uses a map 
 to show another set of data, such as starting a business score.
 
 a. Click on Insert then select Chart
@@ -171,11 +171,11 @@ c. Select location column (``A2:A192``) as the region and any column that you wi
 d. You may hover around each country to see its respective statistic.
 
 
-4. You may be wondering if there is a correlation between a country’s starting a business score and GNI or procedure. 
+4. You may be wondering if there is a **correlation** between a country’s starting a business score and GNI or procedure. 
 One way to check this is to use the ``CORREL`` function to see how the score is affected by each factor i.e., starting a business score to GNI, 
 starting a business score to the procedure, starting a business score to time.
 
-a. We can use the ``CORREL`` function to calculate the Pearson correlation between two ranges of data. Use a ``$`` sign to anchor the 
+a. We can use the ``CORREL`` function to calculate the **Pearson correlation** between two ranges of data. Use a ``$`` sign to anchor the 
    column and the values of starting a business ``$D$2:$D192``, so it doesn’t change when it is copy-pasted to use for other columns.
 
 b. Repeat the above exercise by changing or copy-pasting it to different columns to see the correlation with other factors listed.

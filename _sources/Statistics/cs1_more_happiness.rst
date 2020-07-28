@@ -6,7 +6,7 @@
 
 .. _h501f735b0476f5e696e1e2f7175266:
 
-Case Study 1: Adding More Data
+Case Study 1: Adding More Happiness Data
 ===============================
 
 Happiness by Region
@@ -153,7 +153,7 @@ data.
    country.
 
 2. You can start by either copy/pasting the whole sheet into a new tab or
-   importing the csv file into a new tab.
+   importing the **csv file** into a new tab.
 
 3. Next, we will want to add a column to the happiness spreadsheet that contains
    the population for each country. The way we do this is to use the ``VLOOKUP``
@@ -308,7 +308,7 @@ Now, using your new spreadsheet skills answer your own questions.
 Introducing Pivot Tables
 ------------------------
 
-We can make all of this a bit easier using pivot table! This is a really useful
+We can make all of this a bit easier using **pivot table**! This is a really useful
 tool to have in your toolbox, and many other tools you use will support the
 creation of pivot tables as well.
 

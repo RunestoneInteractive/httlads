@@ -10,7 +10,7 @@ Case Study 1: The Happiness Report
 ==================================
 
 Before proceeding, you need to have read the required readings about the data science processing pipeline,
-exploratory data analysis, and the other resources on spreadsheets and summary
+exploratory **data analysis**, and the other resources on spreadsheets and summary
 statistics linked in the previous section.
 
 
@@ -225,7 +225,7 @@ Summary Statistics
       A1:L141.
 
    c. Now calculate the ``STDEV`` and ``MEDIAN`` for the Happiness Score column
-      as well. If you are fuzzy about standard deviation,
+      as well. If you are fuzzy about **standard deviation**,
       `this article <https://towardsdatascience.com/intro-to-descriptive-statistics-252e9c464ac9>`_
       is a nice intuitive explanation.
 
@@ -271,7 +271,7 @@ Visualizing Happiness
 ---------------------
 
 1. The STDDEV value tells us that the majority of the values are between 4.0 and 6.6 so let
-   us check that graphically. It is easy to make a histogram of the values in
+   us check that graphically. It is easy to make a **histogram** of the values in
    Sheets. Note: To do this same thing in Excel you would need to install an
    extension.
 
@@ -404,8 +404,8 @@ Visualizing Happiness
    a. First, let's calculate a correlation between happiness score and each
       other factor.
 
-   b. To do this, we can use the ``CORREL`` function, which calculates a Pearson
-      correlation between two ranges of data. Because we want to always keep the
+   b. To do this, we can use the ``CORREL`` function, which calculates a **Pearson correlation**
+      between two ranges of data. Because we want to always keep the
       happiness index as one of the columns, we will anchor that column using $
       and but not the other columns. This will allow us to copy the formula
       across.
