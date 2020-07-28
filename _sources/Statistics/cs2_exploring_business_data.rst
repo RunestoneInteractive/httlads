@@ -64,13 +64,9 @@ Starting a Business Research Questions
 
 1. What are the different factors that lead to a high ranking in the “starting a business rank”?
 2. What role does “income level” play in determining the rank of a country?
-3. What factor, on average, contributes most/least to the starting a business rank?
+3. What factor, on average, contributes most/least to the starting a business rank? 
 4. What similarities and differences do the countries experiencing the highest/lowest starting a business rank have? Are there any discrepancies between different score factors of countries with similar rankings?
-5. Does being in a certain region/continent have any correlation to the average rank of countries?
-6. Have the starting a business rank changed over time? Which countries have the most improvement in their rank? Which countries have most declined in their rank?
-7. For the countries with the largest change, which factors changed the most? Are these factors the same as you identified in the first 3 questions?
-
-
+5. For the countries with the largest change, which factors changed the most? Are these factors the same as you identified in the first 3 questions?
 
 The data set lists countries based on their starting a business score. While it is easy to 
 see the best countries for starting a business using the starting a business rank, it is not 
@@ -125,19 +121,10 @@ Visualizing Starting a Business
 --------------------------------
 
 1. Visualizing the data is a great way to interpret it. It allows the viewer to easily see trends or find outliers. 
-A **histogram** is one way to visualize the standard deviation of a particular data set. To create a histogram in Google Sheets:
-
-a. Click on Insert then select Chart
-
-b. On the new Chart editor section, click on Chart Type and select histogram
-
-c. Edit the histogram columns to see the distribution of different columns by changing the series dropdown menu.
-
+A **histogram** is one way to visualize the standard deviation of a particular data set. 
 
 2. When you have a data set covering the entire world, it can be interesting to extrapolate certain information. For instance, 
 you can calculate which countries have the largest or smallest GNI, the income per capita of women and men, and so on. 
-
-
 
 a. Remember, finding the maximum value of a column does not mean we know which country it corresponds to. Therefore, we can use the ``MATCH`` and ``INDEX`` functions 
    to fix this problem. Let's find what country corresponds the maximum value of GNI. First, calculate the maximum GNI in cell M193, then in cell M194 type ``=MATCH(M193, M2:M192, 0)``. 
@@ -175,7 +162,7 @@ d. You may hover around each country to see its respective statistic.
 One way to check this is to use the ``CORREL`` function to see how the score is affected by each factor i.e., starting a business score to GNI, 
 starting a business score to the procedure, starting a business score to time.
 
-a. We can use the ``CORREL`` function to calculate the **Pearson correlation** between two ranges of data. Use a ``$`` sign to anchor the 
+a. We can use the ``CORREL`` function to calculate the **Pearson correlation** between two ranges of data. Remember to use the ``$`` sign to anchor the 
    column and the values of starting a business ``$D$2:$D192``, so it doesn’t change when it is copy-pasted to use for other columns.
 
 b. Repeat the above exercise by changing or copy-pasting it to different columns to see the correlation with other factors listed.
