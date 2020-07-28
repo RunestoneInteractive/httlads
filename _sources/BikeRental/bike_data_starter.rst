@@ -24,7 +24,7 @@ only show me the first ten (LIMIT 10).
 
 .. activecode:: sql_bikeshare_intro_1
     :language: sql
-    :dburl: /runestone/books/published/httlads/_static/bikeshare.db
+    :dburl: /runestone/books/published/httlads/_static/bikeshare_11_12.db
 
     SELECT
       *
