@@ -42,6 +42,6 @@ Table of Contents
     MovieData/toctree.rst
     WorldFacts/toctree.rst
     DataEthics/toctree.rst
-    UNGeneralDebates/toctree.rst
+    TextualAnalysis/toctree.rst
     BikeRental/toctree.rst
     Instacart/toctree.rst

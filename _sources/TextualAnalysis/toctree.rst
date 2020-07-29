@@ -4,8 +4,8 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-Text Analysis
-==============
+Textual Analysis
+================
 
 .. toctree::
    :maxdepth: 2
