@@ -4,21 +4,20 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-Data Analysis
-==============
+Case Study 2: Analyzing Protecting Minority Investors
+======================================================
 
 In this section, we will walk you through the process of analyzing and inspecting data. We 
 will go over the process of modeling and visualizing a data set with a different set of tools. 
-For this exercise, we will use the World Bank Data on Protecting Minority Investors which was 
+For this case study, we will use the World Bank Data on Protecting Minority Investors which was 
 provided to you in the introduction.
 
 
-Loading Data into a DataFrame from a CSV File
-----------------------------------------------
+Loading Minority Investors Data into a DataFrame
+-------------------------------------------------
 
-One of the most common ways you will find data in the contemporary world is in a **CSV file** format. CSV stands for
-"comma-separated value," This format allows us to share data files in a simple text format. To get our first glimpse at **Pandas** and its capabilities,
-we will be using the data about the countries we used in the spreadsheet module. A CSV file can be opened in any text editor; however, it is sometimes hard to read. Although it is hard to read, the structure makes it easy to parse for analysis, which we will use to our advantage. In the following block of code, you will see the first few lines of the raw CSV file for this project. 
+To get our first glimpse at **Pandas** and its capabilities, we will be using the data about the countries we used in the spreadsheet module. 
+In the following block of code, you will see the first few lines of the raw CSV file for this project. 
 It may look intimidating, but we will unpack it as we go. 
 
 .. code-block:: none
@@ -29,9 +28,8 @@ It may look intimidating, but we will unpack it as we go.
    Algeria,179,20.0,10,4.0,1.0,5.0,0.0,0.0,0.0,78
    Angola,147,32.0,16,4.0,6.0,6.0,0.0,0.0,0.0,79.4
 
-You can review the following material to get more familiar with reading and parsing CSV files with Python.
-`review this material <https://runestone.academy/runestone/static/fopp/Files/ReadingCSVFiles.html>`_.
-
+In case we have forgotten, here is the `link <https://runestone.academy/runestone/static/fopp/Files/ReadingCSVFiles.html>`_ to the documentation 
+on how to read and parse CSV files with Python.
 
 .. code:: python3
 
@@ -51,8 +49,7 @@ You can review the following material to get more familiar with reading and pars
    matplotlib.style.use('ggplot')
    # for plotly py.offline.init_notebook_mode()
 
-First, let us start by making use of one of the data reading functions that pandas
-provides for us, ``read_csv``.
+First, let's read the protecting minority investors CSV file using Pandas ``read_csv`` function.
 
 
 .. code:: python3
@@ -167,8 +164,8 @@ provides for us, ``read_csv``.
     </tr>
     </tbody></table>
 
-Describing the Data
--------------------
+Describing Minority Investors
+-----------------------------
 
 - Location
 - Protecting Minority Investors rank
@@ -180,9 +177,8 @@ Describing the Data
 - Extent of ownership and control index (0-7)
 - Extent of corporate transparency index (0-7)
 
-A handy method that pandas provide us with is ``describe``.
-`` describe`` is a method that is used to analyze and calculate statistical data. 
-Below is an example of what this method is capable of. 
+Let's use our handy method that Pandas provides us with, ``describe``, to get some statistical data.
+
 .. code:: python3
 
    wd.describe()
@@ -325,8 +321,8 @@ Below is an example of what this method is capable of.
 
 
 
-Visualizing Data with Histogram
---------------------------------
+Visualizing Minority Investors with a Histogram
+------------------------------------------------
 
 .. code:: python3
 
@@ -337,11 +333,8 @@ Visualizing Data with Histogram
 
 .. image:: Figures/visualization_1.png
 
-
-The code above explains every step in detail on how to make a **histogram** chart, creating a mark that returns
-the new chart to add encoding. However, there is also a shortcut to what we did above. We can write that code into a single line because once we create a mark, we can start to add the encoding right away.
-The other methods are designed to return the proper object. Therefore, we can write all of the
-calls above into a single line. We also do not need to explicitly call "display" because Altair returns an object that the Jupyter environment knows how to display automatically.
+As you may recall from case study 1, we can shorten the steps above of creating a histogram using a shortcut.
+Let's write all of the above calls into a single line.
  
 
 .. code:: python3
@@ -352,54 +345,22 @@ calls above into a single line. We also do not need to explicitly call "display"
 .. image:: Figures/visualization_2.png
 
 
-Practice
---------
-
-.. fillintheblank:: fact_disclosure_index_cs1
-   :casei:
-   
-   What is the range of values for the tallest bar when creating a histogram of the extent of disclosure index (0-10)? Lower: |blank| Upper: |blank|
-
-   - :7: Is the correct answer
-     :6: Just a little too low
-     :x: Try again, look closer at the histogram
-
-   - :8: Is correct
-     :x: Try again, look closer at the histogram
-
-
-
-.. fillintheblank:: fact_direct_liability_index_cs1
-   :casei:
-
-   What is the range of values for the tallest bar when creating a histogram of
-   the extent of director liability index? Lower: |blank| Upper: |blank|
-
-   - :(5): Is the correct answer
-     :.4: Just a little too low
-     :x: Try again, look closer at the histogram
-
-   - :(6): Is correct
-     :x: Try again, look closer at the histogram
-
-
 .. fillintheblank:: fact_liability_index2_cs1
    :casei:
 
-   Approximately how many countries have a score between 8.0 and 9.0 in the extent of the director liability index? |blank|
+   How many countries have a score between 8.0 and 9.0 in the extent of the director liability index? |blank|
 
    - :(23|24): Is the correct answer
      :x: Try again, the number is less than 25
 
 
 
-Scatter Plots for Discovering Relationships
+Discovering Relationships with Scatter Plots
 --------------------------------------------
 
 We can visualize and show the relationship between data using **scatter plots**.
 Let's make a simple scatter plot of protecting_minority_investors_score versus starting_a_business_score of the
 locations. For this exercise, we will use `Protecting Minority Investors CSV file <../_static/protecting_minority_investors.csv>`_.
-
 
 .. code:: python3
 
@@ -407,10 +368,11 @@ locations. For this exercise, we will use `Protecting Minority Investors CSV fil
 
 .. image:: Figures/visualization_3.png
 
-As we can see, that is a very scattered graph that does not focus on one area. Let’s redo the graph so we can focus on one area.
-Let us focus on the locations where protecting_minority_investors_score is less than 50, and the starting_a_business_score is less than 70. Let’s start with the first part.
+Now, let us focus on the locations where protecting_minority_investors_score is less than 50, and the starting_a_business_score is less than 70.
+Let’s start with the first part.
 
-To do this, we will create a new **DataFrame** where we focus on the locations where the protecting_minority_investors_score is less than 50, and the locations starting_a_business_score is less than 70. Pandas make this easy with its querying power. 
+To do this, we will create a new **DataFrame** where we focus on the locations where the protecting_minority_investors_score is less than 50, 
+and the locations starting_a_business_score is less than 70. Pandas make this easy with its querying power. 
 
 The statement below produces a series of **boolean values**. These boolean values are used to index the data frame and only the rows 
 corresponding to True values are returned in the result.
@@ -603,7 +565,6 @@ You can do this two ways; you can assign your query to a variable and put the va
 Or, you can put the query right into the call to create a chart.  
 
 
-
 .. code:: python3
 
     Chart(wd[wd.protecting_minority_investors_score < 50]).mark_point().encode(
@@ -614,11 +575,11 @@ Or, you can put the query right into the call to create a chart.
 
 
 Pretty neat! As we can see, one location has a minimal value while others are farther to the right. This graph encapsulates all the protecting_minority_investors_score
-that is less than 20; we also added a tooltip parameter so that if you hover over that point, you will see it is Somalia. Let's improve our query to focus on the locations where starting_a_business_score is less than 70.
+that is less than 20; we also added a tooltip parameter so that if you hover over that point, you will see it is Somalia. Let's improve our query to focus on the 
+locations where starting_a_business_score is less than 70.
 
 We can create a more complicated boolean expression by using ``|`` (logical *or*)
-and ``&`` (logical *and*) operators. In Python, these two operators are
-used for bitwise *or* and bitwise *and*.
+and ``&`` (logical *and*) operators. 
 
 
 .. code:: python3
@@ -894,7 +855,7 @@ used for bitwise *or* and bitwise *and*.
 .. image:: Figures/visualization_5.png
 
 Now, let’s suppose you want to travel and start your dream business in one of your favorite locations. For example, 
-let’s say you have always wanted to go to Malta and start your business; you might be curious about Malta. Let’s see what data we have in the data frame for Malta using equality. 
+let’s say you have always wanted to go to Malta and start your business. Let’s see what business related data we have in the data frame for Malta using equality. 
 
 
 .. code:: python3
@@ -959,9 +920,9 @@ had to type 'Malta '. This would have been very inconvenient, and we don't want 
 Therefore, we always need to do a bit of cleanup to strip those spaces.
 
 
-Python has a method called ``strip`` which does what we want, it removes characters
-from left and right based on the argument passed. You may be wondering, how can we apply this to all of the strings
-in the series. Well, Pandas allows us to do this using the ``str`` attribute of the series in combination with most of the standard string methods you know about.
+As you may recall, Python has a method called ``strip`` which does what we want, it removes characters
+from left and right based on the argument passed. Also, Pandas allows us to do this using the ``str`` attribute 
+of the series in combination with most of the standard string methods you know about.
 
 
 .. code:: python3
@@ -985,7 +946,7 @@ in the series. Well, Pandas allows us to do this using the ``str`` attribute of 
    Name: location, Length: 191, dtype: object
 
 
-If Malta had space after it, the strip method would get rid of it, and we could just use 'Malta' to get the 
+If Malta had a space after it, the strip method would get rid of it, and we could just use 'Malta' to get the 
 necessary information from our data set.
 
 .. code:: python3
@@ -1040,14 +1001,10 @@ necessary information from our data set.
     </div>
 
 
-Power Tools: Scatter Matrix
----------------------------
+Minority Investors: Scatter Matrix
+-----------------------------------
 
-There might be endless pairs of things we might want to see if there is any correlation. 
-However, this would take a long time and can be very tedious. This is where Scatter Matrix 
-comes into the rescue. Scatter Matrix allows you to see multiple pairs of things at once, as shown below. 
-
-
+Let's use scatter matrix to see correlation between multiple pairs of things at once.
 
 .. code:: python3
 
@@ -1077,24 +1034,12 @@ comes into the rescue. Scatter Matrix allows you to see multiple pairs of things
    ['b', 'a']
 
 
-Developing Fluency
-------------------
-
-As we saw, Pandas can be very useful and powerful. It was probably a lot to take in, 
-but if you develop fluency in the basics, it can be part of your daily workflow. Queries are a big part of Pandas; therefore, you should strive to make simple queries without thinking about the syntax. Lots of practice and repetition can achieve this. 
-
-That doesn't mean you can't go on and do lots of much harder things, it just
-means that it will take longer at first, as you have to go back and review
-documentation to become efficient.
-
 
 Practice Questions
 ------------------
 
 1. What are the top 10 countries by starting a business score?
 2. What are the top 20 countries by protecting minority investors' scores?
-3. What are the 10 countries with the highest score in the extent of ownership and control index (0-7)?
-4. What are the names, protecting minority investors rank, and starting a business score of the 5 largest countries?
-5. What are the names and their starting a business score of the five ranked countries?
+3. What are the names and their starting a business score of the five ranked countries?
 
     

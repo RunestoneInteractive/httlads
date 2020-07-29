@@ -6,8 +6,8 @@
 
 .. _screenscrape:
 
-Challenge: Screen Scraping the CIA
-==================================
+Case Study 1: Screen Scraping the CIA
+=======================================
 
 The country data that we have been using was compiled and turned into a CSV file
 in 2006. Much of that data comes from the CIA World Factbook (not Facebook, as

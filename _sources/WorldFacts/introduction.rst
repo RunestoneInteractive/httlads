@@ -51,10 +51,11 @@ Reading List
 
 In this first part of the module, we will continue with some data that should be familiar to you, but we
 will use it in Pandas instead of a spreadsheet. In the second part, we will
-focus on several different kinds of textual analysis using data. Download The `World Countries csv file <../_static/world_countries.csv>`_,
-`Protecting Minority Investors csv file <../_static/protecting_minority_investors.csv>`_, and
-`Starting a Business csv file <../_static/starting_a_business.csv>`_ to get started. We
-will be working with these files in this chapter.
+focus on several different kinds of textual analysis using data. Download The `world countries <../_static/world_countries.csv>`_,
+`protecting minority investors <../_static/protecting_minority_investors.csv>`_, and
+`starting a business <../_static/starting_a_business.csv>`_ to get started. We
+will be working with these files in this chapter. Keep in mind that this `starting a business <../_static/starting_a_business.csv>`_ is 
+different than the one used in chapter 2.
 
 
 

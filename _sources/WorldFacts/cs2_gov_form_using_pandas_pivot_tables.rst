@@ -5,8 +5,8 @@
 
 
 
-Comparing Government Forms
-============================
+Case Study 2: Comparing Government Forms
+=========================================
 
 The goal of this section is to be able to summarize, sort, organize, or count the
 data in a specific database using pivot tables. In this section, we will work with the data that we scraped from the CIA World Factbook website. We will compare different forms

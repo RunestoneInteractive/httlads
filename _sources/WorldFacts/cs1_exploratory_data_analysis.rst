@@ -4,8 +4,8 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-Exploratory Data Analysis
-=========================
+Case Study 1: Exploratory Data Analysis
+==========================================
 
 Loading Data into a DataFrame from a CSV File
 ---------------------------------------------

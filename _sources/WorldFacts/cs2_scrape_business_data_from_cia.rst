@@ -7,8 +7,8 @@
 
 .. _screenscrape:
 
-Web Scraping Using Panda and BeautifulSoup 
-===========================================
+Case Study 2: Scraping Business Data Using Panda and BeautifulSoup 
+===================================================================
 
 
 In this chapter, we will learn how to extract data from any source. Often, data cannot be obtained in a simple CSV format, and we need to extract it in other ways. 
@@ -40,11 +40,12 @@ local computer.
 The challenge of this project is that each variable, such as budget, GDP, inflation rate, etc., is on its page.
 So, we will have to combine data from many pages into a single coherent data frame. Then,
 when we have gathered all of the columns, we can pull them together into one
-nice data frame, and we'll learn how to save that to a CSV file.
+nice data frame, and save that to a CSV file.
 
-If you design a good function for finding and scraping
-one piece of information, make it work for all pieces of information, and in the end, you will have a minimal amount of code that does a LOT of work. Therefore, try scraping one or two pages and when you have become comfortable scraping single pages. You can gather all the columns and URLs from the ``notesanddefs.html`` file, and loop through the URLs
-to go to each page and retrieve all the information you want. 
+If you design a good function like the one in the previous case study to find and scrape one piece of information, you can also 
+make it work for all pieces of information. If you accomplish this, in the end, you will have minimal amount of code that does a lot of work. 
+Therefore, try scraping one or two pages and when you have become comfortable scraping single pages. You can gather all the columns and URLs from the ``notesanddefs.html`` 
+file, and loop through the URLs to go to each page and retrieve all the information you want. 
 
 Copy path from your file explorer. Here is an example of how it should look like.
 
@@ -65,8 +66,8 @@ Lets take a look at the file structure of the downloaded data from 2017.
    ['2001.html', '2002.html', '2003.html', '2004.html', '2006.html', '2007.html', '2008.html', '2010.html', '2011.html', '2012.html']
 
 
-Getting a List of All Fields
-----------------------------
+Getting a List of Business Fields
+----------------------------------
 
 This may look intimidating to see, but there is a method behind this madness. For each
 numbered file, it contains one field that we can add to our data frame. Try to examine
@@ -78,15 +79,10 @@ there is one, and we can find it in the file, ``rankorderguide.html``.
 For now, let's start small and work our way up to the bigger picture. We can write
 some code to scrape all the fields and the file they are in from the ``rankorderguide.html`` file.
 
-The webpage for that file looks like this.
+Each page contains different information about countries. We can scrape features such as Inflation rate (consumer prices), 
+industrial production growth rate, etc., and the link to the page that has all of the data for this feature for each country.
 
-.. figure:: Figures/factbook_notes.png
-
-   Part of the Definitions and Notes page for the World Factbook 2017.
-
-Each page contains different information about countries. We can scrape features such as Inflation rate (consumer prices), industrial production growth rate, etc., and the link to the page that has all of the data for this feature for each country.
-
-Before we start scraping the CIA World Factbook data, let's get a bit more familiar with **HTML** structure.
+Before we start scraping the CIA World Factbook data, let's refresh our memory on the **HTML** structure.
 Below is an excerpt from the HTML page that has information about the inflation rate. Let us carefully examine each tag and element in HTML so we 
 can scrape the data more efficiently.
 
@@ -117,50 +113,23 @@ If you are using another browser, you can always look up online on how to view t
 			</li>
 			</div> 
 
-If you have not seen **HTML** before, this may look a bit confusing. A
-skill you will develop as a data scientist is learning what to focus on and
-what to ignore. This takes practice and experience, so don't be frustrated if it
-seems a bit overwhelming at the beginning.
 
-The two things to focus on here are:
 
-* ``<td style="width: 90%;" >Inflation rate (consumer prices)</td><td align="right" valign="middle">``
-* ``<a href="../fields/2092.html#119" title="Field info displayed for all countries in alpha order."><img src="../graphics/field_listing_on.gif" border="0" style="padding:0px;" > </a>``
-
-The ``<td>`` is a tag that defines a cell in a table. The page you see in the figure is composed of many small tables; each table has one row and two columns.
-The first column contains the feature we are interested in, and the second
-contains the icon. This would not be considered as good page design by many web
-developers today, but you have to learn to work with what you've got. The icon
-is embedded in an ``<a>`` tag. This is the tag that is used to link one web page
+The ``<td>`` is a tag that defines a cell in a table. ``<a>`` is the tag that is used to link one web page
 to another. You click on things defined by ``<a>`` tags all the time.  The part
 ``href="../fields/2092.html#119`` is a hyper-ref, that contains the URL of where
-the link should take you. For example, `This Link <https://runestone.academy>`_
-takes you to the Runestone homepage and looks like this in HTML
-``<a href="https://runestone.academy">This Link</a>``.
+the link should take you.
 
 The indentation in the code shows the hierarchical structure of an HTML document. Some very important things to note is that,
 blocks that are indented to the same level are siblings, and blocks that are nested inside other blocks have a parent-child relationship. 
 We can take a look at examples of these relationships in the following diagram. 
 
-.. figure:: Figures/htmltree.png
+Let's find a pattern that will help us find the two items that we are interested in. For instance, in the 2017 country 
+data, we see that each table we want is contained in a ``span``, and the span has the attribute ``class="category"``. 
+Keep in mind that this is not always the pattern for every webpage. For future web scraping, pay attention 
+to the particular pattern of a webpage and scrape accordingly.
 
-Now, we need to look closely at the HTML page as a whole and see if we can find a pattern
-that can help us find the two items that we are interested in. 
-
-In the 2017 country data, we see that each table we want is
-contained in a ``span``, and the span has the attribute ``class="category"``. Keep in mind that this is not always the pattern for every webpage. For future web scraping, pay
-attention to the particular pattern of a webpage and scrape accordingly.
-
-Now that we know the pattern of the 2017 country data, the big question is how we go
-about finding and working with each instance of what we are looking for on our
-web page. We could treat each page as a big long string and use Python's
-string searching facilities. But, that would be *painful* for sure. Instead, we
-will turn to another of Python's packages that will make the job fun and very
-manageable. That package is called
-`BeautifulSoup <https://www.crummy.com/software/BeautifulSoup/bs4/doc/>`_. The
-name "Beautiful Soup" comes from *Alice in Wonderland*; it is the title of a
-song sung by the Mock Turtle. (Yes, its turtles everywhere!) Using
-**BeautifulSoup**, we can get the web page into a form that we can use some real
+We will use Python's **BeautifulSoup** package to get the web page into a form that we can use some real
 power search tools.
 
 First, let's import the module and read the entire webpage as a string. In this exercise, since we downloaded
@@ -217,14 +186,10 @@ Now, let's have BeautifulSoup take control.
      <script src="../js/jquery-1.8.3.min.
 
 
-So far, this doesn't seem like much help, but let's see how we can use the
-search capabilities of BeautifulSoup to find all of the ``span`` tags with the
-``class`` "category". To do this, we will use a search syntax commonly
-used in the web development community. It is the same syntax used to
-write the rules for the **Cascading Style Sheets (CSS)** that are used to make our
-web pages look nice.
+We will use the search capabilities of BeautifulSoup to find all of the ``span`` tags with the
+``class`` "category".
 
-The search syntax allows us to:
+As you may remember, the search syntax allows us to:
 
 * Search for all matching tags
 * Search for all matching tags with a particular class
@@ -234,7 +199,7 @@ The search syntax allows us to:
 * Many other things of a similar essence
 
 The search syntax uses a couple of unique characters to indicate
-relationships or to identify classes and ids.
+relationships or to identify classes and ids. Let's review them.
 
 * ``.`` is used to specify a class, so ``.category`` finds all tags that have the attribute ``class=category``. ``tag.class`` makes that more specific and limits the results to just the particular tags that have that class. For
   example, ``span.category`` will only select span tags with ``class=category``.
@@ -242,11 +207,9 @@ relationships or to identify classes and ids.
   id=2053. ``#2053`` would find any tag with id=2053. Note ids are meant to be unique within a web page, so ``#2053`` should only find a single tag.
 * `` `` indicates parent-child relationship, so ``span table`` would find all of the table tags that are children of a span, and ``div span table`` would find all the tables that are children of a span that are children of a div.
 
-You can get more complicated than that, but knowing only those three of
-those concepts is an excellent start. To make use of the search capability, we will
-use the
-`select <https://www.crummy.com/software/BeautifulSoup/bs4/doc/#css-selectors>`_
-method of a BeautifulSoup object. In our case, we have created a BeautifulSoup
+
+Let's use the `select <https://www.crummy.com/software/BeautifulSoup/bs4/doc/#css-selectors>`_
+method of BeautifulSoup object. In our case, we have created a BeautifulSoup
 object called ``page``. ``select`` will always return a list so that you can iterate
 over the list or index into the list. Let's try an example. 
 
@@ -277,24 +240,9 @@ takes us to the top of the page.
    - :793: Is the correct answer
      :x: Use the select method to find only a div tag
 
-.. fillintheblank:: cfclose_tag
-    :casei:
-
-   What kind of tag is the last tag to have the class of "cfclose"? |blank|
-
-   - :button: Is correct
-     :x: Hint: There are three items with class="cfclose", all are the same tag
-
-
-Now, let's put this all together and see if we can make a list of the columns
-and the paths to the files that contain the data. We will do this by creating a
+Starting small, let's print the column names. We will do this by creating a
 list of all of the ``span`` tags with the class category. As we iterate over
 each of them, we can use ``select`` to find the ``td`` tags inside the span.
-There should be two of them in each. The first will give us the name of the
-column and the second will have the path to the file contained in the ``href``
-attribute.
-
-Starting small, let's print the column names.
 
 
 .. code:: python3
@@ -322,7 +270,7 @@ Starting small, let's print the column names.
    Budget
 
 
-Next, let's expand on this example to get the path to the file.
+Next, let's get the path file name using the same concept as the example above. 
 
 
 .. code:: python3
@@ -370,9 +318,8 @@ Next, let's expand on this example to get the path to the file.
 
 
 
-So, now we have the means to get the names and paths so that we can populate a
-DataFrame with columns and data for each country. Your task is now to create a
-DataFrame with as many of the same columns as you can. You'll have to do your investigation into the
+So, now we have the means to get the names and paths. Your task is now to create a
+DataFrame with as many of the business information that you can. You'll have to do your investigation into the
 structure of the file to find a way to scrape the information.
 
 Like mentioned earlier, we suggest starting by scraping one or two pages and get all the information from those pages. Then, when 
@@ -380,26 +327,10 @@ you are comfortable and make a function that gives you all the information; you 
 all the pages with minimal code. 
 
 
-Loading All the Data in Rough Form
-----------------------------------
+Loading Business Data in Rough Form
+------------------------------------
 
-One more thing to note: you might assume that the country names will all be
-consistent from field to field, but that probably isn't always the case. Therefore, if the country names are consistent in the fields, go ahead, and use country names.
-However, if that is not the case, you can use the two-letter country code in the URL 
-to the detailed information about each country or the id of the ``tr`` tag in the large
-table that contains the data you want. So, what you are are going to have to do
-is build a data structure for each field. You will want a name for the field,
-then a dictionary that maps from either country name or the two-digit country code to the value of the
-field.
-
-
-.. code-block:: none
-
-   all_data = {'field name' : {coutry_code : value} ...}
-
-It may be that the data for the field and the country is more than we want, but
-it will be easiest, for now, to just get the data in rough form, then we can clean
-it up once we have it in a DataFrame.
+Let's get the data in rough form, then we can clean it up once we have it in a DataFrame.
 
 There are 177 different fields in the 2017 data. Loading all of them would be a
 considerable amount of work, and more data than we need. Let's start with a list that is
@@ -417,8 +348,13 @@ close to our original data above.
 
 Feel free to add others if they interest you.
 
-If you use the structure given above, you can just pass the dictionary that you created to the DataFrame
+
+You can use the structure given below and you can just pass the dictionary that you created to the DataFrame
 constructor, and you should have something that looks like this.
+
+.. code-block:: none
+
+   all_data = {'field name' : {coutry_code : value} ...}
 
 
 .. code:: python3
@@ -511,56 +447,35 @@ constructor, and you should have something that looks like this.
       </tbody></table>
       </div>
 
-We have made a lot of progress, but we still have a lot of cleanup to do! You
-will have noticed that many of the fields that we wanted to be numeric are
-not. Many of them are in a more human-readable format than
-computer-digestible. You should consult the documentation on the ``extract``
-method in Pandas, as it will help you get what you want from the strings you
-currently have.
+Now, we need to a bit of cleanup!
+You can use the documentation on the ``extract`` method in Pandas to make the fields that
+are not numeric more computer-digestable.
 
 
-Cleaning the Data
------------------
+Cleaning Business Data
+-----------------------
 
-With the data now in a DataFrame, we can begin the hard work of cleaning it up.
-We can do this nicely and tackle one column at a time. This is a lot of string
-processing and type conversion. A lot of this can be made easier by using
-regular expression pattern matching, which is a great skill to add to your
-arsenal. If you haven't used them before or are out of practice, go through
-`this tutorial <http://evc-cit.info/comsc020/python-regex-tutorial/>`_.
-
-**Instructors Note:** This would work well as a class project, where each team
-gets a column to transform. Everyone can then share their solution with everyone
-else, or if you don't have enough students, then each team can take one or more
-columns.
+Now that the data is in a DataFrame, you can start cleaning it up.
+You can go through `this tutorial <http://evc-cit.info/comsc020/python-regex-tutorial/>`_. to learn how 
+to use regular expression pattern matching.
 
 
-.. shortanswer:: budget_av
-
-   What is the average value for the column Budget, to two
-   significant digits?
-
-
-Saving the Data
----------------
+Saving the Business Data
+-------------------------
 
 We can save the data using ``to_csv``.
 
-Comparing Across the Years
---------------------------
 
-If you try to repeat the exercise above for 2016, it works great! How about
-2015? Earlier? How far back can you go before your code breaks?
+Comparing Business Data Across the Years
+-----------------------------------------
 
-What you will find when you go back illustrates one of the really ugly parts of
-**screen scraping**, which is that you are at the mercy of the website designer. All
-they have to do is make one little change to a CSS class or the id of an
-element, and your whole strategy goes away.
+We can do this process for past years, but you might have to change your code a bit as you go back in the years.
+As you go back and **screen scrape** previous years, you will see that we really are at the mercy of the website designers.
+One minor change to the CSS class or the id element can really mess up your code and strategy to screen scrape.
 
-If you or your classmates can scrape all 17 years of world factbook data, you
-will have achieved something special. (And, you will be destined for
-internet fame if you make your notebooks public.) You will likely have noticed
-that lots of people want this data in a more convenient format.
+However, if you mange to scrape all 17 years of world factbook data, you will have achieved something special.
+There are a lot of people that can make use of this data in a more convenient format. 
+
 
 .. reveal:: web_scraping_2017_data
     :instructoronly:

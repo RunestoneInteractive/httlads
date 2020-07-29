@@ -11,15 +11,18 @@ Exploratory Data Analysis
    :maxdepth: 2
 
    introduction.rst                        
-   data_analysis.rst
-   graphing_data_on_a_map.rst
-   Web_Scraping.rst
-   summarizing_gov_form_using_pandas_pivot_table.rst
-   exploratory_data_analysis.rst
-   screenscrape_cids.rst
-   scrape_cia.rst
-   summarizing_data_using_pivot_table.rst
+   cs1_exploratory_data_analysis.rst
+   cs1_graphing_infant_mortality.rst
+   cs1_scrape_cia.rst
+   cs1_government_types.rst
+   cs2_data_analysis.rst
+   cs2_graphing_business_data.rst
+   cs2_scrape_business_data_from_cia.rst
+   cs2_gov_form_using_pandas_pivot_tables.rst
    glossary.rst
 
-   
+
+
+
+    
    

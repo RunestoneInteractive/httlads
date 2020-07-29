@@ -3,8 +3,8 @@
    International License. To view a copy of this license, visit
    http://creativecommons.org/licenses/by-sa/4.0/.
 
-Summarzing Data Using Pandas Pivot Table
-==========================================
+Case Study 1: Summarzing Data Using Pandas Pivot Table
+=======================================================
 
 The goal of this section is to be able to make a comparison of data in our data set.
 In the previous sections, we learned how to extract, visualize, and save data. Now,

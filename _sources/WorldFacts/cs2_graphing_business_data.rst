@@ -4,195 +4,42 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-Graphing Data on a Map
-=======================
-
+Case Study 2: Graphing Business Data on a Map
+===============================================
  
-In this section, we will explore data visualization techniques that use data to display information in a more abstract and helpful format so that the data analysis results are better understood.
-For this exercise, we will focus on graphing data on a map using Altair.
+In this section, we will explore visualization techniques that use data to display information in a more abstract and helpful format so that the data analysis results are better understood.
+For this case study, we will focus on graphing business data on a map using Altair.
 
-
-Let's take on the seemingly simple task of plotting some of the country data on
-a map as we did in Google Sheets earlier. We'll see that this is one area
-where things are not quite as simple as they are in Sheets. But we can make it
-work with a bit of effort.
-
-Altair provides us with the facility to make a blank map. But filling in the
-data requires a bit more work on our part.
-
-This is an excellent example of learning by example, then extrapolating what you need
-to do based on understanding the example.
-
-The counties data that is passed to the chart is the data needed to
-create and outline the map.
-
-
-.. code:: python3
-
-   import pandas as pd
-   import altair as alt
-   from vega_datasets import data
-   counties = alt.topo_feature(data.us_10m.url, 'counties')
-   unemp_data = data.unemployment.url
-
-
-   alt.Chart(counties).mark_geoshape().project(
-       type='albersUsa').properties(
-       width=500,
-       height=300
-   )
-
-
-.. image:: Figures/WorldFactbook_55_0.png
-
-
-What about our encoding channels?! The primary data needed to draw the map using
-a ``mark_geoshape`` was passed to the Chart, but that is secondary data
-. What we care about is graphing the unemployment data by county. That is
-in a different data frame with a column called ``rate``.
-
-With a geoshape, we can encode the county data using color. But, there is no
-unemployment data in counties, so we have to use a ``transform_lookup`` to
-**map** from the way counties are identified in the geodata to our DataFrame
-that contains unemployment data.
-
-
-.. code:: python3
-
-   unemp_data = pd.read_csv('http://vega.github.io/vega-datasets/data/unemployment.tsv',sep='\t')
-   unemp_data.head()
-
-
-.. raw:: html
-
-    <div style="max-width: 800px; overflow: scroll;">
-    <style scoped>
-        .dataframe tbody tr th:only-of-type {
-            vertical-align: middle;
-        }
-
-        .dataframe tbody tr th {
-            vertical-align: top;
-        }
-
-        .dataframe thead th {
-            text-align: right;
-        }
-    </style>
-    <table border="1" class="dataframe">
-      <thead>
-        <tr style="text-align: right;">
-          <th></th>
-          <th>id</th>
-          <th>rate</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th>0</th>
-          <td>1001</td>
-          <td>0.097</td>
-        </tr>
-        <tr>
-          <th>1</th>
-          <td>1003</td>
-          <td>0.091</td>
-        </tr>
-        <tr>
-          <th>2</th>
-          <td>1005</td>
-          <td>0.134</td>
-        </tr>
-        <tr>
-          <th>3</th>
-          <td>1007</td>
-          <td>0.121</td>
-        </tr>
-        <tr>
-          <th>4</th>
-          <td>1009</td>
-          <td>0.099</td>
-        </tr>
-      </tbody>
-    </table>
-    </div>
-
-
-Using the ``transform_lookup`` method, we can arrange for the id in the
-geographic data to be matched against the id in our ``unemp_data`` data frame.
-This allows us to make use of two data frames in one graph. The example below is
-a bit misleading because id is used both as lookup and key in
-the call to LookupData. The lookup value refers to the column name in the
-DataFrame passed to Chart, whereas the second parameter to the LookupData call
-is the name of the column in the ``unemp_data`` DataFrame. It is just a
-coincidence that they have the same name in this example.
-
-
-.. code:: python3
-
-   alt.Chart(counties).mark_geoshape(
-   ).encode(
-       color='rate:Q'
-   ).transform_lookup(
-       lookup='id',
-       from_=alt.LookupData(unemp_data, 'id', ['rate'])
-   ).project(
-       type='albersUsa'
-   ).properties(
-       width=500,
-       height=300,
-       title='Unemployment by County'
-   )
-
-
-.. image:: Figures/WorldFactbook_59_0.png
-
-
-Using a Web API to get Country Codes
+Getting Country Codes from a Web API
 ------------------------------------
 
-Now that you are familiar with graphing data on a map using Altair. We can
-make use of the provided example above to create a graph of the world where
-the countries are colored by one of the features in the `Starting a Business CSV file <../_static/starting_a_business.csv>`_ data set.
+Now that you are familiar with graphing data on a map using Altair from the previous case study. We can
+make use of the provided example in the previous case study to create a graph of the world where
+the countries are colored by one of the features in the `starting a business <../_static/starting_a_business.csv>`_ data set.
 
-The goal of this section is to learn how to use web API to gather data. In this
-specific exercise, we will use a web API to get data that maps country codes to country numbers. We will learn how to add columns to our Starting a Business data set
-using the ``map`` function. This new column will contain country codes.
+In this specific exercise, we will use a web API to get data that maps country codes to country numbers.
+We will use the ``map`` function to add columns to our starting a business data. This new column will contain country codes.
 
-This exercise aims to add a new column to our data set and then graph it on a map.
-We can get the information for the new column from different sources. But this is an excellent chance
-to learn how to get the data using web API. To get this information, we will use a web API from a 
-website. **API** stands for Application Programmer Interface. Each website will have its
-convention for how you ask it for data, and the format in which the data is
-returned. Once we obtained the required data using web API, we can follow the example
-at the beginning of this section to add the new column and then make a world map and show Starting_a_Business_score
-from the Starting a Business data set.
+We can get the information for the new column from different sources. To get this information, we will use a web API from a 
+website. Each website has its own specific API format and a protocol to obtain that API. Once we obtained the required data using the web API, we can follow the example
+from the previous case study to add the new column and then make a world map to show Starting_a_Business_score column
+from the starting a business data set.
 
-First, let's familiarize ourselves with the `requests module <http://http://docs.python-requests.org>`_.
-This tool is amazing because the request module allows us to communicate with databases across the web.
-The request module documentation is really helpful, so we recommend you using it to learn about its features in detail. 
-For now, we will give you the bare bones here to get you started. 
-
-
-This website, ``restcountries.eu`` provides an interface where we can get data from their site
-rather than a web page. It is important that when you think of a web API, you understand how to ask
-it for the data that you want. For our purposes, we are going to use ``/rest/v2/alpha/XXX``. Let's take a look
-at what this means.  
-
+We will use the `requests module <http://http://docs.python-requests.org>`_ as it is a great tool that allows us to communicate with databases 
+across the web. We will also use the ``restcountries.eu``, as it provides us an interface where we can get data from their site rather
+than a web page. If you recall, there is a way to ask for the data that you want. We will use ``/rest/v2/alpha/XXX``.
 
 * ``/rest``: Technically, REST stands for REpresentational State Transfer. This uses the HTTP protocol to ask for and respond with data.
 * ``/v2``: This is version 2 of this website's protocol.
 * ``/alpha``: This tells the website that the next thing we are going to pass is the country's three-letter code.
 * ``XXX``: This can be any valid three-letter country code, for example, "usa".
 
-
 **NOTE** there are other ways to look up information, such as the countries' numericCode, language, currency, and more. 
 These other methods are in the website ``restcountries.eu``.
 
-Now that we know the format let's open a new tab in your browser and see the call in action. Paste the following 
-URL in your web browser: `https://restcountries.eu/rest/v2/alpha/usa`. As you may have noticed, you do not get a 
-web page in response. You get information that looks like a Python **dictionary**. We will come back to this later
-on in this section, but we can do something similar with a python program using the requests library. 
+Open a new tab in your browser and see the call in action. Paste the following 
+URL in your web browser: `https://restcountries.eu/rest/v2/alpha/usa` and make a request. 
+Let's also check if our request was processed correctly with ``status_code``. A status code of 200 means everything went fine.
 
 .. code:: python3
 
@@ -201,15 +48,13 @@ on in this section, but we can do something similar with a python program using 
    res.status_code
 
 
+
 .. parsed-literal::
 
    200
 
-The status code of 200 tells us that everything went fine. If you make a typo in
-the URL, you may see the familiar status code of 404, meaning not found.
 
 We can also look at the text that was returned.
-
 
 .. code:: python3
 
@@ -220,21 +65,10 @@ We can also look at the text that was returned.
 
    '{"name":"United States of America","topLevelDomain":[".us"],"alpha2Code":"US","alpha3Code":"USA","callingCodes":["1"],"capital":"Washington, D.C.","altSpellings":["US","USA","United States of America"],"region":"Americas","subregion":"Northern America","population":323947000,"latlng":[38.0,-97.0],"demonym":"American","area":9629091.0,"gini":48.0,"timezones":["UTC-12:00","UTC-11:00","UTC-10:00","UTC-09:00","UTC-08:00","UTC-07:00","UTC-06:00","UTC-05:00","UTC-04:00","UTC+10:00","UTC+12:00"],"borders":["CAN","MEX"],"nativeName":"United States","numericCode":"840","currencies":[{"code":"USD","name":"United States dollar","symbol":"$"}],"languages":[{"iso639_1":"en","iso639_2":"eng","name":"English","nativeName":"English"}],"translations":{"de":"Vereinigte Staaten von Amerika","es":"Estados Unidos","fr":"États-Unis","ja":"アメリカ合衆国","it":"Stati Uniti D\'America","br":"Estados Unidos","pt":"Estados Unidos","nl":"Verenigde Staten","hr":"Sjedinjene Američke Države","fa":"ایالات متحده آمریکا"},"flag":"https://restcountries.eu/data/usa.svg","regionalBlocs":[{"acronym":"NAFTA","name":"North American Free Trade Agreement","otherAcronyms":[],"otherNames":["Tratado de Libre Comercio de América del Norte","Accord de Libre-échange Nord-Américain"]}],"cioc":"USA"}'
 
-
-That looks like an ugly mess! Fortunately, it's not as bad as it seems. If you
-look closely at the data, you will see that it starts with a ``{`` and ends with
-a ``}``. You may realize this looks a lot like a Python dictionary! If
-you thought that, you are correct. This is a big long string that represents a
-Python dictionary. We can convert this string into an actual Python
-dictionary and then access the individual key-value pairs stored in the
-dictionary using the usual Python syntax!
-
-The official name for the format that we saw above is called **JSON**: JavaScript
-Object Notation. It's an excellent acronym to know, but you don't have to know
-anything about Javascript to make use of JSON.  You can think of the
-results as a Python dictionary.  It can be a bit daunting at first, as there can be
-many keys. JSON is often full of dictionaries of dictionaries of lists of dictionaries
-but fear not; you can figure it out with a bit of experimentation.
+If you recall, this long string resembles a Python dictionary. We can convert this string into an actual Python
+dictionary and then access the individual key-value pairs stored in the dictionary using the usual Python syntax.
+The official name for the format that we saw above is called **JSON**. As you recall, JSON is full of dictionaries 
+of dictionaries of lists of dictionaries.
 
 
 .. code:: python3
@@ -298,55 +132,8 @@ but fear not; you can figure it out with a bit of experimentation.
         'Accord de Libre-échange Nord-Américain']}],
     'cioc': 'USA'}
 
-For example, timezones is a top level key, which produces a list of the valid timezones in the USA.
-
-.. code:: python3
-
-   usa_info['timezones']
-
-
-.. parsed-literal::
-
-   ['UTC-12:00',
-    'UTC-11:00',
-    'UTC-10:00',
-    'UTC-09:00',
-    'UTC-08:00',
-    'UTC-07:00',
-    'UTC-06:00',
-    'UTC-05:00',
-    'UTC-04:00',
-    'UTC+10:00',
-    'UTC+12:00']
-
-
-But languages are more complicated. It also returns a list, but each element of the file corresponds
-to one of the country's official languages.  The USA has only one official language, but other countries
-have more.  For example, Malta has both Maltese and English as official languages.  Notice that the two dictionaries
-have an identical structure, a key for the two-letter abbreviation, a key for the three-letter abbreviation, the name, and the native name.
-
-.. parsed-literal::
-
-    [{'iso639_1': 'mt',
-      'iso639_2': 'mlt',
-      'name': 'Maltese',
-      'nativeName': 'Malti'},
-    {'iso639_1': 'en',
-      'iso639_2': 'eng',
-      'name': 'English',
-      'nativeName': 'English'}]
-
 
 **Check Your Understanding**
-
-
-.. fillintheblank:: ecuador_code_6
-   :casei:
-
-   What is the the three letter country codes of Ecuador? |blank|
-
-   - :(ecu|'ecu'): Is the correct answer
-     :x: Check your answer again
 
 
 .. fillintheblank:: numeric_code_6
@@ -363,20 +150,11 @@ have an identical structure, a key for the two-letter abbreviation, a key for th
      :x: Incorrect. Try again.
 
 
-.. fillintheblank:: peru_6
-   :casei:
-
-   How many keys are in the dictionary returned for the country of Peru? |blank|
-
-   - :24: Is the correct answer
-     :x: Use the keys method after .json() to see the list of keys
-
-
-For this example, we will use the Starting a Business data set and look at the Starting_a_Business_score in different countries around the world.
+For this example, we will use the starting a business data set and look at the Starting_a_Business_score column in different countries around the world.
 
 .. code:: python3
    
-   wd = pd.read_csv('Starting_a_Business.csv')
+   wd = pd.read_csv('starting_a_business.csv')
 
 .. code:: python3
 
@@ -497,25 +275,16 @@ For this example, we will use the Starting a Business data set and look at the S
     </tbody></table>
     </div>
 
+Since we know how to get additional country information, we can add a new column that contains the numeric code 
+of each country. We can add this new column in our ``wd`` data frame. We can do this by using the ``map`` function which we learned in 
+the previous case study. If you need to refresh your memory, see here :ref:`PythonReview`.
+
+Use ``df.myColumn.map(function)`` to ``map`` the data. Remember, we don't pass the
+list as a parameter to ``map`` since it is a method of a Series.
 
 
-
-Now that we have an excellent way to get the additional country information
-let's add the numeric country code as a new column in our ``wd`` DataFrame. We
-can think of adding the column as a transformation of our three-letter country
-code to a number. We can do this using the ``map`` function. You learned about
-``map`` in the Python Review section of this book. If you need to refresh your
-memory, see here :ref:`PythonReview`.
-
-When we use Pandas, the difference is that we don't pass the list as a parameter
-to ``map``. ``map`` is a method of a Series, so we use the syntax
-``df.myColumn.map(function)``. This applies the function we pass as a parameter
-to each element of the series and constructs a brand new series.
-
-
-For our case, we need to write a function that takes a three-letter country code as a parameter and returns the numeric code we lookup converted to an integer; let’s call it get_num_code. You have all the details you need to write this function. Once you write this function, you can use the code below.
-
-
+You have already gone through the process of getting a three-letter country code for the previous case study. We will
+use the same function to add the country code to the protecting minority investors data set. We can use the code below to proceed.
 
 
 .. code:: python3
@@ -646,17 +415,6 @@ For our case, we need to write a function that takes a three-letter country code
     
 
 
-
-.. warning:: DataFrame Gotcha
-
-   Be careful, ``wd.CodeNum`` and ``wd['CodeNum']`` are ALMOST always
-   interchangeable, except for when you create a new column. When you create a
-   new column you MUST use ``wd['CodeNum'] = blah new column expression``. If
-   you write ``wd.CodeNum = blah new column expression``, it will add a
-   ``CodeNum`` attribute to the ``wd`` object, rather than creating a new
-   column. This is consistent with standard Python syntax of allowing you to add
-   an attribute on the fly to any object.
-
 You can make a gray map of the world like this.
 
 
@@ -716,7 +474,7 @@ Your final result should look like this.
         country_info = res.json() # formats all the information
         return country_info['numericCode'] # returns the correct numericCode of the country
       
-    The following is the implementation of transform_lookup() in the Starting_a_Business_score data.
+    The following is the implementation of transform_lookup() in the Starting_a_Business_score column.
     
     .. code:: python3
        countries = alt.topo_feature(data.world_110m.url, 'countries')
@@ -734,22 +492,4 @@ Your final result should look like this.
       base
 
 
-Using a Web API on Your Own
----------------------------
-
-Find a web API that provides some numeric data that interests you. There are tons
-of data available in the world of finance, sports, environment, travel, etc. A
-great place to look is 
-`The Programmable Web <https://www.programmableweb.com>`_. Yes, this assignment
-is a bit vague and open-ended, but that is part of the excitement. You get to
-find an API and graph some data that appeals to you, not something some author
-or professor picked out. You might even feel like you have awesome superpowers
-by the time you finish this project.
-
-1. Use the web API to obtain the data. Most sites are going to provide it in
-   JSON format which is similar to what we saw.
-
-2. Next, create a graph of your data using Altair.
-
-3. Take some time to talk about and present the data and the graph you created for the class.
    
