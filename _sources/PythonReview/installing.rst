@@ -23,7 +23,7 @@ miniconda or do a silent installation.
 
 
 Starting Jupyter Lab
-====================
+--------------------
 
 Once you have completed the installation, you should launch Anaconda Navigator.
 You will find Anaconda Navigator in the anaconda3 folder.
