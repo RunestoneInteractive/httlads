@@ -6,7 +6,7 @@
 
 .. _h756a797b286237b36797fb1f277d18:
 
-Case Study 2. Comparing Happiness Data across Years
+Case Study 2. Comparing Happiness Data Across Years
 ===================================================
 
 We have two files of happiness data, one for 2017 that you have been using, and
