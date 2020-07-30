@@ -78,7 +78,7 @@ from the original table should I use as the new row index?". The columns
 parameter asks "what values from the original table should I use as the column
 headings?". The values parameter says what values to include in the cells. In
 most cases, these values will need to be aggregated in some way, and by default
-the aggregation is to take the mean.
+the **aggregation** is to take the mean.
 
 
 .. code:: python3
@@ -125,28 +125,28 @@ the columns, and summarize the GDP in tabular form.
 
 **Lesson Feedback**
 
-.. poll:: LearningZone_6_5
+.. poll:: LearningZone_6_5_cs1
     :option_1: Comfort Zone
     :option_2: Learning Zone
     :option_3: Panic Zone
 
     During this lesson I was primarily in my...
 
-.. poll:: Time_6_5
+.. poll:: Time_6_5_cs1
     :option_1: Very little time
     :option_2: A reasonable amount of time
     :option_3: More time than is reasonable
 
     Completing this lesson took...
 
-.. poll:: TaskValue_6_5
+.. poll:: TaskValue_6_5_cs1
     :option_1: Don't seem worth learning
     :option_2: May be worth learning
     :option_3: Are definitely worth learning
 
     Based on my own interests and needs, the things taught in this lesson...
 
-.. poll:: Expectancy_6_5
+.. poll:: Expectancy_6_5_cs1
     :option_1: Definitely within reach
     :option_2: Within reach if I try my hardest
     :option_3: Out of reach no matter how hard I try

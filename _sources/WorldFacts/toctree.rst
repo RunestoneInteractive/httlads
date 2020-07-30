@@ -18,7 +18,7 @@ Exploratory Data Analysis
    cs2_data_analysis.rst
    cs2_graphing_business_data.rst
    cs2_scrape_business_data_from_cia.rst
-   cs2_gov_form_using_pandas_pivot_tables.rst
+   cs2_compare_cia_gov_forms.rst
    glossary.rst
 
 

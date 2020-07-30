@@ -43,9 +43,9 @@ when we have gathered all of the columns, we can pull them together into one
 nice data frame, and save that to a CSV file.
 
 If you design a good function like the one in the previous case study to find and scrape one piece of information, you can also 
-make it work for all pieces of information. If you accomplish this, in the end, you will have minimal amount of code that does a lot of work. 
+make it work for all pieces of information. If you accomplish this, in the end, you will have a minimal amount of code that does a lot of work. 
 Therefore, try scraping one or two pages and when you have become comfortable scraping single pages. You can gather all the columns and URLs from the ``notesanddefs.html`` 
-file, and loop through the URLs to go to each page and retrieve all the information you want. 
+file and loop through the URLs to go to each page and retrieve all the information you want. 
 
 Copy path from your file explorer. Here is an example of how it should look like.
 
@@ -80,7 +80,7 @@ For now, let's start small and work our way up to the bigger picture. We can wri
 some code to scrape all the fields and the file they are in from the ``rankorderguide.html`` file.
 
 Each page contains different information about countries. We can scrape features such as Inflation rate (consumer prices), 
-industrial production growth rate, etc., and the link to the page that has all of the data for this feature for each country.
+industrial production growth rate, etc., and the link to the page with all of the data for this feature for each country.
 
 Before we start scraping the CIA World Factbook data, let's refresh our memory on the **HTML** structure.
 Below is an excerpt from the HTML page that has information about the inflation rate. Let us carefully examine each tag and element in HTML so we 
@@ -330,7 +330,7 @@ all the pages with minimal code.
 Loading Business Data in Rough Form
 ------------------------------------
 
-Let's get the data in rough form, then we can clean it up once we have it in a DataFrame.
+Let's get the data in the rough form; then, we can clean it up once we have it in a DataFrame.
 
 There are 177 different fields in the 2017 data. Loading all of them would be a
 considerable amount of work, and more data than we need. Let's start with a list that is
@@ -349,7 +349,7 @@ close to our original data above.
 Feel free to add others if they interest you.
 
 
-You can use the structure given below and you can just pass the dictionary that you created to the DataFrame
+You can use the structure given below, and you can pass the dictionary that you created to the DataFrame
 constructor, and you should have something that looks like this.
 
 .. code-block:: none
@@ -447,9 +447,9 @@ constructor, and you should have something that looks like this.
       </tbody></table>
       </div>
 
-Now, we need to a bit of cleanup!
+Now, we need a bit of cleanup!
 You can use the documentation on the ``extract`` method in Pandas to make the fields that
-are not numeric more computer-digestable.
+are not numeric more computer-digestible.
 
 
 Cleaning Business Data
@@ -469,11 +469,11 @@ We can save the data using ``to_csv``.
 Comparing Business Data Across the Years
 -----------------------------------------
 
-We can do this process for past years, but you might have to change your code a bit as you go back in the years.
-As you go back and **screen scrape** previous years, you will see that we really are at the mercy of the website designers.
-One minor change to the CSS class or the id element can really mess up your code and strategy to screen scrape.
+We can do this process for past years, but you might have to change your code slightly as you go back in the years.
+As you go back and **screen scrape** previous years, you will see that we are at the mercy of the website designers.
+One minor change to the CSS class or the id element can mess up your code and strategy to screen scrape.
 
-However, if you mange to scrape all 17 years of world factbook data, you will have achieved something special.
+However, if you manage to scrape all 17 years of world factbook data, you will have achieved something special.
 There are a lot of people that can make use of this data in a more convenient format. 
 
 
@@ -557,3 +557,32 @@ There are a lot of people that can make use of this data in a more convenient fo
           # print(all_data)
           web_scrape = pd.DataFrame(all_data).head()
 
+**Lesson Feedback**
+
+.. poll:: LearningZone_measure_6_3_cs2
+    :option_1: Comfort Zone
+    :option_2: Learning Zone
+    :option_3: Panic Zone
+
+    During this lesson I was primarily in my...
+
+.. poll:: Time_measure_6_3_cs2
+    :option_1: Very little time
+    :option_2: A reasonable amount of time
+    :option_3: More time than is reasonable
+
+    Completing this lesson took...
+
+.. poll:: TaskValue_measure_6_3_cs2
+    :option_1: Don't seem worth learning
+    :option_2: May be worth learning
+    :option_3: Are definitely worth learning
+
+    Based on my own interests and needs, the things taught in this lesson...
+
+.. poll:: Expectancy_measure_6_3_cs2
+    :option_1: Definitely within reach
+    :option_2: Within reach if I try my hardest
+    :option_3: Out of reach no matter how hard I try
+
+    For me to master the things taught in this lesson feels...

@@ -129,7 +129,7 @@ text for this page.
 		</div>
 
 
-If you have not seen HTML before, this may look a bit confusing. One of the
+If you have not seen **HTML** before, this may look a bit confusing. One of the
 skills you will develop as a data scientist is learning what to focus on and
 what to ignore. This takes practice and experience, so don't be frustrated if it
 seems a bit overwhelming at the beginning.
@@ -177,7 +177,7 @@ string searching facilities. But, that would be *painful* for sure. Instead, we
 will turn to another of Python's packages that will make the job fun and very
 manageable. That package is called
 `BeautifulSoup <https://www.crummy.com/software/BeautifulSoup/bs4/doc/>`_. The
-name "Beautiful Soup" comes from *Alice in Wonderland*; it is the title of a
+name "**Beautiful Soup**" comes from *Alice in Wonderland*; it is the title of a
 song sung by the Mock Turtle. (Yes, its turtles everywhere!) Using
 BeautifulSoup, we can get the web page into a form that we can use some real
 power search tools.
@@ -237,7 +237,7 @@ So far, this doesn't seem like much help, but let's see how we can use the
 search capabilities of BeautifulSoup to find all of the ``span`` tags with the
 ``class`` "category". To do this, we will use a search syntax that is commonly
 used in the web development community. It is the same syntax that is used to
-write the rules for the Cascading Style Sheets (CSS) that are used to make our
+write the rules for the **Cascading Style Sheets (CSS)** that are used to make our
 web pages look nice.
 
 The search syntax allows us to:

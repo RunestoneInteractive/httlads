@@ -855,7 +855,7 @@ and ``&`` (logical *and*) operators.
 .. image:: Figures/visualization_5.png
 
 Now, let’s suppose you want to travel and start your dream business in one of your favorite locations. For example, 
-let’s say you have always wanted to go to Malta and start your business. Let’s see what business related data we have in the data frame for Malta using equality. 
+let’s say you have always wanted to go to Malta and start your business. Let’s see what business-related data we have in the data frame for Malta using equality. 
 
 
 .. code:: python3
@@ -922,7 +922,7 @@ Therefore, we always need to do a bit of cleanup to strip those spaces.
 
 As you may recall, Python has a method called ``strip`` which does what we want, it removes characters
 from left and right based on the argument passed. Also, Pandas allows us to do this using the ``str`` attribute 
-of the series in combination with most of the standard string methods you know about.
+of the series in combination with most of the standard string methods you know.
 
 
 .. code:: python3
@@ -1042,4 +1042,32 @@ Practice Questions
 2. What are the top 20 countries by protecting minority investors' scores?
 3. What are the names and their starting a business score of the five ranked countries?
 
-    
+**Lesson Feedback**
+
+.. poll:: LearningZone_measure_6_1_cs2
+    :option_1: Comfort Zone
+    :option_2: Learning Zone
+    :option_3: Panic Zone
+
+    During this lesson I was primarily in my...
+
+.. poll:: Time_measure_6_1_cs2
+    :option_1: Very little time
+    :option_2: A reasonable amount of time
+    :option_3: More time than is reasonable
+
+    Completing this lesson took...
+
+.. poll:: TaskValue_measure_6_1_cs2
+    :option_1: Don't seem worth learning
+    :option_2: May be worth learning
+    :option_3: Are definitely worth learning
+
+    Based on my own interests and needs, the things taught in this lesson...
+
+.. poll:: Expectancy_measure_6_1_cs2
+    :option_1: Definitely within reach
+    :option_2: Within reach if I try my hardest
+    :option_3: Out of reach no matter how hard I try
+
+    For me to master the things taught in this lesson feels...

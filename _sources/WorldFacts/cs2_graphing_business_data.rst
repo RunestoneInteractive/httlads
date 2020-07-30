@@ -21,7 +21,7 @@ In this specific exercise, we will use a web API to get data that maps country c
 We will use the ``map`` function to add columns to our starting a business data. This new column will contain country codes.
 
 We can get the information for the new column from different sources. To get this information, we will use a web API from a 
-website. Each website has its own specific API format and a protocol to obtain that API. Once we obtained the required data using the web API, we can follow the example
+website. Each website has its specific API format and a protocol to obtain that API. Once we obtained the required data using the web API, we can follow the example
 from the previous case study to add the new column and then make a world map to show Starting_a_Business_score column
 from the starting a business data set.
 
@@ -276,7 +276,7 @@ For this example, we will use the starting a business data set and look at the S
     </div>
 
 Since we know how to get additional country information, we can add a new column that contains the numeric code 
-of each country. We can add this new column in our ``wd`` data frame. We can do this by using the ``map`` function which we learned in 
+of each country. We can add this new column in our ``wd`` data frame. We can do this by using the ``map`` function, which we learned in 
 the previous case study. If you need to refresh your memory, see here :ref:`PythonReview`.
 
 Use ``df.myColumn.map(function)`` to ``map`` the data. Remember, we don't pass the
@@ -492,4 +492,32 @@ Your final result should look like this.
       base
 
 
-   
+**Lesson Feedback**
+
+.. poll:: LearningZone_measure_6_2_cs2
+    :option_1: Comfort Zone
+    :option_2: Learning Zone
+    :option_3: Panic Zone
+
+    During this lesson I was primarily in my...
+
+.. poll:: Time_measure_6_2_cs2
+    :option_1: Very little time
+    :option_2: A reasonable amount of time
+    :option_3: More time than is reasonable
+
+    Completing this lesson took...
+
+.. poll:: TaskValue_measure_6_2_cs2
+    :option_1: Don't seem worth learning
+    :option_2: May be worth learning
+    :option_3: Are definitely worth learning
+
+    Based on my own interests and needs, the things taught in this lesson...
+
+.. poll:: Expectancy_measure_6_2_cs2
+    :option_1: Definitely within reach
+    :option_2: Within reach if I try my hardest
+    :option_3: Out of reach no matter how hard I try
+
+    For me to master the things taught in this lesson feels...
