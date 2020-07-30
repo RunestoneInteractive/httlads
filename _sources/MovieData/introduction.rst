@@ -13,13 +13,13 @@ to data frames and learn to use them to obtain information from data.
 
 Learning Goals
 ---------------
-- Learn how to create and manipulate a ``DataFrames``.
+- Learn how to create and manipulate a ``DataFrame``.
 - Learn how to use data from multiple ``DataFrames``.
 
 Learning Objectives
 --------------------
 - Be able to use Jupyter Notebooks and Pandas.
-- Be able to import data into a ``DataFrames``.
+- Be able to import data into a ``DataFrame``.
 - Be able to manipulate ``DataFrames`` to gain specific information.
 
 
