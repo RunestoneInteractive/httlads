@@ -19,9 +19,9 @@ Introducing the Happiness Report
 
 The World Happiness Report is a landmark survey of the state of global
 happiness. The World Happiness Report 2018 ranks 156 countries by their
-happiness levels, and 117 countries by the happiness of their immigrants. Many
-factors may lead to the happiness of a country and we will use spreadsheets to
-help us explore these factors to try to discover what factors may be most
+happiness levels, and 117 countries by the happiness levels of their immigrants. Many
+factors may contribute to the happiness of a country, and we will use spreadsheets to 
+explore and analyze what factors may be most
 important in determining a country's happiness.
 
 We will start by loading the
@@ -82,12 +82,11 @@ The following definitions are reproduced from
 
 In this first part, we will review and practice some spreadsheet calculations by
 doing some exploratory data analysis. If you have never used a spreadsheet
-before, don't worry, you will catch on quickly. Also, remember that at this
-point we are just exploring, so there isn't necessarily a right answer. In fact,
-most of the time we don't know what the right answers are when we are in
-exploring mode. You might even be wondering what it means to be in exploring
-mode. The main thing we are doing is looking around at the data and seeking out
-things that look like 'interesting' bits of statistics that stand out. We wonder
+before, don't worry, you will catch on quickly. Remember that we are just exploring at this
+point, so there isn't necessarily a right answer. Most of the time, we don't know what the right 
+answers are while we are in exploring mode. You might even be wondering what it means to be in exploring
+mode. The main thing we do is look at the data and seek out
+things that look like 'interesting' bits of statistics that stand out. We also think
 about how things might correlate or what variables might be interdependent on
 others. Two of the primary tools we use in this exploring mode are summary
 statistics and visualization.
@@ -245,7 +244,7 @@ Summary Statistics
       you can also click on the square in the lower right corner of the
       currently selected cell and drag it.
 
-   e. After you have copied and pasted the formula for average to cells E143 to
+   e. After you have copied and pasted the formula for ``AVERAGE`` to cells E143 to
       N143 click in N143.  The formula there looks like ``=AVERAGE(N2:N141)``.
       Notice that Sheets is smart about changing the cell references when you
       copy/paste a formula.
@@ -262,7 +261,7 @@ Summary Statistics
            :x: Make sure you are using the correct range
 
    f. If you do NOT want Sheets to change the cell references when you are
-      copy/pasting you can use a $ in front of the row or the column and that
+      copy/pasting you can use a $ in front of the row or the column, which
       tells sheets to "leave this reference alone". We see some examples of this
       later.
 
@@ -301,13 +300,13 @@ Visualizing Happiness
 
 
    b. Knowing the maximum is one thing, but that does not tell us which country
-      it corresponds to. For that we will use the ``MATCH`` and ``INDEX``
+      it corresponds to. For that, we will use the ``MATCH`` and ``INDEX``
       functions.  ``MATCH`` allows us to search for a value in a range of cells,
-      just like the search function in a word processor. In cell J147 type
+      just like the search function in a word processor. In cell J147, type
       ``=MATCH(J146, J2:J141, 0)``. The ``MATCH`` function looks for the value
       in cell J146 in the range J2:J141 and the 0 tells it that the data is not
-      sorted. If you leave out the 0, Sheets will assume that the data is sorted
-      and stop searching and return the first cell it finds that is greater than
+      sorted. If you leave out the 0, Sheets will assume that the data is sorted,
+      stop searching, and return the first cell it finds that is greater than
       the value in J146.
 
 
@@ -319,11 +318,11 @@ Visualizing Happiness
            :x: catchall feedback
 
 
-   c. In cell J148 type ``=INDEX(A2:A141, J147)``. This tells Sheets to return
+   c. In cell J148, type ``=INDEX(A2:A141, J147)``. This tells Sheets to return
       the value from the range A2:A141 in the row specified by the value in
-      J163. As we will see later, ``INDEX`` is really powerful for doing all
-      kinds of things, but primarily for now we will think of the combination of
-      ``MATCH`` and ``INDEX`` being our search and retrieve power tools.
+      J163. As we will see later, ``INDEX`` is a really powerful tool for doing all
+      kinds of things, but for now we will primarily think of the combination of
+      ``MATCH`` and ``INDEX`` as being our search and retrieve power tools.
 
 
       .. fillintheblank:: gen_max_country
@@ -385,7 +384,7 @@ Visualizing Happiness
 
 3. One great way to get an overview of the data visually is to make a
    **choropleth**. A choropleth combines the geographic data with some other
-   data such as the happiness score. Sheets make it very easy to graph data by
+   data such as the happiness score. Sheets makes it very easy to graph data by
    country.
 
    a. Click on the insert graph icon.
@@ -399,7 +398,7 @@ Visualizing Happiness
    can answer this question is to calculate a correlation between the happiness
    index and the various factors. This will create a small table that computes a
    correlation score between of of our columns of data. Happiness score to
-   Economy, Happiness score to Family etc.
+   Economy, Happiness score to Family, etc.
 
    a. First, let's calculate a correlation between happiness score and each
       other factor.
@@ -437,7 +436,7 @@ Visualizing Happiness
       to gather together the countries with significant differences from their
       neighbors. WARNING: Sorting by a calculated column like this will lead to
       unexpected results. Copy this column and do a paste special where you
-      paste only the values, before sorting.
+      paste only the values before sorting.
 
 
 **Lesson Feedback**

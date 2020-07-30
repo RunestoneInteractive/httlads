@@ -21,7 +21,7 @@ questions.
 
 1. We can get a table of the unique region names by using the ``UNIQUE``
    function. In cell A180, the ``UNIQUE`` function takes the range that contains
-   all of the region names and will populate a few rows with just the unique
+   all of the region names, and will populate a few rows with just the unique
    names.
 
 
@@ -308,14 +308,14 @@ Now, using your new spreadsheet skills answer your own questions.
 Introducing Pivot Tables
 ------------------------
 
-We can make all of this a bit easier using **pivot table**! This is a really useful
+We can make all of this a bit easier using a **pivot table**! This is a really useful
 tool to have in your toolbox, and many other tools you use will support the
 creation of pivot tables as well.
 
 1. The idea behind a pivot table is to take the unique values from some column
    and make them the titles of a bunch of columns, while summarizing the data
    for those columns from a number of rows. For example, suppose you had a table
-   with three columns: user, movie, rating. What would be more easy to look at
+   with three columns: user, movie, and rating. What would be more easy to look at
    would be to have a column for each movie and a row for each user with the
    rating in the cell corresponding to a user and a movie. This is exactly the
    use case for pivot tables. You can see an example of transforming the orginal
@@ -368,10 +368,10 @@ table to find the least happy country in each region. Then using ``MATCH`` and
      :x: Make sure you are summarizing the value with the MAX function
 
 
-You will find that understanding Pivot tables and when to use them to be a very
+You will find that understanding Pivot tables and knowing when to use them to be a very
 powerful tool to have in your toolbox. Many other systems, including Pandas and
-relational databases like Postgresql, also support making pivot tables. The
-interface in Sheets is the simplest, so it is a good one to learn on.
+relational databases like PostgreSQL, also support making pivot tables. The
+interface in Sheets is the simplest, so it is a good system to learn on.
 
 
 **Lesson Feedback**

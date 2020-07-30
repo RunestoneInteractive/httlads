@@ -10,13 +10,13 @@ Introduction
 ============
 
 In this chapter, we will explore concepts of descriptive statistics such as normal distribution, measures of central tendency, 
-measures of variability, and other related concepts.  We will learn the difference between descriptive and inferential statistics 
-and will explore various data types in statistics such as categorical and numerical types.
+measures of variability, and other related ideas.  We will learn the difference between descriptive and inferential statistics 
+and explore various data types in statistics, such as categorical and numerical types.
 
-We will use a spreadsheet application to manipulate the data in the chapter to solve problems because they are one of the best 
-tools for this particular work. Many spreadsheets exist but perhaps the most ubiquitous are Excel (a proprietary commercial spreadsheet application) 
+We will use a spreadsheet application to manipulate the data in the chapter to solve problems because spreadsheets are one of the best 
+tools for this particular work. Many different spreadsheet applications exist, but perhaps the most ubiquitous are Excel (a proprietary commercial spreadsheet application) 
 and **Google Sheets** (a free web-based spreadsheet application).  We will use Google Sheets because it is free, works from almost any device 
-(including your laptop, tablet, or phone) and because it includes spreadsheet functions that are very similar to those in Excel.  
+(including your laptop, tablet, or phone) and includes spreadsheet functions that are very similar to those in Excel.  
 So, if you are familiar with Microsoft Excel, you will find Google Sheets very easy to use.
 
 Lastly, we will discuss the difference between **correlation** and **causation** and explore why correlation does not imply causation.  Understanding 

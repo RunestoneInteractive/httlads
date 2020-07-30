@@ -35,7 +35,7 @@ Below are definitions of the indicators found in the data set.
 -  **Paid-In Minimum Capital:** The minimum amount of money the entrepreneur must have is deposits in the bank for the business registration process to be completed.
 -  **Income Level:** This represents the income levels of each country's economy. This indicator is divided into low, lower-middle, upper-middle, and high, based on a country's gross national income (GNI) per person.
 
-We will use **Google Sheets** to explore which of these indicators are most important to start a new business in each economy's largest businesscity. So now, 
+We will use **Google Sheets** to explore which of these indicators are most important to start a new business in each economy's largest cities. So now, 
 import the data set that you downloaded earlier, starting a business, into Google Sheets.
 
 .. mchoice:: dat_sab1
