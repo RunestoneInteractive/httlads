@@ -9,8 +9,8 @@ Appendix for Google Colab
 For this course, we will be using Google Colaboratory to run code and complete assignments.
 
 Google Colab is a free Jupyter Notebook environment hosted by google. It has all the features of Jupyter Lab and more. It is a great platform 
-used by Data Scientists and Machine Learning programmers because it takes away the hassle of having to install an IDE and additional files. As you use it further
-you will appreciate how it has many data science libraries pre-installed and allows you to save your file on Google Drive for convinient sharing. 
+used by Data Scientists and Machine Learning programmers because it takes away the hassle of having to install an IDE and additional files. Colab has
+many data science libraries pre-installed and allows you to save your files on Google Drive.
 
 Getting Set Up
 --------------
@@ -18,18 +18,18 @@ Getting Set Up
 How do you set up this great tool?
 
 To begin, go to the `Google Colab website`_ and sign in by clicking the blue button on the top right of the web page. You must have a Gmail account to use this tool.
-If you do not already have a Gmail account then you will have to create one.
+If you do not already have a Gmail account, then you will have to create one.
 
 .. _Google Colab website: https://colab.research.google.com/
 
-Once you are signed in, you should see a pop up box similar to the one shown below.
+Once you are signed in, you should see a pop-up box similar to the one shown below.
 
 .. image:: Figures/colab_new_notebook.JPG
   :alt: Pop-up window to create a new notebook or open an existing one on google colab.
 
 
 You can create a new notebook file by clicking on NEW NOTEBOOK, but for now close the pop up by clicking on cancel 
-or by clicking on the shaded area outside of the pop up. Another way of creating a new notebook is to  click on File tab (top left) -> New Notebook. 
+or by clicking on the shaded area outside of the pop-up. Another way of creating a new notebook is to click on the File tab (top left) -> New Notebook. 
 Notice that there are options for opening different files and uploading files, these will be important for later. 
 
 The UI
@@ -60,16 +60,16 @@ Before we start getting into the coding, let's familiarize ourselves with the us
 .. image:: Figures/colab_UI_right.JPG
   :alt: Left side Google Colab notebook with arrows pointing at different features.
 
-12. **Ram & Disk:** All of the code you write will run on Google's computer and you will only see the output. This means that even if you have a slow computer running big chunks of code will not be an issue. 
-    Google only allots a certain amount of Ram and Disk space for each *user* so be mindful of that as you work on larger projects. 
+12. **Ram & Disk:** All of the code you write will run on Google's computer, and you will only see the output. This means that even if you have a slow computer, running big chunks of code will not be an issue. 
+    Google only allots a certain amount of Ram and Disk space for each *user*, so be mindful of that as you work on larger projects. 
 13. **Link to Cell:** This button will create a URL that will link to the cell you have selected.
 14. **Comment:** This button will allow you to create a comment on the selected cell. Note that this will be a comment on (about) the cell and not a comment in the cell.
 15. **Settings:** This button will allow you to change the Theme of the notebook, font type and size, indentation width, etc.
 16. **Delete Cell:** This button will delete the selected cell.
 17. **More Options:** Contains options to cut and copy a cell as well as the option to add form and hide code.
 
-Let's try something fun. Do the following: go to Settings(#15) -> Miscellaneous, check the boxes that say Corgi mode and Kitty mode. Click save.
-Now wait a few seconds, keep an eye on the top of the web page. WARNING: Having this setting on might slow down your browser so it is not recommened that
+Let's try something fun. Do the following: go to Settings(#15) -> Miscellaneous, check the boxes that say Corgi mode, and Kitty mode. Click save.
+Now wait a few seconds, keep an eye on the top of the web page. WARNING: Having this setting on might slow down your browser, so it is not recommended that
 you leave them on while working on assignments or projects.
 
 Functionalities (Text and Code Cells)
@@ -77,7 +77,7 @@ Functionalities (Text and Code Cells)
 
 Most of the functionalities of Google Colab occurs in cells. Cells are runnable blocks that either contain Text or Python Code.  
 In normal compilers, you would have to run the whole file if you wanted to test a snippet of code. With runnable blocks, you can
-run individual cells without having to worry about the cells above or below it. Cells come into types: Text Cells and Code Cells. 
+run individual cells without worrying about the cells above or below it. Cells come into types: Text Cells and Code Cells. 
 
 Text Cells
 ~~~~~~~~~~
@@ -95,7 +95,7 @@ There are many more options to customize your text cells if you use Markdown.
 Markdown is a lightweight markup language that uses a plain text format which is used in programming to edit and present HTML, XHTML, pdf 
 and other file types. Refer to the relevant appendix for more about Markdown.
 
-You can view a cell's source by double clicking on it or by pressing Enter to edit it while it is selected. You can also use Shift-Enter if 
+You can view a cell's source by double-clicking it or by pressing Enter to edit it while it is selected. You can also use Shift-Enter if 
 you would like to re-render it. 
 
 
@@ -111,7 +111,7 @@ The output, if there is one, will be shown directly below the cell. Try running 
    3+5*4%43
 
 
-This doesn’t work just for arithmetic operations but any Python code that you
+This doesn't work just for arithmetic operations but any Python code that you
 might write.
 
 
@@ -128,8 +128,8 @@ might write.
 
 
 Notice that if the last line of a cell is a value/variable, that value/variable will be 
-printed in the output. If the last line is an assignment of a value to a variable  then nothing 
-will be printed in the output. Alternativly you may use a print statment (`print (<variable name>)`) to 
+printed in the output. If the last line is an assignment of a value to a variable, then nothing 
+will be printed in the output. Alternatively, you may use a print statement (`print (<variable name>)`) to 
 see what is stored in the variable. 
 
 
@@ -139,8 +139,8 @@ see what is stored in the variable.
    
 
 Note that no output is produced when you run the above cell. However, the
-value of ``a`` is saved and is available in other cells. Here we have included a 
-print statment to show you what is stored in variable `b`.
+value of "a "is saved and is available in other cells. Here we have included a 
+print statement to show you what is stored in variable `b`.
 
 
 .. jupyter-execute::
@@ -149,7 +149,7 @@ print statment to show you what is stored in variable `b`.
    print (b)
 
 
-This is useful because it means that we can put ``import`` statements and the
+This is useful because it means that we can put "import" statements and the
 time-consuming reading of large data sources in one cell (usually) at the start
 of the notebook, and experiment with manipulations of that data in later cells
 without having the wait to reload the data. The caveat to this is that each cell
@@ -175,17 +175,17 @@ out of order. Below is an example.
    print(my_list)
 
 
-Notice that ``my_list`` contains "purple" twice even the code above only adds it
+Notice that ``my_list`` "contains "purple" twice; even the code above only adds it
 once. In general, you should write your code assuming that each cell is run once
 from top to bottom. There's even a menu to help you do that. The "Run" menu has
 "Run All Above Selected Cell" and "Run All Cells" functions that allow you to
 get your notebook in a predictable state if you ever get confused by having run
 cells multiple times or out of order.
 
-Google Colab has preinstalled packages,modules and libraries to make it easier for us to use it without 
+Google Colab has preinstalled packages, modules, and libraries to make it easier for us to use it without 
 worrying about having to download the packages ourselves. As you might have noticed 
-in one of the codeblocks above ``import math`` allows you  to utilize the math module 
-which includes summation and subtraction. As you go further in this chapter you will 
+in one of the codeblocks above, "import math" allows you to utilize the math module 
+which includes summation and subtraction. As you go further in this chapter, you will 
 be importing other packages and libraries as well.  
 
 .. jupyter-execute::
@@ -194,28 +194,28 @@ be importing other packages and libraries as well.
    import numpy as np
    import scipy as sc
 
-Think of packages, libraries and modules as sperate files that exist outside of the one you are working on. 
+Think of packages, libraries, and modules as sperate files that exist outside of the one you are working on. 
 They are an efficient part of programming to help programmers not have to re-write every bit of code from scratch. 
-For instance the Math module already has addition and subtraction defined in it so by importing it you can build 
+For instance, the Math module already has addition and subtraction defined in it, so by importing it, you can build 
 on top of it rather than having to reinvent the wheel.
 
-The ``import`` statement tells the program that you are going to be referencing things that do not exist in this file. 
-It also tells the program which file, among the files preinstalled in Colab, it is refering to. For example, ``import 
-pandas as pd`` tells the program that you will be using things from the pandas "file" (pacakge) and that whenever you 
+The "import "statement tells the program that you are going to be referencing things that do not exist in this file. 
+It also tells the program which file, among the files preinstalled in Colab, it is referring to. For example, "import 
+pandas as pd "tells the program that you will be using things from the pandas "file" (package) and that whenever you 
 type "pd" you are talking about the pandas package.
 
-Some python packages may not be preinstalled on Google Colab. For those you may use ``!pip install <package_name>``. The ``!`` is 
+Some python packages may not be preinstalled on Google Colab. For those you may use ``!pip install <package_name>``. The "! "is 
 important before the pip because it is telling Colab that the line is a terminal command and not python code. 
 
 You may notice a few lines appear telling you that your installation is happening. This means you are doing it right! Sometimes it 
-might be a few lines and other times it might be many, it varries depending on how large the library, module or package is.
+might be a few lines, and other times it might be many. The number of lines varies depending on how large the library, module, or package is.
 
 .. jupyter-execute::
 
    !pip install str
 
 
-Now that you have successfully installed it, you must import the file (modlue for str) before you are able to use it.
+Now that you have successfully installed it, you must import the file (module for str) before you are able to use it.
 
 .. jupyter-execute::
 
