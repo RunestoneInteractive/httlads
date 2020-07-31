@@ -4,8 +4,8 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-Comparing Forms of Government
-=============================
+Case Study 1: Comparing Forms of Government
+===========================================
 
 The goal of this section is to be able to do some comparison of the different
 forms of government, and how the form of government might have an impact some of
@@ -31,6 +31,11 @@ What we want to do is summarize that information in a table where we have a row
 for each region, and a column for each classification of climate. Then in each
 cell, we would like to summarize the fraction of the economy that comes from
 agriculture.
+
+**Why analyze the relationship between Climate and Economy?**
+Climate affects the economy in more ways than we realize. According to the article *Can Civilization Survive What's Coming*?, 
+extreme weather costs the U.S $306 billion in damages in 2017. If climate denial continues, these costs will only increase. 
+Therefore, we will do an example to see how climate, a region of the world, and parts of the economy might be related. 
 
 
 .. csv-table::
@@ -73,7 +78,7 @@ from the original table should I use as the new row index?". The columns
 parameter asks "what values from the original table should I use as the column
 headings?". The values parameter says what values to include in the cells. In
 most cases, these values will need to be aggregated in some way, and by default
-the aggregation is to take the mean.
+the **aggregation** is to take the mean.
 
 
 .. code:: python3
@@ -120,28 +125,28 @@ the columns, and summarize the GDP in tabular form.
 
 **Lesson Feedback**
 
-.. poll:: LearningZone_6_5
+.. poll:: LearningZone_6_5_cs1
     :option_1: Comfort Zone
     :option_2: Learning Zone
     :option_3: Panic Zone
 
     During this lesson I was primarily in my...
 
-.. poll:: Time_6_5
+.. poll:: Time_6_5_cs1
     :option_1: Very little time
     :option_2: A reasonable amount of time
     :option_3: More time than is reasonable
 
     Completing this lesson took...
 
-.. poll:: TaskValue_6_5
+.. poll:: TaskValue_6_5_cs1
     :option_1: Don't seem worth learning
     :option_2: May be worth learning
     :option_3: Are definitely worth learning
 
     Based on my own interests and needs, the things taught in this lesson...
 
-.. poll:: Expectancy_6_5
+.. poll:: Expectancy_6_5_cs1
     :option_1: Definitely within reach
     :option_2: Within reach if I try my hardest
     :option_3: Out of reach no matter how hard I try

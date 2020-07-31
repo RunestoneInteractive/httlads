@@ -4,15 +4,15 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-Exploratory Data Analysis
-=========================
+Case Study 1: Exploratory Data Analysis
+==========================================
 
 Loading Data into a DataFrame from a CSV File
 ---------------------------------------------
 
-The CSV file is one of the most common ways you will find data. CSV stands for
+The **CSV file** is one of the most common ways you will find data. CSV stands for
 "comma separated value", and this format allows us to share data files in a
-simple text format. The data we will use to get started with Pandas is the data
+simple text format. The data we will use to get started with **Pandas** is the data
 about countries we used in the spreadsheet module. You can open a CSV file in
 any text editor, but it may not be particularly easy to read. But because of its
 structure, it is easy to parse for analysis. The first few lines of the raw CSV
@@ -568,7 +568,7 @@ Practice
 Scatter Plots for Discovering Relationships
 -------------------------------------------
 
-Now, let's make a simple scatter plot of area versus population of the
+Now, let's make a simple **scatter plot** of area versus population of the
 countries.
 
 
@@ -585,11 +585,11 @@ the lower left corner. Let's redo the graph focussing on the countries with a
 population under 150 million and an area under million. Let's start with the
 first part.
 
-To do this, we will create a new DataFrame where we focus on the countries with
+To do this, we will create a new **DataFrame** where we focus on the countries with
 populations less than 150 million and areas less than 4 million. Pandas makes
 this really easy with its querying power.
 
-The statement below produces a Series of boolean values. These boolean values
+The statement below produces a Series of **boolean values**. These boolean values
 are used to index the data frame, and only the rows corresponding to True values
 are returned in the result.
 
