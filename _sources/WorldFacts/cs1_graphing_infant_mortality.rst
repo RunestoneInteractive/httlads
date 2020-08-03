@@ -4,8 +4,8 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-Graphing Infant Mortality on a Map
-==================================
+Case Study 1: Graphing Infant Mortality on a Map
+=================================================
 
 Let's take on the seemingly simple task of plotting some of the country data on
 a map, like we did in Google Sheets earlier. We'll see that this is one area
@@ -192,7 +192,7 @@ telling us.
 Open a new tab in your browser and paste this URL:
 `https://restcountries.eu/rest/v2/alpha/usa`. You will see that you don't get a
 web page in response, but rather some information that looks like a Python
-dictionary. We'll explore that more below. We can do the same thing from a
+**dictionary**. We'll explore that more below. We can do the same thing from a
 Python program using the requests library.
 
 
@@ -232,7 +232,7 @@ Python dictionary. Better yet, we can convert this string into an actual Python
 dictionary and then access the individual key-value pairs stored in the
 dictionary using the usual Python syntax!
 
-The official name for the format that we saw above is called JSON: JavaScript
+The official name for the format that we saw above is called **JSON**: JavaScript
 Object Notation. It's a good acronym to know, but you don't have to know
 anything about Javascript in order to make use of JSON.  You can think of the
 results as a Python dictionary.  It can be a bit daunting at first as there can be
