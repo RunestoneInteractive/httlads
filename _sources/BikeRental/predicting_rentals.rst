@@ -384,7 +384,7 @@ The weather data can be found in the weather table and looks like this.
 * ``temp_f``: Temperature in degrees Fahrenheit
 * ``feelslike_f``: The feels like temperature in Fahrenheit
 * ``humidity``: percent from 0 to 100
-* ``windspeed``: Wind speed mph
+* ``windspeed``: Wind speed in mph
 
 Let's look at a few rows.
 
@@ -480,7 +480,7 @@ the n-dimensional space in strange ways. Some axes are elongated with respect to
 other axes. For example, think about the values for our one-hot encoded features
 like the season or weekend. Those values are either 0 or 1. However, the
 temperature values can range from -8 to a max of 102. If you just use those two
-features, think of how the 2-dimensional graph of ``isweekday`` loos, compareed
+features, think of how the 2-dimensional graph of ``isweekday`` looks, compared
 to temperature.
 
 Now, why is this a problem? Remember that we are trying to minimize the sum of
