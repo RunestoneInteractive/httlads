@@ -3,8 +3,8 @@
    International License. To view a copy of this license, visit
    http://creativecommons.org/licenses/by-sa/4.0/.
 
-Challenge in Case Study1: Calculating a Correlation Matrix
-===========================================================
+Case Study 1 Challenge. Calculating a Correlation Matrix
+========================================================
 
 Early on in our exploration of the business data, we calculated the correlation
 between the business score and the different factors. Now we have more data and we might ask a more
