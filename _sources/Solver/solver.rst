@@ -6,8 +6,8 @@
 
 .. _h2b207b587f1f7c6d7e167056a1f7c7f:
 
-Optimization with Solver
-========================
+Optimization Using Solver
+==========================
 
 A lot of data science and machine learning concerns itself with optimization. In
 the business word, people are often trying to maximize profit and/or minimize
@@ -32,7 +32,7 @@ Some key terminology to understand:
 
 Google Sheets has an excellent plugin that allows you to solve these kinds of
 optimization problems. Let's look at an example problem to get an idea of what
-solver can do for us.
+Solver can do for us.
 
 Suppose you run a lemonade stand on the corner of your street. In addition to
 lemonade, you also sell the items in the table below. This is a pretty advanced
@@ -85,7 +85,7 @@ The next question is: What are our constraints?
 * You can't sell more than 500 items total.
 * You can't sell more items than you have in your inventory.
 
-Given those constraints, we will use solver to come up with the following
+Given those constraints, we will use Solver to come up with the following
 solution.
 
 
@@ -118,33 +118,36 @@ solution.
 +------------+------------+-------------+--------------+----------------+-------------+-----------------+
 
 
-The interesting part is that we are going to let solver fill in the values for
+The interesting part is that we are going to let Solver fill in the values for
 us in the numsold column. You should start out by trying out some values for
-yourself, so you can see the recalculation happening. Now, let's set up solver
+yourself, so you can see the recalculation happening. Now, let's set up Solver
 to find the best values for that column.
 
 
 .. image:: Figures/Solver_.png
    :width: 300px
    :align: left
+   :alt: Solver window with "Set Objective" Cell, "By Changing" Cell, and "Subject To" Cell with buttons to add, change, or delete constraints.
 
 
-We said that our objective function was to maximize profit. That value is the
+We said that our **objective function** was to maximize profit. That value is the
 total that shows up as 894.75 and is in cell G11 in the spreadsheet. So, in our
-solver tab in the **Set Objective** input box, we will set G11 as our objective
-cell. You can see that at the right. You can also see that I have checked the
-box to maximize that objective.
+Solver tab in the **Set Objective** input box, we will set G11 as our objective
+cell. You can see that at the right. You can also see that we have checked the
+box to maximize that objective. You can think of **Set Objective** as the **dependent variable**. 
 
-Next, you can see the **By Changing** input box. This is where we tell solver
-the values it can change. We are allowing solver to decide how much of each item
+
+Next, you can see the **By Changing** input box. This is where we tell Solver
+the values it can change. We are allowing Solver to decide how much of each item
 we should sell. Those are in cells F2:F9. It doesn't matter if you have already
-entered a few values into those cells, as solver will override them.
+entered a few values into those cells, as Solver will override them. You can think
+of **By Changing** as the **independent variable**.
 
 Finally, we have the **Subject To** entry area. Recall that our two constraints
 were that we could not sell more than 500 total items. That means that in our
 spreadsheet, F11 must be less than or equal to the value in F12. Note that makes
 it easy for us to change our constraint by just changing the value in cell F12
-and rerunning solver.
+and rerunning Solver.
 
 Also, we said that you could not sell more items than you have in the inventory.
 So F2:F9 must be less than or equal to D2:D9.
