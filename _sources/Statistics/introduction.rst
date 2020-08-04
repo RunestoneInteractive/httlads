@@ -28,7 +28,7 @@ Learning Goals
 - Distinguish between descriptive and inferential statistics.
 - Learn to apply the various measures of central tendency and the measures of variability.
 - Become familiar with several descriptive statistics and data visualization spreadsheet operations.
-- Addressing cells: relative versus absolute, on the same same sheet versus across sheets.
+- Addressing cells: relative versus absolute, on the same sheet versus across sheets.
 - Use a spreadsheet to explore data.
 
 Learning Objectives

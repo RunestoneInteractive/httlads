@@ -45,7 +45,7 @@ spreadsheet work together.
    case, two columns of numbers to compute the correlation between. For example,
    the happiness score and the economy. However, to make our correlation matrix,
    we need to compute the correlation between all pairs of columns. Using the
-   column letters is more compact so lets write out a few.
+   column letters is more compact so let's write out a few.
 
    a. EE, EF, EG, EH, EI, EJ, EK, EL, FE, FF, FG, FH, FI, FJ, FK, FL, ...
 

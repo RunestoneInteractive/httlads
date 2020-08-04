@@ -31,7 +31,7 @@ Below are definitions of the indicators found in the data set.
 -  **Starting a Business Score:** These scores are calculated using the simple average of all the indicators' scores.
 -  **Procedures:** The activities must be accomplished to get the business registered with its associated governmental entity.
 -  **Time (days):** The median number of days needed to get the business up and running for each country/region.
--  **Cost:** The amount of money that must be expended to get the business started (such as official, legal and professional services fees, etc.).
+-  **Cost:** The amount of money that must be expended to get the business started (such as official, legal, and professional services fees, etc.).
 -  **Paid-In Minimum Capital:** The minimum amount of money the entrepreneur must have is deposits in the bank for the business registration process to be completed.
 -  **Income Level:** This represents the income levels of each country's economy. This indicator is divided into low, lower-middle, upper-middle, and high, based on a country's gross national income (GNI) per person.
 
@@ -127,7 +127,7 @@ A **histogram** is one way to visualize the standard deviation of a particular d
 you can calculate which countries have the largest or smallest GNI, the income per capita of women and men, and so on. 
 
 a. Remember, finding the maximum value of a column does not mean we know which country it corresponds to. Therefore, we can use the ``MATCH`` and ``INDEX`` functions 
-   to fix this problem. Let's find what country corresponds the maximum value of GNI. First, calculate the maximum GNI in cell M193, then in cell M194 type ``=MATCH(M193, M2:M192, 0)``. 
+   to fix this problem. Let's find what country corresponds to the maximum value of GNI. First, calculate the maximum GNI in cell M193, then in cell M194 type ``=MATCH(M193, M2:M192, 0)``. 
    Notice that the match function searches for the value in cell M193 in the range ``M2:M192``, and the 0 tells Google Sheets that the data is not sorted. The 0 is 
    important because, without it, sheets will assume the data is sorted and will stop when it finds a value greater than the value in M194.
 
@@ -135,7 +135,7 @@ b. Type ``=INDEX(A2:A192, M194)`` in cell M195. The ``A2:A192`` parameters is th
    case, it is the location. M194 from the previous question is ``=MATCH(M193, M2:M192, 0)``. So the ``INDEX`` is practically telling sheets to find the 
    location, from column A, that is found in the same row as the maximum value.
 
-c. All three steps shown above can be performed in a single cell. Let’s look at the country that has the lowest Procedure Men number . 
+c. All three steps shown above can be performed in a single cell. Let’s look at the country that has the lowest Procedure Men number. 
    In cell E193 type ``=INDEX($A2:$A141, MATCH(MIN(E2:E141), E2:E141, 0))``. The ``MATCH`` and ``MIN`` functions both return one value. 
    So, sheets will first find the minimum value in cells ``J2:J141``. Then it will use the ``MATCH`` function to find the cell location (column and row) 
    of where that minimum value is. Finally, it will use the ``INDEX`` function to find what value from ``A2:A141`` matches up with the given parameters. Try

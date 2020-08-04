@@ -46,7 +46,7 @@ column matches the given region, the function includes the value from the busine
 
 Lastly, we can sort the business scores to see the regions from the highest score to the lowest. First, 
 select Column A, and then from the menu select Data -> Sort sheet by column A, A -> Z. Then, add another column to 
-our table that tells us how many countries are in each region (``COUNTIF``). Finally, using ``MAXIFS``, ``MINIFS``, ``MATCH`` 
+our table that tells us how many countries are in each region (``COUNTIF``). Finally, using ``MAXIFS``, ``MINIFS``, ``MATCH``, 
 and ``INDEX``, find the easiest and hardest country to start a business for each region. ``MAXIFS`` and ``MINIFS`` work 
 like ``AVERAGEIF`` and ``COUNTIF``, but they allow for more conditions. In our case, we still need only one condition.
 
@@ -70,7 +70,7 @@ we will learn how to join data from various sources.
 
 In our starting a business spreadsheet, we have a column that
 contains the name of each country. It has a bunch of business-related data
-about each country in other columns. On our countries of the world sheet, we
+about each country in other columns. In our countries of the world sheet, we
 have a column of country names and other information about countries
 in other columns. The two sheets do not have the countries in the same order. Also, 
 they have most of the same countries, but not all.
@@ -105,7 +105,7 @@ Double-check the entire column to make sure that all the data is filled.
 
 As in our previous study case, we will have some rows with a value of #N/A. In this case,
 In one spreadsheet there is a name "Venezuela, RB" and in the other spreadsheet it has 
-"Venezuela, the Bolivarian Republic of." You will have to clean up this data, and make the names manually 
+"Venezuela, the Bolivarian Republic of." You will have to clean up this data and make the names manually 
 match where they don't already.
 
 

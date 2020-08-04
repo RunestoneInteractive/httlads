@@ -118,7 +118,7 @@ mean by dividing our two columns.
 5. Add another column to our table that tells us how many countries are in each
    region (``COUNTIF``).
 
-6. Using ``MAXIFS``, ``MINIFS``, ``MATCH`` and ``INDEX``, let's find the most
+6. Using ``MAXIFS``, ``MINIFS``, ``MATCH``, and ``INDEX``, let's find the most
    and least happy country in each region. ``MAXIFS`` and ``MINIFS`` work like
    ``AVERAGEIF`` and ``COUNTIF``,  but allow for more conditions. In our case,
    we still need only one. (If you read the popup you will know what to do.)
@@ -222,7 +222,7 @@ because one spreadsheet has the name "United States" and the other spreadsheet
 has "United States of America". We know these are the same but the computer does
 not make the match. You will need to clean up this data manually by making the
 names match where they don't already. This is also why the countries of the
-world spreadsheet contains the column that has a three letter code for each
+world spreadsheet contains the column that has a three-letter code for each
 country. These codes are internationally agreed upon and are always the same for
 each country. This avoids the kind of problems we have where there is more than
 one common spelling.
@@ -318,7 +318,7 @@ creation of pivot tables as well.
    with three columns: user, movie, and rating. What would be more easy to look at
    would be to have a column for each movie and a row for each user with the
    rating in the cell corresponding to a user and a movie. This is exactly the
-   use case for pivot tables. You can see an example of transforming the orginal
+   use case for pivot tables. You can see an example of transforming the original
    data to the pivot table view below.
 
 

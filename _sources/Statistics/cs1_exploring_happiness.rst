@@ -160,14 +160,14 @@ statistics and visualization.
 Happiness Index Research Questions
 ----------------------------------
 
-1. What are the different factors that lead to happiness of a country?
+1. What are the different factors that lead to the happiness of a country?
 
 2. What role does the economy play in determining the happiness of a country?
 
 3. Which factor, on average, contributes most/least to happiness?
 
 4. What similarities and differences do the countries experiencing the
-   highest/lowest WHS have? Are there any countries where there scores for some
+   highest/lowest WHS have? Are there any countries where their scores for some
    factor are very different than those of the countries around it in the
    rankings?
 
@@ -194,7 +194,7 @@ Summary Statistics
 
 
 1. Although the countries are ranked from most happy to least happy, we might
-   want start by looking at some summary statistics for the happiness score.
+   want to start by looking at some summary statistics for the happiness score.
 
    a. Use the ``AVERAGE`` function of sheets to calculate the mean in column D.
       Scroll down and click in cell D143. That should be an empty cell below the
@@ -378,7 +378,7 @@ Visualizing Happiness
            :x: Incorrect
 
    f. If you tried to copy/paste the functions from above you likely ran into
-      some errors. Check the ranges carefully and remember what Sheets does when
+      some errors. Check the ranges carefully and remember what Sheets do when
       you copy and paste. If you insist on copy/pasting, then you are going to
       have to use $ to get it right. We'll leave it to you to figure that out.
 
@@ -397,7 +397,7 @@ Visualizing Happiness
    others. Is it their level of freedom, or their level of wealth?  One way we
    can answer this question is to calculate a correlation between the happiness
    index and the various factors. This will create a small table that computes a
-   correlation score between of of our columns of data. Happiness score to
+   correlation score between of our columns of data. Happiness score to
    Economy, Happiness score to Family, etc.
 
    a. First, let's calculate a correlation between happiness score and each
