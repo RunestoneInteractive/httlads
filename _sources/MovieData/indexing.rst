@@ -17,21 +17,21 @@ Before you start, here is a refresher on the index operator in Pandas.
 
 **Selecting Columns of a DataFrame**
 
-* ``df[<string>]`` gets me a column and return the Series corresponding to that
+* ``df[<string>]`` gets me a column and returns the Series corresponding to that
   column.
-* ``df[<list of strings>]`` gets me a bunch of columns and return a DataFrame.
+* ``df[<list of strings>]`` gets me a bunch of columns and returns a DataFrame.
 
 **Selecting Rows of a DataFrame**
 
 * ``df[<series/list of Boolean>]`` gets me the rows for each element in the
-  listlike thing you passed me that is ``True``.  However, I think this is
+  list like thing you passed me that is ``True``.  However, I think this is
   confusing and whenever you want to select some rows of a DataFrame you should
   use ``df.loc[]``.
 * ``df.loc[<series/list of Boolean>]`` behaves just like
   ``df[<series/list of Boolean>]``.
-* ``df.loc[<string>]`` uses the non-numeric row index and return the row(s) for
+* ``df.loc[<string>]`` uses the non-numeric row index and returns the row(s) for
   that index value.
-* ``df.loc[<string1>:<string2>]`` uses the non-numeric index and return a data
+* ``df.loc[<string1>:<string2>]`` uses the non-numeric index and returns a data
   frame composed of the rows starting with string1 and ending with each string2.
 * ``df.loc[<list/Series of strings>]`` returns a data frame composed of each row
   from df with an index value that matches a string in the list.

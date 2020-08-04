@@ -47,18 +47,18 @@ Keywords
 
 ``<DataFrame>[<series/list of Boolean>]``: If the index in the given list is ``True`` then it returns the row from that same index in the ``DataFrame``.
 
-``<DataFrame>.loc[ ]``: Uses explicit indexing to return a ``DataFrame`` containing those indicies and the values associated with them. 
+``<DataFrame>.loc[ ]``: Uses explicit indexing to return a ``DataFrame`` containing those indices and the values associated with them. 
 
-``<DataFrame>.loc[<string1>:<string2>]``: This takes in a range of explicit indices and returns a ``DataFrame`` containing those indicies and the values associated with them.
+``<DataFrame>.loc[<string1>:<string2>]``: This takes in a range of explicit indices and returns a ``DataFrame`` containing those indices and the values associated with them.
 
 ``<DataFrame>.loc[<string>]``: Uses an explicit index and return the row(s) for that index value.
 
 ``<DataFrame>.loc[<list/series of strings>]``: Returns a new ``DataFrame`` containing the labels given in the list of strings.
 
-``<DataFrame>.iloc[ ]``: Uses implicit indexing to return a ``DataFrame`` containing those indicies and the values associated with them.
+``<DataFrame>.iloc[ ]``: Uses implicit indexing to return a ``DataFrame`` containing those indices and the values associated with them.
 
 ``<DataFrame>.iloc[<index, range of indices>]``: This takes in an implicit index (or a range of implicit indices) and returns a ``DataFrame`` containing those 
-indicies and the values associated with them.
+indices and the values associated with them.
 
 ``<DataFrame>.set_index [<string)>]``: Sets an existing column(s) with the <string> name as the index of the ``DataFrame``. 
 
