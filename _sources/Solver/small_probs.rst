@@ -20,12 +20,12 @@ Small Problems To Try
    plant food mix A and plant food mix B. Each cubic yard of food A contains 20
    pounds of phosphoric acid, 30 pounds of nitrogen and 5 pounds of potash. Each
    cubic yard of food B contains 10 pounds of phosphoric acid, 30 pounds of
-   nitrogen and 10 pounds of potash. He requires a minimum of 460 pounds of
-   phosphoric acid, 9,060 pounds of nitrogen and 220 pounds of potash. If food A
-   costs $30 per cubic yard and food B costs $35 per cubic yard, how many cubic
+   nitrogen, and 10 pounds of potash. He requires a minimum of 460 pounds of
+   phosphoric acid, 9,060 pounds of nitrogen, and 220 pounds of potash. If food A
+   costs $30 per cubic yard, and food B costs $35 per cubic yard, how many cubic
    yards of each food should the farmer blend to meet the minimum chemical
    requirements at a minimal cost? What is this cost?
 
 4. "Travelling salesman problem": Create a matrix of distances and then a row of
-   nodes to go to and from. Use index to lookup the distance, and minimize the
+   nodes to go to and from. Use index to look up the distance, and minimize the
    total distance.

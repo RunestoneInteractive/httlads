@@ -10,7 +10,7 @@ a stated objective.  Optimization techniques will produce the best mix of elemen
 a dataset in order to meet an expected optimized outcome. An
 optimization model consists of 3 components, the objective function (the 
 variable being optimized), the decision variables (those elements that will 
-change to achieve the optimization) and the constraints (the elements that 
+change to achieve the optimization), and the constraints (the elements that 
 create limitations).  These concepts will be covered in more detail later in the chapter. 
 
 We will use a tool called Solver to manipulate a small dataset using Google

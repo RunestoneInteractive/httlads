@@ -10,7 +10,7 @@ Optimization Using Solver
 ==========================
 
 A lot of data science and machine learning concerns itself with optimization. In
-the business word, people are often trying to maximize profit and/or minimize
+the business world, people are often trying to maximize profit and/or minimize
 costs. In the manufacturing world, people are often trying to figure out how to
 make the best product while using the least amount of resources. Machine
 learning algorithms are trying to figure out how to make the best predictions
@@ -65,7 +65,7 @@ profits from the lemonade stand. You have the following inventory on hand, but
 because of your busy schedule, you know that you can only sell 500 items before
 you close up shop for the day. You are a good salesperson, and can usually get
 your customers to buy whatever you suggest. So, the question is how to you steer
-those customers to make maximum amount of money.
+those customers to make the maximum amount of money.
 
 Start by entering the data from the table above into a Google Sheets document.
 Now, add a column called "profit" and figure out the profit margin for each

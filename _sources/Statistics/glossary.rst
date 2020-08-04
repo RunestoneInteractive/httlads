@@ -58,11 +58,11 @@ Keywords
 
 ``STDEV`` Calculates the standard deviation.
 
-``SUM`` This function returns the sum of a serires of numbers.
+``SUM`` This function returns the sum of a series of numbers.
 
 ``SUMIF`` Uses a conditional sum across a range and returns it.
 
-``TRIM`` is used to remove repeated spaces in text.
+``TRIM`` is used to remove repeated spaces in the text.
 
 ``UNIQUE`` Returns unique and discarding duplicate rows in a specific range. Unique returns the row in which the unique value first appears.
 

@@ -9,12 +9,12 @@
 Optimizing Your Class Schedule
 ==============================
 
-Use Solver to optimize your class schedule accoridng to the following specifications.
+Use Solver to optimize your class schedule according to the following specifications.
 
 * 10 classes in your major
 * Maximize your GPA
-* No classes before 9am
-* No classes after 2:30pm
+* No classes before 9:00 am
+* No classes after 2:30 pm
 * Must take at least 32 credits
 * Must take 2 courses in humanities
 * Must take 2 courses in social sciences
