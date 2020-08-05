@@ -284,7 +284,7 @@ list as a parameter to ``map`` since it is a method of a Series.
 
 
 You have already gone through the process of getting a three-letter country code for the previous case study. We will
-use the same function to add the country code to the protecting minority investors data set. We can use the code below to proceed.
+use the same function to add the country code to the protecting minority investors' data set. We can use the code below to proceed.
 
 
 .. code:: python3

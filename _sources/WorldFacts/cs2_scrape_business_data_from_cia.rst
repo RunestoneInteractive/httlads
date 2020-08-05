@@ -120,7 +120,7 @@ to another. You click on things defined by ``<a>`` tags all the time.  The part
 ``href="../fields/2092.html#119`` is a hyper-ref, that contains the URL of where
 the link should take you.
 
-The indentation in the code shows the hierarchical structure of an HTML document. Some very important things to note is that,
+The indentation in the code shows the hierarchical structure of an HTML document. Some very important things to note are that,
 blocks that are indented to the same level are siblings, and blocks that are nested inside other blocks have a parent-child relationship. 
 We can take a look at examples of these relationships in the following diagram. 
 

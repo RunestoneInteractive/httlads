@@ -79,7 +79,7 @@ you can figure out a good marker we can use to find the field contained in each.
 
 In fact, now that you are investigating and if you stop and think for a minute,
 you may conclude that there must be some kind of nice human-readable table of
-contents. In fact, there is. Take a look at the file ``notesanddefs.html``
+contents. In fact, there is. Take a look at the ``.docs`` folder to find the ``notesanddefs.html`` file.   
 
 In the spirit of starting small and working our way up to a larger project,
 let's write some code to scrape all of the fields and the file they are in from
