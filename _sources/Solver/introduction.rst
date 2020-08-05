@@ -33,7 +33,7 @@ Learning Objectives
 -------------------
 
 - Be able to recognize an **objective function** and any **constraints** in a specific problem.
-- Learn to apply opitimization concepts to maximize or minimize an **objective function** or to set it to a specified value.
+- Learn to apply optimization concepts to maximize or minimize an **objective function** or to set it to a specified value.
 - Use Solver as a tool to optimize an **objective function** for a specific scenario.
 
 Reading List
