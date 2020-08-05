@@ -9,6 +9,8 @@
 Optimizing Your Class Schedule
 ==============================
 
+Use Solver to optimize your class schedule accoridng to the following specifications.
+
 * 10 classes in your major
 * Maximize your GPA
 * No classes before 9am

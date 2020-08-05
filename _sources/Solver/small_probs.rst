@@ -8,7 +8,7 @@ Small Problems To Try
 =====================
 
 1. With exactly 2700 square inches of cardboard, we wish to construct a box
-   (width *2x*, depth *x*, height *2x*. We would like to maximize the volume *V*
+   (width *2x*, depth *x*, height *2x*). We would like to maximize the volume *V*
    the box can hold. Which values of width, depth, and height fulfill our
    objective?
 
@@ -21,7 +21,7 @@ Small Problems To Try
    pounds of phosphoric acid, 30 pounds of nitrogen and 5 pounds of potash. Each
    cubic yard of food B contains 10 pounds of phosphoric acid, 30 pounds of
    nitrogen and 10 pounds of potash. He requires a minimum of 460 pounds of
-   phosphoric acid, 9060 pounds of nitrogen and 220 pounds of potash. If food A
+   phosphoric acid, 9,060 pounds of nitrogen and 220 pounds of potash. If food A
    costs $30 per cubic yard and food B costs $35 per cubic yard, how many cubic
    yards of each food should the farmer blend to meet the minimum chemical
    requirements at a minimal cost? What is this cost?
