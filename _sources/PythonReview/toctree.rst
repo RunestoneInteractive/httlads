@@ -12,4 +12,4 @@ Setting up Jupyter and a Python Review
    :maxdepth: 2
 
    installing.rst
-   python_review.rst
+   python_review_new.rst

@@ -202,7 +202,6 @@ Strings also have special abilities.
 
 Lists
 ------
-
 Getting back to lists, they are a basic type in Python and they can contain a
 mix of different types.
 
@@ -507,48 +506,6 @@ Note that lambda functions don't use the ``return`` keyword, you just specify
 the names of the parameters of the function (``x`` in the example above), a
 colon, and the operation to perform on the parameter(s).
 
-You can also use
-`list comprehension <https://www.pythonforbeginners.com/basics/list-comprehensions-in-python>`_
-to perform an operation on every item in the list. It looks a little bit like a
-for loop inside of a list.
-
-
-.. code:: python3
-
-   [x*2 for x in my_list]
-
-
-.. parsed-literal::
-
-   [6, 8, 128, 4, 90, 46, 24, 68, 292, 292, 292]
-
-
-You can also use it to filter out values from a list. For example, the below
-extracts every odd values from the list.
-
-
-.. code:: python3
-
-   [x for x in my_list if x % 2 == 1]
-
-
-.. parsed-literal::
-
-   [3, 45, 23]
-
-
-You can even combine filtering and other operations.
-
-
-.. code:: python3
-
-   # Square every value less than 10.
-   [x**2 for x in my_list if x<10]
-
-
-.. parsed-literal::
-
-   [9, 16, 4]
 
 
 List Comprehension Exercises
@@ -642,3 +599,46 @@ not be the resulting list).
 
    ['Riverside', 'Dayton', 'Los Angeles']
 
+
+You can also use
+`list comprehension <https://www.pythonforbeginners.com/basics/list-comprehensions-in-python>`_
+to perform an operation on every item in the list. It looks a little bit like a
+for loop inside of a list.
+
+
+.. code:: python3
+
+   [x*2 for x in my_list]
+
+
+.. parsed-literal::
+
+   [6, 8, 128, 4, 90, 46, 24, 68, 292, 292, 292]
+
+
+You can also use it to filter out values from a list. For example, the below
+extracts every odd values from the list.
+
+
+.. code:: python3
+
+   [x for x in my_list if x % 2 == 1]
+
+
+.. parsed-literal::
+
+   [3, 45, 23]
+
+
+You can even combine filtering and other operations.
+
+
+.. code:: python3
+
+   # Square every value less than 10.
+   [x**2 for x in my_list if x<10]
+
+
+.. parsed-literal::
+
+   [9, 16, 4]
