@@ -509,6 +509,7 @@ Visualizing Distribution with Histograms
 
 
 .. image:: Figures/WorldFactbook_15_0.png
+  :alt: Histogram with Number of Records as the y-axis and Birth Rate as the x-axis.
 
 
 We can shortcut a lot of what we did above into a single line, because once we
@@ -525,7 +526,7 @@ Jupyter environment knows how to display automatically.
 
 
 .. image:: Figures/WorldFactbook_17_0.png
-
+  :alt: Histogram with Number of Records as the y-axis and Birth Rate as the x-axis.
 
 Practice
 --------
@@ -578,6 +579,7 @@ countries.
 
 
 .. image:: Figures/WorldFactbook_22_0.png
+  :alt: Histogram with Number of Records as the y-axis and Birth Rate as the x-axis.
 
 
 That's not a very satisfying graph, but it does make us want to focus more on
@@ -1582,6 +1584,7 @@ variable first.
 
 
 .. image:: Figures/WorldFactbook_30_0.png
+  :alt: Scatter plot with Area as the y-axis and Population as the x-axis. Most of the points are congregated at a very low y-axis but are spread out on the x-axis. One point is near the top of the y-axis and center of the x-axis.
 
 
 How interesting! One country has such a large value that it pushes all the
@@ -2523,6 +2526,7 @@ boolean expression to limit our DataFrame in both directions.
 
 
 .. image:: Figures/WorldFactbook_34_0.png
+  :alt: Scatter plot with Area as the y-axis and Population as the x-axis. Most of the points are congregated at a low y-axis (with varying y values) but are spread out on the x-axis. One point is near the top of the y-axis and center of the x-axis.
 
 
 Suppose you have a favorite country you have visited or lived in at some point.
@@ -2862,7 +2866,7 @@ to make life easier.
 
 
 .. image:: Figures/WorldFactbook_45_0.png
-
+  :alt: Scatter Matrix of Birth rate, Death rate, Infant Mortality, and GDP.
 
 .. code:: python3
 
