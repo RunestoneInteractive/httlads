@@ -8,7 +8,7 @@ Case Study 1: Comparing Forms of Government
 ===========================================
 
 The goal of this section is to be able to do some comparison of the different
-forms of government, and how the form of government might have an impact some of
+forms of government, and how the form of government might have an impact on some of
 our other variables. We'll do this by building a pivot table in Pandas. You have
 already done this in a spreadsheet, so it's good to see how to do it in Pandas
 as well. In order to accomplish this, we are going to have to do the following.
@@ -20,7 +20,7 @@ as well. In order to accomplish this, we are going to have to do the following.
 
 If you haven't already, you should review the example of :ref:`screenscrape`.
 This will show you the basics of reading and grabbing information out of a page.
-When you are comfortable with that, you can dig in to getting the information
+When you are comfortable with that, you can dig into getting the information
 from `this page <../_static/government_type.html>`_.
 
 Now, let's look at making a pivot table. We will leave pivoting on the form of
@@ -28,7 +28,7 @@ government up to you. Instead, we will do an example to see how climate, region
 of the world, and parts of the economy might be related. We have a column for
 region, we have a column for climate, and we have information on the economy.
 What we want to do is summarize that information in a table where we have a row
-for each region, and a column for each classification of climate. Then in each
+for each region and a column for each classification of climate. Then in each
 cell, we would like to summarize the fraction of the economy that comes from
 agriculture.
 
@@ -56,7 +56,7 @@ Therefore, we will do an example to see how climate, a region of the world, and 
 
 
 The first thing we really want to do is change those headings. Climate values of
-1.0, 2.0 etc are not very useful, but we can translate that into more
+1.0, 2.0 etc are not very useful, but we can translate that into a more
 human-friendly form.
 
 The climate numbers are as follows:
@@ -107,7 +107,7 @@ The ``pivot`` function works like the ``pivot_table`` function, but does not do
 any aggregation. Therefore, it will throw an error if you have duplicate index
 rows.
 
-Try changing the values parameter to be a list of of columns maybe Agriculture,
+Try changing the values parameter to be a list of columns maybe Agriculture,
 Service, and Industry. How does that change your table?
 
 

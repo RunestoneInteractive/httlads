@@ -5,7 +5,7 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-.. _screenscrape:
+.. _screenscrape_Bus:
 
 Case Study 2: Scraping Business Data Using Panda and BeautifulSoup 
 ===================================================================
@@ -481,81 +481,84 @@ There are a lot of people that can make use of this data in a more convenient fo
     :instructoronly:
     
     Here we have the code that enables you to scrape one page, get all the information, and put it in a dictionary.
-    .. code:: python3
-       from bs4 import BeautifulSoup
-       import pandas as pd
-       # file = open(filename, encoding="utf8")
-       page = open(r"C:/Users/santoshernandezr/factbook2017/fields/2003.html", encoding='utf-8').read()
-       page[:200]
 
-       gdp_content = BeautifulSoup(page)
-       gdp_content
-       gdp_content = gdp_content.find(id="fieldListing") # gets all the data where the country and the data is stored
+.. code:: python3
 
-       country_tags = gdp_content.select("#fieldListing .country") # gets all the information where the countries are
-       gdp_country = [pt.get_text() for pt in country_tags] # gets all the countries
-       # print(gdp_country)
+      from bs4 import BeautifulSoup
+      import pandas as pd
+      # file = open(filename, encoding="utf8")
+      page = open(r"C:/Users/santoshernandezr/factbook2017/fields/2003.html", encoding='utf-8').read()
+      page[:200]
 
-       period_tags = gdp_content.select("#fieldListing .fieldData") # gets all the gdp data of each country
-       gdp_data = [pt.get_text() for pt in period_tags] # gets data
-       # print(gdp_data)
-            
-       dict = {gdp_country[i]: gdp_data[i] for i in range(len(gdp_country))}
-       #print(dict)
+      gdp_content = BeautifulSoup(page)
+      gdp_content
+      gdp_content = gdp_content.find(id="fieldListing") # gets all the data where the country and the data is stored
+
+      country_tags = gdp_content.select("#fieldListing .country") # gets all the information where the countries are
+      gdp_country = [pt.get_text() for pt in country_tags] # gets all the countries
+      # print(gdp_country)
+
+      period_tags = gdp_content.select("#fieldListing .fieldData") # gets all the gdp data of each country
+      gdp_data = [pt.get_text() for pt in period_tags] # gets data
+      # print(gdp_data)
+         
+      dict = {gdp_country[i]: gdp_data[i] for i in range(len(gdp_country))}
+      #print(dict)
 
     Below we have the code that iterates through all the URLs to scrape all the data without having to scrape each one individually.
     
-    .. code:: python3
-       from bs4 import BeautifulSoup
-       import pandas as pd
-       page = open(r"C:/Users/santoshernandezr/factbook2017/docs/notesanddefs.html", encoding='utf-8').read()
-       page[:200]
+.. code:: python3
 
-       all_info = BeautifulSoup(page)
-       # print(page.prettify()[:1000])
+      from bs4 import BeautifulSoup
+      import pandas as pd
+      page = open(r"C:/Users/santoshernandezr/factbook2017/docs/notesanddefs.html", encoding='utf-8').read()
+      page[:200]
 
-       country_tags = all_info.select(".header_ul .category") 
-       urls = []
+      all_info = BeautifulSoup(page)
+      # print(page.prettify()[:1000])
 
-       for col in country_tags:
-          links = col.select('a')
-          if len(links) > 0:
-             fpath = links[0]['href']
-             fpath = fpath[2:] 
-             urls.append("C:/Users/santoshernandezr/factbook2017" + fpath)
-       # print(urls)
+      country_tags = all_info.select(".header_ul .category") 
+      urls = []
 
-       from bs4 import BeautifulSoup
-       import pandas as pd
+      for col in country_tags:
+         links = col.select('a')
+         if len(links) > 0:
+            fpath = links[0]['href']
+            fpath = fpath[2:] 
+            urls.append("C:/Users/santoshernandezr/factbook2017" + fpath)
+      # print(urls)
 
-       all_data = {}
+      from bs4 import BeautifulSoup
+      import pandas as pd
 
-       for url in urls[:20]:
-          new_url = url[:55]
-          # print(new_url)
-          page = open(new_url, encoding='utf-8').read()
-          page_content = BeautifulSoup(page)
-         
-          header_info = page_content.select("tr.fieldHeading")
-          header = header_info[0].get_text()[7:]
-          # print(header)
-         
-          page_content = page_content.find(id="fieldListing") # gets all the data where the country and the data is stored
-         
-          find_country = page_content.select("#fieldListing .country") # gets all the countries
-          country_name = [pt.get_text() for pt in find_country] # gets all the countries
-          #print(country_name)
-         
-          find_data = page_content.select("#fieldListing .fieldData") # finding where the data is
-          country_data = [pt.get_text()[1:-1] for pt in find_data] # retrieving the data
-         
-          dict = {country_name[i]: country_data[i] for i in range(len(country_name))} # dictionary that maps each country to the info
-          all_data[header] = dict # having a header for the dictionary of the information
-         
-          dict = {}
-         
-          # print(all_data)
-          web_scrape = pd.DataFrame(all_data).head()
+      all_data = {}
+
+      for url in urls[:20]:
+         new_url = url[:55]
+         # print(new_url)
+         page = open(new_url, encoding='utf-8').read()
+         page_content = BeautifulSoup(page)
+      
+         header_info = page_content.select("tr.fieldHeading")
+         header = header_info[0].get_text()[7:]
+         # print(header)
+      
+         page_content = page_content.find(id="fieldListing") # gets all the data where the country and the data is stored
+      
+         find_country = page_content.select("#fieldListing .country") # gets all the countries
+         country_name = [pt.get_text() for pt in find_country] # gets all the countries
+         #print(country_name)
+      
+         find_data = page_content.select("#fieldListing .fieldData") # finding where the data is
+         country_data = [pt.get_text()[1:-1] for pt in find_data] # retrieving the data
+      
+         dict = {country_name[i]: country_data[i] for i in range(len(country_name))} # dictionary that maps each country to the info
+         all_data[header] = dict # having a header for the dictionary of the information
+      
+         dict = {}
+      
+         # print(all_data)
+         web_scrape = pd.DataFrame(all_data).head()
 
 **Lesson Feedback**
 

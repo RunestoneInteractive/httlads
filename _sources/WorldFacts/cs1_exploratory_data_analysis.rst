@@ -243,7 +243,7 @@ Describing the Data
 -  Population density per square mile
 -  Coastline coast/area ratio
 -  Net migration
--  Infant mortaility per 1000 births
+-  Infant mortality per 1000 births
 -  GDP $ per capita
 -  Literacy %
 -  Phones per 1000
@@ -254,10 +254,10 @@ Describing the Data
 -  Birthrate
 -  Deathrate
 -  Agriculture % GDP
--  Inustry % GDP
+-  Industry % GDP
 -  Service % GDP
 
-The Climate numbers are as follows.
+The climate numbers are as follows.
 
 1. Dry tropical or tundra and ice
 2. Wet tropical
@@ -588,7 +588,7 @@ population under 150 million and an area under million. Let's start with the
 first part.
 
 To do this, we will create a new **DataFrame** where we focus on the countries with
-populations less than 150 million and areas less than 4 million. Pandas makes
+populations less than 150 million and areas less than 4 million. Pandas make
 this really easy with its querying power.
 
 The statement below produces a Series of **boolean values**. These boolean values
@@ -1591,7 +1591,7 @@ How interesting! One country has such a large value that it pushes all the
 others down. We added a tooltip parameter so that if you hover over that point,
 you will see it is Greenland (which has lots of land area, but not too many
 people). There are large universities that have more people than the entire
-country of Greenland. Let's improve our query to focus on area less than
+country of Greenland. Let's improve our query to focus on an area less than
 200,000.
 
 We can do more complicated boolean expressions by using the ``|`` (logical *or*)
@@ -2680,7 +2680,7 @@ spaces.
 
 You may recall that Python has a string method called ``strip`` that does
 exactly what we want. How can we get that to apply to all of the strings in the
-Series? Pandas allows us to do this using the ``str`` attribute of the series in
+Series? Pandas allow us to do this using the ``str`` attribute of the series in
 combination with most of the standard string methods you know about.
 
 
@@ -2845,7 +2845,7 @@ Now, we can replace our original ``Country`` column with the stripped column.
 Power Tools: Scatter Matrix
 ---------------------------
 
-It would be pretty tedius to look at all the different pairs of things we might
+It would be pretty tedious to look at all the different pairs of things we might
 want to look at for correlation one at a time, but we can use a scatter matrix
 to make life easier.
 
@@ -2898,11 +2898,11 @@ Practice Questions
 1. What are the top 10 countries by GDP?
 2. What are the top 20 countries by population?
 3. What are the 10 countries with the largest net migration?
-4. What is the distribution of Argiculture, Industry, and service for the
+4. What is the distribution of Agriculture, Industry, and service for the
    countries in Western Europe?
-5. What are the names, population and Area of the 5 largest (by area) landlocked
+5. What are the names, population and, Area of the 5 largest (by area) landlocked
    countries?
-6. What are the names and population of the five most populous landlocked
+6. What are the names and populations of the five most populous landlocked
    countries?
 7. What is the name and GDP of the 10 countries with the most cell phones/1000
    people?

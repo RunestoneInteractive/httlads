@@ -8,7 +8,7 @@ Case Study 1: Graphing Infant Mortality on a Map
 =================================================
 
 Let's take on the seemingly simple task of plotting some of the country data on
-a map, like we did in Google Sheets earlier. We'll see that this is one area
+a map like we did in Google Sheets earlier. We'll see that this is one area
 where things are not quite as simple as they are in Sheets. But we can make it
 work with a bit of effort.
 
@@ -119,7 +119,7 @@ geographic data to be matched against the id in our ``unemp_data`` data frame.
 This allows us to make use of two data frames in one graph. The example below is
 a bit misleading, in that id is used both as the lookup, as well as the key in
 the call to LookupData. The lookup value refers to the column name in the
-DataFrame passed to Chart, where as the second parameter to the LookupData call
+DataFrame passed to Chart, whereas the second parameter to the LookupData call
 is the name of the column in the ``unemp_data`` DataFrame. It is just a
 coincidence that they have the same name in this example.
 
@@ -148,18 +148,18 @@ coincidence that they have the same name in this example.
 Using a Web API to get Country Codes
 ------------------------------------
 
-Can you make use of the provided example and the altair documentation to produce
+Can you make use of the provided example and the Altair documentation to produce
 a graph of the world where the countries are colored by one of the features in
 the data?
 
 In this part of the project we will:
 
--  Learn about using web apis for data gathering
--  Use a web api to get data that maps country codes to country numbers
+-  Learn about using web APIs for data gathering
+-  Use a web API to get data that maps country codes to country numbers
 -  Learn how to add columns to a data frame using the ``map`` function, and
    possibly learn to use a lambda function if you've never used one before
 
-Lets make a to-do list:
+Let's make a to-do list:
 
 1. We need to add a column to our ``wd`` DataFrame that contains the numerical
    country id. Where can we get this data? There may be some CSV files with this
@@ -181,7 +181,7 @@ detail. We'll just give you the bare bones here to get started.
 The website called ``restcountries.eu`` provides an interface for us to get data
 from their site rather than a web page. When thinking about a web API, you have
 to understand how to ask it for the data you want. In this case, we will use
-``/rest/v2/alpha/XXX``. If we unpack that into pieces, let's look at what its
+``/rest/v2/alpha/XXX``. If we unpack that into pieces, let's look at what it's
 telling us.
 
 * ``/rest``: Technically, REST stands for REpresentational State Transfer. This
@@ -238,8 +238,8 @@ The official name for the format that we saw above is called **JSON**: JavaScrip
 Object Notation. It's a good acronym to know, but you don't have to know
 anything about Javascript in order to make use of JSON.  You can think of the
 results as a Python dictionary.  It can be a bit daunting at first as there can be
-many keys and in fact JSON is often full of dictionaries of dictionaries of lists of dictionaries
-but fear not, you can figure it out with a bit of experiementation.
+many keys and JSON is often full of dictionaries of dictionaries of lists of dictionaries
+but fear not, you can figure it out with a bit of experimentation.
 
 
 .. code:: python3
@@ -303,7 +303,7 @@ but fear not, you can figure it out with a bit of experiementation.
         'Accord de Libre-échange Nord-Américain']}],
     'cioc': 'USA'}
 
-For example timezones is a top level key, which produces a list of the valid timezones in the USA.
+For example, timezones is a top level key, which produces a list of the valid timezones in the USA.
 
 .. code:: python3
 
@@ -324,11 +324,11 @@ For example timezones is a top level key, which produces a list of the valid tim
     'UTC+10:00',
     'UTC+12:00']
 
-But, languages is more complicated It also returns a list but each element of the list corresponds
+But, languages is more complicated it also returns a list but each element of the list corresponds
 to one of the official languages of the country.  The USA has only one official language but other countries
-have more.  For example Malta has both Maltese and English as official languages.  Notice that the two dictionaries
+have more.  For example, Malta has both Maltese and English as official languages.  Notice that the two dictionaries
 have an identical structure, a key for the two letter abbreviation, a key for the three letter abbreviation, the name
-and the native name.
+and, the native name.
 
 .. parsed-literal::
 
