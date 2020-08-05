@@ -39,6 +39,7 @@ create and outline the map.
 
 
 .. image:: Figures/WorldFactbook_55_0.png
+  :alt: Map of the United States divided by counties.
 
 
 What about our encoding channels?! The primary data needed to draw the map using
@@ -141,6 +142,7 @@ coincidence that they have the same name in this example.
 
 
 .. image:: Figures/WorldFactbook_59_0.png
+  :alt: Heat map of the U.S. counties based on relative Unemployment. Colors range from yellow for high unemployment to blue for low employment. 
 
 
 Using a Web API to get Country Codes
@@ -610,13 +612,13 @@ above and apply that to the world below.
 
 
 .. image:: Figures/WorldFactbook_74_0.png
-
+  :alt: Gray colored map of the entire world.
 
 Your final result should look like this.
 
 
 .. image:: Figures/WorldFactbook_75_0.png
-
+  :alt: Heat map of the world mapped by infant mortality. Colors range yello for high mortality to blue for low mortality. 
 
 .. reveal:: sol_infant_mort_map
     :instructoronly:
