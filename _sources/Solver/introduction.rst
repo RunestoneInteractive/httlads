@@ -11,7 +11,7 @@ minimize the waiting time for people in a customer service phone queue? These
 questions are examples of optimization problems.
 
 Optimization is the overarching objective of Operations Research, the study of 
-applying mathematics to business questions. OR is closely related to Machine 
+applying mathematics to business questions. Operations Research is closely related to Machine 
 Learning and general Data Science as a subset of Applied Mathematics. It has 
 many different uses, such as optimizing waiting lines (queue theory) or graph 
 analysis (related to graph theory), but its most frequent use is Linear programming, 
