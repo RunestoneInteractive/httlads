@@ -4,7 +4,7 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-.. _h45294365433556a7a5a2403ac5f8:
+.. _Chapter2Introduction:
 
 Introduction
 ============
@@ -40,7 +40,7 @@ Learning Objectives
 - Learn to create and use spreadsheet pivot tables.
 
 
-.. _h257e47683de51231245397924107b3:
+.. _Chapter2ReadingList:
 
 Reading List
 ------------
@@ -60,7 +60,7 @@ Be sure to read each link below entirely and watch for key references before mov
 * `Why Correlation does not Imply Causation <https://towardsdatascience.com/why-correlation-does-not-imply-causation-5b99790df07e>`_
 
 
-.. _h85837457734576e2a582e637a44:
+.. _Chapter2TimeRequired:
 
 Time Required
 -------------
