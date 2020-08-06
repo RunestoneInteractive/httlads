@@ -21,7 +21,17 @@ UN General Debates
     }
     </style>
 
-In this chapter we are going to explore the text from many speeches over many years given by delegates to the United Nations General Assembly.  Every year since 1947, representatives of UN member states gather at the annual sessions of the United Nations General Assembly. The centrepiece of each session is the General Debate. This is a forum at which leaders and other senior officials deliver statements that present their government’s perspective on the major issues in world politics. (Jankin Mikhaylov, Slava; Baturo, Alexander; Dasandi, Niheer, 2017, "United Nations General Debate Corpus", https://doi.org/10.7910/DVN/0TJX8Y, Harvard Dataverse, V5) This diversity of text gives us a great opportunity for some deeper exploration of text.   You can download `un-general-debates.csv <../_static/un-general-debates.csv>`_ to get started.  It is 130MB so be prepared for a lot of words!  It is licensed CC0 which means it is a public domain data set.  We will also make use of a CSV file of `country codes <../_static/country_codes.csv>`_.
+In this chapter we are going to explore the text from many speeches over many years given by delegates 
+to the United Nations General Assembly.  Every year since 1947, representatives of UN member states 
+gather at the annual sessions of the United Nations General Assembly. The centrepiece of each session 
+is the General Debate. This is a forum at which leaders and other senior officials deliver statements 
+that present their government’s perspective on the major issues in world politics. (Jankin Mikhaylov, 
+Slava; Baturo, Alexander; Dasandi, Niheer, 2017, "United Nations General Debate 
+Corpus", https://doi.org/10.7910/DVN/0TJX8Y, Harvard Dataverse, V5) This diversity of text gives us 
+a great opportunity for some deeper exploration of text.   You can 
+download `un-general-debates.csv <../_static/un-general-debates.csv>`_ to get started.  
+It is 130MB so be prepared for a lot of words!  It is licensed CC0 which means it is a public domain 
+data set.  We will also make use of a CSV file of `country codes <../_static/country_codes.csv>`_.
 
 For your convenience you can use the Colab notebook `TextAnalysisOnUNGeneralDebates.ipynb <https://colab.research.google.com/drive/1bTjqsPONdF4Fe6SNwbrXgqXuwPx7mFU5>`_
 
@@ -730,7 +740,6 @@ convenient for us.
 
 
 .. image:: Figures/UNGeneralDebates_11_0.png
-  :alt: Bar graph representing the change in text between 1970 to 2015.
 
 
 .. code:: python3
@@ -800,7 +809,6 @@ convenient for us.
 
 
 .. image:: Figures/UNGeneralDebates_13_0.png
-  :alt: Bar chart showing the number of records as the y axis and text(binned) as the x axis. Speech Distribution is the title of the chart. 
 
 
 .. code:: python3
@@ -959,6 +967,7 @@ hexadecimal value a9, which is easier to work with in Python.
 
    b'\xa9'.decode('utf8')
 
+
 The above code takes the hexadecimal value of a9 and decodes it using the utf8
 character set.
 
@@ -1109,7 +1118,7 @@ Now let's reread the file using the new character set.
 
 .. code:: python3
 
-   year_summ = undf.groupby('year', as_index=False)['text'].sum()
+   year_summ = undf.groupby('year', as_index=False)['text'].sum(numeric_only=False)
 
 
 .. code:: python3
@@ -1170,6 +1179,7 @@ Now let's reread the file using the new character set.
       </tbody>
     </table>
     </div>
+
 
 .. code:: python3
 
@@ -1536,7 +1546,6 @@ Now let's reread the file using the new character set.
 
 
 .. image:: Figures/Colab_iOverTime.png
-  :alt: Line graph showing mentions of income over time. 
 
 
 .. code:: python3
@@ -1547,405 +1556,14 @@ Now let's reread the file using the new character set.
 
 
 .. image:: Figures/Colab_i_vs_ir.png
-  :alt: Line charts showing mentions of income and interest rate over time from 1970 to 2015. 
 
 
-Interesting! The mention of interest rate in the UN general speeches
-spiked in 1980. It dropped after 1984 and has returned to what 
-it was before 1980. Now, let's take a look at how often climate 
-change and global warming are mentioned.
-
-
-.. code:: python3
-
-    year_summ['gw'] = year_summ.text.str.count('global warming')
-    year_summ['cc'] = year_summ.text.str.count('climate change')
-    year_summ
-
-
-.. raw:: html
-
-    <div>
-    <style scoped>
-        .dataframe tbody tr th:only-of-type {
-            vertical-align: middle;
-        }
-
-        .dataframe tbody tr th {
-            vertical-align: top;
-        }
-
-        .dataframe thead th {
-            text-align: right;
-        }
-    </style>
-    <table border="1" class="dataframe">
-      <thead>
-        <tr style="text-align: right;">
-          <th></th>
-          <th>year</th>
-          <th>text</th>
-          <th>gw</th>
-          <th>cc</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th>0</th>
-          <td>1970</td>
-          <td>126.\t In this anniversary year the General As...</td>
-          <td>0</td>
-          <td>0</td>
-        </tr>
-        <tr>
-          <th>1</th>
-          <td>1971</td>
-          <td>83.\t Mr. President, the first words of my del...</td>
-          <td>0</td>
-          <td>0</td>
-        </tr>
-        <tr>
-          <th>2</th>
-          <td>1972</td>
-          <td>Since the twenty-sixth session of the General ...</td>
-          <td>0</td>
-          <td>0</td>
-        </tr>
-        <tr>
-          <th>3</th>
-          <td>1973</td>
-          <td>﻿1.\tIt is a great pleasure for me to congratu...</td>
-          <td>0</td>
-          <td>1</td>
-        </tr>
-        <tr>
-          <th>4</th>
-          <td>1974</td>
-          <td>Mr. President, first I should like to extend m...</td>
-          <td>0</td>
-          <td>0</td>
-        </tr>
-        <tr>
-          <th>5</th>
-          <td>1975</td>
-          <td>104.\t Mr. President, on behalf of the delegat...</td>
-          <td>0</td>
-          <td>0</td>
-        </tr>
-        <tr>
-          <th>6</th>
-          <td>1976</td>
-          <td>Allow me first to say how pleased I am to see ...</td>
-          <td>0</td>
-          <td>0</td>
-        </tr>
-        <tr>
-          <th>7</th>
-          <td>1977</td>
-          <td>﻿ \n1.\t'O praise the Lord, all ye nations: pr...</td>
-          <td>0</td>
-          <td>0</td>
-        </tr>
-        <tr>
-          <th>8</th>
-          <td>1978</td>
-          <td>﻿210.\tI am particularly happy to be able in m...</td>
-          <td>0</td>
-          <td>0</td>
-        </tr>
-        <tr>
-          <th>9</th>
-          <td>1979</td>
-          <td>﻿My delegation is pleased to convey to the rep...</td>
-          <td>0</td>
-          <td>0</td>
-        </tr>
-        <tr>
-          <th>10</th>
-          <td>1980</td>
-          <td>﻿I should like first of all to extend to Ambas...</td>
-          <td>0</td>
-          <td>0</td>
-        </tr>
-        <tr>
-          <th>11</th>
-          <td>1981</td>
-          <td>\n73.\t Mr. President, the Republic of Iraq an...</td>
-          <td>0</td>
-          <td>0</td>
-        </tr>
-        <tr>
-          <th>12</th>
-          <td>1982</td>
-          <td>First of all I wish to convey my warm \ncongra...</td>
-          <td>0</td>
-          <td>0</td>
-        </tr>
-        <tr>
-          <th>13</th>
-          <td>1983</td>
-          <td>﻿1.\t It is my pleasure to address, in the nam...</td>
-          <td>0</td>
-          <td>0</td>
-        </tr>
-        <tr>
-          <th>14</th>
-          <td>1984</td>
-          <td>﻿I have the honour to convey to the President ...</td>
-          <td>0</td>
-          <td>1</td>
-        </tr>
-        <tr>
-          <th>15</th>
-          <td>1985</td>
-          <td>I wish to convey to you, Sir, the felicitation...</td>
-          <td>0</td>
-          <td>0</td>
-        </tr>
-        <tr>
-          <th>16</th>
-          <td>1986</td>
-          <td>Allow me first, Sir, to congratulate you on y...</td>
-          <td>0</td>
-          <td>0</td>
-        </tr>
-        <tr>
-          <th>17</th>
-          <td>1987</td>
-          <td>﻿\nAllow me at the outset. Sic, to convey to y...</td>
-          <td>0</td>
-          <td>0</td>
-        </tr>
-        <tr>
-          <th>18</th>
-          <td>1988</td>
-          <td>﻿\nI ask the President to accept our congratul...</td>
-          <td>1</td>
-          <td>1</td>
-        </tr>
-        <tr>
-          <th>19</th>
-          <td>1989</td>
-          <td>﻿It is indeed a pleasure for me and the member...</td>
-          <td>20</td>
-          <td>18</td>
-        </tr>
-        <tr>
-          <th>20</th>
-          <td>1990</td>
-          <td>﻿Mr. President, allow me to congratulate you o...</td>
-          <td>9</td>
-          <td>12</td>
-        </tr>
-        <tr>
-          <th>21</th>
-          <td>1991</td>
-          <td>﻿On behalf of my delegation and on my own beha...</td>
-          <td>20</td>
-          <td>30</td>
-        </tr>
-        <tr>
-          <th>22</th>
-          <td>1992</td>
-          <td>I shall read out the following statement\non b...</td>
-          <td>6</td>
-          <td>15</td>
-        </tr>
-        <tr>
-          <th>23</th>
-          <td>1993</td>
-          <td>Allow me to congratulate you sincerely, Sir,\n...</td>
-          <td>5</td>
-          <td>14</td>
-        </tr>
-        <tr>
-          <th>24</th>
-          <td>1994</td>
-          <td>On behalf of the Namibian\ndelegation, I wish ...</td>
-          <td>2</td>
-          <td>9</td>
-        </tr>
-        <tr>
-          <th>25</th>
-          <td>1995</td>
-          <td>Allow me at the outset, on behalf of the\ndele...</td>
-          <td>8</td>
-          <td>12</td>
-        </tr>
-        <tr>
-          <th>26</th>
-          <td>1996</td>
-          <td>﻿The delegation of the Republic of the Congo\n...</td>
-          <td>4</td>
-          <td>16</td>
-        </tr>
-        <tr>
-          <th>27</th>
-          <td>1997</td>
-          <td>﻿I wish to congratulate the President on his\n...</td>
-          <td>5</td>
-          <td>14</td>
-        </tr>
-        <tr>
-          <th>28</th>
-          <td>1998</td>
-          <td>The General Assembly has\nunanimously chosen M...</td>
-          <td>10</td>
-          <td>23</td>
-        </tr>
-        <tr>
-          <th>29</th>
-          <td>1999</td>
-          <td>Today, we look ahead to the\nnew millennium. A...</td>
-          <td>4</td>
-          <td>31</td>
-        </tr>
-        <tr>
-          <th>30</th>
-          <td>2000</td>
-          <td>I join my colleagues in\ncongratulating the Pr...</td>
-          <td>7</td>
-          <td>15</td>
-        </tr>
-        <tr>
-          <th>31</th>
-          <td>2001</td>
-          <td>﻿On\nbehalf of the Comorian delegation, which ...</td>
-          <td>4</td>
-          <td>30</td>
-        </tr>
-        <tr>
-          <th>32</th>
-          <td>2002</td>
-          <td>﻿Allow me\nto begin my statement by expressing...</td>
-          <td>6</td>
-          <td>25</td>
-        </tr>
-        <tr>
-          <th>33</th>
-          <td>2003</td>
-          <td>﻿The people of Tuvalu,\non whose behalf I have...</td>
-          <td>4</td>
-          <td>25</td>
-        </tr>
-        <tr>
-          <th>34</th>
-          <td>2004</td>
-          <td>The United Nations\nfaces unprecedented challe...</td>
-          <td>9</td>
-          <td>42</td>
-        </tr>
-        <tr>
-          <th>35</th>
-          <td>2005</td>
-          <td>Sixty years ago at San Francisco, the United\n...</td>
-          <td>1</td>
-          <td>46</td>
-        </tr>
-        <tr>
-          <th>36</th>
-          <td>2006</td>
-          <td>In 2006, several important anniversaries coinc...</td>
-          <td>15</td>
-          <td>54</td>
-        </tr>
-        <tr>
-          <th>37</th>
-          <td>2007</td>
-          <td>It is a  pleasure, Sir, to congratulate you on...</td>
-          <td>59</td>
-          <td>472</td>
-        </tr>
-        <tr>
-          <th>38</th>
-          <td>2008</td>
-          <td>It is an \nhonour for me to represent my count...</td>
-          <td>34</td>
-          <td>353</td>
-        </tr>
-        <tr>
-          <th>39</th>
-          <td>2009</td>
-          <td>I begin by joining others \nin congratulating ...</td>
-          <td>47</td>
-          <td>485</td>
-        </tr>
-        <tr>
-          <th>40</th>
-          <td>2010</td>
-          <td>It is a privilege and a \ngreat honour for me ...</td>
-          <td>28</td>
-          <td>368</td>
-        </tr>
-        <tr>
-          <th>41</th>
-          <td>2011</td>
-          <td>\nAllow me, first of all, to warmly congratula...</td>
-          <td>17</td>
-          <td>287</td>
-        </tr>
-        <tr>
-          <th>42</th>
-          <td>2012</td>
-          <td>﻿First, I would like\nto express my sincere ap...</td>
-          <td>8</td>
-          <td>185</td>
-        </tr>
-        <tr>
-          <th>43</th>
-          <td>2013</td>
-          <td>Allow me at the outset, on \nbehalf of the Pre...</td>
-          <td>20</td>
-          <td>200</td>
-        </tr>
-        <tr>
-          <th>44</th>
-          <td>2014</td>
-          <td>I congratulate Mr. Sam \nKutesa on his assumpt...</td>
-          <td>16</td>
-          <td>307</td>
-        </tr>
-        <tr>
-          <th>45</th>
-          <td>2015</td>
-          <td>The Head of State of the Transition, Her Excel...</td>
-          <td>37</td>
-          <td>382</td>
-        </tr>
-      </tbody>
-    </table>
-    </div>
-
-
-.. code:: python3
-
-   alt.Chart(year_summ[['year', 'gw', 'cc']]).mark_line().encode(
-       x='year',y='gw')
-
-
-.. image:: Figures/UNGeneralDebates_69_0.png
-  :alt: Line graph showing mentions of global warming over time. 
-
-
-.. code:: python3
-
-    alt.Chart(year_summ[['year', 'gw', 'cc']].melt(
-        id_vars='year', value_vars=['cc','gw'])).mark_line().encode(
-        x='year:O',y='value', color='variable')
-
-
-.. image:: Figures/UNGeneralDebates_70_0.png
-  :alt: Line charts showing mentions of global warming and climate change and over time from 1970 to 2015. 
-
-
-
-Fascinating! Until the late 80's, neither global warming or climate change were
-mentioned with relatively close to the same frequency until 2006 when climate
-change became a huge topic. This raises all kinds of interesting questions.
-Which countries were talking about these topics and when? This is exactly the
+Fascinating! In 1980, the mention of interest rate in the UN general speeches
+spiked. It dropped after 1984 and has returned to what 
+it was before 1980. This raises all kinds of interesting questions.
+Which countries were talking about these topics and why? This is exactly the
 kind of thing that happens in data science. One question or the visualization of
 one or more items often leads to further and even more interesting questions.
-
 
 
 .. code:: python3
@@ -1961,7 +1579,6 @@ one or more items often leads to further and even more interesting questions.
 
 
 .. image:: Figures/UNGeneralDebates_74_0.png
-  :alt: Line charts showing mentions of terror over time from 1970 to 2015. 
 
 
 .. code:: python3
@@ -2143,7 +1760,6 @@ one or more items often leads to further and even more interesting questions.
 
 
 .. image:: Figures/UNGeneralDebates_81_0.png
-  :alt: Bar chart showing the number of records as the y axis and text(binned) as the x axis. 
 
 
 .. code:: python3
@@ -2269,28 +1885,28 @@ one or more items often leads to further and even more interesting questions.
 
 **Lesson Feedback**
 
-.. poll:: LearningZone_8_1
+.. poll:: LearningZone_8_1_v2
     :option_1: Comfort Zone
     :option_2: Learning Zone
     :option_3: Panic Zone
 
     During this lesson I was primarily in my...
 
-.. poll:: Time_8_1
+.. poll:: Time_8_1_v2
     :option_1: Very little time
     :option_2: A reasonable amount of time
     :option_3: More time than is reasonable
 
     Completing this lesson took...
 
-.. poll:: TaskValue_8_1
+.. poll:: TaskValue_8_1_v2
     :option_1: Don't seem worth learning
     :option_2: May be worth learning
     :option_3: Are definitely worth learning
 
     Based on my own interests and needs, the things taught in this lesson...
 
-.. poll:: Expectancy_8_1
+.. poll:: Expectancy_8_1_v2
     :option_1: Definitely within reach
     :option_2: Within reach if I try my hardest
     :option_3: Out of reach no matter how hard I try
