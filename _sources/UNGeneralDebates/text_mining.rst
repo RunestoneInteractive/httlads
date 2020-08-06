@@ -4,8 +4,8 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-UN General Debates
-==================
+Text Mining
+==============
 
 In this section, we will learn how to read and explore data on a deeper level. We will learn how to use various 
 tools to group and visualize the diverse text in a data set. Keep in mind that you might encounter some errors along the way. 
@@ -920,7 +920,7 @@ complete table ready for you to load, so you don't have to scrape it again.
 OH NO, what the heck!!
 ----------------------
 
-Unicode errors can be a huge pain, but are a fact of life for anyone dealing
+**Unicode errors** can be a huge pain, but are a fact of life for anyone dealing
 with data from multiple sources. In this case, we can use the unix file command
 to get a bit more information:
 
@@ -937,8 +937,8 @@ it tells Python how to interpret the 8 bits as a character we would recognize.
 For example, let's take the familiar copyright © symbol. This symbol is stored
 in the computer's memory as 10101001. Aren't you glad you don't have to remember
 that? When Python tries to display a character for us, it has to know how that
-information is **encoded**, that is, how should Python interpret those bits.
-There are several common encodings used today.
+information is encoded, that is, how should Python interpret those bits.
+There are several common **encodings** used today.
 
 * ASCII (American Standard Code for Information Interchange): This is one of the
   oldest encodings, and has been in use for years, its major limitation is that
@@ -947,7 +947,7 @@ There are several common encodings used today.
   computing but it does not work in the world today with many languages and many
   more emojis.
 
-* 'utf-8': This is probably the most common encoding in use today. It can
+* '**utf-8**': This is probably the most common encoding in use today. It can
   efficiently encode over 4 billion characters. Some with just 8 bits and others
   with up to 32 bits.
 

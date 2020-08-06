@@ -204,9 +204,9 @@ column. That is, for every row in ``undf``, we will look for a row in the
 add the rest of the columns from the matching row in ``c_codes`` to the current
 row in ``undf``.
 
-In the ``c_codes`` data frame, ``code_3`` is the "primary key", as no two rows
+In the ``c_codes`` data frame, ``code_3`` is the "**primary key**", as no two rows
 have the same value for ``code_3``. In the ``undf`` data frame, ``code_3`` is a
-"foreign key", as we use it to lookup additional information in a table where
+"**foreign key**", as we use it to lookup additional information in a table where
 ``code_3`` is a primary key. More on this when we study SQL queries.
 
 
@@ -639,14 +639,13 @@ Tidy Data
 
 A lot of the work in data science revolves around getting data into the proper
 format for analysis. A lot of data comes in messy formats for many different
-reasons. But if we apply some basic principles from the world of database
-design, data modeling, and some common sense (as outlined in the Hadley Wickham
-paper), we can whip our data into shape. Wickham says that tidy data has the
-following attributes.
+reasons. But if we apply some basic principles from the world of **database design**, **data modeling**, 
+and some common sense (as outlined in the Hadley Wickham paper), we can whip our 
+data into shape. Wickham says that tidy data has the following attributes.
 
 * Each variable belongs in a column and contains values.
 * Each observation forms a row.
-* Each type of observational unit forms a table.
+* Each type of **observational unit** forms a table.
 
 How does our United Nations data stack up? Pretty well. We have four columns:
 session, year, country, and text. If we think of the text of the speech as the
@@ -673,14 +672,14 @@ to observe interact with other things we can observe, and when we try to combine
 them into a single data frame, that causes trouble. There are three kinds of
 relationships that we should consider.
 
-* one-to-one relationships
-* one-to-many relationships
-* many-to-many relationships
+* **one-to-one relationships**
+* **one-to-many relationships**
+* **many-to-many relationships**
 
 An example of a one-to-one relationship would be a person and their passport. A
 person can have one passport, and a given passport belongs to only one person.
 There is data that we can collect about a person and that could be stored in a
-DataFrame. There is also data that we can collect from a passport, such as the
+DataFrame. There is also data that we can collect ffrom a passport, such as the
 countries that person has visited, the place the passport was issued, and this
 could also be stored in a DataFrame.
 
