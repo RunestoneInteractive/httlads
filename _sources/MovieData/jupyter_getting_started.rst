@@ -7,7 +7,7 @@
 Jupyter Notebooks
 =================
 
-The files you will be working with are called a Jupyter notebooks. This comes
+The files you will be working with are called Jupyter Notebooks. This comes
 from the idea of a lab notebook, where you combine figures, data that you have
 gathered, and explanations about how the data fits the theory. In our case, a
 notebook can be used to write and run programs and to edit accompanying text.
@@ -30,7 +30,7 @@ looking at the content that we provide.
 After you edit a text cell, click the "run cell" button at the top that looks
 like ▶ or hold down ``shift`` + ``return`` to confirm any changes.
 
-Practice editing a text cell by making any part of the text this cell that you
+Practice editing a text cell by making any part of the text in the cell that you
 choose bold. Bold is created in Markdown by surrounding the word or phrase you
 want bolded with double underscores or double asterisks.
 

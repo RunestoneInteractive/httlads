@@ -44,7 +44,7 @@ Reading List
 ------------
 
 -  `Market Basket Analysis <http://pbpython.com/market-basket-analysis.html>`_
--  Item Recommender Systems
+-  `Item Recommender Systems <https://www.cs.umd.edu/~samir/498/Amazon-Recommendations.pdf>`_
 
 
 The Data
