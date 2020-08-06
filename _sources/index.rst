@@ -49,3 +49,4 @@ Table of Contents
     UNGeneralDebates/toctree.rst
     PredictiveAnalytics/toctree.rst
     Instacart/toctree.rst
+    Google_Colab/toctree.rst
