@@ -15,7 +15,7 @@ Factbook website. You will compare different forms of government and how the for
 might impact the countries' economic success. For this example, measure financial stability 
 based on GDP. You can do this by building a pivot table in Pandas. 
 
-If you haven't already, you should review the example of ref:`screenscrape`.
+If you haven't already, you should review the example of ref:`screenscrape_Bus`.
 This will show you the basics of reading and grabbing information out of a page.
 
 1. If you scraped the whole data from CIA World Factbook 2017 in the previous exercise, you should be able to use the government type field 

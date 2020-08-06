@@ -29,6 +29,8 @@ lesson we used the TMDB API, but our book is not endorsed or certified by TMDB.
 Their API also provides access to data on many additional movies, actors and
 actresses, crew members, and TV shows.
 
+Click `here <../_static/movies_metadata.csv>`_ to download the movies dataset.
+
 Then we load the data from a local file and checkout the data.
 
 
@@ -36,8 +38,6 @@ Then we load the data from a local file and checkout the data.
 
    df = pd.read_csv('./Data/movies_metadata.csv').dropna(axis=1, how='all')
    df.head()
-
-
 
 
 Exploring the Data

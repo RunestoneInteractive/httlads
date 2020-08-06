@@ -4,13 +4,15 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-Using Solver (Optional)
-=======================
+Optimization 
+=============
 
 .. toctree::
    :caption: Using Solver
    :maxdepth: 2
 
+   introduction.rst
    solver.rst
    small_probs.rst
    class_schedule.rst
+   glossary.rst

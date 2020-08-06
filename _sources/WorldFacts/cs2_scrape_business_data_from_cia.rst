@@ -5,7 +5,7 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-.. _screenscrape:
+.. _screenscrape_Bus:
 
 Case Study 2: Scraping Business Data Using Panda and BeautifulSoup 
 ===================================================================
@@ -482,6 +482,7 @@ There are a lot of people that can make use of this data in a more convenient fo
     
     Here we have the code that enables you to scrape one page, get all the information, and put it in a dictionary.
     .. code:: python3
+
        from bs4 import BeautifulSoup
        import pandas as pd
        # file = open(filename, encoding="utf8")
@@ -506,6 +507,7 @@ There are a lot of people that can make use of this data in a more convenient fo
     Below we have the code that iterates through all the URLs to scrape all the data without having to scrape each one individually.
     
     .. code:: python3
+
        from bs4 import BeautifulSoup
        import pandas as pd
        page = open(r"C:/Users/santoshernandezr/factbook2017/docs/notesanddefs.html", encoding='utf-8').read()
