@@ -74,7 +74,7 @@ cool other operations like %, which is called the modulus function which gives y
 Booleans
 --------
 
-Boolean (``bool``) is another data type that is very useful in programming. It is used to check 
+**Boolean** (``bool``) is another data type that is very useful in programming. It is used to check 
 the truth of an expression in Python. Booleans return ``True`` or ``False``. You can evaluate 
 multiple Boolean expressions using the following operations: ``and``, ``or``,and ``not``.
 
@@ -218,11 +218,10 @@ After running them, try changing the variables and use the methods in different 
    new_string = "-".join(list_of_string)
    print(new_string)
 
-
 Conditional Statements
 ----------------------
 
-Conditional Statements (also known as selection statements or if statements) are used to ask a question, and depending on the 
+**Conditional Statements** (also known as selection statements or if statements) are used to ask a question, and depending on the 
 result, perform different actions. The questions follow this format: If a condition is true then perform the action.
 
 .. code:: python3
@@ -246,12 +245,12 @@ conditional statement. In other words, there can only be one ``else`` clause in 
 
 Once a condition has been met, all subsequent clauses will be ignored.
 
-.. activecode:: conditional_question
+.. activecode:: conditionals_if
    :coach:
 
    num = 5
    if type(num) == float:
-      print("num is a float.")
+      print("num is a float")
 
    elif type(num) == int:
       print("num is an int")
@@ -260,107 +259,36 @@ Once a condition has been met, all subsequent clauses will be ignored.
       print("num is a string")
 
    else:
-      print("num is not a float, int, or string.")
+      print("num is not a float, int, or string")
 
 
-**Add question fill in the blank** What gets printed if num is 5.2 ?
+Try the following exercise:
 
+.. mchoice:: conditional_exercise
 
-Range
------
+    What gets printed if num is 5.2 ?
 
-A range represents a sequence of values. When trying to access specific members of a list or a string, ranges 
-are used as inputs to specify the output needed. Consider the following examples.
+    - num is a string
 
-.. code:: python3
+      - Incorrect
 
-    print(list(range(5)))
-    print(list(range(5, 10)))
-    print(list(range(5, 10, 2))) # The third parameter specifies the value each member of the range is incremented by.
-    print(list(range(10, 1, -1))) # Here the -1 shows the value each member is decremented by.
-    
-.. parsed-literal::
+    - num is not a float, int, or string
 
-    [0, 1, 2, 3, 4]
-    [5, 6, 7, 8, 9]
-    [5, 7, 9]
-    [10, 9, 8, 7, 6, 5, 4, 3, 2]
-   
+      - Incorrect
+     
+    - num is a an int
 
-You might have noticed that the ``print`` and ``list`` functions are used in the above examples. This is because ``range`` by itself 
-does not output a value we can see. ``list`` lists out all of the values in the range, this also does not output anything 
-we can see. ``print`` is the function that allows us to see the output values.
+      - Incorrect
 
+    - num is a float
 
-For loops
----------
+      + That's right!
 
-``for`` loops are used to repeat an action until a specific condition is met. A common use of the for loop 
-is to iterate over the elements of a collection as long as the collection is a sequence. 
-
-You will often see for loops used with the ``range`` function to specify the number of times the action should be repeated as shown in the 
-following example:
-
-.. code:: python3
-
-   for i in range(0, 10):
-       print(i)
-
-.. parsed-literal::
-
-   0
-   1
-   2
-   3
-   4
-   5
-   6
-   7
-   8
-   9
-
-
-For loops can also be used to visit every item in a list. These do not require the ``range`` function.
-
-.. code:: python3
-
-   for color in ["red", "green", "blue"]:
-       print(color)
-
-
-.. parsed-literal::
-
-   red
-   green
-   blue
-
-
-Just like in conditional statments the contents of the for loop have to be indented at the same level
-to differentiate them from code outside the for loop.
-
-.. code:: python3
-
-   for i in range(3):
-       print("repeated")
-       print("also repeated")
-   print("not repeated") # This is not in the for loop!
-
-
-.. parsed-literal::
-
-   repeated
-   also repeated
-   repeated
-   also repeated
-   repeated
-   also repeated
-
-   not repeated
 
 Lists
 -----
 
-Lists are a sequential collection of data. They are created by using two square brackets ([ ]). Each element 
+**Lists** are a sequential collection of data. They are created by using two square brackets ([ ]). Each element 
 in the list is differentiated by commas. 
 
 A list can also contain objects of any data type.  
@@ -475,10 +403,124 @@ remainder of two values. So to add up all the odd numbers in ``my_list``.
 
 
 
+
+Range
+-----
+
+A **range** represents a sequence of values. When trying to access specific members of a list or a string, ranges 
+are used as inputs to specify the output needed. Consider the following examples.
+
+.. code:: python3
+
+    print(list(range(5)))
+    print(list(range(5, 10)))
+    print(list(range(5, 10, 2))) # The third parameter specifies the value each member of the range is incremented by.
+    print(list(range(10, 1, -1))) # Here the -1 shows the value each member is decremented by.
+    
+.. parsed-literal::
+
+    [0, 1, 2, 3, 4]
+    [5, 6, 7, 8, 9]
+    [5, 7, 9]
+    [10, 9, 8, 7, 6, 5, 4, 3, 2]
+   
+
+You might have noticed that the ``print`` and ``list`` functions are used in the above examples. This is because ``range`` by itself 
+does not output a value we can see. ``list`` lists out all of the values in the range, this also does not output anything 
+we can see. ``print`` is the function that allows us to see the output values.
+
+.. mchoice:: Range_exercise
+
+    What would ``print(list(range(-1,13)))`` show?
+
+    - [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12. 13]
+
+      - Think about the boarders of a range. The last input should not be part of the list.
+   
+    - [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+
+      + Correct!
+   
+    - [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+
+      - Think about the boarders or a range. The first input is part of the list.
+
+    - [-1, 1, 3, 5, 7, 9, 11]
+
+      - This is incorrect!
+
+
+For loops
+---------
+
+**for loops** are used to repeat an action until a specific condition is met. A common use of the for loop 
+is to iterate over the elements of a collection as long as the collection is a sequence. 
+
+You will often see for loops used with the ``range`` function to specify the number of times the action should be repeated as shown in the 
+following example:
+
+.. code:: python3
+
+   for i in range(0, 10):
+       print(i)
+
+.. parsed-literal::
+
+   0
+   1
+   2
+   3
+   4
+   5
+   6
+   7
+   8
+   9
+
+
+For loops can also be used to visit every item in a list. These do not require the ``range`` function.
+
+.. code:: python3
+
+   for color in ["red", "green", "blue"]:
+       print(color)
+
+
+.. parsed-literal::
+
+   red
+   green
+   blue
+
+
+Just like in conditional statments the contents of the for loop have to be indented at the same level
+to differentiate them from code outside the for loop.
+
+.. code:: python3
+
+   for i in range(3):
+       print("repeated")
+       print("also repeated")
+   print("not repeated") # This is not in the for loop!
+
+
+.. parsed-literal::
+
+   repeated
+   also repeated
+   repeated
+   also repeated
+   repeated
+   also repeated
+
+   not repeated
+
+
+
 Dictionaries
 ------------
 
-Dictionaries are another convenient, built-in data type in Python (they’re hash
+**Dictionaries** are another convenient, built-in data type in Python (they’re hash
 tables, if you've used another language that uses that name). Hash tables are 
 one form of data structure used to store data by generating a key-value pair using hash 
 functions. For this course, Dictionaries are a way of storing data where each value is stored 
@@ -525,7 +567,7 @@ And you can add new values (or overwrite old ones) by key as well.
 Functions
 ----------
 
-Functions are a reusable block of code that are meant to perform a specific task. A parameter is an input that a function 
+**Functions** are a reusable block of code that are meant to perform a specific task. A parameter is an input that a function 
 takes. A return value is what a function outputs or passes on after it is run. The return value of a 
 function is not printed (or displayed) so we have to use a print statment to see it. The following example shows you python functions 
 used in this section:
@@ -614,7 +656,7 @@ A professor wishes to drop the lowest score of three exams and compute the remai
 .. parsed-literal::
       88.5
 
-Note that if the professor wanted to use this function as part of a further calculation we would need a return value instead of a print!
+Note that if the professor wanted to use this function as part of further calculations they would need a return value instead of a print!
 Try creating your own function in the following:
  
 .. activecode:: methods_functions
@@ -631,7 +673,7 @@ Try creating your own function in the following:
 The map function 
 ----------------
 
-The map function allows us to use each item in a list as a parameter for a function.
+The **map function** allows us to use each item in a list as a parameter for a function.
 
 
 .. code:: python3
@@ -661,10 +703,10 @@ Lambda Functions
 -----------------
 
 For a simple, one-time-use function, we don't have to define a function, we can
-use ``lambda`` to define the operation in-line. A Lambda function is an anonymous 
-function, meaning that the lambda function does not need a name. These are generally 
-not a good idea, most functions are easier to recognize and to read if they have names, but you 
-will see them widely used, so we thought we should mention them. 
+use a **Lamda function** to define the operation in-line. A Lambda function is an anonymous 
+function, meaning that it does not need a name. Using them is generally not a good idea, since 
+most functions are easier to recognize and to read if they have names, but you will see them 
+widely used on online forums. 
 
 You can make a Lambda function with a simple one line expression. You can make a lambda function by writing:
 
@@ -672,7 +714,7 @@ You can make a Lambda function with a simple one line expression. You can make a
 
    lambda parameters : expression
 
-The best way to understand the Lambda function is to see examples of it. 
+The best way to understand the Lambda function is to see it being used. 
 
 .. activecode:: lamda_function
    :coach:
@@ -920,4 +962,11 @@ You may also this kind of thing done as the following:
 
 The ``as rand`` in the above code allows you to use rand instead of ``random`` to use all the functions that come with 
 random (such as ``randrange``). rand is not a preset value so you can use any name you would like instead of it. 
+
+Practice using the random module below:
+
+.. activecode:: random_generator
+
+   import random as rand
+   rand.randrange() # Add a two numbers between which you want a random value generated. 
 
