@@ -42,8 +42,11 @@ Create a DataFrame of the first 10 rides from the trip_data table sorted by star
      :442: is the answer in seconds, calculate a new field
      :x: Keep working
 
-Mapping Bike Stations
----------------------
+Mapping Bike Stations Using Anaconda
+------------------------------------
+
+This section specifically references Jupyterlab and uses a module not supported by Google Colab. If you are using Colab, proceed to the next section 
+where we will learn about how to map bike stations using Colab. 
 
 Now lets have some fun.  We are going to map the location of all of the bike stations on a google map!  Later you can explore all kinds of ways to visualize rides and ride frequencies routes between starting and ending point and many more things.
 
