@@ -9,6 +9,9 @@
 Python Review
 =============
 
+variables
+---------
+
 Python variables don't have a type so they can seamlessly change from being a
 numerical value, a string, other things.
 
@@ -30,31 +33,6 @@ numerical value, a string, other things.
    <class 'builtin_function_or_method'>
 
 
-Strings can be represented with single or double quotes. Triple quotes make it
-easy to define multi-line strings.
-
-
-.. code:: python3
-
-   # \n means newline
-
-   my_var = 'foo\nbar'
-   print("1:", my_var)
-   my_var = "foo\nbar"
-   print("2:", my_var)
-   my_var = """foo
-   bar"""
-   print("3:", my_var)
-
-
-.. parsed-literal::
-
-   1: foo
-   bar
-   2: foo
-   bar
-   3: foo
-   bar
 
 
 Python can convert variable from one type to another.
@@ -108,6 +86,7 @@ languages with the range function.
    9
 
 
+
 But can also be used to visit every item in a list.
 
 
@@ -146,102 +125,33 @@ to differentiate them from code outside the for loop.
    also repeated
    not repeated
 
-
-
-Getting back to lists, they are a basic type in Python and they can contain a
-mix of different types.
-
-
-.. code:: python3
-
-   my_list = ["string", 1, [2.0, 4.5], 5.6]  # Don't do that
-   my_list = []                              # An empty list
-   my_list = [3, 4, 6, 2, 45, 23, 12, 34]    # That's better
-
-
-Lists are mutable so you can overwrite arbitrary values.
+Strings
+-------
+Strings can be represented with single or double quotes. Triple quotes make it
+easy to define multi-line strings.
 
 
 .. code:: python3
 
-   my_list[2] = 64
-   my_list
+   # \n means newline
+
+   my_var = 'foo\nbar'
+   print("1:", my_var)
+   my_var = "foo\nbar"
+   print("2:", my_var)
+   my_var = """foo
+   bar"""
+   print("3:", my_var)
 
 
 .. parsed-literal::
 
-   [3, 4, 64, 2, 45, 23, 12, 34]
-
-
-Remember that indexes start at 0.
-
-
-.. code:: python3
-
-   my_list[0]
-
-
-.. parsed-literal::
-
-   3
-
-
-And you use negative indexes to refer to values starting from the end of the
-list.
-
-
-.. code:: python3
-
-   my_list[-2]
-
-
-.. parsed-literal::
-
-   12
-
-
-You can also use slices to rapidly grab portion of the list.
-
-
-.. code:: python3
-
-   my_list[0:2]
-
-
-.. parsed-literal::
-
-   [3, 4]
-
-
-You can also perform a variety of operations on lists.
-
-
-.. code:: python3
-
-   print(len(my_list))
-   print(min(my_list))
-   print(max(my_list))
-   print(sum(my_list))
-   print(my_list * 2)
-
-   # Changes my_list
-   my_list.append(146)
-
-   # Doesn't change my_list, need to store returned value
-   other_list = my_list + [1, 2, 3]
-
-   print(other_list)
-
-
-.. parsed-literal::
-
-   10
-   2
-   146
-   479
-   [3, 4, 64, 2, 45, 23, 12, 34, 3, 4, 64, 2, 45, 23, 12, 34]
-   [3, 4, 64, 2, 45, 23, 12, 34, 146, 1, 2, 3]
-
+   1: foo
+   bar
+   2: foo
+   bar
+   3: foo
+   bar
 
 Some of these operations work on strings too.
 
@@ -290,6 +200,122 @@ Strings also have special abilities.
    Abc#$#defg#$#hij
 
 
+Lists
+------
+Getting back to lists, they are a basic type in Python and they can contain a
+mix of different types.
+
+
+.. code:: python3
+
+   my_list = ["string", 1, [2.0, 4.5], 5.6]  # Don't do that
+   my_list = []                              # An empty list
+   my_list = [3, 4, 6, 2, 45, 23, 12, 34]    # That's better
+
+
+Lists are mutable so you can overwrite arbitrary values.
+
+
+.. code:: python3
+
+   my_list[2] = 64
+   my_list
+
+
+.. parsed-literal::
+
+   [3, 4, 64, 2, 45, 23, 12, 34]
+
+
+You can also perform a variety of operations on lists.
+
+
+.. code:: python3
+
+   print(len(my_list))
+   print(min(my_list))
+   print(max(my_list))
+   print(sum(my_list))
+   print(my_list * 2)
+
+   # Changes my_list
+   my_list.append(146)
+
+   # Doesn't change my_list, need to store returned value
+   other_list = my_list + [1, 2, 3]
+
+   print(other_list)
+
+So to add up all the odd numbers in ``my_list``.
+
+
+.. code:: python3
+
+   total = 0
+   for val in my_list:
+       if val % 2 == 1:
+           total += val
+   total
+
+
+.. parsed-literal::
+
+   71
+
+.. parsed-literal::
+
+   10
+   2
+   146
+   479
+   [3, 4, 64, 2, 45, 23, 12, 34, 3, 4, 64, 2, 45, 23, 12, 34]
+   [3, 4, 64, 2, 45, 23, 12, 34, 146, 1, 2, 3]
+
+
+indexes (Strings and lists)
+-------
+Remember that indexes start at 0.
+
+
+.. code:: python3
+
+   my_list[0]
+
+
+.. parsed-literal::
+
+   3
+
+
+And you use negative indexes to refer to values starting from the end of the
+list.
+
+
+.. code:: python3
+
+   my_list[-2]
+
+
+.. parsed-literal::
+
+   12
+
+
+You can also use slices to rapidly grab portion of the list.
+
+
+.. code:: python3
+
+   my_list[0:2]
+
+
+.. parsed-literal::
+
+   [3, 4]
+
+
+Bool
+----
 Use double-equals (==) to test for equality.
 
 
@@ -324,22 +350,8 @@ But you can test for a lot of different relations.
    Weird condition
 
 
-So to add up all the odd numbers in ``my_list``.
-
-
-.. code:: python3
-
-   total = 0
-   for val in my_list:
-       if val % 2 == 1:
-           total += val
-   total
-
-
-.. parsed-literal::
-
-   71
-
+Other
+-----
 
 To read a file, we use the ``open`` function. Using ``with`` avoids having to
 remember to close the file.
@@ -351,7 +363,8 @@ remember to close the file.
        for line in md:
            pass # Do something with each line
 
-
+Dictionaries
+------------
 Dictionaries are another very handy, built-in data type in Python (they’re hash
 tables, if you've use another language that uses that name). Dictionaries can be
 created in a variety of ways.
@@ -420,6 +433,8 @@ specify the value that is returned by the function.
 
    16
 
+functions
+---------
 
 But functions don't have to take parameters (``x`` and ``y`` in the example
 above) or return anything.
@@ -460,7 +475,8 @@ The map function allows us to call a function on each item in a list.
    296
    296
 
-
+lambda function
+---------------
 For a simple, one-time-use function, we don't have to define a function, we can
 use lambda to define the operation in-line.
 
@@ -490,48 +506,6 @@ Note that lambda functions don't use the ``return`` keyword, you just specify
 the names of the parameters of the function (``x`` in the example above), a
 colon, and the operation to perform on the parameter(s).
 
-You can also use
-`list comprehension <https://www.pythonforbeginners.com/basics/list-comprehensions-in-python>`_
-to perform an operation on every item in the list. It looks a little bit like a
-for loop inside of a list.
-
-
-.. code:: python3
-
-   [x*2 for x in my_list]
-
-
-.. parsed-literal::
-
-   [6, 8, 128, 4, 90, 46, 24, 68, 292, 292, 292]
-
-
-You can also use it to filter out values from a list. For example, the below
-extracts every odd values from the list.
-
-
-.. code:: python3
-
-   [x for x in my_list if x % 2 == 1]
-
-
-.. parsed-literal::
-
-   [3, 45, 23]
-
-
-You can even combine filtering and other operations.
-
-
-.. code:: python3
-
-   # Square every value less than 10.
-   [x**2 for x in my_list if x<10]
-
-
-.. parsed-literal::
-
-   [9, 16, 4]
 
 
 List Comprehension Exercises
@@ -626,32 +600,45 @@ not be the resulting list).
    ['Riverside', 'Dayton', 'Los Angeles']
 
 
-**Lesson Feedback**
+You can also use
+`list comprehension <https://www.pythonforbeginners.com/basics/list-comprehensions-in-python>`_
+to perform an operation on every item in the list. It looks a little bit like a
+for loop inside of a list.
 
-.. poll:: LearningZone_4_1
-    :option_1: Comfort Zone
-    :option_2: Learning Zone
-    :option_3: Panic Zone
 
-    During this lesson I was primarily in my...
+.. code:: python3
 
-.. poll:: Time_4_1
-    :option_1: Very little time
-    :option_2: A reasonable amount of time
-    :option_3: More time than is reasonable
+   [x*2 for x in my_list]
 
-    Completing this lesson took...
 
-.. poll:: TaskValue_4_1
-    :option_1: Don't seem worth learning
-    :option_2: May be worth learning
-    :option_3: Are definitely worth learning
+.. parsed-literal::
 
-    Based on my own interests and needs, the things taught in this lesson...
+   [6, 8, 128, 4, 90, 46, 24, 68, 292, 292, 292]
 
-.. poll:: Expectancy_4_1
-    :option_1: Definitely within reach
-    :option_2: Within reach if I try my hardest
-    :option_3: Out of reach no matter how hard I try
 
-    For me to master the things taught in this lesson feels...
+You can also use it to filter out values from a list. For example, the below
+extracts every odd values from the list.
+
+
+.. code:: python3
+
+   [x for x in my_list if x % 2 == 1]
+
+
+.. parsed-literal::
+
+   [3, 45, 23]
+
+
+You can even combine filtering and other operations.
+
+
+.. code:: python3
+
+   # Square every value less than 10.
+   [x**2 for x in my_list if x<10]
+
+
+.. parsed-literal::
+
+   [9, 16, 4]

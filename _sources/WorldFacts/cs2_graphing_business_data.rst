@@ -469,6 +469,7 @@ Your final result should look like this.
     # This is the function, get_num_code, that converts the three letter code of each country and gets its numericCode.
 
     .. code:: python3
+
       def get_num_code(code):
         res = requests.get('https://restcountries.eu/rest/v2/alpha/' + code) # gets all the information of the country using their three letter code
         country_info = res.json() # formats all the information
@@ -477,6 +478,7 @@ Your final result should look like this.
     The following is the implementation of transform_lookup() in the Starting_a_Business_score column.
     
     .. code:: python3
+    
        countries = alt.topo_feature(data.world_110m.url, 'countries')
       base = alt.Chart(countries).mark_geoshape(
       ).encode(#color='Infant mortality:Q',
