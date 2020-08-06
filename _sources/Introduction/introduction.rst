@@ -105,8 +105,8 @@ available at a liberal arts college, all of which are looking for people with
 data skills!
 
 
-.. figure:: https://static1.squarespace.com/static/5150aec6e4b0e340ec52710a/t/51525c33e4b0b3e0d10f77ab/1364352052403/Data_Science_VD.png?format=1500w
-
+.. image:: https://static1.squarespace.com/static/5150aec6e4b0e340ec52710a/t/51525c33e4b0b3e0d10f77ab/1364352052403/Data_Science_VD.png?format=1500w
+  :alt: Venn Diagram depicting the different components of Data Science: Hacking Skills, Substantive Expertise, and Math and Statistics Knowledge.
    Venn Diagram |CCBYANC| Drew Conway
 
 
@@ -161,11 +161,15 @@ tell.
 The Data Science Pipeline
 -------------------------
 
+<<<<<<< HEAD
 .. image:: Figures/DSPipeline.svg
    :align: left
 
 
 One of the primary goals of this textbook is to familiarize you with the data
+=======
+One of the primary goals of this course is to familiarize you with the data
+>>>>>>> 90a02a5e1cacc1178269fe9152552766eb0b8315
 science pipeline. That is the series of steps you will go through as you seek to
 analyze and communicate with data. There are many steps in the pipeline and as
 you can see; the pipeline is anything but a linear process. Doing data science
@@ -173,6 +177,12 @@ is a very iterative process whereby you will often repeat previous steps because
 of something you learn in later steps. This is part of the exploratory nature of
 data science. There is not a single formula for success, or a single process
 that works for every data set. Let's look at each of the steps.
+
+.. image:: Figures/DS_Pipeline.png
+  :align: left
+  :width: 250
+  :height: 625
+  :alt: Chart outlining the different steps in the Data Science pipeline.
 
 * **Get Data:** Acquiring data can come in many forms. Data is sometimes found
   in a simple file, or in relational database, from a web based interface, or in
