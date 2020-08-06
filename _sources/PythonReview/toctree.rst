@@ -14,4 +14,3 @@ Setting up Jupyter and a Python Review
    introduction.rst
    installing.rst
    python_review_new.rst
-   installing.rst
