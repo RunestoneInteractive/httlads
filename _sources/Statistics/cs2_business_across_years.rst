@@ -18,12 +18,12 @@ data across a span of 5 years.
    loaded into separate sheets. Therefore, you will have one sheet containing 2014 business data,
    and another sheet containing 2019  business data in the same workbook.
 
-2. Next, we can create a table on a new sheet with the ease of starting a business rank for each country in each year.
+2. Next, we can create a table on a new sheet with the business start-up rank for each country in each year.
    You will have the following three columns: country name, 2014 rank, and 2019 rank. Hint: Use ``VLOOKUP``.
    Some countries did not have their data reported for a variety of reasons. Therefore, we will have
    ``#N/A`` values like in the previous case study.
 
-Next, create a new column, you will use this column to measure the change between starting a business rank from
+Next, create a new column, you will use this column to measure the change between the business start-up rank from
 2018 and 2014. Then, create a new cell for finding the maximum value of this new column.
 
 As we saw in the previous case study, if we run a function on a column with ``#N/A`` values, the function will

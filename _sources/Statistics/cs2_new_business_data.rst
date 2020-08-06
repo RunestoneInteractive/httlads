@@ -63,7 +63,7 @@ like ``AVERAGEIF`` and ``COUNTIF``, but they allow for more conditions. In our c
 Joining Data from Other Sources When Considering Starting a New Business
 ------------------------------------------------------------------------
 
-So far, we have only used the original starting a business score spreadsheet for our analysis. Often,
+So far, we have only used the original business start-up score spreadsheet for our analysis. Often,
 one file does not contain all the data we need. So, if we need to look at other factors that affect
 starting a business in different countries, we can import another spreadsheet that has a lot more data. In this lesson,
 we will learn how to join data from various sources.
@@ -80,11 +80,11 @@ This has a huge amount of data about each country. For now, we will use the info
 the country code of each country
 
 When we use ``VLOOKUP``, our goal is to join these two sheets together, adding
-columns to the starting a business spreadsheet using values from the population row in the countries of the
+columns to the business start-up spreadsheet using values from the population row in the countries of the
 world sheet in the rows where the country names match. For example, in our
-starting a business spreadsheet, Ethiopia is on row 170, but in the countries of the world spreadsheet,
+business start-up spreadsheet, Ethiopia is on row 170, but in the countries of the world spreadsheet,
 it is on row 67. We want to take column A row 67 from
-the countries' spreadsheet and add it to the starting a business spreadsheet on row 170 column Q.
+the countries' spreadsheet and add it to the business start-up spreadsheet on row 170 column Q.
 We do this with ``VLOOKUP`` by allowing the function to search for the value in
 one cell in another column, and then return the value from a different cell in
 the same row but in some other column.
@@ -112,12 +112,12 @@ match where they don't already.
 Any time you are introducing data from another source, you are likely to run
 into inconsistencies and missing data.
 
-Now that you have learned how to use ``VLOOKUP``. Add another column to starting a business spreadsheet.
+Now that you have learned how to use ``VLOOKUP``. Add another column to business start-up spreadsheet.
 
 1. You can start by either copy/pasting the whole spreadsheet into a new tab in the same spreadsheet or
    importing the CSV file into a new tab in the same spreadsheet.
 
-2. Next, we will want to add a column to the starting a business spreadsheet that contains
+2. Next, we will want to add a column to the business start-up spreadsheet that contains
    the population for each country.
 
 Summarizing Key Business Data Using Pivot Table
@@ -133,15 +133,15 @@ of summary statistics for each.
 
 .. fillintheblank:: q13_cs1_sbd
 
-   Using a pivot table, find the median value of the starting a business score column for each
+   Using a pivot table, find the median value of the business start-up score column for each
    region. The median value for Africa is |blank|.
 
    - :4353.4: Is the correct answer
-     :x: Incorrect. You should have Starting a Business Score column summarized by Median
+     :x: Incorrect. You should have business start-up Score column summarized by Median
 
 
 Pivot tables can be treated like any other part of your spreadsheet. You can use a pivot table to find the country with
-the lowest starting a business score. Then using ``MATCH`` and ``INDEX``, add an additional column
+the lowest business start-up score. Then using ``MATCH`` and ``INDEX``, add an additional column
 that contains the name of that country.
 
 **Lesson Feedback**
