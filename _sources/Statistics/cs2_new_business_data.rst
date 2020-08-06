@@ -3,17 +3,17 @@
    International License. To view a copy of this license, visit
    http://creativecommons.org/licenses/by-sa/4.0/.
 
-Case Study 2: Introducing New Data to Starting a Business
-==========================================================
+Case Study 2: Where Should We Start Out New Business?
+=====================================================
 
-Before we begin, make sure that the Google Sheets file you are working on is exactly like the one given at 
-the beginning of this case study. Any changes you made to the Google Sheets while following along in the 
+Before we begin, make sure that the Google Sheets file you are working on is exactly like the one given at
+the beginning of this case study. Any changes you made to the Google Sheets while following along in the
 previous section should be deleted.
 
 Business Score by Region
 ------------------------
 
-Let's show the average business score in all countries. We will create a table for all countries in the region. 
+Let's show the average business score in all countries. We will create a table for all countries in the region.
 Before we get started, consider the following questions.
 
 - What are the unique region names?
@@ -22,32 +22,32 @@ Before we get started, consider the following questions.
 1. Let's start by first sorting the data by region. Select Column A and then from the menu select Data -> Sort sheet
 by column A, A -> Z.
 
-2. Use the ``UNIQUE`` function to create a table of the unique region names. In cell ``B193`` use the ``UNIQUE`` function 
-and find the different names for the regions. The ``UNIQUE`` function returns a list of unique values in a range. 
+2. Use the ``UNIQUE`` function to create a table of the unique region names. In cell ``B193`` use the ``UNIQUE`` function
+and find the different names for the regions. The ``UNIQUE`` function returns a list of unique values in a range.
 In this case, the values are unique region names.
 
 3. Now that we have the table of regions, use ``SUMIF`` and ``COUNTIF`` to compute the average business score. The
-``COUNTIF`` function counts the number of cells in a range that meets a specific condition. In our case, the range for all 
+``COUNTIF`` function counts the number of cells in a range that meets a specific condition. In our case, the range for all
 regions is ``B2:B192``. The condition is the name of the regions in the newly created table of region names.
-To get started, create a column next to the region names that contains the number of countries in the region. 
+To get started, create a column next to the region names that contains the number of countries in the region.
 
-4. Now, let’s use the ``SUMIF`` function to create a column that sums the business score for each region. 
-``SUMIF`` function sums up values in a range that meet specific criteria. The first parameter will be 
-the range containing the regions; the second parameter will be the name of a region to match. In this case, 
-a third parameter is the range of cells containing the business scores. When a row in the region 
+4. Now, let’s use the ``SUMIF`` function to create a column that sums the business score for each region.
+``SUMIF`` function sums up values in a range that meet specific criteria. The first parameter will be
+the range containing the regions; the second parameter will be the name of a region to match. In this case,
+a third parameter is the range of cells containing the business scores. When a row in the region
 column matches the given region, the function includes the value from the business score column in the sum.
 
 
 .. shortanswer:: q3_cs1_sbd
 
-   What is the sum of all business scores in Asia? 
+   What is the sum of all business scores in Asia?
 
 
 
-Lastly, we can sort the business scores to see the regions from the highest score to the lowest. First, 
-select Column A, and then from the menu select Data -> Sort sheet by column A, A -> Z. Then, add another column to 
-our table that tells us how many countries are in each region (``COUNTIF``). Finally, using ``MAXIFS``, ``MINIFS``, ``MATCH``, 
-and ``INDEX``, find the easiest and hardest country to start a business for each region. ``MAXIFS`` and ``MINIFS`` work 
+Lastly, we can sort the business scores to see the regions from the highest score to the lowest. First,
+select Column A, and then from the menu select Data -> Sort sheet by column A, A -> Z. Then, add another column to
+our table that tells us how many countries are in each region (``COUNTIF``). Finally, using ``MAXIFS``, ``MINIFS``, ``MATCH``,
+and ``INDEX``, find the easiest and hardest country to start a business for each region. ``MAXIFS`` and ``MINIFS`` work
 like ``AVERAGEIF`` and ``COUNTIF``, but they allow for more conditions. In our case, we still need only one condition.
 
 
@@ -60,23 +60,23 @@ like ``AVERAGEIF`` and ``COUNTIF``, but they allow for more conditions. In our c
       :x: Incorrect. Try using the functions one at a time in different cells before combining them.
 
 
-Joining Data from Other Sources with Starting a Business
---------------------------------------------------------
+Joining Data from Other Sources When Considering Starting a New Business
+------------------------------------------------------------------------
 
-So far, we have only used the original starting a business score spreadsheet for our analysis. Often, 
-one file does not contain all the data we need. So, if we need to look at other factors that affect 
+So far, we have only used the original starting a business score spreadsheet for our analysis. Often,
+one file does not contain all the data we need. So, if we need to look at other factors that affect
 starting a business in different countries, we can import another spreadsheet that has a lot more data. In this lesson,
 we will learn how to join data from various sources.
 
-In our starting a business spreadsheet, we have a column that
+In our business spreadsheet, we have a column that
 contains the name of each country. It has a bunch of business-related data
 about each country in other columns. In our countries of the world sheet, we
 have a column of country names and other information about countries
-in other columns. The two sheets do not have the countries in the same order. Also, 
+in other columns. The two sheets do not have the countries in the same order. Also,
 they have most of the same countries, but not all.
 
 The first thing we need to do is import the `countries of the world <../_static/world_countries.csv>`_ spreadsheet.
-This has a huge amount of data about each country. For now, we will use the information on this new spreadsheet to give us 
+This has a huge amount of data about each country. For now, we will use the information on this new spreadsheet to give us
 the country code of each country
 
 When we use ``VLOOKUP``, our goal is to join these two sheets together, adding
@@ -104,8 +104,8 @@ paste the values into the remaining cells until it reaches a black cell in the l
 Double-check the entire column to make sure that all the data is filled.
 
 As in our previous study case, we will have some rows with a value of #N/A. In this case,
-In one spreadsheet there is a name "Venezuela, RB" and in the other spreadsheet it has 
-"Venezuela, the Bolivarian Republic of." You will have to clean up this data and make the names manually 
+In one spreadsheet there is a name "Venezuela, RB" and in the other spreadsheet it has
+"Venezuela, the Bolivarian Republic of." You will have to clean up this data and make the names manually
 match where they don't already.
 
 
@@ -114,21 +114,21 @@ into inconsistencies and missing data.
 
 Now that you have learned how to use ``VLOOKUP``. Add another column to starting a business spreadsheet.
 
-1. You can start by either copy/pasting the whole spreadsheet into a new tab in the same spreadsheet or 
+1. You can start by either copy/pasting the whole spreadsheet into a new tab in the same spreadsheet or
    importing the CSV file into a new tab in the same spreadsheet.
 
 2. Next, we will want to add a column to the starting a business spreadsheet that contains
-   the population for each country. 
+   the population for each country.
 
-Summarizing Starting a Business Data Using Pivot Table
-------------------------------------------------------
+Summarizing Key Business Data Using Pivot Table
+-----------------------------------------------
 
-A great way to summarize and analyze data is by using a pivot table. A pivot table takes the unique values from some column and make them 
-the titles of a bunch of columns, while summarizing the data for those columns from a number of rows. 
+A great way to summarize and analyze data is by using a pivot table. A pivot table takes the unique values from some column and make them
+the titles of a bunch of columns, while summarizing the data for those columns from a number of rows.
 
 For this practice, you should redo the exercise of finding the average population for each region that you did above.
 You should create a pivot table that uses the unique values for each country code as the row and calculates a number
-of summary statistics for each. 
+of summary statistics for each.
 
 
 .. fillintheblank:: q13_cs1_sbd
@@ -140,14 +140,9 @@ of summary statistics for each.
      :x: Incorrect. You should have Starting a Business Score column summarized by Median
 
 
-Pivot tables can be treated like any other part of your spreadsheet. You can use a pivot table to find the country with 
-the lowest starting a business score. Then using ``MATCH`` and ``INDEX``, add an additional column 
+Pivot tables can be treated like any other part of your spreadsheet. You can use a pivot table to find the country with
+the lowest starting a business score. Then using ``MATCH`` and ``INDEX``, add an additional column
 that contains the name of that country.
-
-
-
-
-
 
 **Lesson Feedback**
 
