@@ -9,7 +9,7 @@ Introduction
 This chapter will cover the definition and practice of data science.
 It will explore the history and current state of the discipline, explaining
 how data science began and where it will be going in the future. We will also
-explore how data science is leverages data analysis and data visualization.
+explore how data science leverages data analysis and data visualization.
 
 Learning Goals
 --------------
