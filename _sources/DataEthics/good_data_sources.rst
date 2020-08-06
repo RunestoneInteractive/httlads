@@ -74,11 +74,11 @@ proceed, but you are not quite finished with your responsible scraping research.
 
 The next thing to check is the site's ``robots.txt`` file. Many sites have these
 files to tell automated screen scraping programs, like Google's web crawler,
-about any pages on their site the owners do not want scraped. Most sites have
+about any pages on their site the owners do not want to be scraped. Most sites have
 ``robots.txt`` in the top level of their domain. For example, the site
 `robotstxt.org <http://www.robotstxt.org/robotstxt.html>`_ (which is a good
 resource for learning about the format of the ``robots.txt`` file) has the
-following information at the url ``http://www.robotstxt.org/robots.txt``.
+following information at the URL ``http://www.robotstxt.org/robots.txt``.
 
 
 .. code-block:: none
