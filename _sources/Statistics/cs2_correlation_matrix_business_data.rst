@@ -8,7 +8,7 @@ Case Study 2: Calculating a Correlation Matrix for Business Data
 
 If you recall from the previous case study, we used a correlation matrix and all the values of 1.0 mean that each factor is perfectly correlated with itself. 
 
-The following steps are a reminder on how to make a correlation matrix between the various factors of our starting a business data. 
+The following steps are a reminder on how to make a correlation matrix between the various factors of our business start-up data. 
 This will be a challenge as it will test your use of the ``$`` in defining ranges, and your ability to think about having
 several cells of a spreadsheet work together. 
 
@@ -50,12 +50,12 @@ Change the background color of the cells.
 
    Which two factors have the largest negative correlation? |blank| |blank|
 
-   - :Starting a Business Score: Is the correct answer
-     :Starting a Business Rank: Is the correct answer
+   - :Business Start-Up Score: Is the correct answer
+     :Business Start-Up Score Rank: Is the correct answer
      :x: List the column first
 
-   - :Starting a Business Rank: Is the correct answer
-     :Starting a Business Score: Is the correct answer
+   - :Business Start-Up Score Rank: Is the correct answer
+     :Business Start-Up Score Score: Is the correct answer
      :x: Maybe your order is wrong?
 
 

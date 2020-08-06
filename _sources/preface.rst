@@ -28,10 +28,10 @@ Some of the key changes from the First Edition include:
 * Chapter titles that identify the data technique to be utilized while still letting curiosity about each of the datasets drive the exploration.
 * The fourth chapter has been significantly expanded to include a targetted introduction/review of Python.
 * The option to choose to use Google Colaboratory Notebooks or an Anaconda installation using Jupyter Notebooks.
-* Additional datasets presented as cases studies that focus on business applications added in addition to the existing case studies on other interesting topics.
+* Additional datasets presented as case studies that focus on business applications added in addition to the existing case studies on other interesting topics.
 
-One can find data science offered by computer science departments,
-math or statistics departments, as well as business departments,
+One can find data science offered by departments such as computer science,
+math or statistics, as well as business, 
 so this edition strives to appeal
 to the interests of students in each of these disciplines.
 Of course, the applications of data science
