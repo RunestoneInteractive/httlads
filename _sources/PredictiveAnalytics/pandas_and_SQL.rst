@@ -9,7 +9,7 @@ Getting SQL Data into a DataFrame
 
 Running the kind of queries we did in the last few sections is great for exploring and getting to know the data.  It is also useful if you just need a one time quick answer.   But more often than not what you want to do is to get the data from a database into a DataFrame so that you can visualize it, combine it with other data, or do further analysis.  For this exercise our goal is to create a Google Map with a marker for all of the stations in the database.
 
-Pandas provides us with a great way to use our SQL knowledge to create create a DataFrame with the results.  The ``pd.read_sql``  allows us to pass in a SQL query as a string, along with a URL to connect to the database, and will return a DataFrame.  Let's try that on our bikeshare_stations table now.
+Pandas provides us with a great way to use our SQL knowledge to create a DataFrame with the results.  The ``pd.read_sql``  allows us to pass in a SQL query as a string, along with a URL to connect to the database, and will return a DataFrame.  Let's try that on our bikeshare_stations table now.
 
 .. jupyter-execute::
 

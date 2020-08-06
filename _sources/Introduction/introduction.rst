@@ -161,15 +161,11 @@ tell.
 The Data Science Pipeline
 -------------------------
 
-<<<<<<< HEAD
 .. image:: Figures/DSPipeline.svg
    :align: left
 
 
 One of the primary goals of this textbook is to familiarize you with the data
-=======
-One of the primary goals of this course is to familiarize you with the data
->>>>>>> 90a02a5e1cacc1178269fe9152552766eb0b8315
 science pipeline. That is the series of steps you will go through as you seek to
 analyze and communicate with data. There are many steps in the pipeline and as
 you can see; the pipeline is anything but a linear process. Doing data science
