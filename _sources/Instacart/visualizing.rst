@@ -4,8 +4,9 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-Visualizing Grocery Data
-========================
+Visualizing Data
+=================
+In this section, we will learn how to visualize our work so far.
 
 You can get some inspiration from https://python-graph-gallery.com/.
 
