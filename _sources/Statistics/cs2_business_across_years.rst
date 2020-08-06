@@ -10,13 +10,13 @@ Case Study 2: How is Business Over Time?
 In this section, we will compare data across the years in order to identify
 patterns and trends over time.
 This will help us to analyze data better and make important connections. So far, We have
-been using the business data set from 2019. In this section, we will use the same data set from
+been using the business start-up data set from 2019. In this section, we will use the same data set from
 `2014 <../_static/Starting_a_Business_2014.csv>`_. We can use this file to make some comparisons of our
 data across a span of 5 years.
 
-1. First, let's start with a new workbook. We want to get each of the CSV files from the business data
-   loaded into separate sheets. Therefore, you will have one sheet containing 2014 business data,
-   and another sheet containing 2019  business data in the same workbook.
+1. First, let's start with a new workbook. We want to get each of the CSV files from the business start-up data
+   loaded into separate sheets. Therefore, you will have one sheet containing 2014 business start-up data,
+   and another sheet containing 2019  business start-up data in the same workbook.
 
 2. Next, we can create a table on a new sheet with the business start-up rank for each country in each year.
    You will have the following three columns: country name, 2014 rank, and 2019 rank. Hint: Use ``VLOOKUP``.
@@ -33,7 +33,7 @@ We change the calculation to look something like ``=IFERROR(C2-B2)``.
 
 .. fillintheblank:: q1_p3_sab
 
-      What is the name of the country with the largest positive change in their ease of starting a business rank?
+      What is the name of the country with the largest positive change in their ease of business start-up rank?
       |blank| What about the largest negative change? |blank|
 
       - :Myanmar: Is the correct answer!
@@ -49,7 +49,7 @@ You can find the annual populations of the countries in the `world_countries <..
 we used in the previous section. Import the dataset into a new tab in your sheet. Create two new columns for each year and
 use appropriate functions (hint: ``VLOOKUP``) to input the population data for both years. Use the population data from 2014
 and the one from 2019 to determine which countries (at least 10) had the most significant increase in population over those five years.
-Is there a correlation between the change in a country's population and its "Starting a Business" ranking?
+Is there a correlation between the change in a country's population and its business start-up ranking?
 
 
 **Lesson Feedback**

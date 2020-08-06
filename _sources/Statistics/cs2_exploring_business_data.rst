@@ -16,20 +16,20 @@ related to starting a business.
 Thinking About Starting Your Business
 -------------------------------------
 
-This case study utilizes the `starting a business <../_static/Start_a_Business_2019.csv>`_ data set obtained from the Doing Business-World Bank website.
+This case study utilizes the `starting a business <../_static/Start_a_Business_2019.csv>`_ (also called business start-up) data set obtained from the Doing Business-World Bank website.
 The data set contains indicators from over 190 countries that measure the relative ease of starting a business in those countries. The data set looks at
 two limited liability companies in various regions and countries around the world.
 
 Each country in the data set measures things such as the minimum amount of capital investment an entrepreneur must have to start a business,
-and the number of procedures that necessary to register the business, and more that will be covered throughout this case study.
+and the number of procedures that are necessary to register the business, and more that will be covered throughout this case study.
 
 The ease of starting a business for each country is measured on a scale of 0-100. A score of zero represents the country with the lowest performance
 while 100 represents the country with the highest performance.
 
 Below are definitions of the indicators found in the data set.
 
--  **Business Start-Up Rank:** Countries are ranked on a score representing the relative ease of starting a business.
--  **Business Start-Up Score:** These scores are calculated using the simple average of all the indicators' scores.
+-  **Starting a Business Rank:** Countries are ranked on a score representing the relative ease of starting a business.
+-  **Starting a Business Score:** These scores are calculated using the simple average of all the indicators' scores.
 -  **Procedures:** The activities that must be accomplished to get the business registered with its associated governmental entity.
 -  **Time (days):** The median number of days needed to get the business up and running for each country/region.
 -  **Cost:** The amount of money that must be expended to get the business started (such as official, legal, and professional services fees, etc.).
@@ -37,7 +37,7 @@ Below are definitions of the indicators found in the data set.
 -  **Income Level:** This represents the income levels of each country's economy. This indicator is divided into low, lower-middle, upper-middle, and high, based on a country's gross national income (GNI) per person.
 
 We will use **Google Sheets** to explore which of these indicators are most important to start a new business in each economy's largest cities. 
-import the data set that you downloaded earlier, `starting a business <../_static/Start_a_Business_2019.csv>`_, into Google Sheets.
+Import the data set that you downloaded earlier, `starting a business <../_static/Start_a_Business_2019.csv>`_, into Google Sheets.
 
 .. mchoice:: dat_sab1
 
@@ -69,11 +69,11 @@ Business Start-Up Data Analysis Research Questions
 4. What similarities and differences do the countries experiencing the highest/lowest business start-up rank have? Are there any discrepancies between different score factors of countries with similar rankings?
 5. For the countries with the largest change, which factors changed the most? Are these factors the same as you identified in the first 3 questions?
 
-The data set lists countries based on their business start-up score. While it is easy to
+The data set lists countries based on their business start-up scores. While it is easy to
 see the best countries for starting a business based on the business start-up rank, it is not
 easy to grasp the relative simplicity of each country. We can use the functions that we
 learned in the previous case study to create a common baseline: average, standard deviation, and median. So, let's average
-the "business start-up score" of all countries together.
+the business start-up score of all countries together.
 
 a. Use the ``AVERAGE`` function to calculate the mean in column D. Scroll down and click on a cell in column 194.
    There should be an empty cell below the column of numbers for the business start-up score. Now type ``=AVERAGE(D2:D192)``.

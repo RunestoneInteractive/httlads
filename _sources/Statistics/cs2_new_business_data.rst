@@ -3,7 +3,7 @@
    International License. To view a copy of this license, visit
    http://creativecommons.org/licenses/by-sa/4.0/.
 
-Case Study 2: Where Should We Start Out New Business?
+Case Study 2: Where Should We Start Our New Business?
 =====================================================
 
 Before we begin, make sure that the Google Sheets file you are working on is exactly like the one given at
