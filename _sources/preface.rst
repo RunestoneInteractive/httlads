@@ -10,10 +10,8 @@ We are excited to bring you this enhanced version of this book.
 As we were planning to teach a course in data analytics,
 a course which is cross listed in computer science and business at our institution,
 we found it quite challenging to identify a book that had appropriate content
-for this type of interdisciplinary study. We were so very excited to find this
+for this type of interdisciplinary course. We were so very excited to find this
 open source book due to the clear focus on the data.
-The ability of others to contribute to and improve the text creates a synergistic
-benefit for students, professors, instructors and others who find this book useful.
 We both believe that curiosity is exactly what drives data science and data analytics.
 When we encounter a set of data, it leads us to ask provocative questions that
 can often be answered by the data techniques covered in this book.
@@ -28,6 +26,7 @@ Some of the key changes from the First Edition include:
 
 * Learning Goals, Learning Objectives, and Glossaries added to each chapter.
 * Chapter titles that identify the data technique to be utilized while still letting curiosity about each of the datasets drive the exploration.
+* The fourth chapter has been significantly expanded to include a targetted introduction/review of Python.
 * The option to choose to use Google Colaboratory Notebooks or an Anaconda installation using Jupyter Notebooks.
 * Additional datasets presented as cases studies that focus on business applications added in addition to the existing case studies on other interesting topics.
 
