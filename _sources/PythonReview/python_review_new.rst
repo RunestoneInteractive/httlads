@@ -877,7 +877,7 @@ Some Additional Important Python Knowledge
 Opening Files
 ~~~~~~~~~~~~~
 
-You can open files selectivly into  by using the following code:
+You can open files selectivly by using the following code:
 
 .. code:: python3
 
