@@ -4,7 +4,7 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-.. _PythonReview:
+.. _PythonReview_old:
 
 Python Review
 =============

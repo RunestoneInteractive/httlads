@@ -8,7 +8,8 @@
 
 Python Review
 =============
-In the following section you will get a rudimentary introduction to python for this course. The purpose
+
+In the following section you will get a rudimentary introduction to Python for this course. The purpose
 of this section is not to teach you all of Python but ranther to arm you with the konwledge required to
 succeed in this course. Because of this, we will only be introducing concepts that are necessary for this course.
 
@@ -16,27 +17,25 @@ succeed in this course. Because of this, we will only be introducing concepts th
 Variables
 ---------
 
-To better understand **Variables**, let us first look at a concept from Google Sheets that you are already familiar with, cells.
+To better understand **variables**, let us first look at a concept from Google Sheets that you are already familiar with, cells.
 Each of those cell names refer to a specific place in the spreadsheet and each of those places can contain a value. The name of 
 the cell such as "B12" is similar to the name of a variable and what you put into it is called the value. 
 
 
 
 In order to create a variable in Python, you must give it a name. It can have any name that has alphanumeric (A-Z,a-z,0-9) characters including 
-underscore (_). The name cannot start with a number and it is case sensitive.
+underscore (_). The name cannot start with a number and it is case sensitive, for example my_var is not the same variable as My_Var.
 
-Each variable has a type such as integer, float, string, etc.
-
-Python variables can seamlessly change from being a numerical value, a string, or other types. 
-Look at the following:
+Each variable has a type such as integer, float, string, etc., but Python variables can seamlessly change from being a numerical value, a string, or 
+other types. Look at the following:
 
 .. code:: python3
 
-   my_var = 3
+   my_var = 3 # my_var is an integer here
    print(type(my_var))
-   my_var = "foo"
+   my_var = "foo" # my_var is now a string
    print(type(my_var))
-   my_var = len  # this is a function to find the length of a value (visit lists and Strings for more)
+   my_var = print  # as you know this is a built-in function that prints!
    print(type(my_var))
 
 
@@ -44,7 +43,7 @@ Look at the following:
 
    <class 'int'>
    <class 'str'>
-   <class 'builtin_function_or_method'>
+   <class 'function'>
 
 Python can convert a variable from one type to another without having to create a new variable. Often, this is 
 probably a bad idea, because we want our variables to be meaningfully named, rather than something like "foo".
@@ -61,7 +60,7 @@ Numeric Data Types
 ------------------
 
 There are two main types of numeric data in Python. Integers (``int``) and floating-point values (``float``).
-Integers are positive or negative whole numbers or zero. 
+An integer is a zero or a positive or negative whole number. 
 Floating-point numbers are numbers that have fractional components after the decimal points, even if the fractional component is zero. 
 As a good rule of thumb, if it has a decimal point, it is a ``float``. If the number does not contain a decimal point, it is an ``int``. 
 The number 12 is an ``int``, but 12.0 is a ``float``, even if the numbers seem to represent the same value, 
@@ -69,13 +68,14 @@ they can be of different data types.
 
 You can use both ``int`` and ``float`` values to perform basic mathematical operations such as addition (+), subtraction 
 (-), multiplication (*), division (/), and exponentiation (**). Python will automatically use the normal order of operations 
-when calculating a value. You can use parentheses to force Python to evaluate certain expressions first.
+when calculating a value. You can use parentheses to force Python to evaluate certain expressions first. There are also some 
+cool other operations like %, which is called the modulus function which gives you the remainder of division between two integers.
 
 Booleans
 --------
 
-Boolean (``bool``) is another data type that is very useful in programming. They are used to check 
-the truth of an expression in python. Booleans return ``True`` or ``False``. You can evaluate 
+Boolean (``bool``) is another data type that is very useful in programming. It is used to check 
+the truth of an expression in Python. Booleans return ``True`` or ``False``. You can evaluate 
 multiple Boolean expressions using the following operations: ``and``, ``or``,and ``not``.
 
 ::
@@ -139,23 +139,23 @@ Note that once a string is created and saved in a variable, it cannot be altered
    # \n means newline
 
    lion = 'Simba\nNala'
-   print("1: ", lion)
+   print(lion)
    tiger = "Diego\nShira"
-   print("2: ", tiger)
+   print(tiger)
    ogre = """Shrek
    Princess Fiona"""
-   print("3: ", ogre)
+   print(ogre)
 
 .. parsed-literal::
 
-   1: Simba
+   Simba
    Nala
-   2: Diego
+   Diego
    Shira
-   3: Shrek
+   Shrek
    Princess Fiona
 
-You can slice or access particular elements of a string by using the following sequential indexing 
+You can access particular character or segment of a string by using the following sequential indexing 
 operations. :ref `Table 2 <_tab_sequentialmethods>`_.
 
 .. _tab_sequentialmethods:
@@ -223,7 +223,7 @@ Conditional Statements
 ----------------------
 
 Conditional Statements (also known as selection statements or if statements) are used to ask a question, and depending on the 
-result, perform different actions. The questions follow the this format: If a condition is true then perform the action.
+result, perform different actions. The questions follow this format: If a condition is true then perform the action.
 
 .. code:: python3
 
@@ -239,14 +239,15 @@ If the condition is not met then all of the code indented inside of the if state
    This will only print if num is a float.
    "Indeed, num is a float!"
 
-If statements can have two additional clauses, ``elif`` and ``else``. ``elif`` is a shorter way of saying else if. The ``elif`` clause
-is used after the if statement and provides another conditon to be checked if the first one (the original if statement) is not true.
-It is possible to have multiple ``elif`` clauses in one if statement. When the ``else`` clause is used, it is always the last clause in a conditional statement. 
-In other words, there can only be one ``else`` clause in a conditional statement and it comes last. 
+If statements can have two additional clauses, ``elif`` and ``else``. The keyword ``elif`` is a shorter way of saying an else followed by an if. 
+The ``elif`` clause is used after the if statement and provides another conditon to be checked if the first one (the original if statement) is not true.
+It is possible to have multiple ``elif`` clauses in one if statement. When the ``else`` clause is used, it is always the last clause in a 
+conditional statement. In other words, there can only be one ``else`` clause in a conditional statement and it comes last. 
 
 Once a condition has been met, all subsequent clauses will be ignored.
 
-.. code:: python3
+.. activecode:: conditional_question
+   :coach:
 
    num = 5
    if type(num) == float:
@@ -261,33 +262,25 @@ Once a condition has been met, all subsequent clauses will be ignored.
    else:
       print("num is not a float, int, or string.")
 
-.. parsed-literal::
 
-   num is an int.
+**Add question fill in the blank** What gets printed if num is 5.2 ?
 
 
 Range
 -----
 
 A range represents a sequence of values. When trying to access specific members of a list or a string, ranges 
-are used as inputs to specify the output needed. Range functions can also be used as a standalone function as used 
-in the following examples.
+are used as inputs to specify the output needed. Consider the following examples.
 
 .. code:: python3
 
-    print(range(5))
-    print(range(0, 5))
-    print(range(5, 10))
     print(list(range(5)))
     print(list(range(5, 10)))
-    print(list(range(5, 10, 2))) #The third parameter specifies the value each member of the range is incremented by.
-    print(list(range(10, 1, -1))) #Here the -1 shows the value each member is decremented by.
+    print(list(range(5, 10, 2))) # The third parameter specifies the value each member of the range is incremented by.
+    print(list(range(10, 1, -1))) # Here the -1 shows the value each member is decremented by.
     
 .. parsed-literal::
 
-    (0,5)
-    (0,5)
-    (5,10)
     [0, 1, 2, 3, 4]
     [5, 6, 7, 8, 9]
     [5, 7, 9]
@@ -374,9 +367,10 @@ A list can also contain objects of any data type.
 
 .. code:: python3
 
-   my_list1 = ["string", 1, [2.0, 4.5], 5.6]  
+   my_list = [3, 4, 2, 45, 23, 12, 34] 
+   my_list1 = [3, "list", 4, "this", 5, "is"] 
    my_list2 = []                              # An empty list 
-   my_list3 = [3, "list", 4, "this", 5, "is"] 
+   my_list3 = ["string", 1, [2.0, 4.5], 5.6]  # Notice that one of the elements in this list is a list!
    
 
 Because the data in a list is ordered, you can use the index with ``[ ]`` brackets. Indexes start at 0.
@@ -391,19 +385,20 @@ Because the data in a list is ordered, you can use the index with ``[ ]`` bracke
    3
 
 Lists are **mutable**. Mutable means that arbitrary values can be overwritten and added or deleted after the list is created. You should use their index 
-to specify the value you would like to change as shown below:
+to specify which location you would like to overwrite the value of as shown below:
 
 .. code:: python3
 
    my_list = [3, 4, 2, 45, 23, 12, 34] 
    my_list
+   my_list[0] = 5
    my_list[2] = 6
    my_list
 
 .. parsed-literal::
 
    [3, 4, 2, 45, 23, 12, 34] 
-   [3, 4, 6, 45, 23, 12, 34] 
+   [5, 4, 6, 45, 23, 12, 34] # Notice both 0th and 2th indexes have overwritten values.
 
 
 And you can use negative indexes to refer to values starting from the end of the
@@ -484,10 +479,11 @@ Dictionaries
 ------------
 
 Dictionaries are another convenient, built-in data type in Python (they’re hash
-tables, if you've used another language that uses that name). Hashtables are 
+tables, if you've used another language that uses that name). Hash tables are 
 one form of data structure used to store data by generating a key-value pair using hash 
 functions. For this course, Dictionaries are a way of storing data where each value is stored 
-under a ``key`` that is used to retrieve the ``value``.
+under a ``key`` that is used to retrieve the ``value``. You can think of Dictionaries much like a lookup table 
+in a spreadsheet. 
 
 Dictionaries can be created in a variety of ways.
 
@@ -525,42 +521,30 @@ And you can add new values (or overwrite old ones) by key as well.
    my_dict['three'] = 'tres' # Spelling corrected
 
 
-You can iterate over a dictionary using a for loop.
-
-
-.. code:: python3
-
-   for key in my_dict:
-       print("The key", key, "maps to the value", my_dict[key])
-
-
-.. parsed-literal::
-
-   The key one maps to the value uno
-   The key two maps to the value dos
-   The key three maps to the value tres
-
 
 Functions
 ----------
 
-Functions are a reusable block of code that are meant to perform a specific task. A parameter is an input that functions 
-take. A return value is what a function outputs or passes on after it is run. The return value of a function is not printed (or displayed) 
-so we have to use a print statment to see it. The following example shows you python functions 
+Functions are a reusable block of code that are meant to perform a specific task. A parameter is an input that a function 
+takes. A return value is what a function outputs or passes on after it is run. The return value of a 
+function is not printed (or displayed) so we have to use a print statment to see it. The following example shows you python functions 
 used in this section:
 
 .. code:: python3
 
-    print(range(2,6))
+    print(max([55, 33, -56, 107, 3, 2]))
 
 .. parsed-literal::
 
-    (2,6)
+    107
 
 
 
-Here ``print`` and ``range`` are functions. ``print`` takes the parameter ``range(2,6)`` and ``range`` takes 
-in 2 and 6. You can create functions by using the ``def`` keyword. Whether or not a function has parameters 
+Here ``print`` and ``max`` are functions. ``print`` takes the parameter ``max([55, 33, -56, 107, 3, 2])`` and ``max`` takes the 
+list [55, 33, -56, 107, 3, 2] as a parameter. The output (return value) of the max function is 107 but without the print function you wouldn't be 
+able to see it. It gets printed because we use the print function with the input that resolves to 107.  
+
+You can create your own functions by using the ``def`` keyword. Whether or not a function has parameters 
 or return values depends on the purpose of the function. Take a look at the following example which has neither:
 
 .. code:: python3
@@ -579,8 +563,8 @@ function with an input parameter. Try changing the parameter in the following:
 
 .. code:: python3
 
-   def say_it(it):
-       print("Just saying " + it)
+   def say_it(say_what):
+       print("Just saying " + say_what)
 
    say_it("Python is fun!")
 
@@ -588,8 +572,12 @@ function with an input parameter. Try changing the parameter in the following:
 
    Just saying Python is fun!
 
-Recall that the ``range`` function is a built in function that we use in for loops and other places. We would not want to print the ``range`` everytime we used it.
-That is why we need to have ``return`` values as output. Functions with ``return`` values are sometimes called **fruitful functions**.
+The way this works is the say_it function has a parameter named say_what. That parameter is sent to the print function which has a different parameter. 
+The print function gets a concatenation of the string "Just saying " concatenated with say_what as its parameter.
+
+Functions with ``return`` values are sometimes called **fruitful functions**. 
+
+Here's a simple example: 
 
 .. code:: python3
    
@@ -608,21 +596,40 @@ That is why we need to have ``return`` values as output. Functions with ``return
    True
 
 
+Recall that the ``max`` function is a built in function that can be used to fnd the highest value from a list. We would not want to print the ``max`` 
+everytime we used it. That is why we need to have ``return`` values as output. The ``min`` function is similar, consider the following scenario:
+
+A professor wishes to drop the lowest score of three exams and compute the remaining two. Here's how they might do that:
+
+.. code:: python3
+
+   def compute_with_drop(grades):
+
+      total = (sum(grades) - min(grades))/2.0
+      print (total) # Why print this?
+
+   compute_with_drop([90, 78, 87])
+
+
+.. parsed-literal::
+      88.5
+
+Note that if the professor wanted to use this function as part of a further calculation we would need a return value instead of a print!
 Try creating your own function in the following:
  
 .. activecode:: methods_functions
    :coach:
 
-   def print_something(your_name):
-       print("This function was ran by " + your_name)
+   def your_function(your_input):
 
-   name = "Put your name here"  # Change this to your name
-   print(print_something(name))
+      # Put your code here!
+      
+
+   your_function() # Add parameters inside the parentheses!
   
 
-
-Mapping 
--------
+The map function 
+----------------
 
 The map function allows us to use each item in a list as a parameter for a function.
 
@@ -654,16 +661,18 @@ Lambda Functions
 -----------------
 
 For a simple, one-time-use function, we don't have to define a function, we can
-use ``lambda`` to define the operation in-line. A lambda function is an anonymous 
-function, meaning that the lambda function does not need a name. 
+use ``lambda`` to define the operation in-line. A Lambda function is an anonymous 
+function, meaning that the lambda function does not need a name. These are generally 
+not a good idea, most functions are easier to recognize and to read if they have names, but you 
+will see them widely used, so we thought we should mention them. 
 
-You can make a lambda function with a simple one line expression. You can make a lambda function by writing:
+You can make a Lambda function with a simple one line expression. You can make a lambda function by writing:
 
 .. parsed-literal::
 
    lambda parameters : expression
 
-The best way to understand the lambda function is to see examples of it. 
+The best way to understand the Lambda function is to see examples of it. 
 
 .. activecode:: lamda_function
    :coach:
@@ -678,10 +687,10 @@ The best way to understand the lambda function is to see examples of it.
    print(z("Happy birthday to you!" + "\n"))
 
 
-Note that lambda functions do not use the ``return`` keyword, you just specify
+Note that Lambda functions do not use the ``return`` keyword, you just specify
 the name and value(s) of the parameters of the function, a colon, and the operation to perform on the parameters. 
 
-The `lambda` function can also be used with other functions. 
+The ``lambda`` function can also be used with other functions. 
 
 .. code:: python3
 
@@ -704,12 +713,12 @@ The `lambda` function can also be used with other functions.
    292
 
 
-List Comprehension
-------------------
+List Comprehensions
+-------------------
 
-**List comprehension** provides a concise way to create a list and will always return a list. 
+**List comprehensions** provide a concise way to create a list and will always return a list. 
 List comprehensions are never necessary because they can always produce the same result as a for loop, possibly 
-with a nested conditional inside. 
+with a nested conditional inside, but again, you will see that they are widely used. 
 
 As you will see in the examples below, they consist of brackets that contain a *for clause* and zero or more *if clauses*. 
 List comprhension follows the following format: 
@@ -862,12 +871,13 @@ not be the resulting list).
    print(texas)
 
 
-Some Important Python Knowledge
--------------------------------
+Some Additional Important Python Knowledge
+------------------------------------------
 
 Opening Files
 ~~~~~~~~~~~~~
-You can open files selectivly into  by using the following code:
+
+You can open files selectivly by using the following code:
 
 .. code:: python3
 
@@ -883,9 +893,21 @@ you can change it to any name you'd like.
 
 Random Number Generators
 ~~~~~~~~~~~~~~~~~~~~~~~~
+
 You don't always have to reinvent the wheel! Python has built in functions you can use for a more efficient 
 programming. A good example of a built-in function is ``randrange``. It requires you to import a module called ``random`` as 
 you can see in the following code: 
+
+.. code:: python3
+
+   import random
+   random.randrange(20, 30)
+
+.. parsed-literal::
+
+   26
+
+You may also this kind of thing done as the following:
 
 .. code:: python3
 
@@ -898,3 +920,4 @@ you can see in the following code:
 
 The ``as rand`` in the above code allows you to use rand instead of ``random`` to use all the functions that come with 
 random (such as ``randrange``). rand is not a preset value so you can use any name you would like instead of it. 
+

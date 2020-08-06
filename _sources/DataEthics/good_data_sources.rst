@@ -22,7 +22,7 @@ up with your own interests.
 
 * `Awesome Public Datasets on GitHub <https://github.com/awesomedata/awesome-public-datasets>`_
   (This is a public list of public datasets maintained by volunteers on GitHub.
-  Most of the data is freely available, but some is not so you should check the
+  Most of the data is freely available, but some of the data is not so you should check the
   terms.)
 
 * `Data.gov <http://data.gov>`_
@@ -67,7 +67,7 @@ In section :ref:`screenscrape`, we take you through the mechanics of screen
 scraping. In this section, we will look at some of the ethical considerations.
 
 The first thing you should do before you get data from a website via screen
-scraping is check the terms and conditions of the site. If screen scraping is
+scraping is to check the terms and conditions of the site. If screen scraping is
 prohibited by their terms, then you should definitely move on and look for a
 different source. If screen scraping is explicitly allowed, then you are good to
 proceed, but you are not quite finished with your responsible scraping research.
