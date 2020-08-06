@@ -6,11 +6,11 @@
 
 Introduction
 ============
-Data are a ubiquitous part of our everyday lives. Through text, pictures, or 
-social media, the data that we upload and interact with reflect who we are. 
-Data are incredibly useful in understanding patterns inherent in both people 
-and the rest of the world. To ensure the appropriateness of their work, 
-data scientists have an obligation to ask themselves the following questions:
+Data is a ubiquitous part of our everyday lives. Through text, pictures, or social media,
+the data that we upload and interact with reflect who we are. 
+Data is incredibly useful in understanding patterns inherent in both people and the rest of the world. 
+To ensure the appropriateness of their work, 
+data scientists are obligated to ask themselves the following questions:
 
 
 - Are we using the data for the greater good? 
@@ -18,7 +18,7 @@ data scientists have an obligation to ask themselves the following questions:
 - Does my organization have a data code of conduct?  If, so is it being followed each time data are used by the organization?
 
 In short, it is imperative for data scientists to consider the ethical 
-implications of their work. They must also do so when sharing data or 
+implications of their work. They must do so when sharing data or 
 merging data from multiple sources. They should ask questions such as:
 
 - Will the ethics of the project stay the same after the share and/or merge? 

@@ -407,7 +407,7 @@ incorporate it in the future. For example, we can use the information that the u
 
 .. code:: python 3
 
-   print("We can lowercase your name " + your_name.lowercase() + " or uppercase your name " + your_name.uppercase())
+   case your name " + your_name.lowercase() + " or uppercase your name " + your_name.uppercase())
 
 Another thing to notice is the spaces that we have in our print statements. These are required so we can have nice formating. 
 If we had no spaces, we would have something like this: ``We can lowercase your nameyour_nameor uppercase your nameyour_name``.  
@@ -431,6 +431,7 @@ the sphere formula as we did above.
 A common use of the``for`` statement is to iterate over the elements of a collection as long as the collection is a sequence. For instance,
 
 .. code:: python3
+
   for item in [1, 2, 3, 4, 5]:
   print(item)
 
