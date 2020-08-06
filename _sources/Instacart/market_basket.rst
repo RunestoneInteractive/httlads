@@ -9,7 +9,7 @@ Market Basket Analysis
 
 For retailers to increase sales and make as much profit, they need to know 
 their customers and understand their needs and behaviors. To do this, retailers 
-use a technique called market basket analysis. Market basket analysis consists of analyzing 
+use a technique called ** market basket analysis **. Market basket analysis consists of analyzing 
 large data sets that include purchase history, revealing product groupings, and 
 products that are likely to be purchased together. 
 
@@ -266,7 +266,7 @@ product_id the index of the DataFrame to make things faster.
 Constructing an Item-Item Matrix
 --------------------------------
 
-Constructing a matrix of the kind shown above will take a bit of thought (and
+Constructing a **matrix** of the kind shown above will take a bit of thought (and
 time!). So let's do some design first.
 
 1. Its a very good assumption that this data is sparse, so lets start by
@@ -301,8 +301,8 @@ time!). So let's do some design first.
 
 2. The primary source of our data will be the ``order_products__train`` data.
    The data is sorted by the order number and the order in which products were
-   added to the cart. We want to take each order as a group and add **all
-   pairs** of items in a cart to the matrix.
+   added to the cart. We want to take each order as a group and add all
+   pairs of items in a cart to the matrix.
 
 3. We can take advantage of the symmetry by ordering the products in the same
    cart by their product id and always using the lower number as the first
@@ -557,9 +557,9 @@ matrix easily.
    {1: {2: 2, 3: 6}, 2: {3: 3}, 3: {}}
 
 
-Now we have a "co-occurence matrix"; given one product, we an tell how often
+Now we have a "**co-occurence matrix**"; given one product, we an tell how often
 that product is in the same shopping cart as many others. The matrix we have
-built turns out to be a "lower triangular" matrix because we are only storing
+built turns out to be a "**lower triangular matrix**" because we are only storing
 the lower left. The upper right is symmetric so we can save half the storage!
 
 **Important:** Saving storage often comes with an additional cost in complexity.
@@ -1155,7 +1155,7 @@ Since building the item-item matrix takes some time, we should save it in a
 format that is convenient for us to reload so we don't need to remake it every
 time.
 
-We can probably reduce the size of our sparse matrix by eliminating all of the
+We can probably reduce the size of our **sparse matrix** by eliminating all of the
 cells with a count of 1. That doesn't really tell us anything that we would want
 to use in making a recommendation. We can also eliminate our original
 dictionary.

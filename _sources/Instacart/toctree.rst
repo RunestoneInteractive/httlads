@@ -15,3 +15,4 @@ Exploring Market Basket Analysis
    exploratory.rst
    market_basket.rst
    visualizing.rst
+   glossary.rst

@@ -18,7 +18,7 @@ To accomplish this, you will have to dig into some new packages that we have not
 used so far. But this is all part of the process.
 
 We need to create square adjacency matrix: Aisle to Aisle. We'll use this to
-build our chord diagram and other graph like visualizations.
+build our **chord diagram** and other graph like visualizations.
 
 1. Merge the order_product data frame with the aisle data frame so we have the
    aisle number for each product. (We can drop the aisle name to save memory.)
