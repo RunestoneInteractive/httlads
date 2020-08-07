@@ -4,14 +4,15 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-Recommending Groceries
-======================
+Exploring Market Basket Analysis
+==================================
 
 .. toctree::
-   :caption: Introduction
    :maxdepth: 2
 
    introduction.rst
+   exploring_our_data_set.rst
    exploratory.rst
    market_basket.rst
    visualizing.rst
+   glossary.rst

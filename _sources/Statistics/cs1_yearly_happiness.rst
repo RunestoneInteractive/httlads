@@ -4,7 +4,7 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-.. _h756a797b286237b36797fb1f277d18:
+.. _CSHappinessComparingYears:
 
 Case Study 1: Comparing Happiness Data across Years
 ===================================================

@@ -6,21 +6,23 @@
 Introduction
 ============
 
-This chapter will cover the definition and practice of data science.
+This chapter will cover the definition and practice of **data science**.
 It will explore the history and current state of the discipline, explaining
 how data science began and where it will be going in the future. We will also
 explore how data science leverages data analysis and data visualization.
 
 Learning Goals
 --------------
-- Learn about what a data scientist does and the history of the practice of data science.
-- Gain awareness of how broad data collection and analysis is.
-- Understand the importance of data collection and its implementation.
-- Understand and know the purpose of all the steps in a data science pipeline.
-- Understand what it takes to gain and better skills: learning zone vs performance zone.
+- Understand the importance of data collection and its implementation. 
+- Gain awareness of how broad data collection is in all subjects. 
+- Gain an introduction to what a Data Scientist does. 
+- Understand and know the purpose of all the steps in the **Data Science Pipeline**.
+- Understand what it takes to gain and better skills: **Learning Zone** vs **Performance Zone**. 
+- Learn the difference between Data Science and Data Analytics.
 
 Learning Objectives
 ---------------------
+
 - Be able to identify different steps along different data science pipelines, recognizing all the previous and future steps.
 - Be able to identify if you are in a performance zone or learning zone and transition between them as necessary.
 - Be able to effectively navigate the *How to Think Like a Data Scientist* book.
@@ -103,8 +105,8 @@ available at a liberal arts college, all of which are looking for people with
 data skills!
 
 
-.. figure:: https://static1.squarespace.com/static/5150aec6e4b0e340ec52710a/t/51525c33e4b0b3e0d10f77ab/1364352052403/Data_Science_VD.png?format=1500w
-
+.. image:: https://static1.squarespace.com/static/5150aec6e4b0e340ec52710a/t/51525c33e4b0b3e0d10f77ab/1364352052403/Data_Science_VD.png?format=1500w
+  :alt: Venn Diagram depicting the different components of Data Science: Hacking Skills, Substantive Expertise, and Math and Statistics Knowledge.
    Venn Diagram |CCBYANC| Drew Conway
 
 
@@ -171,6 +173,12 @@ is a very iterative process whereby you will often repeat previous steps because
 of something you learn in later steps. This is part of the exploratory nature of
 data science. There is not a single formula for success, or a single process
 that works for every data set. Let's look at each of the steps.
+
+.. image:: Figures/DS_Pipeline.png
+  :align: left
+  :width: 250
+  :height: 625
+  :alt: Chart outlining the different steps in the Data Science pipeline.
 
 * **Get Data:** Acquiring data can come in many forms. Data is sometimes found
   in a simple file, or in relational database, from a web based interface, or in

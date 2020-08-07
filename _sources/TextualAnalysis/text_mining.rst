@@ -4,8 +4,12 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-UN General Debates
-==================
+Text Mining
+==============
+
+In this section, we will learn how to read and explore data on a deeper level. We will learn how to use various 
+tools to group and visualize the diverse text in a data set. Keep in mind that you might encounter some errors along the way. 
+Therefore, we will  also focus on different ways we can fix these errors.
 
 .. raw:: html
 
@@ -730,6 +734,7 @@ convenient for us.
 
 
 .. image:: Figures/UNGeneralDebates_11_0.png
+  :alt: Bar graph representing the change in text between 1970 to 2015.
 
 
 .. code:: python3
@@ -799,6 +804,7 @@ convenient for us.
 
 
 .. image:: Figures/UNGeneralDebates_13_0.png
+  :alt: "Bar chart showing the number of records as the y axis and text(binned) as the x axis. Speech Distribution is the title of the chart."
 
 
 .. code:: python3
@@ -914,7 +920,7 @@ complete table ready for you to load, so you don't have to scrape it again.
 OH NO, what the heck!!
 ----------------------
 
-Unicode errors can be a huge pain, but are a fact of life for anyone dealing
+**Unicode errors** can be a huge pain, but are a fact of life for anyone dealing
 with data from multiple sources. In this case, we can use the unix file command
 to get a bit more information:
 
@@ -926,27 +932,30 @@ to get a bit more information:
 
 
 The important part of the result of that command is that it tells us that the
-character set is `iso-8859-1`. This piece of information is important, because
+character set is **`iso-8859-1`**. This piece of information is important, because
 it tells Python how to interpret the 8 bits as a character we would recognize.
 For example, let's take the familiar copyright © symbol. This symbol is stored
 in the computer's memory as 10101001. Aren't you glad you don't have to remember
 that? When Python tries to display a character for us, it has to know how that
-information is **encoded**, that is, how should Python interpret those bits.
-There are several common encodings used today.
+information is encoded, that is, how should Python interpret those bits.
+There are several common **encodings** used today.
 
-* ASCII (American Standard Code for Information Interchange): This is one of the
-  oldest encodings, and has been in use for years, its major limitation is that
+* **ASCII** (American Standard Code for Information Interchange): This is one of the
+  oldest encodings and has been in use for years. Its major limitation is that
   it can only encode 256 characters. And in fact, Python only interprets 0-127
-  as proper ASCII. This was fine for American English, in the early days of
-  computing but it does not work in the world today with many languages and many
+  as proper ASCII. This was fine for American English in the early days of
+  computing, but it does not work in the world today with many languages and many
   more emojis.
 
-* 'utf-8': This is probably the most common encoding in use today. It can
-  efficiently encode over 4 billion characters. Some with just 8 bits and others
+* **'utf-8'**: This is probably the most common encoding in use today. UTF stands for 
+  an 8-bit Unicode Transformation Format, which can encode all 1,112,064 characters in Unicode. 
+  It can efficiently encode over 4 billion characters. Some with just 8 bits and others 
   with up to 32 bits.
 
-* 'iso-8859-1' (also called 'latin-1'): This encoding takes full advantage of
-  all 8 bits of the ascii character set.
+* **'iso-8859-1'** (also called 'latin-1'): This encoding takes full advantage of
+  all 8 bits of the **ASCII** character set. It only uses one byte, so it can only represent
+  the first 256 Unicode characters. ISO-8859 contains encodings of different character sets, 
+  and the '-1' specifies  to use the 'latin-1' character set.
 
 
 So, let's try a little experiment. We can represent 169 as 10101001 or as the
@@ -957,6 +966,8 @@ hexadecimal value a9, which is easier to work with in Python.
 
    b'\xa9'.decode('utf8')
 
+The above code takes the hexadecimal value of a9 and decodes it using the utf8
+character set.
 
 .. parsed-literal::
 
@@ -971,7 +982,7 @@ hexadecimal value a9, which is easier to work with in Python.
 Aha! That error message looks familiar. (And you will run into this many times
 when working with data from the internet).
 
-Lets give ASCII a try.
+Lets give **ASCII** a try.
 
 .. code:: python3
 
@@ -991,6 +1002,7 @@ Lets give ASCII a try.
 The message is that the character is not in range(128); yes 169 is definitely
 not in range(128).
 
+Lets try it with iso-8859-1.
 
 .. code:: python3
 
@@ -1003,6 +1015,13 @@ not in range(128).
 
 
 Success!!
+
+Now let's reread the file using the new character set.
+
+.. code:: python3
+
+   c_codes = pd.read_csv('Data/country_codes.csv', encoding = 'iso-8859-1')
+   c_codes.head()
 
 
 .. code:: python3
@@ -1050,7 +1069,7 @@ Success!!
           <th></th>
           <th>session</th>
           <th>year</th>
-          <th>code_3</th>
+          <th>country</th>
           <th>text</th>
         </tr>
       </thead>
@@ -1158,6 +1177,390 @@ Success!!
       </tbody>
     </table>
     </div>
+
+.. code:: python3
+
+    year_summ['i'] = year_summ.text.str.count('income')
+    year_summ['ir'] = year_summ.text.str.count('interest rate')
+    year_summ
+
+
+.. raw:: html
+
+    <div>
+    <style scoped>
+        .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+        }
+
+        .dataframe tbody tr th {
+            vertical-align: top;
+        }
+
+        .dataframe thead th {
+            text-align: right;
+        }
+    </style>
+    <table border="1" class="dataframe">
+    <thead><tr><th title="Field #1"></th>
+      <th title="Field #2">year</th>
+      <th title="Field #3">text</th>
+      <th title="Field #4">i</th>
+      <th title="Field #5">ir</th>
+      </tr></thead>
+      <tbody><tr>
+      <td align="right">0</td>
+      <td align="right">1970</td>
+      <td>126.\t In this anniversary year the General As...</td>
+      <td align="right">37</td>
+      <td align="right">0</td>
+      </tr>
+      <tr>
+      <td align="right">1</td>
+      <td align="right">1971</td>
+      <td>83.\t Mr. President, the first words of my del...</td>
+      <td align="right">27</td>
+      <td align="right">1</td>
+      </tr>
+      <tr>
+      <td align="right">2</td>
+      <td align="right">1972</td>
+      <td>Since the twenty-sixth session of the General ...</td>
+      <td align="right">31</td>
+      <td align="right">2</td>
+      </tr>
+      <tr>
+      <td align="right">3</td>
+      <td align="right">1973</td>
+      <td>﻿1.\tIt is a great pleasure for me to congratu...</td>
+      <td align="right">36</td>
+      <td align="right">2</td>
+      </tr>
+      <tr>
+      <td align="right">4</td>
+      <td align="right">1974</td>
+      <td>Mr. President, first I should like to extend m...</td>
+      <td align="right">57</td>
+      <td align="right">3</td>
+      </tr>
+      <tr>
+      <td align="right">5</td>
+      <td align="right">1975</td>
+      <td>104.\t Mr. President, on behalf of the delegat...</td>
+      <td align="right">29</td>
+      <td align="right">1</td>
+      </tr>
+      <tr>
+      <td align="right">6</td>
+      <td align="right">1976</td>
+      <td>Allow me first to say how pleased I am to see ...</td>
+      <td align="right">52</td>
+      <td align="right">0</td>
+      </tr>
+      <tr>
+      <td align="right">7</td>
+      <td align="right">1977</td>
+      <td>﻿ \n1.\t&#39;O praise the Lord, all ye nations: pr...</td>
+      <td align="right">42</td>
+      <td align="right">0</td>
+      </tr>
+      <tr>
+      <td align="right">8</td>
+      <td align="right">1978</td>
+      <td>﻿210.\tI am particularly happy to be able in m...</td>
+      <td align="right">30</td>
+      <td align="right">1</td>
+      </tr>
+      <tr>
+      <td align="right">9</td>
+      <td align="right">1979</td>
+      <td>﻿My delegation is pleased to convey to the rep...</td>
+      <td align="right">45</td>
+      <td align="right">2</td>
+      </tr>
+      <tr>
+      <td align="right">10</td>
+      <td align="right">1980</td>
+      <td>﻿I should like first of all to extend to Ambas...</td>
+      <td align="right">34</td>
+      <td align="right">6</td>
+      </tr>
+      <tr>
+      <td align="right">11</td>
+      <td align="right">1981</td>
+      <td>\n73.\t Mr. President, the Republic of Iraq an...</td>
+      <td align="right">40</td>
+      <td align="right">32</td>
+      </tr>
+      <tr>
+      <td align="right">12</td>
+      <td align="right">1982</td>
+      <td>First of all I wish to convey my warm \ncongra...</td>
+      <td align="right">34</td>
+      <td align="right">51</td>
+      </tr>
+      <tr>
+      <td align="right">13</td>
+      <td align="right">1983</td>
+      <td>﻿1.\t It is my pleasure to address, in the nam...</td>
+      <td align="right">40</td>
+      <td align="right">53</td>
+      </tr>
+      <tr>
+      <td align="right">14</td>
+      <td align="right">1984</td>
+      <td>﻿I have the honour to convey to the President ...</td>
+      <td align="right">41</td>
+      <td align="right">106</td>
+      </tr>
+      <tr>
+      <td align="right">15</td>
+      <td align="right">1985</td>
+      <td>I wish to convey to you, Sir, the felicitation...</td>
+      <td align="right">41</td>
+      <td align="right">68</td>
+      </tr>
+      <tr>
+      <td align="right">16</td>
+      <td align="right">1986</td>
+      <td>Allow me first, Sir, to congratulate you on y...</td>
+      <td align="right">34</td>
+      <td align="right">49</td>
+      </tr>
+      <tr>
+      <td align="right">17</td>
+      <td align="right">1987</td>
+      <td>﻿\nAllow me at the outset. Sic, to convey to y...</td>
+      <td align="right">36</td>
+      <td align="right">37</td>
+      </tr>
+      <tr>
+      <td align="right">18</td>
+      <td align="right">1988</td>
+      <td>﻿\nI ask the President to accept our congratul...</td>
+      <td align="right">47</td>
+      <td align="right">32</td>
+      </tr>
+      <tr>
+      <td align="right">19</td>
+      <td align="right">1989</td>
+      <td>﻿It is indeed a pleasure for me and the member...</td>
+      <td align="right">45</td>
+      <td align="right">32</td>
+      </tr>
+      <tr>
+      <td align="right">20</td>
+      <td align="right">1990</td>
+      <td>﻿Mr. President, allow me to congratulate you o...</td>
+      <td align="right">50</td>
+      <td align="right">16</td>
+      </tr>
+      <tr>
+      <td align="right">21</td>
+      <td align="right">1991</td>
+      <td>﻿On behalf of my delegation and on my own beha...</td>
+      <td align="right">38</td>
+      <td align="right">7</td>
+      </tr>
+      <tr>
+      <td align="right">22</td>
+      <td align="right">1992</td>
+      <td>I shall read out the following statement\non b...</td>
+      <td align="right">45</td>
+      <td align="right">6</td>
+      </tr>
+      <tr>
+      <td align="right">23</td>
+      <td align="right">1993</td>
+      <td>Allow me to congratulate you sincerely, Sir,\n...</td>
+      <td align="right">35</td>
+      <td align="right">0</td>
+      </tr>
+      <tr>
+      <td align="right">24</td>
+      <td align="right">1994</td>
+      <td>On behalf of the Namibian\ndelegation, I wish ...</td>
+      <td align="right">43</td>
+      <td align="right">7</td>
+      </tr>
+      <tr>
+      <td align="right">25</td>
+      <td align="right">1995</td>
+      <td>Allow me at the outset, on behalf of the\ndele...</td>
+      <td align="right">28</td>
+      <td align="right">3</td>
+      </tr>
+      <tr>
+      <td align="right">26</td>
+      <td align="right">1996</td>
+      <td>﻿The delegation of the Republic of the Congo\n...</td>
+      <td align="right">20</td>
+      <td align="right">2</td>
+      </tr>
+      <tr>
+      <td align="right">27</td>
+      <td align="right">1997</td>
+      <td>﻿I wish to congratulate the President on his\n...</td>
+      <td align="right">27</td>
+      <td align="right">0</td>
+      </tr>
+      <tr>
+      <td align="right">28</td>
+      <td align="right">1998</td>
+      <td>The General Assembly has\nunanimously chosen M...</td>
+      <td align="right">31</td>
+      <td align="right">3</td>
+      </tr>
+      <tr>
+      <td align="right">29</td>
+      <td align="right">1999</td>
+      <td>Today, we look ahead to the\nnew millennium. A...</td>
+      <td align="right">45</td>
+      <td align="right">2</td>
+      </tr>
+      <tr>
+      <td align="right">30</td>
+      <td align="right">2000</td>
+      <td>I join my colleagues in\ncongratulating the Pr...</td>
+      <td align="right">54</td>
+      <td align="right">2</td>
+      </tr>
+      <tr>
+      <td align="right">31</td>
+      <td align="right">2001</td>
+      <td>﻿On\nbehalf of the Comorian delegation, which ...</td>
+      <td align="right">33</td>
+      <td align="right">1</td>
+      </tr>
+      <tr>
+      <td align="right">32</td>
+      <td align="right">2002</td>
+      <td>﻿Allow me\nto begin my statement by expressing...</td>
+      <td align="right">19</td>
+      <td align="right">0</td>
+      </tr>
+      <tr>
+      <td align="right">33</td>
+      <td align="right">2003</td>
+      <td>﻿The people of Tuvalu,\non whose behalf I have...</td>
+      <td align="right">26</td>
+      <td align="right">2</td>
+      </tr>
+      <tr>
+      <td align="right">34</td>
+      <td align="right">2004</td>
+      <td>The United Nations\nfaces unprecedented challe...</td>
+      <td align="right">39</td>
+      <td align="right">1</td>
+      </tr>
+      <tr>
+      <td align="right">35</td>
+      <td align="right">2005</td>
+      <td>Sixty years ago at San Francisco, the United\n...</td>
+      <td align="right">61</td>
+      <td align="right">1</td>
+      </tr>
+      <tr>
+      <td align="right">36</td>
+      <td align="right">2006</td>
+      <td>In 2006, several important anniversaries coinc...</td>
+      <td align="right">68</td>
+      <td align="right">2</td>
+      </tr>
+      <tr>
+      <td align="right">37</td>
+      <td align="right">2007</td>
+      <td>It is a pleasure, Sir, to congratulate you on...</td>
+      <td align="right">65</td>
+      <td align="right">0</td>
+      </tr>
+      <tr>
+      <td align="right">38</td>
+      <td align="right">2008</td>
+      <td>It is an \nhonour for me to represent my count...</td>
+      <td align="right">68</td>
+      <td align="right">0</td>
+      </tr>
+      <tr>
+      <td align="right">39</td>
+      <td align="right">2009</td>
+      <td>I begin by joining others \nin congratulating ...</td>
+      <td align="right">83</td>
+      <td align="right">1</td>
+      </tr>
+      <tr>
+      <td align="right">40</td>
+      <td align="right">2010</td>
+      <td>It is a privilege and a \ngreat honour for me ...</td>
+      <td align="right">63</td>
+      <td align="right">0</td>
+      </tr>
+      <tr>
+      <td align="right">41</td>
+      <td align="right">2011</td>
+      <td>\nAllow me, first of all, to warmly congratula...</td>
+      <td align="right">60</td>
+      <td align="right">0</td>
+      </tr>
+      <tr>
+      <td align="right">42</td>
+      <td align="right">2012</td>
+      <td>﻿First, I would like\nto express my sincere ap...</td>
+      <td align="right">80</td>
+      <td align="right">1</td>
+      </tr>
+      <tr>
+      <td align="right">43</td>
+      <td align="right">2013</td>
+      <td>Allow me at the outset, on \nbehalf of the Pre...</td>
+      <td align="right">91</td>
+      <td align="right">0</td>
+      </tr>
+      <tr>
+      <td align="right">44</td>
+      <td align="right">2014</td>
+      <td>I congratulate Mr. Sam \nKutesa on his assumpt...</td>
+      <td align="right">74</td>
+      <td align="right">0</td>
+      </tr>
+      <tr>
+      <td align="right">45</td>
+      <td align="right">2015</td>
+      <td>The Head of State of the Transition, Her Excel...</td>
+      <td align="right">57</td>
+      <td align="right">1</td>
+      </tr>
+
+      </tbody>
+    </table>
+    </div>
+
+
+.. code:: python3
+
+   alt.Chart(year_summ[['year', 'i', 'il']]).mark_line().encode(
+       x='year',y='i')
+
+
+.. image:: Figures/Colab_iOverTime.png
+  :alt: Line graph showing mentions of income over time. 
+
+
+.. code:: python3
+
+    alt.Chart(year_summ[['year', 'i', 'il']].melt(
+        id_vars='year', value_vars=['il','i'])).mark_line().encode(
+        x='year:O',y='value', color='variable')
+
+
+.. image:: Figures/Colab_i_vs_ir.png
+  :alt: Line charts showing mentions of income and interest rate over time from 1970 to 2015. 
+
+
+Interesting! The mention of interest rate in the UN general speeches
+spiked in 1980. It dropped after 1984 and has returned to what 
+it was before 1980. Now, let's take a look at how often climate 
+change and global warming are mentioned.
 
 
 .. code:: python3
@@ -1528,6 +1931,7 @@ Success!!
 
 
 .. image:: Figures/UNGeneralDebates_69_0.png
+  :alt: "Line graph showing mentions of global warming over time."  
 
 
 .. code:: python3
@@ -1538,7 +1942,7 @@ Success!!
 
 
 .. image:: Figures/UNGeneralDebates_70_0.png
-
+  :alt: "Line charts showing mentions of global warming and climate change and over time from 1970 to 2015."
 
 Fascinating! Until the late 80's, neither global warming or climate change were
 mentioned with relatively close to the same frequency until 2006 when climate
@@ -1546,6 +1950,7 @@ change became a huge topic. This raises all kinds of interesting questions.
 Which countries were talking about these topics and when? This is exactly the
 kind of thing that happens in data science. One question or the visualization of
 one or more items often leads to further and even more interesting questions.
+
 
 
 .. code:: python3
@@ -1561,6 +1966,7 @@ one or more items often leads to further and even more interesting questions.
 
 
 .. image:: Figures/UNGeneralDebates_74_0.png
+  :alt: "Line charts showing mentions of terror over time from 1970 to 2015. "
 
 
 .. code:: python3
@@ -1623,7 +2029,7 @@ one or more items often leads to further and even more interesting questions.
           <th></th>
           <th>session</th>
           <th>year</th>
-          <th>code_3</th>
+          <th>country</th>
           <th>text</th>
           <th>text_len</th>
         </tr>
@@ -1676,7 +2082,7 @@ one or more items often leads to further and even more interesting questions.
 
 .. code:: python3
 
-   undf.groupby('code_3', as_index=False)['text_len'].mean().head()
+   undf.groupby('country', as_index=False)['text_len'].mean().head()
 
 
 .. raw:: html
@@ -1699,7 +2105,7 @@ one or more items often leads to further and even more interesting questions.
       <thead>
         <tr style="text-align: right;">
           <th></th>
-          <th>code_3</th>
+          <th>country</th>
           <th>text_len</th>
         </tr>
       </thead>
@@ -1737,16 +2143,16 @@ one or more items often leads to further and even more interesting questions.
 .. code:: python3
 
    alt.Chart(undf.groupby(
-       'code_3', as_index=False)['text_len'].mean()).mark_bar().encode(
+       'country', as_index=False)['text_len'].mean()).mark_bar().encode(
        alt.X('text_len', bin=True), y='count()')
 
 
 .. image:: Figures/UNGeneralDebates_81_0.png
-
+  :alt: "Bar chart showing the number of records as the y axis and text(binned) as the x axis."
 
 .. code:: python3
 
-   undf.groupby('code_3', as_index=False)['text_len'].mean().sort_values('text_len').head()
+   undf.groupby('country', as_index=False)['text_len'].mean().sort_values('text_len').head()
 
 
 .. raw:: html
@@ -1769,7 +2175,7 @@ one or more items often leads to further and even more interesting questions.
       <thead>
         <tr style="text-align: right;">
           <th></th>
-          <th>code_3</th>
+          <th>country</th>
           <th>text_len</th>
         </tr>
       </thead>
@@ -1806,7 +2212,7 @@ one or more items often leads to further and even more interesting questions.
 
 .. code:: python3
 
-   undf.groupby('code_3', as_index=False)['text_len'].mean().sort_values(
+   undf.groupby('country', as_index=False)['text_len'].mean().sort_values(
        'text_len').tail()
 
 
@@ -1830,7 +2236,7 @@ one or more items often leads to further and even more interesting questions.
       <thead>
         <tr style="text-align: right;">
           <th></th>
-          <th>code_3</th>
+          <th>country</th>
           <th>text_len</th>
         </tr>
       </thead>

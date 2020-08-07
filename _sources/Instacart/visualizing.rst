@@ -4,8 +4,9 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-Visualizing Grocery Data
-========================
+Visualizing Data
+=================
+In this section, we will learn how to visualize our work so far.
 
 You can get some inspiration from https://python-graph-gallery.com/.
 
@@ -16,14 +17,14 @@ You can get some inspiration from https://python-graph-gallery.com/.
 To accomplish this, you will have to dig into some new packages that we have not
 used so far. But this is all part of the process.
 
-We need to create square adjacency matrix: Aisle to Aisle. We'll use this to
-build our chord diagram and other graph like visualizations.
+We need to create a square adjacency matrix: Aisle to Aisle. We'll use this to
+build our **chord diagram** and other graph-like visualizations.
 
 1. Merge the order_product data frame with the aisle data frame so we have the
    aisle number for each product. (We can drop the aisle name to save memory.)
 2. Iterate over each order.
 3. Order the order by add_to_cart_order.
-4. Increase the count in from aisle (row) to to aisle (column); this is a
+4. Increase the count in from aisle (row) to aisle (column); this is a
    directed graph.
 
 
@@ -85,7 +86,9 @@ build our chord diagram and other graph like visualizations.
 
 
 .. image:: Figures/Instacart_84_1.png
-
+  :alt: A heat map that represents the squere adjacency matrix. The colors range from 
+        black to red to white in accending order. Most of the map is black with some red 
+        and white.
 
 Looks like a lot of small values. Let's make a histogram of the whole thing and
 see.
@@ -110,7 +113,8 @@ see.
 
 
 .. image:: Figures/Instacart_92_1.png
-
+  :alt: The same heat map as above but the smaller values (in black) are removed so that the 
+        larger values are more obvious.
 
 .. code:: python3
 

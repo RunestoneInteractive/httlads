@@ -4,8 +4,8 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-Sentiment Analysis of UN Speeches
-=================================
+Sentiment Analysis
+===================
 
 Sentiment analysis is a probabilistic evaluation of a piece of text that
 classifies the text as either positive, negative, or neutral. This kind of
@@ -104,7 +104,7 @@ for all of the speeches.
 
 
 .. figure:: Figures/sentiment_dist.png
-
+  :alt: A histogram with sentiment as the x-axis (ranging from -0.40 to 0.70) and Number of Records as the y-axis (ranging from 0 to 2400).
 
 Well, it seems that the vast majority of the speeches are neutral to positive.
 But that may not be a big surprise, as you might expect that in the general

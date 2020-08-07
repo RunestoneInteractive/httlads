@@ -7,14 +7,19 @@
 Working with Text
 =================
 
+Since we are working with data frames, sometimes when extracting text, blank spaces or 
+trailing characters come with the data. That is not good, so we have to clean it up. 
+Therefore, in this section, we will look at how we can clean up the text. 
+
+
 The ``Series`` and ``index`` objects in Pandas each have a set of string
 processing methods that make all of the standard Python string methods more
 available to work on all of the string elements in a Series. We call these
-"vectorized string methods", because Pandas is designed to allow these
+**"vectorized string methods"**, because Pandas is designed to allow these
 operations to happen in parallel on all the rows of the data frame
 simultaneously, if you have the computing power. These are accessed through an
 intermediate object called ``str``. For example, suppose we wanted to convert
-all of our three letter country codes to lowercase.
+all of our three-letter country codes to lowercase.
 
 
 .. code:: python3
@@ -168,7 +173,7 @@ Research Questions
 Text Complexity
 ---------------
 
-For years, people have been trying to find measures of text complexity,
+For years, people have been trying to find measures of **text complexity**,
 sometimes to determine what 'reading level' an article is at, or how much formal
 education is required to understand an piece of writing. These measures are
 often functions of things such as the number of sentences in a paragraph,

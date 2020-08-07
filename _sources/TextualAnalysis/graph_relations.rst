@@ -4,20 +4,20 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-Graphing Relationships Between Countries
-========================================
+Graphing Relationships Between Data
+=====================================
 
 One thing that we might expect to come out of a bunch of people at the United
 Nations making speeches is that one country might mention another country. In
 fact, this probably happens quite frequently. In this section, we are interested
 in how we might visualize the relationship of one country talking about another
-country. We will do this in two ways: first as a "heatmap", second as a
+country. We will do this in two ways: first as a **"heatmap"**, second as a
 **graph**.
 
 Preparing the Data
 ------------------
 
-Both of these visualization rely on us processing the data in the speeches, to
+Both of these visualizations rely on us processing the data in the speeches, to
 create pairs of countries based on one country mentioning the other in a speech.
 In fact, what we are going for will be a table that looks like this.
 
@@ -33,22 +33,22 @@ The columns are:
 
 * ``speaking_c``: The country doing the speaking
 * ``referenced_c``: The country that is referenced
-* ``ref_count``: The number of times a reference is made over all speeches
+* ``ref_count``: The number of times a reference is made over all of the speeches
 
 When we are all done, we will put them together into a matrix that will have the
-country codes as the rows and the columns, and the cells will contain the count
+country codes as the rows. The columns and the cells will contain the count
 of the number of references.
 
-This project might sounds a bit ambitious to tackle all at once, so it's
+This project might sound a bit ambitious to tackle all at once, so it's
 probably a good idea to limit the number of countries and the number of years to
 something more manageable, and more importantly, something we can check by hand.
 So, let's limit our countries to the United States, Canada, Cuba, and Mexico for
-the years 2014 and 2015. The corresponding three letter country codes are USA,
+the years 2014 and 2015. The corresponding three-letter country codes are USA,
 CAN, CUB, and MEX.
 
 Next, we'll want to combine all of the speeches made by each country into one
 long string. You can arrange it so that the index of the resulting series is the
-three letter country code.
+three-letter country code.
 
 
 .. fillintheblank:: un_fb_len1
@@ -407,6 +407,7 @@ The result we are after for our 2014, 2015 dataset looks like this.
 
 
 .. figure:: Figures/heatmap1.png
+  :alt: Heatmap of how often USA, Mexico, Cuba and Canada are refered to by eachother.  
 
 
 With the narrow representation of the data, it is easy to have Altair make a
@@ -463,6 +464,7 @@ Your new heatmap should look like this.
 
 
 .. image:: Figures/heatmap2.png
+  :alt: Heatmap of how often the USA, Mexico, Cuba and Canada are referred to by each other.  
 
 
 Now, try to make your heatmap for these countries across all years, then move on
@@ -481,14 +483,14 @@ to making a heatmap for all countries across all years.
 
 
 If you inspect the data, you will see that many of the problem country names
-follow a pattern of ``name (something something in parens)``. You can fix a
+follow a pattern of ``name (something in parens)``. You can fix a
 bunch of these by replacing the name that has the parentheses with just the
 name. The ``str.extract`` function will be really useful to solve this.
 
 To make a graph of all of the countries is a little overwhelming. So you may
 want to narrow it down to a group of approximately 12 related countries, just to
 get something a little more interesting and interpretable. For example, use one
-of our earlier datasets to get all of the three letter country codes for
+of our earlier datasets to get all of the three-letter country codes for
 countries in the same region.
 
 You should also take a moment to step back and reflect on how we have built this
@@ -508,14 +510,14 @@ a line between the two circles. Our small example would look like this.
 
 
 .. image:: Figures/Digraph.gv.png
+  :alt: Digraph of USA, Mexico, Cuba and Canada based on how often they refer to each other. Mexico, USA and Cuba form a bidirectional line between each other while Canada points to itself. 
 
-
-The arrows on the graph indicate which country is referencing which other
+The arrows on the graph indicate which country is referencing another
 country. Formally, we call the ovals with the country names **nodes**, and the
 arrows connecting them **edges**. One of the most common ways that computer
-scientists and mathematicians represent a graph is called an adjacency matrix.
+scientists and mathematicians represent a graph is called an **adjacency matrix**.
 Don't worry if this sounds daunting, you have actually already built an
-adjacency matrix!
+**adjacency matrix**!
 
 
 .. raw:: html
@@ -570,18 +572,18 @@ adjacency matrix!
     </table>
 
 
-In an adjacency matrix, the cells indicate if there is an edge from the row node
+In an **adjacency matrix**, the cells indicate if there is an edge from the row node
 to the column node. The values in the cells are often used to represent a weight
 or cost to go from one node to the other. A 0 in the cell indicates that there
 is no relationship.
 
-A second common way to represent a graph is through an **edge list**. Our narrow
+A second common way to represent a graph is through an edge list. Our narrow
 representation that we built originally for this project fits that description
 perfectly. Even the names we chose for the columns (``speaking_c``,
 ``referenced_c``) suggest a graph like relationship.
 
 There are two graph packages we can use: ``networkx`` and ``graphviz``. It's not
-clear that one is clear preferable over the other; each has some strengths and
+clear that one is preferable over the other; each has some strengths and
 weaknesses and in fact they can be used together to some extent. ``graphviz``
 may be a little easier to use, since the file format is easy to edit, and can
 draw pretty graphs out of the box. The graph above was drawn using ``graphviz``.
@@ -628,8 +630,8 @@ The above produces a rather unattractive graph.
 
 
 .. image:: Figures/networkx1.png
-
-
+  :alt: A digraph of the Mexico, USA, Cuba, and Canada set as nodes. Three undirected edges connect Mexico, USA and Cuba. Canada is not connected to any other node. All nodes are coloured Red.  
+  
 The graph is missing the arrows, the text doesn't fit, and the bright red is a
 bit alarming for no good reason. The layout is also not very easy to understand.
 We can immediately do much better by saving the graph we created with
@@ -651,7 +653,7 @@ This produces a much nicer looking graph.
 
 
 .. image:: Figures/mydots.dot.png
-
+  :alt: Directed digraph of USA, Mexico, Cuba, and Canada based on how often they refer to each other. Mexico has an edge pointing to Cuba and USA. Cuba has an edge pointing to the USA. USA has an edge pointing to Cuba. Canada has no edges connecting it to any other country. All four countries have edges pointing to themselves.
 
 As with many tools, it's easy to get 80% done in a pretty quick way, but if you
 want to make a graph worthy of a polished presentation, that last 20% can take
@@ -676,7 +678,7 @@ Projects for Further Exploration
 
 * Since graphing each country of the world individually is a bit difficult,
   build a heatmap or graph of how the countries within each subregion reference
-  each other. There are about 22 sub regions in the
+  each other. There are about 22 sub-regions in the
   `country_codes <../_static/country_codes.csv>`_ data file, which is quite
   manageable.
 

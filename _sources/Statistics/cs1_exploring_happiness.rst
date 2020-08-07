@@ -4,7 +4,7 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-.. _h651bd6f7d3125664c517b446bc5d4b:
+.. _CSHappinessReport:
 
 Case Study 1: The Happiness Report
 ==================================
@@ -155,7 +155,7 @@ statistics and visualization.
 
      + Correct
 
-.. _hf33f5c6794a1d5ee7c64395b788:
+.. _CS2ResearchQuestions:
 
 Happiness Index Research Questions
 ----------------------------------
