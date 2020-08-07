@@ -47,6 +47,7 @@ Table of Contents
     WorldFacts/toctree.rst
     DataEthics/toctree.rst
     UNGeneralDebates/toctree.rst
+    TextualAnalysis/toctree.rst
     PredictiveAnalytics/toctree.rst
     Instacart/toctree.rst
     Google_Colab/toctree.rst
