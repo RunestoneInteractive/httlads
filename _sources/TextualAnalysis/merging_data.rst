@@ -206,7 +206,7 @@ row in ``undf``.
 
 In the ``c_codes`` data frame, ``code_3`` is the "**primary key**", as no two rows
 have the same value for ``code_3``. In the ``undf`` data frame, ``code_3`` is a
-"**foreign key**", as we use it to lookup additional information in a table where
+"**foreign key**", as we use it to look up additional information in a table where
 ``code_3`` is a primary key. More on this when we study SQL queries.
 
 
@@ -347,11 +347,11 @@ have the same value for ``code_3``. In the ``undf`` data frame, ``code_3`` is a
     </div>
 
 
-Wait! What? What happened to EU?! Why did it dissappear after the merge? What
-else may have disappeared? The reason the EU dissappeared is that it is not in
+Wait! What? What happened to the EU?! Why did it disappear after the merge? What
+else may have disappeared? The reason the EU disappeared is that it is not in
 the ``c_codes`` data frame, and as you may recall, the ``merge`` function does
 the equivalent of a set intersection. That is, the key must be in BOTH data
-frames in order for it to be in the result. We can do our merge using an outer
+frames for it to be in the result. We can do our merge using an outer
 join to preserve the data, then see which countries have no text and which texts
 have no country name.
 
@@ -582,7 +582,7 @@ South Sudan has only spoken 5 times. Why is that? There is a very logical
 explanation, but it only makes you want to check out the 5 or 10 countries that
 have spoken the least.
 
-But why did EU seem to dissappear? When we do a merge, if the key is missing,
+But why did EU seem to disappear? When we do a merge, if the key is missing,
 then the row is not included in the final result.
 
 
@@ -629,7 +629,7 @@ then the row is not included in the final result.
 Can you figure out what each of the above stands for? Why are they not in the
 list presented earlier?
 
-At this point, you may want to edit the csv file and add the data for these
+At this point, you may want to edit the CSV file and add the data for these
 countries to the file. Then, you can rerun the whole notebook and we will not
 lose as much data.
 
@@ -649,7 +649,7 @@ data into shape. Wickham says that tidy data has the following attributes.
 
 How does our United Nations data stack up? Pretty well. We have four columns:
 session, year, country, and text. If we think of the text of the speech as the
-thing we can observe, then each row does, in fact, form an observation, and
+thing we can observe, then each row does form an observation, and
 session, year, and country are attributes that identify this particular
 observation.
 
