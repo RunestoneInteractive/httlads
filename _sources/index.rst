@@ -6,6 +6,10 @@
 How to Think like a Data Scientist
 ==================================
 
+**Second Edition**
+
+by Brad Miller, Jacqueline Boggs, and Janice L Pearce
+
 .. Here is were you specify the content and order of your new book.
 
 .. Each section heading (e.g. "SECTION 1: A Random Section") will be

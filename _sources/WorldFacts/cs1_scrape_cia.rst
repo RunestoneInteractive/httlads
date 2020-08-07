@@ -6,8 +6,8 @@
 
 .. _screenscrape:
 
-Challenge: Screen Scraping the CIA
-==================================
+Case Study 1: Screen Scraping the CIA
+=======================================
 
 The country data that we have been using was compiled and turned into a CSV file
 in 2006. Much of that data comes from the CIA World Factbook (not Facebook, as
@@ -22,7 +22,7 @@ fun as each column of the data is on its own page. But you can do it, and you
 will see how powerful you can be when you have the right tools!
 
 **Think Generally!** At the end of this we would like to be able to scrape the
-CIA data for **any** year not just 2017, so keep that in mind.
+CIA data for **any** year, not just 2017, so keep that in mind.
 
 You can download each year of the factbook going back to the year 2000
 `from the CIA <https://www.cia.gov/library/publications/download/>`_. Start with
@@ -35,10 +35,10 @@ when we have gathered all of the columns, we can pull them together into one
 nice data frame and we'll learn how to save that to a CSV file.
 
 Again, think generally. If you design a good function for finding and scraping
-one piece of information, make it work for all pieces of information, and at the
+one piece of information, make it work for all pieces of information, and in the
 end you will have a minimal amount of code that does a LOT of work.
 
-Lets take a look at the file structure of the downloaded data from 2017.
+Let's take a look at the file structure of the downloaded data from 2017.
 
 
 .. code:: python3
@@ -89,7 +89,7 @@ The webpage for that file looks like this.
 
 
 .. figure:: Figures/factbook_notes.png
-
+  :alt: Screen capture of the Definitions and Notes page for the references section in the World Factbook 2017.
    Part of the Definitions and Notes page for the World Factbook 2017.
 
 
@@ -129,7 +129,7 @@ text for this page.
 		</div>
 
 
-If you have not seen HTML before, this may look a bit confusing. One of the
+If you have not seen **HTML** before, this may look a bit confusing. One of the
 skills you will develop as a data scientist is learning what to focus on and
 what to ignore. This takes practice and experience, so don't be frustrated if it
 seems a bit overwhelming at the beginning.
@@ -159,7 +159,7 @@ relationships as follows.
 
 
 .. figure:: Figures/htmltree.png
-
+  :alt: A tree diagram of the different HTML elements and tags from the above code that shows the parent-child relationship between those elements and tags.
 
 So, what we need to do is look at the page as a whole and see if we can find a
 pattern that will allow us to find the two items we are interested in. In newer
@@ -177,7 +177,7 @@ string searching facilities. But, that would be *painful* for sure. Instead, we
 will turn to another of Python's packages that will make the job fun and very
 manageable. That package is called
 `BeautifulSoup <https://www.crummy.com/software/BeautifulSoup/bs4/doc/>`_. The
-name "Beautiful Soup" comes from *Alice in Wonderland*; it is the title of a
+name "**Beautiful Soup**" comes from *Alice in Wonderland*; it is the title of a
 song sung by the Mock Turtle. (Yes, its turtles everywhere!) Using
 BeautifulSoup, we can get the web page into a form that we can use some real
 power search tools.
@@ -237,7 +237,7 @@ So far, this doesn't seem like much help, but let's see how we can use the
 search capabilities of BeautifulSoup to find all of the ``span`` tags with the
 ``class`` "category". To do this, we will use a search syntax that is commonly
 used in the web development community. It is the same syntax that is used to
-write the rules for the Cascading Style Sheets (CSS) that are used to make our
+write the rules for the **Cascading Style Sheets (CSS)** that are used to make our
 web pages look nice.
 
 The search syntax allows us to:
@@ -248,7 +248,7 @@ The search syntax allows us to:
 * Search for all matching tags that are the children of some other tag
 * Many other things of a similar essence
 
-The search syntax is uses a couple of special characters to indicate
+The search syntax uses a couple of special characters to indicate
 relationships or to identify classes and ids.
 
 * ``.`` is used to specify a class, so ``.category`` finds all tags that have
@@ -257,7 +257,7 @@ relationships or to identify classes and ids.
   example, ``span.category`` will only select span tags with ``class=category``.
 * ``#`` is used to specify an id so ``div#2053`` would only match a div tag with
   id=2053. ``#2053`` would find any tag with id=2053. Note ids are meant to be
-  unique within a web page so ``#2053`` should ony find a single tag.
+  unique within a web page so ``#2053`` should olny find a single tag.
 * `` `` indicates parent-child relationship, so ``span table`` would find all of
   the table tags that are children of a span, and ``div span table`` would find
   all the tables that are children of a span that are children of a div.
@@ -399,7 +399,7 @@ Loading All the Data in Rough Form
 
 One more thing to note: you might assume that the country names will all be
 consistent from field to field but that probably isn't the case. What is
-consistent is the two-letter country code used in the URL to the detail
+consistent is the two-letter country code used in the URL to the detailed
 information about each country, as well as the id of the ``tr`` tag in the large
 table that contains the data you want. So, what you are are going to have to do
 is build a data structure for each field. You will want a name for the field,
@@ -585,11 +585,11 @@ constructor and you should have something that looks like this.
     </div>
 
 
-So, we have made lot of progress but we still have a lot of cleanup to do! You
+So, we have made a lot of progress but we still have a lot of cleanup to do! You
 will have noticed that many of the fields that we wanted to be numeric are
 definitely not. Many of them are in a more human-readable format than
 computer-digestible. You should consult the documentation on the ``extract``
-method in Pandas, as it will help you get want you want from the strings you
+method in Pandas, as it will help you get what you want from the strings you
 currently have.
 
 

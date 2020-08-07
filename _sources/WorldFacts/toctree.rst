@@ -4,15 +4,25 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-CIA World Factbook Data
-=======================
+Exploratory Data Analysis
+==========================
 
 .. toctree::
-   :caption: Practicing with World Factbook
    :maxdepth: 2
 
-   introduction.rst
-   exploratory_data_analysis.rst
-   screenscrape_cids.rst
-   scrape_cia.rst
-   government_types.rst
+   introduction.rst                        
+   cs1_exploratory_data_analysis.rst
+   cs1_graphing_infant_mortality.rst
+   cs1_scrape_cia.rst
+   cs1_government_types.rst
+   cs2_data_analysis.rst
+   cs2_graphing_business_data.rst
+   cs2_scrape_business_data_from_cia.rst
+   cs2_compare_cia_gov_forms.rst
+   glossary.rst
+
+
+
+
+    
+   
