@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Problem Solving with Algorithms and Data Structures documentation build configuration file, created by
+# How to Think Like a Data Scientist documentation build configuration file, created by
 # sphinx-quickstart on Thu Oct 27 08:17:45 2011.
 #
 # This file is execfile()d with the current directory set to its containing dir.
@@ -56,8 +56,8 @@ source_suffix = ".rst"
 master_doc = "index"
 
 # General information about the project.
-project = "Runestone Interactive Overview"
-copyright = "2017 bmiller"
+project = "How to Think Like a Data Scientist"
+copyright = "2020 Brad Miller, Jacqueline Boggs, and Jan Pearce"
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the

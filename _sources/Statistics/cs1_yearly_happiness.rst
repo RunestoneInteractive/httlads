@@ -6,11 +6,11 @@
 
 .. _h756a797b286237b36797fb1f277d18:
 
-Case Study 2. Comparing Happiness Data across Years
+Case Study 1: Comparing Happiness Data across Years
 ===================================================
 
-We have two files of happiness data, one for 2017 that you have been using, and
-another for `2012 <../_static/happiness_2012.csv>`_, so you can do some
+We have two files of happiness data, one for 2017 which you have been using, and
+another for `2012 <../_static/happiness_2012.csv>`_, so you can make some
 comparisons across a span of five years.
 
 1. Start a new workbook, and get each of the csv files for the happiness data
@@ -21,7 +21,7 @@ comparisons across a span of five years.
    and 2017 rank. (Hint: Use ``VLOOKUP``.) But wait! What is the deal with these
    ``#N/A`` values? Shouldn't the happiness report have the same countries for
    every year? Apparently, just like regular people, not all countries
-   participated in the survey every year. Let's press on and hope for best for
+   participated in the survey every year. Let's press on and hope for the best for
    the moment.
 
 Now, create a column where you calculate the change between the 2017 rank and

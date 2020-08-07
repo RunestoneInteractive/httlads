@@ -4,15 +4,15 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-Exploratory Data Analysis
-=========================
+Case Study 1: Exploratory Data Analysis
+==========================================
 
 Loading Data into a DataFrame from a CSV File
 ---------------------------------------------
 
-The CSV file is one of the most common ways you will find data. CSV stands for
+The **CSV file** is one of the most common ways you will find data. CSV stands for
 "comma separated value", and this format allows us to share data files in a
-simple text format. The data we will use to get started with Pandas is the data
+simple text format. The data we will use to get started with **Pandas** is the data
 about countries we used in the spreadsheet module. You can open a CSV file in
 any text editor, but it may not be particularly easy to read. But because of its
 structure, it is easy to parse for analysis. The first few lines of the raw CSV
@@ -243,7 +243,7 @@ Describing the Data
 -  Population density per square mile
 -  Coastline coast/area ratio
 -  Net migration
--  Infant mortaility per 1000 births
+-  Infant mortality per 1000 births
 -  GDP $ per capita
 -  Literacy %
 -  Phones per 1000
@@ -254,10 +254,10 @@ Describing the Data
 -  Birthrate
 -  Deathrate
 -  Agriculture % GDP
--  Inustry % GDP
+-  Industry % GDP
 -  Service % GDP
 
-The Climate numbers are as follows.
+The climate numbers are as follows.
 
 1. Dry tropical or tundra and ice
 2. Wet tropical
@@ -509,6 +509,7 @@ Visualizing Distribution with Histograms
 
 
 .. image:: Figures/WorldFactbook_15_0.png
+  :alt: Histogram with Number of Records as the y-axis and Birth Rate as the x-axis.
 
 
 We can shortcut a lot of what we did above into a single line, because once we
@@ -525,7 +526,7 @@ Jupyter environment knows how to display automatically.
 
 
 .. image:: Figures/WorldFactbook_17_0.png
-
+  :alt: Histogram with Number of Records as the y-axis and Birth Rate as the x-axis.
 
 Practice
 --------
@@ -568,7 +569,7 @@ Practice
 Scatter Plots for Discovering Relationships
 -------------------------------------------
 
-Now, let's make a simple scatter plot of area versus population of the
+Now, let's make a simple **scatter plot** of area versus population of the
 countries.
 
 
@@ -578,6 +579,7 @@ countries.
 
 
 .. image:: Figures/WorldFactbook_22_0.png
+  :alt: Histogram with Number of Records as the y-axis and Birth Rate as the x-axis.
 
 
 That's not a very satisfying graph, but it does make us want to focus more on
@@ -585,11 +587,11 @@ the lower left corner. Let's redo the graph focussing on the countries with a
 population under 150 million and an area under million. Let's start with the
 first part.
 
-To do this, we will create a new DataFrame where we focus on the countries with
-populations less than 150 million and areas less than 4 million. Pandas makes
+To do this, we will create a new **DataFrame** where we focus on the countries with
+populations less than 150 million and areas less than 4 million. Pandas make
 this really easy with its querying power.
 
-The statement below produces a Series of boolean values. These boolean values
+The statement below produces a Series of **boolean values**. These boolean values
 are used to index the data frame, and only the rows corresponding to True values
 are returned in the result.
 
@@ -1582,13 +1584,14 @@ variable first.
 
 
 .. image:: Figures/WorldFactbook_30_0.png
+  :alt: Scatter plot with Area as the y-axis and Population as the x-axis. Most of the points are congregated at a very low y-axis but are spread out on the x-axis. One point is near the top of the y-axis and center of the x-axis.
 
 
 How interesting! One country has such a large value that it pushes all the
 others down. We added a tooltip parameter so that if you hover over that point,
 you will see it is Greenland (which has lots of land area, but not too many
 people). There are large universities that have more people than the entire
-country of Greenland. Let's improve our query to focus on area less than
+country of Greenland. Let's improve our query to focus on an area less than
 200,000.
 
 We can do more complicated boolean expressions by using the ``|`` (logical *or*)
@@ -2523,6 +2526,7 @@ boolean expression to limit our DataFrame in both directions.
 
 
 .. image:: Figures/WorldFactbook_34_0.png
+  :alt: Scatter plot with Area as the y-axis and Population as the x-axis. Most of the points are congregated at a low y-axis (with varying y values) but are spread out on the x-axis. One point is near the top of the y-axis and center of the x-axis.
 
 
 Suppose you have a favorite country you have visited or lived in at some point.
@@ -2676,7 +2680,7 @@ spaces.
 
 You may recall that Python has a string method called ``strip`` that does
 exactly what we want. How can we get that to apply to all of the strings in the
-Series? Pandas allows us to do this using the ``str`` attribute of the series in
+Series? Pandas allow us to do this using the ``str`` attribute of the series in
 combination with most of the standard string methods you know about.
 
 
@@ -2841,7 +2845,7 @@ Now, we can replace our original ``Country`` column with the stripped column.
 Power Tools: Scatter Matrix
 ---------------------------
 
-It would be pretty tedius to look at all the different pairs of things we might
+It would be pretty tedious to look at all the different pairs of things we might
 want to look at for correlation one at a time, but we can use a scatter matrix
 to make life easier.
 
@@ -2862,7 +2866,7 @@ to make life easier.
 
 
 .. image:: Figures/WorldFactbook_45_0.png
-
+  :alt: Scatter Matrix of Birth rate, Death rate, Infant Mortality, and GDP.
 
 .. code:: python3
 
@@ -2894,11 +2898,11 @@ Practice Questions
 1. What are the top 10 countries by GDP?
 2. What are the top 20 countries by population?
 3. What are the 10 countries with the largest net migration?
-4. What is the distribution of Argiculture, Industry, and service for the
+4. What is the distribution of Agriculture, Industry, and service for the
    countries in Western Europe?
-5. What are the names, population and Area of the 5 largest (by area) landlocked
+5. What are the names, population and, Area of the 5 largest (by area) landlocked
    countries?
-6. What are the names and population of the five most populous landlocked
+6. What are the names and populations of the five most populous landlocked
    countries?
 7. What is the name and GDP of the 10 countries with the most cell phones/1000
    people?
