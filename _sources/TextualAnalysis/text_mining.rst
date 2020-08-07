@@ -804,7 +804,7 @@ convenient for us.
 
 
 .. image:: Figures/UNGeneralDebates_13_0.png
-  :alt: Bar chart showing the number of records as the y axis and text(binned) as the x axis. Speech Distribution is the title of the chart. 
+  :alt: "Bar chart showing the number of records as the y axis and text(binned) as the x axis. Speech Distribution is the title of the chart."
 
 
 .. code:: python3
@@ -932,7 +932,7 @@ to get a bit more information:
 
 
 The important part of the result of that command is that it tells us that the
-character set is `iso-8859-1`. This piece of information is important, because
+character set is **`iso-8859-1`**. This piece of information is important, because
 it tells Python how to interpret the 8 bits as a character we would recognize.
 For example, let's take the familiar copyright © symbol. This symbol is stored
 in the computer's memory as 10101001. Aren't you glad you don't have to remember
@@ -940,19 +940,22 @@ that? When Python tries to display a character for us, it has to know how that
 information is encoded, that is, how should Python interpret those bits.
 There are several common **encodings** used today.
 
-* ASCII (American Standard Code for Information Interchange): This is one of the
-  oldest encodings, and has been in use for years, its major limitation is that
+* **ASCII** (American Standard Code for Information Interchange): This is one of the
+  oldest encodings and has been in use for years. Its major limitation is that
   it can only encode 256 characters. And in fact, Python only interprets 0-127
-  as proper ASCII. This was fine for American English, in the early days of
-  computing but it does not work in the world today with many languages and many
+  as proper ASCII. This was fine for American English in the early days of
+  computing, but it does not work in the world today with many languages and many
   more emojis.
 
-* '**utf-8**': This is probably the most common encoding in use today. It can
-  efficiently encode over 4 billion characters. Some with just 8 bits and others
+* **'utf-8'**: This is probably the most common encoding in use today. UTF stands for 
+  an 8-bit Unicode Transformation Format, which can encode all 1,112,064 characters in Unicode. 
+  It can efficiently encode over 4 billion characters. Some with just 8 bits and others 
   with up to 32 bits.
 
-* 'iso-8859-1' (also called 'latin-1'): This encoding takes full advantage of
-  all 8 bits of the ascii character set.
+* **'iso-8859-1'** (also called 'latin-1'): This encoding takes full advantage of
+  all 8 bits of the **ASCII** character set. It only uses one byte, so it can only represent
+  the first 256 Unicode characters. ISO-8859 contains encodings of different character sets, 
+  and the '-1' specifies  to use the 'latin-1' character set.
 
 
 So, let's try a little experiment. We can represent 169 as 10101001 or as the
@@ -979,7 +982,7 @@ character set.
 Aha! That error message looks familiar. (And you will run into this many times
 when working with data from the internet).
 
-Lets try decoding hexadecimal a9 using the ASCII character set.
+Lets give **ASCII** a try.
 
 .. code:: python3
 
@@ -1928,7 +1931,7 @@ change and global warming are mentioned.
 
 
 .. image:: Figures/UNGeneralDebates_69_0.png
-  :alt: Line graph showing mentions of global warming over time. 
+  :alt: "Line graph showing mentions of global warming over time."  
 
 
 .. code:: python3
@@ -1939,9 +1942,7 @@ change and global warming are mentioned.
 
 
 .. image:: Figures/UNGeneralDebates_70_0.png
-  :alt: Line charts showing mentions of global warming and climate change and over time from 1970 to 2015. 
-
-
+  :alt: "Line charts showing mentions of global warming and climate change and over time from 1970 to 2015."
 
 Fascinating! Until the late 80's, neither global warming or climate change were
 mentioned with relatively close to the same frequency until 2006 when climate
@@ -1965,7 +1966,7 @@ one or more items often leads to further and even more interesting questions.
 
 
 .. image:: Figures/UNGeneralDebates_74_0.png
-  :alt: Line charts showing mentions of terror over time from 1970 to 2015. 
+  :alt: "Line charts showing mentions of terror over time from 1970 to 2015. "
 
 
 .. code:: python3
@@ -2147,8 +2148,7 @@ one or more items often leads to further and even more interesting questions.
 
 
 .. image:: Figures/UNGeneralDebates_81_0.png
-  :alt: Bar chart showing the number of records as the y axis and text(binned) as the x axis. 
-
+  :alt: "Bar chart showing the number of records as the y axis and text(binned) as the x axis."
 
 .. code:: python3
 

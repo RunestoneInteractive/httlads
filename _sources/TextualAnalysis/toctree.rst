@@ -4,15 +4,15 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-Text Analysis
-==============
+Textual Analysis
+================
 
 .. toctree::
-   :caption: UN General Debates
    :maxdepth: 2
 
-   text_mining.rst
-   merging_data.rsts
+   introduction.rst
+   text_mining.rsts
+   merging_data.rst
    tidying_text.rst
    research_questions.rst
    graph_relations.rst

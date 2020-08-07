@@ -36,7 +36,7 @@ The columns are:
 * ``ref_count``: The number of times a reference is made over all speeches
 
 When we are all done, we will put them together into a matrix that will have the
-country codes as the rows and the columns, and the cells will contain the count
+country codes as the rows. The columns and the cells will contain the count
 of the number of references.
 
 This project might sounds a bit ambitious to tackle all at once, so it's
@@ -407,6 +407,7 @@ The result we are after for our 2014, 2015 dataset looks like this.
 
 
 .. figure:: Figures/heatmap1.png
+  :alt: Heatmap of how often USA, Mexico, Cuba and Canada are refered to by eachother.  
 
 
 With the narrow representation of the data, it is easy to have Altair make a
@@ -463,6 +464,7 @@ Your new heatmap should look like this.
 
 
 .. image:: Figures/heatmap2.png
+  :alt: Heatmap of how often the USA, Mexico, Cuba and Canada are referred to by each other.  
 
 
 Now, try to make your heatmap for these countries across all years, then move on
@@ -508,14 +510,14 @@ a line between the two circles. Our small example would look like this.
 
 
 .. image:: Figures/Digraph.gv.png
-
+  :alt: Digraph of USA, Mexico, Cuba and Canada based on how often they refer to each other. Mexico, USA and Cuba form a bidirectional line between each other while Canada points to itself. 
 
 The arrows on the graph indicate which country is referencing which other
 country. Formally, we call the ovals with the country names **nodes**, and the
 arrows connecting them **edges**. One of the most common ways that computer
-scientists and mathematicians represent a graph is called an adjacency matrix.
+scientists and mathematicians represent a graph is called an **adjacency matrix**.
 Don't worry if this sounds daunting, you have actually already built an
-adjacency matrix!
+**adjacency matrix**!
 
 
 .. raw:: html
@@ -570,7 +572,7 @@ adjacency matrix!
     </table>
 
 
-In an adjacency matrix, the cells indicate if there is an edge from the row node
+In an **adjacency matrix**, the cells indicate if there is an edge from the row node
 to the column node. The values in the cells are often used to represent a weight
 or cost to go from one node to the other. A 0 in the cell indicates that there
 is no relationship.
@@ -628,8 +630,8 @@ The above produces a rather unattractive graph.
 
 
 .. image:: Figures/networkx1.png
-
-
+  :alt: A digraph of the Mexico, USA, Cuba, and Canada set as nodes. Three undirected edges connect Mexico, USA and Cuba. Canada is not connected to any other node. All nodes are coloured Red.  
+  
 The graph is missing the arrows, the text doesn't fit, and the bright red is a
 bit alarming for no good reason. The layout is also not very easy to understand.
 We can immediately do much better by saving the graph we created with
@@ -651,7 +653,7 @@ This produces a much nicer looking graph.
 
 
 .. image:: Figures/mydots.dot.png
-
+  :alt: Directed digraph of USA, Mexico, Cuba, and Canada based on how often they refer to each other. Mexico has an edge pointing to Cuba and USA. Cuba has an edge pointing to the USA. USA has an edge pointing to Cuba. Canada has no edges connecting it to any other country. All four countries have edges pointing to themselves.
 
 As with many tools, it's easy to get 80% done in a pretty quick way, but if you
 want to make a graph worthy of a polished presentation, that last 20% can take

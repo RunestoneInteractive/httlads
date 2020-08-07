@@ -104,7 +104,7 @@ for all of the speeches.
 
 
 .. figure:: Figures/sentiment_dist.png
-
+  :alt: A histogram with sentiment as the x-axis (ranging from -0.40 to 0.70) and Number of Records as the y-axis (ranging from 0 to 2400).
 
 Well, it seems that the vast majority of the speeches are neutral to positive.
 But that may not be a big surprise, as you might expect that in the general
