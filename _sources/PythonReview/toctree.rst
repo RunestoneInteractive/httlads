@@ -15,3 +15,4 @@ Setting up Jupyter and a Python Review
    installing.rst
    python_review.rst
    markdown.rst
+   glossary.rst
