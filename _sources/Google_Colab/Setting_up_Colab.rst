@@ -28,7 +28,7 @@ Once you are signed in, you should see a pop-up box similar to the one shown bel
   :alt: Pop-up window to create a new notebook or open an existing one on google colab.
 
 
-You can create a new notebook file by clicking on NEW NOTEBOOK, but for now close the pop up by clicking on cancel 
+You can create a new notebook file by clicking on NEW NOTEBOOK, but for now, close the pop up by clicking on cancel 
 or by clicking on the shaded area outside of the pop-up. Another way of creating a new notebook is to click on the File tab (top left) -> New Notebook. 
 Notice that there are options for opening different files and uploading files, these will be important for later. 
 
@@ -49,12 +49,12 @@ Before we start getting into the coding, let's familiarize ourselves with the us
 3. **Run Cell:** This is the run button. Clicking this will run any code that is inserted in the cell beside it. You can use the shortcut shift+enter to run the current cell and exit to a new one.
 4. **Table of Contents:** Here you will be able to create and traverse different sections inside of your notebook. Sections allow you to organize your code and improve readability.
 5. **Menu Bar:** Like in any other application, this menu bar can be used to manipulate the entire file or add new files. Look over the different tabs and familiarize yourself with the different options. 
-   In particular, make sure you know how to upload or open a notebook, and download the notebook (all of these options are under "File").
+   In particular, make sure you know how to upload or open a notebook and download the notebook (all of these options are under "File").
 6. **File Name:** This is the name of your file. You can click on it to change the name. Do not edit the extension (.ipynb) while editing the file name as this might make your file unopenable.
 7. **Insert Code Cell:** This button will add a code cell below the cell you currently have selected.
 8. **Insert Text Cell:** This button will add a text cell below the cell you currently have selected.
 9. **Cell:** This is the cell. This is where you can write your code or add text depending on the type of cell it is.
-10. **Output:** This is where the output of you code, including any errors, will be shown.
+10. **Output:** This is the output of your code, including any errors, will be shown.
 11. **Clear Output:** This button will remove the output.
 
 .. image:: Figures/colab_UI_right.JPG
@@ -64,7 +64,7 @@ Before we start getting into the coding, let's familiarize ourselves with the us
     Google only allots a certain amount of Ram and Disk space for each *user*, so be mindful of that as you work on larger projects. 
 13. **Link to Cell:** This button will create a URL that will link to the cell you have selected.
 14. **Comment:** This button will allow you to create a comment on the selected cell. Note that this will be a comment on (about) the cell and not a comment in the cell.
-15. **Settings:** This button will allow you to change the Theme of the notebook, font type and size, indentation width, etc.
+15. **Settings:** This button will allow you to change the Theme of the notebook, font type, and size, indentation width, etc.
 16. **Delete Cell:** This button will delete the selected cell.
 17. **More Options:** Contains options to cut and copy a cell as well as the option to add form and hide code.
 
@@ -184,7 +184,7 @@ cells multiple times or out of order.
 
 Google Colab has preinstalled packages, modules, and libraries to make it easier for us to use it without 
 worrying about having to download the packages ourselves. As you might have noticed 
-in one of the codeblocks above, "import math" allows you to utilize the math module 
+in one of the code blocks above, "import math" allows you to utilize the math module 
 which includes summation and subtraction. As you go further in this chapter, you will 
 be importing other packages and libraries as well.  
 

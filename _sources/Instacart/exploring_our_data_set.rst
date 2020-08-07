@@ -15,7 +15,7 @@ Instacart is a shopping and delivery service that works with stores in your city
 such as Whole Foods, Costco, and local stores. They pick up your order and
 deliver it to your door. Consequently, they have a lot of data on a lot of
 different shopping behaviors that we can use to make predictions about future
-purchases, or suggest items that a person may want to add to their shopping cart
+purchases or suggest items that a person may want to add to their shopping cart
 based on their past behavior. Sound familiar? This is the kind of thing that
 Amazon has been doing successfully for years.
 
@@ -48,7 +48,7 @@ Reading List
 ------------
 
 -  `Market Basket Analysis <http://pbpython.com/market-basket-analysis.html>`_
--  Item Recommender Systems
+-  `Item Recommender Systems <https://www.cs.umd.edu/~samir/498/Amazon-Recommendations.pdf>`_
 
 
 The Data
@@ -111,7 +111,7 @@ orders.csv
 
 This file tells to which set (prior, train, test) an order belongs. You are
 predicting reordered items only for the test set orders. ``order_dow`` is the
-day of week.
+day of the week.
 
 
 .. code-block:: none

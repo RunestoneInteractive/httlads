@@ -91,7 +91,7 @@ the count of the number of times they ended up in the same shopping cart.
 
 
 Looking at the table, it is clear that Doritos and Snickers are most often
-purchased together, because the total is 6. The next most common pair is
+purchased together because the total is 6. The next most common pair is
 Snickers and Oreos, that just beat out Doritos and Oreos.
 
 Looking at the table makes answering this question fairly straightforward. We
@@ -269,9 +269,9 @@ Constructing an Item-Item Matrix
 Constructing a **matrix** of the kind shown above will take a bit of thought (and
 time!). So let's do some design first.
 
-1. Its a very good assumption that this data is sparse, so lets start by
+1. It's a very good assumption that this data is sparse, so let's start by
    using a data structure that supports sparsity.  A dictionary of
-   dictionaries is the key to this. In fact scroll back just a bit and
+   dictionaries is the key to this. In fact, scroll back just a bit and
    look carefully at how our DataFrame was constructed. You will notice
    a dictionary like this:
 
@@ -294,8 +294,8 @@ time!). So let's do some design first.
        }
 
 
-   If you think about it, you will realise that we are storing twice as much
-   data as we need to, since the matrix we are building is symmetric; the value
+   If you think about it, you will realzse that we are storing twice as much
+   data as we need to since the matrix we are building is symmetric; the value
    at position ``(i, j)`` will always match the value at position ``(j, i)``,
    because the order of the products is not important.
 
@@ -557,13 +557,13 @@ matrix easily.
    {1: {2: 2, 3: 6}, 2: {3: 3}, 3: {}}
 
 
-Now we have a "**co-occurence matrix**"; given one product, we an tell how often
+Now we have a "**co-occurrence matrix**"; given one product, we can tell how often
 that product is in the same shopping cart as many others. The matrix we have
 built turns out to be a "**lower triangular matrix**" because we are only storing
 the lower left. The upper right is symmetric so we can save half the storage!
 
 **Important:** Saving storage often comes with an additional cost in complexity.
-In this case, becuase we are building a "lower triangular" matrix, we have to be
+In this case, because we are building a "lower triangular" matrix, we have to be
 careful if we want to get all of the products that are purchased together. We
 cannot just look at the column corresponding to the product and we cannot just
 look at the row corresponding to the product. If we wanted to know everything
@@ -572,12 +572,12 @@ for 2. The row for 2 tells us that 2 was purchased with 1 (2 times) and the
 column for 2 tells us that 2 was purchased with 3 (3 times). If we kept both
 triangles we could look at either the row or the column.
 
-Let's build the item item matrix for the instacart data and see what we can
+Let's build the item-item matrix for the instacart data and see what we can
 learn!
 
 The first thing we'll need is a list of unique order ids. In the toy example
 above, we were able to just use a range of numbers, because we knew that the
-numbers started at 1 and went sequentailly.
+numbers started at 1 and went sequentially.
 
 
 .. code:: python3
@@ -738,7 +738,7 @@ numbers started at 1 and went sequentailly.
 
 
 A bit of analysis revealed that there are a HUGE number of entries in the matrix
-that are a count of 1. These 1 time "co-purchases" don't give us much useful
+that are a count of 1. These 1-time "co-purchases" don't give us much useful
 information for recommending products, so let's save some memory and remove
 them.
 
@@ -1157,7 +1157,7 @@ time.
 
 We can probably reduce the size of our **sparse matrix** by eliminating all of the
 cells with a count of 1. That doesn't really tell us anything that we would want
-to use in making a recommendation. We can also eliminate our original
+to use in making a recommendations. We can also eliminate our original
 dictionary.
 
 
@@ -1174,7 +1174,7 @@ articles, stocks, search terms, or products, this kind of recommender is widely
 used in industry.
 
 -  Create a histogram that shows the distribution of the shopping cart
-   co-occurence counts.
+   co-occurrence counts.
 
 -  How many items in this item-item matrix contain a count of 1? That is
    probably not good information and you could save a lot more memory by
@@ -1204,7 +1204,7 @@ Experimenting with Item-Item Recommendations
 --------------------------------------------
 
 -  The histogram above shows that the vast majority of the items are in the
-   0-200 co-occurence range. But the items purchased together outside that big
+   0-200 co-occurrence range. But the items purchased together outside that big
    bar are interesting. Write a function to print out the item pairs that have
    been in the same shopping cart more than 200 times.
 
@@ -1212,8 +1212,8 @@ Experimenting with Item-Item Recommendations
    and 200 co-occurrences.
 
 -  Write a function called ``top_n`` that takes a product name to search for,
-   allows the user to select the best match and then returns the top ``n``
-   recommendatons for products that have been purchased with the selected item.
+   allows the user to select the best match, and then returns the top ``n``
+   recommendations for products that have been purchased with the selected item.
 
 -  Write a function that takes a product id as its parameter and then recommends
    the top 10 products to go with the given product but from the same department
@@ -1221,11 +1221,10 @@ Experimenting with Item-Item Recommendations
 
 -  One of the problems with a recommender like this one is that it tends to
    recommend a lot of popular items. We might call this the banana problem in
-   this dataset! Can you devise a strategy to recommend things that are not just
-   the popular things?
+   this dataset! Can you devise a strategy to recommend things that are not just popular?
 
 -  Design an experiment in which you can train an item-item model like we have
-   done above and then test it. Perhaps in the training set you withold that
+   done above and then test it. Perhaps in the training set you withhold that
    last item added to the shopping cart to see how frequently you can predict
    the last item based on the first items.
 

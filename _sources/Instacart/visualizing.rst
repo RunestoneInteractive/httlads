@@ -17,14 +17,14 @@ You can get some inspiration from https://python-graph-gallery.com/.
 To accomplish this, you will have to dig into some new packages that we have not
 used so far. But this is all part of the process.
 
-We need to create square adjacency matrix: Aisle to Aisle. We'll use this to
-build our **chord diagram** and other graph like visualizations.
+We need to create a square adjacency matrix: Aisle to Aisle. We'll use this to
+build our **chord diagram** and other graph-like visualizations.
 
 1. Merge the order_product data frame with the aisle data frame so we have the
    aisle number for each product. (We can drop the aisle name to save memory.)
 2. Iterate over each order.
 3. Order the order by add_to_cart_order.
-4. Increase the count in from aisle (row) to to aisle (column); this is a
+4. Increase the count in from aisle (row) to aisle (column); this is a
    directed graph.
 
 
