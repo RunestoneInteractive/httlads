@@ -25,7 +25,7 @@ the values for the slope and intercept.
 
 **Mean Squared Error (MSE):**  MSE is a technique used to measure how far the predicted values are from the actual values. 
 It is used to calculate the error between a model for a set of data and the actual data. MSE can be calculated by squaring 
-the differences of the perdicted values and actual values then averaging them. The predicted values and actual values are 
+the differences of the predicted values and actual values then averaging them. The predicted values and actual values are 
 squared so that there are no negative numbers in the average. MSE gives more weight to outliers when calculating the error 
 because the differences get exponentially bigger or smaller when squaring them.
 
@@ -49,7 +49,7 @@ preparing the data so that our algorithms can use it to make predictions.
 **SQL:** Structured Query Language is a programming language that is used to manipulate databases.
 
 **Train-Test Split:** It is the process of splitting the data into a training set and a testing set, building 
-a model using the training set and validating it using the testing set. 
+a model using the training set, and validating it using the testing set. 
 
 
 Keywords
@@ -59,7 +59,7 @@ Keywords
 
 ``COUNT``: (SQL) Returns the number of rows in a given column. It can be used in conjunction with ``WHERE`` to only return the number of rows that match specific conditions.
 
-``DESC``: (SQL) Used with ``ORDER BY`` to sort data in dessending order. Sintax: ``ORDER BY`` column_name ``DESC``
+``DESC``: (SQL) Used with ``ORDER BY`` to sort data in descending order. Sintax: ``ORDER BY`` column_name ``DESC``
 
 ``FROM``: (SQL) Used to specify a database we want to access.
 

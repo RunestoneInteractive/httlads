@@ -48,11 +48,11 @@ Mapping Bike Stations Using Anaconda
 This section specifically references Jupyterlab and uses a module not supported by Google Colab. If you are using Colab, proceed to the next section 
 where we will learn about how to map bike stations using Colab. 
 
-Now lets have some fun.  We are going to map the location of all of the bike stations on a google map!  Later you can explore all kinds of ways to visualize rides and ride frequencies routes between starting and ending point and many more things.
+Now let's have some fun.  We are going to map the location of all of the bike stations on a google map!  Later you can explore all kinds of ways to visualize rides and ride frequencies routes between starting and ending point and many more things.
 
 To map our stations we will use the ``ipyleaflet`` module.  You will need to ``conda install -c conda-forge ipyleaflet`` to install this.  You will also need to install the `jupyter-leaflet extension <https://ipyleaflet.readthedocs.io/en/latest/installation.html#jupyterlab-extension>`_ for Jupyterlab.  You can also enable the extension manager in Jupyterlab and use that to install the extension.
 
-Lets proceed under the assumption that you have all of the prerequisites installed and working.  Our next task is to create a list of all the latitude and longitude values for each of the bikeshare stations.  The challenge here is that the Google Maps interface wants to get a list of that looks like this:  ``[(lat1, long1), (lat2, long2), ...]`` that means we need to combine the two columns from the DataFrame into a list of tuples.  You could, of course, do this with a for loop, iterating over all the rows and making a tuple, but there is a much easier way.
+Let's proceed under the assumption that you have all of the prerequisites installed and working.  Our next task is to create a list of all the latitude and longitude values for each of the bikeshare stations.  The challenge here is that the Google Maps interface wants to get a list of that looks like this:  ``[(lat1, long1), (lat2, long2), ...]`` that means we need to combine the two columns from the DataFrame into a list of tuples.  You could, of course, do this with a for loop, iterating over all the rows and making a tuple, but there is a much easier way.
 
 Suppose we have two lists:
 
@@ -71,7 +71,7 @@ We want to combine these into ``[('a', 1), ('b', 2), ('c', 3)]`` We can do that 
 
 Then ``list(zip(list1, list2, str1))`` returns ``[('a', 1, 'X'), ('b', 2, 'Y'), ('c', 3, 'Z')]``  But, what is the deal with wrapping ``zip`` with ``list``?  Well, ``zip`` does not actually return a list, zip returns an iterator that in most circumstances behaves just like a list, except when you want to see a small example.
 
-The good news is that Series are also iterables so we can pass a series to the zip function and it will work great.
+The good news is that series are also iterables so we can pass a series to the zip function and it will work great.
 
 .. jupyter-execute::
 
@@ -80,7 +80,7 @@ The good news is that Series are also iterables so we can pass a series to the z
     stations = pd.read_csv("https://media.githubusercontent.com/media/bnmnetp/httlads/master/Data/bikeshare_stations.csv")
     stations.head()
 
-First we can load the stations data.  You can get this from your database, from a local file, or even remotely as we are demonstrating here.  Next we will use the latitude and longitude data to create a marker for each station.
+First, we can load the stations data.  You can get this from your database, from a local file, or even remotely as we are demonstrating here.  Next we will use the latitude and longitude data to create a marker for each station.
 
 .. jupyter-execute::
 
@@ -106,9 +106,9 @@ Practice and Further Exploration
 
 3. Investigate the interface to see if there is a way for you to color code the markers based on the number of rides originating from that station.  Show the 50 most popular stations using five different colors. 1 color for the top 10 another for the next 10 and so on.
 
-4. Bikeshare datasets are available for many cities.  Most of them come a similar format to this one.  Find some bikeshare data for a city close to you or for your favorite city and see if you can reproduce this map.  Hint, if your data does not come with latitude and longitude then investigate the ``geopy`` package, you can use a free service like GeocodeFarm to use the address of the station to get the latitude and longitude.
+4. Bikeshare datasets are available for many cities.  Most of them come in a similar format to this one.  Find some bikeshare data for a city close to you or for your favorite city and see if you can reproduce this map.  Hint, if your data does not come with latitude and longitude then investigate the ``geopy`` package, you can use a free service like GeocodeFarm to use the address of the station to get the latitude and longitude.
 
-5.  Here is a real **challenge** for you, pick a station and then follow the rentals, but only map the stations where a bike ends up back at your original starting point.  In other words for the bikes that started at station A, go to station B, then D then pause for a while then on to station X and finally back to A.  Others may take a different route.    If you can do this you can investigate the AntPath layer that lets you add a route to the map!  Then you can show the routes that the various bikes took to make their way back to the starting point.  You may want to limit the time on this to one day or a week.
+5.  Here is a real **challenge** for you, pick a station and then follow the rentals, but only map the stations where a bike ends up back at your original starting point.  In other words for the bikes that started at station A, go to station B, then D then pause for a while then on to station X and finally back to A.  Others may take a different route.    If you can do this you can investigate the AntPath layer that let's you add a route to the map!  Then you can show the routes that the various bikes took to make their way back to the starting point.  You may want to limit the time on this to one day or a week.
 
 6. **Another Challenge** The ``ipyleaflet`` interface allows you to add a heatmap layer.  This sounds like it could a very interesting way to overlay the popularity of different stations and routes on the map.  Investigate this layer and what the data should look like, then see if you can find a way to get the data into the appropriate form to make a heatmap.
 

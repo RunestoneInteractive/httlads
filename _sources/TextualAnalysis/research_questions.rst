@@ -19,7 +19,7 @@ available to work on all of the string elements in a Series. We call these
 operations to happen in parallel on all the rows of the data frame
 simultaneously, if you have the computing power. These are accessed through an
 intermediate object called ``str``. For example, suppose we wanted to convert
-all of our three letter country codes to lowercase.
+all of our three-letter country codes to lowercase.
 
 
 .. code:: python3

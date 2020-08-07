@@ -11,7 +11,7 @@ multiple tables in our database. For example, we might want to store
 additional information about the starting and ending location of the
 ride beside their IDs in a table called ``bikeshare_stations``.
 
-Here’s the columns in table ``bikeshare_stations``
+Here are the columns in table ``bikeshare_stations``
 
 ========== ======= ============================================
 Field name Type    Description
@@ -52,7 +52,7 @@ a few important reasons why that’s a bad idea:
    would require updating each row in ``trip_data`` that refers to that
    station ID. This is time-consuming and error-prone.
 
-Instead we leave the data in two separate tables and need a way to
+Instead, we leave the data in two separate tables and need a way to
 ‘join’ the values together. We can do that by just listing multiple
 table names but the result is a mess:
 

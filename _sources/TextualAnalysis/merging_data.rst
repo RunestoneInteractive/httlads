@@ -683,7 +683,7 @@ DataFrame. There is also data that we can collect from a passport, such as the
 countries that person has visited, the place the passport was issued, and this
 could also be stored in a DataFrame.
 
-An example of a one-to-many relationship is a customer and the the things they
+An example of a one-to-many relationship is a customer and the things they
 have ordered from Amazon. A particular customer may have ordered many things,
 but a given order can only belong to a single customer.
 
@@ -700,7 +700,7 @@ Tidying the Movie Genres
 ------------------------
 
 Let's look at the genres column of the movies dataset. You may recall that it
-looks odd. In fact, here is the result of ``df.iloc[0].genres``.
+looks odd. Here is the result of ``df.iloc[0].genres``.
 
 
 .. parsed-literal::
@@ -708,7 +708,7 @@ looks odd. In fact, here is the result of ``df.iloc[0].genres``.
    "[{'id': 16, 'name': 'Animation'}, {'id': 35, 'name': 'Comedy'}, {'id': 10751, 'name': 'Family'}]"
 
 
-It looks like a list of dictionary literals, except that it is in double quotes
+It looks like a list of dictionary literals, except that it is in double-quotes
 like a string. Let's first figure out how we can get it to be an actual list of
 dictionaries. Then, we'll figure out what to do with it. Python has a nifty
 function called ``eval`` that allows you to evaluate a Python expression that is
@@ -727,7 +727,7 @@ a string.
     {'id': 10751, 'name': 'Family'}]
 
 
-Even better, we can assign the result of ``eval`` to a variable and then we can
+Even better, we can assign the result of ``eval`` to a variable, and then we can
 use the list and dictionary index syntax to access parts of the result, just
 like we learned about when we discussed JSON in an earlier chapter.
 
@@ -744,7 +744,7 @@ like we learned about when we discussed JSON in an earlier chapter.
 
 
 One way we could solve this is to duplicate all of the rows for as many genres
-as the movie has storing one genre on each line, but that would mean we would
+as the movie has, storing one genre on each line, but that would mean we would
 have to needlessly duplicate all of the other information on our first movie
 three times.
 

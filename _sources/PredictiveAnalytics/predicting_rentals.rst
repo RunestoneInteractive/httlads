@@ -48,7 +48,7 @@ The Train-Test Split
 --------------------
 
 The way to handle the problem of quantifying the quality of your model is to
-hold out some of the data that you already have. Lets take 20% of the days that
+hold out some of the data that you already have. Let's take 20% of the days that
 we have data for, and NOT use them in building the model. Then we can make
 predictions for those days and check our work. It's kind of like covering up the
 answer to a math problem so you don't cheat and just look at the answer. We call
@@ -60,7 +60,7 @@ To be a little more scientific about this, we will split our data into a
 "training set" that we will use to build the model, and a "test set" that we
 will use to validate the model. That is, we want to test our model on data that
 is different from the data we used to build the model. Testing using the data
-the you trained on would be like cheating, as you could just build a model that
+that you trained on would be like cheating, as you could just build a model that
 memorized everything and got 100%. In the real world, you need to make
 predictions for things that you have not seen before.
 
@@ -92,7 +92,7 @@ we are all getting the same randomness. This will allow you to compare your
 results against mine and your classmates'. It will also make your results
 reproducible from one day to the next.
 
-Lets try this:
+Let's try this:
 
 .. jupyter-execute::
 
@@ -102,7 +102,7 @@ Lets try this:
      trips = pd.read_csv("https://media.githubusercontent.com/media/bnmnetp/httlads/master/Data/trip_data.csv",
                    parse_dates=['start_date','end_date'])
 
-Now lets make start date the index, resample, and count the number of trips on each day.
+Now let's make start date the index, resample, and count the number of trips on each day.
 
 .. jupyter-execute::
 
@@ -215,7 +215,7 @@ What do you think of the model so far? You are probably a bit disappointed, both
 with how the graph looks as well as the mean absolute error. Missing your daily
 predictions by over 900 is not great, especially in the earlier days when
 rentals were only around 1000. In fact, if the average daily rentals for this
-time period is about 2750, then you are off by around 77% every day.
+period is about 2750, then you are off by around 77% every day.
 
 We can also look at the :math:`R^2` score for this model, which is 0.373. 1.0
 would be the best score possible, so we are a long way from there.
@@ -240,24 +240,24 @@ look at the time series of daily rentals.
   :alt: Line graph of bike rentals with duration (0 to 6,000) as the y axis and start_date (by months of first year) as the x axis. 
 
 
-The representation of the date we chose is definitely simple, but you know from
+The representation of the date we chose is simple, but you know from
 the time series visualization, that numbering the days that way would leave out
 a lot of valuable information. You can see in the graph above that there are
 seasonal variations in the data as well as variations due to the day of the
 week. We also know that as we went from year to year, overall rentals kept
 growing. So, instead of encoding our date as a single number let's encode the
-date as by adding features for year, month, day and even weekday. Hopefully by
+date by adding features for year, month, day and even weekday. Hopefully, by
 adding more features that capture the kinds of variation, we will help our
 model.
 
 This kind of development of the model is very common. Start with a simple idea
 and then refine it, learning what you can from the previous refinements.
-Sometimes an idea you think will make an improvement actually turns out to hurt
+Sometimes an idea you think will improve turns out to hurt
 more than it helps, so you have to abandon it. This is part of the joy and the
 frustration of data science: it is an experimental science. There is not
 necessarily one "right way" to get the best answer. In this particular example
 we might have to admit that we can only do so much. The shape of the time series
-is clearly NOT a linear function, but we will do the best with the tools we
+is NOT a linear function, but we will do the best with the tools we
 have. The truth is that there are other approaches besides linear regression
 that will ultimately work better for data like this, but we can still learn a
 lot by trying to see how far we can push linear regression.
@@ -267,7 +267,7 @@ Version 2.0 Task List
 ---------------------
 
 * Create four new features out of the date, a column for year, month, day, and
-  weekday. We will keep daynum as a feature as well, so that we can use it to
+  weekday. We will keep daynum as a feature as well so that we can use it to
   build a graph. Later we can experiment to see if we need it at all.
 * Redo the train-test split using the same ``random_state`` as before.
 * Fit a new model using the new features.
