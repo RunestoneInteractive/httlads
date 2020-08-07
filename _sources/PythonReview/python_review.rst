@@ -4,7 +4,7 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-.. _PythonReview:
+.. _PythonReview_old:
 
 Python Review
 =============
@@ -145,6 +145,7 @@ to differentiate them from code outside the for loop.
    repeated
    also repeated
    not repeated
+
 
 
 Getting back to lists, they are a basic type in Python and they can contain a
