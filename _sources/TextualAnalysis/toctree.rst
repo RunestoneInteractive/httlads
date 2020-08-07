@@ -11,7 +11,7 @@ Textual Analysis
    :maxdepth: 2
 
    introduction.rst
-   text_mining.rsts
+   text_mining.rst
    merging_data.rst
    tidying_text.rst
    research_questions.rst
