@@ -7,6 +7,7 @@
 .. _CSHappinessAddingData:
 
 Case Study 1: Adding More Happiness Data
+========================================
 
 Happiness by Region
 -------------------

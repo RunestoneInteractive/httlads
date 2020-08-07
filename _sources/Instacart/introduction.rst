@@ -1,4 +1,5 @@
 Introduction
+============
 
 In this chapter, we will learn how retailers such as Amazon, eBay, and Instacart predict consumer 
 shopping behavior and make suggestions accordingly. We will take a close look at the various methods 
