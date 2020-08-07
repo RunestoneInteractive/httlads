@@ -270,7 +270,7 @@ Constructing a **matrix** of the kind shown above will take a bit of thought (an
 time!). So let's do some design first.
 
 1. Its a very good assumption that this data is sparse, so lets start by
-   using a data structure that supports sparsity. – A dictionary of
+   using a data structure that supports sparsity.  A dictionary of
    dictionaries is the key to this. In fact scroll back just a bit and
    look carefully at how our DataFrame was constructed. You will notice
    a dictionary like this:

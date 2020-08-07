@@ -9,12 +9,12 @@ Exploring Our Data Set
 
 In this section, we will learn how to analyze an enormous data set to find interesting
 associations between its various items. We will also learn how to evaluate the data set's different behaviors to make predictions about its future behaviors. For this 
-exercise, we will use shopping data from Instacar.
+exercise, we will use shopping data from Instacart.
 
 Instacart is a shopping and delivery service that works with stores in your city
 such as Whole Foods, Costco, and local stores. They pick up your order and
 deliver it to your door. Consequently, they have a lot of data on a lot of
-different shopping behavior that we can use to make predictions about future
+different shopping behaviors that we can use to make predictions about future
 purchases, or suggest items that a person may want to add to their shopping cart
 based on their past behavior. Sound familiar? This is the kind of thing that
 Amazon has been doing successfully for years.
@@ -93,7 +93,7 @@ These files specify which products were purchased in each order.
 ``order_products__prior.csv`` contains previous order contents for all
 customers. ``reordered`` indicates that the customer has a previous order that
 contains the product. Note that some orders will have no reordered items.
-``order_products_train.csv`` is much smaller (even though it hasm 1.3 million
+``order_products_train.csv`` is much smaller (even though it has 1.3 million
 records), and is a better place to start.
 
 

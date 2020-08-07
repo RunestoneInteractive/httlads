@@ -7,7 +7,6 @@
 .. _CSBusinessCorrelationMatrix:
 
 Challenge in Case Study1: Calculating a Correlation Matrix
-===========================================================
 
 Early on in our exploration of the happiness data, we calculated the correlation
 between the happiness score and the different factors. Now we have more data and
