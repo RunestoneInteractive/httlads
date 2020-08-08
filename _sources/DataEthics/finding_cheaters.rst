@@ -8,7 +8,7 @@ Finding the Cheaters
 ====================
 
 In this lesson, you are going to do a simplified version of the analysis
-outlined in the Tennis Racket article. I have prepared an anonymized data
+outlined in the Tennis Racket article. We have prepared an anonymized data
 file for you that contains a numeric identifier instead of a name, along with
 the starting odds and the ending odds of a number of tennis matches. Your goal
 is to identify the cheaters. You can get the data from
@@ -118,3 +118,14 @@ real names?
     :option_3: Out of reach no matter how hard I try
 
     For me to master the things taught in this lesson feels...
+
+
+Glossary
+=========
+
+Definitions
+-----------
+
+**Ethics:**  are the branch of knowledge that deals with
+moral principles that govern a person's behaviors and actions including
+the processes of categorizing, asserting, and defending concepts of right and wrong.
