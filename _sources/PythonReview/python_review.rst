@@ -9,10 +9,12 @@
 Python Review
 =============
 
-In the following section you will get a rudimentary introduction to Python for this course. The purpose
+In the following section you will get a review or rudimentary introduction to Python for this course. The purpose
 of this section is not to teach you all of Python but rather to arm you with the knowledge required to
 succeed in this course.
 Because of this, we will only be introducing concepts that are necessary for this course.
+For those of you who know Python it should serve as a quick review, for those of you
+who know another language, it should serve as a rudimentary introduction.
 
 
 Variables
@@ -203,7 +205,7 @@ methods used in this course.
 In the coding section below, you are provided with some examples of sequential operations and string methods.
 After running them, try changing the variables and use the methods in different ways to better understand how they work.
 
-.. activecode:: sequence_methods_string
+.. activecode:: methods_strings_slices
    :coach:
 
    my_var = "Abc defg hij"
