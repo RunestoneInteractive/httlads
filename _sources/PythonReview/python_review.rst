@@ -9,11 +9,10 @@
 Python Review
 =============
 
-In the following section you will get a review or rudimentary introduction to Python for this course. The purpose
-of this section is not to teach you all of Python but rather to arm you with the knowledge required to
-succeed in this course.
+In this chapter you will get a review or rudimentary introduction to Python for this course. The purpose
+of this section is not to teach you all of Python, but rather to arm you with the knowledge required to succeed in this course.
 Because of this, we will only be introducing concepts that are necessary for this course.
-For those of you who know Python it should serve as a quick review, for those of you
+For those of you who already know some Python it should serve as a quick review, for those of you
 who know another language, it should serve as a rudimentary introduction.
 
 
@@ -71,14 +70,14 @@ they can be of different data types.
 You can use both ``int`` and ``float`` values to perform basic mathematical operations such as addition (+), subtraction
 (-), multiplication (*), division (/), and exponentiation (**). Python will automatically use the normal order of operations
 when calculating a value. You can use parentheses to force Python to evaluate certain expressions first. There are also some
-cool other operations like %, which is called the modulus function which gives you the remainder of division between two integers.
+cool other operations like %, which is called the modulus function, and which gives you the remainder of division between two integers.
 
 Booleans
 --------
 
 **Boolean** (``bool``) is another data type that is very useful in programming. It is used to check
 the truth of an expression in Python. Booleans return ``True`` or ``False``. You can evaluate
-multiple Boolean expressions using the following operations: ``and``, ``or``,and ``not``.
+multiple Boolean expressions using the following operations: ``and``, ``or``, and ``not``.
 
 ::
 
@@ -357,11 +356,11 @@ You can also perform a variety of operations on lists.
                      min() All items in the list must of of the same data type.
                            For a list of numbers: returns the smallest number.
                            For a list of strings: returns the first string in
-                           aphabatical order
+                           alphabetical order
                      max() All items in the list must of the same data type.
                            For a list of numbers: returns the largest number.
                            For a list of strings: returns the last string in
-                           aphabatical order
+                           alphabetical order
                      sum() All items in the list must be numbers.
                            returns the sum all numbers in the list.
                  .append() Adds an item to the end of the list.
@@ -453,13 +452,13 @@ we can see. ``print`` is the function that allows us to see the output values.
       - This is incorrect!
 
 
-For loops
+For Loops
 ---------
 
-**for loops** are used to repeat an action until a specific condition is met. A common use of the for loop
+A **for loop** is used to repeat an action until a specific condition is met. A common use of the for loop
 is to iterate over the elements of a collection as long as the collection is a sequence.
 
-You will often see for loops used with the ``range`` function to specify the number of times the action should be repeated as shown in the
+You will often see a for loop used with the ``range`` function to specify the number of times the action should be repeated as shown in the
 following example:
 
 .. code:: python3
@@ -496,7 +495,7 @@ For loops can also be used to visit every item in a list. These do not require t
    blue
 
 
-Just like in conditional statements the contents of the for loop have to be indented at the same level
+Just like in conditional statements, the contents of the for loop have to be indented at the same level
 to differentiate them from code outside the for loop.
 
 .. code:: python3
@@ -527,10 +526,9 @@ Dictionaries
 tables, if you've used another language that uses that name). Hash tables are
 one form of data structure used to store data by generating a key-value pair using hash
 functions. For this course, Dictionaries are a way of storing data where each value is stored
-under a ``key`` that is used to retrieve the ``value``. You can think of Dictionaries much like a lookup table
-in a spreadsheet.
+under a ``key`` that is used to retrieve the ``value``. You can think of dictionaries much like a lookup table in a spreadsheet. You can also think of them like a foreign language
+dictionary that you might use to look up a foreign word.
 
-Dictionaries can be created in a variety of ways.
 
 .. code:: python3
 
@@ -563,7 +561,7 @@ And you can add new values (or overwrite old ones) by key as well.
 .. code:: python3
 
    my_dict['three'] = 'trez'
-   my_dict['three'] = 'tres' # Spelling corrected
+   my_dict['three'] = 'tres' # Oops! Spelling corrected.
 
 
 
@@ -708,18 +706,18 @@ Lambda Functions
 ----------------
 
 For a simple, one-time-use function, we don't have to define a function, we can
-use a **Lamda function** to define the operation in-line. A Lambda function is an anonymous
+use a **lamda function** to define the operation in-line. A lambda function is an anonymous
 function, meaning that it does not need a name. Using them is generally not a good idea, since
 most functions are easier to recognize and to read if they have names, but you will see them
 widely used on online forums.
 
-You can make a Lambda function with a simple one line expression. You can make a Lambda function by writing:
+You can make a Lambda function with a simple one line expression. You can make a lambda function by writing:
 
 .. parsed-literal::
 
    lambda parameters : expression
 
-The best way to understand the Lambda function is to see it being used.
+The best way to understand the lambda function is to see it being used.
 
 .. activecode:: lamda_functions
    :coach:
@@ -734,7 +732,7 @@ The best way to understand the Lambda function is to see it being used.
    print(z("Happy birthday to you!" + "\n"))
 
 
-Note that Lambda functions do not use the ``return`` keyword, you just specify
+Note that lambda functions do not use the ``return`` keyword, you just specify
 the name and value(s) of the parameters of the function, a colon, and the operation to perform on the parameters.
 
 The ``lambda`` function can also be used with other functions.
@@ -896,7 +894,7 @@ For a more challenging list comprehension, write a single list comprehension
 that produces the
 `title-cased <https://en.wikipedia.org/wiki/Letter_case#Title_Case>`_ version of
 just the city names of the cities in Texas (that means that the states should
-not be the resulting list).
+not be inside of the resulting list).
 
 
 .. activecode:: your_list_comprehension
@@ -924,7 +922,7 @@ Some Additional Important Python Knowledge
 Opening Files
 ~~~~~~~~~~~~~
 
-You can open files selectivly by using the following code:
+You can open files selectively by using the following code:
 
 .. code:: python3
 
@@ -935,7 +933,7 @@ You can open files selectivly by using the following code:
 The name of the file in the above code is 'mydata.txt'. The 'r' means the file is opened in a
 read-only mode. If you would like to write in the file, you can use 'w' instead of 'r'. It is
 not recommended to use 'w' if your file already has something in it since it will write over it.
-The ``as md`` tells python to recognize that md refers to the opened file. md is an artbitrary name so
+The ``as md`` tells python to recognize that md refers to the opened file where md is an arbitrary name so
 you can change it to any name you'd like.
 
 Random Number Generators
