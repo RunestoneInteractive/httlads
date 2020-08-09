@@ -4,8 +4,8 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-Setting up Jupyter and a Python Review
-======================================
+Python Review
+=============
 
 .. toctree::
    :caption: Python Review
@@ -15,4 +15,3 @@ Setting up Jupyter and a Python Review
    python_review.rst
    installing.rst
    glossary.rst
-
