@@ -14,14 +14,16 @@ data scientists. Before you can learn these, however, you must have a rudimentar
 understanding of a programming language. In this chapter, you will get an introduction
 to Python.  Python is powerful, easy to learn, and one of the most-used programming
 languages in the data science field. You will also set up the tools you will be
-using throughout the entire course.
+using throughout the entire course including a type of scientific notebook that
+allows for a mix of text and code.
 
 Learning Goals
 --------------
 - Review the fundamental constructs of programming in Python.
+- Learn to use a type of programming notebook that mixes text and code.
 
 Learning Objectives
 -------------------
 - Recall the fundamentals of programming in Python.
 - Learn to use the Markdown language.
-- Learn how to set up a Jupyter Notebook or a Google Colaboratory Notebook.
+- Learn to set up a Jupyter Notebook or a Google Colaboratory Notebook.
