@@ -4,42 +4,57 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-Installing Anaconda
-===================
+Jupyter Notebooks
+=================
 
-We will be using the Anaconda distribution of Python in this class. It is a
-very complete installation of Python, and nearly all of the packages you will
-need for many years of data science productivity are included in the
-initial installation.
+Jupyter Notebooks in data science allow for a mixture of runnable code and text. They are often used to create reports.
+The interface is a virtual environment that resembles a real-life research notebook.
+A form of literate programming, a Jupyter Notebook allows for the possibility of not only writing code but
+also inspecting and documenting its results as a piece of writing that is understandable for
+human beings. As you will learn later, the only way to document anything in a pure code
+environment is to use comments and docstrings, which is not convenient for data scientists who need to report on their research in a way that
+is readable and possibly updateable even by non-technical users.
+So, a great advantage of a Jupyter Notebook environment is being able to combine both code and nicely
+formatted text or graphics to easily document your work.
 
-The good people who created Anaconda have also provided a very nice set of
-instructors to help you install it for the first time. There are instructions
-for Windows, macOS, and Linux. The
-`installation guide <https://docs.anaconda.com/anaconda/install/index.html#>`_ is
-also part of a larger set of `documentation <https://docs.anaconda.com/anaconda/>`_ that you may find useful. Make sure
-you follow the instructions for a Regular Installation of Anaconda, and that you
-install the Python 3.x version (3.7 at the time of this writing). Do not install
-miniconda or do a silent installation.
+The industry standard of a Jupyter notebook environment is certainly the Jupyter Notebook itself, a free, open-source
+interactive web-based computational Notebook. Though computational notebooks existed long
+before Jupyter Notebook, its multi-language programming capabilities are what made it the
+industry standard. Even its name, Jupyter, is an acronym for all of its coding languages -
+Julia, Python, and R. Currently, there are many Notebook environments for the users to choose
+from. In this book, we will highlight both the traditional Jupyter Notebooks and Google Colab Notebook environments.
+
+Notebook Functionalities
+------------------------
+
+Most of the functionalities of Jupyter Notebooks occurs in cells.
+Cells come into types: Text Cells and Code Cells.
+In a compiled program, you would have to run the whole file if you wanted to test a snippet of code. With runnable code cells, you can
+run individual code cells without worrying about the cells above or below it.
+
+Text Cells
+~~~~~~~~~~
+
+There are multiple ways to customize a text cell in a Jupyter Notebook. In the image below you will see a few options that
+are available.
+
+.. image:: Figures/text_cells.png
+  :alt: Snippet of a text cell from Google colab with text in showing different formatting styles.
 
 
-Starting Jupyter Lab
---------------------
+There is an option to bold, italicize, add bullet points, add numbered lists, and toggle text(s) as headers using the clickable options.
+There are many more options to customize your text cells if you use Markdown.
 
-Once you have completed the installation, you should launch Anaconda Navigator.
-You will find Anaconda Navigator in the anaconda3 folder.
+Markdown is a lightweight markup language that uses a plain text format which is used in programming to edit and present HTML, XHTML, pdf
+and other file types. More about Markdown will be presented later in
+this chapter.
 
+Using Jupyter Notebooks
+-----------------------
 
-.. figure:: Figures/navigator.png
-   :alt: Anaconda navigator home screen with JupyterLab, Notebook, Qt Console, and Navigation bar
+You will either choose to do an Anaconda installation of
+Jupyter Notebooks on your own machine or you will choose to work in
+Google Colaboratory Notebooks in the cloud. Each has advantages.
 
-
-From the Anaconda Navigator Window, you can Launch JupyterLab. This may take a
-few seconds, but it will start up and open a browser window for you. From here,
-you can create a new Notebook to start working in by clicking on the Python 3
-icon under Notebook.
-
-
-.. figure:: Figures/labif.png
-   :alt: JupyterLab Launcher Tab opened in Google Chrome web browser with Notebook, Console and Other sections. 
-
-You are now ready to continue on the the Python Review on the next page.
+If you are in a course that is using this text, your instructor will
+likely have you read one of two following sections.

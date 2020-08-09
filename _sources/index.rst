@@ -49,4 +49,3 @@ Table of Contents
     TextualAnalysis/toctree.rst
     PredictiveAnalytics/toctree.rst
     Instacart/toctree.rst
-    Google_Colab/toctree.rst

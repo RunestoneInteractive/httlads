@@ -4,14 +4,17 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-Python Review
-=============
+Python and Jupyter Notebooks
+============================
 
 .. toctree::
-   :caption: Python Review
+   :caption: Python and Jupyter Notebooks
    :maxdepth: 2
 
    introduction.rst
    python_review.rst
    installing.rst
+   anaconda.rst
+   google_colab.rst
+   markdown.rst
    glossary.rst
