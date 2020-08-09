@@ -12,7 +12,6 @@ Setting up Jupyter and a Python Review
    :maxdepth: 2
 
    introduction.rst
+   python_review.rst
    installing.rst
-   python_review_new.rst
-   markdown.rst
    glossary.rst
