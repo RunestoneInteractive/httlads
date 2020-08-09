@@ -12,9 +12,9 @@ of pizza based on its size. However, we know that there are many other factors,
 we will call them **features**, that go into the price of a pizza. In this
 section, we will investigate how we can improve our model by adding a feature
 corresponding to the number of toppings. The theory here is that with more
-information we should be able to do a better job of making predictions. Now this
+information we should be able to do a better job of making predictions. Now, this
 little step makes the math a LOT more complicated, and it's a lot harder to
-visualize what we are doing when we get past 3 dimensions! Fortunately we can
+visualize what we are doing when we get past 3 dimensions! Fortunately, we can
 ignore the complicated math and let Solver do the heavy lifting. It turns out
 that it is not a big leap to go from one feature to several when using solver.
 
@@ -50,9 +50,10 @@ go in there in order to minimize the MSE with the yellow background.
 
 
 .. figure:: Figures/multi_solver.png
+  :alt: Screen capture of Google Sheets with Solver add on opened and with cell containing MSE and its value highlighted yellow. Area of coefficients found under pizza diameter num toppings and bias highlihted in Green. 
 
 
-Computing the prediction for each row could be quite error prone as there are a
+Computing the prediction for each row could be quite error-prone as there are a
 lot of cells to get right. The prediction for E3 could be calculated by the
 formula ``A$2*A3+B$2*B3+C$2*C3``. You can see that this would get pretty
 tiresome if you had 20 features. It is better to use ``SUMPRODUCT`` function
@@ -87,7 +88,7 @@ improved model.
      :x: Not quite. Keep trying
 
 
-Hopefully this little excursion back to spreadsheets has helped you develop some
+Hopefully, this little excursion back to spreadsheets has helped you develop some
 intuition for how regression works and what is being computed. Before we return
 to the bike rental problem, let's see how we can duplicate our efforts on
 predicting Pizza prices in Python using Pandas and Scikit-Learn.

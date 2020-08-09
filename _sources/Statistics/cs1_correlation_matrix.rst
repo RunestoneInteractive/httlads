@@ -3,8 +3,11 @@
    International License. To view a copy of this license, visit
    http://creativecommons.org/licenses/by-sa/4.0/.
 
-Case Study 1: A Correlation Matrix
-==================================
+
+.. _CSBusinessCorrelationMatrix:
+
+Challenge in Case Study 1: Calculating a Correlation Matrix
+===========================================================
 
 Early on in our exploration of the happiness data, we calculated the correlation
 between the happiness score and the different factors. Now we have more data and

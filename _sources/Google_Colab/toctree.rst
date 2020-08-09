@@ -4,13 +4,11 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-Ethical and Legal Considerations in Using Data
-==============================================
+Appendix: Google Colaboratory
+=============================
 
 .. toctree::
-   :caption: Data Ethics
+   :caption: Google Colab
    :maxdepth: 2
 
-   introduction.rst
-   good_data_sources.rst
-   finding_cheaters.rst
+   Setting_up_Colab.rst

@@ -7,6 +7,9 @@
 Merging and Tidying Data
 ========================
 
+In this section, we will learn how to merge two data frames that contain information that we wish to put together. 
+This will create a new data frame that contains the information of both data frames as long as they have a primary and foreign key, meaning they have to have a unique column in common. Then we will learn the basic principles of tidying up data and the relationships that a data set can have. 
+
 Now that we know how the file is encoded, we can read it easily.
 
 
@@ -201,9 +204,9 @@ column. That is, for every row in ``undf``, we will look for a row in the
 add the rest of the columns from the matching row in ``c_codes`` to the current
 row in ``undf``.
 
-In the ``c_codes`` data frame, ``code_3`` is the "primary key", as no two rows
+In the ``c_codes`` data frame, ``code_3`` is the "**primary key**", as no two rows
 have the same value for ``code_3``. In the ``undf`` data frame, ``code_3`` is a
-"foreign key", as we use it to lookup additional information in a table where
+"**foreign key**", as we use it to look up additional information in a table where
 ``code_3`` is a primary key. More on this when we study SQL queries.
 
 
@@ -344,11 +347,11 @@ have the same value for ``code_3``. In the ``undf`` data frame, ``code_3`` is a
     </div>
 
 
-Wait! What? What happened to EU?! Why did it dissappear after the merge? What
-else may have disappeared? The reason the EU dissappeared is that it is not in
+Wait! What? What happened to the EU?! Why did it disappear after the merge? What
+else may have disappeared? The reason the EU disappeared is that it is not in
 the ``c_codes`` data frame, and as you may recall, the ``merge`` function does
 the equivalent of a set intersection. That is, the key must be in BOTH data
-frames in order for it to be in the result. We can do our merge using an outer
+frames for it to be in the result. We can do our merge using an outer
 join to preserve the data, then see which countries have no text and which texts
 have no country name.
 
@@ -579,7 +582,7 @@ South Sudan has only spoken 5 times. Why is that? There is a very logical
 explanation, but it only makes you want to check out the 5 or 10 countries that
 have spoken the least.
 
-But why did EU seem to dissappear? When we do a merge, if the key is missing,
+But why did EU seem to disappear? When we do a merge, if the key is missing,
 then the row is not included in the final result.
 
 
@@ -626,7 +629,7 @@ then the row is not included in the final result.
 Can you figure out what each of the above stands for? Why are they not in the
 list presented earlier?
 
-At this point, you may want to edit the csv file and add the data for these
+At this point, you may want to edit the CSV file and add the data for these
 countries to the file. Then, you can rerun the whole notebook and we will not
 lose as much data.
 
@@ -636,18 +639,17 @@ Tidy Data
 
 A lot of the work in data science revolves around getting data into the proper
 format for analysis. A lot of data comes in messy formats for many different
-reasons. But if we apply some basic principles from the world of database
-design, data modeling, and some common sense (as outlined in the Hadley Wickham
-paper), we can whip our data into shape. Wickham says that tidy data has the
-following attributes.
+reasons. But if we apply some basic principles from the world of **database design**, **data modeling**, 
+and some common sense (as outlined in the Hadley Wickham paper), we can whip our 
+data into shape. Wickham says that tidy data has the following attributes.
 
 * Each variable belongs in a column and contains values.
 * Each observation forms a row.
-* Each type of observational unit forms a table.
+* Each type of **observational unit** forms a table.
 
 How does our United Nations data stack up? Pretty well. We have four columns:
 session, year, country, and text. If we think of the text of the speech as the
-thing we can observe, then each row does, in fact, form an observation, and
+thing we can observe, then each row does form an observation, and
 session, year, and country are attributes that identify this particular
 observation.
 
@@ -670,9 +672,9 @@ to observe interact with other things we can observe, and when we try to combine
 them into a single data frame, that causes trouble. There are three kinds of
 relationships that we should consider.
 
-* one-to-one relationships
-* one-to-many relationships
-* many-to-many relationships
+* **one-to-one relationships**
+* **one-to-many relationships**
+* **many-to-many relationships**
 
 An example of a one-to-one relationship would be a person and their passport. A
 person can have one passport, and a given passport belongs to only one person.
@@ -681,7 +683,7 @@ DataFrame. There is also data that we can collect from a passport, such as the
 countries that person has visited, the place the passport was issued, and this
 could also be stored in a DataFrame.
 
-An example of a one-to-many relationship is a customer and the the things they
+An example of a one-to-many relationship is a customer and the things they
 have ordered from Amazon. A particular customer may have ordered many things,
 but a given order can only belong to a single customer.
 
@@ -698,7 +700,7 @@ Tidying the Movie Genres
 ------------------------
 
 Let's look at the genres column of the movies dataset. You may recall that it
-looks odd. In fact, here is the result of ``df.iloc[0].genres``.
+looks odd. Here is the result of ``df.iloc[0].genres``.
 
 
 .. parsed-literal::
@@ -706,7 +708,7 @@ looks odd. In fact, here is the result of ``df.iloc[0].genres``.
    "[{'id': 16, 'name': 'Animation'}, {'id': 35, 'name': 'Comedy'}, {'id': 10751, 'name': 'Family'}]"
 
 
-It looks like a list of dictionary literals, except that it is in double quotes
+It looks like a list of dictionary literals, except that it is in double-quotes
 like a string. Let's first figure out how we can get it to be an actual list of
 dictionaries. Then, we'll figure out what to do with it. Python has a nifty
 function called ``eval`` that allows you to evaluate a Python expression that is
@@ -725,7 +727,7 @@ a string.
     {'id': 10751, 'name': 'Family'}]
 
 
-Even better, we can assign the result of ``eval`` to a variable and then we can
+Even better, we can assign the result of ``eval`` to a variable, and then we can
 use the list and dictionary index syntax to access parts of the result, just
 like we learned about when we discussed JSON in an earlier chapter.
 
@@ -742,11 +744,11 @@ like we learned about when we discussed JSON in an earlier chapter.
 
 
 One way we could solve this is to duplicate all of the rows for as many genres
-as the movie has storing one genre on each line, but that would mean we would
+as the movie has, storing one genre on each line, but that would mean we would
 have to needlessly duplicate all of the other information on our first movie
 three times.
 
-A better strategy for doing solving this problem is to create a new DataFrame
+A better strategy for solving this problem is to create a new DataFrame
 with just two columns: one containing the movie's unique id number, and a second
 containing the genre. This allows you to use the ``merge`` method on the two
 data frames, but only temporarily when you need to know the genre of a
@@ -754,7 +756,7 @@ particular movie.
 
 
 .. figure::  movie_genres.jpg
-
+  :alt: Illustration of the merging of two data frames. One data frame contains movie info, and the other contains genre. The data frames are merged into a single data frame with two columns: genre and movie info.
 
 To construct this table, we need to iterate over all the rows of the DataFrame
 and gather the genres for this movie. For each genre of the movie, we will add

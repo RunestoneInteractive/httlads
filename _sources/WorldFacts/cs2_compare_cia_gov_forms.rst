@@ -37,8 +37,8 @@ rows.
 Project
 -------
 
-Try changing the values parameter to be a list of columns may be Agriculture,
-inflation Rate and Industry. How does that change your table?
+Try changing the values parameter to be a list of columns may be agriculture,
+inflation rate and, industry. How does that change your table?
 
 **Lesson Feedback**
 

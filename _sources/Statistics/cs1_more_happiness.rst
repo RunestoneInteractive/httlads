@@ -4,10 +4,10 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-.. _h501f735b0476f5e696e1e2f7175266:
+.. _CSHappinessAddingData:
 
 Case Study 1: Adding More Happiness Data
-=========================================
+========================================
 
 Happiness by Region
 -------------------
@@ -34,8 +34,8 @@ questions.
 
 
 2. Now, let's make that list of countries look a little nicer by sorting it.
-   Select the countries and then from the menu select Data -> Sort range. Then
-   click on the Sort button.
+   Select the countries and then from the menu select Data -> Sort sheet by. Then select 
+   ascending order(A->Z). 
 
 3. You should have noticed an issue. The problem is that ``UNIQUE`` is a special
    kind of function that returns an array of values. We need to make the values
@@ -178,14 +178,14 @@ the countries sheet, and add it to the happiness sheet on row 15 column M.
 
 With ``VLOOKUP``, we do this by allowing the function to search for the value in
 one cell in another column, and then return the value from a different cell in
-the same row but in some other column. To find the continent of Israel, we would
+the same row but in some other column. To find the continent of Ireland, we would
 use ``VLOOKUP(A15, Sheet1!$A$6:$F$229, 5, FALSE)``.
 
 * A15 is the cell containing Ireland
 * ``Sheet1!$A$6:$F$229`` is the range of cells we can search in as well as get
   values from
-* 2 tells Sheets that when we find a match for Israel, we want the value from
-  the same row but in column 2 of our range
+* 5 tells Sheets that when we find a match for Ireland, we want the value from
+  the same row but in column 5 of our range
 
 Notice that column 5 of our range is the continent/region column. You may have
 noticed that ``VLOOKUP`` is a bit like using ``MATCH`` and ``INDEX`` together,

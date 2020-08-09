@@ -11,9 +11,9 @@ Linear regression is probably one of the most widely used algorithms in data
 science, and in many other applications. One of the best things about linear
 regression is that it allows us to use observations and measurements of things
 we know to make predictions about new things. These predictions might be about
-the likelihood of a person buying a product online, or the chance that someone
+the likelihood of a person buying a product online or the chance that someone
 will default on their loan payment. To start, we are going to use an even
-simpler example predicting the price of pizza based on its diameter.
+simpler example of predicting the price of pizza based on its diameter.
 
 We conducted an extensive study of the pizza places in one neighborhood, and
 here is a table of observations of pizza diameters and their price.
@@ -37,18 +37,19 @@ possible to all of them, it would look like this.
 
 
 .. image:: Figures/pizza_best_fit.png
+  :alt: Scatter plot with a line of best fit showing the price of pizza based on diameter.
 
 
-The orange line, called the trendline or the regression line is our best guess
+The orange line called the trendline or the regression line is our best guess
 at a linear relationship that describes the data. This is important because we
 can come up with an equation for the line that will allow us to predict the
 y-value (price) for any given x-value (diameter). Linear regression is all about
 finding the best equation for the line.
 
 There are actually several different ways we can come up with the equation for
-the line. We will look at two different solutions: one is a closed form equation
+the line. We will look at two different solutions: one is a closed-form equation
 that will work for any problem like this in just two dimensions. The second is a
-solution that will allow us to generalize the idea of a best fit line to many
+solution that will allow us to generalize the idea of a best-fit line to many
 dimensions!
 
 Recall the equation for a line that you learned in algebra: :math:`y = mx + b`.
@@ -59,7 +60,7 @@ stupid, but it is actually a pretty fundamental part of many machine learning
 algorithms.
 
 You may also be wondering how we decide what it means to "get better"?  In the
-case of our pizza problem we have some data to work with, and so for a given
+case of our pizza problem, we have some data to work with, and so for a given
 guess for *m* and *b* we can compare the calculated *y* (price) against the
 known value of *y* and measure our error. For example, suppose we guess that
 :math:`b = 5` and :math:`m = .8` for a diameter of 10 we get
@@ -71,7 +72,7 @@ value should be 13, so our error is our known value minus our predicted value
 
 Add a column to the spreadsheet that contains the predicted price for the pizza
 using the diameter as the x-value and using a slope of 0.7 and intercept of 5.
-Now, plot the original set of data along with the this new table of data. Make
+Now, plot the original set of data along with this new table of data. Make
 the original data one color and your calculated table another color. Experiment
 with some different guesses for the slope and intercept to see how it works.
 
@@ -82,7 +83,7 @@ combine these error measurements together is to compute the Mean Squared Error
 errors, add them up and then divide by the number of error terms we have.
 
 Why do we square them first? Well, did you notice that in our example, one of
-the errors was positive and one was negative. But if we add together both
+the errors was positive and one was negative? But if we add together both
 positive and negative numbers they, can cancel each other, out making our final
 mean value smaller. So we square them to be sure they are all positive. We call
 this calculation of the MSE an **objective function**. In many machine learning
@@ -90,7 +91,7 @@ algorithms, our goal is to minimize the objective function. That is what we want
 to do here: we want to find the value for *m* and *b* that minimizes the error.
 
 Add two cells to your spreadsheet where you can try different values for the
-slope and intercept. Also update the column where you compute a value for the
+slope and intercept. Also, update the column where you compute a value for the
 price to use the values from these cells rather than the hardcoded values of 0.7
 and 5.
 
@@ -134,6 +135,7 @@ it for the pizza problem.
 If you are having any trouble, your setup should look like this.
 
 .. figure:: Figures/Solver_screen.png
+  :alt: Screen capture of Google Sheets with Solver add-on being used to calculate the slope and intercept by minimizing the MSE.
 
 
 Closed-Form Solution
@@ -172,7 +174,7 @@ The Payoff - Supervised Learning
 
 The payoff from this exercise with Solver is that we have "learned" values for
 the slope and intercept that will allow us to predict the price of any pizza! If
-your friend calls you up and says "I just ate a 7 inch pizza, guess how much it
+your friend calls you up and says "I just ate a 7-inch pizza, guess how much it
 cost?", you can quickly do the math of :math:`1.97 + 0.98 x 7` and guess $8.83!
 Won't they be amazed?
 
@@ -181,7 +183,7 @@ solver-like algorithm for finding the values for the slope and intercept, are
 called **supervised learning**. That is because we are using the known values
 for the prices of different pizzas along with their diameters to help correct
 our algorithm and come up with a value for the slope and intercept. The values
-that the algorithm learns are called our **model**. This model is pretty simple,
+that the algorithm learns are called our **model**. This model is pretty simple
 because it just uses two numbers and the formula for a line. But don't let the
 simplicity fool you, regression is one of the most commonly used algorithms in a
 data scientist's arsenal.
@@ -225,7 +227,7 @@ You will write three functions:
 
 
 Next, write a function that systematically tries different values for *m* and
-*b* in order to minimize the MSE. Put this function in a ``for`` loop and
+*b* to minimize the MSE. Put this function in a ``for`` loop and
 iterate 1000 times. See what your value is for *m* and *b* at the end.
 
 
@@ -238,13 +240,13 @@ loop, then plot it. You should see the error go down pretty quickly, then level
 off or go down very gradually. Note that the error will never go to 0 because
 the data isn't perfectly linear. But nothing in the real world is!
 
-At this point your algorithm's ability to learn is limited by how much you
-change the slope and intercept values each time through the loop. At the
+At this point, your algorithm's ability to learn is limited by how much you
+change the slope and intercept values each time through the loop. In the
 beginning, it's good to change them by a lot but as you get closer to the best
 answer, it's better to tweak them by smaller and smaller amounts. Can you adjust
 your code above to do this?
 
-For two-dimensional data, there is even a closed form solution to this problem
+For two-dimensional data, there is even a closed-form solution to this problem
 that one could derive using a bit of calculus. It is worthwhile to do this to
 see that their solution is very close to the solution you get from a simple
 formula that :math:`slope = covariance / variance` and
