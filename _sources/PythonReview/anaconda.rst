@@ -13,7 +13,7 @@ need for many years of data science productivity are included in the
 initial installation.
 
 The good people who created Anaconda have also provided a very nice set of
-instructors to help you install it for the first time. There are instructions
+instructions to help you install it for the first time. There are instructions
 for Windows, macOS, and Linux. The
 `installation guide <https://docs.anaconda.com/anaconda/install/index.html#>`_ is
 also part of a larger set of `documentation <https://docs.anaconda.com/anaconda/>`_ that you may find useful. Make sure

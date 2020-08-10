@@ -156,7 +156,7 @@ Note that once a string is created and saved in a variable, it cannot be altered
    Princess Fiona
 
 You can access particular character or segment of a string by using the following sequential indexing 
-operations. :ref `Table 2 <_tab_sequentialmethods>`_.
+operations. Refer to Table 2 below.
 
 .. _tab_sequentialmethods:
 
@@ -190,8 +190,8 @@ methods used in this course.
       .endswith()  returns True or False depending on if the string 
                    ends with the specified characters
          .split()  splits the string at specified characters. The
-                   split strings with be returned in a list.
-         .title()  returns a string where the first letter of each world
+                   split strings will be returned in a list.
+         .title()  returns a string where the first letter of each word
                    is upper cased.
           .join()  takes all elements from an iterable and seperates them
                    using a string. (a string is an iterable)
@@ -482,7 +482,7 @@ Dictionaries are another convenient, built-in data type in Python (they’re has
 tables, if you've used another language that uses that name). Hash tables are 
 one form of data structure used to store data by generating a key-value pair using hash 
 functions. For this course, Dictionaries are a way of storing data where each value is stored 
-under a ``key`` that is used to retrieve the ``value``. You can think of Dictionaries much like a lookup table 
+under a ``key`` that is used to retrieve the ``value``. You can think of dictionaries much like a lookup table 
 in a spreadsheet. 
 
 Dictionaries can be created in a variety of ways.
@@ -907,7 +907,7 @@ you can see in the following code:
 
    26
 
-You may also this kind of thing done as the following:
+You may also see this kind of thing done as the following:
 
 .. code:: python3
 
@@ -919,5 +919,5 @@ You may also this kind of thing done as the following:
    26
 
 The ``as rand`` in the above code allows you to use rand instead of ``random`` to use all the functions that come with 
-random (such as ``randrange``). rand is not a preset value so you can use any name you would like instead of it. 
+random (such as ``randrange``). Rand is not a preset value so you can use any name you would like instead of it. 
 
