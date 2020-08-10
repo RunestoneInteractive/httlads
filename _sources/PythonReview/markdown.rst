@@ -13,7 +13,7 @@ text format language known as Markdown.
 
 Markdown is a lightweight Markup (human-readable syntax) language that many consider being a
 key authoring framework for data science. Markdown allows for capabilities like bolding, italicizing,
-or making headers similar to word processing tools Google Docs or Microsoft Word.
+or making headers similar to word processing tools like Google Docs or Microsoft Word.
 
 In Notebook, Markdown Cells are run in the same way as Code Cells by pressing on the Run button or holding
 the Shift + Return keys. Outside of Notebooks, you can use Markdown to create a web page, pdf,

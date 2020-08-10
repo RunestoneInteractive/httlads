@@ -10,7 +10,7 @@ You may be using Google Colaboratory to run code and complete assignments.
 
 Google Colab is a free Jupyter Notebook environment hosted by Google.
 It has all the features of Jupyter Lab and more. It is a great platform
-used by data scientists and machine learning programmers because it takes away the hassle of having to do installations on your own maching. Colab has
+used by data scientists and machine learning programmers because it takes away the hassle of having to do installations on your own machine. Colab has
 many data science libraries pre-installed and allows you to save your files on Google Drive.
 
 Getting Google Colab Set Up
@@ -88,7 +88,7 @@ The output, if there is one, will be shown directly below the cell. Try running 
    3+5*4%43
 
 
-This doesn't work just for arithmetic operations but any Python code that you
+This doesn't work just for arithmetic operations but for any Python code that you
 might write.
 
 
@@ -152,7 +152,7 @@ out of order. Below is an example.
    print(my_list)
 
 
-Notice that ``my_list`` "contains "purple" twice; even the code code above only adds it
+Notice that ``my_list`` "contains "purple" twice; even the code above only adds it
 once. In general, you should write your code assuming that each code cell is run once
 from top to bottom. There's even a menu to help you do that. The "Run" menu has
 "Run All Above Selected Cell" and "Run All Cells" functions that allow you to
@@ -172,7 +172,7 @@ be importing other packages and libraries as well.
    import scipy as sc
 
 Think of packages, libraries, and modules as separate files that exist outside of the one you are working on.
-They are an efficient part of programming to help programmers not have to re-write every bit of code from scratch.
+They are an efficient part of programming so programmers don't have to re-write every bit of code from scratch.
 For instance, the math module already has addition and subtraction defined in it, so by importing it, you can build
 on top of it rather than having to reinvent the wheel.
 
