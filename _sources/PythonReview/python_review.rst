@@ -971,4 +971,4 @@ Practice using the random module below:
 .. activecode:: random_generator
 
    import random as rand
-   rand.randrange() # Add a two numbers between which you want a random value generated.
+   rand.randrange() # Add two numbers between which you want a random value generated.
