@@ -11,5 +11,6 @@ Ethical and Legal Considerations in Using Data
    :caption: Data Ethics
    :maxdepth: 2
 
+   introduction.rst
    good_data_sources.rst
    finding_cheaters.rst

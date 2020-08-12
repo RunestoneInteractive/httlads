@@ -6,6 +6,10 @@
 How to Think like a Data Scientist
 ==================================
 
+**Second Edition**
+
+by Brad Miller, Jacqueline Boggs, and Janice L Pearce
+
 .. Here is were you specify the content and order of your new book.
 
 .. Each section heading (e.g. "SECTION 1: A Random Section") will be
@@ -36,12 +40,12 @@ Table of Contents
     :maxdepth: 3
 
     Introduction/toctree.rst
-    Happiness/toctree.rst
+    Statistics/toctree.rst
     Solver/toctree.rst
     PythonReview/toctree.rst
     MovieData/toctree.rst
     WorldFacts/toctree.rst
     DataEthics/toctree.rst
-    UNGeneralDebates/toctree.rst
-    BikeRental/toctree.rst
+    TextualAnalysis/toctree.rst
+    PredictiveAnalytics/toctree.rst
     Instacart/toctree.rst

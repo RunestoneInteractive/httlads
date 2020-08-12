@@ -3,11 +3,35 @@
    International License. To view a copy of this license, visit
    http://creativecommons.org/licenses/by-sa/4.0/.
 
+Introduction
+============
+
+This chapter will cover the definition and practice of **data science**.
+It will explore the history and current state of the discipline, explaining
+how data science began and where it will be going in the future. We will also
+explore how data science leverages data analysis and data visualization.
+
+Learning Goals
+--------------
+- Understand the importance of data collection and its implementation. 
+- Gain awareness of how broad data collection is in all subjects. 
+- Gain an introduction to what a Data Scientist does. 
+- Understand and know the purpose of all the steps in the **Data Science Pipeline**.
+- Understand what it takes to gain and better skills: **Learning Zone** vs **Performance Zone**. 
+- Learn the difference between Data Science and Data Analytics.
+
+Learning Objectives
+---------------------
+
+- Be able to identify different steps along different data science pipelines, recognizing all the previous and future steps.
+- Be able to identify if you are in a performance zone or learning zone and transition between them as necessary.
+- Be able to effectively navigate the *How to Think Like a Data Scientist* book.
+
 
 What Is Data Science?
-=====================
+---------------------
 
-`90% of the data in the world today has been created in the last two years alone. <http://www.iflscience.com/technology/how-much-data-does-the-world-generate-every-minute>`_
+In 2016 a study reported that `90% of the data in the world today has been created in the last two years alone. <http://www.iflscience.com/technology/how-much-data-does-the-world-generate-every-minute>`_
 This is the result of the continuing acceleration of the rate at which we store
 data. Some estimates indicate that roughly 2.5 quintillion bytes of data are
 generated per day; that's 2,500,000,000,000,000,000 bytes! By comparison, all
@@ -21,7 +45,7 @@ you can visualize 15 exabytes as a
 `pile of cards three miles high <https://what-if.xkcd.com/63/>`_ ,covering all
 of New England. Everywhere you go, someone or something is collecting data about
 you: what you buy, what you read, where you eat, where you stay, how and when
-you travel, and so much more.
+you travel, and so much more. By 2025, it is estimated that 463 exabytes of data will be created each day globally, and the entire digital universe is expected to reach 44 zettabytes by 2020. `This would mean there would be 40 times more bytes than there are stars in the observable universe. <https://www.visualcapitalist.com/how-much-data-is-generated-each-day/>`_
 
 
 What does it all mean?
@@ -30,7 +54,7 @@ What does it all mean?
 Often, this data is collected and stored with little idea about how to use it,
 because technology makes it so easy to capture. Other times, the data is
 collected quite intentionally. The big question is: what does it all mean?
-That's where data science comes in. Data science is an emerging field that
+That's where data science comes in. Data science is an emerging and interdiciplinary field that
 brings together ideas that have been around for years, or even centuries. Most
 people define data science as "an interdisciplinary field about processes and
 systems to extract knowledge or insights from data in various forms".
@@ -65,13 +89,14 @@ Data Science in a Liberal Arts Context
 --------------------------------------
 
 As an interdisciplinary field of inquiry, data science is perfect for a liberal
-arts college. Combining statistics, computer science, writing, art, and ethics,
+arts college as well as many other types of universities.
+Combining statistics, computer science, writing, art, and ethics,
 data science has application across the entire curriculum:  biology, economics,
 management, English, history, music, pretty much everything. The best thing
 about data science is that the job of a data scientist seems perfectly suited to
 many liberal arts students.
 
-  The best data scientists have one thing in common: unbelievable curiosity. - D.J. Patil Chief Data Scientist of the United States.
+  The best data scientists have one thing in common: unbelievable curiosity. - D.J. Patil Chief Data Scientist of the United States from 2015 to 2017.
 
 The diagram below is widely used to answer the question "What is Data Science?"
 It also is a great illustration of the liberal arts nature of data science. Some
@@ -80,13 +105,14 @@ available at a liberal arts college, all of which are looking for people with
 data skills!
 
 
-.. figure:: https://static1.squarespace.com/static/5150aec6e4b0e340ec52710a/t/51525c33e4b0b3e0d10f77ab/1364352052403/Data_Science_VD.png?format=1500w
-
+.. image:: https://static1.squarespace.com/static/5150aec6e4b0e340ec52710a/t/51525c33e4b0b3e0d10f77ab/1364352052403/Data_Science_VD.png?format=1500w
+  :alt: Venn Diagram depicting the different components of Data Science: Hacking Skills, Substantive Expertise, and Math and Statistics Knowledge.
    Venn Diagram |CCBYANC| Drew Conway
 
 
-According to Eric Haller, VP of Experian (a global information services
-company), recently interviewed by the Chicago Tribune:
+According to Eric Haller, Executive Vice President & Global Head, Experian DataLabs
+(a global information services
+company), when interviewed by the Chicago Tribune:
 
   A data scientist is an explorer, scientist, and analyst all combined into one
   role. They have the curiosity and passion of an explorer for jumping into
@@ -105,7 +131,7 @@ company), recently interviewed by the Chicago Tribune:
   things for people, businesses and society with data.
 
 However, all of this exploration and analysis means nothing if you cannot
-communicate it to people. In a recent Harvard Business Review article by Jeff
+communicate it to people. In a Harvard Business Review article by Jeff
 Bladt and Bob Filbin entitled: **A Data Scientist's Real Job: Storytelling**,
 they elaborate:
 
@@ -116,7 +142,7 @@ they elaborate:
   - `Harvard Business Review <https://hbr.org/2013/03/a-data-scientists-real-job-sto/>`_
 
 Stories are great, but in data science, you need to make sure they are true,
-especially when you are dealing with stories about numbers. In a recent article
+especially when you are dealing with stories about numbers. In an article
 entitled
 `The Ethical Data Scientist <http://www.slate.com/articles/technology/future_tense/2016/02/how_to_bring_better_ethics_to_data_science.html>`_,
 the sub-title really tells the story: *People have too much trust in numbers to
@@ -139,7 +165,7 @@ The Data Science Pipeline
    :align: left
 
 
-One of the primary goals of this course is to familiarize you with the data
+One of the primary goals of this textbook is to familiarize you with the data
 science pipeline. That is the series of steps you will go through as you seek to
 analyze and communicate with data. There are many steps in the pipeline and as
 you can see; the pipeline is anything but a linear process. Doing data science
@@ -147,6 +173,12 @@ is a very iterative process whereby you will often repeat previous steps because
 of something you learn in later steps. This is part of the exploratory nature of
 data science. There is not a single formula for success, or a single process
 that works for every data set. Let's look at each of the steps.
+
+.. image:: Figures/DS_Pipeline.png
+  :align: left
+  :width: 250
+  :height: 625
+  :alt: Chart outlining the different steps in the Data Science pipeline.
 
 * **Get Data:** Acquiring data can come in many forms. Data is sometimes found
   in a simple file, or in relational database, from a web based interface, or in
@@ -196,19 +228,20 @@ that works for every data set. Let's look at each of the steps.
   your boss, your parents, or your customers.
 
 
-Data Science in This Course
----------------------------
+Data Science in This Text
+-------------------------
 
-In this course, we will use the Python that you have already learned, and apply
-those skills to the exploration of data about the world around us. The if
-statements, for loops, and functions are still with us but, we will add some
+In this text, we will use Google Sheets and Python to apply
+data science skills to the exploration of data about the world around us.
+We will use programming skills like if
+statements, for loops, and functions that are core to Python, we will add some
 specialized tools to allow us to process large datasets both easily and quickly.
 These are the tools that researchers and professional data scientists use to
 perform their work.
 
-As we dive into data science, you will notice that the format of this course
-will be very different from what you experienced in your Introduction to
-Programming course. The questions that we will ask of each other and of the data
+As we dive into data science, you will notice that the format of this text
+will be very different from what you might have experienced in an introduction to
+programming course, if you had one. The questions that we will ask of each other and of the data
 will be more open-ended. It is no longer a matter of only computing the mean or
 median of some metric, but of exploring all the data available to us, sometimes
 across multiple datasets, excluding outliers, and finding interesting groupings
@@ -217,9 +250,8 @@ these questions will not be a clear "yes" or "no", but something much more
 subjective and open to analysis. That can be frustrating at times, but that is
 reality of the messy world we live in (and the messy data we extract from it).
 
-This means that the learning zones that we talked about
-`previously <https://runestone.academy/runestone/static/fopp/FrontBackMatter/preface.html#get-in-the-learning-zone>`_
-are still very much going to be with us. Computers are still very reliable, and
+This means that the `learning zone you may have heard of <https://runestone.academy/runestone/static/fopp/FrontBackMatter/preface.html#get-in-the-learning-zone>`_
+are very much going to be key. Computers are still very reliable, and
 very quick, but not creative. As you apply more powerful tools to problem
 solving, you will find that some things that might have been hard with basic
 Python are now easy, allowing you to perform certain tasks in your comfort zone.
@@ -227,16 +259,17 @@ However, new tools also mean new ways for them to fail or produce unexpected
 results. This will hopefully push you into your learning zone where you will
 discover your ability to perform complex analyses to solve real-world problem.
 
-There is a second definition of the learning zone that is related to what we
-have been talking aobut. In this amazing
+There is another definition of the learning zone that is related to what we
+have been talking about. In this amazing
 `TED talk: How to get better at the things you care about <https://www.ted.com/talks/eduardo_briceno_how_to_get_better_at_the_things_you_care_about>`_,
 Eduardo Briceño talks about the "performance zone" versus the "learning zone."
+Please watch it.
 
 
 .. youtube:: YKACzIrog24
 
 
-The big takeaway for you is that as a student in the classroom for this class,
+The big takeaway for you is that as a student in a classroom using this text,
 you are in the learning zone as Briceño defines it. You are not being judged or
 graded for how quickly you arrive at an answer or not. The classroom for this
 course is a time for you to practice old skills, try new skills, and to fail
@@ -263,7 +296,7 @@ might encounter in other courses or books.
 When using real data, it is important to make sure that the data is licensed in
 a way that is appropriate for your intended use. For example, the CIA World
 Factbook data is licensed in the "public domain", which allows you to use the
-data any way you want. You could even package the CIA data in an application for
+data any way one might want. You could even package the CIA data in an application for
 a phone and sell that application on the app store. If you search, you will see
 there is more than such app! Another data set called the Twitter US Airline
 Sentiment data set is used in several different data science textbooks, and is
@@ -304,16 +337,18 @@ How to Use This Book
 --------------------
 
 This book is designed to be used in conjunction with external tools like Google
-Sheets and Jupyter Notebooks. You will need to move back and forth between
+Sheets and Google Colaboratory or Jupyter Notebooks. You will need to move back and forth between
 browser tabs as you work with the tools, and follow the instructions in the
 book. You will be asked to answer the questions in the book as you read. This is
 to encourage you to type in the code we have provided and experiment with it.
-Learning computer science or data science is not a spectator sport. Many
-students make the mistake of thinking that they can just read about it and
-understand it. You really have to do it in order to understand it. So, don't
-fool yourself and don't guess at the answers to the questions in the book.
+Learning computer science, data science, or data analytics is not a spectator sport.
+Many students make the mistake of thinking that they can just read about it and
+understand it. You really have to do it in order to understand it.
+Imagine trying to learn to play a sport or a musical instrument by only reading
+about it and not trying it... It simply would not work. So, please don't
+cheat yourself by failing to try and don't guess at the answers to the questions in the book.
 
-Everything you learn in this class builds on and reinforces the things you have
+Everything you learn in this textbook builds on and reinforces the things you have
 learned previously. If you do fall behind, make sure you talk to your instructor
 so you can develop a strategy for catching up.
 
