@@ -7,7 +7,7 @@
 .. _screenscrape:
 
 Case Study 1: Screen Scraping the CIA
-=======================================
+=====================================
 
 The country data that we have been using was compiled and turned into a CSV file
 in 2006. Much of that data comes from the CIA World Factbook (not Facebook, as
@@ -29,13 +29,16 @@ You can download each year of the factbook going back to the year 2000
 the year 2017. The nice thing about this is that you can unzip the file on your
 local computer but still use ``requests``.
 
+Download the 2017 zip file from <https://www.cia.gov/library/publications/download/>`_ and
+then extract (unzip) the files, so you can see all of them in a folder.
+
 The challenge of this project is that each variable is on its own page. So, we
 are going to have to combine many pages into a single coherent data frame. Then,
 when we have gathered all of the columns, we can pull them together into one
 nice data frame and we'll learn how to save that to a CSV file.
 
 Again, think generally. If you design a good function for finding and scraping
-one piece of information, make it work for all pieces of information, and in the
+one piece of information, try to make it work for all pieces of information, and in the
 end you will have a minimal amount of code that does a LOT of work.
 
 Let's take a look at the file structure of the downloaded data from 2017.
@@ -48,10 +51,10 @@ Let's take a look at the file structure of the downloaded data from 2017.
 
 .. parsed-literal::
 
-   appendix/          fonts/             index.html         rankorder/
-   css/               geos/              js/                scripts/
-   docs/              graphics/          print/             styles/
-   fields/            images/            print_Contact.pdf  wfbExt/
+   appendix/          fonts/             index.html         rankorder/
+   css/               geos/              js/                scripts/
+   docs/              graphics/          print/             styles/
+   fields/            images/            print_Contact.pdf  wfbExt/
 
 
 The folder that may jump out at you is called ``fields``, so lets look at that
@@ -79,7 +82,7 @@ you can figure out a good marker we can use to find the field contained in each.
 
 In fact, now that you are investigating and if you stop and think for a minute,
 you may conclude that there must be some kind of nice human-readable table of
-contents. In fact, there is. Take a look at the ``.docs`` folder to find the ``notesanddefs.html`` file.   
+contents. In fact, there is. Take a look in the ``docs`` folder to find the ``notesanddefs.html`` file.   
 
 In the spirit of starting small and working our way up to a larger project,
 let's write some code to scrape all of the fields and the file they are in from
@@ -183,12 +186,15 @@ BeautifulSoup, we can get the web page into a form that we can use some real
 power search tools.
 
 First, let's import the module, and read the entire webpage as a string.
+Note that there is a weird-looking "r" before the url in the following code. It stands for *raw string* 
+and is not a typo. If you forget it, the `\` in url can act as and escape character in Python, which is 
+not at all what we want!
 
 
 .. code:: python3
 
    from bs4 import BeautifulSoup
-   page = open('../Data/factbook/2017/docs/notesanddefs.html').read()
+   page = open(r'C:\Data\factbook\2017\docs/notesanddefs.html').read() 3 or another local address 
    page[:200]
 
 
