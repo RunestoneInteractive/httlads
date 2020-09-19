@@ -11,8 +11,8 @@ This chapter will explore the concept of analyzing data sets to
 summarize their main characteristics and information. We will start by exploring
 the dataset in more depth and use Pandas and Altair to explore and visualize the
 data in different formats, such as histograms and maps. As we go further in
-the chapter, you will realize that we do not have access to every database. Often
-we need to find other means to obtain the data. We will learn how to extract data from websites
+the chapter, you will realize that we do not have access to every data set in the form that we might wish. Often
+we need to find other means to obtain the data we need or to reformat the data in some way. We will learn how to extract data from websites
 using web scraping methods. Finally, you will be able to use the Pandas pivot table to summarize the data.
 
 

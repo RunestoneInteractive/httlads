@@ -28,7 +28,7 @@ file for this project look like this.
 
 
 You may have some experience with reading and parsing CSV files on your own with
-Python. If not, you may wish to
+Python. If not don't worry. If you are interested in learning more, you may wish to
 `review this material <https://runestone.academy/runestone/static/fopp/Files/ReadingCSVFiles.html>`_.
 
 
@@ -40,7 +40,6 @@ Python. If not, you may wish to
    import matplotlib
    import matplotlib.pyplot as plt
    import psycopg2
-   import textatistic
    import seaborn as sbn
    from altair import Chart, X, Y, Color, Scale
    import altair as alt
