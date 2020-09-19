@@ -6,14 +6,14 @@
 Mapping Bike Stations Using Colab
 =================================
 
-This section will show you how to map our bikeshare data on **Google Colab**. We are going to be using 
-a module called ``folium`` instead of ``ipyleaflets`` (as shown in 9.8) because Colab does not support Jupyter widgets. 
+This section will show you how to map our bikeshare data on **Google Colab**. We are going to be using
+a module called ``folium`` instead of ``ipyleaflets`` (as shown in 9.8) because Colab does not support Jupyter widgets.
 We will be using the package ``folium`` which is a module that allows for mapping  static data in both Jupyter Notebooks
 and Colab.
 
-Next, we want to put all the latitude and longitude values from each of the bikeshare stations into a list. What 
-we want to do is combine the two columns from the ``DataFrame`` into tuples and put them in a list. The aim is to 
-get something that would look like this: ``[(lat1, long1), (lat2, long2), ...]`` which the Google Maps interface can accept. 
+Next, we want to put all the latitude and longitude values from each of the bikeshare stations into a list. What
+we want to do is combine the two columns from the ``DataFrame`` into tuples and put them in a list. The aim is to
+get something that would look like this: ``[(lat1, long1), (lat2, long2), ...]`` which the Google Maps interface can accept.
 While a for loop might be used for this, we will be using a simpler way.
 
 Suppose we have two lists:
@@ -28,7 +28,7 @@ We want to combine these lists into ``[('a', 1), ('b', 2), ('c', 3)]``. Python h
 that takes in any number of iterable objects and "zips" them together. The ``zip`` function will take the first elements
 from each iterable object and puts them in a tuple; then it will do the same for the second element from each object,
 then the third, then the fourth, etc. We can use the zip function like this ``zip(list1, list2)``. Let us expand our
-example. 
+example.
 
 .. code:: python3
 
@@ -37,25 +37,25 @@ example.
     str1 = "XYZ"
 
 If we were to run ``list(zip(list1, list2, str1))`` it would return ``[('a', 1, 'X'), ('b', 2, 'Y'), ('c', 3, 'Z')]``.
-Why do we need to put ``zip`` into a ``list``? ``zip`` returns an iterator that, under most circumstances, behaves like 
+Why do we need to put ``zip`` into a ``list``? ``zip`` returns an iterator that, under most circumstances, behaves like
 a list, except when we want to see specific examples. If we want to index into something that has been zipped (or simply
-print the zipped values) we have to turn it into a list first. Series are also iterable objects, which means that it is 
+print the zipped values) we have to turn it into a list first. Series are also iterable objects, which means that it is
 possible to ``zip`` them.
 
 ::
 
     import pandas as pd
 
-    stations = pd.read_csv("https://media.githubusercontent.com/media/bnmnetp/httlads/master/Data/bikeshare_stations.csv")
+    stations = pd.read_csv("https://media.githubusercontent.com/media/RunestoneInteractive/httlads/master/Data/bikeshare_stations.csv")
     stations.head()
 
-Let us start by loading the stations data into Colab. You can load data into Colab from a database, local file, or remotely as it is 
+Let us start by loading the stations data into Colab. You can load data into Colab from a database, local file, or remotely as it is
 being done here. After the file has been loaded, we will create a marker for each station using the longitude and latitude data.
 
 ::
 
    import folium
-   
+
    Locations = list(zip(stations.latitude, stations.longitude))
    dc_center = (38.9072, -77.0369)
 
