@@ -22,6 +22,14 @@ Course Outputs Learning Objectives
 * Simulations, Monte Carlo
 * Run basic statistical tests, set up null hypotheses
 
+## Before you Clone this Repository install git-lfs
+
+There are a number of large data files in this book.  You need to enable git-lfs or when you clone you will just get stubs of the data files and things will break all over the place.
+
+## Before you build install the packages in requirements.txt
+
+This book also uses a number of additional packages that the regular runestone command does not include.  Please update your virtual environment.
+
 ## Course Outline
 
 ### [Week 1-2] --  Module 1
