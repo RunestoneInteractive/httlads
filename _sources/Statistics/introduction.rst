@@ -22,8 +22,10 @@ So, if you are familiar with Microsoft Excel, you will find Google Sheets very e
 Lastly, we will discuss the difference between **correlation** and **causation** and explore why correlation does not imply causation.  Understanding 
 this concept is crucially important for making correct assumptions and decisions when analyzing data.
 
-Learning Goals
---------------
+Learning Goals and Objectives
+-----------------------------
+Learning goals:
+
 - Explore the concepts of descriptive statistics and data visualization.
 - Distinguish between descriptive and inferential statistics.
 - Learn to apply the various measures of central tendency and the measures of variability.
@@ -31,8 +33,8 @@ Learning Goals
 - Addressing cells: relative versus absolute, on the same sheet versus across sheets.
 - Use a spreadsheet to explore data.
 
-Learning Objectives
--------------------
+Learning objectives:
+
 - Become adept at importing, organizing, and visualizing data using Google Sheets.
 - Extrapolate measures of central tendencies and measures of variability of a given data set.
 - Combine different datasets and use them to extract new data.

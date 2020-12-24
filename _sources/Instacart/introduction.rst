@@ -8,15 +8,16 @@ to purchase. We will also explore tools such as recommender systems, which are a
 that predict consumer’s preferences. We will learn how to use Python libraries to find common purchasing 
 combinations and consumer’s purchasing preferences in a large data set.
 
-Learning Goals
----------------
+Learning Goals and Objectives
+-----------------------------
+
+Learning goals:
 
 - Look for common patterns in a large data set
 - Analyze data and determine if it is sparse
 - Visualize associations between different items in a large data set
 
-Learning Objectives
----------------------
+Learning objectives:
 
 - Find relationships between a particular group of items in an extensive data set using the Market basket analysis technique
 - Construct, analyze, and retrieve information from an item-item matrix

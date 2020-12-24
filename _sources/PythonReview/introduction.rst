@@ -17,13 +17,16 @@ languages in the data science field. You will also set up the tools you will be
 using throughout the entire course including a type of scientific notebook that
 allows for a mix of text and code.
 
-Learning Goals
---------------
+Learning Goals and Objectives
+-----------------------------
+
+Learning goals:
+
 - Review the fundamental constructs of programming in Python.
 - Learn to use a type of programming notebook that mixes text and code.
 
-Learning Objectives
--------------------
+Learning objectives:
+
 - Recall the fundamentals of programming in Python.
 - Learn to use the Markdown language.
 - Learn to set up a Jupyter Notebook or a Google Colaboratory Notebook.

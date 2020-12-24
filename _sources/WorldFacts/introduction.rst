@@ -16,16 +16,17 @@ we need to find other means to obtain the data we need or to reformat the data i
 using web scraping methods. Finally, you will be able to use the Pandas pivot table to summarize the data.
 
 
-Learning Goals
-----------------
+Learning Goals and Objectives
+-----------------------------
+
+Learning goals:
 
 * Visualize, analyze, and describe data in various formats
 * Extract data from different sources
 * Summarizes the data of a large data set
 
 
-Learning Objectives
---------------------
+Learning objectives:
 
 * Use Pandas to analyze and describe data
 * Visualize data with histograms and scatter plots
