@@ -397,7 +397,7 @@ code.
      :x: This is the same as before, but with more years
 
 
-Visualizing the Relationships with a Heatmap
+Visualizing the Relationships With a Heatmap
 --------------------------------------------
 
 We will now look at a way to get a better visual representation of the table we
@@ -499,7 +499,7 @@ very satisfying part of programming and data analysis! You have to enjoy your
 victories while you can.
 
 
-Visualizing the Relationships with a Graph
+Visualizing the Relationships With a Graph
 ------------------------------------------
 
 The good news is that we have already done most of the hard work in the last

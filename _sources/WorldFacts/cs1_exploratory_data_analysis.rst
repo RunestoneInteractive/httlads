@@ -7,7 +7,7 @@
 Case Study 1: Exploratory Data Analysis
 ==========================================
 
-Loading Data into a DataFrame from a CSV File
+Loading Data Into a DataFrame From a CSV File
 ---------------------------------------------
 
 The **CSV file** is one of the most common ways you will find data. CSV stands for
@@ -495,7 +495,7 @@ mixed between 1 and 2, and 2.5 mixed between 2 and 3.
     </div>
 
 
-Visualizing Distribution with Histograms
+Visualizing Distribution With Histograms
 ----------------------------------------
 
 
@@ -565,7 +565,7 @@ Practice
      :x: Try again, the number is less than 15
 
 
-Scatter Plots for Discovering Relationships
+Scatter Plots For Discovering Relationships
 -------------------------------------------
 
 Now, let's make a simple **scatter plot** of area versus population of the

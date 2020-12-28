@@ -131,8 +131,8 @@ mean by dividing our two columns.
    - :Taiwan.*: Is the correct answer
      :x: Keep checking
 
-
-Joining Data from Other Sources
+S
+Joining Data From Other Sources
 -------------------------------
 
 So far, we have limited our analysis to the data provided for us in the original

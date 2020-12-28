@@ -62,7 +62,7 @@ you: what you buy, what you read, where you eat, where you stay, how and when
 you travel, and so much more. By 2025, it is estimated that 463 exabytes of data will be created each day globally, and the entire digital universe is expected to reach 44 zettabytes by 2020. `This would mean there would be 40 times more bytes than there are stars in the observable universe. <https://www.visualcapitalist.com/how-much-data-is-generated-each-day/>`_
 
 
-What does it all mean?
+What Does It All Mean?
 ----------------------
 
 Often, this data is collected and stored with little idea about how to use it,
@@ -93,7 +93,7 @@ efficient and comfortable footwear
 `understanding this data <https://www.tekscan.com/product-group/medical/in-shoe>`_.
 
 
-What does a data scientist do?
+What Does a Data Scientist Do?
 ------------------------------
 
 .. youtube:: 0tuEEnL61HM
@@ -298,7 +298,7 @@ ability to join these solutions together to solve increasingly challenging
 problems with real-world applications.
 
 
-Datasets in this Book
+Datasets in This Book
 ---------------------
 
 Every chapter in this book uses data. The data that we use is real world data

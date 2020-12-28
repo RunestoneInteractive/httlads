@@ -4,7 +4,7 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-Numbers as Indices
+Numbers As Indices
 ==================
 
 Enough about movie budgets, it's time to budget my time instead. Because I

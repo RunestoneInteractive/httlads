@@ -5,7 +5,7 @@
 
 
 Text Mining
-==============
+===========
 
 In this section, we will learn how to read and explore data on a deeper level. We will learn how to use various 
 tools to group and visualize the diverse text in a data set. Keep in mind that you might encounter some errors along the way. 

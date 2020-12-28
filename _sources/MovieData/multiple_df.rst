@@ -4,7 +4,7 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-Dealing with Multiple DataFrames
+Dealing With Multiple DataFrames
 ================================
 
 Forget about budget or runtimes as criteria for selecting a movie, let's take a
@@ -17,7 +17,7 @@ have received more than 20 votes, and whose average score is greater than 8.
 .. jupyter-execute::
 
    import pandas as pd
-   df = pd.read_csv("https://media.githubusercontent.com/media/bnmnetp/httlads/master/Data/movies_metadata.csv").dropna(axis=1, how='all')
+   df = pd.read_csv("/Users/uhzees/httlads/Data/movies_metadata.csv").dropna(axis=1, how='all')
 
    df_highly_voted = df[df.vote_count > 20]
    df_high_rated = df_highly_voted[df_highly_voted.vote_average > 8]
@@ -76,7 +76,7 @@ difference between the ``vote_average`` and ``my_vote`` and divide it by
 
 .. fillintheblank:: mov_star_wars_difference
 
-   What's the percentage difference between the popular rating for Star Wars and my vote 
+   What's the percentage difference between the popular rating for Star Wars and my vote
    for it? |blank|
 
    - :-10: Is the correct answer

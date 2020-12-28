@@ -1,4 +1,4 @@
-Getting Started with the Bike Data
+Getting Started With the Bike Data
 ==================================
 
 In this Lesson, we will be hands on and try out SQL with the Capital
@@ -7,7 +7,7 @@ bike sharing dataset, hosted on a SQLLite database. You don't have to do anythin
 
 
 
-Verify access to the dataset
+Verify Access to The Dataset
 ----------------------------
 
 Let’s verify that you have access to the dataset by running a simple SQL

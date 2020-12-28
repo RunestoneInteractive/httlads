@@ -4,7 +4,7 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-Learning Pandas with Movie Data
+Learning Pandas With Movie Data
 ===============================
 
 .. toctree::
