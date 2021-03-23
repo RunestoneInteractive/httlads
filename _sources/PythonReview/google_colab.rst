@@ -42,7 +42,7 @@ Before we start getting into the coding, let's familiarize ourselves with the us
 
 **What the different buttons mean:**
 
-.. image:: Figures/colab_UI_left.JPG
+.. image:: Figures/colab_UI_Left.JPG
   :alt: Left side Google Colab notebook with arrows pointing at different features.
 
 1. **Files:** Here you will be able to upload datasets and other files from both your computer and Google Drive
@@ -134,23 +134,27 @@ is executed only when you run it, so you could accidentally or willfully run cod
 out of order. Below is an example.
 
 
-.. jupyter-execute::
+.. code-block:: python3
 
    # Run this cell once
    my_list = ["red", "green", "blue"]
 
 
-.. jupyter-execute::
+.. code-block:: python3
 
    # Run this cell twice
    my_list.append("purple")
 
 
-.. jupyter-execute::
+.. code-block:: python3
 
    # Run this cell once
    print(my_list)
 
+.. code-block:: none
+
+   ["red", "green", "blue", "purple", "purlple"]
+   
 
 Notice that ``my_list`` "contains "purple" twice; even the code above only adds it
 once. In general, you should write your code assuming that each code cell is run once

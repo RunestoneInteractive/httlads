@@ -16,7 +16,7 @@ master_url = None
 if not master_url:
     master_url = get_master_url()
 
-dynamic_pages = False
+dynamic_pages = True
 master_app = 'runestone'
 serving_dir = "./build/httlads"
 if dynamic_pages:

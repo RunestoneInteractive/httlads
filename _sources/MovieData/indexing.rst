@@ -92,7 +92,7 @@ Here is a simpler example that shows the movies that are 7 minutes long
 .. jupyter-execute::
 
    import pandas as pd
-   df = pd.read_csv("https://media.githubusercontent.com/media/bnmnetp/httlads/master/Data/movies_metadata.csv").dropna(axis=1, how='all')
+   df = pd.read_csv("https://media.githubusercontent.com/media/RunestoneInteractive/httlads/master/Data/movies_metadata.csv").dropna(axis=1, how='all')
   time_scheduler = df.set_index('runtime')
   time_scheduler = time_scheduler[['title', 'release_date']]
   time_scheduler.loc[7].head()
