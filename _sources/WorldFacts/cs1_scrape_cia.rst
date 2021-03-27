@@ -185,16 +185,16 @@ song sung by the Mock Turtle. (Yes, its turtles everywhere!) Using
 BeautifulSoup, we can get the web page into a form that we can use some real
 power search tools.
 
-First, let's import the module, and read the entire webpage as a string.
+First, let's import the module and read the entire webpage as a string.
 Note that there is a weird-looking "r" before the url in the following code. It stands for *raw string* 
-and is not a typo. If you forget it, the `\` in url can act as and escape character in Python, which is 
+and is not a typo. If you forget it, the backslash in the url can act as an escape character in Python, which is 
 not at all what we want!
 
 
 .. code:: python3
 
    from bs4 import BeautifulSoup
-   page = open(r'C:\Data\factbook\2017\docs/notesanddefs.html').read() 3 or another local address 
+   page = open(r'C:\Data\factbook\2017\docs\notesanddefs.html').read() 3 or another local address 
    page[:200]
 
 
