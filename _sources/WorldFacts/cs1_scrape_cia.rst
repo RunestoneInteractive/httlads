@@ -25,11 +25,11 @@ will see how powerful you can be when you have the right tools!
 CIA data for **any** year, not just 2017, so keep that in mind.
 
 You can download each year of the factbook going back to the year 2000
-`from the CIA <https://www.cia.gov/library/publications/download/>`_. Start with
+`from the CIA <https://www.cia.gov/the-world-factbook/about/archives/>`_. Start with
 the year 2017. The nice thing about this is that you can unzip the file on your
 local computer but still use ``requests``.
 
-Download the 2017 zip file from <https://www.cia.gov/library/publications/download/>`_ and
+Download the 2017 zip file from <https://www.cia.gov/the-world-factbook/about/archives/download/factbook-2017.zip>`_ and
 then extract (unzip) the files, so you can see all of them in a folder.
 
 The challenge of this project is that each variable is on its own page. So, we
