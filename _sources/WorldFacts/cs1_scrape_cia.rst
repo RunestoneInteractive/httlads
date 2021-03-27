@@ -29,7 +29,7 @@ You can download each year of the factbook going back to the year 2000
 the year 2017. The nice thing about this is that you can unzip the file on your
 local computer but still use ``requests``.
 
-Download the 2017 zip file from <https://www.cia.gov/the-world-factbook/about/archives/download/factbook-2017.zip>`_ and
+Download the `2017 zip file <https://www.cia.gov/the-world-factbook/about/archives/download/factbook-2017.zip>>`_ and
 then extract (unzip) the files, so you can see all of them in a folder.
 
 The challenge of this project is that each variable is on its own page. So, we
