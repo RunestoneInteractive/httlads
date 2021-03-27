@@ -34,7 +34,7 @@ Let's start scraping the country data from 2017. At the end of this exercise, yo
 data from any year.
 
 You can download each year of the factbook going back to the year 2000
-`from the CIA (click here) <https://www.cia.gov/library/publications/download/>`_. For this exercise, we will scrape the data from the year 2017. Once you have downloaded the data, you can unzip the file on your
+`from the CIA (click here) <https://www.cia.gov/the-world-factbook/about/archives/>`_. For this exercise, we will scrape the data from the year 2017. Once you have downloaded the data, you can unzip the file on your
 local computer.
 
 The challenge of this project is that each variable, such as budget, GDP, inflation rate, etc., is on its page.
