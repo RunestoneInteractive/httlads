@@ -48,7 +48,7 @@ other types. Look at the following:
 
 Python can convert a variable from one type to another without having to create a new variable. Sometimes, this is
 probably a bad idea, because we typically want our variables to be meaningfully named, rather than something obscure like "foo".
-But sometimes it is necessary to change types is necessary for example:
+But sometimes it is necessary to change types. For example:
 
 .. code:: python3
 
