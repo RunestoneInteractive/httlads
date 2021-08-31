@@ -450,12 +450,14 @@ above and apply that to the world below.
 
 
 .. image:: Figures/WorldFactbook_74_0.png
+:alt: This is the world map without color. 
 
 
 Your final result should look like this.
 
 
 .. image:: Figures/Visualization_7.png
+:alt: This is the world map with color based on data.
 
 
 .. reveal:: sol_business_score_map

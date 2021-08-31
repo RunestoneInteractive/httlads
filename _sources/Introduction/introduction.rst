@@ -82,7 +82,7 @@ efficient and comfortable footwear
 What does a data scientist do?
 ------------------------------
 
-.. youtube:: 0tuEEnL61HM
+.. youtube:: 0tuEEnL61HM 
 
 
 Data Science in a Liberal Arts Context
@@ -163,6 +163,7 @@ The Data Science Pipeline
 
 .. image:: Figures/DSPipeline.svg
    :align: left
+   :alt: Depicts the data science pipeline. A series of steps to go through to analyze and communicate with data.
 
 
 One of the primary goals of this textbook is to familiarize you with the data
