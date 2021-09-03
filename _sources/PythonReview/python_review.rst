@@ -386,10 +386,10 @@ You can also perform a variety of operations on lists.
 
 .. parsed-literal::
 
-   10
+   8
    2
-   146
-   479
+   64
+   187
    [3, 4, 64, 2, 45, 23, 12, 34, 3, 4, 64, 2, 45, 23, 12, 34]
    [3, 4, 64, 2, 45, 23, 12, 34, 146, 1, 2, 3]
 
