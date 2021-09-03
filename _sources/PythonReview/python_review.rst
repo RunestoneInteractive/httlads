@@ -259,7 +259,7 @@ Once a condition has been met, all subsequent clauses will be ignored.
    elif type(num) == int:
       print("num is an int")
 
-   elif type(num) == string:
+   elif type(num) == str:
       print("num is a string")
 
    else:
