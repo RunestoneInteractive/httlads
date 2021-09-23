@@ -48,7 +48,7 @@ other types. Look at the following:
 
 Python can convert a variable from one type to another without having to create a new variable. Sometimes, this is
 probably a bad idea, because we typically want our variables to be meaningfully named, rather than something obscure like "foo".
-But sometimes it is necessary to change types is necessary for example:
+But sometimes it is necessary to change types. For example:
 
 .. code:: python3
 
@@ -259,7 +259,7 @@ Once a condition has been met, all subsequent clauses will be ignored.
    elif type(num) == int:
       print("num is an int")
 
-   elif type(num) == string:
+   elif type(num) == str:
       print("num is a string")
 
    else:
@@ -386,10 +386,10 @@ You can also perform a variety of operations on lists.
 
 .. parsed-literal::
 
-   10
+   8
    2
-   146
-   479
+   64
+   187
    [3, 4, 64, 2, 45, 23, 12, 34, 3, 4, 64, 2, 45, 23, 12, 34]
    [3, 4, 64, 2, 45, 23, 12, 34, 146, 1, 2, 3]
 
