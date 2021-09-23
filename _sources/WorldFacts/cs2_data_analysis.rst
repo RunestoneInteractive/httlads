@@ -854,11 +854,7 @@ and ``&`` (logical *and*) operators.
 
 
 .. image:: Figures/visualization_5.png
-<<<<<<< HEAD
     :alt: This is a scatter graph protecting minority investor score.
-=======
-    :alt: This is a scatterg graph protecting minority investor score.
->>>>>>> a090e70ad9ca16912f62bcd21b655dcbcee8002c
 
 Now, let’s suppose you want to travel and start your dream business in one of your favorite locations. For example, 
 let’s say you have always wanted to go to Malta and start your business. Let’s see what business-related data we have in the data frame for Malta using equality. 
