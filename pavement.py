@@ -36,7 +36,7 @@ options(
         template_args={'course_id': 'httlads',
                        'login_required':'false',
                        'appname':master_app,
-                       'loglevel': 0,
+                       'loglevel': 10,
                        'course_url':master_url,
                        'dynamic_pages': dynamic_pages,
                        'use_services': 'true',
@@ -51,11 +51,6 @@ options(
     )
 )
 
-# if we are on runestone-deploy then use the proxy server not canterbury
-if gethostname() == 'runestone-deploy':
-    del options.build.template_args['jobe_server']
-    del options.build.template_args['proxy_uri_runs']
-    del options.build.template_args['proxy_uri_files']
 
 version = pkg_resources.require("runestone")[0].version
 options.build.template_args['runestone_version'] = version
