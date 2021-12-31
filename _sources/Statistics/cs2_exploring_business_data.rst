@@ -4,8 +4,8 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-Case Study 2: Considering Starting a Business?
-==============================================
+Case Study 2: Business Start-Up Analysis in Different Countries
+===============================================================
 
 Data science and data analytics can be used to analyze and understand data related to many different fields,
 such as education, business, targeted advertising, healthcare, and many more.
@@ -18,7 +18,7 @@ Thinking About Starting Your Business
 
 This case study utilizes the `starting a business <../_static/Start_a_Business_2019.csv>`_ (also called business start-up) data set obtained from the Doing Business-World Bank website.
 The data set contains indicators from over 190 countries that measure the relative ease of starting a business in those countries. The data set looks at
-two limited liability companies in various regions and countries around the world.
+two limited liability companies in various regions and countries around the world related to the ease of starting a business in different countries.
 
 Each country in the data set measures things such as the minimum amount of capital investment an entrepreneur must have to start a business,
 and the number of procedures that are necessary to register the business, and more that will be covered throughout this case study.
@@ -36,8 +36,26 @@ Below are definitions of the indicators found in the data set.
 -  **Paid-In Minimum Capital:** The minimum amount of money the entrepreneur must have in the bank for the business registration process to be completed.
 -  **Income Level:** This represents the income levels of each country's economy. This indicator is divided into low, lower-middle, upper-middle, and high, based on a country's gross national income (GNI) per person.
 
-We will use **Google Sheets** to explore which of these indicators are most important to start a new business in each economy's largest cities. 
+Now, let's revise what we have learned from Chapter 2.1. We will use **Google Sheets** to explore which of these indicators are most important to start a new business in each economy's largest cities. 
 Import the data set that you downloaded earlier, `starting a business <../_static/Start_a_Business_2019.csv>`_, into Google Sheets.
+
+Based on `Data Types in Statistics <https://towardsdatascience.com/data-types-in-statistics-347e152e8bee>`_, in order to categorize different types of variables, we split them into Categorical and Numerical Data. 
+
+Categorical data describe charateristics of the variables, and can be further split into Nominal and Ordinal. Some examples of categorical data are eye color, social class, etc. 
+Nominal values represent discrete units and are used to label the variables, which have no quantitative value. An example of nominal data is eye color (blue, brown, black).
+Ordinal data are values that are ordered discrete characteristics. An example of ordinal data is social class (lower, middle, upper).
+
+As for the numerical data, we include quantitaive data, and they are seperated into interval and ratio data. Some examples of numerical data are height, weight, income.
+Interval values represent ordered categories that have the equal difference. Interval data do not have a "true zero". Some examples of interval values are the temprature or income.
+Ratio values are also ordered categories that have the equal difference and can have a "true zero". Some examples of ratio data are height, length, or weight.
+
+The following picture is a great way to determine what category is a variable in. 
+
+.. image:: Figures/datatypes.png
+   :alt: A graph showing the different data types
+
+Numerical Data can also be seperated into discrete and continuous. Discrete are data that can be classified and also counted. Some discrete data are the number of students in a class, or someone's shoe size.
+Continuous data can't be counted but they can be measured. An example of continuous data is a person's height.
 
 .. mchoice:: dat_sab1
 
@@ -60,8 +78,11 @@ Import the data set that you downloaded earlier, `starting a business <../_stati
      - Incorrect
 
 
-Business Start-Up Data Analysis Research Questions
---------------------------------------------------
+Business Business Start-Up Analysis in Different Countries
+-----------------------------------------------------------
+
+The research questions below are interesting questions that can be addressed using data analysis. Using data analytics techniques we will be able to explore some of these
+research questions questions throughout the book. 
 
 1. What are the different factors that lead to a high ranking in the business start-up dataset?
 2. What role does “income level” play in determining the rank of a country?
@@ -71,8 +92,25 @@ Business Start-Up Data Analysis Research Questions
 
 The data set lists countries based on their business start-up scores. While it is easy to
 see the best countries for starting a business based on the business start-up rank, it is not
-easy to grasp the relative simplicity of each country. We can use the functions that we
-learned in the previous case study to create a common baseline: average, standard deviation, and median. So, let's average
+easy to grasp the relative simplicity of each country. 
+
+The following are some very important terms in data analytics that are used to describe the dataset. 
+
+**Mean** is the average of a set of values. It is important in analytics as it is a measure of central tendency. In Google Sheets we use the function ``AVERAGE`` and then select the cells of the values values to find the mean.
+From now on we will use the words mean and average interchangeably. 
+
+**Range** is the difference between the lowest and highest values of the dataset. To find the maximum value you use the function ``MAX``. Similarly, to find the minimum value you use the
+function ``MIN``.
+
+**Standard deviation** is the average distance from the mean. It shows how spread out the data is more than other types of variabilities. To find the standard deviation we use the
+the function ``STDEV``.
+
+**Mode** is the most common value on the dataset. It is very important in categorical data because it describes the most frequent option. To find the mode you can use the function 
+``MODE``.
+
+**Median** is the middle value of the dataset. The median is also as important because it provides another kind of baseline besides mean and mode. The function that gives the median is ``MEDIAN``.
+
+We can use the functions that we learned in the previous case study to create a common baseline: average, standard deviation, and median. So, let's average
 the business start-up score of all countries together.
 
 a. Use the ``AVERAGE`` function to calculate the mean in column D. Scroll down and click on a cell in column 194.
@@ -87,13 +125,15 @@ b. Many formulas in Google Sheets use ranges. They can span cells in a single co
    - E2:E192
    - E2:L192
 
-c. **Standard deviation** is the average distance from the mean. It shows how spread out the data is more
-   than other types of variabilities. The median is also as important because it provides another kind of
-   baseline besides mean and mode. Calculate the ``STDEV`` and ``MEDIAN`` for the business start-up score column.
+c. Calculate the ``STDEV`` and ``MEDIAN`` for the business start-up score column.
 
 d. Calculate the standard deviation and median by copying and pasting the formula to other columns.
 
-e. Copy the formula for ``=AVERAGE(D2:D141)`` from a, and the formula for standard deviation from c then calculate:
+e. Copy the formula for ``=AVERAGE(D2:D141)`` from a, and the formula for standard deviation from c 
+
+f. Remember, use a ``$`` so Google Sheets will not change the cell references when copy/pasting. 
+
+Then calculate the following:
 
 .. fillintheblank:: fb_sab8
 
@@ -113,9 +153,6 @@ e. Copy the formula for ``=AVERAGE(D2:D141)`` from a, and the formula for standa
      :20720.78597: Remember to round up and include three digits to the right of the decimal point
      :20721: Remember to include three digits to the right of the decimal point
      :x: USE the ``STDEV`` function and the range from N2 to N192
-
-
-f. Remember, use a ``$`` so Google Sheets will not change the cell references when copy/pasting.
 
 
 Visualizing How to Start a Business

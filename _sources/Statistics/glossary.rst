@@ -19,11 +19,19 @@ Definitions
 
 **Histogram:** Is a graph used to display data.
 
+**Mean:** is the average of a set of values.
+
+**Median:** is the middle value of the dataset. 
+
+**Mode:** is the most common value on the dataset and shows frequency.
+
 **Pearson correlation:** Is a type of measurement; it measures the strength and direction of a linear relationship between two variables. -1 has a strong negative relationship, and +1 has a strong positive relationship.
 
 **Pivot table:** Is a function used in Google Sheets to summarize, organize, sort, and perform other operations on data sets.
 
-**Standard Deviation:** Is used to measure the degree of variation of a set of values.
+**Range:** is the difference between the lowest and highest values of the dataset.
+
+**Standard Deviation:** Is used to measure the degree of variation of a set of values. It also shows the difference from the mean and how spread out the data is more than other types of variabilities.
 
 Keywords
 --------
