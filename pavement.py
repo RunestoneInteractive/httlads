@@ -12,7 +12,7 @@ from runestone import get_master_url
 sys.path.append(os.getcwd())
 
 home_dir = os.getcwd()
-master_url = "159.223.188.247"
+master_url = None
 if not master_url:
     master_url = get_master_url()
 
