@@ -25,7 +25,7 @@ website. Each website has its specific API format and a protocol to obtain that 
 from the previous case study to add the new column and then make a world map to show Starting_a_Business_score column
 from the starting a business data set.
 
-We will use the `requests module <http://http://docs.python-requests.org>`_ as it is a great tool that allows us to communicate with databases 
+We will use the `requests module <http://docs.python-requests.org>`_ as it is a great tool that allows us to communicate with databases 
 across the web. We will also use the ``restcountries.eu``, as it provides us an interface where we can get data from their site rather
 than a web page. If you recall, there is a way to ask for the data that you want. We will use ``/rest/v2/alpha/XXX``.
 
