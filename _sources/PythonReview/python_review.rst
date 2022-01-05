@@ -159,7 +159,7 @@ Note that once a string is created and saved in a variable, it cannot be altered
 
 
 You can access particular character or segment of a string by using the following sequential indexing
-operations. :ref `Table 2 <_tab_sequentialmethods>`_.
+operations. 
 
 .. _tab_sequentialmethods:
 

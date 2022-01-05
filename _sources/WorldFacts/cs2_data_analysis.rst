@@ -28,7 +28,7 @@ It may look intimidating, but we will unpack it as we go.
    Algeria,179,20.0,10,4.0,1.0,5.0,0.0,0.0,0.0,78
    Angola,147,32.0,16,4.0,6.0,6.0,0.0,0.0,0.0,79.4
 
-In case we have forgotten, here is the `link <https://runestone.academy/runestone/static/fopp/Files/ReadingCSVFiles.html>`_ to the documentation 
+In case we have forgotten, here is the `link <https://runestone.academy/ns/books/published/fopp/Files/ReadingCSVFiles.html>`_ to the documentation 
 on how to read and parse CSV files with Python.
 
 .. code:: python3
