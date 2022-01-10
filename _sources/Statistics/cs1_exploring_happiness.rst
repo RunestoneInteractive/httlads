@@ -28,9 +28,17 @@ We will be using Google Sheets instead of Microsoft Excel. Google sheets is used
 sharing a link and working in real time with a team. The same Solver tool is available on Microsoft Excel however working
 on Google Sheets is preferred because you can easily and quickly share data with other users, and work on the same dataset at the same time. 
 
-We will start by loading the `happiness_2017.csv <../_static/happiness_2017.csv>`_ file into Google Sheets. In order to do that you should 
-follow the instructions on how to import the file. First, open a spreadsheet in Google Sheets. Then, open or create a sheet, and at the top,
-click File and then Import. The list below gives a bit of detail about each of the columns on the spreadsheet.
+.. _googlesheet_setup:
+
+We will start by loading the `happiness_2017.csv <../_static/happiness_2017.csv>`_ file into Google Sheets. 
+
+1. In order to do that you should go to `Google Sheets <https://www.google.com/sheets/about/>`_ 
+
+2. Click on "Go to Sheets".
+
+3. Open a blank and then at the top, click File and then Import the file `happiness_2017.csv <../_static/happiness_2017.csv>`_.
+
+The list below gives a bit of detail about each of the columns on the spreadsheet.
 
 The following definitions are reproduced from
 `World Happiness Report 2018 <http://worldhappiness.report/ed/2018/>`_.
