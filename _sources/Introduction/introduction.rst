@@ -11,8 +11,23 @@ It will explore the history and current state of the discipline, explaining
 how data science began and where it will be going in the future. We will also
 explore how data science leverages data analysis and data visualization.
 
-Learning Goals
---------------
+Learning Goals and Objectives
+-----------------------------
+
+Goals and objectives refer to the desired outcomes that an entity, person or business,
+wants to achieve. However, there is a significant difference between them.
+
+A **goal** is a broad, often non-measurable, and intangible statement focusing on the desired 
+outcome. A goal seeks to achieve the larger, conceptual mission of the individual or the 
+business, and it does not define methods for attaining that intended outcome. Generally, 
+goals span over a long time frame. 
+
+An **objective**, on the other hand, is a specific, actionable, and tangible target that can be
+achieved within a shorter specified time frame. While goals target the larger mission, 
+objectives are involved in achieving the goals.
+
+Learning goals:
+
 - Understand the importance of data collection and its implementation. 
 - Gain awareness of how broad data collection is in all subjects. 
 - Gain an introduction to what a Data Scientist does. 
@@ -20,8 +35,7 @@ Learning Goals
 - Understand what it takes to gain and better skills: **Learning Zone** vs **Performance Zone**. 
 - Learn the difference between Data Science and Data Analytics.
 
-Learning Objectives
----------------------
+Learning objectives:
 
 - Be able to identify different steps along different data science pipelines, recognizing all the previous and future steps.
 - Be able to identify if you are in a performance zone or learning zone and transition between them as necessary.
@@ -48,7 +62,7 @@ you: what you buy, what you read, where you eat, where you stay, how and when
 you travel, and so much more. By 2025, it is estimated that 463 exabytes of data will be created each day globally, and the entire digital universe is expected to reach 44 zettabytes by 2020. `This would mean there would be 40 times more bytes than there are stars in the observable universe. <https://www.visualcapitalist.com/how-much-data-is-generated-each-day/>`_
 
 
-What does it all mean?
+What Does It All Mean?
 ----------------------
 
 Often, this data is collected and stored with little idea about how to use it,
@@ -79,7 +93,7 @@ efficient and comfortable footwear
 `understanding this data <https://www.tekscan.com/product-group/medical/in-shoe>`_.
 
 
-What does a data scientist do?
+What Does a Data Scientist Do?
 ------------------------------
 
 .. youtube:: 0tuEEnL61HM
@@ -284,7 +298,7 @@ ability to join these solutions together to solve increasingly challenging
 problems with real-world applications.
 
 
-Datasets in this Book
+Datasets in This Book
 ---------------------
 
 Every chapter in this book uses data. The data that we use is real world data

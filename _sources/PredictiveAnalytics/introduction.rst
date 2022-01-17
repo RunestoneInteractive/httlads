@@ -12,14 +12,17 @@ common ways of storing data is in a database. In this chapter, we will use SQLli
 send queries to different databases, and import data from those databases into a pandas 
 DataFrame. Then we will use the data to model different situations and predict outcomes.
 
-Learning Goals
---------------
+Learning Goals and Objectives
+-----------------------------
+
+Learning goals:
+
 - Manipulate data from a database using Structured Query Language.
 - Use linear regression to model the relationship between predicted data and actual data.
 - Create models that we can use to predict outcomes.  
 
-Learning Objectives
--------------------
+Learning objectives:
+
 - Import a SQL database into a Pandas DataFrame.
 - Retrieve, sort, and aggregate data from a database.
 - Join and extract data from multiple databases.

@@ -1200,7 +1200,7 @@ used in industry.
         From 0 to 200 (on the x-axis) there is one bar that goes to 5,000 and from 200 to 
         400 the bar goes up to less than 200. 
 
-Experimenting with Item-Item Recommendations
+Experimenting With Item-Item Recommendations
 --------------------------------------------
 
 -  The histogram above shows that the vast majority of the items are in the

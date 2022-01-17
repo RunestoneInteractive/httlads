@@ -4,7 +4,7 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-Working with Text
+Working With Text
 =================
 
 Since we are working with data frames, sometimes when extracting text, blank spaces or 

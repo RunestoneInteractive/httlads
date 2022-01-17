@@ -145,7 +145,7 @@ coincidence that they have the same name in this example.
   :alt: Heat map of the U.S. counties based on relative Unemployment. Colors range from yellow for high unemployment to blue for low employment. 
 
 
-Using a Web API to get Country Codes
+Using a Web API to Get Country Codes
 ------------------------------------
 
 Can you make use of the provided example and the Altair documentation to produce

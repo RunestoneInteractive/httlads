@@ -26,13 +26,15 @@ We will use a tool for linear programming called Solver in Google Sheets. Solver
 can also be used with Microsoft Excel and many other spreadsheet programs.
 
 
-Learning Goals
---------------
+Learning Goals and Objectives
+-----------------------------
+
+Learning goals:
+
 - Explore the ideas and techniques of **optimization**.
 - Learn how to optimize an **objective function** under specific **constraints**.
 
-Learning Objectives
--------------------
+Learning objectives:
 
 - Be able to recognize an **objective function** and any **constraints** in a specific problem.
 - Learn to apply optimization concepts to maximize or minimize an **objective function** or to set it to a specified value.

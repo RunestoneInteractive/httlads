@@ -6,7 +6,7 @@
 
 .. _CSHappinessComparingYears:
 
-Case Study 1: Comparing Happiness Data across Years
+Case Study 1: Comparing Happiness Data Across Years
 ===================================================
 
 We have two files of happiness data, one for 2017 which you have been using, and

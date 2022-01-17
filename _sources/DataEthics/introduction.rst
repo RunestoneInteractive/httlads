@@ -24,12 +24,14 @@ merging data from multiple sources. They should ask questions such as:
 - Will the ethics of the project stay the same after the share and/or merge? 
 - Does the share and/or merger reveal information that could be harmful to the privacy of people involved in the data? 
 
-Learning Goals
---------------
+Learning Goals and Objectives
+-----------------------------
+Learning goals:
+
 - Learn about ethical practices when using data.
 
-Learning Objectives
--------------------
+Learning objectives:
+
 - Learn to identify data that are free to use.
 - Learn to check if screen scraping is legal on different websites. 
 - Understand the ethical wrongs of misrepresenting data.  

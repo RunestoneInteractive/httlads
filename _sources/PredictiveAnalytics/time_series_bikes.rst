@@ -218,7 +218,7 @@ of the week with just the business days.
         d+b
 
 
-Indexing with a DatetimeIndex
+Indexing With a DatetimeIndex
 -----------------------------
 
 Using a timestamp as an index gives you some additional power. For example, you
@@ -260,7 +260,7 @@ common models to start with for making predictions is "linear regression". But
 first, let's take a break for some pizza.
 
 
-Working with ZIP Files (Optional)
+Working With ZIP Files (Optional)
 ---------------------------------
 
 In many cases, large data files are available in compressed format. Usually, this

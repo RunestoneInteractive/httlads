@@ -3,7 +3,7 @@
    International License. To view a copy of this license, visit
    http://creativecommons.org/licenses/by-sa/4.0/.
 
-Exploring Bike Rental Data with SQL
+Exploring Bike Rental Data With SQL
 ===================================
 
 .. figure:: https://imgs.xkcd.com/comics/exploits_of_a_mom.png

@@ -4,7 +4,7 @@
    http://creativecommons.org/licenses/by-sa/4.0/.
 
 
-Dealing with Multiple DataFrames
+Dealing With Multiple DataFrames
 ================================
 
 Forget about budget or runtimes as criteria for selecting a movie, let's take a

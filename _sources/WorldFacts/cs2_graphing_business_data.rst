@@ -10,7 +10,7 @@ Case Study 2: Graphing Business Data on a Map
 In this section, we will explore visualization techniques that use data to display information in a more abstract and helpful format so that the data analysis results are better understood.
 For this case study, we will focus on graphing business data on a map using Altair.
 
-Getting Country Codes from a Web API
+Getting Country Codes From a Web API
 ------------------------------------
 
 Now that you are familiar with graphing data on a map using Altair from the previous case study. We can

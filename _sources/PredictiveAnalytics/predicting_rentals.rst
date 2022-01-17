@@ -509,7 +509,7 @@ One really common method for transforming the data is to use min-max scaling.
 This will ensure that all of your values are between 0 and 1.
 
 
-Where to go from here?
+Where To Go From Here?
 ----------------------
 
 In the introduction to this textbook, we showed you this diagram. Take a look at

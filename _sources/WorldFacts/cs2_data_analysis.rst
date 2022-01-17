@@ -13,7 +13,7 @@ For this case study, we will use the World Bank Data on Protecting Minority Inve
 provided to you in the introduction.
 
 
-Loading Minority Investors Data into a DataFrame
+Loading Minority Investors Data Into a DataFrame
 -------------------------------------------------
 
 To get our first glimpse at **Pandas** and its capabilities, we will be using the data about the countries we used in the spreadsheet module. 
@@ -321,7 +321,7 @@ Let's use our handy method that Pandas provides us with, ``describe``, to get so
 
 
 
-Visualizing Minority Investors with a Histogram
+Visualizing Minority Investors With a Histogram
 ------------------------------------------------
 
 .. code:: python3
@@ -355,7 +355,7 @@ Let's write all of the above calls into a single line.
 
 
 
-Discovering Relationships with Scatter Plots
+Discovering Relationships With Scatter Plots
 --------------------------------------------
 
 We can visualize and show the relationship between data using **scatter plots**.
