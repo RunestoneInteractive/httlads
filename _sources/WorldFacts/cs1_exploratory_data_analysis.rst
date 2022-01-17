@@ -548,11 +548,11 @@ Practice
    What is the range of values for the tallest bar when creating a histogram of
    the fraction of the economy due to service? Lower: |blank| Upper: |blank|
 
-   - :(.5|.50|0.50): Is the correct answer
+   - :(.5|0.5|.50|0.50): Is the correct answer
      :.49: Just a little too low
      :x: Try again, the number will be between 0 and 1.0
 
-   - :(.60|.6|0.60): Is correct
+   - :(.6|0.6|.60|0.60): Is correct
      :x: Try again, the number will be between 0.0 and 1.0
 
 
