@@ -343,7 +343,7 @@ Let's write all of the above calls into a single line.
 
 
 .. image:: Figures/visualization_2.png
-
+    :alt: This is a histogram depicting protecting minority score. 
 
 .. fillintheblank:: fact_liability_index2_cs1
    :casei:
@@ -572,6 +572,7 @@ Or, you can put the query right into the call to create a chart.
 
 
 .. image:: Figures/visualization_4.png
+    :alt: This is a scatter graph of protecting minority investors score.
 
 
 Pretty neat! As we can see, one location has a minimal value while others are farther to the right. This graph encapsulates all the protecting_minority_investors_score
@@ -853,6 +854,7 @@ and ``&`` (logical *and*) operators.
 
 
 .. image:: Figures/visualization_5.png
+    :alt: This is a scatter graph protecting minority investor score.
 
 Now, let’s suppose you want to travel and start your dream business in one of your favorite locations. For example, 
 let’s say you have always wanted to go to Malta and start your business. Let’s see what business-related data we have in the data frame for Malta using equality. 
@@ -1013,7 +1015,7 @@ Let's use scatter matrix to see correlation between multiple pairs of things at 
         alt.Y(alt.repeat("row"), type='quantitative'),
         color='Region:N'
     ).properties(
-        width=150,
+        width=150
         height=150
     ).repeat(
         row=['protecting_minority_investors_score', 'strength_of_minority_investor_protection_index_(0-50)', 'extent_of_disclosure_index_(0-10)', 'extent_of_director_liability_index_(0-10)'],
@@ -1022,6 +1024,7 @@ Let's use scatter matrix to see correlation between multiple pairs of things at 
 
 
 .. image:: Figures/visualization_6.png
+    :alt: This is a group of graphs used to show scatter mattrix. 
 
 
 .. code:: python3
