@@ -77,7 +77,7 @@ The good news is that series are also iterables so we can pass a series to the z
 
     import pandas as pd
 
-    stations = pd.read_csv("https://media.githubusercontent.com/media/RunestoneInteractive/httlads/master/Data/bikeshare_stations.csv")
+    stations = pd.read_csv("https://runestone.academy/ns/books/published/httlads/_static/bikeshare_stations.csv")
     stations.head()
 
 First, we can load the stations data.  You can get this from your database, from a local file, or even remotely as we are demonstrating here.  Next we will use the latitude and longitude data to create a marker for each station.

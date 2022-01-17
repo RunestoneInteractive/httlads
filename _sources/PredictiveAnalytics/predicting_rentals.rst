@@ -99,7 +99,7 @@ Let's try this:
      import pandas as pd
      from sklearn.model_selection import train_test_split
 
-     trips = pd.read_csv("https://media.githubusercontent.com/media/RunestoneInteractive/httlads/master/Data/trip_data.csv",
+     trips = pd.read_csv("https://runestone.academy/ns/books/published/httlads/_static/trip_data.csv",
                    parse_dates=['start_date','end_date'])
 
 Now let's make start date the index, resample, and count the number of trips on each day.

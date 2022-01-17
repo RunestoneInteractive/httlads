@@ -46,7 +46,7 @@ possible to ``zip`` them.
 
     import pandas as pd
 
-    stations = pd.read_csv("https://media.githubusercontent.com/media/RunestoneInteractive/httlads/master/Data/bikeshare_stations.csv")
+    stations = pd.read_csv("https://runestone.academy/ns/books/published/httlads/_static/bikeshare_stations.csv")
     stations.head()
 
 Let us start by loading the stations data into Colab. You can load data into Colab from a database, local file, or remotely as it is

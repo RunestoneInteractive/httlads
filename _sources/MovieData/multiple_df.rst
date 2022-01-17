@@ -17,7 +17,7 @@ have received more than 20 votes, and whose average score is greater than 8.
 .. jupyter-execute::
 
    import pandas as pd
-   df = pd.read_csv("https://media.githubusercontent.com/media/RunestoneInteractive/httlads/master/Data/movies_metadata.csv").dropna(axis=1, how='all')
+   df = pd.read_csv("https://runestone.academy/ns/books/published/httlads/_static/movies_metadata.csv").dropna(axis=1, how='all')
 
    df_highly_voted = df[df.vote_count > 20]
    df_high_rated = df_highly_voted[df_highly_voted.vote_average > 8]
