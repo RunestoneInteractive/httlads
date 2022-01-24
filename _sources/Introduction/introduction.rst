@@ -261,7 +261,7 @@ discover your ability to perform complex analyses to solve real-world problem.
 
 There is another definition of the learning zone that is related to what we
 have been talking about. In this amazing
-`TED talk: How to get better at the things you care about <https://www.ted.com/talks/eduardo_briceno_how_to_get_better_at_the_things_you_care_about>`_,
+TED talk: How to get better at the things you care about,
 Eduardo Briceño talks about the "performance zone" versus the "learning zone."
 Please watch it.
 

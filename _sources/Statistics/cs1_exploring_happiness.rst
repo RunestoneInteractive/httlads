@@ -24,10 +24,21 @@ factors may contribute to the happiness of a country, and we will use spreadshee
 explore and analyze what factors may be most
 important in determining a country's happiness.
 
-We will start by loading the
-`happiness_2017.csv <../_static/happiness_2017.csv>`_ file into Google Sheets.
-The list below gives a bit of detail about each of the columns on the
-spreadsheet.
+We will be using Google Sheets instead of Microsoft Excel. Google sheets is used because it is a preferred method for
+sharing a link and working in real time with a team. The same Solver tool is available on Microsoft Excel however working
+on Google Sheets is preferred because you can easily and quickly share data with other users, and work on the same dataset at the same time. 
+
+.. _googlesheet_setup:
+
+We will start by loading the `happiness_2017.csv <../_static/happiness_2017.csv>`_ file into Google Sheets. 
+
+1. In order to do that you should go to `Google Sheets <https://www.google.com/sheets/about/>`_ 
+
+2. Click on "Go to Sheets".
+
+3. Open a blank and then at the top, click File and then Import the file `happiness_2017.csv <../_static/happiness_2017.csv>`_.
+
+The list below gives a bit of detail about each of the columns on the spreadsheet.
 
 The following definitions are reproduced from
 `World Happiness Report 2018 <http://worldhappiness.report/ed/2018/>`_.
@@ -43,6 +54,7 @@ The following definitions are reproduced from
    per capita, as this form fits the data significantly better than GDP per
    capita.
 
+
 2. The time series of healthy life expectancy at birth are constructed based on
    data from the World Health Organization (WHO) and WDI. WHO publishes the data
    on healthy life expectancy for the year 2012. The time series of life
@@ -53,18 +65,22 @@ The following definitions are reproduced from
    country-specific ratios to other years to generate the healthy life
    expectancy data.
 
+
 3. Social support is the national average of the binary responses (either 0 or
    1) to the Gallup World Poll (GWP) question "If you were in trouble, do you
    have relatives or friends you can count on to help you whenever you need
    them, or not?"
 
+
 4. Freedom to make life choices is the national average of binary responses to
    the GWP question "Are you satisfied or dissatisfied with your freedom to
    choose what you do with your life?"
 
+
 5. Generosity is a function of the national average of GWP responses to the
    question "Have you donated money to a charity in the past month?" on GDP per
    capita.
+
 
 6. Perceptions of corruption are the average of binary answers to two GWP
    questions: "Is corruption widespread throughout the government or not?" and
@@ -72,13 +88,16 @@ The following definitions are reproduced from
    government corruption are missing, the perception of business corruption is
    used as the overall corruption-perception measure.
 
+
 7. Positive affect is defined as the average of previous-day affect measures for
    happiness, laughter, and enjoyment for GWP waves 3-7 (years 2008 to 2012, and
    some in 2013). It is defined as the average of laughter and enjoyment for
    other waves where the happiness question was not asked.
 
+
 8. Negative affect is defined as the average of previous-day affect measures for
    worry, sadness, and anger for all waves.
+
 
 In this first part, we will review and practice some spreadsheet calculations by
 doing some exploratory data analysis. If you have never used a spreadsheet
@@ -206,7 +225,7 @@ Summary Statistics
       .. fillintheblank:: fb_avghappiness
 
          Calculating the average happiness score. You should include three
-         digits to the right of the decimal point.|blank|
+         digits to the right of the decimal point.
 
          - :5.399: Is the correct answer
            :5.398: 5.3989 should be rounded up to 5.399
