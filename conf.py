@@ -177,6 +177,8 @@ html_theme_path = [
 html_title = "How to Think Like a Data Scientist"
 shelf_section = "Intro to Data Science"
 
+course_description = """This book is designed as a second course in computing, to follow up on an intro to programming with Python.  It introduces many ideas in data science in an intuitive/informal way."""
+
 # A shorter title for the navigation bar.  Default is the same as html_title.
 html_short_title = "HtTLaDS"
 
