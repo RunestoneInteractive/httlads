@@ -26,8 +26,8 @@ from the previous case study to add the new column and then make a world map to 
 from the starting a business data set.
 
 We will use the `requests module <http://http://docs.python-requests.org>`_ as it is a great tool that allows us to communicate with databases 
-across the web. We will also use the ``restcountries.eu``, as it provides us an interface where we can get data from their site rather
-than a web page. If you recall, there is a way to ask for the data that you want. We will use ``/rest/v2/alpha/XXX``.
+across the web. We will also use the ``restcountries.com``, as it provides us an interface where we can get data from their site rather
+than a web page. If you recall, there is a way to ask for the data that you want. We will use ``/v3.1/alpha/XXX``.
 
 * ``/rest``: Technically, REST stands for REpresentational State Transfer. This uses the HTTP protocol to ask for and respond with data.
 * ``/v2``: This is version 2 of this website's protocol.
@@ -35,16 +35,16 @@ than a web page. If you recall, there is a way to ask for the data that you want
 * ``XXX``: This can be any valid three-letter country code, for example, "usa".
 
 **NOTE** there are other ways to look up information, such as the countries' numericCode, language, currency, and more. 
-These other methods are in the website ``restcountries.eu``.
+These other methods are in the website ``restcountries.com``.
 
 Open a new tab in your browser and see the call in action. Paste the following 
-URL in your web browser: `https://restcountries.eu/rest/v2/alpha/usa` and make a request. 
+URL in your web browser: `https://restcountries.com/v3.1/alpha/usa` and make a request. 
 Let's also check if our request was processed correctly with ``status_code``. A status code of 200 means everything went fine.
 
 .. code:: python3
 
    import requests
-   res = requests.get('https://restcountries.eu/rest/v2/alpha/usa')
+   res = requests.get('https://restcountries.com/v3.1/alpha/usa')
    res.status_code
 
 
@@ -63,7 +63,7 @@ We can also look at the text that was returned.
 
 .. parsed-literal::
 
-   '{"name":"United States of America","topLevelDomain":[".us"],"alpha2Code":"US","alpha3Code":"USA","callingCodes":["1"],"capital":"Washington, D.C.","altSpellings":["US","USA","United States of America"],"region":"Americas","subregion":"Northern America","population":323947000,"latlng":[38.0,-97.0],"demonym":"American","area":9629091.0,"gini":48.0,"timezones":["UTC-12:00","UTC-11:00","UTC-10:00","UTC-09:00","UTC-08:00","UTC-07:00","UTC-06:00","UTC-05:00","UTC-04:00","UTC+10:00","UTC+12:00"],"borders":["CAN","MEX"],"nativeName":"United States","numericCode":"840","currencies":[{"code":"USD","name":"United States dollar","symbol":"$"}],"languages":[{"iso639_1":"en","iso639_2":"eng","name":"English","nativeName":"English"}],"translations":{"de":"Vereinigte Staaten von Amerika","es":"Estados Unidos","fr":"États-Unis","ja":"アメリカ合衆国","it":"Stati Uniti D\'America","br":"Estados Unidos","pt":"Estados Unidos","nl":"Verenigde Staten","hr":"Sjedinjene Američke Države","fa":"ایالات متحده آمریکا"},"flag":"https://restcountries.eu/data/usa.svg","regionalBlocs":[{"acronym":"NAFTA","name":"North American Free Trade Agreement","otherAcronyms":[],"otherNames":["Tratado de Libre Comercio de América del Norte","Accord de Libre-échange Nord-Américain"]}],"cioc":"USA"}'
+   '{"name":"United States of America","topLevelDomain":[".us"],"alpha2Code":"US","alpha3Code":"USA","callingCodes":["1"],"capital":"Washington, D.C.","altSpellings":["US","USA","United States of America"],"region":"Americas","subregion":"Northern America","population":323947000,"latlng":[38.0,-97.0],"demonym":"American","area":9629091.0,"gini":48.0,"timezones":["UTC-12:00","UTC-11:00","UTC-10:00","UTC-09:00","UTC-08:00","UTC-07:00","UTC-06:00","UTC-05:00","UTC-04:00","UTC+10:00","UTC+12:00"],"borders":["CAN","MEX"],"nativeName":"United States","numericCode":"840","currencies":[{"code":"USD","name":"United States dollar","symbol":"$"}],"languages":[{"iso639_1":"en","iso639_2":"eng","name":"English","nativeName":"English"}],"translations":{"de":"Vereinigte Staaten von Amerika","es":"Estados Unidos","fr":"États-Unis","ja":"アメリカ合衆国","it":"Stati Uniti D\'America","br":"Estados Unidos","pt":"Estados Unidos","nl":"Verenigde Staten","hr":"Sjedinjene Američke Države","fa":"ایالات متحده آمریکا"},"flag":"https://restcountries.com/data/usa.svg","regionalBlocs":[{"acronym":"NAFTA","name":"North American Free Trade Agreement","otherAcronyms":[],"otherNames":["Tratado de Libre Comercio de América del Norte","Accord de Libre-échange Nord-Américain"]}],"cioc":"USA"}'
 
 If you recall, this long string resembles a Python dictionary. We can convert this string into an actual Python
 dictionary and then access the individual key-value pairs stored in the dictionary using the usual Python syntax.
@@ -124,7 +124,7 @@ of dictionaries of lists of dictionaries.
       'nl': 'Verenigde Staten',
       'hr': 'Sjedinjene Američke Države',
       'fa': 'ایالات متحده آمریکا'},
-    'flag': 'https://restcountries.eu/data/usa.svg',
+    'flag': 'https://restcountries.com/data/usa.svg',
     'regionalBlocs': [{'acronym': 'NAFTA',
       'name': 'North American Free Trade Agreement',
       'otherAcronyms': [],
@@ -471,7 +471,7 @@ Your final result should look like this.
     .. code:: python3
 
       def get_num_code(code):
-        res = requests.get('https://restcountries.eu/rest/v2/alpha/' + code) # gets all the information of the country using their three letter code
+        res = requests.get('https://restcountries.com/v3.1/alpha/' + code) # gets all the information of the country using their three letter code
         country_info = res.json() # formats all the information
         return country_info['numericCode'] # returns the correct numericCode of the country
       
