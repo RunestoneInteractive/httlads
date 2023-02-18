@@ -41,6 +41,11 @@ Open a new tab in your browser and see the call in action. Paste the following
 URL in your web browser: `https://restcountries.com/v3.1/alpha/usa` and make a request. 
 Let's also check if our request was processed correctly with ``status_code``. A status code of 200 means everything went fine.
 
+.. note:: Beware: Content Can Change
+
+   Just a quick note to let you know that these web services are like any other software, they go through changes. So while the information we provide here is up to date to the best of our ability, sometimes things change and we may not find out about it.  This recently happened with this very data.  The URL and host had changed, I don't know when, but thanks to a long time instructor who emailed me to let me know I have updated this section as of February 2023.
+
+
 .. code:: python3
 
    import requests
@@ -63,7 +68,7 @@ We can also look at the text that was returned.
 
 .. parsed-literal::
 
-   '{"name":"United States of America","topLevelDomain":[".us"],"alpha2Code":"US","alpha3Code":"USA","callingCodes":["1"],"capital":"Washington, D.C.","altSpellings":["US","USA","United States of America"],"region":"Americas","subregion":"Northern America","population":323947000,"latlng":[38.0,-97.0],"demonym":"American","area":9629091.0,"gini":48.0,"timezones":["UTC-12:00","UTC-11:00","UTC-10:00","UTC-09:00","UTC-08:00","UTC-07:00","UTC-06:00","UTC-05:00","UTC-04:00","UTC+10:00","UTC+12:00"],"borders":["CAN","MEX"],"nativeName":"United States","numericCode":"840","currencies":[{"code":"USD","name":"United States dollar","symbol":"$"}],"languages":[{"iso639_1":"en","iso639_2":"eng","name":"English","nativeName":"English"}],"translations":{"de":"Vereinigte Staaten von Amerika","es":"Estados Unidos","fr":"États-Unis","ja":"アメリカ合衆国","it":"Stati Uniti D\'America","br":"Estados Unidos","pt":"Estados Unidos","nl":"Verenigde Staten","hr":"Sjedinjene Američke Države","fa":"ایالات متحده آمریکا"},"flag":"https://restcountries.com/data/usa.svg","regionalBlocs":[{"acronym":"NAFTA","name":"North American Free Trade Agreement","otherAcronyms":[],"otherNames":["Tratado de Libre Comercio de América del Norte","Accord de Libre-échange Nord-Américain"]}],"cioc":"USA"}'
+   '[{"name":"United States of America","topLevelDomain":[".us"],"cca2":"US","cca3":"USA","callingCodes":["1"],"capital":"Washington, D.C.","altSpellings":["US","USA","United States of America"],"region":"Americas","subregion":"Northern America","population":323947000,"latlng":[38.0,-97.0],"demonym":"American","area":9629091.0,"gini":48.0,"timezones":["UTC-12:00","UTC-11:00","UTC-10:00","UTC-09:00","UTC-08:00","UTC-07:00","UTC-06:00","UTC-05:00","UTC-04:00","UTC+10:00","UTC+12:00"],"borders":["CAN","MEX"],"nativeName":"United States","ccn3":"840","currencies":[{"code":"USD","name":"United States dollar","symbol":"$"}],"languages":[{"iso639_1":"en","iso639_2":"eng","name":"English","nativeName":"English"}],"translations":{"de":"Vereinigte Staaten von Amerika","es":"Estados Unidos","fr":"États-Unis","ja":"アメリカ合衆国","it":"Stati Uniti D\'America","br":"Estados Unidos","pt":"Estados Unidos","nl":"Verenigde Staten","hr":"Sjedinjene Američke Države","fa":"ایالات متحده آمریکا"},"flag":"https://restcountries.com/data/usa.svg","regionalBlocs":[{"acronym":"NAFTA","name":"North American Free Trade Agreement","otherAcronyms":[],"otherNames":["Tratado de Libre Comercio de América del Norte","Accord de Libre-échange Nord-Américain"]}],"cioc":"USA"}]'
 
 If you recall, this long string resembles a Python dictionary. We can convert this string into an actual Python
 dictionary and then access the individual key-value pairs stored in the dictionary using the usual Python syntax.
@@ -81,8 +86,8 @@ of dictionaries of lists of dictionaries.
 
    {'name': 'United States of America',
     'topLevelDomain': ['.us'],
-    'alpha2Code': 'US',
-    'alpha3Code': 'USA',
+    'cca2': 'US',
+    'cca3': 'USA',
     'callingCodes': ['1'],
     'capital': 'Washington, D.C.',
     'altSpellings': ['US', 'USA', 'United States of America'],
@@ -106,7 +111,7 @@ of dictionaries of lists of dictionaries.
       'UTC+12:00'],
     'borders': ['CAN', 'MEX'],
     'nativeName': 'United States',
-    'numericCode': '840',
+    'ccn3': '840',
     'currencies': [{'code': 'USD',
       'name': 'United States dollar',
       'symbol': '$'}],
@@ -473,7 +478,7 @@ Your final result should look like this.
       def get_num_code(code):
         res = requests.get('https://restcountries.com/v3.1/alpha/' + code) # gets all the information of the country using their three letter code
         country_info = res.json() # formats all the information
-        return country_info['numericCode'] # returns the correct numericCode of the country
+        return country_info['ccn3'] # returns the correct numericCode of the country
       
     The following is the implementation of transform_lookup() in the Starting_a_Business_score column.
     
